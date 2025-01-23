@@ -21,6 +21,7 @@ class LoginPage extends StatelessWidget {
             left: 0,
             right: 0,
             child: Container(
+              height: MediaQuery.of(context).size.height - 300,
               decoration: const BoxDecoration(
                 color: defaultWhite, // Cambia a blanco cuando lo necesites
                 borderRadius: BorderRadius.only(
@@ -123,7 +124,7 @@ class LoginPage extends StatelessWidget {
                         child: const Text('¿Olvidaste tu contraseña?'),
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 8),
                     ElevatedButton(
                       onPressed: () {
                         // Lógica para iniciar sesión
@@ -153,7 +154,7 @@ class LoginPage extends StatelessWidget {
                             style: TextStyle(color: darkGreen),
                           ),
                           const SizedBox(height: 8),
-                          Row(
+                          Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               ElevatedButton.icon(
@@ -164,12 +165,15 @@ class LoginPage extends StatelessWidget {
                                   backgroundColor: Colors.white,
                                   foregroundColor: Colors.black,
                                   side: const BorderSide(color: Colors.grey),
-                                  minimumSize: const Size(150, 50),
+                                  minimumSize: const Size(double.infinity,
+                                      50), // Ocupa todo el ancho
                                 ),
                                 icon: const Icon(Icons.account_circle),
                                 label: const Text('Google'),
                               ),
-                              const SizedBox(width: 16),
+                              const SizedBox(
+                                  height:
+                                      16), // Ajuste de espacio entre botones
                               ElevatedButton.icon(
                                 onPressed: () {
                                   // Lógica para iniciar sesión con Facebook
@@ -178,7 +182,8 @@ class LoginPage extends StatelessWidget {
                                   backgroundColor: Colors.white,
                                   foregroundColor: Colors.blue,
                                   side: const BorderSide(color: Colors.grey),
-                                  minimumSize: const Size(150, 50),
+                                  minimumSize: const Size(double.infinity,
+                                      50), // Ocupa todo el ancho
                                 ),
                                 icon: const Icon(Icons.facebook),
                                 label: const Text('Facebook'),
@@ -187,7 +192,7 @@ class LoginPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),
