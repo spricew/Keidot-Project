@@ -40,6 +40,7 @@ class LoginPage extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Poppins',
                         color: darkGreen,
+                        letterSpacing: -1,
                       ),
                     ),
                     GestureDetector(
@@ -53,6 +54,7 @@ class LoginPage extends StatelessWidget {
                           color: greenHigh,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'Poppins',
+                          letterSpacing: -0.8,
                         ),
                       ),
                     ),
@@ -69,7 +71,7 @@ class LoginPage extends StatelessWidget {
                           padding: EdgeInsets.only(
                               left: 20, right: 10), // Agrega espacio al ícono
                           child: Icon(Icons.email,
-                              size: 20), // Ajusta el tamaño del ícono
+                              size: 22), // Ajusta el tamaño del ícono
                         ),
                         border: OutlineInputBorder(
                           borderRadius:
@@ -98,7 +100,13 @@ class LoginPage extends StatelessWidget {
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                         ),
-                        prefixIcon: const Icon(Icons.lock),
+                        prefixIcon: const Padding(
+                          padding: EdgeInsets.only(left: 20, right: 10),
+                          child: Icon(
+                            Icons.lock,
+                            size: 22,
+                          ),
+                        ),
                         suffixIcon: const Icon(Icons.visibility_off),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30)),
@@ -140,7 +148,10 @@ class LoginPage extends StatelessWidget {
                     Center(
                       child: Column(
                         children: [
-                          const Text('O inicia sesión con'),
+                          const Text(
+                            'O inicia sesión con',
+                            style: TextStyle(color: darkGreen),
+                          ),
                           const SizedBox(height: 8),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
