@@ -10,11 +10,11 @@ class LoginPage extends StatelessWidget {
       body: Stack(
         clipBehavior: Clip.none, // Permite que los widgets salgan del Stack
         children: [
-          Image.asset(
-            'assets/images/banner.png',
-            width: double.infinity,
-            height: 380,
-            fit: BoxFit.cover,
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/banner.png',
+              fit: BoxFit.cover,
+            ),
           ),
           Positioned(
             top: 300, // Ajusta para superponer la tarjeta
