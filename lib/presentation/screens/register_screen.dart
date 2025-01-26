@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
+import 'package:test_app/widgets/custom_button.dart';
 import 'package:test_app/widgets/custom_input.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -13,40 +14,63 @@ class RegisterScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         title: 'Registrarse',
-        toolbarHeight: 90,
-        backgroundColor: const Color.fromARGB(255, 189, 189, 189),
+        toolbarHeight: 125,
+        backgroundColor: Colors.white,
         titleColor: darkGreen,
         iconColor: darkGreen,
         onBackPressed: () {
           Navigator.pop(context); // Acción al presionar el botón de retroceso
         },
       ),
-      body: Center(
-          child: Padding(
-        padding: const EdgeInsets.all(40.0),
-        child: Column(
-          children: [
-            CustomInput(
-              labelText: 'Usuario',
-              prefixIcon: Icons.people,
-              controller: emailController,
-            ),
-            const SizedBox(height: 16),
-            CustomInput(
-              labelText: 'Correo electrónico',
-              prefixIcon: Icons.email,
-              controller: emailController,
-            ),
-            const SizedBox(height: 16),
-            CustomInput(
-              labelText: 'Teléfono',
-              prefixIcon: Icons.phone,
-              controller: emailController,
-            ),
-            const SizedBox(height: 16),
-          ],
-        ),
-      )),
+      body: Container(
+        color: Colors.white,
+        child: Center(
+            child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 80),
+          child: Column(
+            children: [
+              CustomInput(
+                labelText: 'Usuario',
+                prefixIcon: Icons.people,
+              ),
+              const SizedBox(height: 18),
+              CustomInput(
+                labelText: 'Correo electrónico',
+                prefixIcon: Icons.email,
+                controller: emailController,
+              ),
+              const SizedBox(height: 18),
+              CustomInput(
+                labelText: 'Teléfono',
+                prefixIcon: Icons.phone,
+              ),
+              const SizedBox(height: 18),
+              CustomInput(
+                labelText: 'Contraseña',
+                prefixIcon: Icons.password,
+                controller: passwordController,
+                obscureText: true,
+                suffixIcon: Icons.visibility_off,
+              ),
+              const SizedBox(height: 18),
+              CustomInput(
+                labelText: 'Repetir contraseña',
+                prefixIcon: Icons.lock,
+                controller: passwordController,
+                obscureText: true,
+                suffixIcon: Icons.visibility_off,
+              ),
+              const SizedBox(height: 18),
+              CustomButton(
+                text: 'Registrarse',
+                onPressed: () {
+                  // Lógica para iniciar sesión
+                },
+              ),
+            ],
+          ),
+        )),
+      ),
     );
   }
 }
