@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/homePage.dart';
 import 'package:test_app/presentation/screens/register_screen.dart';
 import 'package:test_app/widgets/custom_input.dart';
 import 'package:test_app/widgets/custom_button.dart';
@@ -102,7 +103,10 @@ class LoginPage extends StatelessWidget {
                       text: 'Iniciar sesión',
                       onPressed: () {
                         // Lógica para iniciar sesión
-
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Homepage()));
                         // ignore: avoid_print
                         print('Email: ${emailController.text}');
                         // ignore: avoid_print

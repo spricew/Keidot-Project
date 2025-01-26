@@ -6,6 +6,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double toolbarHeight;
   final Color backgroundColor;
   final Color titleColor;
+  final double titleFontSize; // Nuevo atributo
   final Color iconColor;
   final VoidCallback? onBackPressed;
 
@@ -15,6 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.toolbarHeight = 90,
     this.backgroundColor = Colors.amberAccent,
     this.titleColor = darkGreen,
+    this.titleFontSize = 28, // Valor por defecto
     this.iconColor = darkGreen,
     this.onBackPressed,
   });
@@ -31,7 +33,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           color: titleColor,
           letterSpacing: -0.8,
           fontWeight: FontWeight.w500,
-          fontSize: 28,
+          fontSize: titleFontSize, // Usar el nuevo atributo
         ),
       ),
       leading: IconButton(

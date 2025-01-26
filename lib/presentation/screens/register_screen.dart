@@ -16,6 +16,7 @@ class RegisterScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: CustomAppBar(
         title: 'Registrarse',
+        titleFontSize: 28,
         toolbarHeight: 125,
         backgroundColor: Colors.white,
         titleColor: darkGreen,
