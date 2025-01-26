@@ -13,6 +13,7 @@ class LoginPage extends StatelessWidget {
     final TextEditingController passwordController = TextEditingController();
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         //clipBehavior: Clip.none,
         children: [
