@@ -35,9 +35,10 @@ class CustomInput extends StatelessWidget {
           padding: const EdgeInsets.only(left: 20, right: 10),
           child: Icon(prefixIcon, size: 22),
         ),
-        suffixIcon: suffixIcon != null
-            ? Icon(suffixIcon)
-            : null, // Muestra el ícono solo si se proporciona
+        suffixIcon: Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: suffixIcon != null ? Icon(suffixIcon) : null,
+        ), // Muestra el ícono solo si se proporciona
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
         ),

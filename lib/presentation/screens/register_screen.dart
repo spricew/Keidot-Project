@@ -61,7 +61,7 @@ class RegisterScreen extends StatelessWidget {
                 obscureText: true,
                 suffixIcon: Icons.visibility_off,
               ),
-              const SizedBox(height: 18),
+              const SizedBox(height: 20),
               CustomButton(
                 text: 'Registrarse',
                 onPressed: () {
