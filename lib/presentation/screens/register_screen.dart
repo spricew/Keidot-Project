@@ -12,6 +12,7 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: CustomAppBar(
         title: 'Registrarse',
         toolbarHeight: 125,
@@ -29,7 +30,7 @@ class RegisterScreen extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 80),
           child: Column(
             children: [
-              CustomInput(
+              const CustomInput(
                 labelText: 'Usuario',
                 prefixIcon: Icons.people,
               ),
@@ -40,7 +41,7 @@ class RegisterScreen extends StatelessWidget {
                 controller: emailController,
               ),
               const SizedBox(height: 18),
-              CustomInput(
+              const CustomInput(
                 labelText: 'Teléfono',
                 prefixIcon: Icons.phone,
               ),
