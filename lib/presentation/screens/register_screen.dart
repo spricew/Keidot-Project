@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 import 'package:test_app/widgets/custom_button.dart';
 import 'package:test_app/widgets/custom_input.dart';
@@ -65,7 +66,10 @@ class RegisterScreen extends StatelessWidget {
               CustomButton(
                 text: 'Registrarse',
                 onPressed: () {
-                  // Lógica para iniciar sesión
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginPage()));
                 },
               ),
             ],
