@@ -22,14 +22,30 @@ class RegisterScreen extends StatelessWidget {
         },
       ),
       body: Center(
-          child: Column(
-        children: [
-          CustomInput(
-            labelText: 'Correo electrónico',
-            prefixIcon: Icons.email,
-            controller: emailController,
-          ),
-        ],
+          child: Padding(
+        padding: const EdgeInsets.all(40.0),
+        child: Column(
+          children: [
+            CustomInput(
+              labelText: 'Usuario',
+              prefixIcon: Icons.people,
+              controller: emailController,
+            ),
+            const SizedBox(height: 16),
+            CustomInput(
+              labelText: 'Correo electrónico',
+              prefixIcon: Icons.email,
+              controller: emailController,
+            ),
+            const SizedBox(height: 16),
+            CustomInput(
+              labelText: 'Teléfono',
+              prefixIcon: Icons.phone,
+              controller: emailController,
+            ),
+            const SizedBox(height: 16),
+          ],
+        ),
       )),
     );
   }
