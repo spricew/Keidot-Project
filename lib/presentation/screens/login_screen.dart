@@ -1,29 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/widgets/custom_input.dart';
+import 'package:test_app/widgets/custom_button.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Declarar los controladores para los campos de texto
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+
     return Scaffold(
       body: Stack(
-        clipBehavior: Clip.none, // Permite que los widgets salgan del Stack
+        //clipBehavior: Clip.none,
         children: [
-          Positioned.fill(
-            child: Image.asset(
-              'assets/images/banner.png',
-              fit: BoxFit.cover,
-            ),
+          Image.asset(
+            'assets/images/banner.png',
+            width: double.infinity,
+            height: double.infinity,
+            fit: BoxFit.cover,
           ),
           Positioned(
-            top: 300, // Ajusta para superponer la tarjeta
+            top: 300,
             left: 0,
             right: 0,
             child: Container(
-              height: MediaQuery.of(context).size.height - 300,
+              height: MediaQuery.of(context).size.height,
               decoration: const BoxDecoration(
-                color: defaultWhite, // Cambia a blanco cuando lo necesites
+                color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
@@ -60,59 +66,20 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Correo electrónico',
-                        labelStyle: const TextStyle(
-                          fontFamily: 'Urbanist',
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        prefixIcon: const Padding(
-                          padding: EdgeInsets.only(
-                              left: 20, right: 10), // Agrega espacio al ícono
-                          child: Icon(Icons.email,
-                              size: 22), // Ajusta el tamaño del ícono
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius:
-                              BorderRadius.circular(30), // Bordes redondeados
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: const BorderSide(color: Colors.grey),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                          borderSide: const BorderSide(color: Colors.green),
-                        ),
-                        contentPadding: const EdgeInsets.symmetric(
-                          vertical: 15, // Padding interno del texto
-                          horizontal: 10, // Padding horizontal del texto
-                        ),
-                      ),
+                    // Campo de correo electrónico reutilizable
+                    CustomInput(
+                      labelText: 'Correo electrónico',
+                      prefixIcon: Icons.email,
+                      controller: emailController,
                     ),
                     const SizedBox(height: 16),
-                    TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Contraseña',
-                        labelStyle: const TextStyle(
-                          fontFamily: 'Urbanist',
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        prefixIcon: const Padding(
-                          padding: EdgeInsets.only(left: 20, right: 10),
-                          child: Icon(
-                            Icons.lock,
-                            size: 22,
-                          ),
-                        ),
-                        suffixIcon: const Icon(Icons.visibility_off),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                      ),
+                    // Campo de contraseña reutilizable
+                    CustomInput(
+                      labelText: 'Contraseña',
+                      prefixIcon: Icons.lock,
                       obscureText: true,
+                      suffixIcon: Icons.visibility_off,
+                      controller: passwordController,
                     ),
                     const SizedBox(height: 8),
                     Align(
@@ -125,25 +92,15 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    ElevatedButton(
+                    CustomButton(
+                      text: 'Iniciar sesión',
                       onPressed: () {
                         // Lógica para iniciar sesión
+                        // ignore: avoid_print
+                        print('Email: ${emailController.text}');
+                        // ignore: avoid_print
+                        print('Contraseña: ${passwordController.text}');
                       },
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: darkGreen,
-                          minimumSize: const Size(double.infinity, 50),
-                          textStyle: const TextStyle(
-                            fontFamily: 'Urbanist',
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          )),
-                      child: const Text(
-                        'Iniciar sesión',
-                        style: TextStyle(
-                            color: defaultWhite,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w500),
-                      ),
                     ),
                     const SizedBox(height: 16),
                     Center(
@@ -154,45 +111,36 @@ class LoginPage extends StatelessWidget {
                             style: TextStyle(color: darkGreen),
                           ),
                           const SizedBox(height: 8),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              ElevatedButton.icon(
-                                onPressed: () {
-                                  // Lógica para iniciar sesión con Google
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.white,
-                                  foregroundColor: Colors.black,
-                                  side: const BorderSide(color: Colors.grey),
-                                  minimumSize: const Size(double.infinity,
-                                      50), // Ocupa todo el ancho
-                                ),
-                                icon: const Icon(Icons.account_circle),
-                                label: const Text('Google'),
-                              ),
-                              const SizedBox(
-                                  height:
-                                      16), // Ajuste de espacio entre botones
-                              ElevatedButton.icon(
-                                onPressed: () {
-                                  // Lógica para iniciar sesión con Facebook
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.white,
-                                  foregroundColor: Colors.blue,
-                                  side: const BorderSide(color: Colors.grey),
-                                  minimumSize: const Size(double.infinity,
-                                      50), // Ocupa todo el ancho
-                                ),
-                                icon: const Icon(Icons.facebook),
-                                label: const Text('Facebook'),
-                              ),
-                            ],
+                          ElevatedButton.icon(
+                            onPressed: () {
+                              // Lógica para iniciar sesión con Google
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.black,
+                              side: const BorderSide(color: Colors.grey),
+                              minimumSize: const Size(double.infinity, 50),
+                            ),
+                            icon: const Icon(Icons.account_circle),
+                            label: const Text('Google'),
+                          ),
+                          const SizedBox(height: 16),
+                          ElevatedButton.icon(
+                            onPressed: () {
+                              // Lógica para iniciar sesión con Facebook
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.blue,
+                              side: const BorderSide(color: Colors.grey),
+                              minimumSize: const Size(double.infinity, 50),
+                            ),
+                            icon: const Icon(Icons.facebook),
+                            label: const Text('Facebook'),
                           ),
                         ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
