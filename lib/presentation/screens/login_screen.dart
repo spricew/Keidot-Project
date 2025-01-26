@@ -15,7 +15,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
-        //clipBehavior: Clip.none,
+        clipBehavior: Clip.none,
         children: [
           Image.asset(
             'assets/images/banner.png',
@@ -32,8 +32,8 @@ class LoginPage extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30),
+                  topLeft: Radius.circular(35),
+                  topRight: Radius.circular(35),
                 ),
               ),
               child: Padding(
