@@ -58,7 +58,7 @@ class LoginPage extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => RegisterScreen()));
+                                builder: (context) => const RegisterScreen()));
                         // Lógica para redirigir a Crear cuenta
                       },
                       child: const Text(
@@ -74,19 +74,17 @@ class LoginPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     // Campo de correo electrónico reutilizable
-                    CustomInput(
+                    const CustomInput(
                       labelText: 'Correo electrónico',
                       prefixIcon: Icons.email,
-                      controller: emailController,
                     ),
                     const SizedBox(height: 16),
                     // Campo de contraseña reutilizable
-                    CustomInput(
+                    const CustomInput(
                       labelText: 'Contraseña',
                       prefixIcon: Icons.lock,
                       obscureText: true,
                       suffixIcon: Icons.visibility_off,
-                      controller: passwordController,
                     ),
                     const SizedBox(height: 8),
                     Align(
