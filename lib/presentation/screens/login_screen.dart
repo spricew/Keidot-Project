@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/screens/homePage.dart';
+import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/presentation/screens/register_screen.dart';
 import 'package:test_app/widgets/custom_input.dart';
 import 'package:test_app/widgets/custom_button.dart';
