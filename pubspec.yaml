@@ -38,4 +38,7 @@ flutter:
 
   assets:
     - assets/images/banner.png
-    - assets/images/ola.png
+    - assets/images/maquinaria.png
+    - assets/images/limpieza.png
+    - assets/images/plantas.png
+    - assets/images/jardineria.png

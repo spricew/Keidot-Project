@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/widgets/home_appbar.dart';
+import 'package:test_app/config/theme/app_theme.dart'; // Asegúrate de que greenHigh y darkGreen estén definidos.
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -13,7 +12,6 @@ class Homepage extends StatelessWidget {
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false, // Desactiva el ícono de regresar
         leading: PopupMenuButton(
-          // Mueve el menú al lado izquierdo
           itemBuilder: (BuildContext context) {
             return [
               PopupMenuItem(
@@ -21,7 +19,37 @@ class Homepage extends StatelessWidget {
                   child: const Text("Modificar"),
                   onTap: () {
                     Navigator.pop(context);
-                    // ignore: avoid_print
+                    //ignore: avoid_print
+                    print("Estas en Modificar");
+                  },
+                ),
+              ),
+              PopupMenuItem(
+                child: InkWell(
+                  child: const Text("Modificar"),
+                  onTap: () {
+                    Navigator.pop(context);
+                    //ignore: avoid_print
+                    print("Estas en Modificar");
+                  },
+                ),
+              ),
+              PopupMenuItem(
+                child: InkWell(
+                  child: const Text("Modificar"),
+                  onTap: () {
+                    Navigator.pop(context);
+                    //ignore: avoid_print
+                    print("Estas en Modificar");
+                  },
+                ),
+              ),
+              PopupMenuItem(
+                child: InkWell(
+                  child: const Text("Modificar"),
+                  onTap: () {
+                    Navigator.pop(context);
+                    //ignore: avoid_print
                     print("Estas en Modificar");
                   },
                 ),
@@ -31,7 +59,6 @@ class Homepage extends StatelessWidget {
           icon: const Icon(Icons.menu),
         ),
         title: const Align(
-          // Mueve el título hacia la derecha
           alignment: Alignment.centerRight,
           child: Text(
             'Keidot',
@@ -39,30 +66,95 @@ class Homepage extends StatelessWidget {
               fontSize: 26,
               fontWeight: FontWeight.w600,
               letterSpacing: -0.8,
-              color: greenHigh,
+              color:
+                  greenHigh, // Asegúrate de que esté definido en app_theme.dart
             ),
           ),
         ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
-        child: Container(
-          width: double.infinity, // Ancho del contenedor
-          height: 220, // Altura del contenedor
-          decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 33, 243, 93), // Color de fondo
-            borderRadius:
-                BorderRadius.all(Radius.circular(20)), // Bordes redondeados
-          ),
-          child: const Center(
-            child: Text(
-              'putos',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: double.infinity,
+              height: 230,
+              decoration: BoxDecoration(
+                color: greenHigh.withValues(
+                    alpha: 0.8), // Un tono del color principal
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: const Center(
+                child: Text(
+                  'Contenido',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
               ),
             ),
+            const SizedBox(height: 28),
+            const Text(
+              'Servicios destacados',
+              style: TextStyle(
+                color: darkGreen,
+                fontSize: 20,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w600,
+                letterSpacing: -0.2,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Expanded(
+              // Permite que el GridView ocupe el espacio restante sin errores
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 12,
+                mainAxisSpacing: 12,
+                children: [
+                  _gridItem("Jardinería", "assets/images/jardineria.png"),
+                  _gridItem(
+                      "Renta de maquinaria", "assets/images/maquinaria.png"),
+                  _gridItem("Venta de plantas", "assets/images/plantas.png"),
+                  _gridItem("Limpieza de hojas", "assets/images/limpieza.png"),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _gridItem(String title, String imagePath) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Container(
+        alignment: Alignment.bottomLeft,
+        padding: const EdgeInsets.all(18),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          gradient: LinearGradient(
+            colors: [Colors.black.withValues(alpha: 0.7), Colors.transparent],
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+          ),
+        ),
+        child: Text(
+          title,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
