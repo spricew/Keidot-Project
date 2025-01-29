@@ -114,6 +114,8 @@ class Homepage extends StatelessWidget {
                 crossAxisCount: 2,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
+                childAspectRatio:
+                    0.85, // Ajusta este valor para modificar la altura
                 children: [
                   _gridItem("Jardinería", "assets/images/jardineria.png"),
                   _gridItem(
