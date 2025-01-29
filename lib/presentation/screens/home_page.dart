@@ -100,13 +100,13 @@ class Homepage extends StatelessWidget {
                 'Servicios destacados',
                 style: TextStyle(
                   color: darkGreen,
-                  fontSize: 20,
+                  fontSize: 22,
                   fontFamily: 'Poppins',
                   fontWeight: FontWeight.w600,
                   letterSpacing: -0.2,
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 10),
               GridView.count(
                 crossAxisCount: 2,
                 crossAxisSpacing: 12,
@@ -128,6 +128,33 @@ class Homepage extends StatelessWidget {
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0, // Índice seleccionado
+        selectedItemColor: darkGreen, // Color del ítem seleccionado
+        unselectedItemColor: Colors.grey, // Color de los ítems no seleccionados
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Inicio',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Buscar',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_box_outlined),
+            label: 'Solicitar',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: 'Notificaciones',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.send),
+            label: 'Mensajes',
+          ),
+        ],
       ),
     );
   }
