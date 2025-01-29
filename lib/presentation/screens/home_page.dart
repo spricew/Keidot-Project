@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/config/theme/app_theme.dart'; // Asegúrate de que greenHigh y darkGreen estén definidos.
+import 'package:test_app/config/theme/app_theme.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -66,66 +66,67 @@ class Homepage extends StatelessWidget {
               fontSize: 26,
               fontWeight: FontWeight.w600,
               letterSpacing: -0.8,
-              color:
-                  greenHigh, // Asegúrate de que esté definido en app_theme.dart
+              color: greenHigh,
             ),
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: double.infinity,
-              height: 230,
-              decoration: BoxDecoration(
-                color: greenHigh.withValues(
-                    alpha: 0.8), // Un tono del color principal
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: const Center(
-                child: Text(
-                  'Contenido',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: double.infinity,
+                height: 230,
+                decoration: BoxDecoration(
+                  color: greenHigh.withOpacity(0.8),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const Center(
+                  child: Text(
+                    'Contenido',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 28),
-            const Text(
-              'Servicios destacados',
-              style: TextStyle(
-                color: darkGreen,
-                fontSize: 20,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w600,
-                letterSpacing: -0.2,
+              const SizedBox(height: 28),
+              const Text(
+                'Servicios destacados',
+                style: TextStyle(
+                  color: darkGreen,
+                  fontSize: 20,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: -0.2,
+                ),
               ),
-            ),
-            const SizedBox(height: 8),
-            Expanded(
-              // Permite que el GridView ocupe el espacio restante sin errores
-              child: GridView.count(
+              const SizedBox(height: 8),
+              GridView.count(
                 crossAxisCount: 2,
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
-                childAspectRatio:
-                    0.85, // Ajusta este valor para modificar la altura
+                childAspectRatio: 0.85, // Ajusta la altura de los elementos
+                shrinkWrap:
+                    true, // Permite que el GridView se ajuste automáticamente
+                physics:
+                    const NeverScrollableScrollPhysics(), // Elimina el scroll interno
                 children: [
                   _gridItem("Jardinería", "assets/images/jardineria.png"),
                   _gridItem(
                       "Renta de maquinaria", "assets/images/maquinaria.png"),
                   _gridItem("Venta de plantas", "assets/images/plantas.png"),
                   _gridItem("Limpieza de hojas", "assets/images/limpieza.png"),
+                  // Puedes seguir agregando más items y la pantalla se adaptará automáticamente
                 ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
