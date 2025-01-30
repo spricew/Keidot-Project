@@ -21,6 +21,21 @@ class SearchScreen extends StatelessWidget {
           onTabSelected(0); // Volver al Home (índice 0)
         },
       ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 15),
+          child: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25), color: darkGreen),
+                height: 50,
+                width: double.infinity,
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
