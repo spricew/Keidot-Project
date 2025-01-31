@@ -4,17 +4,28 @@ import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/register_screen.dart';
 import 'package:test_app/widgets/custom_input.dart';
 import 'package:test_app/widgets/custom_button.dart';
- // Importar el servicio de autenticación
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final TextEditingController emailController = TextEditingController();
-    final TextEditingController passwordController = TextEditingController();
-    final AuthService authService = AuthService(); // Instancia del servicio de autenticación
+  _LoginPageState createState() => _LoginPageState();
+}
 
+class _LoginPageState extends State<LoginPage> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final AuthService authService = AuthService();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
@@ -91,9 +102,7 @@ class LoginPage extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                        onPressed: () {
-                          // Lógica para "¿Olvidaste tu contraseña?"
-                        },
+                        onPressed: () {},
                         child: const Text('¿Olvidaste tu contraseña?'),
                       ),
                     ),
@@ -127,9 +136,7 @@ class LoginPage extends StatelessWidget {
                           ),
                           const SizedBox(height: 8),
                           ElevatedButton.icon(
-                            onPressed: () {
-                              // Lógica para iniciar sesión con Google
-                            },
+                            onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.white,
                               foregroundColor: Colors.black,
@@ -141,9 +148,7 @@ class LoginPage extends StatelessWidget {
                           ),
                           const SizedBox(height: 16),
                           ElevatedButton.icon(
-                            onPressed: () {
-                              // Lógica para iniciar sesión con Facebook
-                            },
+                            onPressed: () {},
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.white,
                               foregroundColor: Colors.blue,

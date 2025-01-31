@@ -4,7 +4,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:test_app/Services/models/user_model.dart';
 import 'package:test_app/Services/register_request/register_service.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 import 'package:test_app/widgets/custom_button.dart';
 import 'package:test_app/widgets/custom_input.dart';
