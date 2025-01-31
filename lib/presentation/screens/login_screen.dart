@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/Services/login_request/auth_service.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/presentation/screens/register_screen.dart';
 import 'package:test_app/widgets/custom_input.dart';
 import 'package:test_app/widgets/custom_button.dart';
+ // Importar el servicio de autenticación
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Declarar los controladores para los campos de texto
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
+    final AuthService authService = AuthService(); // Instancia del servicio de autenticación
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -56,10 +57,10 @@ class LoginPage extends StatelessWidget {
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const RegisterScreen()));
-                        // Lógica para redirigir a Crear cuenta
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const RegisterScreen()),
+                        );
                       },
                       child: const Text(
                         'Crear cuenta',
@@ -73,18 +74,18 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    // Campo de correo electrónico reutilizable
-                    const CustomInput(
+                    CustomInput(
                       labelText: 'Correo electrónico',
                       prefixIcon: Icons.email,
+                      controller: emailController,
                     ),
                     const SizedBox(height: 16),
-                    // Campo de contraseña reutilizable
-                    const CustomInput(
+                    CustomInput(
                       labelText: 'Contraseña',
                       prefixIcon: Icons.lock,
                       obscureText: true,
                       suffixIcon: Icons.visibility_off,
+                      controller: passwordController,
                     ),
                     const SizedBox(height: 8),
                     Align(
@@ -99,16 +100,21 @@ class LoginPage extends StatelessWidget {
                     const SizedBox(height: 8),
                     CustomButton(
                       text: 'Iniciar sesión',
-                      onPressed: () {
-                        // Lógica para iniciar sesión
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Homepage()));
-                        // ignore: avoid_print
-                        print('Email: ${emailController.text}');
-                        // ignore: avoid_print
-                        print('Contraseña: ${passwordController.text}');
+                      onPressed: () async {
+                        String email = emailController.text.trim();
+                        String password = passwordController.text.trim();
+
+                        if (email.isNotEmpty && password.isNotEmpty) {
+                          await authService.login(context, email, password);
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content:
+                                  Text('Por favor, completa todos los campos'),
+                              backgroundColor: Colors.red,
+                            ),
+                          );
+                        }
                       },
                     ),
                     const SizedBox(height: 16),
