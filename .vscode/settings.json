@@ -1,3 +1,4 @@
 {
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "cmake.sourceDirectory": "C:/Proyecto-KEIDOT/app_movil/Maquetado/DevSplashScreen/Keidot-Project/linux"
 }

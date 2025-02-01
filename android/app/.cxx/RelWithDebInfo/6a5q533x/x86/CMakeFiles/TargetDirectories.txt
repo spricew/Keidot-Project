@@ -1,0 +1,2 @@
+C:/Proyecto-KEIDOT/app_movil/Maquetado/DevSplashScreen/Keidot-Project/android/app/.cxx/RelWithDebInfo/6a5q533x/x86/CMakeFiles/edit_cache.dir
+C:/Proyecto-KEIDOT/app_movil/Maquetado/DevSplashScreen/Keidot-Project/android/app/.cxx/RelWithDebInfo/6a5q533x/x86/CMakeFiles/rebuild_cache.dir
