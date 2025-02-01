@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/messages_screen.dart';
 import 'package:test_app/presentation/screens/notifications_screen.dart';
-import 'package:test_app/presentation/screens/request_screen.dart';
+import 'package:test_app/presentation/screens/request_screen1.dart';
 import 'package:test_app/presentation/screens/search_screen.dart';
 import 'package:test_app/presentation/screens/home_screen.dart';
 
@@ -24,7 +24,7 @@ class _HomepageState extends State<Homepage> {
     _screens = [
       const HomeScreen(),
       SearchScreen(onTabSelected: _onItemTapped), // Ahora sí podemos usarla
-      const RequestScreen(),
+      const DetallesServicioPage(),
       const NotificationsScreen(),
       const MessagesScreen(),
     ];

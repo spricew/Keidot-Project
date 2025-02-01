@@ -1,8 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:test_app/Services/models/user_model.dart';
+import 'package:test_app/Services/register_request/register_service.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 import 'package:test_app/widgets/custom_button.dart';
 import 'package:test_app/widgets/custom_input.dart';
@@ -17,27 +18,40 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+  final RegisterService _registerService = RegisterService();
 
-  File? _selectedFile; // Variable para almacenar el archivo seleccionado
-  String? _fileName; // Nombre del archivo
+  File? _selectedFile;
+  String? _fileName;
 
   Future<void> _pickFile() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
-      type: FileType.custom, // Define los tipos de archivo permitidos
-      allowedExtensions: ['jpg', 'png', 'pdf'], // Extensiones permitidas
+      type: FileType.custom,
+      allowedExtensions: ['jpg', 'png', 'pdf'],
     );
 
     if (result != null) {
       setState(() {
-        _selectedFile = File(result.files.single.path!); // Ruta del archivo
-        _fileName = result.files.single.name; // Nombre del archivo
+        _selectedFile = File(result.files.single.path!);
+        _fileName = result.files.single.name;
       });
     } else {
-      // El usuario canceló la selección
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('No se seleccionó ningún archivo.')),
       );
     }
+  }
+
+  void _register() async {
+    final user = UserModel(
+      email: emailController.text,
+      username: usernameController.text,
+      phone: int.tryParse(phoneController.text) ?? 0,
+      password: passwordController.text,
+    );
+
+    await _registerService.register(context, user);
   }
 
   @override
@@ -52,7 +66,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         titleColor: darkGreen,
         iconColor: darkGreen,
         onBackPressed: () {
-          Navigator.pop(context); // Acción al presionar el botón de retroceso
+          Navigator.pop(context);
         },
       ),
       body: Container(
@@ -62,9 +76,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const CustomInput(
+              CustomInput(
                 labelText: 'Usuario',
                 prefixIcon: Icons.people,
+                controller: usernameController,
               ),
               const SizedBox(height: 18),
               CustomInput(
@@ -73,9 +88,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 controller: emailController,
               ),
               const SizedBox(height: 18),
-              const CustomInput(
+              CustomInput(
                 labelText: 'Teléfono',
                 prefixIcon: Icons.phone,
+                controller: phoneController,
               ),
               const SizedBox(height: 18),
               CustomInput(
@@ -89,14 +105,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
               CustomInput(
                 labelText: 'Repetir contraseña',
                 prefixIcon: Icons.lock,
-                controller: passwordController,
                 obscureText: true,
                 suffixIcon: Icons.visibility_off,
               ),
               const SizedBox(height: 25),
               const Align(
-                alignment: Alignment
-                    .centerLeft, // Alinea específicamente este texto a la izquierda
+                alignment: Alignment.centerLeft,
                 child: Text(
                   'Identificación oficial:',
                   style: TextStyle(
@@ -130,14 +144,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               const SizedBox(height: 20),
               CustomButton(
                 text: 'Registrarse',
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
-                    ),
-                  );
-                },
+                onPressed: _register,
               ),
             ],
           ),
