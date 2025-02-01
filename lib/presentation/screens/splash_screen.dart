@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/presentation/screens/home_page.dart';
+import 'package:test_app/presentation/screens/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,9 +15,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
     // Esperar 3 segundos y navegar a la pantalla principal
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
+      Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const Homepage()),
+        MaterialPageRoute(builder: (context) => const LoginPage()),
       );
     });
   }
@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/images/splash_logo.png", width: 150),
+            Image.asset("assets/images/Logo.png", width: 150),
             const SizedBox(height: 20),
             const CircularProgressIndicator(), // Animación de carga
           ],

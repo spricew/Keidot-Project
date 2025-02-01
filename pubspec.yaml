@@ -12,14 +12,19 @@ dependencies:
   flutter:
     sdk: flutter
   file_picker: ^8.1.7
-  flutter_native_splash: ^2.3.5 
-
+  flutter_native_splash: ^2.3.5
   cupertino_icons: ^1.0.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+
+flutter_native_splash:
+  color: "#FFFFFF"  # Color de fondo del Splash Screen
+  image: assets/images/Logo.png  # Imagen que se mostrará en el centro
+  android: true
+  ios: true
 
 flutter:
   uses-material-design: true
@@ -44,9 +49,4 @@ flutter:
     - assets/images/plantas.png
     - assets/images/jardineria.png
     - assets/images/Logo.png
-
-flutter_native_splash:
-  color: "#FFFFFF"  # Color de fondo del Splash Screen
-  image: assets/images/Logo.png  # Imagen que se mostrará en el centro
-  android: true
-  ios: true
+    - assets/images/bannerCarrousel.png

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
+import 'package:test_app/widgets/custom_input.dart';
 
 class SearchScreen extends StatelessWidget {
   final Function(int) onTabSelected; // Recibe la función para cambiar de índice
@@ -22,18 +23,53 @@ class SearchScreen extends StatelessWidget {
         },
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 15),
-          child: Column(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25), color: darkGreen),
-                height: 50,
-                width: double.infinity,
-              )
-            ],
-          ),
+        child: Column(
+          children: [
+            Container(
+              decoration: const BoxDecoration(color: Colors.white),
+              height: 100,
+              width: double.infinity,
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24),
+                child: Center(
+                    child: CustomInput(
+                        labelText: 'Buscar servicio',
+                        prefixIcon: Icons.search)),
+              ),
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                  color: Color.fromARGB(137, 226, 155, 155)),
+              height: 200,
+              width: double.infinity,
+              child: const Padding(
+                padding: EdgeInsets.only(top: 26, left: 24),
+                child: Text(
+                  'Ofertas de hoy',
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
+                      color: darkGreen),
+                ),
+              ),
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                  color: Color.fromARGB(136, 169, 226, 155)),
+              height: 200,
+              width: double.infinity,
+              child: const Padding(
+                padding: EdgeInsets.only(top: 26, left: 24),
+                child: Text(
+                  'Todos los servicios',
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
+                      color: darkGreen),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
