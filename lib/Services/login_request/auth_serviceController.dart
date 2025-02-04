@@ -6,7 +6,6 @@ import 'package:test_app/presentation/screens/home_page.dart';
 
 class AuthService {
   final String baseUrl = 'https://keidotapp.azurewebsites.net/api/Login/login';
-  
   final FlutterSecureStorage storage = const FlutterSecureStorage();
 
   Future<void> login(BuildContext context, String email, String password) async {
@@ -20,6 +19,7 @@ class AuthService {
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
         await storage.write(key: 'token', value: data['token']);
+        await storage.write(key: 'userId', value: data['id']); // Guarda el ID del usuario
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => const Homepage()),
@@ -38,6 +38,7 @@ class AuthService {
 
   Future<void> logout(BuildContext context) async {
     await storage.delete(key: 'token');
+    await storage.delete(key: 'userId'); // Elimina el ID del usuario al cerrar sesión
     Navigator.pushReplacementNamed(context, '/login');
   }
 
@@ -45,4 +46,7 @@ class AuthService {
     return await storage.read(key: 'token');
   }
 
+  Future<String?> getUserId() async {
+    return await storage.read(key: 'userId'); // Recupera el ID del usuario
+  }
 }

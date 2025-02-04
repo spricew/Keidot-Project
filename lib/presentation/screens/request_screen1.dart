@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:test_app/Services/transaction/service_transaction_controller.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
-import 'request_screen2.dart';
-
-void main() {
-  runApp(RequestScreen1());
-}
+import 'package:test_app/presentation/screens/request_screen2.dart';
 
 class RequestScreen1 extends StatelessWidget {
   const RequestScreen1({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: DetallesServicioPage(),
-    );
+    return const DetallesServicioPage();
   }
 }
 
@@ -26,7 +21,7 @@ class DetallesServicioPage extends StatefulWidget {
 }
 
 class _DetallesServicioPageState extends State<DetallesServicioPage> {
-  int? _selectedDuration;
+  final ServiceTransactionController controller = Get.find(); // Obtén el controlador
 
   @override
   Widget build(BuildContext context) {
@@ -35,21 +30,13 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Color.fromARGB(255, 0, 0, 0)),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const Homepage(),
-              ),
-            );
+            Get.offAll(() => const Homepage());
           },
         ),
         centerTitle: true,
-        title: const Text(
-          'Jardinería',
-          style: TextStyle(color: Color(0xFF3BA670)),
-        ),
+        title: const Text('Jardinería', style: TextStyle(color: Color(0xFF3BA670))),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -59,91 +46,48 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
             const Center(
               child: Text(
                 'Detalles del servicio',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
             ),
-            const SizedBox(height: 8), // Espacio reducido
+            const SizedBox(height: 8),
             const Center(
               child: Text(
                 'Paso 1 de 3',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF3BA670), // Color verde
-                ),
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFF3BA670)),
               ),
             ),
             const SizedBox(height: 16),
-            const Text(
-              'Ubicación',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-            ),
-            const SizedBox(height: 8),
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Buscar ubicación cercana',
-                prefixIcon: const Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-              ),
-            ),
-            const SizedBox(height: 8),
-            TextButton.icon(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.my_location,
-                color: Color(0xFF3BA670),
-              ),
-              label: const Text(
-                'Usar ubicación actual',
-                style: TextStyle(color: Colors.green),
-              ),
-            ),
-            const SizedBox(height: 16),
-            const Text(
-              'Duración estimada',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-            ),
+            const Text('Duración estimada', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
             const SizedBox(height: 8),
             Card(
               color: const Color.fromARGB(255, 252, 249, 249),
               child: Column(
                 children: [
-                  RadioListTile<int>(
-                    value: 1,
-                    groupValue: _selectedDuration,
-                    onChanged: (value) {
-                      setState(() {
-                        _selectedDuration = value;
-                      });
-                    },
-                    title: const Text('Pequeña - Tiempo Est. 20-30 min'),
-                  ),
-                  RadioListTile<int>(
-                    value: 2,
-                    groupValue: _selectedDuration,
-                    onChanged: (value) {
-                      setState(() {
-                        _selectedDuration = value;
-                      });
-                    },
-                    title: const Text('Mediana - Tiempo Est. 1-2 hr'),
-                  ),
-                  RadioListTile<int>(
-                    value: 3,
-                    groupValue: _selectedDuration,
-                    onChanged: (value) {
-                      setState(() {
-                        _selectedDuration = value;
-                      });
-                    },
-                    title: const Text('Grande - Tiempo Est. Más de 2 hr'),
-                  ),
+                  Obx(() => RadioListTile<int>(
+                        value: 1,
+                        groupValue: controller.requestData.value.tiempoEstimado.inMinutes == 30 ? 1 : 0,
+                        onChanged: (value) {
+                          controller.setTiempoEstimado(Duration(minutes: 30)); // Pequeña: 20-30 min
+                        },
+                        title: const Text('Pequeña - Tiempo Est. 20-30 min'),
+                      )),
+                  Obx(() => RadioListTile<int>(
+                        value: 2,
+                        groupValue: controller.requestData.value.tiempoEstimado.inMinutes == 90 ? 2 : 0,
+                        onChanged: (value) {
+                          controller.setTiempoEstimado(Duration(minutes: 90)); // Mediana: 1-2 hr
+                        },
+                        title: const Text('Mediana - Tiempo Est. 1-2 hr'),
+                      )),
+                  Obx(() => RadioListTile<int>(
+                        value: 3,
+                        groupValue: controller.requestData.value.tiempoEstimado.inMinutes == 150 ? 3 : 0,
+                        onChanged: (value) {
+                          controller.setTiempoEstimado(Duration(minutes: 150)); // Grande: Más de 2 hr
+                        },
+                        title: const Text('Grande - Tiempo Est. Más de 2 hr'),
+                      )),
                 ],
               ),
             ),
@@ -153,37 +97,26 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
               children: [
                 TextButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Homepage(), // Redirige a Homepage
-                      ),
-                    );
+                    Get.offAll(() => const Homepage()); // Regresa a la pantalla de inicio
                   },
-                  child: const Text(
-                    'Cancelar',
-                    style: TextStyle(color: Colors.red),
-                  ),
+                  child: const Text('Cancelar', style: TextStyle(color: Colors.red)),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => RequestScreen2(), // Navega a RequestScreen2
-                      ),
-                    );
+                    // Valida que se haya seleccionado una duración
+                    if (controller.requestData.value.tiempoEstimado.inMinutes <= 0) {
+                      Get.snackbar("Error", "Selecciona una duración válida");
+                      return;
+                    }
+
+                    // Navega a la siguiente pantalla
+                    Get.to(() => RequestScreen2());
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF12372A),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
                   ),
-                  child: const Text(
-                    'Siguiente',
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  child: const Text('Siguiente', style: TextStyle(color: Colors.white)),
                 ),
               ],
             ),

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:test_app/Services/transaction/service_transaction_controller.dart';
 import 'solicitud_exitosa_screen.dart'; // Asegúrate de importar la pantalla de solicitud exitosa
 
 class TransferenciaEsperaScreen extends StatelessWidget {
+  final ServiceTransactionController controller = Get.find(); // Obtén el controlador
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,13 +133,12 @@ class TransferenciaEsperaScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
+                  // Envía los datos al servidor
+                  await controller.sendRequest();
+
                   // Navega a la pantalla de solicitud exitosa
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => SolicitudExitosaScreen()),
-                  );
+                  Get.to(() => SolicitudExitosaScreen());
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF12372A), // Color verde
@@ -144,7 +147,7 @@ class TransferenciaEsperaScreen extends StatelessWidget {
                   ),
                 ),
                 child: Text(
-                  'Continuar',
+                  'Confirmar',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
