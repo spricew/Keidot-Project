@@ -64,8 +64,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  left: 20,
-                  bottom: 20,
+                  left: 25,
+                  bottom: 25,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -74,7 +74,7 @@ class HomeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(30),
                       ),
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 24,
+                        horizontal: 32,
                         vertical: 12,
                       ),
                     ),
