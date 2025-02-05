@@ -1,0 +1,2 @@
+C:/Proyecto-KEIDOT/app_movil/Maquetado/DevSplashScreen/Keidot-Project/android/app/.cxx/Debug/1lq494m5/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Proyecto-KEIDOT/app_movil/Maquetado/DevSplashScreen/Keidot-Project/android/app/.cxx/Debug/1lq494m5/armeabi-v7a/CMakeFiles/rebuild_cache.dir
