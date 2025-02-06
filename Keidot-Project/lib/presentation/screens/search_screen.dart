@@ -58,14 +58,25 @@ class SearchScreen extends StatelessWidget {
                   color: Color.fromARGB(136, 169, 226, 155)),
               height: 200,
               width: double.infinity,
-              child: const Padding(
-                padding: EdgeInsets.only(top: 26, left: 24),
-                child: Text(
-                  'Todos los servicios',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600,
-                      color: darkGreen),
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 26, horizontal: 24),
+                child: Column(
+                  children: [
+                    Text(
+                      'Todos los servicios',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w600,
+                          color: darkGreen),
+                    ),
+                    Container(
+                      height: 100,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: Colors.amber,
+                          borderRadius: BorderRadius.circular(14)),
+                    )
+                  ],
                 ),
               ),
             ),
