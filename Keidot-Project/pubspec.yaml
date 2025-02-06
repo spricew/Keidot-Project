@@ -48,6 +48,7 @@ flutter:
     - assets/images/plantas.png
     - assets/images/jardineria.png
     - assets/images/Logo.png
+    - assets/images/bannerCarrousel.png
 
 flutter_native_splash:
   color: "#FFFFFF"  # Color de fondo del Splash Screen
