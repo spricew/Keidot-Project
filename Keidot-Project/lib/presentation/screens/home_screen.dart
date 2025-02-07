@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/account_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,11 +17,12 @@ class HomeScreen extends StatelessWidget {
             return [
               PopupMenuItem(
                 child: InkWell(
-                  child: const Text("Modificar"),
+                  child: const Text("Mi cuenta"),
                   onTap: () {
-                    Navigator.pop(context);
-                    //ignore: avoid_print
-                    print("Estas en Modificar");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AccountScreen()),
+                    );
                   },
                 ),
               ),
