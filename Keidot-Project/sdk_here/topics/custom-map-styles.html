@@ -1,0 +1,1389 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Customize the map style · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="custom-map-styles-style-guide.html">
+    
+    
+    <link rel="prev" href="map-styles.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Customize the map style</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="customize-the-map-style">Customize the map style</h1>
+<p>The HERE SDK offers a versatile solution for customizing map styles by allowing you to load custom map schemes. You can create new styles from scratch or modify existing <code>MapScheme</code> styles. The HERE SDK includes several pre-configured <code>MapScheme</code> styles, such as <code>normalDay</code> and <code>satellite</code>.</p>
+<p>For more information on existing <code>MapScheme</code> styles, see <a href="map-styles.html">Add predefined map styles</a>. To modify existing map schemes or create new ones, you can use the HERE Style Editor. Detailed instructions are provided below. Additionally, this guide covers how to add custom raster styles on top of a loaded map scheme.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The web-based unified <a href="https://platform.here.com/style-editor/" target="_blank">HERE Style Editor</a> is available on the HERE platform. It is compatible with the <a href="https://www.here.com/docs/bundle/maps-api-for-javascript-api-reference/page/index.html" target="_blank">Maps API for JavaScript (JSAPI)</a> and the HERE SDK since version 4.12.1.0. Custom map styles that have been made with the legacy desktop editor need to be migrated to the new HERE Style Editor format. <a href="https://www.here.com/contact" target="_blank">Get in touch</a> with your HERE representative to discuss potential style updates from legacy editions.</p></div></div>
+<h2 id="add-custom-map-styles">Add custom map styles</h2>
+<p>The most flexible solution to customize the map is to create your own <code>MapScheme</code> styles using a configuration file generated with the WYSIWYG HERE Style Editor.</p>
+<center><p>
+  <img src="../graphics/here_style_editor.jpg" width="850" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: The HERE Style Editor showing a custom map configuration.</figcaption>
+</p></center>
+
+<p>Take a look at the <a href="https://www.here.com/docs/bundle/style-editor-user-guide/page/README.html" target="_blank">user guide</a> of the HERE Style Editor for more information. The latest updates can be found in this <a href="https://www.here.com/learn/blog/here-style-editor-v1-4-0-multiple-feature-updates-now-available" target="_blank">blog post</a>.</p>
+<p>In order to use the HERE Style Editor, perform the following steps:</p>
+<ol>
+<li>Sign-up for an account on the <a href="https://platform.here.com/sign-up" target="_blank">HERE platform</a>, if not done already.</li>
+<li>Confirm and finalize your account generation by providing addition details.</li>
+<li>Select <strong>HERE Style Editor</strong> from the <strong>Launcher</strong> menu on your landing page on the HERE platform or use this <a href="https://platform.here.com/style-editor/" target="_blank">direct link</a> after signing in.</li>
+<li>Start utilizing the HERE Style Editor by selecting one of the existing base styles you want to customize.</li>
+<li>Apply your customizations to the map style.</li>
+<li>Finalize your work by exporting the customized map style to your local computer via <strong>File</strong> -&gt; <strong>Export Map Style</strong> and load it to your application as described below.</li>
+</ol>
+<p>Copy the resulting JSON into the "assets" directory of your project. If not already added, you can add that folder via Android Studio (Right-click on the project: <strong>New</strong> -&gt; <strong>Folder</strong> -&gt; <strong>Assets Folder</strong>). You can also manually generate the folder: <code>/your_app/assets</code>. This folder also needs to be included into your <code>pubspec.yaml</code>:</p>
+<pre class="language-"><code class="lang-xml"># The following section is specific to Flutter.
+flutter:
+
+  # Here we store our custom map styles.
+  assets:
+    - assets/
+</code></pre>
+<p>Load the style into a map scene as follows:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">loadCustomMapStyle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">File</span> file <span class="token operator">=</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"assets/custom-dark-style-neon-rds.json"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">String</span> filePath <span class="token operator">=</span> file<span class="token punctuation">.</span>path<span class="token punctuation">;</span>
+  _hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">loadSceneFromConfigurationFile</span><span class="token punctuation">(</span>filePath<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token class-name">MapError</span><span class="token operator">?</span> error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>error <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Scene loaded.</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Map scene not loaded. MapError: "</span></span> <span class="token operator">+</span> error<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>In the above snippet, we use Flutter's <code>File</code> class to verify that the <code>*.json</code> file exists at the expected location.</p>
+<center><p>
+  <img src="../graphics/custom_style_app.jpg" width="850" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Another example for a custom map style configuration.</figcaption>
+</p></center>
+
+<p>Using custom map styles can be very effective to differentiate your app from other map applications. In addition, it is possible to change map styles on-the-fly, for example, to shift the user's attention to certain map elements based on the current state of your app.</p>
+<center><p>
+  <img src="../graphics/style_examples.jpg" width="850" style="box-shadow: 0 0 20px">
+  <figcaption>A collection of screenshots showing a variety of custom map style configurations.</figcaption>
+</p></center>
+
+<p>Note that when you are doing local changes on the JSON style file, consider to call <code>mapScene.reloadScene()</code> to ensure the entire scene is reloaded again without using any cached data.</p>
+<p>Learn more in this blog post on how to <a href="https://www.here.com/learn/blog/create-custom-map-designs-with-the-here-style-editor" target="_blank">create custom map designs with the HERE Style Editor</a>. More related blog posts can be found <a href="https://www.here.com/site-search?text=style%20editor" target="_blank">here</a>.</p>
+<h2 id="add-custom-raster-layers">Add custom raster layers</h2>
+<p>Another alternative to customize the map's look is to add your own raster tile service on top of the HERE <code>MapScheme</code> styles. This can be your own server where you host tiles that you want to show as an overlay on top of selected areas of the world - or a public tile server such as <a href="https://www.openstreetmap.org/#map=6/47.835/8.899" target="_blank">OpenStreetMap</a>. Fully opaque and transparent map tile overlays are supported. It is also possible to add more than one raster layer to the map at the same time.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Note that this is a beta release of this feature, so there could be a few bugs and unexpected behaviors. Related APIs may change for new releases without a deprecation process.</p></div></div>
+<p>To add custom raster layers, you need to create a <code>RasterDataSource</code>. A <code>RasterDataSource</code> represents the source of raster tile data to display. It also allows changing its configuration. With a <code>RasterDataSourceConfiguration</code> you can specify a configuration for the data source, including URL, tiling scheme, storage levels and caching parameters.</p>
+<p>Finally, with the <code>MapLayerBuilder</code> you can create a <code>MapLayer</code> to add a renderable map overlay to the map.</p>
+<ul>
+<li>Use <code>MapLayerVisibilityRange</code> to specify at which zoom levels the map layer should become visible.</li>
+<li>Use the <code>MapLayerPriority</code> to specify the draw order of the <code>MapLayer</code>.</li>
+<li>Use the <code>MapContentType</code> to specify the type of data to be shown by the <code>MapLayer</code>.</li>
+<li>Optionally, use the <code>Style</code> API to adjust properties such as opacity or brightness at runtime. More about this can be found in the <a href="custom-map-styles-style-guide.html">style guide for custom layers</a>.</li>
+</ul>
+<p>In case of raster tile images, use <code>MapContentType.rasterImage</code>.</p>
+<p>Default map gesture actions such as pinch, rotate and zoom behave in the same way for raster tiles as for HERE vector maps - except for a few differences: for example, raster tiles are loaded as bitmaps and therefore a rotated raster map tile rotates all labels and street names contained together with the tile.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>When loading a map scene with a custom map style or the default map style, the map will be rendered using vector tiles where the map information is represented as vector data consisting of vertices and paths for better scalability and performance. By contrast, raster tiles are regularly spaced and square, and consist of bitmap images that represent only pixel information. Note that the satellite map style is also raster based.</p></div></div>
+<p>Create a <code>RasterDataSource</code> as follows:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">RasterDataSource</span> <span class="token function">_createRasterDataSource</span><span class="token punctuation">(</span><span class="token class-name">String</span> dataSourceName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Note: As an example, below is an URL template of an outdoor layer from thunderforest.com.</span>
+  <span class="token comment">// On their web page you can register a key. Without setting a valid API key, the tiles will</span>
+  <span class="token comment">// show a watermark.</span>
+  <span class="token comment">// More details on the terms of usage can be found here: https://www.thunderforest.com/terms/</span>
+  <span class="token comment">// For example, your application must have working links to https://www.thunderforest.com</span>
+  <span class="token comment">// and https://www.osm.org/copyright.</span>
+  <span class="token comment">// For the below template URL, please pay attention to the following attribution:</span>
+  <span class="token comment">// Maps © www.thunderforest.com, Data © www.osm.org/copyright.</span>
+  <span class="token comment">// Alternatively, choose another tile provider or use the (customizable) map styles provided by HERE.</span>
+  <span class="token keyword">final</span> templateUrl <span class="token operator">=</span> <span class="token string-literal"><span class="token string">'https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png'</span></span><span class="token punctuation">;</span>
+
+  <span class="token comment">// The storage levels available for this data source. Supported range [0, 31].</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span>int<span class="token punctuation">&gt;</span></span> storageLevels <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token class-name">RasterDataSourceProviderConfiguration</span> rasterProviderConfig <span class="token operator">=</span>
+      <span class="token class-name">RasterDataSourceProviderConfiguration</span><span class="token punctuation">.</span><span class="token function">withUrlProviderAndDefaults</span><span class="token punctuation">(</span>
+          <span class="token class-name">TilingScheme</span><span class="token punctuation">.</span>quadTreeMercator<span class="token punctuation">,</span> storageLevels<span class="token punctuation">,</span> <span class="token class-name">TileUrlProviderFactory</span><span class="token punctuation">.</span><span class="token function">fromXyzUrlTemplate</span><span class="token punctuation">(</span>templateUrl<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Raster tiles are stored in a separate cache on the device.</span>
+  <span class="token class-name">String</span> path <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"cache/raster/mycustomlayer"</span></span><span class="token punctuation">;</span>
+  int maxDiskSizeInBytes <span class="token operator">=</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">128</span><span class="token punctuation">;</span> <span class="token comment">// 128 MB</span>
+  <span class="token class-name">RasterDataSourceCacheConfiguration</span> cacheConfig <span class="token operator">=</span> <span class="token class-name">RasterDataSourceCacheConfiguration</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> maxDiskSizeInBytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Note that this will make the raster source already known to the passed map view.</span>
+  <span class="token keyword">return</span> <span class="token class-name">RasterDataSource</span><span class="token punctuation">(</span>_hereMapController<span class="token punctuation">.</span>mapContext<span class="token punctuation">,</span>
+      <span class="token class-name">RasterDataSourceConfiguration</span><span class="token punctuation">.</span><span class="token function">withDefaults</span><span class="token punctuation">(</span>dataSourceName<span class="token punctuation">,</span> rasterProviderConfig<span class="token punctuation">,</span> cacheConfig<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Note that - if desired - you can also hook into the calls of the <code>templateUrl</code> like so:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">RasterDataSourceProviderConfiguration</span> rasterProviderConfig <span class="token operator">=</span>
+    <span class="token class-name">RasterDataSourceProviderConfiguration</span><span class="token punctuation">.</span><span class="token function">withUrlProviderAndDefaults</span><span class="token punctuation">(</span><span class="token class-name">TilingScheme</span><span class="token punctuation">.</span>quadTreeMercator<span class="token punctuation">,</span> storageLevels<span class="token punctuation">,</span>
+        <span class="token punctuation">(</span>int x<span class="token punctuation">,</span> int y<span class="token punctuation">,</span> int level<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"https://tile.thunderforest.com/outdoors/</span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">level</span></span><span class="token string">/</span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">x</span></span><span class="token string">/</span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">y</span></span><span class="token string">.png"</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The latter gives you an option to listen to each tile request and, for example, allows for finer control on the requested tiles, if needed.</p>
+<p>Note that custom raster layers use their own cache directory, which can be independent of the <a href="tips-engines.html#work-with-the-map-cache">map cache</a> that is used for vector-based map data. Find more details in the API Reference for the <code>RasterDataSourceConfiguration</code>.</p>
+<p>This code uses a tile source from <a href="https://www.thunderforest.com/" target="_blank">Thunderforest</a>. More details on the terms of usage can be found on <a href="https://www.thunderforest.com/terms/" target="_blank">https://www.thunderforest.com/terms/</a> and on <a href="https://www.osm.org/copyright" target="_blank">https://www.osm.org/copyright</a>.</p>
+<p>Note that you can also use other tile sources that follow the <a href="https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames" target="_blank">OSM standard style</a> format <code>/zoom/x/y.png</code>. The <code>templateURL</code> should look like this:</p>
+<p><code>https://YourRasterTileService.com/{zoom}/{xTile}/{yTile}.png</code></p>
+<p>Here, the <code>zoom</code> value represents the map's current zoom level, and <code>xTile</code> and <code>yTile</code> defines the horizontal and vertical tile numbers. For example, to show the standard OSM map, use the following template URL:</p>
+<p><code>let templateUrl = "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"</code></p>
+<p>More tile servers following the OSM format are listed <a href="https://wiki.openstreetmap.org/wiki/Tile_servers" target="_blank">here</a>. Note that the HERE SDK supports only tile servers. Servers that provide vector data are not supported. Vector based tiles can only be used with the HERE Style Editor and the embedded map styles (see above).</p>
+<p>Once a tile source is created, a <code>MapLayer</code> can be built:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">MapLayer</span> <span class="token function">_createMapLayer</span><span class="token punctuation">(</span><span class="token class-name">String</span> dataSourceName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// The layer should be rendered on top of other layers including the "labels" layer</span>
+  <span class="token comment">// so that we don't overlap the raster layer over POI markers.</span>
+  <span class="token class-name">MapLayerPriority</span> priority <span class="token operator">=</span> <span class="token class-name">MapLayerPriorityBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">renderedAfterLayer</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"labels"</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// And it should be visible for all zoom levels.</span>
+  <span class="token class-name">MapLayerVisibilityRange</span> range <span class="token operator">=</span> <span class="token class-name">MapLayerVisibilityRange</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">22</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Build and add the layer to the map.</span>
+    <span class="token class-name">MapLayer</span> mapLayer <span class="token operator">=</span> <span class="token class-name">MapLayerBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">forMap</span><span class="token punctuation">(</span>_hereMapController<span class="token punctuation">.</span>hereMapControllerCore<span class="token punctuation">)</span> <span class="token comment">// mandatory parameter</span>
+        <span class="token punctuation">.</span><span class="token function">withName</span><span class="token punctuation">(</span>dataSourceName <span class="token operator">+</span> <span class="token string-literal"><span class="token string">"Layer"</span></span><span class="token punctuation">)</span> <span class="token comment">// mandatory parameter</span>
+        <span class="token punctuation">.</span><span class="token function">withDataSource</span><span class="token punctuation">(</span>dataSourceName<span class="token punctuation">,</span> <span class="token class-name">MapContentType</span><span class="token punctuation">.</span>rasterImage<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">withPriority</span><span class="token punctuation">(</span>priority<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">withVisibilityRange</span><span class="token punctuation">(</span>range<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> mapLayer<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapLayerBuilderInstantiationException</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"MapLayer creation failed."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Above we reference the "labels" layer. More information on existing layers and their names can be found in the API Reference for the <code>MapLayerPriorityBuilder</code>.</p>
+<p>Finally, the visibility can be controlled by enabling or disabling the layer as shown below. Note that we also need to provide a unique name. Each <code>RasterDataSource</code> can be created only once:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">String</span> dataSourceName <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"myRasterDataSourceOutdoorStyle"</span></span><span class="token punctuation">;</span>
+_rasterDataSourceOutdoorStyle <span class="token operator">=</span> <span class="token function">_createRasterDataSource</span><span class="token punctuation">(</span>dataSourceName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+_rasterMapLayerOutdoorStyle <span class="token operator">=</span> <span class="token function">_createMapLayer</span><span class="token punctuation">(</span>dataSourceName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+_rasterMapLayerOutdoorStyle<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">setEnabled</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The resulting layer looks like this:</p>
+<center><p>
+  <img src="../graphics/outdoor_map_layer.jpg" width="650" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: An outdoor map layer from Thunderforest.com shown on top of a map view.</figcaption>
+</p></center>
+
+<p>The above screenshot shows that you can easily combine custom raster tiles with other HERE SDK features. For example, you can render several <code>MapMarker</code> instances on top of the tile data from a tile server.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>One of the main advantages of custom raster layers is that you can easily enhance the HERE map styles with a transparent custom tile source on top, for example, to show weather data or any other data you want to see on top of the map. When using an opaque raster tile source, it is recommended to combine this with an empty base map style.</p></div></div>
+<p>If you do not use an empty base map style, then the underlying map scheme will "shine" through until the raster layer tiles are loaded. The accompanying example app shows how this looks like.</p>
+<p>There are certain other parameters that you can adjust:</p>
+<ul>
+<li>If your app uses multiple raster layers, you can define a load priority when building a layer with the <code>MapLayerBuilder</code>. This allows to specify an integer value: Higher values will lead to load the layer before layers with lower values. Note that this controls just the time when the layer is loaded.</li>
+<li>The <code>MapLayerPriority</code> controls how the layer is rendered: For example, optionally, you can append <code>renderedLast()</code> which means that the layer will be rendered on top of all other layers.</li>
+<li>For showing transparent map styles, set <code>rasterProviderConfig.hasAlphaChannel</code> to true.</li>
+<li>For more parameters, please consult the API Reference.</li>
+</ul>
+<h2 id="add-custom-line-layers">Add custom line layers</h2>
+<p>Custom geodetic lines can be added to the map's look by adding your own custom data layer on top of the HERE <code>MapScheme</code> styles.
+A geodetic line is the shortest line between any two points on the Earth's surface, with each point represented through geodetic coordinates.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Note that this is a beta release of this feature, so there could be a few bugs and unexpected behaviors. Related APIs may change for new releases without a deprecation process.</p></div></div>
+<p>To add custom line layers, you need to create a <code>LineDataSource</code>. A <code>LineDataSource</code> represents the source of geodetic lines data to display.
+Each geodetic line can be coupled with a set of <a href="#add-custom-data-attributes-to-custom-layers">custom data attributes</a> that can be used to customize the look of each line when displayed on top of the map.</p>
+<p>On top of a <code>LineDataSource</code>, with <code>MapLayerBuilder</code> you can create a <code>MapLayer</code> to add a renderable map overlay to the map.</p>
+<ul>
+<li>Use <code>MapLayerVisibilityRange</code> to specify at which zoom levels the map layer should become visible.</li>
+<li>Use the <code>MapLayerPriority</code> to specify the draw order of the <code>MapLayer</code>.</li>
+<li>Use the <code>MapContentType</code> to specify the type of data to be shown by the <code>MapLayer</code>. In case of geodetic lines, use <code>MapContentType.LINE</code>.</li>
+<li>Use the <code>Style</code> API to adjust properties such as width or color at runtime. More about this can be found in the <a href="custom-map-styles-style-guide.html">style guide for custom layers</a>.</li>
+</ul>
+<p>Create a <code>LineDataSource</code> as follows:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">String</span> myCustomLinesDataSourceName <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"MyCustomLines"</span></span><span class="token punctuation">;</span>
+
+<span class="token class-name">LineDataSource</span> <span class="token function">createLineDataSource</span><span class="token punctuation">(</span><span class="token class-name">String</span> dataSourceName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Creates a new LineDataSource, without custom data.</span>
+    <span class="token comment">// To also add custom lines while creating the data source, `LineDataSourceBuilder.withPolyline` API can be used.</span>
+    <span class="token keyword">return</span> <span class="token class-name">LineDataSourceBuilder</span><span class="token punctuation">(</span>_hereMapController<span class="token punctuation">.</span>mapContext<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withName</span><span class="token punctuation">(</span>dataSourceName<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Once a line data source is created, custom geodetic lines can be added to it:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">addLinesToDataSource</span><span class="token punctuation">(</span><span class="token class-name">LineDataSource</span> linesDataSource<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Prepare the geodetic list of points that make-up the line.</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">&gt;</span></span> lineGeoPoints <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span>point1GeoLatitude<span class="token punctuation">,</span> point1GeoLongitude<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                          <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+                                          <span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span>pointNGeoLatitude<span class="token punctuation">,</span> pointNGeoLongitude<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Optional: Prepare a list of custom attributes.</span>
+    <span class="token class-name">DataAttributes</span> lineAttributes <span class="token operator">=</span> <span class="token class-name">DataAttributesBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">with</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"id"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"my first line"</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Add the line to data source.</span>
+    linesDataSource<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">LineDataBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withGeometry</span><span class="token punctuation">(</span><span class="token class-name">GeoPolyline</span><span class="token punctuation">(</span>lineGeoPoints<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                                         <span class="token punctuation">.</span><span class="token function">withAttributes</span><span class="token punctuation">(</span>lineAttributes<span class="token punctuation">)</span>
+                                         <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Repeat above steps to add more custom lines to the data source.</span>
+    <span class="token comment">// Alternatively, use `LineDataSource.addLines` to add multiple custom lines with a single call.</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Prepare a custom style for your lines layer:</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The <code>layer</code> value in the style string must match the name given to the MapLayer in the next steps. In this example, the <code>dataSourceName</code> used is <code>MyCustomLines</code> and the layer name <code>MyCustomLinesLayer</code>.</p></div></div>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">String</span> myCustomLayerStyle <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"""
+{
+  "styles": [
+    {
+        "layer": "MyCustomLinesLayer",
+        "technique": "line",
+        "attr": {
+            "width": 5.0,
+            "color": "#ff0000ff"
+        }
+    }
+  ]
+}
+"""</span></span><span class="token punctuation">;</span>
+
+<span class="token class-name">Style</span> <span class="token function">_createCustomStyle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token class-name">JsonStyleFactory</span><span class="token punctuation">.</span><span class="token function">createFromString</span><span class="token punctuation">(</span>myCustomLayerStyle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">JsonStyleFactoryInstantiationException</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Custom exception handling.</span>
+      <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>To display a <code>LineDataSource</code> on top of a map, a <code>MapLayer</code> can be built:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">MapLayer</span> <span class="token function">_createMapLayer</span><span class="token punctuation">(</span><span class="token class-name">String</span> dataSourceName<span class="token punctuation">,</span> <span class="token class-name">Style</span> customStyle<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Set the layer to be rendered on top of other layers.</span>
+  <span class="token class-name">MapLayerPriority</span> priority <span class="token operator">=</span> <span class="token class-name">MapLayerPriorityBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">renderedLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// And make it visible for all zoom levels.</span>
+  <span class="token class-name">MapLayerVisibilityRange</span> range <span class="token operator">=</span> <span class="token class-name">MapLayerVisibilityRange</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">22</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Build and add the layer to the map.</span>
+    <span class="token class-name">MapLayer</span> mapLayer <span class="token operator">=</span> <span class="token class-name">MapLayerBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">forMap</span><span class="token punctuation">(</span>_hereMapController<span class="token punctuation">.</span>hereMapControllerCore<span class="token punctuation">)</span> <span class="token comment">// mandatory parameter</span>
+        <span class="token punctuation">.</span><span class="token function">withName</span><span class="token punctuation">(</span>dataSourceName <span class="token operator">+</span> <span class="token string-literal"><span class="token string">"Layer"</span></span><span class="token punctuation">)</span> <span class="token comment">// mandatory parameter</span>
+        <span class="token punctuation">.</span><span class="token function">withDataSource</span><span class="token punctuation">(</span>dataSourceName<span class="token punctuation">,</span> <span class="token class-name">MapContentType</span><span class="token punctuation">.</span>line<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">withPriority</span><span class="token punctuation">(</span>priority<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">withVisibilityRange</span><span class="token punctuation">(</span>range<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">withStyle</span><span class="token punctuation">(</span>customStyle<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> mapLayer<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapLayerBuilderInstantiationException</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"MapLayer creation failed."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="add-custom-polygon-layers">Add custom polygon layers</h2>
+<p>Custom geodetic polygons can be added to the map's look by adding your own custom data layer on top of the HERE <code>MapScheme</code> styles.
+A geodetic polygon is defined by an exterior geodetic boundary, and optionally one or more interior boundaries. Each boundary is made from a closed sequence of geodetic points (the first point is the same as the last one).</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Note that this is a beta release of this feature, so there could be a few bugs and unexpected behaviors. Related APIs may change for new releases without a deprecation process.</p></div></div>
+<p>To add custom polygon layers, you need to create a <code>PolygonDataSource</code>. A <code>PolygonDataSource</code> represents the source of geodetic polygon data to display.
+Each geodetic polygon can be coupled with a set of <a href="#add-custom-data-attributes-to-custom-layers">custom data attributes</a> that can be used to customize the look of each polygon when displayed on top of the map.</p>
+<p>On top of a <code>PolygonDataSource</code>, with <code>MapLayerBuilder</code> you can create a <code>MapLayer</code> to add a renderable map overlay to the map.</p>
+<ul>
+<li>Use <code>MapLayerVisibilityRange</code> to specify at which zoom levels the map layer should become visible.</li>
+<li>Use the <code>MapLayerPriority</code> to specify the draw order of the <code>MapLayer</code>.</li>
+<li>Use the <code>MapContentType</code> to specify the type of data to be shown by the <code>MapLayer</code>. In case of geodetic polygons, use <code>MapContentType.POLYGON</code>.</li>
+<li>Use the <code>Style</code> API to adjust properties such as color at runtime. More about this can be found in the <a href="custom-map-styles-style-guide.html">style guide for custom layers</a>.</li>
+</ul>
+<p>Create a <code>PolygonDataSource</code> as follows:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">String</span> myCustomPolygonsDataSourceName <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"MyCustomPolygons"</span></span><span class="token punctuation">;</span>
+
+<span class="token class-name">PolygonDataSource</span> <span class="token function">createPolygonDataSource</span><span class="token punctuation">(</span><span class="token class-name">String</span> dataSourceName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Creates a new PolygonDataSource, without custom data.</span>
+    <span class="token comment">// To also add custom polygons while creating the data source, `PolygonDataSourceBuilder.withPolygon` API can be used.</span>
+    <span class="token keyword">return</span> <span class="token class-name">PolygonDataSourceBuilder</span><span class="token punctuation">(</span>_hereMapController<span class="token punctuation">.</span>mapContext<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withName</span><span class="token punctuation">(</span>dataSourceName<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Once a polygon data source is created, custom geodetic polygons can be added to it:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">addPolygonsToDataSource</span><span class="token punctuation">(</span><span class="token class-name">PolygonDataSource</span> polygonsDataSource<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Prepare the geodetic list of points that make-up the polygon.</span>
+    <span class="token comment">// Note: The point list must be closed and given in clockwise order.</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">&gt;</span></span> polygonGeoPoints <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span>point1GeoLatitude<span class="token punctuation">,</span> point1GeoLongitude<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                             <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>
+                                             <span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span>pointNGeoLatitude<span class="token punctuation">,</span> pointNGeoLongitude<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                                             <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>
+                                             <span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span>point1GeoLatitude<span class="token punctuation">,</span> point1GeoLongitude<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Optional: Prepare a list of custom attributes.</span>
+    <span class="token class-name">DataAttributes</span> polygonAttributes <span class="token operator">=</span> <span class="token class-name">DataAttributesBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">with</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"id"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"my first polygon"</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Add the polygon to data source.</span>
+    polygonsDataSource<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">PolygonDataBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withGeometry</span><span class="token punctuation">(</span><span class="token class-name">GeoPolygon</span><span class="token punctuation">(</span>polygonGeoPoints<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                                               <span class="token punctuation">.</span><span class="token function">withAttributes</span><span class="token punctuation">(</span>polygonAttributes<span class="token punctuation">)</span>
+                                               <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Repeat above steps to add more custom polygon to the data source.</span>
+    <span class="token comment">// Alternatively, use `PolygonDataSource.addPolygons` to add multiple custom polygons with a single call.</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Prepare a custom style for your polygons layer:</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The <code>layer</code> value in the style string must match the name given to the MapLayer in the next steps. In this example, the <code>dataSourceName</code> used is <code>MyCustomPolygons</code> and the layer name <code>MyCustomPolygonsLayer</code>.</p></div></div>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">String</span> myCustomLayerStyle <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"""
+{
+  "styles": [
+    {
+        "layer": "MyCustomPolygonsLayer",
+        "technique": "polygon",
+        "attr": {
+            "color": "#ff0000ff"
+        }
+    }
+  ]
+}
+"""</span></span><span class="token punctuation">;</span>
+
+<span class="token class-name">Style</span> <span class="token function">_createCustomStyle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token class-name">JsonStyleFactory</span><span class="token punctuation">.</span><span class="token function">createFromString</span><span class="token punctuation">(</span>myCustomLayerStyle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">JsonStyleFactoryInstantiationException</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Custom exception handling.</span>
+      <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>To display a <code>PolygonDataSource</code> on top of a map, a <code>MapLayer</code> can be built:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">MapLayer</span> <span class="token function">_createMapLayer</span><span class="token punctuation">(</span><span class="token class-name">String</span> dataSourceName<span class="token punctuation">,</span> <span class="token class-name">Style</span> customStyle<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Set the layer to be rendered on top of other layers.</span>
+  <span class="token class-name">MapLayerPriority</span> priority <span class="token operator">=</span> <span class="token class-name">MapLayerPriorityBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">renderedLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// And make it visible for all zoom levels.</span>
+  <span class="token class-name">MapLayerVisibilityRange</span> range <span class="token operator">=</span> <span class="token class-name">MapLayerVisibilityRange</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">22</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Build and add the layer to the map.</span>
+    <span class="token class-name">MapLayer</span> mapLayer <span class="token operator">=</span> <span class="token class-name">MapLayerBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">forMap</span><span class="token punctuation">(</span>_hereMapController<span class="token punctuation">.</span>hereMapControllerCore<span class="token punctuation">)</span> <span class="token comment">// mandatory parameter</span>
+        <span class="token punctuation">.</span><span class="token function">withName</span><span class="token punctuation">(</span>dataSourceName <span class="token operator">+</span> <span class="token string-literal"><span class="token string">"Layer"</span></span><span class="token punctuation">)</span> <span class="token comment">// mandatory parameter</span>
+        <span class="token punctuation">.</span><span class="token function">withDataSource</span><span class="token punctuation">(</span>dataSourceName<span class="token punctuation">,</span> <span class="token class-name">MapContentType</span><span class="token punctuation">.</span>polygon<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">withPriority</span><span class="token punctuation">(</span>priority<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">withVisibilityRange</span><span class="token punctuation">(</span>range<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">withStyle</span><span class="token punctuation">(</span>customStyle<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> mapLayer<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapLayerBuilderInstantiationException</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"MapLayer creation failed."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="add-custom-point-layers">Add custom point layers</h2>
+<p>Custom geodetic points can be added to the map's look by adding your own custom data layer on top of the HERE <code>MapScheme</code> styles.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Note that this is a beta release of this feature, so there could be a few bugs and unexpected behaviors. Related APIs may change for new releases without a deprecation process.</p></div></div>
+<p>To add custom point layers, you need to create a <code>PointDataSource</code>. A <code>PointDataSource</code> represents the source of geodetic point data to display.
+Each geodetic point can be coupled with a set of <a href="#add-custom-data-attributes-to-custom-layers">custom data attributes</a> that can be used to customize the look of each point when displayed on top of the map.</p>
+<p>On top of a <code>PointDataSource</code>, with <code>MapLayerBuilder</code> you can create a <code>MapLayer</code> to add a renderable map overlay to the map.</p>
+<ul>
+<li>Use <code>MapLayerVisibilityRange</code> to specify at which zoom levels the map layer should become visible.</li>
+<li>Use the <code>MapLayerPriority</code> to specify the draw order of the <code>MapLayer</code>.</li>
+<li>Use the <code>MapContentType</code> to specify the type of data to be shown by the <code>MapLayer</code>. In case of geodetic points, use <code>MapContentType.POINT</code>.</li>
+<li>Use the <code>Style</code> API to adjust properties such as icon at runtime. More about this can be found in the <a href="custom-map-styles-style-guide.html">style guide for custom layers</a>.</li>
+</ul>
+<p>Create a <code>PointDataSource</code> as follows:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">String</span> myCustomPointsDataSourceName <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"MyCustomPoints"</span></span><span class="token punctuation">;</span>
+
+<span class="token class-name">PointDataSource</span> <span class="token function">createPointDataSource</span><span class="token punctuation">(</span><span class="token class-name">String</span> dataSourceName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Creates a new PointDataSource, without custom data.</span>
+    <span class="token comment">// To also add custom points while creating the data source, `PointDataSourceBuilder.withPoint` API can be used.</span>
+    <span class="token keyword">return</span> <span class="token class-name">PointDataSourceBuilder</span><span class="token punctuation">(</span>_hereMapController<span class="token punctuation">.</span>mapContext<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withName</span><span class="token punctuation">(</span>dataSourceName<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Once a point data source is created, custom geodetic points can be added to it:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">addPointsToDataSource</span><span class="token punctuation">(</span><span class="token class-name">PointDataSource</span> pointsDataSource<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Prepare the geodetic point.</span>
+    <span class="token comment">// Note: The point list must be closed and given in clockwise order.</span>
+    <span class="token class-name">GeoCoordinates</span> geoPoint <span class="token operator">=</span> <span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span>pointGeoLatitude<span class="token punctuation">,</span> pointGeoLongitude<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Optional: Prepare a list of custom attributes.</span>
+    <span class="token class-name">DataAttributes</span> pointAttributes <span class="token operator">=</span> <span class="token class-name">DataAttributesBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">with</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"id"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"my first point"</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Add the point to data source.</span>
+    pointsDataSource<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">PointDataBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span>geoPoint<span class="token punctuation">)</span>
+                                           <span class="token punctuation">.</span><span class="token function">withAttributes</span><span class="token punctuation">(</span>pointAttributes<span class="token punctuation">)</span>
+                                           <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Repeat above steps to add more custom points to the data source.</span>
+    <span class="token comment">// Alternatively, use `PointDataSource.addPoints` to add multiple custom points with a single call.</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Prepare a custom style for your points layer:</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The <code>layer</code> value in the style string must match the name given to the MapLayer in the next steps. In this example, the <code>dataSourceName</code> used is <code>MyCustomPoints</code> and the layer name <code>MyCustomPointsLayer</code>.</p></div></div>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">String</span> myCustomLayerStyle <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"""
+{
+  "styles": [
+    {
+        "layer": "MyCustomPointsLayer",
+        "technique": "icon-text",
+        "attr": {
+            "icon-source": "my_icon.png"
+        }
+    }
+  ]
+}
+"""</span></span><span class="token punctuation">;</span>
+
+<span class="token class-name">Style</span> <span class="token function">_createCustomStyle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token class-name">JsonStyleFactory</span><span class="token punctuation">.</span><span class="token function">createFromString</span><span class="token punctuation">(</span>myCustomLayerStyle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">JsonStyleFactoryInstantiationException</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Custom exception handling.</span>
+      <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>To display a <code>PointDataSource</code> on top of a map, a <code>MapLayer</code> can be built:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">MapLayer</span> <span class="token function">_createMapLayer</span><span class="token punctuation">(</span><span class="token class-name">String</span> dataSourceName<span class="token punctuation">,</span> <span class="token class-name">Style</span> customStyle<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Set the layer to be rendered on top of other layers.</span>
+  <span class="token class-name">MapLayerPriority</span> priority <span class="token operator">=</span> <span class="token class-name">MapLayerPriorityBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">renderedLast</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// And make it visible for all zoom levels.</span>
+  <span class="token class-name">MapLayerVisibilityRange</span> range <span class="token operator">=</span> <span class="token class-name">MapLayerVisibilityRange</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">22</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Build and add the layer to the map.</span>
+    <span class="token class-name">MapLayer</span> mapLayer <span class="token operator">=</span> <span class="token class-name">MapLayerBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">forMap</span><span class="token punctuation">(</span>_hereMapController<span class="token punctuation">.</span>hereMapControllerCore<span class="token punctuation">)</span> <span class="token comment">// mandatory parameter</span>
+        <span class="token punctuation">.</span><span class="token function">withName</span><span class="token punctuation">(</span>dataSourceName <span class="token operator">+</span> <span class="token string-literal"><span class="token string">"Layer"</span></span><span class="token punctuation">)</span> <span class="token comment">// mandatory parameter</span>
+        <span class="token punctuation">.</span><span class="token function">withDataSource</span><span class="token punctuation">(</span>dataSourceName<span class="token punctuation">,</span> <span class="token class-name">MapContentType</span><span class="token punctuation">.</span>point<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">withPriority</span><span class="token punctuation">(</span>priority<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">withVisibilityRange</span><span class="token punctuation">(</span>range<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">withStyle</span><span class="token punctuation">(</span>customStyle<span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> mapLayer<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapLayerBuilderInstantiationException</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"MapLayer creation failed."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="add-custom-data-attributes-to-custom-layers">Add custom data attributes to custom layers</h2>
+<p>Any custom object such as a geodetic line can be coupled with a set of attributes. Such attributes are generic key-value pairs and can be freely defined by the developer.</p>
+<p>For example, such user-defined attributes can be used to tag each object with a unique identifier:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">DataAttributes</span> lineAttributes <span class="token operator">=</span> <span class="token class-name">DataAttributesBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">with</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"id"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"my first line"</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Another use case is to use attributes along with <a href="custom-map-styles-style-expressions.html">style expressions</a> to customize the look of each object when displayed on top of the map:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Define a layer style string that would use per-line object width and color values</span>
+<span class="token comment">// that are stored inside line custom data attributes. For that purpose, the 'get' expression is used.</span>
+<span class="token class-name">String</span> myCustomLayerStyle <span class="token operator">=</span> "<span class="token string-literal"><span class="token string">""</span></span>
+<span class="token punctuation">{</span>
+    <span class="token string-literal"><span class="token string">"styles"</span></span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token string-literal"><span class="token string">"layer"</span></span><span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"MyCustomLinesLayer"</span></span><span class="token punctuation">,</span>
+            <span class="token string-literal"><span class="token string">"technique"</span></span><span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">"line"</span></span><span class="token punctuation">,</span>
+            <span class="token string-literal"><span class="token string">"attr"</span></span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                <span class="token string-literal"><span class="token string">"width"</span></span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"get"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"lineWidthInMeters"</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token string-literal"><span class="token string">"color"</span></span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"to-color"</span></span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"get"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"lineColor"</span></span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Define specific values for "lineWidth" and "lineColor" per line object.</span>
+<span class="token class-name">DataAttributes</span> lineAttributes <span class="token operator">=</span> <span class="token class-name">DataAttributesBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">with</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"lineWidthInMeters"</span></span><span class="token punctuation">,</span> <span class="token number">10.0</span><span class="token punctuation">)</span>
+                                                       <span class="token punctuation">.</span><span class="token keyword">with</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"lineColor"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"#ff0000ff"</span></span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre>
+<h2 id="try-the-example-apps">Try the example apps</h2>
+<p>Most of the code snippets mentioned above are available in our "custom_map_styles_app" and "custom_raster_layers_app" example apps. You can find these example apps on <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">GitHub</a> for your preferred platform.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="map-styles.html" class="navigation navigation-prev " aria-label="Previous page: Add predefined map styles">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="custom-map-styles-style-guide.html" class="navigation navigation-next " aria-label="Next page: Style guide for custom layers">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Customize the map style","level":"1.4.6","depth":2,"next":{"title":"Style guide for custom layers","level":"1.4.6.1","depth":3,"path":"topics/custom-map-styles-style-guide.md","ref":"topics/custom-map-styles-style-guide.md","articles":[]},"previous":{"title":"Add predefined map styles","level":"1.4.5","depth":2,"path":"topics/map-styles.md","ref":"topics/map-styles.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/custom-map-styles.md","mtime":"2025-01-22T16:33:08.554Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

@@ -1,0 +1,964 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Community and support · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="use-cases.html">
+    
+    
+    <link rel="prev" href="tips-troubleshooting.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Community and support</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="community-and-support">Community and support</h1>
+<p>We are here to help you. Find below comprehensive tips when encountering bugs, access assistance by joining our Slack community and benefit from other available support channels.</p>
+<h2 id="getting-help-when-bugs-occur">Getting help when bugs occur</h2>
+<p>If you experience a crash or unexpected behavior, please <a href="https://www.here.com/contact" target="_blank">contact us</a> and provide detailed information on how to reproduce the issue.</p>
+<p>Note that when crashes occur in the native C++ stack of the HERE SDK, then in the crash logs you will see only the addresses where the crash occurred. These addresses need to be symbolicated in order to see the stack trace where the crash occurred.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Since HERE SDK 4.13.3 we include <a href="https://developer.apple.com/documentation/xcode/building-your-app-to-include-debugging-information" target="_blank">debug symbols</a> in the <code>heresdk.xcframework</code> for iOS: look for the dSYM files that are added for each device architecture.</p><p>For iOS apps that are deployed to App Store or via <a href="https://developer.apple.com/testflight/" target="_blank">TestFlight</a> you can find in Apple's Connect Portal the crash reports:</p><ul>
+<li>Instead of downloading the crash report click on <strong>Open in Xcode</strong> and you should see the symbolicated stack trace using the dSYM files.</li>
+<li>This should also work with <a href="https://firebase.google.com/products/crashlytics" target="_blank">Firebase Crashlytics</a> and related solutions.</li>
+</ul><p>Keep in mind, that the <code>heresdk.xcframework</code> is a set of frameworks for several architectures. Its file size is optimized by Xcode at deployment time. The dSYM files are not available on the device of a user. Therefore, make sure to open Xcode on a machine where your app project is hosted, so that the debug symbols can be found.</p><p>Since HERE SDK 4.15.3 we also include <a href="https://developer.android.com/studio/debug/apk-debugger#attach_native" target="_blank">debug symbols</a> for Android in the HERE SDK package. Inside, look for the <code>.so</code> files that are added for each device architecture.</p><p>In order to symbolicate crash logs on Android, you should have the <a href="https://developer.android.com/ndk" target="_blank">NDK</a> (Native Development Kit) stack tool and <a href="https://developer.android.com/tools/adb" target="_blank">ADB</a> (Android Debug Bridge) installed.</p></div></div>
+<p>Make sure to use only the symbols that are shipped for the release you have integrated. Symbols from other releases will not work.</p>
+<h3 id="provide-meaningful-bug-reports">Provide meaningful bug reports</h3>
+<p>When you reach out to us, be sure to always include at least the HERE SDK version, platform, edition and logs. Below you can find a bug report checklist that will help us to respond faster:</p>
+<ul>
+<li>Type of the issue: For example, a crash or unexpected behavior.<ul>
+<li>In case of a crash, provide a crash log incl. stack trace.</li>
+<li>In case of unexpected behavior, describe the expected versus the actual behavior.</li>
+</ul>
+</li>
+<li>Is the issue a regression and if yes, since when?</li>
+<li>Description of the issue with detailed steps to reproduce it: Is the issue reproducible with one of our <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">example apps</a>, or can you provide code that isolates the issue?</li>
+<li>What APIs are called (if applicable)? Try to list all parameters and options.</li>
+<li>Reproducibility rate?</li>
+<li>Provide information about the environment such as OS, IDE, device / simulator (OS, name).</li>
+<li>Map data version / used catalog (if relevant).</li>
+<li>List other frameworks or plugins that are used, including version information (if applicable).</li>
+<li>Add screenshots or a video (if applicable).</li>
+<li>In case of search or routing issues, provide the geographic coordinates where the issue occurred or a GPX trace.</li>
+</ul>
+<p>Make sure to check our changelog where we list known issues. Please also make sure to follow the latest instructions and code examples listed in the related sections of this Developer Guide to avoid implementation issues.</p>
+<h2 id="join-our-slack-community">Join our Slack community</h2>
+<p>If you need help with this or any other HERE product, join our <a href="https://join.slack.com/t/heredev/shared_invite/zt-2j95txlgl-jQGFgKOrlSQqW26MIbV3UA" target="_blank">Slack Workspace</a>. Alternatively, try one of the below options:</p>
+<ul>
+<li>If you have a HERE representative, contact them when you have questions/issues.</li>
+<li>Log into your account and check the pages on the SLA report.</li>
+<li>If you have purchased your plan/product from a HERE reseller, contact your reseller.</li>
+<li>If you have questions about billing, your account, or anything else <a href="https://www.here.com/contact" target="_blank">contact us</a>.</li>
+</ul>
+<h2 id="read-our-developer-blogs">Read our developer blogs</h2>
+<p>Our <a href="https://www.here.com/learn/blog?type=developer&amp;category=sdks--dev-tools&amp;page=1" target="_blank">developer blog</a> features engaging tutorials covering the HERE SDK product family and other related products.</p>
+<p>A selection of tutorials can be found on our <a href="tutorials.html">tutorials</a> page.</p>
+<h2 id="report-documentation-or-example-app-issues-on-github">Report documentation or example app issues on GitHub</h2>
+<p>If you encounter any issues with this documentation or the example apps provided with the HERE SDK, <a href="https://github.com/heremaps/here-sdk-examples/issues/new" target="_blank">reporting them on GitHub</a> is the most effective way to ensure they are addressed promptly.</p>
+<p>Before reporting an issue, ensure that you can clearly identify the problem you're experiencing. This could be a discrepancy in the documentation, a bug in the example app, or any other issue you encounter while working with the SDK.</p>
+<p>When creating a new issue, provide as much detail as possible about the problem you're encountering. Include steps to reproduce the issue, any error messages you're seeing, and the expected behavior. The above bug report checklist provides a guideline.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tips-troubleshooting.html" class="navigation navigation-prev " aria-label="Previous page: Debugging and troubleshooting">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="use-cases.html" class="navigation navigation-next " aria-label="Next page: FAQ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Community and support","level":"1.10.6","depth":2,"next":{"title":"FAQ","level":"1.10.7","depth":2,"path":"topics/use-cases.md","ref":"topics/use-cases.md","articles":[]},"previous":{"title":"Debugging and troubleshooting","level":"1.10.5","depth":2,"path":"topics/tips-troubleshooting.md","ref":"topics/tips-troubleshooting.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/tips-support.md","mtime":"2025-01-22T16:33:08.794Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

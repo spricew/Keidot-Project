@@ -1,0 +1,1553 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Add UI building blocks · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="routing-options.html">
+    
+    
+    <link rel="prev" href="routing.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Add UI building blocks</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="add-ui-building-blocks">Add UI building blocks</h1>
+<p>This section presents various UI elements and related code snippets that are already available as part of the HERE SDK offering. From maneuver instructions and maneuver icon assets to visual route representation, discover how to integrate these elements into your application interface. More reusable UI building blocks are planned for the future.</p>
+<h2 id="get-maneuver-instructions">Get maneuver instructions</h2>
+<p>Each <code>Section</code> of a <code>Route</code> object contains maneuver instructions a user may need to follow to reach the destination. For each turn, a <code>Maneuver</code> object contains an action and the location where the maneuver must be taken. The action may indicate actions like "depart" or directions such as "turn left".</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Section</span><span class="token punctuation">&gt;</span></span> sections <span class="token operator">=</span> route<span class="token punctuation">.</span>sections<span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Section</span> section <span class="token keyword">in</span> sections<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">_logManeuverInstructions</span><span class="token punctuation">(</span>section<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>And here is the code to access the maneuver instructions per section:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_logManeuverInstructions</span><span class="token punctuation">(</span><span class="token class-name">Section</span> section<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Log maneuver instructions per route section:"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Maneuver</span><span class="token punctuation">&gt;</span></span> maneuverInstructions <span class="token operator">=</span> section<span class="token punctuation">.</span>maneuvers<span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Maneuver</span> maneuverInstruction <span class="token keyword">in</span> maneuverInstructions<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">ManeuverAction</span> maneuverAction <span class="token operator">=</span> maneuverInstruction<span class="token punctuation">.</span>action<span class="token punctuation">;</span>
+    <span class="token class-name">GeoCoordinates</span> maneuverLocation <span class="token operator">=</span> maneuverInstruction<span class="token punctuation">.</span>coordinates<span class="token punctuation">;</span>
+    <span class="token class-name">String</span> maneuverInfo <span class="token operator">=</span> maneuverInstruction<span class="token punctuation">.</span>text <span class="token operator">+</span>
+        <span class="token string-literal"><span class="token string">", Action: "</span></span> <span class="token operator">+</span>
+        maneuverAction<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+        <span class="token string-literal"><span class="token string">", Location: "</span></span> <span class="token operator">+</span>
+        maneuverLocation<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>maneuverInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>This may be useful to easily build maneuver instructions lists describing the whole route in written form. For example, the <code>ManeuverAction</code> enum can be used to build your own unique routing experience.</p>
+<center><p>
+  <img src="../graphics/route_preview.jpg" width="300">
+  <figcaption>Screenshot: An example screen showing a route preview with maneuver instructions.</figcaption>
+</p></center>
+
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The attributes <code>maneuverInstruction.roadTexts</code>, <code>maneuverInstruction.nextRoadTexts</code> and <code>maneuverInstruction.exitSignTexts</code> are only available for users of editions such as the <em>Navigate Edition</em> as they are meant to be shown as part of <strong>turn-by-turn maneuvers</strong> during navigation. If taken from a <code>Route</code> instance, these attributes are always empty.</p></div></div>
+<p>In the API Reference you can find an overview of the available maneuver actions.</p>
+<p>The below table shows all <code>ManeuverAction</code> items with a preview description and an asset example. Note that the HERE SDK itself does not ship with maneuver icons. The assets are available as SVGs or solid PNGs in different densities as part of the open-source <a href="https://github.com/heremaps/here-icons/tree/master/icons/guidance-icons/manoeuvers" target="_blank">HERE Icon Library</a>.</p>
+<p>The available maneuver actions are sorted in the order as they appear in the API Reference:</p>
+<!-- Attention: Gitbook cannot render assets that are resources on the internet. Therefore, the assets are stored locally. -->
+<table>
+  <thead>
+    <tr>
+      <th>Maneuver Action</th>
+      <th>Description Example</th>
+      <th>Icon Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>arrive</td>
+      <td>Arrival maneuver, such as "Arrive at". Example description for in-between waypoint(s): "Arrive at &lt;road name | waypoint&gt;". For the destination of a route: "Arrive at &lt;road name | destination name | destination&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/arrive_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/arrive_solid_24px.png" alt="ARRIVE"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>continueOn</td>
+      <td>Continue maneuver, such as "Continue on &lt;road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/continue-on_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/continue-on_solid_24px.png" alt="CONTINUE_ON"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>depart</td>
+      <td>Departure maneuver, such as "Start at &lt;road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/depart_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/depart_solid_24px.png" alt="DEPART"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>enterHighwayFromLeft</td>
+      <td>Merge onto a highway from the left side, which effectively means the driver has to move right to enter the highway. Such a maneuver occurs only in countries that drive on the left side of the road (left-hand traffic).</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/enter-highway-right_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/enter-highway-left_solid_24px.png" alt="ENTER_HIGHWAY_FROM_LEFT"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>enterHighwayFromRight</td>
+      <td>Merge onto a highway from the right side, which effectively means the driver has to move left to enter the highway. Such a maneuver occurs only in countries that drive on the right side of the road (right-hand traffic).</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/enter-highway-left_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/enter-highway-right_solid_24px.png" alt="ENTER_HIGHWAY_FROM_RIGHT"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftExit</td>
+      <td>Left exit maneuver, such as "Take the left exit to &lt;next road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/left_exit_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left_exit_solid_24px.png" alt="LEFT_EXIT"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftFork</td>
+      <td>Left fork maneuver, such as "Take the left fork onto &lt;next road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/left-fork_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left-fork_solid_24px.png" alt="LEFT_FORK"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRamp</td>
+      <td>Left ramp maneuver, such as "Take the left ramp onto".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/left-ramp_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left-ramp_solid_24px.png" alt="LEFT_RAMP"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutEnter</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Enter the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/left-roundabout-enter_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left-roundabout-enter_solid_24px.png"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutExit1</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Take the first exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/left-roundabout-exit1_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left-roundabout-exit1_solid_24px.png" alt="LEFT_ROUNDABOUT_EXIT1 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutExit10</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Take the tenth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers-sdk/left-roundabout-exit10.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/maneuver_icon_40.png" alt="LEFT_ROUNDABOUT_EXIT10 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutExit11</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Take the eleventh exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers-sdk/left-roundabout-exit11.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/maneuver_icon_41.png" alt="LEFT_ROUNDABOUT_EXIT11 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutExit12</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Take the twelfth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers-sdk/left-roundabout-exit12.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/maneuver_icon_42.png" alt="LEFT_ROUNDABOUT_EXIT12 icon"></a>
+     </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutExit2</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Take the second exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/left-roundabout-exit2_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left-roundabout-exit2_solid_24px.png" alt="LEFT_ROUNDABOUT_EXIT2 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutExit3</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Take the third exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/left-roundabout-exit3_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left-roundabout-exit3_solid_24px.png" alt="LEFT_ROUNDABOUT_EXIT3 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutExit4</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Take the fourth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/left-roundabout-exit4_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left-roundabout-exit4_solid_24px.png" alt="LEFT_ROUNDABOUT_EXIT4 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutExit5</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Take the fifth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/left-roundabout-exit5_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left-roundabout-exit5_solid_24px.png" alt="LEFT_ROUNDABOUT_EXIT5 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutExit6</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Take the sixth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/left-roundabout-exit6_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left-roundabout-exit6_solid_24px.png" alt="LEFT_ROUNDABOUT_EXIT6 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutExit7</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Take the seventh exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/left-roundabout-exit7_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left-roundabout-exit7_solid_24px.png" alt="LEFT_ROUNDABOUT_EXIT7 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutExit8</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Take the eighth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers-sdk/left-roundabout-exit8.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/maneuver_icon_38.png" alt="LEFT_ROUNDABOUT_EXIT8 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutExit9</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Take the ninth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers-sdk/left-roundabout-exit9.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/maneuver_icon_39.png" alt="LEFT_ROUNDABOUT_EXIT9 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftRoundaboutPass</td>
+      <td>Roundabout maneuver (left-hand traffic), such as "Pass the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers-sdk/left-roundabout-pass.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left-roundabout-pass.png" alt="LEFT_ROUNDABOUT_PASS icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftTurn</td>
+      <td>Left turn maneuver, such as "Turn left on &lt;next road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/left-turn_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left-turn_solid_24px.png" alt="LEFT_TURN icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>leftUTurn</td>
+      <td>Left-hand U-turn maneuver, such as "Make a U-turn at &lt;next road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/left-u-turn_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/left-u-turn_solid_24px.png" alt="LEFT_U_TURN icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>middleFork</td>
+      <td>Middle fork maneuver, such as "Take the middle fork onto &lt;next road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/middle-fork_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/middle-fork_solid_24px.png" alt="Middle fork icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightExit</td>
+      <td>Right exit maneuver, such as "Take the right exit to &lt;next road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/right-exit_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-exit_solid_24px.png" alt="Right exit icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightFork</td>
+      <td>Right fork maneuver, such as "Take the right fork onto &lt;next road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/right-fork_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-fork_solid_24px.png" alt="Right fork icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRamp</td>
+      <td>Right ramp maneuver, such as "Take the right ramp onto".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/right-ramp_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-ramp_solid_24px.png" alt="Right ramp icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutEnter</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Enter the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/right-roundabout-enter_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-roundabout-enter_solid_24px.png" alt="Right roundabout enter icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutExit1</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Take the first exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/right-roundabout-exit1_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-roundabout-exit1_solid_24px.png" alt="Right roundabout exit 1 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutExit10</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Take the tenth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers-sdk/right-roundabout-exit10.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/maneuver_icon_28.png" alt="Right roundabout exit 10 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutExit11</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Take the eleventh exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers-sdk/right-roundabout-exit11.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/maneuver_icon_29.png" alt="Right roundabout exit 11 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutExit12</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Take the twelfth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers-sdk/right-roundabout-exit12.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/maneuver_icon_30.png" alt="RIGHT_ROUNDABOUT_EXIT12 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutExit2</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Take the second exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/right-roundabout-exit2_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-roundabout-exit2_solid_24px.png" alt="RIGHT_ROUNDABOUT_EXIT2 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutExit3</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Take the third exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/right-roundabout-exit3_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-roundabout-exit3_solid_24px.png" alt="RIGHT_ROUNDABOUT_EXIT3 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutExit4</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Take the fourth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/right-roundabout-exit4_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-roundabout-exit4_solid_24px.png" alt="RIGHT_ROUNDABOUT_EXIT4 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutExit5</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Take the fifth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/right-roundabout-exit5_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-roundabout-exit5_solid_24px.png" alt="RIGHT_ROUNDABOUT_EXIT5 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutExit6</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Take the sixth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/right-roundabout-exit6_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-roundabout-exit6_solid_24px.png" alt="RIGHT_ROUNDABOUT_EXIT6 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutExit7</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Take the seventh exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/right-roundabout-exit7_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-roundabout-exit7_solid_24px.png" alt="RIGHT_ROUNDABOUT_EXIT7 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutExit8</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Take the eighth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers-sdk/right-roundabout-exit8.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/maneuver_icon_26.png" alt="RIGHT_ROUNDABOUT_EXIT8 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutExit9</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Take the ninth exit of the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers-sdk/right-roundabout-exit9.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/maneuver_icon_27.png" alt="RIGHT_ROUNDABOUT_EXIT9 icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightRoundaboutPass</td>
+      <td>Roundabout maneuver (right-hand traffic), such as "Pass the roundabout".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers-sdk/right-roundabout-pass.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-roundabout-pass.png" alt="RIGHT_ROUNDABOUT_PASS icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightTurn</td>
+      <td>Right turn maneuver, such as "Turn right on &lt;next road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/right-turn_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-turn_solid_24px.png" alt="RIGHT_TURN icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>rightUTurn</td>
+      <td>Right u-turn maneuver, such as "Make a right U-turn at &lt;next road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/right-u-turn_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/right-u-turn_solid_24px.png" alt="RIGHT_U_TURN icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>sharpLeftTurn</td>
+      <td>Sharp left turn maneuver, such as "Make a hard left turn onto &lt;next road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/sharp-left-turn_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/sharp-left-turn_solid_24px.png" alt="SHARP_LEFT_TURN icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>sharpRightTurn</td>
+      <td>Sharp right turn maneuver, such as "Make a hard right turn onto &lt;next road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/sharp-right-turn_solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/sharp-right-turn_solid_24px.png" alt="SHARP_RIGHT_TURN icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>slightLeftTurn</td>
+      <td>Slight left turn maneuver, such as "Bear left onto &lt;next road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/slide-left-turn-solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/slide-left-turn-solid_24px.png" alt="SLIGHT_LEFT_TURN icon"></a>
+      </td>
+    </tr>
+    <tr>
+      <td>slightRightTurn</td>
+      <td>Slight right turn maneuver, such as "Bear right onto &lt;next road name&gt;".</td>
+      <td><a href="https://github.com/heremaps/here-icons/blob/master/icons/guidance-icons/manoeuvers/SVG/slight-right-turn-solid_24px.svg" target="_blank">
+      <img width="100" src="../graphics/maneuver_icons/slight-right-turn-solid_24px.png" alt="SLIGHT_RIGHT_TURN icon"></a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note that for now, the HERE assets for <code>leftRoundaboutPass</code> and <code>rightRoundaboutPass</code> are only available as SVGs - and some maneuver assets are only available in the sub-folder "wego-fallback-roundabout". For the PNG representation, also the <a href="https://github.com/heremaps/msdkui-ios/tree/master/MSDKUI/Assets" target="_blank">MSDKUI</a> open-source project can be used as a fallback.</p>
+<h2 id="get-road-shield-icons-for-maneuver-preview">Get road shield icons for maneuver preview</h2>
+<p>With <code>iconProvider.createRoadShieldIcon(...)</code> you can asynchronously create a <code>Bitmap</code> that depicts a road number such as "A7" or "US-101" - as it already appears on the map view.</p>
+<p>The creation of road shield icons happens offline and does not require an internet connection. The data you need to create the icons is taken solely from the <code>Route</code> itself, but can be filled out also manually.</p>
+<center><p>
+  <img src="../graphics/road-shield-icons.png" width="450" style="box-shadow: 0 0 20px">
+  <figcaption>Examples of road shield icons.</figcaption>
+</p></center>
+
+<p>An example implementation of road shield display for maneuver previews is part of the "rerouting<em>app" example. To get it, visit the <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">example app repository on GitHub</a>. Note that it requires the _Navigate Edition</em>, but the code for the <code>IconProvider</code> can be also used by other editions, for example, to show road shield icons as part of a route preview.</p>
+<h2 id="show-the-route-on-the-map">Show the route on the map</h2>
+<p>Below is a code snippet that shows how to show a route on the map by using a <code>MapPolyline</code> that is drawn between each coordinate of the route including the starting point and the destination:</p>
+<pre class="language-"><code class="lang-dart"><span class="token function">_showRouteOnMap</span><span class="token punctuation">(</span><span class="token class-name"><span class="token namespace">here<span class="token punctuation">.</span></span>Route</span> route<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Show route as polyline.</span>
+  <span class="token class-name">GeoPolyline</span> routeGeoPolyline <span class="token operator">=</span> route<span class="token punctuation">.</span>geometry<span class="token punctuation">;</span>
+  double widthInPixels <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+  <span class="token class-name">Color</span> polylineColor <span class="token operator">=</span> <span class="token keyword">const</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">fromARGB</span><span class="token punctuation">(</span><span class="token number">160</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">144</span><span class="token punctuation">,</span> <span class="token number">138</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">MapPolyline</span> routeMapPolyline<span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      routeMapPolyline <span class="token operator">=</span> <span class="token class-name">MapPolyline</span><span class="token punctuation">.</span><span class="token function">withRepresentation</span><span class="token punctuation">(</span>
+          routeGeoPolyline<span class="token punctuation">,</span>
+          <span class="token class-name">MapPolylineSolidRepresentation</span><span class="token punctuation">(</span>
+              <span class="token class-name">MapMeasureDependentRenderSize</span><span class="token punctuation">.</span><span class="token function">withSingleSize</span><span class="token punctuation">(</span><span class="token class-name">RenderSizeUnit</span><span class="token punctuation">.</span>pixels<span class="token punctuation">,</span> widthInPixels<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              polylineColor<span class="token punctuation">,</span>
+              <span class="token class-name">LineCap</span><span class="token punctuation">.</span>round<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      _hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">addMapPolyline</span><span class="token punctuation">(</span>routeMapPolyline<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapPolylineRepresentationInstantiationException</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"MapPolylineRepresentation Exception:"</span></span> <span class="token operator">+</span> e<span class="token punctuation">.</span>error<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapMeasureDependentRenderSizeInstantiationException</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"MapMeasureDependentRenderSize Exception:"</span></span> <span class="token operator">+</span> e<span class="token punctuation">.</span>error<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>The first screenshot below shows a route without additional waypoints - and therefore only one route section. Starting point and destination are indicated by green-circled map marker objects. Note that the code for drawing the circled objects is not shown here, but can be seen from the example's source code, if you are interested.</p>
+<center><p>
+  <img src="../graphics/route.jpg" width="450" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing a route on the map.</figcaption>
+</p></center>
+
+<p>The second screenshot shows the same route as above, but with two additional <code>stopover</code>-waypoints, indicated by red-circled map marker objects. The route therefore, contains three route sections.</p>
+<center><p>
+  <img src="../graphics/route_with_waypoints.jpg" width="450" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing a route with two additional waypoints.</figcaption>
+</p></center>
+
+<p>Additional <code>stopover</code>-waypoints split a route into separate sections and force the route to pass these points and to generate a maneuver instruction for each point.</p>
+<p>Note that internally, rendering of the <code>MapPolyline</code> is optimized for very long routes. For example, on a higher zoom level, not every coordinate needs to be rendered, while for lower zoom levels, the entire route is not visible. The algorithm for this is not exposed, but the basic principle can be seen in the <a href="https://github.com/heremaps/flexible-polyline" target="_blank">flexible-polyline</a> open-source project from HERE.</p>
+<h2 id="zoom-to-the-route">Zoom to the route</h2>
+<p>For some use cases, it may be useful to zoom to the calculated route. The camera class provides a convenient method to adjust the viewport so that a route fits in:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">GeoBox</span> routeGeoBox <span class="token operator">=</span> route<span class="token operator">!</span><span class="token punctuation">.</span>boundingBox<span class="token punctuation">;</span>
+<span class="token comment">// Keep default orientation for bearing and tilt.</span>
+_hereMapController<span class="token punctuation">.</span>camera<span class="token punctuation">.</span><span class="token function">lookAtAreaWithGeoOrientation</span><span class="token punctuation">(</span>routeGeoBox<span class="token punctuation">,</span> <span class="token class-name">GeoOrientationUpdate</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Here we use the enclosing bounding box of the route object. This can be used to instantly update the camera: zoom level and target point of the camera will be changed, so that the given bounding rectangle fits exactly into the viewport. Additionally, we can specify an orientation to specify more camera parameters - here we keep the default values. Note that calling <code>lookAtAreaWithOrientation()</code> will instantly change the view.</p>
+<p>For most use cases, a better user experience is to zoom to the route with an animation. Below you can see an example that zooms to a <code>GeoBox</code> plus an additional padding of 50 pixels:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_animateToRoute</span><span class="token punctuation">(</span><span class="token class-name"><span class="token namespace">here<span class="token punctuation">.</span></span>Route</span> route<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// The animation results in an untilted and unrotated map.</span>
+  double bearing <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  double tilt <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token comment">// We want to show the route fitting in the map view with an additional padding of 50 pixels.</span>
+  <span class="token class-name">Point2D</span> origin <span class="token operator">=</span> <span class="token class-name">Point2D</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">Size2D</span> sizeInPixels <span class="token operator">=</span> <span class="token class-name">Size2D</span><span class="token punctuation">(</span>_hereMapController<span class="token punctuation">.</span>viewportSize<span class="token punctuation">.</span>width <span class="token operator">-</span> <span class="token number">100</span><span class="token punctuation">,</span> _hereMapController<span class="token punctuation">.</span>viewportSize<span class="token punctuation">.</span>height <span class="token operator">-</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">Rectangle2D</span> mapViewport <span class="token operator">=</span> <span class="token class-name">Rectangle2D</span><span class="token punctuation">(</span>origin<span class="token punctuation">,</span> sizeInPixels<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Animate to the route within a duration of 3 seconds.</span>
+  <span class="token class-name">MapCameraUpdate</span> update <span class="token operator">=</span> <span class="token class-name">MapCameraUpdateFactory</span><span class="token punctuation">.</span><span class="token function">lookAtAreaWithGeoOrientationAndViewRectangle</span><span class="token punctuation">(</span>route<span class="token punctuation">.</span>boundingBox<span class="token punctuation">,</span>
+      <span class="token class-name">GeoOrientationUpdate</span><span class="token punctuation">(</span>bearing<span class="token punctuation">,</span> tilt<span class="token punctuation">)</span><span class="token punctuation">,</span>
+      mapViewport<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">MapCameraAnimation</span> animation <span class="token operator">=</span> <span class="token class-name">MapCameraAnimationFactory</span><span class="token punctuation">.</span><span class="token function">createAnimationFromUpdateWithEasing</span><span class="token punctuation">(</span>
+      update<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token class-name">Duration</span><span class="token punctuation">(</span>milliseconds<span class="token punctuation">:</span> <span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name"><span class="token namespace">here<span class="token punctuation">.</span></span>Easing</span><span class="token punctuation">(</span><span class="token class-name"><span class="token namespace">here<span class="token punctuation">.</span></span>EasingFunction</span><span class="token punctuation">.</span>inCubic<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  _hereMapController<span class="token punctuation">.</span>camera<span class="token punctuation">.</span><span class="token function">startAnimation</span><span class="token punctuation">(</span>animation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">The</span> `<span class="token class-name">CameraKeyframeTracks</span>` example app shows how <span class="token keyword">this</span> can look like<span class="token punctuation">.</span>
+</code></pre>
+<h2 id="render-a-polyline-adjacent-to-traffic-flow">Render a polyline adjacent to traffic flow</h2>
+<p>By default, the HERE SDK provides the color encoding used for the <a href="map-styles.html#add-map-features">traffic flow layer</a> which indicates the traffic. Using <code>MapMeasureDependentRenderSize</code> you can define the rendering width size of your polyline based on the <code>MapMeasure.Kind</code> such that it renders your polyline adjacent to these traffic polylines.</p>
+<center><p>
+  <img src="../graphics/traffic_adjacent_to_route.jpg" width="450">
+  <figcaption>Screenshot: Polyline adjacent to traffic flow.</figcaption>
+</p></center>
+
+<p>Here's an example to implement it:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Show route as polyline.</span>
+<span class="token class-name">GeoPolyline</span> routeGeoPolyline <span class="token operator">=</span> route<span class="token punctuation">.</span>geometry<span class="token punctuation">;</span>
+<span class="token class-name">Color</span> polylineColor <span class="token operator">=</span> <span class="token keyword">const</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">fromARGB</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">97</span><span class="token punctuation">,</span> <span class="token number">222</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Color</span> outlineColor <span class="token operator">=</span> <span class="token keyword">const</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">fromARGB</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">83</span><span class="token punctuation">,</span> <span class="token number">191</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">MapPolyline</span> routeMapPolyline<span class="token punctuation">;</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Below, we're creating an instance of MapMeasureDependentRenderSize. This instance will use the scaled width values to render the route polyline.</span>
+  <span class="token comment">// We can also apply the same values to MapArrow.setMeasureDependentTailWidth().</span>
+  <span class="token comment">// The parameters for the constructor are: the kind of MapMeasure (in this case, ZOOM_LEVEL), the unit of measurement for the render size (PIXELS), and the scaled width values.</span>
+  <span class="token class-name">MapMeasureDependentRenderSize</span> mapMeasureDependentLineWidth <span class="token operator">=</span>
+      <span class="token class-name">MapMeasureDependentRenderSize</span><span class="token punctuation">(</span><span class="token class-name">MapMeasureKind</span><span class="token punctuation">.</span>zoomLevel<span class="token punctuation">,</span>
+          <span class="token class-name">RenderSizeUnit</span><span class="token punctuation">.</span>pixels<span class="token punctuation">,</span> <span class="token function">getDefaultLineWidthValues</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// We can also use MapMeasureDependentRenderSize to specify the outline width of the polyline.</span>
+  double outlineWidthInPixel <span class="token operator">=</span> <span class="token number">1.23</span> <span class="token operator">*</span> _hereMapController<span class="token punctuation">.</span>pixelScale<span class="token punctuation">;</span>
+  <span class="token class-name">MapMeasureDependentRenderSize</span> mapMeasureDependentOutlineWidth <span class="token operator">=</span>
+      <span class="token class-name">MapMeasureDependentRenderSize</span><span class="token punctuation">.</span><span class="token function">withSingleSize</span><span class="token punctuation">(</span>
+          <span class="token class-name">RenderSizeUnit</span><span class="token punctuation">.</span>pixels<span class="token punctuation">,</span> outlineWidthInPixel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  routeMapPolyline <span class="token operator">=</span> <span class="token class-name">MapPolyline</span><span class="token punctuation">.</span><span class="token function">withRepresentation</span><span class="token punctuation">(</span>
+      routeGeoPolyline<span class="token punctuation">,</span>
+      <span class="token class-name">MapPolylineSolidRepresentation</span><span class="token punctuation">.</span><span class="token function">withOutline</span><span class="token punctuation">(</span>
+          mapMeasureDependentLineWidth<span class="token punctuation">,</span>
+          polylineColor<span class="token punctuation">,</span>
+          mapMeasureDependentOutlineWidth<span class="token punctuation">,</span>
+          outlineColor<span class="token punctuation">,</span>
+          <span class="token class-name">LineCap</span><span class="token punctuation">.</span>round<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  _hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">addMapPolyline</span><span class="token punctuation">(</span>routeMapPolyline<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  _mapPolylines<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>routeMapPolyline<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapPolylineRepresentationInstantiationException</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"MapPolylineRepresentation Exception:"</span></span> <span class="token operator">+</span> e<span class="token punctuation">.</span>error<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapMeasureDependentRenderSizeInstantiationException</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"MapMeasureDependentRenderSize Exception:"</span></span> <span class="token operator">+</span> e<span class="token punctuation">.</span>error<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>The width values specified for <code>MapMeasureDependentRenderSize</code> are linearly interpolated between each successive pair of data points. It can be generated like this:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Returns a map where the key is the zoom level and the value is the corresponding scaled width.</span>
+<span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span>double<span class="token punctuation">,</span> double<span class="token punctuation">&gt;</span></span> <span class="token function">getDefaultLineWidthValues</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span>double<span class="token punctuation">,</span> double<span class="token punctuation">&gt;</span></span> widthsPerZoomLevel <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token comment">// Here width value will remain 2.18 from 0.0 zoom level to 6.0.</span>
+  <span class="token comment">// From 6.0 the updated value 2.48 will be used.</span>
+  double pixelScale <span class="token operator">=</span> _hereMapController<span class="token punctuation">.</span>pixelScale<span class="token punctuation">;</span>
+  widthsPerZoomLevel<span class="token punctuation">[</span><span class="token number">0.0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2.18</span> <span class="token operator">*</span> pixelScale<span class="token punctuation">;</span>
+  widthsPerZoomLevel<span class="token punctuation">[</span><span class="token number">6.0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2.48</span> <span class="token operator">*</span> pixelScale<span class="token punctuation">;</span>
+  widthsPerZoomLevel<span class="token punctuation">[</span><span class="token number">7.0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2.78</span> <span class="token operator">*</span> pixelScale<span class="token punctuation">;</span>
+  widthsPerZoomLevel<span class="token punctuation">[</span><span class="token number">11.0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">3.1</span> <span class="token operator">*</span> pixelScale<span class="token punctuation">;</span>
+  widthsPerZoomLevel<span class="token punctuation">[</span><span class="token number">16.0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">3.15</span> <span class="token operator">*</span> pixelScale<span class="token punctuation">;</span>
+  widthsPerZoomLevel<span class="token punctuation">[</span><span class="token number">17.0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">3.35</span> <span class="token operator">*</span> pixelScale<span class="token punctuation">;</span>
+  widthsPerZoomLevel<span class="token punctuation">[</span><span class="token number">18.0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">3.78</span> <span class="token operator">*</span> pixelScale<span class="token punctuation">;</span>
+  widthsPerZoomLevel<span class="token punctuation">[</span><span class="token number">19.0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">6.5</span> <span class="token operator">*</span> pixelScale<span class="token punctuation">;</span>
+  widthsPerZoomLevel<span class="token punctuation">[</span><span class="token number">20.0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10.2</span> <span class="token operator">*</span> pixelScale<span class="token punctuation">;</span>
+  widthsPerZoomLevel<span class="token punctuation">[</span><span class="token number">24.0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">77.5</span> <span class="token operator">*</span> pixelScale<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> widthsPerZoomLevel<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="render-custom-traffic-along-a-route">Render custom traffic along a route</h2>
+<p>As an alternative to rendering the route's polyline adjacent to traffic flow (see above), you can also render the traffic yourself. Note that this approach may be perceived as less accurate because the traffic information includes predictive data from the route instead of the real-time information provided by the traffic flow schemes. However, similar to the color encoding used for the <a href="traffic.html">traffic flow layer</a>, you can indicate the traffic along a route using a <code>trafficSpeed.jamFactor</code> that ranges from 0 (no traffic) to 10 (road is blocked). Each <code>Section</code> of a <code>Route</code> can contain various <code>TrafficSpeed</code> instances.</p>
+<p>An example how this value can be mapped to a suitable color is shown below:</p>
+<center><p>
+  <img src="../graphics/jam_factor.png" width="350">
+  <figcaption>Illustration: Traffic jam factors.</figcaption>
+</p></center>
+
+<p>Usually, the <code>jamFactor</code> can be interpreted like this:</p>
+<ul>
+<li>0 &lt;= <code>jamFactor</code> &lt; 4: No or light traffic.</li>
+<li>4 &lt;= <code>jamFactor</code> &lt; 8: Moderate or slow traffic.</li>
+<li>8 &lt;= <code>jamFactor</code> &lt; 10: Severe traffic.</li>
+<li><code>jamFactor</code> = 10: No traffic, that is the road is blocked.</li>
+</ul>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Note that the <code>jamFactor</code> indicating <code>TrafficSpeed</code> is calculated piecewise-linear from the ratio of <code>trafficSpeedInMetersPerSecond</code> / <code>baseSpeedInMetersPerSecond</code> - without taking road types and other parameters into account. Therefore, the provided <code>jamFactor</code> does not necessarily match exactly the traffic flow visualization on the map view (if enabled). On top, the <code>RoutingEngine</code> uses predictive location services to predict upcoming traffic while traversing the route - whereas the traffic flow visualization represents only the current point in time (real time). Also, worth to mention, the prerendered traffic flow may use a different color representation based on the current zoom level.</p><p>It is an app decision whether to prefer predicted traffic along a route that matches the given ETA - or to show instead the real-time traffic situation, which might not be accurate any more when reaching a destination in the future.</p><p>The recommended approach for the latter is to show the route and the traffic-flow side-by-side by using a map-measure dependent width for the route's polyline - instead of rendering the traffic additionally on the route itself.</p></div></div>
+<center><p>
+  <img src="../graphics/traffic_on_route.png" width="450">
+  <figcaption>Screenshot: Traffic visualized on a route using jam factor.</figcaption>
+</p></center>
+
+<p>If you want to visualize the traffic along a route, consider to render multiple colored <code>MapPolyline</code> objects for each span of a section:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// This renders the traffic jam factor on top of the route as multiple MapPolylines per span.</span>
+<span class="token function">_showTrafficOnRoute</span><span class="token punctuation">(</span><span class="token class-name"><span class="token namespace">here<span class="token punctuation">.</span></span>Route</span> route<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>route<span class="token punctuation">.</span>lengthInMeters <span class="token operator">/</span> <span class="token number">1000</span> <span class="token operator">&gt;</span> <span class="token number">5000</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Skip showing traffic-on-route for longer routes."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> section <span class="token keyword">in</span> route<span class="token punctuation">.</span>sections<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> span <span class="token keyword">in</span> section<span class="token punctuation">.</span>spans<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">DynamicSpeedInfo</span><span class="token operator">?</span> dynamicSpeed <span class="token operator">=</span> span<span class="token punctuation">.</span>dynamicSpeedInfo<span class="token punctuation">;</span>
+      <span class="token class-name">Color</span><span class="token operator">?</span> lineColor <span class="token operator">=</span> <span class="token function">_getTrafficColor</span><span class="token punctuation">(</span>dynamicSpeed<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">calculateJamFactor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>lineColor <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// We skip rendering low traffic.</span>
+        <span class="token keyword">continue</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      double widthInPixels <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+      <span class="token class-name">MapPolyline</span> trafficSpanMapPolyline<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+          trafficSpanMapPolyline <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MapPolyline</span><span class="token punctuation">.</span><span class="token function">withRepresentation</span><span class="token punctuation">(</span>
+              span<span class="token punctuation">.</span>geometry<span class="token punctuation">,</span>
+              <span class="token class-name">MapPolylineSolidRepresentation</span><span class="token punctuation">(</span>
+                  <span class="token class-name">MapMeasureDependentRenderSize</span><span class="token punctuation">.</span><span class="token function">withSingleSize</span><span class="token punctuation">(</span><span class="token class-name">RenderSizeUnit</span><span class="token punctuation">.</span>pixels<span class="token punctuation">,</span> widthInPixels<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                  lineColor<span class="token punctuation">,</span>
+                  <span class="token class-name">LineCap</span><span class="token punctuation">.</span>round<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          _hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">addMapPolyline</span><span class="token punctuation">(</span>trafficSpanMapPolyline<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          _mapPolylines<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>trafficSpanMapPolyline<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapPolylineRepresentationInstantiationException</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"MapPolylineRepresentation Exception:"</span></span> <span class="token operator">+</span> e<span class="token punctuation">.</span>error<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapMeasureDependentRenderSizeInstantiationException</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"MapMeasureDependentRenderSize Exception:"</span></span> <span class="token operator">+</span> e<span class="token punctuation">.</span>error<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Define a traffic color scheme based on the route's jam factor.</span>
+<span class="token comment">// 0 &lt;= jamFactor &lt; 4: No or light traffic.</span>
+<span class="token comment">// 4 &lt;= jamFactor &lt; 8: Moderate or slow traffic.</span>
+<span class="token comment">// 8 &lt;= jamFactor &lt; 10: Severe traffic.</span>
+<span class="token comment">// jamFactor = 10: No traffic, that is the road is blocked.</span>
+<span class="token comment">// Returns null in case of no or light traffic.</span>
+<span class="token class-name">Color</span><span class="token operator">?</span> <span class="token function">_getTrafficColor</span><span class="token punctuation">(</span>double<span class="token operator">?</span> jamFactor<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>jamFactor <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> jamFactor <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>jamFactor <span class="token operator">&gt;=</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> jamFactor <span class="token operator">&lt;</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">fromARGB</span><span class="token punctuation">(</span><span class="token number">160</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Yellow</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>jamFactor <span class="token operator">&gt;=</span> <span class="token number">8</span> <span class="token operator">&amp;&amp;</span> jamFactor <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">fromARGB</span><span class="token punctuation">(</span><span class="token number">160</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Red</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">fromARGB</span><span class="token punctuation">(</span><span class="token number">160</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Black</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Note that we skip traffic rendering for longer routes due to performance reasons - since in this example each span with traffic is rendered as a separate polyline.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Alternatively, you can show the traffic flow scheme on the map side-by-side with the route's polyline. To ensure that the route is not covering the traffic flow lines, set a measure-dependent width based on the current zoom level for <code>MapPolyline</code> and <code>MapArrow</code>.</p></div></div>
+<ul>
+<li><p>In addition, you can query traffic incidents along the route with the <code>TrafficEngine</code>. For this, you need to create a <code>GeoCorridor</code> out from the coordinates of a <code>Route</code>. Make sure to also specify a corridor radius by setting <code>halfWidthInMeters</code>. Note that the <code>GeoCorridor</code> is limited in length and width. Check the <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">traffic example app</a> to see how to use the <code>TrafficEngine</code>. Check also the <a href="traffic.html">Traffic</a> section in this guide.</p>
+</li>
+<li><p>If you are only interested in basic traffic incident information along the route, you can get a summary of the traffic situation directly from the <code>Route</code> instance - per <code>Section</code>, by calling <code>Section.getTrafficIncidents()</code>. The resulting <code>TrafficIncidentOnRoute</code> object contains a small subset of the data that is available with the <code>TrafficEngine</code>, but it can be useful to give a first overview.</p>
+</li>
+</ul>
+<p>In addition to render traffic on route, you can also show the traffic incidents as icons based on the <code>TrafficIncidentType</code>. The following categories are delivered as part of the <code>Route</code> object:</p>
+<ul>
+<li><code>accident</code>: Traffic accident.</li>
+<li><code>congestion</code>: Traffic jam.</li>
+<li><code>construction</code>: Construction work.</li>
+<li><code>disabledVehicle</code>: Overturned or broken down vehicle(s) on the road.</li>
+<li><code>laneRestriction</code>: A lane restriction.</li>
+<li><code>massTransit</code>: Incident involving mass transit such as rail or subway.</li>
+<li><code>plannedEvent</code>: Incident involving activities such as sport events or festivals.</li>
+<li><code>roadClosure</code>: Road closure.</li>
+<li><code>roadHazard</code>: Dangerous obstruction on the road such as downed tree or traffic light out.</li>
+<li><code>weather</code>: Adverse weather conditions.</li>
+<li><code>other</code>: The incident is known but it doesn't fit into any of the other categories.</li>
+<li><code>unknown</code>: No specific incident type is provided.</li>
+</ul>
+<p>Note that the HERE SDK does not expose such icon assets, but you can enable the <code>trafficIncidents</code> map feature layer to show all incidents with an icon on the map. Similarly, you can also enable a <code>trafficFlow</code> layer to show the general traffic flow on the streets. Take a look at the <a href="traffic.html">Traffic</a> section for more details.</p>
+<h2 id="completely-disable-traffic-optimization">Completely disable traffic optimization</h2>
+<p>As stated above, the <code>RoutingEngine</code> uses <em>predictive location services</em> to anticipate upcoming traffic conditions. This means that the routes generated can change dynamically based on real-time traffic data, leading to different route shapes.</p>
+<p>Usually, traffic optimization is desired, but if you are, for example, a bus driver, you cannot choose better routes as you have to follow a pre-defined bus route.</p>
+<p>The HERE SDK provides a feature called <code>TrafficOptimizationMode</code> to manage this. If you prefer stable routes and are not concerned about traffic conditions, you can completely disable traffic optimization by choosing <code>TrafficOptimizationMode.disabled</code>. It can be achieved like this:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">CarOptions</span> carOptions <span class="token operator">=</span> <span class="token class-name">CarOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+carOptions<span class="token punctuation">.</span>routeOptions<span class="token punctuation">.</span>trafficOptimizationMode <span class="token operator">=</span> <span class="token class-name">TrafficOptimizationMode</span><span class="token punctuation">.</span>disabled<span class="token punctuation">;</span>
+</code></pre>
+<p>Note that disabling <code>TrafficOptimizationMode</code> will also disable any traffic information from the <code>Route</code> and the ETA will not include potential delays.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="routing.html" class="navigation navigation-prev " aria-label="Previous page: Get started with Routing">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="routing-options.html" class="navigation navigation-next " aria-label="Next page: Add route options">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Add UI building blocks","level":"1.6.2","depth":2,"next":{"title":"Add route options","level":"1.6.3","depth":2,"path":"topics/routing-options.md","ref":"topics/routing-options.md","articles":[]},"previous":{"title":"Get started with Routing","level":"1.6.1","depth":2,"path":"topics/routing.md","ref":"topics/routing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/routing-ui.md","mtime":"2025-01-22T16:33:08.762Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

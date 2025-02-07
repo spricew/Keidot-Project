@@ -13,7 +13,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Stripe Checkout",
           style: TextStyle(fontSize: 20),
         ),
@@ -43,11 +43,11 @@ class _CheckoutPageState extends State<CheckoutPage> {
           style: TextButton.styleFrom(
             backgroundColor: Colors.teal,
             foregroundColor: Colors.white,
-            shape: BeveledRectangleBorder(
+            shape: const BeveledRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(1)),
             ),
           ),
-          child: Text("Checkout"),
+          child: const Text("Checkout"),
         ),
       ),
     );

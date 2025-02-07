@@ -1,0 +1,1157 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Get routes for electric vehicles · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="routing-advanced.html">
+    
+    
+    <link rel="prev" href="routing-options.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Get routes for electric vehicles</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="get-routes-for-electric-vehicles">Get routes for electric vehicles</h1>
+<p>Electric vehicle (EV) usage and sales continue growing around the world. How can HERE help to provide the best routes for electric vehicles?</p>
+<ul>
+<li><p>HERE EV Routing delivers optimized routes for EVs to get from A to B, minimizing the number of charging stops and optimizing battery charge times (based on the vehicle’s consumption model). It also takes into account a number of factors when planning trips, including topography, road geometry, real-time traffic information and traffic patterns.</p>
+</li>
+<li><p>Instead of searching for charging stations along the route, HERE analyzes the charging time at every possible station and chooses the most appropriate combination that will deliver the shortest driving and charging times.</p>
+</li>
+</ul>
+<h2 id="calculate-ev-routes">Calculate EV routes</h2>
+<p>Getting EV routes is simple. Similar to getting car or truck routes, for EV routing you just need to add electric vehicle specific route options. This way you can get routes for electric vehicles in the same way as for other transport modes. Just specify <code>EVRouteOptions</code> and add them to the <code>calculateRoute()</code> method:</p>
+<pre class="language-"><code class="lang-dart">_routingEngine<span class="token punctuation">.</span><span class="token function">calculateEVCarRoute</span><span class="token punctuation">(</span>waypoints<span class="token punctuation">,</span> <span class="token function">_getEVCarOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token class-name">RoutingError</span><span class="token operator">?</span> routingError<span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name"><span class="token namespace">here<span class="token punctuation">.</span></span>Route</span><span class="token punctuation">&gt;</span></span><span class="token operator">?</span> routeList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>routingError <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// When error is null, then the list guaranteed to be not null.</span>
+    <span class="token class-name"><span class="token namespace">here<span class="token punctuation">.</span></span>Route</span> route <span class="token operator">=</span> routeList<span class="token operator">!</span><span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+    <span class="token comment">// Use routes from list.</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> error <span class="token operator">=</span> routingError<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">_showDialog</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'Error'</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">'Error while calculating a route: </span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">error</span></span><span class="token string">'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="define-evcaroptions">Define EVCarOptions</h2>
+<p>By default, <code>EVRouteOptions</code> will not include the required parameters to ensure that a destination can be reached without running out of energy.</p>
+<p>To ensure this, you need to set the required parameters that may add charging stations to the route - while still optimizing the result for overall travel time.</p>
+<p>Below you can see an example how to create such options:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Note: This API is currently only accessible for alpha users.</span>
+<span class="token keyword">void</span> <span class="token function">_applyEMSPPreferences</span><span class="token punctuation">(</span><span class="token class-name">EVCarOptions</span> evCarOptions<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// You can get a list of all E-Mobility Service Providers and their partner IDs by using the request described here:</span>
+  <span class="token comment">// https://www.here.com/docs/bundle/ev-charge-points-api-developer-guide/page/topics/example-charging-station.html.</span>
+  <span class="token comment">// The RoutingEngine will follow the priority order you specify when calculating routes, so try to specify at least most preferred providers.</span>
+  <span class="token comment">// Note that this may impact the route geometry.</span>
+
+  <span class="token comment">// Most preferred provider for route calculation: As an example, we use "Jaguar Charging" referenced by the partner ID taken from above link.</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> preferredProviders <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"3379b852-cca5-11ed-8856-42010aa40002"</span></span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Example code for a least preferred provider.</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> leastPreferredProviders <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"12345678-abcd-0000-0000-000000000000"</span></span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Alternative provider for route calculation to be used only when no better options are available.</span>
+  <span class="token comment">// Example code for an alternative provider.</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> alternativeProviders <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"12345678-0000-abcd-0000-000123456789"</span></span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Excluded provider that should not be considered for route calculation.</span>
+  <span class="token comment">// Example code for an excluded provider.</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> excludedProviders <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string-literal"><span class="token string">"00000000-abcd-0000-1234-123000000000"</span></span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  evCarOptions<span class="token punctuation">.</span>evMobilityServiceProviderPreferences <span class="token operator">=</span> <span class="token class-name">EVMobilityServiceProviderPreferences</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  evCarOptions<span class="token punctuation">.</span>evMobilityServiceProviderPreferences<span class="token punctuation">.</span>high <span class="token operator">=</span> preferredProviders<span class="token punctuation">;</span>
+  evCarOptions<span class="token punctuation">.</span>evMobilityServiceProviderPreferences<span class="token punctuation">.</span>low <span class="token operator">=</span> leastPreferredProviders<span class="token punctuation">;</span>
+  evCarOptions<span class="token punctuation">.</span>evMobilityServiceProviderPreferences<span class="token punctuation">.</span>medium <span class="token operator">=</span> alternativeProviders<span class="token punctuation">;</span>
+  evCarOptions<span class="token punctuation">.</span>evMobilityServiceProviderPreferences<span class="token punctuation">.</span>exclude <span class="token operator">=</span> excludedProviders<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">EVCarOptions</span> <span class="token function">_getEVCarOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">EVCarOptions</span> evCarOptions <span class="token operator">=</span> <span class="token class-name">EVCarOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// The below three options are the minimum you must specify or routing will result in an error.</span>
+  evCarOptions<span class="token punctuation">.</span>consumptionModel<span class="token punctuation">.</span>ascentConsumptionInWattHoursPerMeter <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
+  evCarOptions<span class="token punctuation">.</span>consumptionModel<span class="token punctuation">.</span>descentRecoveryInWattHoursPerMeter <span class="token operator">=</span> <span class="token number">4.3</span><span class="token punctuation">;</span>
+  evCarOptions<span class="token punctuation">.</span>consumptionModel<span class="token punctuation">.</span>freeFlowSpeedTable <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">:</span> <span class="token number">0.239</span><span class="token punctuation">,</span> <span class="token number">27</span><span class="token punctuation">:</span> <span class="token number">0.239</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">:</span> <span class="token number">0.196</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">:</span> <span class="token number">0.238</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Must be 0 for isoline calculation.</span>
+  evCarOptions<span class="token punctuation">.</span>routeOptions<span class="token punctuation">.</span>alternatives <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Ensure that the vehicle does not run out of energy along the way</span>
+  <span class="token comment">// and charging stations are added as additional waypoints.</span>
+  evCarOptions<span class="token punctuation">.</span>ensureReachability <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// The below options are required when setting the ensureReachability option to true</span>
+  <span class="token comment">// (AvoidanceOptions need to be empty).</span>
+  evCarOptions<span class="token punctuation">.</span>avoidanceOptions <span class="token operator">=</span> <span class="token class-name">AvoidanceOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  evCarOptions<span class="token punctuation">.</span>routeOptions<span class="token punctuation">.</span>speedCapInMetersPerSecond <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  evCarOptions<span class="token punctuation">.</span>routeOptions<span class="token punctuation">.</span>optimizationMode <span class="token operator">=</span> <span class="token class-name">OptimizationMode</span><span class="token punctuation">.</span>fastest<span class="token punctuation">;</span>
+  evCarOptions<span class="token punctuation">.</span>batterySpecifications<span class="token punctuation">.</span>connectorTypes <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token class-name">ChargingConnectorType</span><span class="token punctuation">.</span>tesla<span class="token punctuation">,</span>
+    <span class="token class-name">ChargingConnectorType</span><span class="token punctuation">.</span>iec62196Type1Combo<span class="token punctuation">,</span>
+    <span class="token class-name">ChargingConnectorType</span><span class="token punctuation">.</span>iec62196Type2Combo
+  <span class="token punctuation">]</span><span class="token punctuation">;</span>
+  evCarOptions<span class="token punctuation">.</span>batterySpecifications<span class="token punctuation">.</span>totalCapacityInKilowattHours <span class="token operator">=</span> <span class="token number">80.0</span><span class="token punctuation">;</span>
+  evCarOptions<span class="token punctuation">.</span>batterySpecifications<span class="token punctuation">.</span>initialChargeInKilowattHours <span class="token operator">=</span> <span class="token number">10.0</span><span class="token punctuation">;</span>
+  evCarOptions<span class="token punctuation">.</span>batterySpecifications<span class="token punctuation">.</span>targetChargeInKilowattHours <span class="token operator">=</span> <span class="token number">72.0</span><span class="token punctuation">;</span>
+  evCarOptions<span class="token punctuation">.</span>batterySpecifications<span class="token punctuation">.</span>chargingCurve <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0.0</span><span class="token punctuation">:</span> <span class="token number">239.0</span><span class="token punctuation">,</span> <span class="token number">64.0</span><span class="token punctuation">:</span> <span class="token number">111.0</span><span class="token punctuation">,</span> <span class="token number">72.0</span><span class="token punctuation">:</span> <span class="token number">1.0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Apply EV mobility service provider preferences (eMSP).</span>
+  <span class="token comment">// This API is currently in alpha stage. Comment it out when you are participating.</span>
+  <span class="token comment">// _applyEMSPPreferences(evCarOptions);</span>
+
+  <span class="token comment">// Note: More EV options are available, the above shows only the minimum viable options.</span>
+  <span class="token keyword">return</span> evCarOptions<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>As part of the <code>EVCarOptions</code> we have defined above a consumption model, battery specs and optionally, EV mobility service provider preferences.</p>
+<h2 id="define-the-consumption-model">Define the consumption model</h2>
+<p>The following parameters define a consumption model to get more accurate results for electric vehicles:</p>
+<ul>
+<li><strong>ascentConsumptionInWattHoursPerMeter</strong>:    Rate of energy consumed per meter rise in elevation.</li>
+<li><strong>descentRecoveryInWattHoursPerMeter</strong>: Rate of energy recovered per meter fall in elevation.</li>
+<li><strong>freeFlowSpeedTable</strong>:    Function curve specifying consumption rate at a given free flow speed on a flat stretch of road.</li>
+<li><strong>trafficSpeedTable</strong>: Function curve specifying consumption rate at a given speed under traffic conditions on a flat stretch of road.</li>
+<li><strong>auxiliaryConsumptionInWattHoursPerSecond</strong>:    Rate of energy consumed by the vehicle's auxiliary systems (e.g., air conditioning, lights) per second of travel.</li>
+</ul>
+<p>A consumption speed table defines the energy consumption rate when the vehicle travels on a straight road without elevation change at a given speed in km/h. It represents a piecewise linear function.</p>
+<p>Here is an example of a free flow speed list. On the left you see the speed and on the right, consumption:</p>
+<ul>
+<li>0: 0.239</li>
+<li>27: 0.239</li>
+<li>45: 0.259</li>
+<li>60: 0.196</li>
+<li>75: 0.207</li>
+<li>90: 0.238</li>
+<li>100: 0.26</li>
+<li>110: 0.296</li>
+<li>120: 0.337</li>
+<li>130: 0.351</li>
+</ul>
+<p>In a graph it will look like this:</p>
+<center><p>
+  <img src="../graphics/consumption_speed_table.png" width="450" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: An example for a consumption speed graph.</figcaption>
+</p></center>
+
+<p>You can specify two different consumption speed tables - free flow speed table and traffic speed tables:</p>
+<ul>
+<li><strong>Free flow speed</strong>: Describes the energy consumption when traveling at constant speed.</li>
+<li><strong>Traffic speed</strong>: Describes the energy consumption when traveling under heavy traffic conditions, for example, when the vehicle is expected to often change the travel speed at a given average speed.</li>
+</ul>
+<p>If a <code>trafficSpeedTable</code> is not provided then only the <code>freeFlowSpeedTable</code> is used for calculating speed-related energy consumption.</p>
+<p>The <code>EVConsumptionModel</code> specifies the energy consumption model of the electric vehicle. We also add <code>BatterySpecifications</code>. With these options, additional charging stations may be inserted into the route as additional stopovers - which means that the route will be split into more sections depending on the number of inserted charging stations.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>If you want to include such required charging stations, it is also mandatory to use <code>OptimizationMode.FASTEST</code>. You also need to set <code>ensureReachability</code> to true. When <code>ensureReachability</code> is activated, the route may be adjusted so that required charging stations are along the resulting path and the required charging stations are added as <code>WayPoint</code> items to the <code>route</code>.</p><p>Transactions for this feature are counted as "Routing EV" only when this field is set to true. Otherwise, such API calls are billed as normal car route.</p></div></div>
+<p>All options can influence the time it takes to calculate a route for electric vehicles. Most importantly, a large battery capacity - as set with <code>totalCapacityInKilowattHours</code> - can decrease the need for charging stops - as well as a fully loaded battery when starting the trip - see <code>initialChargeInKilowattHours</code>: a relatively low value means that the route must include charging stations near the beginning. Otherwise, the route calculation may even fail.</p>
+<p>Currently, the engine will only include charging stations that are in service. Charging stations that our out-of-service or in maintenance are not considered. However, due to the dynamic situation at charging stations, the engine does not consider if a station is currently occupied or reserved. So, in worst case, it can happen that you arrive at a station and it is currently being used to charge another car.</p>
+<p>Note that we also specify the available battery connector types, so that charging stations that do not provide a compatible connector to charge the car will be excluded.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Usually, you can take the consumption and battery information from the car itself or consult the manual or your car manufacturer directly. Note that not all information may be available to you and some information may be only exclusively known by the manufacturer. Either way, the route calculation process will take the provided specifications into account and missing values will be filled with suitable default values.</p></div></div>
+<h2 id="define-the-ev-mobility-service-provider-preferences">Define the ev mobility service provider preferences</h2>
+<p>When calculating routes, the <code>RoutingEngine</code> allows specifying priority preferences for <code>evMobilityServiceProviderPreferences</code> to optimize the route based on user requirements. Note that this feature requires an active online connection.</p>
+<p>An e-Mobility Service Provider (eMSP) is a company or organization that provides services to electric vehicle drivers, focusing on enabling access to and use of EV charging infrastructure. eMSPs serve as intermediaries between EV drivers and charging station networks.</p>
+<p>eMSPs preferences allow users to select the preferred partner charging stations.</p>
+<p>A most preferred eMSPs can be selected to ensure it is prioritized during route calculation, while a least preferred provider can be included with lower priority. Alternative providers can also be specified, to be considered only when no better options are available. Additionally, certain providers can be excluded entirely from the route calculation process.</p>
+<p>Specifying <code>evMobilityServiceProviderPreferences</code> may impact the resulting route geometry. It is not mandatory, but it can help to improve the user experience. For example, users that want to exclude certain providers can avoid that a route will include such providers.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Currently, this is a <strong>closed-alpha</strong> feature, so it is only available for selected customers. There could be a few bugs and unexpected behaviors. Note: Participants of the closed-alpha group can get access from HERE to use this feature. If the credentials are not enabled, a <code>SearchError.FORBIDDEN</code> will be propagated.</p></div></div>
+<h2 id="find-charging-stations-along-the-route">Find charging stations along the route</h2>
+<p>Especially for longer journeys with electric vehicles, it is important to plan for charging stops along the way. After all, charging stations are much less common than gas stations. With the above options, the <code>RoutingEngine</code> tries to find the fastest route, i.e., one with the lowest overall time consumed to reach the destination, while ensuring that the vehicle does not run out of energy along the way.</p>
+<p>The result of the calculation is a route optimized for electric vehicles - instead of just adding any charging stations found along the way - as we have shown in the <a href="search-geocoding.html#search-along-a-route">Search Along a Route</a> section.</p>
+<p>Once the <code>route</code> is calculated, you can gather more useful information. The code snippet shown below will log the estimated energy consumption per <code>Section</code> and list the actions you need to take in order to charge the battery - if needed:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_logEVDetails</span><span class="token punctuation">(</span><span class="token class-name"><span class="token namespace">here<span class="token punctuation">.</span></span>Route</span> route<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Find inserted charging stations that are required for this route.</span>
+  <span class="token comment">// Note that this example assumes only one start waypoint and one destination waypoint.</span>
+  <span class="token comment">// By default, each route has one section.</span>
+  int additionalSectionCount <span class="token operator">=</span> route<span class="token punctuation">.</span>sections<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>additionalSectionCount <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Each additional waypoint splits the route into two sections.</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"EVDetails: Number of required stops at charging stations: "</span></span> <span class="token operator">+</span> additionalSectionCount<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>
+        <span class="token string-literal"><span class="token string">"EVDetails: Based on the provided options, the destination can be reached without a stop at a charging station."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  int sectionIndex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Section</span><span class="token punctuation">&gt;</span></span> sections <span class="token operator">=</span> route<span class="token punctuation">.</span>sections<span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Section</span> section <span class="token keyword">in</span> sections<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">EVDetails</span><span class="token operator">?</span> evDetails <span class="token operator">=</span> section<span class="token punctuation">.</span>evDetails<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>evDetails <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"No EVDetails found."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"EVDetails: Estimated net energy consumption in kWh for this section: "</span></span> <span class="token operator">+</span>
+        evDetails<span class="token punctuation">.</span>consumptionInKilowattHour<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">PostAction</span> postAction <span class="token keyword">in</span> section<span class="token punctuation">.</span>postActions<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">switch</span> <span class="token punctuation">(</span>postAction<span class="token punctuation">.</span>action<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token class-name">PostActionType</span><span class="token punctuation">.</span>chargingSetup<span class="token punctuation">:</span>
+          <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"EVDetails: At the end of this section you need to setup charging for "</span></span> <span class="token operator">+</span>
+              postAction<span class="token punctuation">.</span>duration<span class="token punctuation">.</span>inSeconds<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+              <span class="token string-literal"><span class="token string">" s."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token class-name">PostActionType</span><span class="token punctuation">.</span>charging<span class="token punctuation">:</span>
+          <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"EVDetails: At the end of this section you need to charge for "</span></span> <span class="token operator">+</span>
+              postAction<span class="token punctuation">.</span>duration<span class="token punctuation">.</span>inSeconds<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+              <span class="token string-literal"><span class="token string">" s."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">case</span> <span class="token class-name">PostActionType</span><span class="token punctuation">.</span>wait<span class="token punctuation">:</span>
+          <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"EVDetails: At the end of this section you need to wait for "</span></span> <span class="token operator">+</span>
+              postAction<span class="token punctuation">.</span>duration<span class="token punctuation">.</span>inSeconds<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+              <span class="token string-literal"><span class="token string">" s."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">default</span><span class="token punctuation">:</span>
+          <span class="token keyword">throw</span> <span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Unknown post action type."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"EVDetails: Section "</span></span> <span class="token operator">+</span>
+        sectionIndex<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+        <span class="token string-literal"><span class="token string">": Estimated battery charge in kWh when leaving the departure place: "</span></span> <span class="token operator">+</span>
+        section<span class="token punctuation">.</span>departurePlace<span class="token punctuation">.</span>chargeInKilowattHours<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"EVDetails: Section "</span></span> <span class="token operator">+</span>
+        sectionIndex<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+        <span class="token string-literal"><span class="token string">": Estimated battery charge in kWh when leaving the arrival place: "</span></span> <span class="token operator">+</span>
+        section<span class="token punctuation">.</span>arrivalPlace<span class="token punctuation">.</span>chargeInKilowattHours<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Only charging stations that are needed to reach the destination are listed below.</span>
+    <span class="token class-name">ChargingStation</span><span class="token operator">?</span> depStation <span class="token operator">=</span> section<span class="token punctuation">.</span>departurePlace<span class="token punctuation">.</span>chargingStation<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>depStation <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> depStation<span class="token punctuation">.</span>id <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>chargingStationsIDs<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>depStation<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"EVDetails: Section "</span></span> <span class="token operator">+</span> sectionIndex<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string-literal"><span class="token string">", name of charging station: "</span></span> <span class="token operator">+</span> depStation<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      chargingStationsIDs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>depStation<span class="token punctuation">.</span>id<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">_addCircleMapMarker</span><span class="token punctuation">(</span>section<span class="token punctuation">.</span>departurePlace<span class="token punctuation">.</span>mapMatchedCoordinates<span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"assets/required_charging.png"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token class-name">ChargingStation</span><span class="token operator">?</span> arrStation <span class="token operator">=</span> section<span class="token punctuation">.</span>departurePlace<span class="token punctuation">.</span>chargingStation<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arrStation <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> arrStation<span class="token punctuation">.</span>id <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>chargingStationsIDs<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>arrStation<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"EVDetails: Section "</span></span> <span class="token operator">+</span> sectionIndex<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string-literal"><span class="token string">", name of charging station: "</span></span> <span class="token operator">+</span> arrStation<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      chargingStationsIDs<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>arrStation<span class="token punctuation">.</span>id<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">_addCircleMapMarker</span><span class="token punctuation">(</span>section<span class="token punctuation">.</span>arrivalPlace<span class="token punctuation">.</span>mapMatchedCoordinates<span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"assets/required_charging.png"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    sectionIndex <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Note that <code>postAction.duration.inSeconds</code> provides the estimated time it takes to charge the battery. This time is included in the overall route calculation and the estimated time of arrival (ETA).</p>
+<p>Below is a screenshot of how a resulting route may look.</p>
+<center><p>
+  <img src="../graphics/ev_routing.jpg" width="450" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing a route for electric vehicles.</figcaption>
+</p></center>
+
+<p>Here you can see that the route required two stops at a charging station - indicated by red markers. The route contains three sections as each charging station splits the route - when inserting additional waypoints.</p>
+<p>The first section includes a post action which describes the charging stop. It contains the information on the expected arrival charge among other information.</p>
+<p>Unless specified otherwise, the energy consumption is assumed to be in Wh.</p>
+<h2 id="search-for-ev-charging-pools">Search for EV charging pools</h2>
+<p>If you don't plan to follow a <code>Route</code>, we got you covered, too: with the online <code>SearchEngine</code> you can also search for <code>EVChargingStation</code> connectors that are part of a <code>EVChargingPool</code>. A charging pool for electric vehicles is an area equipped with one or more charging stations.</p>
+<p>Use <code>PlaceCategory.businessAndServicesEVChargingStation</code> to find pools. Alternatively, you can use a free text query like "charging station". In the <code>Details</code> of a <code>Place</code> result you can find the list of found pools containing stations, if any.</p>
+<p>You can also search for stations with the <code>OfflineSearchEngine</code>, if this engine is supported by your edition of the HERE SDK.</p>
+<p>The HERE SDK also allows populating the results with additional charging station parameters, such as <code>EVChargingPoolDetails</code> and more fields in <code>EVChargingStation</code>. For online use, obtaining these detailed results requires enabling the closed-alpha feature by calling <code>searchEngine.setCustomOption("discover.show", "ev")</code>. Additionally, an extra license is required. For use with the <code>OfflineSearchEngine</code> (if available for your edition), no license is required. Please <a href="https://www.here.com/contact" target="_blank">contact us</a> to receive online access. If your credentials are not enabled, a <code>SearchError.forbidden</code> error will indicate the missing license.</p>
+<h2 id="show-reachable-area">Show reachable area</h2>
+<p>With isoline routing you can visualize the area of reach based on parameters like battery consumption. This is explained in greater detail <a href="routing-advanced.html#isoline-routing">here</a>.</p>
+<h2 id="try-the-ev-example-app">Try the EV example app</h2>
+<p>You can find the "ev_routing_app" example app on <a href="https://github.com/heremaps/here-sdk-examples/" target="_blank">GitHub</a>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="routing-options.html" class="navigation navigation-prev " aria-label="Previous page: Add route options">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="routing-advanced.html" class="navigation navigation-next " aria-label="Next page: Advanced routing features">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Get routes for electric vehicles","level":"1.6.4","depth":2,"next":{"title":"Advanced routing features","level":"1.6.5","depth":2,"path":"topics/routing-advanced.md","ref":"topics/routing-advanced.md","articles":[]},"previous":{"title":"Add route options","level":"1.6.3","depth":2,"path":"topics/routing-options.md","ref":"topics/routing-options.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/routing-ev.md","mtime":"2025-01-22T16:33:08.742Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

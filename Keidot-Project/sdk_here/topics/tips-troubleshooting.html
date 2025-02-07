@@ -1,0 +1,1055 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Debugging and troubleshooting · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tips-support.html">
+    
+    
+    <link rel="prev" href="changelog/changelog-explore.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Debugging and troubleshooting</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="debugging-and-troubleshooting">Debugging and troubleshooting</h1>
+<p>In this section you can find effective debugging and troubleshooting techniques, common issues, and instructions how to generate insightful logs.</p>
+<h2 id="common-issues">Common issues</h2>
+<p>When you run into trouble, please make sure to first check the <a href="introduction-requirements.html#supported-versions">minimum requirements</a> and the <a href="introduction-requirements.html#supported-devices">supported devices</a>.</p>
+<ul>
+<li><strong>Xcode does not compile my project for simulators. I am using a computer with a M1 chip.</strong> You are using a HERE SDK version below 4.9.2.0. Try to use a newer HERE SDK version or run in Rosetta mode by excluding the ARM64 architecture for "Any iOS Simulator SDK" in the <code>Build Settings/Architectures/Excluded Architectures/Debug</code> setting within Xcode. Select this option in the "TARGETS" settings. Note that this may slightly slow down the performance when running the simulator.</li>
+<li><strong>I see only a blank white map:</strong> Make sure that your HERE credentials are valid and set as described in the <a href="get-hsdk-package.html">Get the HERE SDK package</a> section. Also, make sure that your device is able to make an internet connection. With slower internet connections, it may take a while until you see the first map tiles loaded. Please also make sure that your device time is set correctly. In rare cases, a wrongly set device time can lead to authentication issues with some backend services.</li>
+<li><strong>I see only a blank white map and logs show "Could not create root isolate.":</strong> This issue is unrelated to the HERE SDK and it may happen after you tried to downgrade to an older Flutter version. Try to clean your Flutter installation with:<pre class="language-"><code>$ rm -rf path/to/flutter/sdk/bin/cache/artifacts/engine/ios*
+$ flutter clean
+$ flutter run
+</code></pre></li>
+<li><strong>In the logs I see "ios/Runner/GeneratedPluginRegistrant.m:12:9: Module 'here_sdk' not found"</strong>: This may be related to this <a href="https://github.com/flutter/flutter/issues/43986" target="_blank">Flutter issue</a>. Try to clean the project and podfile like so, then build again:<pre class="language-"><code>$ flutter clean
+$ rm ios/Podfile &amp;&amp; flutter build ios
+</code></pre></li>
+<li><strong>In the logs I see "No map content will be displayed until valid config is provided.":</strong> Make sure that your code is really calling <code>loadScene()</code>.</li>
+<li><strong>The app crashes and in the logs I see "CL_magma - Couldn't load the default shader.":</strong> Your device must support OpenGL ES 3.0. If you are running a simulator, edit your emulator settings via <strong>Settings</strong> -&gt; <strong>Advanced</strong> -&gt;  <strong>ES OpenGLAPI level</strong>. If it is set to "Autoselect", try to change it to "Renderer Maximum". This happens mostly on Windows machines.</li>
+<li><strong>I am getting "No toolchains found in the NDK toolchains folder for ABI with prefix: arm-linux-androideabi":</strong> This happens when you have a NDK version installed that is incompatible with the Gradle version of your app. Either uninstall or downgrade your NDK version or change the Gradle classpath to a newer version. For example, change the classpath from: <code>classpath 'com.android.tools.build:gradle:3.5.4'</code> to <code>classpath 'com.android.tools.build:gradle:4.1.3'</code>.</li>
+<li><strong>I am seeing the following in a crash log: "Exception was thrown in Java and it was not handled.":</strong> The HERE SDK cannot handle runtime exceptions that are thrown on app side inside a callback. In such a case you will see this error log. It means that your code throws an exception in one of the HERE SDK callbacks that are handled by your application.</li>
+<li><strong>I am getting a crash due to a cache lock:</strong> If an application crashes due to a <code>Storage.LevelDB</code> error or a <code>FAILED_TO_LOCK_CACHE_FOLDER</code> error, follow <a href="tips-troubleshooting.html#how-to-destroy-a-locking-process">this instruction</a> to prevent such a crash from happening again.</li>
+<li><strong>I see a gray screen:</strong> If the logs repeatedly say "dequeueBuffer failed", then this is caused by a <a href="https://github.com/flutter/flutter/issues/35900" target="_blank">Flutter issue</a> that might get fixed by a new Flutter version, eventually Flutter 1.20.3.</li>
+<li><strong>I see no map and/or my HERE SDK calls do nothing:</strong> If you see the following log message "These credentials do not authorize access" then your credentials are not valid. Make sure you use a working set of credentials. Credentials from the 3.x editions are not compatible. Credentials from the <em>Lite Edition</em> or <em>Explore Edition</em> are not compatible with the <em>Navigate Edition</em>.</li>
+<li><strong>I see graphical glitches on the map view:</strong> For some Android versions this may happen and it can be fixed by using the <code>MapRenderMode.texture</code>. Find more details in the <a href="maps.html">maps</a> guide.</li>
+<li><strong>I see graphical glitches on the map view after screen orientation changes and the map tiles don't show up:</strong> For some Android versions this may happen and it can be fixed by using Flutter's Hybrid Composition render mode. Find more details in the <a href="maps.html">maps</a> guide.</li>
+<li><strong>When I build for iOS release, the build fails:</strong> If you see in the logs that <code>-embed-bitcode</code> is executed, make sure to explicitly disable <a href="https://developer.apple.com/documentation/xcode-release-notes/xcode-14-release-notes" target="_blank">bitcode optimization</a>. Apple deprecated bitcode and the HERE SDK no longer supports it. Add <code>ENABLE_BITCODE = NO</code> to your config. For example, in your <code>ios/Podfile</code> add the following:</li>
+</ul>
+<pre class="language-"><code>post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+    target.build_configurations.each do |config|
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
+end
+</code></pre><ul>
+<li><strong>On exiting app with back button, <code>HereMap</code> widget on Android turns blank on resume:</strong> The user exits the app using back button on Android while the map is displayed, and on resuming the app, the map turns blank. This issue is observed on Flutter v3.22.0 (on Android 6, Android 14). This <a href="https://github.com/flutter/flutter/issues/148662" target="_blank">Flutter issue</a> has been fixed in Flutter 3.22.2.</li>
+<li>Android Studio does not compile my app and I get this build error <strong>Your project's Gradle version is incompatible with the Java version that Flutter is using for Gradle.</strong> Such an error can happen when you are switching to a newer Android Studio version. Either build a new app from scratch following the <a href="integrate-here-sdk.html">Get Started</a> guide, or update Gradle via <code>gradle-wrapper-properties</code> by setting a newer <code>distributionURL</code> and update AGP via <code>settings.gradle</code> by setting a newer <code>id "com.android.application" version</code> in your project's settings. Make sure that the <a href="https://developer.android.com/build/releases/gradle-plugin" target="_blank">AGP plugin and Gradle versions</a> do match.</li>
+<li><strong>When I compile for release I get an error regarding R8:</strong> The error may look like "Missing classes detected while running R8". Such a message is a <a href="https://issuetracker.google.com/issues/282544776" target="_blank">known AGP issue</a> for newer Android Gradle Plugin versions. The example apps show how to fix this in two steps. First, add four <a href="https://github.com/heremaps/here-sdk-examples/blob/master/examples/latest/navigate/flutter/hello_map_app/android/app/" target="_blank">new <code>dontwarn</code> exclusions</a> to <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>your_app_dir</span><span class="token punctuation">&gt;</span></span>/android/app/proguard-rules.pro</code>. If the file does not exist, create it. Secondly, use that file in <code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>your_app_dir</span><span class="token punctuation">&gt;</span></span>/android/app/build.gradle</code> like shown <a href="https://github.com/heremaps/here-sdk-examples/blob/master/examples/latest/navigate/flutter/hello_map_app/android/app/build.gradle" target="_blank">here</a> under <code>buildTypes.release</code>.</li>
+</ul>
+<h2 id="how-to-destroy-a-locking-process">How to destroy a locking process</h2>
+<p>In rare cases an application using the HERE SDK may crash due to a <code>Storage.LevelDB</code> error or the initialization of the HERE SDK may fail with a <code>failedToLockCacheFolder</code> error.</p>
+<p>This may happen when a second instance of a <code>SDKNativeEngine</code> is created with the same <code>access_key_id</code> as an existing one. Then the local map cache directory is locked by the current process.</p>
+<p>This locked cache folder crash can be fixed by setting the following option before initializing the HERE SDK:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">AuthenticationMode</span> authenticationMode <span class="token operator">=</span> <span class="token class-name">AuthenticationMode</span><span class="token punctuation">.</span><span class="token function">withKeySecret</span><span class="token punctuation">(</span>accessKeyId<span class="token punctuation">,</span> accessKeySecret<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">SDKOptions</span> sdkOptions <span class="token operator">=</span> <span class="token class-name">SDKOptions</span><span class="token punctuation">.</span><span class="token function">withAuthenticationMode</span><span class="token punctuation">(</span>authenticationMode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Defaults to SDKOptions.ActionOnCacheLock.waitLockingAppFinish.</span>
+sdkOptions<span class="token punctuation">.</span>actionOnCacheLock <span class="token operator">=</span> <span class="token class-name">SDKOptionsActionOnCacheLock</span><span class="token punctuation">.</span>killLockingApp<span class="token punctuation">;</span>
+
+
+<span class="token comment">// Now, use these options to initialize the HERE SDK and destroy a locking process (if any).</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> <span class="token class-name">SDKNativeEngine</span><span class="token punctuation">.</span><span class="token function">makeSharedInstance</span><span class="token punctuation">(</span>sdkOptions<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">InstantiationException</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Failed to initialize the HERE SDK."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>If there is a cache lock, this will kill the locking process and the app can start normally. If no cache lock occurred, the code will only initialize the HERE SDK. Beside <code>killLockingApp</code>, also the following values can be set:</p>
+<ul>
+<li><code>noAction</code>: Nothing will be done.</li>
+<li><code>waitLockingAppFinish</code>: The app will wait until the locking process has ended. Note that this may happen never. This is the default behavior.</li>
+</ul>
+<p>Alternatively, the following snippet can be used to detect and to prevent the cache lock issue. This has the same effect as <code>killLockingApp</code> as <code>makeSharedInstance()</code> calls internally  <code>destroyLockingProcess()</code> when this flag is set, but it provides more flexibility:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Check if there is a lock on the cache.</span>
+<span class="token class-name">Integer</span> processID <span class="token operator">=</span> <span class="token class-name">LockingProcess</span><span class="token punctuation">.</span><span class="token function">getLockingProcessId</span><span class="token punctuation">(</span>sdkOptions<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>processID <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Warning: The cache is locked.</span>
+
+    <span class="token comment">// This may kill another process that is trying to attempt to lock the current map cache.</span>
+    <span class="token comment">// If this happens, the method will try to gracefully repair the cache.</span>
+    <span class="token comment">// If no problem was detected, the method will do nothing.</span>
+    long maxTimeoutInMilliseconds <span class="token operator">=</span> <span class="token number">300</span><span class="token punctuation">;</span>
+    <span class="token class-name">LockingProcess</span><span class="token punctuation">.</span><span class="token function">destroyLockingProcess</span><span class="token punctuation">(</span>sdkOptions<span class="token punctuation">,</span> maxTimeoutInMilliseconds<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Now, proceed to initialize the HERE SDK.</span>
+</code></pre>
+<p><code>getLockingProcessId()</code> provides the process ID of the locking process from the Android OS. If no lock occurred, the method will return <code>null</code>.</p>
+<p>By calling <code>destroyLockingProcess()</code> the problem will be gone. You can keep this code to solve sporadic crashes at application start. If no cache lock is detected, <code>destroyLockingProcess()</code> will do nothing.</p>
+<h2 id="specify-the-log-level">Specify the log level</h2>
+<p>The <code>LogControl</code> class allows to log HERE SDK messages for various predefined <code>LogLevel</code> values - even for release builds of your app. Make sure to call the <code>LogControl</code> after calling <code>SdkContext.init(IsolateOrigin.main)</code> and before initializing the HERE SDK:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Disable any logs from HERE SDK.</span>
+<span class="token class-name">LogControl</span><span class="token punctuation">.</span><span class="token function">disableLoggingToConsole</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The above allows to silence all HERE SDK related console logs. Note that this is not recommended for debug builds, as you may miss important log messages when you want to investigate issues.</p>
+<p>A log level can be specified like so:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">LogControl</span><span class="token punctuation">.</span><span class="token function">enableLoggingToConsole</span><span class="token punctuation">(</span><span class="token class-name">LogLevel</span><span class="token punctuation">.</span>logLevelInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>When you provide a <code>LogLevel</code>, you set a minimal level of messages which will be reported, based on the below hierarchy:</p>
+<ol>
+<li><code>logLevelInfo</code></li>
+<li><code>logLevelWarning</code></li>
+<li><code>logLevelError</code></li>
+<li><code>logLevelFatal</code></li>
+</ol>
+<p>For example, if you set <code>logLevelError</code>, then <code>logLevelInfo</code> and <code>logLevelWarning</code> will be excluded from the logs. All others will be logged.</p>
+<p>Setting <code>logLevelOff</code> silences all logs.</p>
+<p>All log messages are prefixed with "hsdk-" to help you easily identify messages originating from the HERE SDK.</p>
+<p>You can also use the <code>LogAppender</code> interface to insert your own logging class to the <code>LogControl</code> class. This enables you to filter log messages based on different runtime conditions. For instance, you could choose to log only errors of type <code>logLevelError</code>. By default, this selective logging isn’t possible, as only the log hierarchy determines which messages are allowed through, and you cannot adjust this minimum level after initializing the HERE SDK. By adding your own logging class, however, you gain complete control.</p>
+<p>When running an iOS simulator, you can obtain logs without running Xcode by executing the following command from the terminal:</p>
+<pre class="language-"><code>xcrun simctl spawn booted log stream --level debug
+</code></pre><h2 id="generate-meaningful-logs-on-android">Generate Meaningful Logs on Android</h2>
+<p>For many issues, the logs you see in your IDE's console are containing already the most relevant information. For crashes and ANRs you may want to dig deeper and take a look at the device logs. When you use <code>logcat</code>, use a timestamp to log only the most recent logs.</p>
+<p>Example:</p>
+<p><code>adb logcat -t '06-30 16:30:00.820' &gt; /Users/name/Desktop/log.txt</code></p>
+<p>Preferably, use <code>adb logcat -c</code> to clear all logs before starting to reproduce the issue.</p>
+<h2 id="generate-meaningful-logs-on-ios">Generate Meaningful Logs on iOS</h2>
+<p>For many issues, the logs you see in Xcode are containing already the most relevant information. For crashes and ANRs you may want to dig deeper and take a look at the device logs:</p>
+<ol>
+<li>Open Xcode and connect the device.</li>
+<li>In Xcode click on the top-level menu bar tab for <strong>Window</strong>.</li>
+<li>Tap on <strong>Device and Simulation</strong>.</li>
+<li>Tap on <strong>View Device Logs</strong> - or in newer Xcode versions tap on <strong>Open Recent Logs</strong> or <strong>Open Console</strong>.</li>
+</ol>
+<h2 id="symbolication-of-android-crash-logs-with-google-play-console">Symbolication of Android crash logs with Google Play Console</h2>
+<p>For apps that are deployed to Google Play Store you must upload the symbols files for each version of your app to get the crash reports as follows:</p>
+<ol>
+<li>Open Google Play Console and open your app.</li>
+<li>On the left menu, select <strong>Release</strong> -&gt; <strong>App bundle explorer</strong>.</li>
+<li>Using the picker in the top-right-hand corner, choose the ZIP archive with debug symbols.</li>
+<li>Select the <strong>Downloads</strong> tab, and scroll down to the <strong>Assets</strong> section.</li>
+<li>Click the upload arrow for the debug symbols as applicable to upload the symbols file for the version of your app. See <a href="https://support.google.com/googleplay/android-developer/answer/9848633?sjid=13558197468535295314-EU#upload_file&amp;zippy=%2Cupload-files-using-the-google-play-developer-api" target="_blank">here</a> for more details.</li>
+<li>Afterwards, crashes and ANRs will be deobfuscated. To view deobfuscated stack traces for individual crashes and ANRs on your app, go to your <strong>Crashes &amp; ANRs</strong> page in the Google Play Console.</li>
+</ol>
+<h2 id="symbolication-of-android-crash-logs-can-be-done-also-locally">Symbolication of Android crash logs can be done also locally</h2>
+<p>Follow the below steps to symbolicate a native crash locally:</p>
+<ol>
+<li>Use Logcat or ADB, gather the crash log and save it to a .txt file:</li>
+</ol>
+<pre class="language-"><code>adb logcat -d &gt; your_crashlog_filename.txt
+</code></pre><ol>
+<li>Get the symbols <code>.so</code> file that we ship with the release package. You can find these <code>.so</code> files inside <code>debug-symbols</code> ZIP file.</li>
+<li>Depending upon your build architecture copy the file path, either <code>arm64-v8a</code> or <code>armeabi-v7a</code>.</li>
+<li>Run the <code>ndk-stack</code> tool command :</li>
+</ol>
+<pre class="language-"><code>path-to-Andorid-sdk/Android/sdk/ndk/24.0.8215888/ndk-stack -sym path-to-directory-with-binary-of-desired-architecture -dump path-to-crash.txt
+</code></pre><p>Note that for this release, please use NDK 24.0.8215888.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="changelog/changelog-explore.html" class="navigation navigation-prev " aria-label="Previous page: Product history">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tips-support.html" class="navigation navigation-next " aria-label="Next page: Community and support">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Debugging and troubleshooting","level":"1.10.5","depth":2,"next":{"title":"Community and support","level":"1.10.6","depth":2,"path":"topics/tips-support.md","ref":"topics/tips-support.md","articles":[]},"previous":{"title":"Product history","level":"1.10.4","depth":2,"path":"topics/changelog/changelog-explore.md","ref":"topics/changelog/changelog-explore.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/tips-troubleshooting.md","mtime":"2025-01-22T16:33:08.798Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

@@ -1,0 +1,1259 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Style techniques reference for custom layers · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="custom-map-styles-style-expressions.html">
+    
+    
+    <link rel="prev" href="custom-map-styles-style-guide.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Style techniques reference for custom layers</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="style-techniques-reference-for-custom-layers">Style techniques reference for custom layers</h1>
+<p>This reference describes the style techniques that can be used to customize the visual appearance of a custom layer through the use of custom styles - as described in the <a href="custom-map-styles-style-guide.html">style guide for custom layers</a>.</p>
+<h2 id="technique-index">Technique index</h2>
+<ul>
+<li><a href="#raster-technique">raster</a></li>
+<li><a href="#line-technique">line</a></li>
+<li><a href="#polygon-technique">polygon</a></li>
+<li><a href="#icon-text-technique">icon-text</a></li>
+</ul>
+<h2 id="techniques">Techniques</h2>
+<h3 id="raster-technique">raster technique</h3>
+<h4 id="opacity">opacity</h4>
+<p>Factor applied to the texture color alpha value in order to control the opacity of the texture.</p>
+<blockquote>
+<p>Type: <code>real</code></p>
+<p>Default Value: <code>1.0</code></p>
+</blockquote>
+<h4 id="brightness">brightness</h4>
+<p>Factor applied to the texture color rgb values in order to control the brightness.</p>
+<blockquote>
+<p>Type: <code>real</code></p>
+<p>Default Value: <code>1.0</code></p>
+</blockquote>
+<h4 id="gamma">gamma</h4>
+<p>Texture gamma correction value.</p>
+<blockquote>
+<p>Type: <code>real</code></p>
+<p>Default Value: <code>1.0</code></p>
+</blockquote>
+<h3 id="line-technique">line technique</h3>
+<h4 id="width">width</h4>
+<p>The width of the line in meters.</p>
+<blockquote>
+<p>Type: <code>real</code></p>
+<p>Default Value: <code>1.0</code></p>
+</blockquote>
+<h4 id="color">color</h4>
+<p>The <a href="custom-map-styles-style-expressions.html#color">color</a> of the line.</p>
+<blockquote>
+<p>Type: <code>color</code></p>
+<p>Default Value: <code>"#ffffff"</code></p>
+</blockquote>
+<h4 id="visible">visible</h4>
+<p>Whether the line is visible (drawn on the map).</p>
+<blockquote>
+<p>Type: <code>boolean</code></p>
+<p>Default Value: <code>true</code></p>
+</blockquote>
+<h4 id="z-order">z-order</h4>
+<p>The relative rendering order of items within a category. Higher z-order item will be drawn on top of lower z-order item.
+The order between items within one category and with the same z-order is undefined.</p>
+<blockquote>
+<p>Type: <code>unsigned integer</code></p>
+<p>Default Value: <code>0</code></p>
+</blockquote>
+<h3 id="polygon-technique">polygon technique</h3>
+<h4 id="color">color</h4>
+<p>The <a href="custom-map-styles-style-expressions.html#color">color</a> of the polygon.</p>
+<blockquote>
+<p>Type: <code>color</code></p>
+<p>Default Value: <code>"#ffffff"</code></p>
+</blockquote>
+<h4 id="visible">visible</h4>
+<p>Whether the polygon is visible (drawn on the map).</p>
+<blockquote>
+<p>Type: <code>boolean</code></p>
+<p>Default Value: <code>true</code></p>
+</blockquote>
+<h4 id="z-order">z-order</h4>
+<p>The relative rendering order of items within a category. Higher z-order item will be drawn on top of lower z-order item.
+The order between items within one category and with the same z-order is undefined.</p>
+<blockquote>
+<p>Type: <code>unsigned integer</code></p>
+<p>Default Value: <code>0</code></p>
+</blockquote>
+<h3 id="icon-text-technique">icon text technique</h3>
+<h4 id="icon-source">icon-source</h4>
+<p>Source of the icon to display. Can be an asset file path or an absolute file path. Icon supported formats are PNG, JPEG, SVG Tiny.</p>
+<blockquote>
+<p>Type: <code>string</code></p>
+<p>Default Value: <code>""</code></p>
+</blockquote>
+<h4 id="icon-width">icon-width</h4>
+<p>Width of the icon. When not provided, the <code>icon-height</code> matching value that would preserve the icon source aspect ratio is used.</p>
+<blockquote>
+<p>Type: <code>real</code></p>
+<p>Default Value: <code>-1.0</code></p>
+</blockquote>
+<p>Examples using an icon with original width of 600 pixels and height of 400 pixels:</p>
+<table>
+<thead>
+<tr>
+<th>icon-width</th>
+<th>icon-height</th>
+<th>Displayed width</th>
+<th>Displayed height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>600</td>
+<td>400</td>
+</tr>
+<tr>
+<td>300</td>
+<td>200</td>
+<td>300</td>
+<td>200</td>
+</tr>
+<tr>
+<td>300</td>
+<td>-</td>
+<td>300</td>
+<td>200</td>
+</tr>
+<tr>
+<td>-</td>
+<td>800</td>
+<td>1200</td>
+<td>800</td>
+</tr>
+</tbody>
+</table>
+<h4 id="icon-height">icon-height</h4>
+<p>Height of the icon. When not provided, the <code>icon-width</code> matching value that would preserve the icon source aspect ratio is used.</p>
+<blockquote>
+<p>Type: <code>real</code></p>
+<p>Default Value: <code>-1.0</code></p>
+</blockquote>
+<p>Examples using an icon with original width of 600 pixels and height of 400 pixels:</p>
+<table>
+<thead>
+<tr>
+<th>icon-width</th>
+<th>icon-height</th>
+<th>Displayed width</th>
+<th>Displayed height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>600</td>
+<td>400</td>
+</tr>
+<tr>
+<td>300</td>
+<td>200</td>
+<td>300</td>
+<td>200</td>
+</tr>
+<tr>
+<td>300</td>
+<td>-</td>
+<td>300</td>
+<td>200</td>
+</tr>
+<tr>
+<td>-</td>
+<td>800</td>
+<td>1200</td>
+<td>800</td>
+</tr>
+</tbody>
+</table>
+<h4 id="icon-placement">icon-placement</h4>
+<p>List of cardinal directions to define the placement of the whole icon with respect to the anchor point. One or more comma separated values: TR, R, BR, B, BL, L, TL, T, C.</p>
+<blockquote>
+<p>Type: <code>string</code></p>
+<p>Default Value: <code>"C"</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Placement</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>Center: icon center would match with the anchor point.</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Top: icon bottom center will match with the anchor point.</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Left: icon right-center will match with the anchor point.</td>
+</tr>
+<tr>
+<td>R</td>
+<td>Right: icon left-center will match with the anchor point.</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Bottom: icon top-center will match with the anchor point.</td>
+</tr>
+<tr>
+<td>TL</td>
+<td>Top-Left: icon bottom-right will match with the anchor point.</td>
+</tr>
+<tr>
+<td>TR</td>
+<td>Top-Right: icon bottom-left will match with the anchor point.</td>
+</tr>
+<tr>
+<td>BL</td>
+<td>Bottom-Left: icon top-right will match with the anchor point.</td>
+</tr>
+<tr>
+<td>BR</td>
+<td>Bottom-Right: icon top-left will match with the anchor point.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="icon-dx">icon-dx</h4>
+<p>Offset to apply to the icon in pixels on the x axis. The displacement direction depends on the icon's placement. Positive values move the icon to the right for C, T, TR, R, BR, B and to the left for TL, L, BL.</p>
+<blockquote>
+<p>Type: <code>real</code></p>
+<p>Default Value: <code>0.0</code></p>
+</blockquote>
+<h4 id="icon-dy">icon-dy</h4>
+<p>Offset to apply to the icon in pixels on the y axis. The displacement direction depends on the icon's placement. Positive values move the icon upwards for C, L, TL, T, TR, R and downwards for BL, B, BR.</p>
+<blockquote>
+<p>Type: <code>real</code></p>
+<p>Default Value: <code>0.0</code></p>
+</blockquote>
+<h4 id="text">text</h4>
+<p>Text to be displayed.</p>
+<blockquote>
+<p>Type: <code>string</code></p>
+<p>Default Value: <code>""</code></p>
+</blockquote>
+<h4 id="text-placement">text-placement</h4>
+<p>Cardinal directions that define the text's placement with respect to the icon. Can be defined as one or more comma separated values. The possible values are comprised of C, T, TR, R, BR, B, BL, L, TL.</p>
+<blockquote>
+<p>Type: <code>string</code></p>
+<p>Default Value: <code>"C"</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Placement</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>Center: text centered in the icon.</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Top: text centered top of the icon. The bottom-center of the text area would match with the icon top-center.</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Left: text placed left of the icon. The right-center of the text area would match with the icon left-center.</td>
+</tr>
+<tr>
+<td>R</td>
+<td>Right: text placed right of the icon. The left-center of the text area would match with the icon right-center.</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Bottom: text placed at the bottom of the icon. The top-center of the text area would match with the icon bottom-center.</td>
+</tr>
+<tr>
+<td>TL</td>
+<td>Top-Left: text placed top-left of the icon. The bottom-right of the text area would match with the icon top-left.</td>
+</tr>
+<tr>
+<td>TR</td>
+<td>Top-Right: text placed top-right of the icon. The bottom-left of the text area would match with the icon top-right.</td>
+</tr>
+<tr>
+<td>BL</td>
+<td>Bottom-Left: text placed bottom-left of the icon. The top-right of the text area would match with the icon bottom-left.</td>
+</tr>
+<tr>
+<td>BR</td>
+<td>Bottom-Right: text placed bottom-right of the icon. The top-left of the text area would match with the icon bottom-right.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="text-dx">text-dx</h4>
+<p>Offset to apply to the text in pixels on the x axis. The displacement direction depends on the text's placement. Positive values move the text to the right for C, T, TR, R, BR, B and to the left for TL, L, BL.</p>
+<blockquote>
+<p>Type: <code>real</code></p>
+<p>Default Value: <code>0.0</code></p>
+</blockquote>
+<h4 id="text-dy">text-dy</h4>
+<p>Offset to apply to the text in pixels on the y axis. The displacement direction depends on the text's placement. Positive values move the text upwards for C, L, TL, T, TR, R and downwards for BL, B, BR.</p>
+<blockquote>
+<p>Type: <code>real</code></p>
+<p>Default Value: <code>0.0</code></p>
+</blockquote>
+<h4 id="text-color">text-color</h4>
+<p>Text <a href="custom-map-styles-style-expressions.html#color">color</a>.</p>
+<blockquote>
+<p>Type: <code>color</code></p>
+<p>Default Value: <code>"#ffffffff"</code></p>
+</blockquote>
+<h4 id="text-outline-width">text-outline-width</h4>
+<p>Text outline width in pixels.</p>
+<blockquote>
+<p>Type: <code>real</code></p>
+<p>Default Value: <code>0.0</code></p>
+</blockquote>
+<h4 id="text-outline-color">text-outline-color</h4>
+<p>Text outline <a href="custom-map-styles-style-expressions.html#color">color</a>.</p>
+<blockquote>
+<p>Type: <code>color</code></p>
+<p>Default Value: <code>"#000000ff"</code></p>
+</blockquote>
+<h4 id="text-size">text-size</h4>
+<p>Text font size in pixels. The font used is FiraGO.</p>
+<blockquote>
+<p>Type: <code>real</code></p>
+<p>Default Value: <code>18.0</code></p>
+</blockquote>
+<h4 id="z-order">z-order</h4>
+<p>The relative rendering order of items within a category. Higher z-order item will be drawn on top of lower z-order item.
+The order between items within one category and with the same z-order is undefined.</p>
+<blockquote>
+<p>Type: <code>unsigned integer</code></p>
+<p>Default Value: <code>0</code></p>
+</blockquote>
+<h4 id="visible">visible</h4>
+<p>Whether the item is visible (drawn on the map).</p>
+<blockquote>
+<p>Type: <code>boolean</code></p>
+<p>Default Value: <code>true</code></p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="custom-map-styles-style-guide.html" class="navigation navigation-prev " aria-label="Previous page: Style guide for custom layers">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="custom-map-styles-style-expressions.html" class="navigation navigation-next " aria-label="Next page: Style expressions reference for custom layers">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Style techniques reference for custom layers","level":"1.4.6.2","depth":3,"next":{"title":"Style expressions reference for custom layers","level":"1.4.6.3","depth":3,"path":"topics/custom-map-styles-style-expressions.md","ref":"topics/custom-map-styles-style-expressions.md","articles":[]},"previous":{"title":"Style guide for custom layers","level":"1.4.6.1","depth":3,"path":"topics/custom-map-styles-style-guide.md","ref":"topics/custom-map-styles-style-guide.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/custom-map-styles-style-techniques.md","mtime":"2025-01-22T16:33:08.542Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

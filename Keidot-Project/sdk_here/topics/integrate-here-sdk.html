@@ -1,0 +1,1157 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Integrate the HERE SDK · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="update-version.html">
+    
+    
+    <link rel="prev" href="get-hsdk-package.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Integrate the HERE SDK</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="integrate-the-here-sdk">Integrate the HERE SDK</h1>
+<p>In this tutorial, we will develop a Flutter application that displays a map.</p>
+<ul>
+<li>If you want to integrate the HERE SDK into an existing application, you can skip the initial steps where we set up a new project from scratch.</li>
+<li>If you prefer to start by running an example app that demonstrates some of the features of the HERE SDK, take a look at this <a href="examples.html#how-to-build-an-example-app">tutorial</a>.</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Make sure you have access to your credentials and the HERE SDK framework. To learn more, see <a href="get-hsdk-package.html">Get the HERE SDK package</a>.</p>
+<h2 id="create-a-new-project">Create a new project</h2>
+<p>If you are new to Flutter, please follow the guides on <a href="https://flutter.dev/docs/get-started/install" target="_blank">flutter.dev</a> to help you get started with the first steps.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The resulting code is available from <a href="https://github.com/heremaps/here-sdk-examples/tree/master/examples/latest/navigate/flutter/hello_map_app" target="_blank">GitHub</a>.</p></div></div>
+<p>You don't need any advanced Flutter or Android or iOS experience to follow this step-by-step instruction.</p>
+<p>For this guide, we have used Android Studio version Android Studio Jellyfish | 2023.3.1 Patch 1 and Xcode version 14.2. In addition, we have used:</p>
+<ul>
+<li>Flutter 3.22.3</li>
+<li>Dart 3.4.4</li>
+</ul>
+<p>Note that all example apps have been also tested with Flutter 3.24.1 and Dart 3.5.1.</p>
+<p>Newer versions may also work, but are not guaranteed to work. It is recommended to use the Dart version that is bundled with Flutter.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>This guide does not cover changes that might be needed when you are migrating your app from a Flutter version that is older than the minimum supported Flutter version 3.22.3. All example apps in this guide are compliant with the Flutter V2 <a href="https://flutter.dev/docs/development/packages-and-plugins/plugin-api-migration" target="_blank">plugin architecture</a>. By default, new app projects created with Android Studio are already ready for V2 plugins when Flutter version 1.12 or higher is used.</p></div></div>
+<p>To create a new HERE SDK for Flutter project:</p>
+<p>First, create a new Flutter project, we have called it "hello_map". Make sure you can run your new Flutter project on an Android and iOS device of your choice to make sure that your Flutter SDK is configured correctly. If it does not work, please refer to the Flutter documentation.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>If you don't want to support both platforms, you can skip the steps for either iOS or Android. Note that the HERE SDK for Flutter does not support web and desktop apps.</p></div></div>
+<h2 id="integrate-the-here-sdk-flutter-plugin">Integrate the HERE SDK Flutter plugin</h2>
+<p>As soon as you have verified that everything is set up correctly, it's time to integrate the HERE SDK for Flutter.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Note that the HERE SDK is only available as a separate download. Artifactory support via Maven / Gradle, CocoaPods or pub.dev is not yet available. We plan to add SDK Dependency Management for a future release.</p></div></div>
+<p>Unzip the downloaded HERE SDK for Flutter package. This package contains various files including this documentation:</p>
+<ul>
+<li>A license file.</li>
+<li>The Developer Guide.</li>
+<li>The API Reference.</li>
+<li>The changelog.</li>
+<li>A TAR file containing the HERE SDK for Flutter plugin. The file is named like this: <code>here_sdk-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>edition</span><span class="token punctuation">&gt;</span></span>-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>.release.tar.gz</code>.</li>
+</ul>
+<p>Unzip the TAR file, then rename the folder to <code>here_sdk</code>. The content of the plugin folder looks similar like below:</p>
+<center><p>
+  <img src="../graphics/plugin.png" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: The content of the HERE SDK plugin folder.</figcaption>
+</p></center>
+
+<p>Now create a <code>plugins</code> folder inside your project and copy the renamed plugin folder to this new folder. With this, the content of the plugin folder is contained in <code>hello_map/plugins/here_sdk</code>.</p>
+<p>Open the <code>pubspec.yaml</code> file of your Flutter project and add the path from above to the <code>dependencies</code> section. If you are not sure where to add this, it should look as follows:</p>
+<pre class="language-"><code class="lang-xml">dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^0.1.3
+
+  # The following adds the HERE SDK for Flutter plugin folder to your application.
+  here_sdk:
+    path: plugins/here_sdk
+</code></pre>
+<p>Of course, if you want, you can rename the plugin folder and adjust the path.</p>
+<p>If the path is specified correctly, you can execute <code>flutter pub get</code> from your terminal and the HERE SDK should appear in your project tree. For example, if you are using Android Studio, it will appear under <strong>External Libraries</strong> -&gt; <strong>Flutter Plugins</strong>.</p>
+<p>After you have executed <code>flutter pub get</code> (or clicked the respective "Pub get" button in Android Studio or any other IDE), a new Podfile is created for iOS. Open <code>hello_map/ios/Podfile</code> and set the platform to the minimum supported iOS version.</p>
+<!-- For codesnippet workaround, see IDS-4533, omit the backticks: ```xml
+<pre><code class="lang-xml">
+# Uncomment this line to define a global platform for your project.
+platform :ios, '15.0'
+</code></pre>
+-->
+<p>Uncomment this line to define a global platform for your project:</p>
+<p>platform :ios, '15.0'</p>
+<p>Then open <code>hello_map/ios/Runner.xcodeproj</code> with Xcode and set the deployment target to the same iOS version (via Xcode: <strong>General</strong> -&gt; <strong>Deployment Info</strong> -&gt; <strong>Target</strong>). This step is needed if you want to build your app later on with <code>flutter build ios</code> from the terminal for <a href="https://flutter.dev/docs/deployment/ios" target="_blank">release</a>.
+<!---
+Internal note: When creating apps make sure to set Project Runner and Target Runner in Xcode. Target Runner only updates the target and keeps the default target for project.
+Plus: Also add DEVELOPMENT_TEAM = "" // With Xcode once set a signing team, then set it back to 'None'.
+--></p>
+<p>Now, adjust the minimum supported Android SDK version. Open <code>/hello_map/android/app/build.gradle</code> to change the <code>minSdkVersion</code> to:</p>
+<!-- For codesnippet workaround, see IDS-4533
+<pre><code class="lang-xml">
+minSdkVersion 24
+</code></pre>
+-->
+<p>minSdkVersion 24</p>
+<h2 id="initialize-the-here-sdk">Initialize the HERE SDK</h2>
+<p>The HERE SDK is not initialized automatically. Instead, you can freely decide at which point in time the HERE SDK should be initialized. Initialization happens synchronously on the main thread and takes around 100 ms.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Initialization of the HERE SDK will be successful even if your credentials are invalid. The best way to check if your credentials are valid is to try a feature engine. Invalid credentials will result in a dedicated error enum value. Note that certain features may require more rights than others. For example, the credentials obtained for the <em>Explore Edition</em> will result in an error when being used with the <code>OfflineSearchEngine</code> - which is not part of the subset of the <em>Explore Edition</em>.</p></div></div>
+<p>Initialize the HERE SDK by executing the following method before you want to use any feature of the HERE SDK:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_initializeHERESDK</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Needs to be called before accessing SDKOptions to load necessary libraries.</span>
+  <span class="token class-name">SdkContext</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token class-name">IsolateOrigin</span><span class="token punctuation">.</span>main<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Set your credentials for the HERE SDK.</span>
+  <span class="token class-name">String</span> accessKeyId <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"YOUR_ACCESS_KEY_ID"</span></span><span class="token punctuation">;</span>
+  <span class="token class-name">String</span> accessKeySecret <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"YOUR_ACCESS_KEY_SECRET"</span></span><span class="token punctuation">;</span>
+  <span class="token class-name">AuthenticationMode</span> authenticationMode <span class="token operator">=</span>
+      <span class="token class-name">AuthenticationMode</span><span class="token punctuation">.</span><span class="token function">withKeySecret</span><span class="token punctuation">(</span>accessKeyId<span class="token punctuation">,</span> accessKeySecret<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">SDKOptions</span> sdkOptions <span class="token operator">=</span> <span class="token class-name">SDKOptions</span><span class="token punctuation">.</span><span class="token function">withAuthenticationMode</span><span class="token punctuation">(</span>authenticationMode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> <span class="token class-name">SDKNativeEngine</span><span class="token punctuation">.</span><span class="token function">makeSharedInstance</span><span class="token punctuation">(</span>sdkOptions<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">InstantiationException</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Failed to initialize the HERE SDK."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Make sure to insert correct credentials for key and secret. By calling <code>makeSharedInstance()</code> you initialize all what is needed to use the HERE SDK. The core class of the HERE SDK is called <code>SDKNativeEngine</code>. Under the hood, this instance is used by any other engine that is offered by the HERE SDK.</p>
+<p>The HERE SDK requires initialization of its native libraries via <code>SdkContext</code>, which should happen before your app widget is started.</p>
+<p>Below we show an example how to call <code>initializeHERESDK()</code> in the <code>main()</code> method of a widget - before accessing the <code>MapView</code> from your layout. Always call <code>initializeHERESDK()</code> on the main isolate.</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Usually, you need to initialize the HERE SDK only once during the lifetime of an application.</span>
+  <span class="token function">_initializeHERESDK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Similarly to <code>initializeHERESDK()</code>, you can also free resources by disposing the HERE SDK:</p>
+<pre class="language-"><code class="lang-dart"><span class="token metadata function">@override</span>
+<span class="token keyword">void</span> <span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">_disposeHERESDK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">_disposeHERESDK</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Free HERE SDK resources before the application shuts down.</span>
+  <span class="token keyword">await</span> <span class="token class-name">SDKNativeEngine</span><span class="token punctuation">.</span>sharedInstance<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">SdkContext</span><span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  _appLifecycleListener<span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>In the <a href="tips-engines.html">Engines</a> section you can find more ways to initialize the HERE SDK.</p>
+<h2 id="add-a-map-view">Add a map view</h2>
+<p>Below you can see how to show a HERE map view. Remove all the code from your <code>main.dart</code> file and replace it with the following:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">import</span> <span class="token string-literal"><span class="token string">'package:flutter/material.dart'</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string-literal"><span class="token string">'package:here_sdk/core.dart'</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string-literal"><span class="token string">'package:here_sdk/core.engine.dart'</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string-literal"><span class="token string">'package:here_sdk/core.errors.dart'</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string-literal"><span class="token string">'package:here_sdk/mapview.dart'</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Usually, you need to initialize the HERE SDK only once during the lifetime of an application.</span>
+  <span class="token function">_initializeHERESDK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">runApp</span><span class="token punctuation">(</span><span class="token class-name">MyApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">_initializeHERESDK</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Needs to be called before accessing SDKOptions to load necessary libraries.</span>
+  <span class="token class-name">SdkContext</span><span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token class-name">IsolateOrigin</span><span class="token punctuation">.</span>main<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Set your credentials for the HERE SDK.</span>
+  <span class="token class-name">String</span> accessKeyId <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"YOUR_ACCESS_KEY_ID"</span></span><span class="token punctuation">;</span>
+  <span class="token class-name">String</span> accessKeySecret <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"YOUR_ACCESS_KEY_SECRET"</span></span><span class="token punctuation">;</span>
+  <span class="token class-name">AuthenticationMode</span> authenticationMode <span class="token operator">=</span>
+    <span class="token class-name">AuthenticationMode</span><span class="token punctuation">.</span><span class="token function">withKeySecret</span><span class="token punctuation">(</span>accessKeyId<span class="token punctuation">,</span> accessKeySecret<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">SDKOptions</span> sdkOptions <span class="token operator">=</span> <span class="token class-name">SDKOptions</span><span class="token punctuation">.</span><span class="token function">withAuthenticationMode</span><span class="token punctuation">(</span>authenticationMode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> <span class="token class-name">SDKNativeEngine</span><span class="token punctuation">.</span><span class="token function">makeSharedInstance</span><span class="token punctuation">(</span>sdkOptions<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">InstantiationException</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token class-name">Exception</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Failed to initialize the HERE SDK."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">StatefulWidget</span> <span class="token punctuation">{</span>
+  <span class="token metadata function">@override</span>
+  _MyAppState <span class="token function">createState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">_MyAppState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> _MyAppState <span class="token keyword">extends</span> <span class="token class-name">State</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MyApp</span><span class="token punctuation">&gt;</span></span> <span class="token punctuation">{</span>
+  late <span class="token keyword">final</span> <span class="token class-name">AppLifecycleListener</span> _appLifecycleListener<span class="token punctuation">;</span>
+
+  <span class="token metadata function">@override</span>
+  <span class="token class-name">Widget</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">BuildContext</span> context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token class-name">MaterialApp</span><span class="token punctuation">(</span>
+      title<span class="token punctuation">:</span> <span class="token string-literal"><span class="token string">'HERE SDK for Flutter - Hello Map!'</span></span><span class="token punctuation">,</span>
+      home<span class="token punctuation">:</span> <span class="token class-name">HereMap</span><span class="token punctuation">(</span>onMapCreated<span class="token punctuation">:</span> _onMapCreated<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">void</span> <span class="token function">_onMapCreated</span><span class="token punctuation">(</span><span class="token class-name">HereMapController</span> hereMapController<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// The camera can be configured before or after a scene is loaded.</span>
+    <span class="token keyword">const</span> double distanceToEarthInMeters <span class="token operator">=</span> <span class="token number">8000</span><span class="token punctuation">;</span>
+    <span class="token class-name">MapMeasure</span> mapMeasureZoom <span class="token operator">=</span> <span class="token class-name">MapMeasure</span><span class="token punctuation">(</span><span class="token class-name">MapMeasureKind</span><span class="token punctuation">.</span>distance<span class="token punctuation">,</span> distanceToEarthInMeters<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    hereMapController<span class="token punctuation">.</span>camera<span class="token punctuation">.</span><span class="token function">lookAtPointWithMeasure</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.530932</span><span class="token punctuation">,</span> <span class="token number">13.384915</span><span class="token punctuation">)</span><span class="token punctuation">,</span> mapMeasureZoom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Load the map scene using a map scheme to render the map with.</span>
+    hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">loadSceneForMapScheme</span><span class="token punctuation">(</span><span class="token class-name">MapScheme</span><span class="token punctuation">.</span>normalDay<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token class-name">MapError</span><span class="token operator">?</span> error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>error <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'Map scene not loaded. MapError: </span><span class="token interpolation"><span class="token punctuation">${</span><span class="token expression">error<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token metadata function">@override</span>
+  <span class="token keyword">void</span> <span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">initState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    _listener <span class="token operator">=</span> <span class="token class-name">AppLifecycleListener</span><span class="token punctuation">(</span>
+      onDetach<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">&gt;</span>
+      <span class="token comment">// Sometimes Flutter may not reliably call dispose(),</span>
+      <span class="token comment">// therefore it is recommended to dispose the HERE SDK</span>
+      <span class="token comment">// also when the AppLifecycleListener is detached.</span>
+      <span class="token comment">// See more details: https://github.com/flutter/flutter/issues/40940</span>
+      <span class="token punctuation">{</span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'AppLifecycleListener detached.'</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">_disposeHERESDK</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token metadata function">@override</span>
+  <span class="token keyword">void</span> <span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">_disposeHERESDK</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">void</span> <span class="token function">_disposeHERESDK</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Free HERE SDK resources before the application shuts down.</span>
+    <span class="token keyword">await</span> <span class="token class-name">SDKNativeEngine</span><span class="token punctuation">.</span>sharedInstance<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">SdkContext</span><span class="token punctuation">.</span><span class="token function">release</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    _appLifecycleListener<span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p><a href="https://dart.dev/null-safety#sidenav-2-4" target="_blank">Null safety</a> is supported by default. It can be <a href="https://dart.dev/null-safety/unsound-null-safety" target="_blank">optionally</a> disabled, by adding the following comment on top of any Dart file: <code>// @dart=2.9</code>.</p></div></div>
+<p>Since the <code>HereMap</code> is already implemented as a stateful widget, you can set it directly as the <code>home</code> for your app. The private <code>_onMapCreated</code> callback notifies us when the <code>HereMapController</code> instance is created. The <code>HereMapController</code> allows you to interact with the map.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Note that multiple <code>MapView</code> instances can be created and rendered on the same screen.</p></div></div>
+<p>Before you can see any vector tiles on the map, we must load a map scheme. Here we load <code>MapScheme.normalDay</code>. As an exercise, you can try to replace the above map scheme with the following: <code>MapScheme.satellite</code>. What do you get? Try out also other map schemes, like the normal <code>night</code> scheme.</p>
+<p>The view onto the map can be defined via the <code>camera</code> object. In the example above we show a location in Berlin, Germany.</p>
+<h2 id="handle-the-lifetime">Handle the lifetime</h2>
+<p>In addition, it is recommended to free resources when leaving the app by calling <code>SDKNativeEngine.sharedInstance?.dispose()</code> and <code>SdkContext.release()</code>. The <code>SDKNativeEngine</code> is implicitly created and set when the HERE SDK is automatically initialized. This can be done in the overridden <code>dispose()</code> method of a stateful widget. More information on initialization can be found <a href="tips-engines.html#initialization-options">here</a>.</p>
+<p>Note that when an app is shutting down anyways, then it is not mandatory to dispose of the <code>SDKNativeEngine</code>, but it doesn't do harm to do it and it is considered good practice to cancel ongoing requests and shut down the HERE SDK services. On the other hand, be careful to not dispose the HERE SDK too early when only one of your widgets is destroyed and other parts of your app still need the HERE SDK. In general, it is also possible to init / dispose the HERE SDK for each widget individually.</p>
+<h2 id="run-your-app">Run your app</h2>
+<p>Now, it's time to build and run the app. Attach a device or start an emulator or simulator and execute <code>flutter run</code> from the app's directory - or run the app from within your IDE. If all goes well, you should see a HERE map covering the screen.</p>
+<center><p>
+  <img src="../graphics/hello_map.png" width="800" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing main map scheme.</figcaption>
+</p></center>
+
+
+<center><p>
+  <img src="../graphics/hello_map_satellite.png" width="800" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing satellite map scheme.</figcaption>
+</p></center>
+
+<h2 id="next-steps">Next steps</h2>
+<ul>
+<li>Learn how to integrate the HERE SDK in a new project. See <a href="integrate-here-sdk.html">Integrate the HERE SDK</a>.</li>
+<li>Learn more about the features of the HERE SDK. See the <a href="introduction-feature-list.html">Feature list</a> topic.</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="get-hsdk-package.html" class="navigation navigation-prev " aria-label="Previous page: Get the HERE SDK package">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="update-version.html" class="navigation navigation-next " aria-label="Next page: Update from previous versions">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Integrate the HERE SDK","level":"1.2.2","depth":2,"next":{"title":"Update from previous versions","level":"1.3","depth":1,"path":"topics/update-version.md","ref":"topics/update-version.md","articles":[]},"previous":{"title":"Get the HERE SDK package","level":"1.2.1","depth":2,"path":"topics/get-hsdk-package.md","ref":"topics/get-hsdk-package.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/integrate-here-sdk.md","mtime":"2025-01-22T16:33:08.594Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

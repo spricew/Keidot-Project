@@ -1,0 +1,1044 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Adjust the map view · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="gestures.html">
+    
+    
+    <link rel="prev" href="maps.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Adjust the map view</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="adjust-the-map-view">Adjust the map view</h1>
+<p>The HERE SDK offers various methods to change the map view. While map styles allow you to alter the appearance of the map, the <code>MapCamera</code> functionality enables you to view the map from different perspectives.</p>
+<h2 id="how-does-it-work">How does it work?</h2>
+<p>With the HERE SDK, you can set a target location, tilt the camera, zoom in and out, and adjust the bearing angle, among other capabilities.</p>
+<ul>
+<li>Use the <code>MapCamera</code> returned by <code>HereMapController.camera</code> to manipulate the view of the map.</li>
+<li>Set a new target location by calling <code>camera.lookAtPoint(GeoCoordinates(52.520798, 13.409408))</code>. This instantly switches the map view to the new location.</li>
+<li>Get the current center location of the map view by calling <code>camera.state.targetCoordinates</code>.</li>
+<li>Zoom the map by setting a distance in meters: <code>_hereMapController.camera.lookAtPointWithMeasure(mapCenter, MapMeasure(MapMeasureKind.distance, distanceToEarthInMeters))</code>. Get the current distance from the camera's <code>State</code> property. The <code>State</code> provides also the current the zoom level.</li>
+<li>Set a <code>GeoOrientationUpdate</code> to specify the tilt angle and bearing angle of the camera.</li>
+<li>Set a transform center with <code>MapCamera.principalPoint</code> to change the default pivot point that is centered on the map view.</li>
+<li>Get the bounds of the currently displayed area from <code>camera.boundingBox</code>.</li>
+<li>Set the bounds of an area to display by calling <code>camera.lookAtAreaWithGeoOrientation(geoBox, orientation)</code>.</li>
+<li>Move the map: Run basic animations from A to B with the <code>MapCameraAnimationFactory</code>. Customize animations by using one of its overloaded methods - for example, use <code>flyTo()</code> for advanced animations.</li>
+</ul>
+<p>By default, the camera is located centered above the map. From a bird's eye view looking straight-down, the map is oriented north up. This means that on your device, the top edge is pointing to the north of the map.</p>
+<h2 id="change-the-camera-location">Change the camera location</h2>
+<p>If you want to move the map to a new location with an animation, use the <code>flyTo()</code> method of the <code>MapCameraAnimationFactory</code>. If you want to instantly switch to a new map location, you can do so by setting a new target:</p>
+<p>By setting a new camera target, you can change the camera's location and effectively change the location that is shown at the center of the map view. The <code>lookAt()</code> method is available in different overloads. Just a few examples:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Change only the location.</span>
+_hereMapController<span class="token punctuation">.</span>camera<span class="token punctuation">.</span><span class="token function">lookAtPoint</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.520798</span><span class="token punctuation">,</span> <span class="token number">13.409408</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Change zoom and location.</span>
+double distanceToEarthInMeters <span class="token operator">=</span> <span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">2.0</span><span class="token punctuation">;</span>
+<span class="token class-name">MapMeasure</span> mapMeasureZoom <span class="token operator">=</span> <span class="token class-name">MapMeasure</span><span class="token punctuation">(</span><span class="token class-name">MapMeasureKind</span><span class="token punctuation">.</span>distance<span class="token punctuation">,</span> distanceToEarthInMeters<span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>camera<span class="token punctuation">.</span><span class="token function">lookAtPointWithMeasure</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.530932</span><span class="token punctuation">,</span> <span class="token number">13.384915</span><span class="token punctuation">)</span><span class="token punctuation">,</span> mapMeasureZoom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Change location area and orientation.</span>
+<span class="token keyword">var</span> southWestCorner <span class="token operator">=</span> <span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.373556</span><span class="token punctuation">,</span> <span class="token number">13.114358</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> northEastCorner <span class="token operator">=</span> <span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.611022</span><span class="token punctuation">,</span> <span class="token number">13.479493</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> geoBox <span class="token operator">=</span> <span class="token class-name">GeoBox</span><span class="token punctuation">(</span>southWestCorner<span class="token punctuation">,</span> northEastCorner<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> bearing<span class="token punctuation">;</span> <span class="token comment">// Set null, to keep bearing unchanged.</span>
+<span class="token keyword">var</span> tilt <span class="token operator">=</span> <span class="token number">45.0</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> orientation <span class="token operator">=</span> <span class="token class-name">GeoOrientationUpdate</span><span class="token punctuation">(</span>bearing<span class="token punctuation">,</span> tilt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>camera<span class="token punctuation">.</span><span class="token function">lookAtAreaWithGeoOrientation</span><span class="token punctuation">(</span>geoBox<span class="token punctuation">,</span> orientation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Note that changing the orientation (bearing, tilt) of the camera does not change the location of the map.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The HERE SDK also supports dedicated zoom levels in the range [0,22] to provide a quick way to achieve the desired level of detail. Call the camera's <code>zoomTo(zoomLevel)</code> method to set the zoom level and access the current zoom level from the camera's <code>State</code> property. Important: the zoom level is set as <code>Double</code>, be sure to not mix it with the <code>distanceInMeters</code> parameter that is also of type <code>Double</code>.</p></div></div>
+<p>By changing the camera, you can only programmatically change the perspective of the map view, but you do not have direct control of the map view itself - like when performing gestures to zoom the map or to rotate or to tilt the map. See the <a href="gestures.html">Gestures</a> section for an overview of the available gestures to manipulate the map directly.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>A <code>MapCamera</code> is always in a defined <code>State</code>. For example, the <code>State</code> is providing the current target location. This target location indicates the current center of the map view - unless the default principal point was changed (see below).</p></div></div>
+<p>Alternatively, fly to a location with a concave bow animation:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_flyTo</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span> geoCoordinates<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">GeoCoordinatesUpdate</span> geoCoordinatesUpdate <span class="token operator">=</span> <span class="token class-name">GeoCoordinatesUpdate</span><span class="token punctuation">.</span><span class="token function">fromGeoCoordinates</span><span class="token punctuation">(</span>geoCoordinates<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  double bowFactor <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token class-name">MapCameraAnimation</span> animation <span class="token operator">=</span>
+      <span class="token class-name">MapCameraAnimationFactory</span><span class="token punctuation">.</span><span class="token function">flyTo</span><span class="token punctuation">(</span>geoCoordinatesUpdate<span class="token punctuation">,</span> bowFactor<span class="token punctuation">,</span> <span class="token class-name">Duration</span><span class="token punctuation">(</span>seconds<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  _hereMapController<span class="token punctuation">.</span>camera<span class="token punctuation">.</span><span class="token function">startAnimation</span><span class="token punctuation">(</span>animation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="rotate-the-camera">Rotate the camera</h2>
+<p>With the camera, you cannot rotate the map directly, but change the camera's orientation instead. By changing the <code>bearing</code> parameter of the <code>GeoOrientationUpdate</code>, you will have the same effect as when rotating the map.</p>
+<p>The orientation of the map is usually specified by a bearing angle. 'Bearing' is a navigational term, counted in degrees, from the North in a clockwise direction.</p>
+<center><p>
+  <img src="../graphics/bearing.png" width="450">
+  <figcaption>Illustration: Bearing direction.</figcaption>
+</p></center>
+
+<p>By default, the camera has a bearing value of 0° degrees. By setting a bearing angle of 45°, as visualized in the illustration above, the map appears to the camera's eye as it rotates counter-clockwise and the direction of the bearing becomes the new upward direction on your map, pointing to the top edge of your device. This is similar to holding and rotating a paper map while hiking in a certain direction. Apparently, it is easier to orient yourself if the map's top edge points in the direction in which you want to go. However, this will not always be the true North direction (bearing = 0°).</p>
+<p>Note that the bearing axis is always perpendicular to the ground and passes through the camera, regardless of the current camera orientation.</p>
+<p>The following code rotates the camera by 90°:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">var</span> bearingInDegrees <span class="token operator">=</span> <span class="token number">90.0</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> tiltInDegrees <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> orientation <span class="token operator">=</span> <span class="token class-name">GeoOrientationUpdate</span><span class="token punctuation">(</span>bearingInDegrees<span class="token punctuation">,</span> tiltInDegrees<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> target <span class="token operator">=</span> <span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.373556</span><span class="token punctuation">,</span> <span class="token number">13.114358</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> distanceToEarthInMeters <span class="token operator">=</span> <span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">7.0</span><span class="token punctuation">;</span>
+<span class="token class-name">MapMeasure</span> mapMeasureZoom <span class="token operator">=</span> <span class="token class-name">MapMeasure</span><span class="token punctuation">(</span><span class="token class-name">MapMeasureKind</span><span class="token punctuation">.</span>distance<span class="token punctuation">,</span> distanceToEarthInMeters<span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>camera<span class="token punctuation">.</span><span class="token function">lookAtPointWithGeoOrientationAndMeasure</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> orientation<span class="token punctuation">,</span> mapMeasureZoom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Effectively, for the viewer this lets the map appear rotated by 90° to the left.</p>
+<p>Alternatively, you can use the nullable constructor fields and set only the tilt value for the orientation like so:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">var</span> bearing <span class="token operator">=</span> <span class="token number">90.0</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> defaultOrientation <span class="token operator">=</span> <span class="token class-name">GeoOrientationUpdate</span><span class="token punctuation">(</span>bearing<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Then the current tilt orientation of the map will be unchanged and only the bearing can be changed.</p>
+<h2 id="tilt-the-camera">Tilt the camera</h2>
+<p>The camera can also be used to transform the flat 2D map surface to a 3D perspective to see, for example, roads at a greater distance that may appear towards the horizon. By default, the camera is not tilted (tilt = 0°).</p>
+<p>In addition to the tilt value of the camera, the camera's bearing angle (see above) can be manipulated. Here we show the effect of changing the tilt value. Look at the illustration below to see the available camera axes.</p>
+<p>A tilt value of 0° means that the camera's optical axis is perpendicular to the ground. The tilt angle is always calculated from this perpendicular axis. The tilt angle relates to the optical axis of the camera.</p>
+<p>As visualized in the illustration, tilting the camera by 45° will change the bird's eye view of the camera to a 3D perspective. Use the code below to change only the tilt value of the camera:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">var</span> bearingInDegrees <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> tiltInDegrees <span class="token operator">=</span> <span class="token number">45.0</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> orientation <span class="token operator">=</span> <span class="token class-name">GeoOrientationUpdate</span><span class="token punctuation">(</span>bearingInDegrees<span class="token punctuation">,</span> tiltInDegrees<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> target <span class="token operator">=</span> <span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.373556</span><span class="token punctuation">,</span> <span class="token number">13.114358</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> distanceInMeters <span class="token operator">=</span> <span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">7.0</span><span class="token punctuation">;</span>
+<span class="token class-name">MapMeasure</span> mapMeasureZoom <span class="token operator">=</span> <span class="token class-name">MapMeasure</span><span class="token punctuation">(</span><span class="token class-name">MapMeasureKind</span><span class="token punctuation">.</span>distance<span class="token punctuation">,</span> distanceToEarthInMeters<span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>camera<span class="token punctuation">.</span><span class="token function">lookAtPointWithGeoOrientationAndMeasure</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> orientation<span class="token punctuation">,</span> mapMeasureZoom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Alternatively, you can use the nullable constructor fields and set only the tilt value for the orientation like so (this will keep the current or default bearing value of the map):</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">var</span> tilt <span class="token operator">=</span> <span class="token number">45.0</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> newOrientation <span class="token operator">=</span> <span class="token class-name">GeoOrientationUpdate</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> tilt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>As you can see in the illustration below, the tilt angle is calculated from the vertical axis at the target location. The direction pointing straight-down below the observer is called the nadir. Setting a tilt value will effectively move the camera to keep focusing the camera's target.</p>
+<p>Note that each tilt value is applied as absolute value and not as delta - this means that subsequent tilt values will be always applied from the camera's default location and not the previous location. Therefore, setting the same tilt value multiple times, will not change the camera's tilt axis. This is common for most camera operations. Values that are out of range will be clamped.</p>
+<center><p>
+  <img src="../graphics/tilt.png" width="750">
+  <figcaption>Illustration: Tilt the map.</figcaption>
+</p></center>
+
+<p>All axes can be manipulated at the same time.</p>
+<p>Note that changing the bearing value will give different results when the camera is tilted - as illustrated below: a tilted camera will lead to a different target location when a bearing value is set, while an untilted camera will keep its target location.</p>
+<center><p>
+  <img src="../graphics/camera_explore.png" width="250">
+  <figcaption>Illustration: The axes of the camera for bearing and tilt.</figcaption>
+</p></center>
+
+<h2 id="change-the-transform-center">Change the transform center</h2>
+<p>By default, the map's pivot point - or principal point - is centered on the map view. It determines the point where the target coordinates are placed within the map view. Setting a new principal point instantly moves the map to render the current target coordinates at the new principal point. It is set in pixels relative to the map view's origin top-left (0, 0).</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The principal point affects all programmatic map transformations (rotate, orbit, tilt and zoom) and the two-finger-pan gesture to tilt the map. Other gestures, like pinch-rotate, are not affected.</p></div></div>
+<p>Usually, you want to set the principal point only once, for example to lower the transform center a bit during turn-by-turn navigation - so the user can see more of the road ahead. To achieve this, you need to get the pixel dimensions of your map view (based on your layout and the device's screen dimensions) and then lower the height by 3/4, that is multiply <code>mapViewHeightInPixels</code> by 0.75. See the following example:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Repositions principal point 3/4 lower than default.</span>
+<span class="token keyword">var</span> mapViewWidthInPixels <span class="token operator">=</span> _hereMapController<span class="token punctuation">.</span>viewportSize<span class="token punctuation">.</span>width<span class="token punctuation">;</span>
+<span class="token keyword">var</span> mapViewHeightInPixels <span class="token operator">=</span> _hereMapController<span class="token punctuation">.</span>viewportSize<span class="token punctuation">.</span>height<span class="token punctuation">;</span>
+<span class="token class-name">Point2D</span> newTransformCenter <span class="token operator">=</span> <span class="token class-name">Point2D</span><span class="token punctuation">(</span>mapViewWidthInPixels <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">,</span> mapViewHeightInPixels <span class="token operator">*</span> <span class="token number">0.75</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>camera<span class="token punctuation">.</span>principalPoint <span class="token operator">=</span> newTransformCenter<span class="token punctuation">;</span>
+</code></pre>
+<p>The code snippet above sets a new principal point that will instantly move the current map center down by 3/4 of the visible map area on screen. Once set, all further map manipulations will be pivoted around this new principal point. For example, when you programmatically rotate the map, the map will always rotate around the principal point.</p>
+<p>More example code for this can be seen in the "camera_app" example on <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">GitHub</a>.</p>
+<h2 id="customize-gestures-and-camera-behavior">Customize gestures and camera behavior</h2>
+<p>By default, the map view supports several <a href="gestures.html">gestures</a> that allow users to manipulate the camera by interacting with the map. For example, you can pinch and rotate the map using a two-finger gesture. Each gesture also adjusts the properties of the <code>camera</code>. If you want to customize the default behavior, you can disable any of the supported <code>GestureType</code> actions and define your own camera manipulation.</p>
+<h2 id="add-animations">Add animations</h2>
+<p>More advanced animation examples can be seen in the <code>CameraKeyframeTracks</code> example app on <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">GitHub</a>.</p>
+<p>If you are looking for an example how to zoom to a <code>Route</code>, or a <code>GeoBox</code>, take a look at the <a href="routing-ui.html#zoom-to-the-route">routing section</a>. This can be done with or without an animation - including an optional padding.</p>
+<h2 id="try-the-camera-example-app">Try the Camera example app</h2>
+<p>Most of the code snippets mentioned above are available in our "camera_app" example app. You can find this example app on <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">GitHub</a> for your preferred platform.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="maps.html" class="navigation navigation-prev " aria-label="Previous page: Get started with Maps">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="gestures.html" class="navigation navigation-next " aria-label="Next page: Interact with the map">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Adjust the map view","level":"1.4.2","depth":2,"next":{"title":"Interact with the map","level":"1.4.3","depth":2,"path":"topics/gestures.md","ref":"topics/gestures.md","articles":[]},"previous":{"title":"Get started with Maps","level":"1.4.1","depth":2,"path":"topics/maps.md","ref":"topics/maps.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/camera.md","mtime":"2025-01-22T16:33:08.214Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

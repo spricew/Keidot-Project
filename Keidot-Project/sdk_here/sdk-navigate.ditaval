@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<val>
+<prop action="exclude" att="platform" val="pdfonly"/>
+<prop action="include" att="platform" val="htmlonly"/>
+<prop action="exclude" att="product" val="sdk-explore"/>
+<prop action="exclude" att="product" val="sdk-headless"/>
+<prop action="exclude" att="product" val="sdk-light"/>
+<prop action="include" att="product" val="sdk-navigate"/>
+<prop action="exclude" att="audience" val="internal"/>
+<prop action="include" att="audience" val="external"/>
+</val>

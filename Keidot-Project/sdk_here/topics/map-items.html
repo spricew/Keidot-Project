@@ -1,0 +1,1730 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Add map items · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="map-styles.html">
+    
+    
+    <link rel="prev" href="gestures.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Add map items</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="add-map-items">Add map items</h1>
+<p>The HERE SDK allows you to add several types of items to the map, such as map polylines and markers. They are explained in detail in the sections below. Currently, the following map items are supported:</p>
+<ul>
+<li><strong>Map polylines:</strong> Non-moveable rendered lines.</li>
+<li><strong>Map arrows:</strong> A convenient way to show arrow indicators on the map.</li>
+<li><strong>Map polygons:</strong> Non-moveable rendered shapes.</li>
+<li><strong>Map circles:</strong> Non-moveable rendered circles that can be defined as geo polygons.</li>
+<li><strong>Map markers:</strong> Images that can be pinned to 'mark' specific spots on the map.</li>
+<li><strong>Map marker clustering:</strong> A group of map markers that can be clustered dependent on zoom level.</li>
+<li><strong>Embedded POIs:</strong> Pickable preconfigured and embedded POI objects (Carto POIs) on the map such as public transit stations, restaurants, ATMs and other facilities.</li>
+<li><strong>Map markers 3D:</strong> 3D shapes rendered on the map at the specified geographic coordinates.</li>
+<li><strong>Flat map markers:</strong> Flat map markers that rotates and tilt together with the map.</li>
+<li><strong>Location indicator</strong> Predefined assets to indicate the current device location on the map.</li>
+<li><strong>Map view pins:</strong> A convenient way to show native Flutter <code>Widget</code> layouts on the map.</li>
+</ul>
+<p>Polylines, polygons and circles, will adjust their size based on the current zoom level, while markers remain and pins unchanged when zooming.</p>
+<p>All map items provide a convenient way to pick them from the map.</p>
+<h2 id="add-map-polylines">Add map polylines</h2>
+<p>Polylines can be useful to render, for example, a route geometry on the map. They can be created as shown below:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">MapPolyline</span><span class="token operator">?</span> <span class="token function">_createPolyline</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">&gt;</span></span> coordinates <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  coordinates<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.53032</span><span class="token punctuation">,</span> <span class="token number">13.37409</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  coordinates<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.5309</span><span class="token punctuation">,</span> <span class="token number">13.3946</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  coordinates<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.53894</span><span class="token punctuation">,</span> <span class="token number">13.39194</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  coordinates<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.54014</span><span class="token punctuation">,</span> <span class="token number">13.37958</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token class-name">GeoPolyline</span> geoPolyline<span class="token punctuation">;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    geoPolyline <span class="token operator">=</span> <span class="token class-name">GeoPolyline</span><span class="token punctuation">(</span>coordinates<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">InstantiationException</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Thrown when less than two vertices.</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  double widthInPixels <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+  <span class="token class-name">Color</span> lineColor <span class="token operator">=</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">fromARGB</span><span class="token punctuation">(</span><span class="token number">160</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">144</span><span class="token punctuation">,</span> <span class="token number">138</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">MapPolyline</span><span class="token operator">?</span> mapPolyline<span class="token punctuation">;</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      mapPolyline <span class="token operator">=</span> <span class="token class-name">MapPolyline</span><span class="token punctuation">.</span><span class="token function">withRepresentation</span><span class="token punctuation">(</span>
+          geoPolyline<span class="token punctuation">,</span>
+          <span class="token class-name">MapPolylineSolidRepresentation</span><span class="token punctuation">(</span>
+              <span class="token class-name">MapMeasureDependentRenderSize</span><span class="token punctuation">.</span><span class="token function">withSingleSize</span><span class="token punctuation">(</span><span class="token class-name">RenderSizeUnit</span><span class="token punctuation">.</span>pixels<span class="token punctuation">,</span> widthInPixels<span class="token punctuation">)</span><span class="token punctuation">,</span>
+              lineColor<span class="token punctuation">,</span>
+              <span class="token class-name">LineCap</span><span class="token punctuation">.</span>round<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapPolylineRepresentationInstantiationException</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"MapPolylineRepresentation Exception:"</span></span> <span class="token operator">+</span> e<span class="token punctuation">.</span>error<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapMeasureDependentRenderSizeInstantiationException</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"MapMeasureDependentRenderSize Exception:"</span></span> <span class="token operator">+</span> e<span class="token punctuation">.</span>error<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> mapPolyline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>A <code>MapPolyline</code> consists of three elements:</p>
+<ul>
+<li>A list of two or more geographic coordinates that define where to place the polyline on the map.</li>
+<li>A <code>GeoPolyline</code> that contains this list of coordinates.</li>
+<li>Style parameters such as <code>DashPattern</code> or <code>LineCap</code> to define how to visualize the polyline.</li>
+</ul>
+<p>Since a geometric line is defined by two or more points, you need to create an <code>ArrayList</code>, which must contain at least two <code>GeoCoordinates</code>. Otherwise, an exception will be thrown. To change the look of the line, its thickness in pixels and color can be set. See for an example the screenshot.</p>
+<p>After you have created one or more map polylines, you can add them to a map scene with:</p>
+<pre class="language-"><code class="lang-dart">_mapScene <span class="token operator">=</span> hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">;</span>
+
+_mapPolyline <span class="token operator">=</span> <span class="token function">_createPolyline</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_mapScene<span class="token punctuation">.</span><span class="token function">addMapPolyline</span><span class="token punctuation">(</span>_mapPolyline<span class="token operator">!</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>If a map polyline instance is already attached to a map scene, any further attempt to add it again will be ignored.</p>
+<center><p>
+  <img src="../graphics/polyline.jpg" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing a polyline.</figcaption>
+</p></center>
+
+<p>Note that a map view allows only one scene and all map items are placed directly on it. If you want to group your map items, you may want to organize them by using an array and add or remove them individually.</p>
+<p>You can remove a <code>mapPolyline</code> from the map immediately by calling:</p>
+<pre class="language-"><code class="lang-dart">_mapScene<span class="token punctuation">.</span><span class="token function">removeMapPolyline</span><span class="token punctuation">(</span>_mapPolyline<span class="token operator">!</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p><code>MapPolyline</code> items are pickable and it is possible to store the <code>Metadata</code> that can be retrieved when picking the item. For an example, see the section below on map markers.</p></div></div>
+<p>By setting a list of <code>MapMeasureRange</code> items, the visibility for a <code>MapPolyline</code> can be adjusted dependent on the current zoom level.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>By setting a draw order, you can specify what item is rendered on top of each other. Note that as of now, setting a draw order is not having an affect in relation to other map items as it only defines the order within the same type of class.</p><p>By specifying a <code>DrawOrderType</code>, you can further optimize the experience. For example, with <code>DrawOrderType.mapSceneAdditionOrderIndependent</code> you can specify that the draw order should not depend on the order of when an item is added. Instead, multiple map items of the same type with the same draw order can be drawn in an arbitrary order and map items with similar attributes like color can be grouped and drawn together all at once to improve the rendering performance.</p></div></div>
+<p>Note that map polylines can be also rendered dashed. Use <code>MapPolyline.DashImageRepresentation</code> to set a dashed pattern style.</p>
+<h2 id="add-map-arrows">Add map arrows</h2>
+<p>Map arrows behave similar to <code>MapPolyline</code> items, they consist of a polyline with an arbitrary number of points, but show an arrow tip at its end. Map arrows are only visible on zoom levels above 13. They can be useful do indicate directions on the map - for example, when rendered on parts of a route geometry.</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">MapArrow</span><span class="token operator">?</span> <span class="token function">_createMapArrow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">&gt;</span></span> coordinates <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  coordinates<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.53032</span><span class="token punctuation">,</span> <span class="token number">13.37409</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  coordinates<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.5309</span><span class="token punctuation">,</span> <span class="token number">13.3946</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  coordinates<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.53894</span><span class="token punctuation">,</span> <span class="token number">13.39194</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  coordinates<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.54014</span><span class="token punctuation">,</span> <span class="token number">13.37958</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token class-name">GeoPolyline</span> geoPolyline<span class="token punctuation">;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    geoPolyline <span class="token operator">=</span> <span class="token class-name">GeoPolyline</span><span class="token punctuation">(</span>coordinates<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">InstantiationException</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Thrown when less than two vertices.</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  double widthInPixels <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+  <span class="token class-name">Color</span> lineColor <span class="token operator">=</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">fromARGB</span><span class="token punctuation">(</span><span class="token number">160</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">144</span><span class="token punctuation">,</span> <span class="token number">138</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">MapArrow</span> mapArrow <span class="token operator">=</span> <span class="token class-name">MapArrow</span><span class="token punctuation">(</span>geoPolyline<span class="token punctuation">,</span> widthInPixels<span class="token punctuation">,</span> lineColor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> mapArrow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>A <code>MapArrow</code> consists of three elements:</p>
+<ul>
+<li>A list of two or more geographic coordinates that define where to place the polyline on the map.</li>
+<li>A <code>GeoPolyline</code> that contains this list of coordinates.</li>
+<li>Style parameters such as <code>color</code> or <code>widthInPixels</code> to define how to visualize the arrow.</li>
+</ul>
+<p>Since a geometric line is defined by two or more points, you need to create an array, which must contain at least two <code>GeoCoordinates</code>. Otherwise, an exception will be thrown. To change the look of the line, its thickness in pixels and color can be set. See for an example the screenshot.</p>
+<p>After you have created one or more map arrows, you can add them to a map scene with:</p>
+<pre class="language-"><code class="lang-dart">_mapScene <span class="token operator">=</span> hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">;</span>
+
+_mapArrow <span class="token operator">=</span> <span class="token function">_createMapArrow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_mapScene<span class="token punctuation">.</span><span class="token function">addMapArrow</span><span class="token punctuation">(</span>_mapArrow<span class="token operator">!</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>If a map arrow instance is already attached to a map scene, any further attempt to add it again will be ignored.</p>
+<center><p>
+  <img src="../graphics/map_arrow.jpg" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing a map arrow.</figcaption>
+</p></center>
+
+<p>Note, a map view allows only one scene and all map items are placed directly on it. If you want to group your map items, you may want to organize them by using an array and add or remove them individually.</p>
+<p>You can remove a <code>mapArrow</code> from the map immediately by calling:</p>
+<pre class="language-"><code class="lang-dart">_mapScene<span class="token punctuation">.</span><span class="token function">removeMapArrow</span><span class="token punctuation">(</span>_mapArrow<span class="token operator">!</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p><code>MapArrow</code> items are pickable and it is possible to store the <code>Metadata</code> that can be retrieved when picking the item. For an example, see the section below on map markers.</p></div></div>
+<h2 id="add-map-polygons">Add map polygons</h2>
+<p>A <code>MapPolygon</code> is a shape that consists of at least three coordinates, otherwise it cannot be rendered. Similar to <code>MapPolyline</code>, the coordinates are connected. Polygons can be useful to highlight an area on the map.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The order of the coordinates is important.</p></div></div>
+<p>See the example below on how a polygon can be created. The coordinates are connected based on their clockwise order in the list. The resulting shape can be filled with a color:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">MapPolygon</span><span class="token operator">?</span> <span class="token function">_createPolygon</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">&gt;</span></span> coordinates <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token comment">// Note that a polygon requires a clockwise or counter-clockwise order of the coordinates.</span>
+  coordinates<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.54014</span><span class="token punctuation">,</span> <span class="token number">13.37958</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  coordinates<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.53894</span><span class="token punctuation">,</span> <span class="token number">13.39194</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  coordinates<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.5309</span><span class="token punctuation">,</span> <span class="token number">13.3946</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  coordinates<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.53032</span><span class="token punctuation">,</span> <span class="token number">13.37409</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token class-name">GeoPolygon</span> geoPolygon<span class="token punctuation">;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    geoPolygon <span class="token operator">=</span> <span class="token class-name">GeoPolygon</span><span class="token punctuation">(</span>coordinates<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">InstantiationException</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Less than three vertices.</span>
+    <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token class-name">Color</span> fillColor <span class="token operator">=</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">fromARGB</span><span class="token punctuation">(</span><span class="token number">160</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">144</span><span class="token punctuation">,</span> <span class="token number">138</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">MapPolygon</span> mapPolygon <span class="token operator">=</span> <span class="token class-name">MapPolygon</span><span class="token punctuation">(</span>geoPolygon<span class="token punctuation">,</span> fillColor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> mapPolygon<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>A <code>MapPolygon</code> consists of three elements:</p>
+<ul>
+<li>A list of three or more geographic coordinates that define where to place the polygon on the map.</li>
+<li>A <code>GeoPolygon</code> that contains this list of coordinates.</li>
+<li>A <code>Color</code> to define the fill color of the polygon area.</li>
+</ul>
+<p>Since a polygon is defined by three or more points, you need to create an array list, which must contain at least three <code>GeoCoordinates</code>. Otherwise, an exception will be thrown. See for an example the screenshot.</p>
+<p>Map polygons can be used to create complex filled or unfilled shapes. However, a self-intersecting polygon can lead to undesired results as the coordinates are connected in the order of the list. As an alternative you can add multiple polygons - or make sure to add the coordinates as they appear on the outline of the desired shape.</p>
+<p>Please note that, unlike a map polyline, the outline of a map polygon is connected automatically between the last coordinate and the first coordinate of the list.</p>
+<p>After you have created one or more map polygons, you can add them to a map scene with:</p>
+<pre class="language-"><code class="lang-dart">_mapScene <span class="token operator">=</span> hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">;</span>
+
+_mapPolygon <span class="token operator">=</span> <span class="token function">_createPolygon</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_mapScene<span class="token punctuation">.</span><span class="token function">addMapPolygon</span><span class="token punctuation">(</span>_mapPolygon<span class="token operator">!</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>If a map polygon is already attached to a map scene, any further attempt to add it again will be ignored.</p>
+<center><p>
+  <img src="../graphics/polygon.jpg" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing a polygon.</figcaption>
+</p></center>
+
+<p>Note that a map view allows only one scene and all map items are placed directly on it. If you want to group your map items, you may want to organize them by using an array and add or remove them individually.</p>
+<p>A <code>mapPolygon</code> can be removed immediately from the map by calling:</p>
+<pre class="language-"><code class="lang-dart">_mapScene<span class="token punctuation">.</span><span class="token function">removeMapPolygon</span><span class="token punctuation">(</span>_mapPolygon<span class="token operator">!</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p><code>MapPolygon</code> items are pickable and it is possible to store <code>Metadata</code> that can be retrieved when picking the item. For an example, see the section below on map markers.</p></div></div>
+<p>By setting a list of <code>MapMeasureRange</code> items, the visibility for a <code>MapPolygon</code> can be adjusted dependent on the current zoom level.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>By setting a draw order, you can specify what item is rendered on top of each other. Note that as of now, setting a draw order is not having an affect in relation to other map items as it only defines the order within the same type of class.</p></div></div>
+<h2 id="add-map-circles">Add map circles</h2>
+<p>A circular shape can be useful to highlight areas on the map, draw a transparent halo - or to mark a distinct spot on the map. Circles are technically rendered as a sequence of triangular polygon shapes.</p>
+<p>Consequently, circles can be created as a <code>MapPolygon</code> instance using a <code>GeoCircle</code>:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">MapPolygon</span> <span class="token function">_createMapCircle</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  double radiusInMeters <span class="token operator">=</span> <span class="token number">300</span><span class="token punctuation">;</span>
+  <span class="token class-name">GeoCircle</span> geoCircle <span class="token operator">=</span> <span class="token class-name">GeoCircle</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.530932</span><span class="token punctuation">,</span> <span class="token number">13.384915</span><span class="token punctuation">)</span><span class="token punctuation">,</span> radiusInMeters<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token class-name">GeoPolygon</span> geoPolygon <span class="token operator">=</span> <span class="token class-name">GeoPolygon</span><span class="token punctuation">.</span><span class="token function">withGeoCircle</span><span class="token punctuation">(</span>geoCircle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">Color</span> fillColor <span class="token operator">=</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">fromARGB</span><span class="token punctuation">(</span><span class="token number">160</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">144</span><span class="token punctuation">,</span> <span class="token number">138</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">MapPolygon</span> mapPolygon <span class="token operator">=</span> <span class="token class-name">MapPolygon</span><span class="token punctuation">(</span>geoPolygon<span class="token punctuation">,</span> fillColor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> mapPolygon<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Since a circle is a special shape of a polygon, you can add (or remove) a circle to (or from) a map scene as already shown above in the <code>MapPolygon</code> section.</p>
+<center><p>
+  <img src="../graphics/circle.jpg" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing a circle.</figcaption>
+</p></center>
+
+<h2 id="add-map-markers">Add map markers</h2>
+<p>You can use map markers to precisely point to a location on the map. Map markers will always be drawn on top of anything else that is rendered on the map.</p>
+<p>The following code will add a map marker to the map:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">MapImage</span> _photoMapImage<span class="token punctuation">;</span>
+
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token comment">// Reuse existing MapImage for new map markers.</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>_photoMapImage <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Uint8List</span> imagePixelData <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">_loadFileAsUint8List</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'assets/here_car.png'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  _photoMapImage <span class="token operator">=</span> <span class="token class-name">MapImage</span><span class="token punctuation">.</span><span class="token function">withPixelDataAndImageFormat</span><span class="token punctuation">(</span>imagePixelData<span class="token punctuation">,</span> <span class="token class-name">ImageFormat</span><span class="token punctuation">.</span>png<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">MapMarker</span> mapMarker <span class="token operator">=</span> <span class="token class-name">MapMarker</span><span class="token punctuation">(</span>geoCoordinates<span class="token punctuation">,</span> _photoMapImage<span class="token operator">!</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+mapMarker<span class="token punctuation">.</span>drawOrder <span class="token operator">=</span> drawOrder<span class="token punctuation">;</span>
+
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">addMapMarker</span><span class="token punctuation">(</span>mapMarker<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>In this example, we load a PNG ("here_car.png") from the resources and create a <code>MapImage</code> out of it. This <code>MapImage</code> can then be set to a <code>MapMarker</code> instance.</p>
+<p>Above we load the image with its default pixel size. By using <code>MapImage.withImageDataImageFormatWidthAndHeight(Uint8List imageData, ImageFormat imageFormat, int width, int height)</code> you can set a custom size.</p>
+<p>The PNG asset is stored into an asset folder we have specified in the <code>pubspec.yaml</code> file:</p>
+<pre class="language-"><code class="lang-xml">assets:
+  - assets/
+</code></pre>
+<p>Load the image data with the following helper method:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">Future</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Uint8List</span><span class="token punctuation">&gt;</span></span> <span class="token function">_loadFileAsUint8List</span><span class="token punctuation">(</span><span class="token class-name">String</span> assetPathToFile<span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token comment">// The path refers to the assets directory as specified in pubspec.yaml.</span>
+  <span class="token class-name">ByteData</span> fileData <span class="token operator">=</span> <span class="token keyword">await</span> rootBundle<span class="token punctuation">.</span><span class="token function">load</span><span class="token punctuation">(</span>assetPathToFile<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token class-name">Uint8List</span><span class="token punctuation">.</span><span class="token function">view</span><span class="token punctuation">(</span>fileData<span class="token punctuation">.</span>buffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Alternatively, to load the image synchronously, use the following code and specify the path to the image:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_addMapMarker</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span> geoCoordinates<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  int imageWidth <span class="token operator">=</span> <span class="token number">60</span><span class="token punctuation">;</span>
+  int imageHeight <span class="token operator">=</span> <span class="token number">60</span><span class="token punctuation">;</span>
+  <span class="token class-name">MapImage</span> mapImage <span class="token operator">=</span> <span class="token class-name">MapImage</span><span class="token punctuation">.</span><span class="token function">withFilePathAndWidthAndHeight</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"assets/green_dot.png"</span></span><span class="token punctuation">,</span> imageWidth<span class="token punctuation">,</span> imageHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">MapMarker</span> mapMarker <span class="token operator">=</span> <span class="token class-name">MapMarker</span><span class="token punctuation">(</span>geoCoordinates<span class="token punctuation">,</span> mapImage<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  _hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">addMapMarker</span><span class="token punctuation">(</span>mapMarker<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>By using <code>withFilePathAndWidthAndHeight()</code> you can also set custom <code>imageWidth</code> and <code>imageHeight</code> values to scale the image. However, even if you do not know the default size of an image, setting a size is required when loading an image from a file path.</p>
+<p>Tip: You can reuse the same <code>mapImage</code> instance for other <code>MapMarker</code> instances to save resources.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The HERE SDK for Flutter supports PNG and <a href="https://www.w3.org/TR/SVGTiny12/" target="_blank">SVG Tiny</a> resources with or without transparency (alpha channel). Note that an image can be added in different resolutions to the project. The Flutter platform will then choose the appropriate image resolution based on the device's display density. See the Flutter documentation for more <a href="https://flutter.dev/assets-and-images/#resolution-aware" target="_blank">details</a>.</p><p>In opposition to static image assets, SVG assets can be also useful to show varying content - as only the XML content of the SVG assets needs to be updated. Static image assets and SVG assets can be updated on the fly. As an alternative, for more complex content, consider to use <code>MapViewPins</code> (see below).</p></div></div>
+<p>To see the image, we must add the <code>MapMarker</code> to a map scene. Please note that the <code>MapImage</code> will be displayed centered on the provided <code>geoCoordinates</code>.</p>
+<center><p>
+  <img src="../graphics/map_images.jpg" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing randomly placed map images. The red map circle on top marks the location of the marker.</figcaption>
+</p></center>
+
+<p>You can also update the <code>geoCoordinates</code> after the marker is added to the map: it will instantly appear at the new location after <code>mapMarker.setCoordinates()</code> is called.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The chronological order in which map markers are added to the map determines what marker is rendered first. This can be adjusted by setting an explicit draw order. Note that as of now, setting a draw order is not having an affect in relation to other map items as it only defines the order within the same type of class.</p></div></div>
+<p>If you want to remove a MapMarker, simply call:</p>
+<pre class="language-"><code class="lang-dart">_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">removeMapMarker</span><span class="token punctuation">(</span>_mapMarkers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>You can also remove a list of map markers of type <code>List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>MapMarker</span><span class="token punctuation">&gt;</span></span></code> at once:</p>
+<pre class="language-"><code class="lang-dart">_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">removeMapMarkers</span><span class="token punctuation">(</span>_mapMarkerList<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Likewise, you can add multiple map markers in a batch call via <code>addMapMarkers(mapMarkerList)</code>.</p>
+<p>The HERE SDK offers also highly customizable animation support for <code>MapMarker</code> items. A fade in-out animation can be applied with one line of code:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Optionally, enable a fade in-out animation.</span>
+mapMarker<span class="token punctuation">.</span>fadeDuration <span class="token operator">=</span> <span class="token class-name">Duration</span><span class="token punctuation">(</span>seconds<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Whenever the marker is added or removed to the <code>MapView</code>, the animation will fade-in or fade-out the marker. The animation will also play when a marker was moved back to the viewport, that is when the marker becomes visible again by panning the map.</p>
+<p>Advanced custom animations, like moving markers, are possible with the <code>MapMarkerAnimation</code> class.</p>
+<p>By setting a list of <code>MapMeasureRange</code> items, the visibility for a <code>MapMarker</code> can be adjusted dependent on the current zoom level.</p>
+<p>On top, more features are available, for example, you can also make a marker transparent by setting an opacity value.</p>
+<p><strong>Retina Support for Different Resolutions</strong></p>
+<p>Whereas SVG images can be scaled without loosing the quality of your images, for pixel-based image formats such as PNGs, the Flutter platform offers retina support natively by providing <a href="https://flutter.dev/assets-and-images/#resolution-aware" target="_blank">resolution-aware</a> folders for different pixel densities in the <code>pubspec.yaml</code>:</p>
+<ul>
+<li><code>assets/poi.png</code> - Default (mdpi). Asset size, for example: 100 x 100 pixels.</li>
+<li><code>assets/2.0x/poi.png</code> - For retina displays (xhdpi). Asset size doubled: 200 x 200 pixels.</li>
+<li><code>assets/3.0x/poi.png</code> - For retina HD displays (xxhdpi). Asset size tripled: 300 x 300 pixels.</li>
+<li>...</li>
+</ul>
+<p>With the use of <code>AssetImage</code>, Flutter is able to map the asset based on the screen density (<code>Image(image: AssetImage('poi.png'))</code>). However, this is <strong>not</strong> yet supported by the HERE SDK. Instead when loading an image, you need to specify the path and the dimensions, dependent on the actual screen size in pixels. You can query the device's screen size in pixels like this:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">var</span> w <span class="token operator">=</span> window<span class="token punctuation">.</span>physicalSize<span class="token punctuation">.</span>width<span class="token punctuation">;</span>
+<span class="token keyword">var</span> h <span class="token operator">=</span> window<span class="token punctuation">.</span>physicalSize<span class="token punctuation">.</span>height<span class="token punctuation">;</span>
+</code></pre>
+<p>For example, on a device with retina HD, call <code>MapImage.withFilePathAndWidthAndHeight("assets/3.0x/poi.png", imageWidth, imageHeight)</code> so that the resulting image will have the same size on screen, but with a higher quality asset on bigger screens. Note that such an effort makes sense if you have created assets that show more details for higher resolutions. If you omit resolution dependent assets, you can simply scale the asset at creation time by adjusting <code>imageWidth</code> and <code>imageHeight</code>.</p>
+<h3 id="anchored-poi-markers">Anchored POI markers</h3>
+<p>By default, each image is centered on the location provided, and you may want to change this for some types of markers. An example is the POI marker, which usually points to the location with its bottom-middle position.</p>
+<p>Therefore, the location of where the image is rendered must be shifted. The default center lies at (0.5, 0.5). If the bottom-right corner of the view should point to the set <code>GeoCoordinates</code> location, then the anchor point must be set to (1, 1).</p>
+<p>Anchor points provide a convenient way to specify the location where a marker should be rendered: the top-left corner equals an anchor point of (0, 0) while the bottom-right corner equals an anchor point of (1, 1). Independent of how large the view is, the point that is half the width or height will always be 0.5 - this is similar to the concept of normalized texture UV-coordinates.</p>
+<center><p>
+  <img src="../graphics/mapoverlay_anchor_points.png">
+  <figcaption>Illustration: Normalized anchor points can specify any location within or outside a map marker.</figcaption>
+</p></center>
+
+<p>If you want to shift the POI to point to the location, you can keep the default middle location (0.5), but you must shift the image upwards by 1. 1 is just as long as the height of the image. Note that you can also specify values greater than 1 or less than 0, so that you can shift the image to any possible location. 2 would represent twice the height of the image and so on.</p>
+<p>To add an anchored POI marker to the map, see the example below:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">MapImage</span> _poiMapImage<span class="token punctuation">;</span>
+
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+<span class="token comment">// Reuse existing MapImage for new map markers.</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>_poiMapImage <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Uint8List</span> imagePixelData <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">_loadFileAsUint8List</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'assets/poi.png'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  _poiMapImage <span class="token operator">=</span> <span class="token class-name">MapImage</span><span class="token punctuation">.</span><span class="token function">withPixelDataAndImageFormat</span><span class="token punctuation">(</span>imagePixelData<span class="token punctuation">,</span> <span class="token class-name">ImageFormat</span><span class="token punctuation">.</span>png<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// By default, the anchor point is set to 0.5, 0.5 (= centered).</span>
+<span class="token comment">// Here the bottom, middle position should point to the location.</span>
+<span class="token class-name">Anchor2D</span> anchor2D <span class="token operator">=</span> <span class="token class-name">Anchor2D</span><span class="token punctuation">.</span><span class="token function">withHorizontalAndVertical</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">MapMarker</span> mapMarker <span class="token operator">=</span> <span class="token class-name">MapMarker</span><span class="token punctuation">.</span><span class="token function">withAnchor</span><span class="token punctuation">(</span>geoCoordinates<span class="token punctuation">,</span> _poiMapImage<span class="token operator">!</span><span class="token punctuation">,</span> anchor2D<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">addMapMarker</span><span class="token punctuation">(</span>mapMarker<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Note that an image can be added in different resolutions to the project. The Flutter platform will then choose the appropriate image resolution based on the device's display density. See the Flutter documentation for more <a href="https://flutter.dev/assets-and-images/#resolution-aware" target="_blank">details</a>.</p>
+<center><p>
+  <img src="../graphics/map_markers.jpg" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing randomly placed map markers. The red map circle marks the anchored location of the marker.</figcaption>
+</p></center>
+
+<p>Unlike polylines, each <code>MapImage</code> will keep its size - regardless of how much the map is zoomed in or out.</p>
+<h3 id="map-marker-with-text">Map marker with text</h3>
+<p>A <code>MapMarker</code> can optionally display a string with customizable style options, including outline color and text size.</p>
+<p>You can set the string at any time by calling <code>mapMarker.text = "Hello Text"</code>. Additionally, you can update the text for an existing marker dynamically.</p>
+<center><p>
+  <img src="../graphics/marker_with_text.png" width="350" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing a map marker with text.</figcaption>
+</p></center>
+
+<p>The below example shows how to make use of the available <code>TextStyle</code> options:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">MapMarkerTextStyle</span> textStyleCurrent <span class="token operator">=</span> mapMarker<span class="token punctuation">.</span>textStyle<span class="token punctuation">;</span>
+<span class="token class-name">MapMarkerTextStyle</span> textStyleNew <span class="token operator">=</span> mapMarker<span class="token punctuation">.</span>textStyle<span class="token punctuation">;</span>
+double textSizeInPixels <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+double textOutlineSizeInPixels <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Placement priority is based on order. It is only effective when</span>
+<span class="token comment">// overlap is disallowed. The below setting will show the text</span>
+<span class="token comment">// at the bottom of the marker, but when the marker or the text overlaps</span>
+<span class="token comment">// then the text will swap to the top before the marker disappears completely.</span>
+<span class="token comment">// Note: By default, markers do not disappear when they overlap.</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MapMarkerTextStylePlacement</span><span class="token punctuation">&gt;</span></span> placements <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+placements<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">MapMarkerTextStylePlacement</span><span class="token punctuation">.</span>bottom<span class="token punctuation">)</span><span class="token punctuation">;</span>
+placements<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">MapMarkerTextStylePlacement</span><span class="token punctuation">.</span>top<span class="token punctuation">)</span><span class="token punctuation">;</span>
+mapMarker<span class="token punctuation">.</span>isOverlapAllowed <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+  textStyleNew <span class="token operator">=</span> <span class="token class-name">MapMarkerTextStyle</span><span class="token punctuation">.</span><span class="token function">make</span><span class="token punctuation">(</span>
+      textSizeInPixels<span class="token punctuation">,</span>
+      textStyleCurrent<span class="token punctuation">.</span>textColor<span class="token punctuation">,</span>
+      textOutlineSizeInPixels<span class="token punctuation">,</span>
+      textStyleCurrent<span class="token punctuation">.</span>textOutlineColor<span class="token punctuation">,</span>
+      placements<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapMarkerTextStyleInstantiationException</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// An error code will indicate what went wrong, for example, when negative values are set for text size.</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"TextStyle: Error code: </span><span class="token interpolation"><span class="token punctuation">${</span><span class="token expression">e<span class="token punctuation">.</span>error<span class="token punctuation">.</span>name</span><span class="token punctuation">}</span></span><span class="token string">"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+mapMarker<span class="token punctuation">.</span>text <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Hello Text"</span></span><span class="token punctuation">;</span>
+mapMarker<span class="token punctuation">.</span>textStyle <span class="token operator">=</span> textStyleNew<span class="token punctuation">;</span>
+</code></pre>
+<p>You can set the options as a list to define the priority for relocating text when multiple <code>MapMarker</code> items, with or without text, overlap. The first item in the list represents the default placement. As markers move closer, such as when zooming out, overlapping text will shift to the next available position in the list, until the marker and text completely disappear. Note that for placement priority to work, you must also call <code>mapMarker.isOverlapAllowed = false</code>. By default, markers can overlap, and the text is shown only at the bottom. A single placement option means that the placement will not change.</p>
+<h3 id="pick-map-markers">Pick map markers</h3>
+<p>After you have added the map markers onto the map, you can use a tap gesture listener to find out if a user tapped on a map marker:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_setTapGestureHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  _hereMapController<span class="token punctuation">.</span>gestures<span class="token punctuation">.</span>tapListener <span class="token operator">=</span> <span class="token class-name">TapListener</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Point2D</span> touchPoint<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">_pickMapMarker</span><span class="token punctuation">(</span>touchPoint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">_pickMapMarker</span><span class="token punctuation">(</span><span class="token class-name">Point2D</span> touchPoint<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  double radiusInPixel <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  _hereMapController<span class="token punctuation">.</span><span class="token function">pickMapItems</span><span class="token punctuation">(</span>touchPoint<span class="token punctuation">,</span> radiusInPixel<span class="token punctuation">,</span> <span class="token punctuation">(</span>pickMapItemsResult<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pickMapItemsResult <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Pick operation failed.</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MapMarker</span><span class="token punctuation">&gt;</span></span> mapMarkerList <span class="token operator">=</span> pickMapItemsResult<span class="token punctuation">.</span>markers<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>mapMarkerList<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"No map markers found."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token class-name">MapMarker</span> topmostMapMarker <span class="token operator">=</span> mapMarkerList<span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>As soon as the tap gesture is detected, we can use the view coordinates of the tapped location on the screen to ask the map view for any map markers around that location. In most cases, specifying a radius of two pixels is adequate. Then the <code>PickMapItemsCallback</code> provides access to the map items found, such as a <code>MapPolygon</code> or a <code>MapMarker</code>.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>By convention, the HERE SDK uses listeners for reoccurring events such as gesture events. Single events, that must be handled only one time, require a callback.</p><p>When picking items of the same type, you can compare the instances by calling the overridden <code>equals()</code>-method.</p></div></div>
+<h3 id="adding-metadata">Adding metadata</h3>
+<p>In many cases, users may want to interact with the shown markers - for example, by tapping on a search result to see more details about a restaurant. For this purpose, a <code>MapMarker</code> can hold an instance of the <code>Metadata</code> class, so it is possible to attach various types of data to it - even custom types are supported.</p>
+<p><code>Metadata</code> can hold several key/value pairs. Below, we create a new key named <code>"key_poi"</code> and set a <code>String</code> as the value containing the information about the type of the marker:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">Metadata</span> metadata <span class="token operator">=</span> <span class="token class-name">Metadata</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+metadata<span class="token punctuation">.</span><span class="token function">setString</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"key_poi"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Metadata: This is a POI."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+mapMarker<span class="token punctuation">.</span>metadata <span class="token operator">=</span> metadata<span class="token punctuation">;</span>
+</code></pre>
+<p>Certainly, you can set any information you may need. The moment we want to read the contents of a <code>Metadata</code> instance, we simply ask for the data stored for a key, which is <code>"key_poi"</code> in our example:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">MapMarker</span> topmostMapMarker <span class="token operator">=</span> mapMarkerList<span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+<span class="token class-name">Metadata</span><span class="token operator">?</span> metadata <span class="token operator">=</span> topmostMapMarker<span class="token punctuation">.</span>metadata<span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>metadata <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">String</span> message <span class="token operator">=</span> metadata<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"key_poi"</span></span><span class="token punctuation">)</span> <span class="token operator">?</span><span class="token operator">?</span> <span class="token string-literal"><span class="token string">"No message found."</span></span><span class="token punctuation">;</span>
+  <span class="token function">_showDialog</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Map Marker picked"</span></span><span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>A <code>MapMarker</code> instance, by default, does not contain <code>Metadata</code> and <code>mapMarker.metadata</code> may return <code>null</code>. The data accessed by a key can be <code>null</code> as well, if the <code>Metadata</code> object does not contain such information.</p>
+<p>If it does, we look for the <code>String</code> stored for our key <code>"key_poi"</code> and call a helper method to present the contained <code>String</code> to the user. You can choose any string as a key based on your preference, but use a unique key, or you will otherwise overwrite the content stored for a different data item. To see the full example's source code, please check the "map_marker_app" example on <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">GitHub</a>.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>You can also store custom objects into the <code>Metadata</code> using the <code>CustomMetadataValue</code> interface. An example can be found in the <a href="search.html">Search</a> section where a search result data object is stored as a whole.</p></div></div>
+<h2 id="add-map-marker-cluster">Add map marker cluster</h2>
+<p>Depending on zoom level, multiple <code>MapMarker</code> items can overlap. With the <code>MapMarkerCluster</code> class you can group multiple <code>MapMarker</code> items to a group that can reduce the visual clutter. Markers that are overlapping will be replaced by a single image representation. Such a cluster image can be picked and contains only the markers that are contained within.</p>
+<p>The code below shows how a cluster containing multiple <code>MapMarker</code> items can be created:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">Future</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token keyword">void</span><span class="token punctuation">&gt;</span></span> <span class="token function">showMapMarkerCluster</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Reuse existing MapImage for new map markers.</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>_blueSquareMapImage <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">Uint8List</span> imagePixelData <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">_loadFileAsUint8List</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'assets/green_square.png'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    _blueSquareMapImage <span class="token operator">=</span> <span class="token class-name">MapImage</span><span class="token punctuation">.</span><span class="token function">withPixelDataAndImageFormat</span><span class="token punctuation">(</span>imagePixelData<span class="token punctuation">,</span> <span class="token class-name">ImageFormat</span><span class="token punctuation">.</span>png<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Defines a text that indicates how many markers are included in the cluster.</span>
+  <span class="token class-name">MapMarkerClusterCounterStyle</span> counterStyle <span class="token operator">=</span> <span class="token class-name">MapMarkerClusterCounterStyle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  counterStyle<span class="token punctuation">.</span>textColor <span class="token operator">=</span> <span class="token class-name">Colors</span><span class="token punctuation">.</span>black<span class="token punctuation">;</span>
+  counterStyle<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> <span class="token number">40</span><span class="token punctuation">;</span>
+  counterStyle<span class="token punctuation">.</span>maxCountNumber <span class="token operator">=</span> <span class="token number">9</span><span class="token punctuation">;</span>
+  counterStyle<span class="token punctuation">.</span>aboveMaxText <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"+9"</span></span><span class="token punctuation">;</span>
+
+  <span class="token class-name">MapMarkerCluster</span> mapMarkerCluster <span class="token operator">=</span>
+      <span class="token class-name">MapMarkerCluster.WithCounter</span><span class="token punctuation">(</span><span class="token class-name">MapMarkerClusterImageStyle</span><span class="token punctuation">(</span>_blueSquareMapImage<span class="token operator">!</span><span class="token punctuation">)</span><span class="token punctuation">,</span> counterStyle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  _hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">addMapMarkerCluster</span><span class="token punctuation">(</span>mapMarkerCluster<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  _mapMarkerClusterList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>mapMarkerCluster<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>int i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    mapMarkerCluster<span class="token punctuation">.</span><span class="token function">addMapMarker</span><span class="token punctuation">(</span><span class="token keyword">await</span> <span class="token function">_createRandomMapMarkerInViewport</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>You can set a <code>MapImage</code> that should be used to represent a cluster of two or more overlapping map markers.</p>
+<p>Note that <code>MapMarker</code> items can be added or removed to a <code>MapMarkerCluster</code> that is already shown on the map. If you want the remove the cluster including all markers call:</p>
+<pre class="language-"><code class="lang-dart">_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">removeMapMarkerCluster</span><span class="token punctuation">(</span>mapMarkerCluster<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p><code>MapMarker</code> items contained in a cluster are not part of <code>pickMapItemsResult.markers</code>. Therefore, we can pick them separately with the code as shown below - after we have received the pick result from our <code>pickMapItems()</code> call (see <code>MapMarker</code> section):</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_handlePickedMapMarkerClusters</span><span class="token punctuation">(</span><span class="token class-name">PickMapItemsResult</span> pickMapItemsResult<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">MapMarkerClusterGrouping</span><span class="token punctuation">&gt;</span></span> groupingList <span class="token operator">=</span> pickMapItemsResult<span class="token punctuation">.</span>clusteredMarkers<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>groupingList<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token class-name">MapMarkerClusterGrouping</span> topmostGrouping <span class="token operator">=</span> groupingList<span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+  int clusterSize <span class="token operator">=</span> topmostGrouping<span class="token punctuation">.</span>markers<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>clusterSize <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// This cluster does not contain any MapMarker items.</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>clusterSize <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">_showDialog</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Map marker picked"</span></span><span class="token punctuation">,</span>
+        <span class="token string-literal"><span class="token string">"This MapMarker belongs to a cluster.  Metadata: "</span></span> <span class="token operator">+</span> <span class="token function">_getClusterMetadata</span><span class="token punctuation">(</span>topmostGrouping<span class="token punctuation">.</span>markers<span class="token punctuation">.</span>first<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> metadata <span class="token operator">=</span> <span class="token string-literal"><span class="token string">""</span></span><span class="token punctuation">;</span>
+    topmostGrouping<span class="token punctuation">.</span>markers<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      metadata <span class="token operator">+=</span> <span class="token function">_getClusterMetadata</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      metadata <span class="token operator">+=</span> <span class="token string-literal"><span class="token string">" "</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    int totalSize <span class="token operator">=</span> topmostGrouping<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>markers<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token function">_showDialog</span><span class="token punctuation">(</span>
+        <span class="token string-literal"><span class="token string">"Map marker cluster picked"</span></span><span class="token punctuation">,</span>
+        <span class="token string-literal"><span class="token string">"Number of contained markers in this cluster: </span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">clusterSize</span></span><span class="token string">."</span></span> <span class="token operator">+</span>
+            <span class="token string-literal"><span class="token string">"Contained Metadata: "</span></span> <span class="token operator">+</span>
+            metadata <span class="token operator">+</span>
+            <span class="token string-literal"><span class="token string">". "</span></span> <span class="token operator">+</span>
+            <span class="token string-literal"><span class="token string">"Total number of markers in this MapMarkerCluster: </span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">totalSize</span></span><span class="token string">."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">String</span> <span class="token function">_getClusterMetadata</span><span class="token punctuation">(</span><span class="token class-name">MapMarker</span> mapMarker<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Metadata</span><span class="token operator">?</span> metadata <span class="token operator">=</span> mapMarker<span class="token punctuation">.</span>metadata<span class="token punctuation">;</span>
+  <span class="token class-name">String</span> message <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"No metadata."</span></span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>metadata <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span><span class="token operator">?</span> string <span class="token operator">=</span> metadata<span class="token punctuation">.</span><span class="token function">getString</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"key_cluster"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>string <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      message <span class="token operator">=</span> string<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> message<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>With this code you can detect if a cluster was picked and inform the user of the contained markers. You can also identify a single <code>MapMarker</code> instance if the <code>markers</code> list is containing only one item.</p>
+<center><p>
+  <img src="../graphics/marker_cluster.jpg" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>Several map marker cluster. The number indicates the contained marker.</figcaption>
+</p></center>
+
+<p>Usually, only a single <code>MapMarkerCluster</code> instance is needed and above we handle only the topmost cluster.</p>
+<p>Depending on the distance of the markers, multiple cluster images can appear for the same <code>MapMarkerCluster</code> instance - each containing a subset of the total number of clustered markers.</p>
+<p>See the "map_items_app" app for an example on <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">GitHub</a>.</p>
+<h2 id="add-3d-map-markers">Add 3D map markers</h2>
+<p>The HERE SDK allows to add custom 3D models onto the map. Optionally, these models can be textured together with a blend <code>Color</code>. The common <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file" target="_blank">.obj</a> file format is used to specify the geometry of the 3D model. You can generate it with common 3D modeling software - for example, with the free <a href="https://threejs.org/editor/" target="_blank">Three.js</a> online editor.</p>
+<center><p>
+  <img src="../graphics/model_3d.png" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>The obstacle.obj 3D object we will use for this example.</figcaption>
+</p></center>
+
+<p>The obj file format specifies the vertices, normals, texture coordinates and faces to define how the model will be rendered. The resulting model can be moved around the map by updating its coordinates. Its orientation can be changed by updating its bearing, pitch and roll.</p>
+<p>Note that the HERE SDK does not support material files (*.mtl) and multi texturing.</p>
+<p>Once you have a model defined in the obj format and a texture to wrap around the model, add both files to an assets directory in your project, as specified in your <code>pubspec.yaml</code>, for example:</p>
+<pre class="language-"><code class="lang-xml">assets:
+  - assets/
+  - assets/models/
+</code></pre>
+<p>Below we added one obj file and a PNG texture:</p>
+<ul>
+<li>../assets/models/obstacle.obj</li>
+<li>../assets/models/obstacle_texture.png</li>
+</ul>
+<center><p>
+  <img src="../graphics/obstacle_texture.png" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>The obstacle_texture.png texture we will use for this example.</figcaption>
+</p></center>
+
+<p>Now you can use the following code to add a <code>MapMarker3D</code> to the map:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Place the files in the "assets" directory as specified in pubspec.yaml.</span>
+<span class="token comment">// Adjust file name and path as appropriate for your project.</span>
+<span class="token class-name">String</span> geometryFilePath <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"assets/models/obstacle.obj"</span></span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> textureFilePath <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"assets/models/obstacle_texture.png"</span></span><span class="token punctuation">;</span>
+
+<span class="token comment">// Optionally, consider to store the model for reuse (like we showed for MapImages above).</span>
+<span class="token class-name">MapMarker3DModel</span> mapMarker3DModel <span class="token operator">=</span> <span class="token class-name">MapMarker3DModel</span><span class="token punctuation">.</span><span class="token function">withTextureFilePath</span><span class="token punctuation">(</span>geometryFilePath<span class="token punctuation">,</span> textureFilePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">MapMarker3D</span> mapMarker3D <span class="token operator">=</span> <span class="token class-name">MapMarker3D</span><span class="token punctuation">(</span>geoCoordinates<span class="token punctuation">,</span> mapMarker3DModel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+mapMarker3D<span class="token punctuation">.</span>scale <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>
+mapMarker3D<span class="token punctuation">.</span>isDepthCheckEnabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">addMapMarker3d</span><span class="token punctuation">(</span>mapMarker3D<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Above, we pass both asset files to the <code>MapMarker3DModel</code> constructor that defines the model. Similarly, like we have already seen for <code>MapImage</code> elements, you can pass the model to one of the available <code>MapMarker3D</code> constructors. Note that we also set a scale factor to let the model appear 6x bigger. Since the obj model is defined in a 3D coordinate space, it does not contain length units.</p>
+<p>You can add and remove <code>MapMarker3D</code> items like other map items via <code>MapScene</code>.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The texture must be at least of 1 pixel in size. If you add a transparent pixel as texture image, you can blend the untextured model with a <code>Color</code> that can be passed as third parameter to the <code>MapMarker3DModel</code> constructor.</p></div></div>
+<p>Below you can see an example of how it may appear. The model will be centered on the provided geographic coordinates. The center of the model is defined by the origin of its coordinate system.</p>
+<center><p>
+  <img src="../graphics/map_marker_3d.jpg" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>Two custom 3D map markers shown on a tilted map.</figcaption>
+</p></center>
+
+<p>The property <code>isDepthCheckEnabled</code> determines whether the depth of the 3D marker's vertices is considered during rendering and it is set to false by default.</p>
+<ul>
+<li><code>MapMarker3D</code> items are always rendered on top of anything else that is visible on the map if <code>isDepthCheckEnabled</code> is enabled to false.</li>
+<li>If <code>isDepthCheckEnabled</code> is set to true then the 3D marker might be occluded by other map objects like extruded buildings. The method <code>isDepthCheckEnabled</code> is helpful to depict complex 3D objects like a torus which has outer as well as inner areas.</li>
+</ul>
+<p>Like 2D <code>MapMarker</code> items, a <code>MapMarker3D</code> will not change its size when the map is zoomed in or out, but it will rotate together with map.</p>
+<p>What to do if you want the 3D marker to scale with the map?</p>
+<p>For this, simply use the convenience constructor for <code>MapMarker3D</code> that accepts a <code>RenderSizeUnit</code>. For example, use <code>densityIndependentPixels</code> to prohibit scaling and the resulting marker is created with a fixed size - independent of zoom level. Use <code>RenderSizeUnit</code> with <code>meters</code> to allow scaling.</p>
+<p>By setting a list of <code>MapMeasureRange</code> items, the visibility for a <code>MapMarker3D</code> can be adjusted dependent on the current zoom level.</p>
+<p>If you want to change the transparency of a <code>MapMarker3D</code>, you can specify an <code>opacity</code> factor: the factor is applied to the alpha channel of the texture of the marker. By setting the <code>renderInternalsEnabled</code> flag you can specify whether to render the internal geometry occluded by its front facing polygons.</p>
+<h2 id="add-flat-map-markers">Add flat map markers</h2>
+<p>By default, <code>MapMarker</code> items do not rotate with the map - nor get tilted when the map is tilted. This can be changed by using a <code>MapMarker3D</code> to become flat. In fact, flat map markers are a special case of <code>MapMarker3D</code> items that contain a 0 length on the z-axis in 3D space.</p>
+<p>You can create flat <code>MapMarker3D</code> objects by using the convenience constructor that accepts a <code>MapImage</code> parameter. Use <code>RenderSizeUnit</code> with <code>densityIndependentPixels</code> to prohibit scaling. The resulting marker is created with a fixed size - independent of zoom level. Use <code>RenderSizeUnit</code> with <code>meters</code> to allow scaling.</p>
+<p>The resulting flat marker will tilt with the map and it will also rotate when the map is rotated.</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">Uint8List</span> imagePixelData <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">_loadFileAsUint8List</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'assets/poi.png'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">MapImage</span> mapImage <span class="token operator">=</span> <span class="token class-name">MapImage</span><span class="token punctuation">.</span><span class="token function">withPixelDataAndImageFormat</span><span class="token punctuation">(</span>imagePixelData<span class="token punctuation">,</span> <span class="token class-name">ImageFormat</span><span class="token punctuation">.</span>png<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// The default scale factor of the map marker is 1.0. For a scale of 2, the map marker becomes 2x larger.</span>
+<span class="token comment">// For a scale of 0.5, the map marker shrinks to half of its original size.</span>
+double scaleFactor <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">;</span>
+
+<span class="token comment">// With densityIndependentPixels, the map marker will have a constant size on the screen regardless if the map is zoomed in or out.</span>
+<span class="token class-name">MapMarker3D</span> mapMarker3D <span class="token operator">=</span> <span class="token class-name">MapMarker3D</span><span class="token punctuation">.</span><span class="token function">fromImage</span><span class="token punctuation">(</span>geoCoordinates<span class="token punctuation">,</span>mapImage<span class="token punctuation">,</span> scaleFactor<span class="token punctuation">,</span> <span class="token class-name">RenderSizeUnit</span><span class="token punctuation">.</span>densityIndependentPixels<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">addMapMarker3d</span><span class="token punctuation">(</span>mapMarker3D<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>In this example, we load a PNG ("poi.png") from the resources and create a <code>MapImage</code> out of it. This <code>MapImage</code> can then be set to a <code>MapMarker</code> instance.</p>
+<p>To see the image, we must add the <code>MapMarker</code> to a map scene. Note that the <code>MapImage</code> will be displayed centered on the provided <code>geoCoordinates</code>.</p>
+<p>What to do if you want the flat 3D marker to scale with the map?</p>
+<p>Create a flat map marker using <code>MapMarker3D</code> and use <code>RenderSizeUnit</code> with <code>meters</code> to allow scaling when zoomed in and out.</p>
+<h3 id="how-to-create-a-flat-2d-map-marker-from-a-2d-model">How to create a flat 2D map marker from a 2D model</h3>
+<p>In the next paragraph, we show how a 2D model can be created from a handwritten obj file. As a result, we can create the same flat map marker as in the previous section.</p>
+<p>Below you see a 2D example for a plane, that is 2 units large on the x- and y-axis. Since 3D objects can be easily scaled, the size of the model is not important. The origin of the coordinate system in our example lies at the bottom of the plane. This way we can wrap a POI marker asset as texture that points to the provided geographic coordinates.</p>
+<pre class="language-"><code># A 2 x 2 square, centered upon origin.
+
+v -1 2 0
+v 1 2 0
+v -1 0 0
+v 1 0 0
+# 4 vertices
+
+vt 0 1
+vt 1 1
+vt 0 0
+vt 1 0
+# 4 texture vertices
+
+vn 0 0 1
+vn 0 0 1
+vn 0 0 1
+vn 0 0 1
+# 4 vertex normals
+
+f 1/1/1 3/3/3 2/2/2
+f 3/3/3 4/4/4 2/2/2
+# 2 faces
+</code></pre><p>For this example, we store the above model definition of a plane into a text file called "plane.obj".</p>
+<center><p>
+  <img src="../graphics/plane_model.png" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>The plane.obj 3D model we will use for this example.</figcaption>
+</p></center>
+
+<p>Since the plane is a square, we extend the size of the POI image on the left and right side with a transparent area, so that the image becomes a square. As our original image is a rectangle and not a square it would get distorted when it would be wrapped onto the plane.</p>
+<p>Once you have a model defined in the obj format and a texture to wrap around the model, add both files to an assets directory in your project. For example': <code>app/src/main/assets/...</code>.</p>
+<p>Below we added one obj file and a PNG texture:</p>
+<ul>
+<li>../assets/models/plane.obj</li>
+<li>../assets/models/poi_texture.png</li>
+</ul>
+<center><p>
+  <img src="../graphics/poi_texture.png" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>The poi_texture.png texture we will use for this example.</figcaption>
+</p></center>
+
+<p>Use the following code to add a flat marker to the map:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Place the files in the "assets" directory as specified in pubspec.yaml.</span>
+<span class="token comment">// Adjust file name and path as appropriate for your project.</span>
+<span class="token comment">// Note: The bottom of the plane is centered on the origin.</span>
+<span class="token class-name">String</span> geometryFilePath <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"assets/models/plane.obj"</span></span><span class="token punctuation">;</span>
+
+<span class="token comment">// The POI texture is a square, so we can easily wrap it onto the 2 x 2 plane model.</span>
+<span class="token class-name">String</span> textureFilePath <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"assets/models/poi_texture.png"</span></span><span class="token punctuation">;</span>
+
+<span class="token comment">// Optionally, consider to store the model for reuse (like we showed for MapImages above).</span>
+<span class="token class-name">MapMarker3DModel</span> mapMarker3DModel <span class="token operator">=</span> <span class="token class-name">MapMarker3DModel</span><span class="token punctuation">.</span><span class="token function">withTextureFilePath</span><span class="token punctuation">(</span>geometryFilePath<span class="token punctuation">,</span> textureFilePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">MapMarker3D</span> mapMarker3D <span class="token operator">=</span> <span class="token class-name">MapMarker3D</span><span class="token punctuation">(</span>geoCoordinates<span class="token punctuation">,</span> mapMarker3DModel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// Scale marker. Note that we used a normalized length of 2 units in 3D space.</span>
+mapMarker3D<span class="token punctuation">.</span>scale <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
+
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">addMapMarker3d</span><span class="token punctuation">(</span>mapMarker3D<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Note that we used a normalized length of 2 units in 3D space, therefore we scale the model to be 60x bigger. The result can be seen in the screenshot below.</p>
+<center><p>
+  <img src="../graphics/map_marker_flat.jpg" width="450" style="box-shadow: 0 0 20px">
+  <figcaption>Flat map markers - rotated and tilted together with the map.</figcaption>
+</p></center>
+
+<p>We have added a red circle to indicate the location to which the flat marker is pointing to.</p>
+<p>Flat map markers rotate along with the map - and the map marker will also be tilted when the map is tilted, allowing for a 3D-like effect, although its 2D model is flat. Please note that, by default, flat map markers will not change their scale value together with the zoom level of the map: for example, when zooming out the map, a map marker will still be visible - same as for an unflattened <code>MapMarker</code>.</p>
+<p>If you want the marker to scale with the map, create a flat map marker as shown in the previous section.</p>
+<h2 id="add-a-location-indicator">Add a location indicator</h2>
+<p>Another type of 3D map items is the <code>LocationIndicator</code>. Usually, only one instance is added to the map to indicate the current location of the user's device on the map - including a heading direction.</p>
+<p>The HERE SDK provides predefined 3D assets for various use cases. If desired, these can be replaced by setting your own customized <code>MapMarker3DModel</code> for each of the predefined styles.</p>
+<p>As all map markers, also a <code>LocationIndicator</code> will not be scaled when the zoom level of the map view will change. However, if the map is tilted, the <code>LocationIndicator</code> will get smaller when it is moved farther to the horizon.</p>
+<p>Let's see an example how to add a <code>LocationIndicator</code> onto the map:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_addLocationIndicator</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span> geoCoordinates<span class="token punctuation">,</span> <span class="token class-name">LocationIndicatorIndicatorStyle</span> indicatorStyle<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">LocationIndicator</span> locationIndicator <span class="token operator">=</span> <span class="token class-name">LocationIndicator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  locationIndicator<span class="token punctuation">.</span>locationIndicatorStyle <span class="token operator">=</span> indicatorStyle<span class="token punctuation">;</span>
+
+  <span class="token comment">// A LocationIndicator is intended to mark the user's current location,</span>
+  <span class="token comment">// including a bearing direction.</span>
+  <span class="token comment">// For testing purposes, we create a Location object. Usually, you may want to get this from</span>
+  <span class="token comment">// a GPS sensor instead.</span>
+  <span class="token class-name">Location</span> location <span class="token operator">=</span> <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span>geoCoordinates<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  location<span class="token punctuation">.</span>time <span class="token operator">=</span> <span class="token class-name">DateTime</span><span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  location<span class="token punctuation">.</span>bearingInDegrees <span class="token operator">=</span> <span class="token function">_getRandom</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">360</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  locationIndicator<span class="token punctuation">.</span><span class="token function">updateLocation</span><span class="token punctuation">(</span>location<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// Show the indicator on the map view.</span>
+  locationIndicator<span class="token punctuation">.</span><span class="token function">enable</span><span class="token punctuation">(</span>_hereMapController<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>As you can see above, no asset is required. Instead an <code>IndicatorStyle</code> is set:</p>
+<ul>
+<li><code>LocationIndicator.IndicatorStyle.navigation</code>: An asset designed for navigational use cases.</li>
+<li><code>LocationIndicator.IndicatorStyle.pedestrian</code>: An asset designed for handheld usage, that is while sitting or walking.</li>
+</ul>
+<p>Both styles indicate the current bearing - which represents the direction the user is heading to. In the example, we set a random bearing value between 0° and 360° degrees. A bearing of 0° degrees is indicating north up, and thus, the arrow is pointing up - as the map is also pointing north up, by default.</p>
+<center><p>
+  <img src="../graphics/navigation_location.jpg" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>A location indicator for navigation use case.</figcaption>
+</p></center>
+
+<p>During navigation, a common UX approach is to rotate the map into the direction the user is driving, so that the direction arrow keeps pointing up, although the bearing may change. Usually, during navigation the arrow is expected to point into the direction of the road the user is traveling on.</p>
+<p>For a pedestrian use case, the focus lies on the current location of the user. Therefore, the direction is indicated by a much smaller arrow.</p>
+<center><p>
+  <img src="../graphics/pedestrian_location.jpg" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>A location indicator for pedestrian use case.</figcaption>
+</p></center>
+
+<p>It depends on the application how the bearing value is utilized. Note that the bearing value as derived from the <code>Location</code> object indicates the direction of movement, while alternatively an application may choose to set the bearing in relation to true north (compass mode). If you want the arrow to point to true North, then instead change the bearing value to 0°. Note that such adaptions must be done each time when you receive a new <code>Location</code> update from a location source (see below).</p>
+<p>Usually, only one instance of a <code>LocationIndicator</code> is set to the map. By calling <code>updateLocation()</code> its location can be updated and by calling <code>setLocationIndicatorStyle()</code> its style can be updated on-the-fly.</p>
+<p>Each style has several associated <code>MarkerType</code> values that define different states, such as a gray state when the GPS signal is lost. When a <code>LocationIndicator</code> is customized, it is important to set all types, otherwise changing a state will have no effect.</p>
+<p>The following code snippet shows how to switch between a predefined gray type - indicating an inactive state - and the default state:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">var</span> isActive <span class="token operator">=</span> locationIndicator<span class="token punctuation">.</span>isActive<span class="token punctuation">;</span>
+<span class="token comment">// Toggle between active / inactive state.</span>
+locationIndicator<span class="token punctuation">.</span>isActive <span class="token operator">=</span> <span class="token operator">!</span>isActive<span class="token punctuation">;</span>
+</code></pre>
+<p>If you want to remove the <code>LocationIndicator</code>, call:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Remove the indicator from map view.</span>
+locationIndicator<span class="token punctuation">.</span><span class="token function">disable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The <code>LocationIndicator</code> is not yet pickable and it's always drawn on top of everything else without the need to set a draw order.</p></div></div>
+<p>For most uses cases, the <code>LocationIndicator</code> should get updated based on frequent <code>Location</code> updates. You can see an isolated usage example as part of the <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">map_items_app</a> example.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The LocationIndicator is always rendered at a fixed altitude near 0. Changing the <code>MapCamera</code> to look at geographic coordinates with an altitude that is higher can cause a problem: if the <code>MapCamera</code> angle is tilted and altitude is too high, the <code>LocationIndicator</code> can disappear from the viewport due to the new perspective.</p></div></div>
+<p>It is also possible to visualize the horizontal accuracy of a location signal. On top, the <code>LocationIndicator</code> allows to set a custom color of the accuracy halo. By default, accuracy visualization is disabled.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The "navigation_custom_app" example shows how to switch to a custom <code>LocationIndicator</code> and to a different marker type when navigation has stopped.</p></div></div>
+<h3 id="how-to-use-the-mapviewlifecyclelistener">How to use the MapViewLifecycleListener</h3>
+<p>The <code>MapViewLifecycleListener</code> can be implemented by any class that wants to listen to the lifecycle of the <code>MapView</code>. The implementation takes care to react on the following events:</p>
+<ul>
+<li><code>lambda_onAttach(MapViewBase mapView)</code>: Called when adding the implementing object to the map view.</li>
+<li><code>lambda_onPause()</code>: Called when the map view to which the implementing object is attached gets paused (usually, when the app goes into background).</li>
+<li><code>lambda_onResume()</code>: Called when the map view to which the implementing object is attached gets resumed (usually, when the app goes into foreground).</li>
+<li><code>lambda_onDetach(MapViewBase mapView)</code>: Called when removing the implementing object from the map view.</li>
+<li><code>lambda_onDestroy()</code>: Called when the map view to which this implementing object is attached to is destroyed.</li>
+</ul>
+<p>You can attach and remove the implementing object like so:</p>
+<ul>
+<li>Attach an object to the <code>MapView</code> lifecycle: <code>mapView.addLifecycleListener(myObject);</code></li>
+<li>Remove an object from the <code>MapView</code> lifecycle: <code>mapView.removeLifecycleListener(myObject);</code></li>
+</ul>
+<h3 id="how-to-pick-map-items-from-a-mapview">How to pick map items from a MapView</h3>
+<p>Below table demonstrates how to pick the map items that are currently pickable:</p>
+<table class="table table-bordered" style="table-layout: fixed; width: 100%">
+
+<tr>
+   <th rowspan="2" scope="rowgroup">MapItems</th>
+</tr>
+<tr>
+   <th scope="col">How to pick</th>
+</tr>
+<tr>
+   <td>MapPolyline</td>
+   <td><code>_hereMapController.pickMapItems(touchPoint, radiusInPixel, (pickMapItemsResult))</code></td>
+</tr>
+<tr>
+   <td>MapPolygon</td>
+   <td><code>_hereMapController.pickMapItems(touchPoint, radiusInPixel, (pickMapItemsResult))</code></td>
+</tr>
+<tr>
+   <td>MapMarker</td>
+   <td><code>_hereMapController.pickMapItems(touchPoint, radiusInPixel, (pickMapItemsResult))</code></td>
+</tr>
+<tr>
+   <td>MapMarkerClusterGrouping</td>
+   <td><code>_hereMapController.pickMapItems(touchPoint, radiusInPixel, (pickMapItemsResult))</code></td>
+</tr>
+<tr>
+   <td>Embedded POIs</td>
+   <td><code>_hereMapController!.pickMapContent(rectangle2D, (pickMapContentResult))</code></td>
+</tr>
+<tr>
+   <td>MapViewPin</td>
+   <td><code>GestureDetector(child: Text(...), onTap: () {...})</code></td>
+</tr>
+</table>
+
+<h2 id="add-map-view-pins">Add map view pins</h2>
+<p>While map markers offer a seamless way to place items on the map, map pins can be used to pin a native <code>Widget</code> to the map. This can be useful to show information pop-up bubbles (or animated info bubbles), annotations, or customized controls. For example, when tapping on a map marker, you can show a map pin with additional information about the marker location.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>A view pin is attached to a map view, but not part of the map itself, since it is composed out of native views. Therefore, when panning the map view, the pins will move together with the map view, but with a slight delay. If you want to avoid this, consider to use <code>MapMarker</code> instances instead - especially, if you want to show multiple instances at once.</p></div></div>
+<p>Map view pins are of type <code>WidgetPin</code> and can be composed out of multiple <code>Widgets</code>, and each of them can be used just like any other <code>Widget</code>, allowing you to add nested layouts of your choice, attach click handlers, or apply animations, for example.</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">Widget</span> <span class="token function">_createWidget</span><span class="token punctuation">(</span><span class="token class-name">String</span> label<span class="token punctuation">,</span> <span class="token class-name">Color</span> backgroundColor<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token class-name">Container</span><span class="token punctuation">(</span>
+    padding<span class="token punctuation">:</span> <span class="token class-name">EdgeInsets</span><span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    decoration<span class="token punctuation">:</span> <span class="token class-name">BoxDecoration</span><span class="token punctuation">(</span>
+      color<span class="token punctuation">:</span> backgroundColor<span class="token punctuation">,</span>
+      border<span class="token punctuation">:</span> <span class="token class-name">Border</span><span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>color<span class="token punctuation">:</span> <span class="token class-name">Colors</span><span class="token punctuation">.</span>black<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    child<span class="token punctuation">:</span> <span class="token class-name">GestureDetector</span><span class="token punctuation">(</span>child<span class="token punctuation">:</span> <span class="token class-name">Text</span><span class="token punctuation">(</span>
+      label<span class="token punctuation">,</span>
+      style<span class="token punctuation">:</span> <span class="token class-name">TextStyle</span><span class="token punctuation">(</span>fontSize<span class="token punctuation">:</span> <span class="token number">20.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      onTap<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Tapped on "</span></span> <span class="token operator">+</span> label<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>You can set a tap gesture listener by making your widget as a child of <code>GestureDetector</code> to find out if a user tapped on a map view pin as shown above.</p>
+<p>This creates a <code>Widget</code> holding a decorated <code>Text</code> box. You can also directly add a <code>Text</code>, without adding it to an container. Any combination of widgets - or single widgets - can be added.</p>
+<p>Now, all we need to do is to add our little view composition to the map. Note that pins can be added directly to the map - unlike other map items such as polygons or markers:</p>
+<pre class="language-"><code class="lang-dart">_hereMapController<span class="token punctuation">.</span><span class="token function">pinWidget</span><span class="token punctuation">(</span>
+    <span class="token function">_createWidget</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Centered ViewPin"</span></span><span class="token punctuation">,</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">fromARGB</span><span class="token punctuation">(</span><span class="token number">150</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">194</span><span class="token punctuation">,</span> <span class="token number">138</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> mapCenterGeoCoordinates<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Note that this method returns a proxy object that can be used to control the pinning, for example, to specify an anchor point.</p>
+<center><p>
+  <img src="../graphics/mapoverlay_default.jpg" width="350" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: A map pin showing an Flutter `Widget`. By default, the view is centered on the provided location.</figcaption>
+</p></center>
+
+<p>It is also possible to apply animations to the view or attach some other interaction listeners. After a <code>View</code> is attached to the map view, it will behave like any other Flutter <code>Widget</code> - except that it stays fixed on the map and moves along with it when panning or zooming. Note, the <code>WidgetPin</code> does not rotate when you rotate the map - similar to map polylines and map markers.</p>
+<p>You can add as many map pins as you like, but you should take performance into consideration. For example, if you want to indicate multiple search results on the map, then map pins are less performant than map markers.</p>
+<p>To remove a pin from the map, simply call:</p>
+<pre class="language-"><code class="lang-dart">widgetPin<span class="token punctuation">.</span><span class="token function">unpin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>If you have added multiple <code>WidgetPin</code> instances, you can access all pins from the <code>_hereMapController</code> object by calling:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Note: We make a deep copy of the list as we modify it during iteration.</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">WidgetPin</span><span class="token punctuation">&gt;</span></span> mapViewPins <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>_hereMapController<span class="token punctuation">.</span>widgetPins<span class="token punctuation">]</span><span class="token punctuation">;</span>
+mapViewPins<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>widgetPin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  widgetPin<span class="token punctuation">.</span><span class="token function">unpin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Usually, map pins are the best choice for showing additional dynamic content for a specific location on the map.</p>
+<h3 id="anchored-map-view-pins">Anchored map view pins</h3>
+<p>By default, the map pin will be centered on the provided location. But if you want to use a pin without covering the area underneath, what can you do?</p>
+<p>For this purpose, you can specify an anchor point, which influences the view's position on the screen in the same way as we have already seen for map markers above:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">var</span> widgetPin <span class="token operator">=</span> _hereMapController<span class="token punctuation">.</span><span class="token function">pinWidget</span><span class="token punctuation">(</span>
+    <span class="token function">_createWidget</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Anchored MapViewPin"</span></span><span class="token punctuation">,</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">fromARGB</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">144</span><span class="token punctuation">,</span> <span class="token number">138</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> mapCenterGeoCoordinates<span class="token punctuation">)</span><span class="token punctuation">;</span>
+widgetPin<span class="token operator">?</span><span class="token punctuation">.</span>anchor <span class="token operator">=</span> <span class="token class-name">Anchor2D</span><span class="token punctuation">.</span><span class="token function">withHorizontalAndVertical</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>This will place the view centered horizontally on the location, while the bottom of the view is matching the provided coordinate. As visualized in the screenshot below, the map pin sits on a map circle object that indicates the provided center location of the map pin.</p>
+<center><p>
+  <img src="../graphics/mapoverlay_anchored.jpg" width="350" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: An anchored map pin.</figcaption>
+</p></center>
+
+<p>Anchor points provide a convenient way to specify the location where the view should be rendered: the top-left corner equals an anchor point of (0, 0) while the bottom-right corner equals an anchor point of (1, 1). Independent of how large the view is, the point that is half the width or height will always be 0.5 - this is similar to the concept of normalized texture UV-coordinates. For an illustration, please see the map markers section above.</p>
+<p>By default, the anchor point is (0.5, 0.5), which will render the view centered on the location. If the bottom-right corner of the view should point to the set <code>GeoCoordinates</code> location, then the anchor point must be set to (1, 1).</p>
+<p>Since a view can be of any size, the maximum width and height will have a value of 1. The dimension of the view is calculated after it is fully inflated. If you know the exact dimensions of your view, you can easily calculate a specific point inside the view in relation to the maximum value of 1.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>While offsets allow you to specify the translation along the x- and y-axis, an anchor point defines the relative position of the top-left corner of a rectangle such as a view. In relation to the view's boundaries, it defines the point where the view is centered on the provided <code>GeoCoordinates</code> location.</p></div></div>
+<h2 id="try-the-example-app">Try the example app</h2>
+<p>All of the above code snippets can be seen in our "map_items_app" example which can be found on <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">GitHub</a> for the platform of your choice.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="gestures.html" class="navigation navigation-prev " aria-label="Previous page: Interact with the map">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="map-styles.html" class="navigation navigation-next " aria-label="Next page: Add predefined map styles">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Add map items","level":"1.4.4","depth":2,"next":{"title":"Add predefined map styles","level":"1.4.5","depth":2,"path":"topics/map-styles.md","ref":"topics/map-styles.md","articles":[]},"previous":{"title":"Interact with the map","level":"1.4.3","depth":2,"path":"topics/gestures.md","ref":"topics/gestures.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/map-items.md","mtime":"2025-01-22T16:33:08.630Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

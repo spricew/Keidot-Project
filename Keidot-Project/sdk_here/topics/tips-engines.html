@@ -1,0 +1,1033 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Engines · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="key-concepts.html">
+    
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Engines</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="engines">Engines</h1>
+<p>Explore the fundamentals of working with HERE SDK engines, including their integration with or without a map view, initialization options, and efficient management of the map cache.</p>
+<h2 id="how-to-work-with-engines">How to work with engines</h2>
+<p>The HERE SDK contains several modules - or engines as we call them - to execute specific tasks such as calculating a route with the <code>RoutingEngine</code> or requesting search results via the <code>SearchEngine</code>. There are many more engines you can use with the HERE SDK and you can read more about them in the dedicated chapters below. However, most engines share common concepts that makes it easier to use them. For example:</p>
+<ul>
+<li>All engines execute their tasks asynchronously and receive their results on the main thread.</li>
+<li>All engines share similar interfaces, callbacks and error handling.</li>
+<li>It is possible to start multiple instances of an engine in parallel.</li>
+<li>An online connection is required.</li>
+</ul>
+<p>Below you can find an overview of the most common engines for the <em>Explore Edition</em>:</p>
+<ul>
+<li><code>SearchEngine</code>: Includes all functionality to search for places, suggestions and locations including geocoding and reverse geocoding.</li>
+<li><code>RoutingEngine</code> / <code>TransitRoutingEngine</code>: Allows to calculate routes including various options and transport types.</li>
+<li><code>TrafficEngine</code>: An engine that allows to search for traffic incidents.</li>
+<li><code>SDKNativeEngine</code>: Is required to setup credentials programmatically and allows a few other advanced settings.</li>
+<li><code>MapView</code>: A view to visualize map data. Not really an engine, but listed here for completeness.</li>
+</ul>
+<p>Note that all HERE SDK engines, except for the <code>SDKNativeEngine</code>, can operate independently from each other and require HERE credentials to request data.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The HERE SDK does not verify credentials at instantiation time. This only happens once a feature is used that requires authentication. In case of a failure, you will get a dedicated error message. For example, the <code>SearchEngine</code> will reply with a <code>SearchError.authenticationFailed</code> error. Other engines provide similar error codes.</p><p>Not all credentials will work for all features. If the credentials are invalid, the logs contain "[ERROR]" messages with a text similar to "Failed to get the authentication token: Authentication failed, error code: 1". This indicates that the credentials are not accepted when using a service. If you want to ensure that your credentials are set up correctly, use a feature with a specialized engine and check if the engine replies with an error value.</p></div></div>
+<p>Any engine can be created using a parameterless constructor. Example:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">try</span> <span class="token punctuation">{</span>
+  _searchEngine <span class="token operator">=</span> <span class="token class-name">SearchEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">InstantiationException</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Handle exception.</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Using this default constructor requires that the HERE SDK is already initialized and that a shared instance of the <code>SDKNativeEngine</code> was set either directly by calling <code>SDKNativeEngine.sharedInstance = sdkNativeEngine</code> or implicitly by calling <code>SDKNativeEngine.makeSharedInstance(options)</code>.</p>
+<p>For rare use case scenarios, you can use an overloaded constructor that takes an individually created instance of the <code>SDKNativeEngine</code> - as shown in the below section.</p>
+<h2 id="use-engines-with-or-without-a-map-view">Use Engines with or without a Map View</h2>
+<p>Engines do not need a map view to operate. Therefore it is possible to run an engine on its own, without any map view added to your application. This way, you can build an app solely around a specific engine. With or without a map view - the procedure to create a new engine is exactly the same. Just make sure to initialize the HERE SDK beforehand.</p>
+<h2 id="initialization-options">Initialization options</h2>
+<p>The HERE SDK can be initialized with various options that can be set either directly for the <code>SDKNativeEngine</code> or when initializing the engine with <code>SDKOptions</code>.</p>
+<p>None of the options are persisted - unless otherwise notes in the API Reference: this means, whenever you initialize the HERE SDK again, the previous options have to be set again if you want to keep them.</p>
+<p>The same applies to options you can set for the various feature engines or when using a feature such as the <code>RoutingEngine</code> to calculate a <code>Route</code> with, for example, <code>CarOptions</code>.</p>
+<p>Since HERE SDK 4.12.1.0, the HERE SDK itself needs to be initialized manually. To learn more, see <a href="integrate-here-sdk.html">Integrate the HERE SDK</a>.</p>
+<ul>
+<li>If your app immediately wants to show a map view after app start, then for most use cases it's sufficient to follow the <a href="integrate-here-sdk.html">Integrate the HERE SDK</a> guide. However:</li>
+<li>If your app needs to show a map view at a later point in time or if you want to delay initialization, then it is also possible to initialize the HERE SDK at a later point in time.</li>
+</ul>
+<p>These are the steps to initialize the HERE SDK:</p>
+<ol>
+<li>Call <code>SdkContext.init(IsolateOrigin.main)</code>. Note that this does not yet init the HERE SDK.</li>
+<li>Initialize the HERE SDK by creating <code>SDKOptions</code> and use them to create a new <code>SDKNativeEngine</code>.</li>
+</ol>
+<p>Make sure to call <code>SdkContext.init(IsolateOrigin.main)</code> once, since it initializes the <code>Isolate</code> and sets up other resources that are need to initialize the HERE SDK. If you have different isolates, it must be initialized for each of those isolates threads with a different init parameter. Usually, it is enough to call <code>init()</code> in the <code>main()</code> function in your <code>main.dart</code> file. Note that, for example, during a hot restart all existing isolates are destroyed and the HERE SDK runs <code>SdkContext.init(IsolateOrigin.main)</code> again. However, in such a case you would still need to call <code>init()</code> again if you want to launch a new custom isolate in which the HERE SDK should run.</p>
+<p>The creation of the <code>SDKNativeEngine</code> and other engines such as the <code>SearchEngine</code> happens synchronously in a negligible amount of time.</p>
+<p>You can initialize the HERE SDK in two ways:</p>
+<ul>
+<li>Create a shared instance of the <code>SDKNativeEngine</code> with <code>SDKNativeEngine.makeSharedInstance(options)</code>.</li>
+<li>Create individual instances of the <code>SDKNativeEngine</code> via <code>SDKNativeEngine​(options)</code>.</li>
+</ul>
+<p>By calling <code>SDKNativeEngine.makeSharedInstance(options)</code> you create a shared instance of the <code>SDKNativeEngine</code> that can be used by the HERE SDK. This singleton approach allows easy creation of engines such as the <code>SearchEngine</code>, because you can use the default constructor (<code>SearchEngine()</code>) that requires no parameters. Internally, the <code>SearchEngine</code> will use the shared instance of the <code>SDKNativeEngine</code> you have created at initialization time. Therefore, when you re-initialize the HERE SDK, also all engines that have been created using the parameterless constructor, need to be created again.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>In case of re-initialization, also a <code>MapView</code> instance needs to be initialized again by calling its <code>onCreate(..)</code> method. The state of a <code>MapView</code> becomes invalid, when the <code>SDKNativeEngine</code> is disposed. Call <code>mapView.isValid()</code> to determine if the <code>MapView</code> is initialized correctly.</p></div></div>
+<p>Alternatively, for rare use cases, you can set an individual <code>SDKNativeEngine</code> instance for each of the feature engines:</p>
+<pre class="language-"><code class="lang-java"><span class="token class-name">SearchEngine</span> searchEngine <span class="token operator">=</span> <span class="token class-name">SearchEngine</span><span class="token punctuation">(</span>sdkNativeEngine<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>In general, it should not be necessary to initialize the <code>SDKNativeEngine</code> multiple times. Only one shared instance can be set at a time, which happens implicitly when calling <code>SDKNativeEngine.makeSharedInstance(options)</code>. Alternatively, you can use the available constructor to create an instance of the <code>SDKNativeEngine</code> directly: if you create multiple instances individually, then no shared instance is set - and each feature engine needs to be created with an instance of a <code>SDKNativeEngine</code> as constructor parameter - like shown above. This way you can use feature engines such as the <code>SearchEngine</code> or the <code>RoutingEngine</code> with different instances of the <code>SDKNativeEngine</code> that can hold different <code>SDKOptions</code>.</p>
+<p>Note that any individual instance can be set explicitly as shared instance by calling <code>SDKNativeEngine.sharedInstance = sdkNativeEngine</code>. Attention: in this case, make sure to <code>dispose()</code> any previous instance by calling <code>await SDKNativeEngine.sharedInstance?.dispose()</code>. Note that this is not necessary when creating a global instance by calling <code>SDKNativeEngine.makeSharedInstance(options)</code> - for convenience, this call internally disposes any previously shared instance.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>For most use cases it is not recommended to create multiple instances: in case of doubt, we recommend to initialize the HERE SDK only via <code>SDKNativeEngine.makeSharedInstance(options)</code> as shown in the <a href="integrate-here-sdk.html">Integrate the HERE SDK</a> guide. It is possible to use this initialization method each time the HERE SDK is needed and to dispose the <code>SDKNativeEngine</code> thereafter: for example, for each widget. However, for most cases it can be more efficient if the HERE SDK is initialized only once during the lifetime of an application.</p></div></div>
+<p>Multiple <code>SDKNativeEngine</code> instances can’t have the same access key ID and the cache path is ensured to be unique per access key ID. If a second instance is created with an access key ID that is already in use, then an <code>InstantiationException</code> is thrown: as a rule of thumb, when you need multiple instances, you also need a distinct set of credentials for each.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The access key ID part of your credentials is tied to the cache path. When credentials are changed at runtime, it may look like that the previous cache is gone, but it still exists and it is not cleared automatically after disposing the <code>SDKNativeEngine</code> or after setting new credentials. Since new credentials have been set, the cache path has just been changed. For example, when the previous credentials are restored, the previous cache can be used again.</p></div></div>
+<p>More information on the cache can be found <a href="#work-with-the-map-cache">below</a>.</p>
+<h2 id="initialization-and-android-permissions">Initialization and Android permissions</h2>
+<p>Usually, it is good practice to initialize the HERE SDK not before all permissions have been granted.</p>
+<p>The HERE SDK for Flutter automatically merges all required permissions to the <code>AndroidManifest.xml</code>:</p>
+<pre class="language-"><code class="lang-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.INTERNET<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uses-permission</span> <span class="token attr-name"><span class="token namespace">android:</span>name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>android.permission.ACCESS_NETWORK_STATE<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+</code></pre>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>These permissions are not sensitive and are immediately granted upon installation by the system - they are always needed, as the HERE SDK needs to have a working internet connection. It is not a requirement to handle these permissions and there are no HERE SDK specific requirements on how to handle permissions.</p></div></div>
+<p>However, be aware that a user can deny any permission after installation via the device's app settings. You can use a <a href="https://github.com/heremaps/here-sdk-examples/blob/master/examples/latest/navigate/android/HelloMap/app/src/main/java/com/here/hellomap/PermissionsRequestor.java" target="_blank">convenience class</a> to notify the user upon app launch like shown <a href="https://github.com/heremaps/here-sdk-examples/blob/master/examples/latest/navigate/android/HelloMap/app/src/main/java/com/here/hellomap/MainActivity.java" target="_blank">here</a>. Note that Flutter itself does not provide any mechanism to handle permissions - and the accompanying Flutter example apps do not utilize any specific Android permission handling. If no internet connection is available, most HERE SDK services will indicate this with an appropriate error message.</p>
+<h2 id="work-with-the-map-cache">Work with the map cache</h2>
+<p>To better support online and offline use cases, the HERE SDK supports caching of downloaded vector map data. This happens in the background. While interacting with the map, prefetching or using navigation with or without a map view, the data is stored locally on the device and can be accessed even when the device loses connection or operates in an offline mode.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The HERE SDK stores arbitrary data as part of map tiles. Therefore, even without displaying a map view, the map cache will be utilized. For instance, during navigation, all necessary data is stored in the map cache within map tiles. However, it's important to note that not all editions support features such as prefetching and navigation.</p></div></div>
+<p>The integrated map caching mechanism supports the standard vector based map schemes - satellite images and other raster tiles are also cached, but in a different cache that is not configurable.</p>
+<p>Please note that the amount of cached data is limited and will be overwritten with new map data while using the map. In most cases, this is sufficient to give the user the impression of a faster start-up time - as no additional data must be downloaded when you start an app again at the same location as before.</p>
+<p>When the cache is full, a least recently used <a href="https://en.wikipedia.org/wiki/Cache_replacement_policies#Least_recently_used_(LRU" target="_blank">LRU</a>) strategy is applied.</p>
+<p><strong>Change path and cache size</strong></p>
+<ul>
+<li>An absolute cache path and maximum size can be specified when manually initializing the HERE SDK using <code>SDKOptions</code>. Check the <a href="#engines">Engines</a> section for more details.</li>
+<li>Via <code>SDKOptions</code> you can specify the desired <code>cacheSizeInBytes</code> to define the upper bound of the cache in bytes. Make sure to query the available disk space on the device with the available platform APIs.</li>
+</ul>
+<p>There can be a separate cache defined for <a href="custom-map-styles.html#add-custom-raster-layers">customer raster layers</a>.</p>
+<p>This is how you can clear the map cache:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">SDKCache</span><span class="token punctuation">.</span><span class="token function">fromSdkEngine</span><span class="token punctuation">(</span><span class="token class-name">SDKNativeEngine</span><span class="token punctuation">.</span>sharedInstance<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">clearAppCache</span><span class="token punctuation">(</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>error <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token comment">// ...</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Note that disposing the <code>SDKNativeEngine.sharedInstance</code> does not clear the cache.</p>
+<p>By setting an empty string as cache path, you keep the default cache path - which is also accessible via <code>SDKNativeEngine.sharedInstance?.options.cachePath</code>:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Specify credentials programmatically and keep default cache path by setting an empty string.</span>
+<span class="token class-name">SDKOptions</span> sdkOptions <span class="token operator">=</span> <span class="token class-name">SDKOptions</span><span class="token punctuation">.</span><span class="token function">withAccessKeySecretAndCachePath</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"YOUR_ACCESS_KEY_ID"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"YOUR_ACCESS_KEY_SECRET"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">""</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="questions-and-answers-around-the-map-cache">Questions and answers around the map cache</h3>
+<ul>
+<li><p><strong>What is a map tile?</strong> Map tiles are stored in the map cache. A map tile contains data relevant for search and routing, as well as vector data for the visual representation. Map tiles are available for different zoom levels. A map tile may contain different data, depending on the zoom level.</p>
+</li>
+<li><p><strong>How long are map tiles cached?</strong> Map tiles cannot be used after one day and will be evicted. New images are downloaded earliest after one day based on a LRU strategy.</p>
+</li>
+<li><p><strong>What is the eviction policy of the cache?</strong> The HERE SDK uses a LRU (least recently used tile) logic to evict the tiles after one day. The map cache is not session-specific, its data from the last time the device was used, that is from the last power cycle, is still there the next time the app is used. Note that the cache is specific per app, not per device.</p>
+</li>
+<li><p><strong>What is the size of the map cache?</strong> The size of the map cache can be changed by the application. Use at least 256 MB (default). Values above 512 MB or 1 GB are recommended.
+For turn-by-turn navigation (which is available e.g. for the <code>Navigate Edition</code>), map tiles of zoom level 14 are needed, which equals a circle of roughly 2 km. However, this can vary a bit from location to location.</p>
+</li>
+<li><p><strong>Is any previously cached map tile searchable offline?</strong> Yes, it's always searchable with the <code>OfflineSearchEngine</code>. However, sometimes not every map tile contains the same search results for every zoom level. Note that the <code>OfflineSearchEngine</code> is not available for every edition.</p>
+</li>
+<li><p><strong>Is only one map tile cached at a time?</strong> Yes, only one tile at a time may be added unless its location is on the edge of two tiles. Depending on the zoom level, rendering of the map view will require several tiles - this is not happening automatically and only when the zoom level changes.</p>
+</li>
+<li><p><strong>Are satellite images cached?</strong> Yes. When the satellite map scheme is set, the corresponding imagery is also cached, but satellite images cannot be used after one day and will be evicted. New images are downloaded earliest after one day based on a LRU strategy.</p>
+</li>
+<li><p><strong>Is there always a "base map" available, such as a globe view?</strong> The HERE SDK downloads automatically the world tiles, that is the top most zoom level tiles for the globe. This means that there is always a map available for the globe with a very limited amount of information for rendering purposes. The shapes of countries and continents are visible and capitols are shown with text labels.</p>
+</li>
+<li><p><strong>Is the cache auto-cleared?</strong> No, a full cache is only cleared based on a LRU strategy (see above). If tiles have not been fully downloaded due to a connectivity interruption, these tiles are preserved and the download continues when connectivity resumes.</p>
+</li>
+<li><p><strong>If connectivity is available, will a whole route be cached in advance?</strong> No, this is not happening automatically. However, you can use the <code>RoutePrefetcher</code> to download map data into the cache along the route corridor. Look into the turn-by-turn navigation section for more details. Note that the <code>RoutePrefetcher</code> is not available for every edition.</p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="key-concepts.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Best practices">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Engines","level":"1.10.1","depth":2,"next":{"title":"Best practices","level":"1.10.2","depth":2,"path":"topics/key-concepts.md","ref":"topics/key-concepts.md","articles":[]},"previous":{"title":"Development tips","level":"1.10","depth":1,"ref":"","articles":[{"title":"Engines","level":"1.10.1","depth":2,"path":"topics/tips-engines.md","ref":"topics/tips-engines.md","articles":[]},{"title":"Best practices","level":"1.10.2","depth":2,"path":"topics/key-concepts.md","ref":"topics/key-concepts.md","articles":[]},{"title":"Supplemental information","level":"1.10.3","depth":2,"path":"topics/tips-supplements.md","ref":"topics/tips-supplements.md","articles":[]},{"title":"Product history","level":"1.10.4","depth":2,"path":"topics/changelog/changelog-explore.md","ref":"topics/changelog/changelog-explore.md","articles":[]},{"title":"Debugging and troubleshooting","level":"1.10.5","depth":2,"path":"topics/tips-troubleshooting.md","ref":"topics/tips-troubleshooting.md","articles":[]},{"title":"Community and support","level":"1.10.6","depth":2,"path":"topics/tips-support.md","ref":"topics/tips-support.md","articles":[]},{"title":"FAQ","level":"1.10.7","depth":2,"path":"topics/use-cases.md","ref":"topics/use-cases.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/tips-engines.md","mtime":"2025-01-22T16:33:08.786Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

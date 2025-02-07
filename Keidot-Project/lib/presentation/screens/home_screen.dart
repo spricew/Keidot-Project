@@ -1,8 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/Services/models/service_model.dart';
+import 'package:test_app/Services/services_request/service_controller.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<Service> services = [];
+
+  @override
+  void initState() {
+    super.initState();
+    fetchServices();
+  }
+
+  Future<void> fetchServices() async {
+    try {
+      List<Service> apiServices = await ApiService.fetchServices();
+      setState(() {
+        services = apiServices;
+      });
+    } catch (e) {
+      // Manejo de errores
+      print("Error: $e");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +45,6 @@ class HomeScreen extends StatelessWidget {
                   child: const Text("Modificar"),
                   onTap: () {
                     Navigator.pop(context);
-                    //ignore: avoid_print
                     print("Estas en Modificar");
                   },
                 ),
@@ -36,7 +61,7 @@ class HomeScreen extends StatelessWidget {
               fontSize: 26,
               fontWeight: FontWeight.w600,
               letterSpacing: -0.8,
-              color: greenHigh,
+              color: Colors.green,
             ),
           ),
         ),
@@ -50,7 +75,7 @@ class HomeScreen extends StatelessWidget {
               width: double.infinity,
               height: 230,
               decoration: BoxDecoration(
-                color: greenHigh,
+                color: Colors.green,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: const Center(
@@ -68,28 +93,26 @@ class HomeScreen extends StatelessWidget {
             const Text(
               'Servicios destacados',
               style: TextStyle(
-                color: darkGreen,
+                color: Colors.green,
                 fontSize: 22,
-                fontFamily: 'Poppins',
                 fontWeight: FontWeight.w600,
                 letterSpacing: -0.2,
               ),
             ),
             const SizedBox(height: 10),
-            GridView.count(
-              crossAxisCount: 2,
-              crossAxisSpacing: 12,
-              mainAxisSpacing: 12,
-              childAspectRatio: 0.84,
+            GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              children: [
-                _gridItem("Jardinería", "assets/images/jardineria.png"),
-                _gridItem(
-                    "Renta de maquinaria", "assets/images/maquinaria.png"),
-                _gridItem("Venta de plantas", "assets/images/plantas.png"),
-                _gridItem("Limpieza de hojas", "assets/images/limpieza.png"),
-              ],
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 12,
+                mainAxisSpacing: 12,
+                childAspectRatio: 0.84,
+              ),
+              itemCount: services.length,
+              itemBuilder: (context, index) {
+                return _gridItem(services[index]);
+              },
             ),
           ],
         ),
@@ -97,12 +120,12 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _gridItem(String title, String imagePath) {
+  Widget _gridItem(Service service) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         image: DecorationImage(
-          image: AssetImage(imagePath),
+          image: NetworkImage(service.urlImage),
           fit: BoxFit.cover,
         ),
       ),
@@ -112,13 +135,13 @@ class HomeScreen extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           gradient: LinearGradient(
-            colors: [Colors.black.withValues(alpha: 0.7), Colors.transparent],
+            colors: [Colors.black.withOpacity(0.7), Colors.transparent],
             begin: Alignment.bottomCenter,
             end: Alignment.topCenter,
           ),
         ),
         child: Text(
-          title,
+          service.title,
           style: const TextStyle(
             color: Colors.white,
             fontSize: 22,

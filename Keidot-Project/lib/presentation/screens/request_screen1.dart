@@ -68,7 +68,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                         value: 1,
                         groupValue: controller.requestData.value.tiempoEstimado.inMinutes == 30 ? 1 : 0,
                         onChanged: (value) {
-                          controller.setTiempoEstimado(Duration(minutes: 30)); // Pequeña: 20-30 min
+                          controller.setTiempoEstimado(const Duration(minutes: 30)); // Pequeña: 20-30 min
                         },
                         title: const Text('Pequeña - Tiempo Est. 20-30 min'),
                       )),
@@ -76,7 +76,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                         value: 2,
                         groupValue: controller.requestData.value.tiempoEstimado.inMinutes == 90 ? 2 : 0,
                         onChanged: (value) {
-                          controller.setTiempoEstimado(Duration(minutes: 90)); // Mediana: 1-2 hr
+                          controller.setTiempoEstimado(const Duration(minutes: 90)); // Mediana: 1-2 hr
                         },
                         title: const Text('Mediana - Tiempo Est. 1-2 hr'),
                       )),
@@ -84,7 +84,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                         value: 3,
                         groupValue: controller.requestData.value.tiempoEstimado.inMinutes == 150 ? 3 : 0,
                         onChanged: (value) {
-                          controller.setTiempoEstimado(Duration(minutes: 150)); // Grande: Más de 2 hr
+                          controller.setTiempoEstimado(const Duration(minutes: 150)); // Grande: Más de 2 hr
                         },
                         title: const Text('Grande - Tiempo Est. Más de 2 hr'),
                       )),

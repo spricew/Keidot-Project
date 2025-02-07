@@ -3,6 +3,8 @@ import 'package:flutter/services.dart'; // Importa esto para usar TextInputForma
 import 'package:test_app/presentation/screens/transferenciaespera_screen.dart';
 
 class AnadirMetodoPagoScreen extends StatelessWidget {
+  const AnadirMetodoPagoScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,13 +12,13 @@ class AnadirMetodoPagoScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
             Navigator.pop(context); // Regresa a la pantalla anterior
           },
         ),
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Añadir método de pago',
           style: TextStyle(color: Color(0xFF3BA670)),
         ),
@@ -27,14 +29,14 @@ class AnadirMetodoPagoScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Campo de correo electrónico
-            Text(
+            const Text(
               'Correo electrónico',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             TextField(
               decoration: InputDecoration(
                 hintText: 'example@example.com',
@@ -43,17 +45,17 @@ class AnadirMetodoPagoScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Campo de número de tarjeta (un solo campo)
-            Text(
+            const Text(
               'Número de tarjeta',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             TextField(
               decoration: InputDecoration(
                 hintText: '1234 5678 9012 3456',
@@ -69,17 +71,17 @@ class AnadirMetodoPagoScreen extends StatelessWidget {
                 CardNumberInputFormatter(), // Formateador personalizado
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Campo de fecha de vencimiento
-            Text(
+            const Text(
               'Fecha de vencimiento',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             TextField(
               decoration: InputDecoration(
                 hintText: 'MM/AA',
@@ -95,17 +97,17 @@ class AnadirMetodoPagoScreen extends StatelessWidget {
                 CardExpiryInputFormatter(), // Formateador personalizado
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Campo de código de seguridad
-            Text(
+            const Text(
               'Código de seguridad',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             TextField(
               decoration: InputDecoration(
                 hintText: 'CVC',
@@ -116,7 +118,7 @@ class AnadirMetodoPagoScreen extends StatelessWidget {
               maxLength: 3,
               keyboardType: TextInputType.number,
             ),
-            Spacer(),
+            const Spacer(),
 
             // Botones Regresar y Contribuir
             Row(
@@ -126,7 +128,7 @@ class AnadirMetodoPagoScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pop(context); // Regresa a la pantalla anterior
                   },
-                  child: Text(
+                  child: const Text(
                     'Regresar',
                     style: TextStyle(color: Colors.red),
                   ),
@@ -141,12 +143,12 @@ class AnadirMetodoPagoScreen extends StatelessWidget {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF12372A), // Color verde
+                    backgroundColor: const Color(0xFF12372A), // Color verde
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Continuar',
                     style: TextStyle(color: Colors.white),
                   ),

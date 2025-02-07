@@ -1,0 +1,1183 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Search &amp; Geocoding features · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="search.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Search &amp; Geocoding features</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="search--geocoding-features">Search &amp; Geocoding features</h1>
+<p>The HERE SDK offers a comprehensive suite of search and geocoding features that allow you to interact with geographical data seamlessly. Whether you're looking to convert coordinates into human-readable addresses or find locations based on address input, the HERE SDK has you covered.</p>
+<h2 id="reverse-geocode-an-address-from-geographic-coordinates">Reverse geocode an address from geographic coordinates</h2>
+<p>With the <code>SearchEngine</code>, searching for places at specific locations or areas on the map is straightforward. But what if we only have a location's coordinates? A common scenario involves a user interacting with the map, such as performing a long press gesture, which provides the latitude and longitude of the selected location. While the user can see this location on the map, we lack additional details like the corresponding address information.</p>
+<p>This is where reverse geocoding can be helpful.</p>
+<p>Our location of interest is represented by a <code>GeoCoordinates</code> instance, which we might get from a user tapping the map, for example. To demonstrate how to "geocode" that location, see the following method:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">Future</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token keyword">void</span><span class="token punctuation">&gt;</span></span> <span class="token function">_getAddressForCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span> geoCoordinates<span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token class-name">SearchOptions</span> reverseGeocodingOptions <span class="token operator">=</span> <span class="token class-name">SearchOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  reverseGeocodingOptions<span class="token punctuation">.</span>languageCode <span class="token operator">=</span> <span class="token class-name">LanguageCode</span><span class="token punctuation">.</span>enGb<span class="token punctuation">;</span>
+  reverseGeocodingOptions<span class="token punctuation">.</span>maxItems <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+  _searchEngine<span class="token punctuation">.</span><span class="token function">searchByCoordinates</span><span class="token punctuation">(</span>geoCoordinates<span class="token punctuation">,</span> reverseGeocodingOptions<span class="token punctuation">,</span>
+      <span class="token punctuation">(</span><span class="token class-name">SearchError</span><span class="token operator">?</span> searchError<span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Place</span><span class="token punctuation">&gt;</span></span><span class="token operator">?</span> list<span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>searchError <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">_showDialog</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Reverse geocoding"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Error: "</span></span> <span class="token operator">+</span> searchError<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// If error is null, list is guaranteed to be not empty.</span>
+    <span class="token function">_showDialog</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Reverse geocoded address:"</span></span><span class="token punctuation">,</span> list<span class="token operator">!</span><span class="token punctuation">.</span>first<span class="token punctuation">.</span>address<span class="token punctuation">.</span>addressText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Similar to the other search functionalities provided by the <code>SearchEngine</code>, a <code>SearchOptions</code> instance needs to be provided to set the desired <code>LanguageCode</code>. It determines the language of the resulting address. Then we can make a call to the engine's <code>searchByAddress()</code>-method to search online for the address of the passed coordinates. In case of errors, such as when the device is offline, <code>SearchError</code> holds the error cause.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The reverse geocoding response contains either an error or a result: <code>SearchError</code> and the result list can never be null at the same time - or non-null at the same time.</p></div></div>
+<p>The <code>Address</code> object contained inside each <code>Place</code> instance is a data class that contains multiple <code>String</code> fields describing the address of the raw location, such as country, city, street name, and many more. Consult the API Reference for more details. If you are only interested in receiving a readable address representation, you can access <code>addressText</code>, as shown in the above example. This is a <code>String</code> containing the most relevant address details, including the place's title.</p>
+<center><p>
+  <img src="../graphics/long_press_reverse_geocoding.jpg" width="350" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing a long press coordinate resolved to an address.</figcaption>
+</p></center>
+
+<p>Reverse geocoding does not need a certain search area: you can resolve coordinates to an address worldwide.</p>
+<h2 id="geocode-an-address-to-a-location">Geocode an address to a location</h2>
+<p>While with reverse geocoding you can get an address from raw coordinates, forward geocoding does the opposite and lets you search for the raw coordinates and other location details by just passing in an address detail such as a street name or a city.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Whereas reverse geocoding in most cases delivers only one result, geocoding may provide one or many results.</p></div></div>
+<p>Here is how you can do it. First, we must specify the coordinates near to where we want to search and as <code>queryString</code>, we set the address for which we want to find the exact location:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">AddressQuery</span> query <span class="token operator">=</span> <span class="token class-name">AddressQuery</span><span class="token punctuation">.</span><span class="token function">withAreaCenter</span><span class="token punctuation">(</span>queryString<span class="token punctuation">,</span> geoCoordinates<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">SearchOptions</span> searchOptions <span class="token operator">=</span> <span class="token class-name">SearchOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+searchOptions<span class="token punctuation">.</span>languageCode <span class="token operator">=</span> <span class="token class-name">LanguageCode</span><span class="token punctuation">.</span>deDe<span class="token punctuation">;</span>
+searchOptions<span class="token punctuation">.</span>maxItems <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+
+_searchEngine<span class="token punctuation">.</span><span class="token function">searchByAddress</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> searchOptions<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token class-name">SearchError</span><span class="token operator">?</span> searchError<span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Place</span><span class="token punctuation">&gt;</span></span><span class="token operator">?</span> list<span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>searchError <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">_showDialog</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Geocoding"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Error: "</span></span> <span class="token operator">+</span> searchError<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token class-name">String</span> locationDetails <span class="token operator">=</span> <span class="token string-literal"><span class="token string">""</span></span><span class="token punctuation">;</span>
+
+  <span class="token comment">// If error is null, list is guaranteed to be not empty.</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Place</span> geocodingResult <span class="token keyword">in</span> list<span class="token operator">!</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span>
+
+  int itemsCount <span class="token operator">=</span> list<span class="token operator">!</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token function">_showDialog</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Geocoding result: </span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">itemsCount</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> locationDetails<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>For this example, we will pass in the street name of HERE's Berlin HQ "Invalidenstraße 116" - optionally followed by the city - as the query string. As this is a street name in German, we pass in the language code <code>deDe</code> for Germany. This also determines the language of the returned results.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Results can lie far away from the specified location - although results nearer to the specified coordinates are ranked higher and are returned preferably.</p></div></div>
+<p>After validating that the function completed without an error, we check the list for <code>Place</code> elements.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>If <code>searchError</code> is null, the resulting <code>list</code> is guaranteed to be not null, and vice versa.</p></div></div>
+<p>The results are wrapped in a <code>Place</code> object that contains the raw coordinates - as well as some other address details, such as an <code>Address</code> object and the place ID that identifies the location in the <a href="https://www.here.com/docs/bundle/places-search-api-developer-guide/page/topics/what-is.html" target="_blank">HERE Places API</a>. Below, we iterate over the list and get the address text and the coordinates:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Place</span> geocodingResult <span class="token keyword">in</span> list<span class="token operator">!</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Note: getGeoCoordinates() may return null only for Suggestions.</span>
+  <span class="token class-name">GeoCoordinates</span> geoCoordinates <span class="token operator">=</span> geocodingResult<span class="token punctuation">.</span>geoCoordinates<span class="token operator">!</span><span class="token punctuation">;</span>
+  <span class="token class-name">Address</span> address <span class="token operator">=</span> geocodingResult<span class="token punctuation">.</span>address<span class="token punctuation">;</span>
+  locationDetails <span class="token operator">=</span> address<span class="token punctuation">.</span>addressText <span class="token operator">+</span>
+      <span class="token string-literal"><span class="token string">". GeoCoordinates: "</span></span> <span class="token operator">+</span>
+      geoCoordinates<span class="token punctuation">.</span>latitude<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span>
+      <span class="token string-literal"><span class="token string">", "</span></span> <span class="token operator">+</span>
+      geoCoordinates<span class="token punctuation">.</span>longitude<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>See the screenshot below for an example of how this might look if the user picks such a result from the map. If you are interested, have a look at the accompanying "Search" example app, that shows how to search for an address text and to place map marker(s) at the found location(s) on the map.</p>
+<center><p>
+  <img src="../graphics/geocoding_result_picked.jpg" width="350" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing a picked geocoding result.</figcaption>
+</p></center>
+
+<h2 id="get-auto-suggestions">Get auto-suggestions</h2>
+<p>Most often, applications that offer places search, allow users to type the desired search term into an editable text field component. While typing, it is usually convenient to get predictions for possible terms.</p>
+<p>The suggestions provided by the engine are ranked to ensure that the most relevant terms appear top in the result list. For example, the first list item could be used to offer auto completion of the search term currently typed by the user. Or - you can display a list of possible matches that are updated while the user types. A user can then select from the list of suggestions a suitable keyword and either start a new search for the selected term - or you can already take the details of the result such as title and vicinity and present it to the user.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The HERE SDK does not provide any UI or a fully integrated auto completion solution. Such a solution can be implemented by an application, if desired. With the <code>Suggestion</code> feature you get possible <code>Place</code> results based on a <code>TextQuery</code>: from these places you can use the title text ("Pizza XL") or other relevant place information (such as addresses) to provide feedback to a user - for example, to propose a clickable completion result. However, such a solution depends on the individual requirements of an application and needs to be implemented on app side using platform APIs.</p></div></div>
+<p>Compared to a normal text query, searching for suggestions is specialized in giving fast results, ranked by priority, for typed query terms.</p>
+<p>Let's see how the engine can be used to search for suggestions.</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">GeoCoordinates</span> centerGeoCoordinates <span class="token operator">=</span> <span class="token function">_getMapViewCenter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token class-name">SearchOptions</span> searchOptions <span class="token operator">=</span> <span class="token class-name">SearchOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+searchOptions<span class="token punctuation">.</span>languageCode <span class="token operator">=</span> <span class="token class-name">LanguageCode</span><span class="token punctuation">.</span>enUs<span class="token punctuation">;</span>
+searchOptions<span class="token punctuation">.</span>maxItems <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
+
+<span class="token class-name">TextQueryArea</span> queryArea <span class="token operator">=</span> <span class="token class-name">TextQueryArea</span><span class="token punctuation">.</span><span class="token function">withCenter</span><span class="token punctuation">(</span>centerGeoCoordinates<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Simulate a user typing a search term.</span>
+_searchEngine<span class="token punctuation">.</span><span class="token function">suggestByText</span><span class="token punctuation">(</span>
+    <span class="token class-name">TextQuery</span><span class="token punctuation">.</span><span class="token function">withArea</span><span class="token punctuation">(</span>
+        <span class="token string-literal"><span class="token string">"p"</span></span><span class="token punctuation">,</span> <span class="token comment">// User typed "p".</span>
+        queryArea<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    searchOptions<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token class-name">SearchError</span><span class="token operator">?</span> searchError<span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Suggestion</span><span class="token punctuation">&gt;</span></span><span class="token operator">?</span> list<span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token function">_handleSuggestionResults</span><span class="token punctuation">(</span>searchError<span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+_searchEngine<span class="token punctuation">.</span><span class="token function">suggestByText</span><span class="token punctuation">(</span>
+    <span class="token class-name">TextQuery</span><span class="token punctuation">.</span><span class="token function">withArea</span><span class="token punctuation">(</span>
+        <span class="token string-literal"><span class="token string">"pi"</span></span><span class="token punctuation">,</span> <span class="token comment">// User typed "pi".</span>
+        queryArea<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    searchOptions<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token class-name">SearchError</span><span class="token operator">?</span> searchError<span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Suggestion</span><span class="token punctuation">&gt;</span></span><span class="token operator">?</span> list<span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token function">_handleSuggestionResults</span><span class="token punctuation">(</span>searchError<span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+_searchEngine<span class="token punctuation">.</span><span class="token function">suggestByText</span><span class="token punctuation">(</span>
+    <span class="token class-name">TextQuery</span><span class="token punctuation">.</span><span class="token function">withArea</span><span class="token punctuation">(</span>
+        <span class="token string-literal"><span class="token string">"piz"</span></span><span class="token punctuation">,</span> <span class="token comment">// User typed "piz".</span>
+        queryArea<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    searchOptions<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token class-name">SearchError</span><span class="token operator">?</span> searchError<span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Suggestion</span><span class="token punctuation">&gt;</span></span><span class="token operator">?</span> list<span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token function">_handleSuggestionResults</span><span class="token punctuation">(</span>searchError<span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The helper method <code>_getMapViewCenter()</code> is left out here, you can find it in the accompanying example app. It simply returns the <code>GeoCoordinates</code> that are currently shown at the center of the map view.</p>
+<p>For each new text input, we make a request: assuming the user plans to type "Pizza" - we are looking for the results for "p" first, then for "pi" and finally for "piz." If the user really wants to search for "Pizza," then there should be enough interesting suggestions for the third call.</p>
+<p>Please note that the <code>suggestByText()</code>-method returns a <code>TaskHandle</code> that can be optionally used to check the status of an ongoing call - or to cancel a call.</p>
+<p>Let's see how the results can be retrieved.</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_handleSuggestionResults</span><span class="token punctuation">(</span><span class="token class-name">SearchError</span><span class="token operator">?</span> searchError<span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Suggestion</span><span class="token punctuation">&gt;</span></span><span class="token operator">?</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>searchError <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Autosuggest Error: "</span></span> <span class="token operator">+</span> searchError<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// If error is null, list is guaranteed to be not empty.</span>
+  int listLength <span class="token operator">=</span> list<span class="token operator">!</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Autosuggest results: </span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">listLength</span></span><span class="token string">."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Suggestion</span> autosuggestResult <span class="token keyword">in</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> addressText <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"Not a place."</span></span><span class="token punctuation">;</span>
+    <span class="token class-name">Place</span><span class="token operator">?</span> place <span class="token operator">=</span> autosuggestResult<span class="token punctuation">.</span>place<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>place <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      addressText <span class="token operator">=</span> place<span class="token punctuation">.</span>address<span class="token punctuation">.</span>addressText<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Autosuggest result: "</span></span> <span class="token operator">+</span> autosuggestResult<span class="token punctuation">.</span>title <span class="token operator">+</span> <span class="token string-literal"><span class="token string">" addressText: "</span></span> <span class="token operator">+</span> addressText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Here we log the list items found in <code>Suggestion</code>. If there is no error, the engine will guarantee a list of results - otherwise it will be null.</p>
+<p>Not every suggestion is a place. For example, it can be just a generic term like 'disco' that you can feed into a new search. With generic terms, the <code>Suggestion</code> result does not contain a <code>Place</code> object, but only a <code>title</code> - as it represents a text without referring to a specific place. Please refer to the API Reference for all available fields of a <code>Suggestion</code> result.</p>
+<p>Note that while the results order is ranked, there is no guarantee of the order in which the callbacks arrive. So, in rare cases, you may receive the "piz" results before the "pi" results.</p>
+<h2 id="search-for-places-categories">Search for places categories</h2>
+<p>Instead of doing a keyword search using <code>TextQuery</code> like "Pizza", you can also search for categories to limit the <code>Place</code> results to the expected categories.</p>
+<p>Category IDs follow a specific format and there are more than 700 different categories available on the HERE platform. Luckily, the HERE SDK provides a set of predefined values to make category search easier to use. If needed, you can also pass custom category strings following the format xxx-xxxx-xxxx, where each group stands for first, second and third level categories. While first level represents the main category, third level represents the sub category of the second level sub-category. Each category level is defined as a number in the <a href="https://www.here.com/docs/bundle/geocoding-and-search-api-developer-guide/page/topics-places/places-category-system-full.html" target="_blank">Places Category System</a>.</p>
+<p>As an example, we search below for all places that belong to the "Eat and Drink" category or to the "Shopping Electronics" category:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">searchForCategories</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">PlaceCategory</span><span class="token punctuation">&gt;</span></span> categoryList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  categoryList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">PlaceCategory</span><span class="token punctuation">(</span><span class="token class-name">PlaceCategory</span><span class="token punctuation">.</span>eatAndDrink<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  categoryList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">PlaceCategory</span><span class="token punctuation">(</span><span class="token class-name">PlaceCategory</span><span class="token punctuation">.</span>shoppingElectronics<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> queryArea <span class="token operator">=</span> <span class="token class-name">CategoryQueryArea</span><span class="token punctuation">.</span><span class="token function">withCenter</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.520798</span><span class="token punctuation">,</span> <span class="token number">13.409408</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">CategoryQuery</span> categoryQuery <span class="token operator">=</span> <span class="token class-name">CategoryQuery</span><span class="token punctuation">.</span><span class="token function">withCategoriesInArea</span><span class="token punctuation">(</span>categoryList<span class="token punctuation">,</span> queryArea<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token class-name">SearchOptions</span> searchOptions <span class="token operator">=</span> <span class="token class-name">SearchOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  searchOptions<span class="token punctuation">.</span>languageCode <span class="token operator">=</span> <span class="token class-name">LanguageCode</span><span class="token punctuation">.</span>enUs<span class="token punctuation">;</span>
+  searchOptions<span class="token punctuation">.</span>maxItems <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+
+  _searchEngine<span class="token punctuation">.</span><span class="token function">searchByCategory</span><span class="token punctuation">(</span>categoryQuery<span class="token punctuation">,</span> searchOptions<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token class-name">SearchError</span><span class="token operator">?</span> searchError<span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Place</span><span class="token punctuation">&gt;</span></span><span class="token operator">?</span> list<span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>searchError <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Handle error.</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// If error is null, list is guaranteed to be not empty.</span>
+    int listLength <span class="token operator">=</span> list<span class="token operator">!</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+
+    <span class="token comment">// Add new marker for each search result on map.</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Place</span> searchResult <span class="token keyword">in</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Handle results.</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p><code>PlaceCategory</code> accepts a <code>String</code>. Here we use the predefined categories <code>eatAndDrink</code> and <code>shoppingElectronics</code>. The <code>String</code> value contains the ID as represented in the places category system. Again, we use the <code>searchByCategory()</code> method of the <code>SearchEngine</code> and pass a <code>CategoryQuery</code> object that contains the category list and the geographic coordinates where we want to look for places.</p>
+<!-- TODO Not available at the moment.
+In addition, we log some useful place details like opening hours and (additional) category IDs:
+
+```dart
+String openingHours = getOpeningHours(searchResult.getOpeningHours());
+String categories = getCategories(searchResult.getCategories());
+Log.d(TAG, addressText + ", OpeningHours: " + openingHours + ", Categories: " + categories);
+```
+
+When parsing the result list, we look for the address, opening hours and categories. Opening hours and categories can contain multiple values, so we use helper methods to compose a printable `String` message:
+
+```dart
+private String getOpeningHours(List<OpeningHours> openingHoursList) {
+    String openingHours = "";
+
+    for (OpeningHours openingHoursItem : openingHoursList) {
+        List<String> openingHoursText = openingHoursItem.text;
+        for (String text : openingHoursText) {
+            openingHours += text + ", ";
+        }
+    }
+
+    return openingHours;
+}
+
+private String getCategories(List<PlaceCategory> categoryList) {
+    String categories = "";
+
+    for (PlaceCategory category : categoryList) {
+        categories += category.getId() + ", ";
+    }
+
+    return categories;
+}
+```
+
+Note that the texts are localized based on the language we have set in `SearchOptions`. Below is an example output:
+
+```xml
+Starbucks, Panoramastraße 1, 10178 Berlin, Deutschland, OpeningHours: Mon-Fri: 07:30 - 21:00, Sat, Sun: 08:00 - 21:00, , Categories: 100-1100-0010,
+Yourfone-Shops, Dircksenstraße 2, 10179 Berlin, Deutschland, OpeningHours: Mon-Fri: 09:30 - 20:00, Sat: 10:00 - 18:00, , Categories: 600-6500-0073, 700-7100-0000,
+```
+-->
+<h2 id="search-along-a-route">Search along a route</h2>
+<p>The <code>SearchEngine</code> provides support for a special search case when you do not want to search in a rectangular or circle area, but instead along a more complex <code>GeoCorridor</code> that can be defined by a <code>GeoPolyline</code> and other parameters.</p>
+<p>The most common scenario for such a case may be to search along a <code>Route</code> for restaurants. Let's assume you already calculated a Route object. See the <a href="routing.html">Directions</a> section to learn how to calculate a route.</p>
+<p>The HERE SDK provides a <code>GeoCorridor</code> class that allows to determine the search area from the actual shape of the route. This way, only search results that lie on or beneath the path are included.</p>
+<p>Below you can see an example how to search for charging stations along a route:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Perform a search for charging stations along the found route.</span>
+<span class="token keyword">void</span> <span class="token function">_searchAlongARoute</span><span class="token punctuation">(</span><span class="token class-name"><span class="token namespace">here<span class="token punctuation">.</span></span>Route</span> route<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// We specify here that we only want to include results</span>
+  <span class="token comment">// within a max distance of xx meters from any point of the route.</span>
+  int halfWidthInMeters <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+  <span class="token class-name">GeoCorridor</span> routeCorridor <span class="token operator">=</span> <span class="token class-name">GeoCorridor</span><span class="token punctuation">(</span>route<span class="token punctuation">.</span>geometry<span class="token punctuation">.</span>vertices<span class="token punctuation">,</span> halfWidthInMeters<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">PlaceCategory</span> placeCategory <span class="token operator">=</span> <span class="token class-name">PlaceCategory</span><span class="token punctuation">(</span><span class="token class-name">PlaceCategory</span><span class="token punctuation">.</span>businessAndServicesEvChargingStation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">CategoryQueryArea</span> categoryQueryArea <span class="token operator">=</span> <span class="token class-name">CategoryQueryArea</span><span class="token punctuation">.</span><span class="token function">withCorridorAndCenter</span><span class="token punctuation">(</span>routeCorridor<span class="token punctuation">,</span> _hereMapController<span class="token punctuation">.</span>camera<span class="token punctuation">.</span>state<span class="token punctuation">.</span>targetCoordinates<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">CategoryQuery</span> categoryQuery <span class="token operator">=</span> <span class="token class-name">CategoryQuery</span><span class="token punctuation">.</span><span class="token function">withCategoryInArea</span><span class="token punctuation">(</span>placeCategory<span class="token punctuation">,</span> categoryQueryArea<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token class-name">SearchOptions</span> searchOptions <span class="token operator">=</span> <span class="token class-name">SearchOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  searchOptions<span class="token punctuation">.</span>languageCode <span class="token operator">=</span> <span class="token class-name">LanguageCode</span><span class="token punctuation">.</span>enUs<span class="token punctuation">;</span>
+  searchOptions<span class="token punctuation">.</span>maxItems <span class="token operator">=</span> <span class="token number">30</span><span class="token punctuation">;</span>
+
+  _searchEngine<span class="token punctuation">.</span><span class="token function">searchByCategory</span><span class="token punctuation">(</span>categoryQuery<span class="token punctuation">,</span> searchOptions<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token class-name">SearchError</span><span class="token operator">?</span> searchError<span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Place</span><span class="token punctuation">&gt;</span></span><span class="token operator">?</span> items<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>searchError <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Search: No charging stations found along the route. Error: </span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">searchError</span></span><span class="token string">"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// If error is nil, it is guaranteed that the items will not be nil.</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Search: Search along route found </span><span class="token interpolation"><span class="token punctuation">${</span><span class="token expression">items<span class="token operator">!</span><span class="token punctuation">.</span>length</span><span class="token punctuation">}</span></span><span class="token string"> charging stations:"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Place</span> place <span class="token keyword">in</span> items<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// ...</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>As you can see, the <code>GeoCorridor</code> requires the route's <code>GeoPolyline</code> and a <code>halfWidthInMeters</code>. This value defines the farthest edges from any point on the polyline to the edges of the corridor. With a small value, the resulting corridor will define a very close area along the actual route.</p>
+<center><p>
+  <img src="../graphics/search_along_route.jpg" width="650" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing found charging stations along a route.</figcaption>
+</p></center>
+
+<p>At the start and destination coordinates of the route, the corridor will have a round shape - imagine a snake with a certain thickness, but just with round edges at head and tail. Do not confuse this with the shown screenshot above, as we there we simply rendered green circles to indicate start and destination of the route.</p>
+<p>For very long routes, internally the search algorithm will try to optimize the search corridor. This can be controlled also on app-side with the <code>halfWidthInMeters</code> parameter - a larger value will decrease the complexity of the corridor and therefore result in less precise results as a trade-off.</p>
+<p>If no error occurred, you can handle the <code>Place</code> results as already shown in the sections above.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>You can find the full code for this section as part of the "ev_routing_app" example app on <a href="https://github.com/heremaps/here-sdk-examples/" target="_blank">GitHub</a>.</p></div></div>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="search.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Get started with Search">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Search & Geocoding features","level":"1.5.2","depth":2,"next":{"title":"Routing","level":"1.6","depth":1,"ref":"","articles":[{"title":"Get started with Routing","level":"1.6.1","depth":2,"path":"topics/routing.md","ref":"topics/routing.md","articles":[]},{"title":"Add UI building blocks","level":"1.6.2","depth":2,"path":"topics/routing-ui.md","ref":"topics/routing-ui.md","articles":[]},{"title":"Add route options","level":"1.6.3","depth":2,"path":"topics/routing-options.md","ref":"topics/routing-options.md","articles":[]},{"title":"Get routes for electric vehicles","level":"1.6.4","depth":2,"path":"topics/routing-ev.md","ref":"topics/routing-ev.md","articles":[]},{"title":"Advanced routing features","level":"1.6.5","depth":2,"path":"topics/routing-advanced.md","ref":"topics/routing-advanced.md","articles":[]}]},"previous":{"title":"Get started with Search","level":"1.5.1","depth":2,"path":"topics/search.md","ref":"topics/search.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/search-geocoding.md","mtime":"2025-01-22T16:33:08.774Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

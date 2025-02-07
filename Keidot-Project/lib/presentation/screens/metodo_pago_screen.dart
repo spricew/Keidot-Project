@@ -11,10 +11,12 @@ class MetodoPagoScreen extends StatelessWidget {
     {"paymentmethod_id": "bb802d71-d245-4881-8503-c4e91d2f1c32", "name_at": "Crédito"},
   ];
 
+  MetodoPagoScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Seleccionar Método de Pago")),
+      appBar: AppBar(title: const Text("Seleccionar Método de Pago")),
       body: Column(
         children: [
           Expanded(
@@ -25,9 +27,9 @@ class MetodoPagoScreen extends StatelessWidget {
                 return Obx(() {
                   return ListTile(
                     title: Text(method["name_at"]!),
-                    leading: Icon(Icons.credit_card),
+                    leading: const Icon(Icons.credit_card),
                     trailing: controller.requestData.value.paymentMethodId == method["paymentmethod_id"]
-                        ? Icon(Icons.check_circle, color: Colors.green)
+                        ? const Icon(Icons.check_circle, color: Colors.green)
                         : null,
                     onTap: () {
                       controller.setPaymentMethod(method["paymentmethod_id"]!);
@@ -48,7 +50,7 @@ class MetodoPagoScreen extends StatelessWidget {
                   Get.snackbar("Error", "Selecciona un método de pago");
                 }
               },
-              child: Text("Confirmar"),
+              child: const Text("Confirmar"),
             ),
           ),
         ],

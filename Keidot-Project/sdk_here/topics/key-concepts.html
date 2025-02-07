@@ -1,0 +1,1084 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Best practices · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tips-supplements.html">
+    
+    
+    <link rel="prev" href="tips-engines.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Best practices</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="best-practices">Best practices</h1>
+<p>In the following sections, we will guide you through the most common usage scenarios and reveal tips and easy-to-understand guidelines to help you get the most out of the HERE SDK for Flutter.</p>
+<h2 id="optimization-strategies">Optimization strategies</h2>
+<p>Explore further options to enhance the performance of the HERE SDK:</p>
+<ul>
+<li><strong>Optimize map caching:</strong> Adjust the caching mechanisms by following the guidelines in our <a href="tips-engines.html#work-with-the-map-cache">map caching documentation</a>.</li>
+<li><strong>Conditional HERE SDK initialization:</strong> To conserve resources, <a href="tips-engines.html">initialize the HERE SDK</a> only when it is necessary.</li>
+<li><strong>Adjust the frame fate:</strong> Modify the frame rate settings of the <code>MapView</code> to balance performance and visual fluidity. Detailed guidance can be found in the frame rate adjustment section <a href="#adjust-the-frame-rate">below</a>.</li>
+<li><strong>Simplify visuals with custom map styles:</strong> Employ <a href="custom-map-styles.html">custom map styles</a> that include fewer elements to render, thereby enhancing rendering efficiency and reducing computational load.</li>
+</ul>
+<p>Additionally, the HERE SDK provides versatile configuration options across various engines. For instance, with the <code>SearchEngine</code>, you can define <code>SearchOptions</code> to refine and limit the scope of returned search results.</p>
+<h2 id="free-resources">Free resources</h2>
+<p>All HERE SDK classes will be garbage collected by Flutter if the instance is no longer referenced or set to null.</p>
+<p>When the hosting widget's lifetime has ended, you can free resources by calling <code>SDKNativeEngine.sharedInstance?.dispose()</code>. Also, all references to <code>SDKNativeEngine</code> must be set to <code>null</code> (if any). Calling <code>dispose()</code> will stop pending requests and close open files and databases that are still running. After calling <code>dispose()</code> any related HERE SDK feature should no longer be used - unless you initialize the HERE SDK again: if you have created engines like <code>SearchEngine()</code> or <code>RoutingEngine()</code> using the default constructor, then these instances need to be recreated as well. Basically, all engines that used the same instance of the <code>SDKNativeEngine</code> need to be recreated after it was disposed.</p>
+<h2 id="remove-unused-voice-and-font-files-to-reduce-the-package-size">Remove unused voice and font files to reduce the package size</h2>
+<p>By removing unused <strong>voice files</strong> like <code>voice_package_ar-SA</code> you can reduce the package size of the HERE SDK. These voice packages are only needed when you want to use turn-by-turn navigation with text-to-speech engines. Note that voice files are only included as part of the <em>Navigate Edition</em>.</p>
+<p>On top, the HERE SDK contains several <strong>font files</strong> to render map labels for all supported languages. If you want to optimize the size of the overall app, you can remove selected fonts.</p>
+<p>For example, the <code>DroidSansFallback</code> font uses the Simplified Chinese ideographs for shared Unicode code points.</p>
+<p><strong>On iOS</strong>, to remove this font, open the HERE SDK plugin folder and remove the following files: <code>ios/Frameworks/heresdk.xcframework/ios-arm64/heresdk.framework/geoviz/fonts/DroidSansFallback.ttf</code>.</p>
+<p><strong>For Android</strong>, please follow the steps below.</p>
+<p>The <code>DroidSansFallback</code> is packaged in the HERE SDK <code>AAR</code> file (which can be opened by appending ".zip" to the file name):</p>
+<ul>
+<li><code>assets/geoviz/fonts/DroidSansFallback.ttf</code></li>
+</ul>
+<p>As another example, if you do not need to render the full set of Japanese characters, you can remove:</p>
+<ul>
+<li><code>assets/geoviz/fonts/NotoSansJP-Regular.otf</code></li>
+</ul>
+<p>Note that such fonts may not only be used in <a href="customization-catalogs.html#configure-a-japan-map">Japan</a> and China, but also for other areas around the world when users switch their device language to Japanese or Chinese.</p>
+<p>In order to <a href="https://developer.android.com/reference/tools/gradle-api/8.3/com/android/build/api/variant/ResourcesPackaging#excludes" target="_blank">remove files</a>, you need to edit the app's <code>build.gradle</code> file.</p>
+<p>For <strong>Android Gradle plugin</strong> versions &gt;= 7.0 use <a href="https://developer.android.com/reference/tools/gradle-api/8.3/com/android/build/api/dsl/AndroidResources" target="_blank">AndroidResources</a> like shown below:</p>
+<pre class="language-"><code class="lang-xml">android {
+  ...
+  androidResources {
+      def languagesToRemove = ['ru-Ru', 'zh-HK']
+      def languagePatterns = languagesToRemove.collect {"!voice_package_${it}*"}.join(":")
+      ignoreAssetsPattern "${languagePatterns}:!DroidSansFallback.ttf:!NotoSansJP-Regular.otf"
+  }
+  ...
+}
+</code></pre>
+<p>This excludes the listed fonts and voice assets from the final package. If you need to exclude more assets you need to list them as well.</p>
+<p>Note that this example uses the <a href="https://android.googlesource.com/platform/frameworks/base/+/6d2c0e5/tools/aapt2/Files.h#88" target="_blank">delimiter syntax</a> to exclude files.</p>
+<p><a href="navigation-voice-guidance.md#supported-languages-for-voice-guidance">Here</a> you can find a list of all supported voice languages together with the name of the related voice skin that is stored inside the HERE SDK framework. Alternatively, look into the AAR by unzipping it and search for the voice and/or font files that you want to exclude.</p>
+<p>If your <strong>Android Gradle plugin</strong> version is below 7.0 you can replace <code>androidResources</code> with <a href="https://developer.android.com/reference/tools/gradle-api/8.3/com/android/build/api/dsl/AaptOptions" target="_blank">aaptOptions</a>.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>When you remove a font, it is recommended to switch the map language to any other language than the removed font. At least one font needs to be left to see any map labels. Note that each time a label needs to be displayed in a language for a font that was removed an error message is logged - for each character that is missing.</p></div></div>
+<p>Note that the size of a font file may range from a few hundred kilobytes to a few megabytes in size. After removing selected fonts your application consumes less space when it is installed on a device. The maximum amount that you can save with these steps is approximately 11 MB.</p>
+<h2 id="remove-unused-truck-restriction-icons-to-reduce-the-package-size">Remove unused truck restriction icons to reduce the package size</h2>
+<p>You can manually remove unused truck restriction icons from the following paths inside the HERE SDK binary:</p>
+<pre class="language-"><code>- /assets/geoviz/assets/oslo/truck_restriction/night/ui/
+- /assets/geoviz/assets/oslo/truck_restriction/day/ui/
+</code></pre><p>These icons are only used when creating vehicle restriction icons with <code>IconProvider.createVehicleRestrictionIcon()</code> and the <code>IconProviderAssetType.ui</code> setting. They are better suited for UI rendering compared to their <code>IconProviderAssetType.map</code> counterparts. If these files are removed, the HERE SDK will automatically fall back to using the <code>map</code> assets.</p>
+<p>These SVG icons are included in the HERE SDK binary and occupy approximately 264 KB when compressed.</p>
+<p>If you do not plan to use the <code>IconProvider</code> and if you do not need to show the <code>MapFeatures.vehicleRestriction</code> layer, then you can save considerably more space by removing the entire folder <code>assets/geoviz/assets/oslo/truck_restriction</code>.</p>
+<p>To remove these files, follow the steps outlined in the <a href="#remove-unused-voice-and-font-files-to-reduce-the-package-size">section above</a>.</p>
+<h2 id="use-abi-splits-for-android-to-remove-unused-abis">Use ABI splits for Android to remove unused ABIs</h2>
+<p>Size management: with ABI splits you can reduce the package size of the HERE SDK AAR binary file. As a result, your application will occupy less storage space on a device.</p>
+<p>By default, the HERE SDK includes the following ABIs for Android: <code>armeabi-v7a</code>, <code>arm64-v8a</code> (mainly used for devices) and <code>x86</code>, <code>x86_64</code> (mainly used for emulators). You can enable ABI splits to build your app, for example, only for the <code>armeabi-v7a</code> or <code>arm64-v8a</code> architectures.</p>
+<p>Do this by modifying your app's <code>build.gradle</code> file:</p>
+<pre class="language-"><code>android {
+  (...)
+  splits {
+    abi {
+      enable true
+      reset()
+      include 'x86_64', 'arm64-v8a' // Choose what you need.
+      universalApk false
+    }
+  }
+  (...)
+}
+</code></pre><p>Now, when you execute <code>./gradlew assembleRelease</code> from command line, the following two APKs are generated: <code>app-x86_64-release.apk</code> and <code>app-arm64-v8a-release.apk</code>. Each APK contains only the desired ABI and is therefore much smaller in size. If you change the <code>splits</code> block to set <code>universalApk true</code>, then also a universal APK is generated that contains all ABIs, which is obviously much bigger.</p>
+<p>For more information about the <code>splits</code> Gradle block, see <a href="https://developer.android.com/studio/build/configure-apk-splits#configure-abi-split" target="_blank">Configure Multiple APKs for ABIs</a>.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>By default, an APK built with the HERE SDK for release will be around 103 MB or higher - depending on the app features. Therefore, in order to release an app the Play Store, it is required to use either ABI Splits or <a href="https://developer.android.com/guide/app-bundle" target="_blank">Android App Bundles (AAB)</a>: as of now, the Play Store limits APKs to 100 MB and for ABBs the limit is 150 MB. If you do not want to maintain several APKs built via ABI splits for selected architectures, consider to use ABBs instead.</p></div></div>
+<h2 id="map-rendering-modes">Map rendering modes</h2>
+<p>The <code>HereMap</code> on Android offers the flexibility of using either Hybrid Composition or Virtual Display mode, with the former recommended for Android 12 or higher but potentially impacting performance on older versions, and the latter typically paired with <code>TextureView</code> for optimal rendering.</p>
+<p>More information about Hybrid Composition and Virtual Display modes can be found <a href="https://docs.flutter.dev/development/platform-integration/android/platform-views" target="_blank">here</a>.</p>
+<p>When opting for Hybrid Composition, you can choose between available <code>renderMode</code> options based on your requirements, as Flutter suggests it to avoid post-orientation graphical glitches.</p>
+<p>Additionally, the <code>MapView</code> on Android provides <code>MapRenderMode.surface</code> for optimal performance, albeit with potential graphical glitches on Android 12 and 13, while <code>MapRenderMode.texture</code> offers smoother rendering for complex UI or multiple map instances, though at the cost of increased performance overhead. This choice is made via <code>HereMapOptions.renderMode</code>, internally setting either <code>SurfaceView</code> or <code>TextureView</code> for rendering, noting that <code>TextureView</code> should be used with Virtual Display mode.</p>
+<p>On iOS devices, however, these modes have no effect.</p>
+<h2 id="adjust-the-frame-rate">Adjust the frame rate</h2>
+<p>By default, the <code>MapView</code> is rendered with 60 frames per second (FPS). Via <code>mapView.frameRate</code> the maximum frame rate can be adjusted - for example, to reduce CPU / GPU usage on low end devices. It is also possible to deactivate automatic render cycles by setting FPS to 0. Setting negative values has no effect. The value can be set individually per <code>MapView</code> instance - in case your app contains multiple <code>MapView</code>'s.</p>
+<p>Another option is to use <a href="custom-map-styles.html">custom map styles</a> that contain less elements to render.</p>
+<h2 id="protect-your-credentials">Protect your credentials</h2>
+<p>Your credentials should be protected to provide misuse by other parties that are not intended to use them.</p>
+<p>One option to keep credentials secure is to store them on a secure server and retrieve them by requests using SSL connections.</p>
+<p>For best practice, consider:</p>
+<ul>
+<li>To avoid keeping sensitive data in plain text.</li>
+<li>To transfer credentials using a secure communication channel.</li>
+<li>To store credentials using device security mechanisms and strong encryption ciphers.</li>
+<li>To add anti-tampering and anti-debugging code, so that a potential attacker cannot intercept data during dynamic runtime execution.</li>
+<li>Track the application usage to detect anomalies.</li>
+</ul>
+<h2 id="callbacks-and-listeners">Callbacks and Listeners</h2>
+<ul>
+<li>The HERE SDK exposes callbacks for single event notification such as for search results.</li>
+<li>For reoccurring event notifications such as for gesture events, listeners are used. When multiple listeners can be set, then the method pattern <code>add_x()</code> and <code>remove_x()</code> is used as naming convention. If only one listener can be set at a time, the <code>set_x()</code> pattern is used that can be set to <code>null</code> to stop listening.</li>
+<li>It is the responsibility of the developer to handle errors inside the scope of a callback gracefully: As a guideline, code that can throw an exception should be handled.</li>
+</ul>
+<h2 id="use-taskhandles-to-cancel-asynchronous-operations">Use TaskHandles to Cancel Asynchronous Operations</h2>
+<p>Most asynchronous methods provide a <code>TaskHandle</code> as immediate return value, while the final result of the operation will be returned in a completion handler with a delay. The <code>TaskHandle</code> provides status information and it allows to abort an ongoing operation.</p>
+<h2 id="get-access-tokens-for-use-with-external-rest-apis">Get access tokens for use with external REST APIs</h2>
+<p>Each time the HERE SDK is initialized, a new access token is generated internally. In case of multiple <code>SDKNativeEngine</code> instances, each instance holds its own token. You can also refresh and fetch the token via <code>Authentication.authenticate(SDKNativeEngine.sharedInstance, callback)</code> where the callback provides the token via <code>authenticationData.token</code> - you can use this token to access external HERE REST APIs.</p>
+<p>For using the HERE SDK itself, you do not need to know the token - it is only required under the hood and the HERE SDK is handling the token generation automatically.</p>
+<p>To protect our backends against misusage, a rate limit may apply when too many tokens are generated or when too many services are accessed in a too short time frame. In such a case, an engine will respond with a <code>requestLimitReached</code> error or similar. If you expect very high app usage, please talk to your HERE representative upfront to adapt the limits where needed.</p>
+<h2 id="prepare-your-app-for-distribution-on-ios">Prepare your app for distribution on iOS</h2>
+<p>The included HERE SDK iOS framework (<code>heresdk.xcframework</code>) is not a <a href="https://en.wikipedia.org/wiki/Fat_binary" target="_blank">fat binary</a>, but it contains set of frameworks for several architectures - built for device (arm64) and simulator (x86_64). Therefore it contains multiple architectures. It consists of:</p>
+<ul>
+<li>A framework with architecture for device, this framework is used on end user’s device.</li>
+<li>A framework with two architectures for simulator, this framework is usually necessary only during development.</li>
+<li>Debug symbols for the device, which are uploaded automatically to Apple's crash analytics server.</li>
+</ul>
+<p>This allows easy deployment on a simulator and on a real device. The debug symbols (<a href="https://developer.apple.com/documentation/xcode/building-your-app-to-include-debugging-information" target="_blank">dSYM</a>) are used to symbolicate crashes in Xcode. Find more details on how to use the dSYM files to symbolicate crashes <a href="tips-support.html#getting-help-when-bugs-occur">here</a>.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The file size is optimized by Xcode at deployment time, with unnecessary frameworks being stripped out. Although you can manually remove files such as the dSYM debug symbols, this is not recommended. These files are relatively large, occupying around 80% of the size of the XCFW. However, while they are not necessarily needed during development, the debug symbols are crucial to get symbolized crash stacks for release builds. Note that symbolized crash stacks are treated with higher priority.</p><p>More information on symbolication and logs can be found <a href="tips-troubleshooting.html">here</a>.</p></div></div>
+<p>Since the HERE SDK framework conforms to Apple's XCFramework bundle type (<a href="https://developer.apple.com/documentation/xcode/creating-a-multi-platform-binary-framework-bundle" target="_blank">XCFW</a>), it is ready to be used for the distribution of your app on iOS devices via Apple's App Store.</p>
+<p>As it is the practice, in Xcode you have to select a development team to sign your app, select a <strong>Generic iOS Device</strong> and select <strong>Product</strong> -&gt; <strong>Archive</strong>.</p>
+<p>The binary size of an exported app (that is resulting IPA) for a target device will occupy less space. Note that you can also manually remove files that are not required. However, please keep in mind that the IPA still contains all architectures - unless you explicitly excluded them when archiving: the actual size on the device will occupy much less space and Apple will ensure that only the required architectures are included. Thus, also the actual download size from the App Store will be much smaller. See also this <a href="https://developer.apple.com/documentation/xcode/reducing-your-app-s-size" target="_blank">Xcode guide</a>. Therefore, we recommend to keep the HERE SDK framework as it is when the app is deployed through the App Store - since all size optimization happens automatically as part of the deployment process.</p>
+<h3 id="privacy-manifest-files">Privacy manifest files</h3>
+<p>As of May 2024, every release of an iOS application to the App Store requires the declaration of a <a href="https://developer.apple.com/documentation/bundleresources/privacy_manifest_files" target="_blank">privacy manifest</a> in form of a <code>PrivacyInfo.xcprivacy</code> file. By default, this file is included in the <code>heresdk.xcframework</code> (XCFW) at the following paths:</p>
+<ul>
+<li>heresdk.xcframework/ios-arm64/heresdk.framework/PrivacyInfo.xcprivacy</li>
+<li>heresdk.xcframework/ios-arm64_x86_64-simulator/heresdk.framework/PrivacyInfo.xcprivacy</li>
+</ul>
+<p>For Flutter plugins, find the XCFW here: here_sdk-xxx-4.xxx/ios/Frameworks/heresdk.xcframework</p>
+<p>If you need to publish an update for older versions prior to HERE SDK 4.18.2.0 please insert the privacy manifest file manually into the XCFW and use the below content:</p>
+<pre class="language-"><code><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">plist</span> <span class="token name">PUBLIC</span> <span class="token string">"-//Apple//DTD PLIST 1.0//EN"</span> <span class="token string">"http://www.apple.com/DTDs/PropertyList-1.0.dtd"</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plist</span> <span class="token attr-name">version</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dict</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key</span><span class="token punctuation">&gt;</span></span>NSPrivacyTracking<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>key</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>false</span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key</span><span class="token punctuation">&gt;</span></span>NSPrivacyTrackingDomains<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>key</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>array</span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key</span><span class="token punctuation">&gt;</span></span>NSPrivacyAccessedAPITypes<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>key</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>array</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dict</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key</span><span class="token punctuation">&gt;</span></span>NSPrivacyAccessedAPIType<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>key</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">&gt;</span></span>NSPrivacyAccessedAPICategoryFileTimestamp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key</span><span class="token punctuation">&gt;</span></span>NSPrivacyAccessedAPITypeReasons<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>key</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>array</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">&gt;</span></span>C617.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">&gt;</span></span>0A2A.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>array</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dict</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dict</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key</span><span class="token punctuation">&gt;</span></span>NSPrivacyAccessedAPIType<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>key</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">&gt;</span></span>NSPrivacyAccessedAPICategorySystemBootTime<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key</span><span class="token punctuation">&gt;</span></span>NSPrivacyAccessedAPITypeReasons<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>key</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>array</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">&gt;</span></span>35F9.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>array</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dict</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dict</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key</span><span class="token punctuation">&gt;</span></span>NSPrivacyAccessedAPIType<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>key</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">&gt;</span></span>NSPrivacyAccessedAPICategoryDiskSpace<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>key</span><span class="token punctuation">&gt;</span></span>NSPrivacyAccessedAPITypeReasons<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>key</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>array</span><span class="token punctuation">&gt;</span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>string</span><span class="token punctuation">&gt;</span></span>E174.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>string</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>array</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dict</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>array</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dict</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plist</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tips-engines.html" class="navigation navigation-prev " aria-label="Previous page: Engines">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tips-supplements.html" class="navigation navigation-next " aria-label="Next page: Supplemental information">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Best practices","level":"1.10.2","depth":2,"next":{"title":"Supplemental information","level":"1.10.3","depth":2,"path":"topics/tips-supplements.md","ref":"topics/tips-supplements.md","articles":[]},"previous":{"title":"Engines","level":"1.10.1","depth":2,"path":"topics/tips-engines.md","ref":"topics/tips-engines.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/key-concepts.md","mtime":"2025-01-22T16:33:08.614Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

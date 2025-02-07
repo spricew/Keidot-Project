@@ -1,0 +1,1136 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Add predefined map styles · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="custom-map-styles.html">
+    
+    
+    <link rel="prev" href="map-items.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Add predefined map styles</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="add-predefined-map-styles">Add predefined map styles</h1>
+<p>With map schemes, you can load predefined map styles to instantly change the appearance of the map view.</p>
+<h2 id="load-map-schemes">Load map schemes</h2>
+<p>The HERE SDK supports several preconfigured map schemes:</p>
+<ul>
+<li><code>normalDay</code>: A lossless scalable vector base map for usage during daylight.</li>
+<li><code>normalNight</code>: A lossless scalable vector base map for usage during night.</li>
+<li><code>hybridDay</code>: A day version hybrid map scheme combining satellite imagery with vector street network, map labels and POI information.</li>
+<li><code>hybridNight</code>: A night version hybrid map scheme combining satellite imagery with vector street network, map labels and POI information.</li>
+<li><code>liteDay</code>: A simplified day version of lite map scheme <code>normalDay</code>, featuring fewer map elements and limited color palette.</li>
+<li><code>liteNight</code>: A simplified night version of lite map scheme <code>normalNight</code>, featuring fewer map elements and limited color palette.</li>
+<li><code>liteHybridDay</code>: A simplified day version of lite hybrid map scheme <code>hybridDay</code>, featuring fewer map elements and limited color palette.</li>
+<li><code>liteHybridNight</code>: A simplified night version of lite hybrid map scheme <code>hybridNight</code>, featuring fewer map elements and limited color palette.</li>
+<li><code>satellite</code>: A bitmap based map showing satellite imagery for various zoom stages.</li>
+<li><code>logisticsDay</code>: A day version map scheme with focus on fleet management content. It also enables certain POI icons to indicate, for example, truck parking or truck wash. These icons are pickable.</li>
+<li><code>logisticsNight</code>: A night version of the <code>logisticsDay</code> map scheme.</li>
+<li><code>logisticsHybridDay</code>: A day version logistics hybrid map scheme catering to the needs of dispatchers, fleet managers and delivery drivers, highlighting and featuring map elements relevant to logistics use cases.</li>
+<li><code>logisticsHybridNight</code>: A night version of the <code>logisticsHybridDay</code> map scheme.</li>
+<li><code>roadNetworkDay</code>: A day version of a scheme which highlights roads without showing other content such as labels or buildings. It is designed for usage as an additional zoomed-in mini-maps display to help drivers to orientate during navigation and to focus on the maneuver arrows which can be highlighted on top of this map scheme.</li>
+<li><code>roadNetworkNight</code>: A night version of the <code>roadNetworkDay</code> map scheme.</li>
+<li><code>topoDay</code>: A day version map scheme highlighting geographic features such as elevation, landforms and natural landscapes to provide a clear representation of the terrain.</li>
+<li><code>topoNight</code>: A night version of the <code>topoDay</code> map scheme.</li>
+</ul>
+<p>Note that it is also possible to fully <a href="custom-map-styles.html">customize your own map styles</a>, except for the satellite imagery.</p>
+<p>Use the following code snippet to load a map scheme:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">MapScheme</span> mapScheme <span class="token operator">=</span> <span class="token class-name">MapScheme</span><span class="token punctuation">.</span>normalDay<span class="token punctuation">;</span>
+
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">loadSceneForMapScheme</span><span class="token punctuation">(</span>mapScheme<span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token class-name">MapError</span><span class="token operator">?</span> error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>error <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'Map scene not loaded. MapError: </span><span class="token interpolation"><span class="token punctuation">${</span><span class="token expression">error<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><span class="token punctuation">}</span></span><span class="token string">'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>It is recommended to use the <code>day</code> variants during day time when the surrounding light is brighter. The <code>night</code> variants are optimized for usage when there is less light. For example, an application may switch from day to night scheme when a driver is passing through a tunnel - if you are using the <em>Navigate Edition</em>, you can get notified on changed road attributes to know when you are driving through a tunnel. This allows an application to switch the map scheme on the fly. Note that this is not happening automatically.</p>
+<p>The HERE SDK is also not automatically detecting the current time of the day to switch between day and night modes. An application may decide to do this based on the user's configuration or by checking the device clock.</p>
+<center><p>
+<img src="../graphics/map_schemes.jpg" width="1050">
+<figcaption>From left to right: MapScheme.normalDay, MapScheme.normalNight, MapScheme.hybridDay, MapScheme.hybridNight</figcaption>
+</p></center>
+
+<p>The available map styles are optimized to easily add additional content and overlays onto the base map without visual interference. The map schemes are less colorful and support a clean and neutral tone to maximize readability even in case of color blindness:</p>
+<ul>
+<li>The street network is designed in gray scales and provides a hierarchy through brightness, contrast and widths.</li>
+<li>Colors are overall rather bright set up.</li>
+<li>Key colors are grey, blue, green, white.</li>
+</ul>
+<p>The HERE SDK also has lite map schemes which features fewer map elements and a more limited color palette. See below:</p>
+<center><p>
+<img src="../graphics/lite_map_schemes.jpg" width="1050">
+<figcaption>From left to right: MapScheme.liteDay, MapScheme.liteNight, MapScheme.liteHybridDay, MapScheme.liteHybridNight</figcaption>
+</p></center>
+
+<p>In addition, the HERE SDK offers a logistics map scheme that focuses more on fleet management content.</p>
+<center><p>
+<img src="../graphics/logistics_map_schemes.jpg" width="1050">
+<figcaption>Screenshots (from left to right): MapScheme.logisticsDay, MapScheme.logisticsNight, MapScheme.logisticsHybridDay, MapScheme.logisticsHybridNight</figcaption>
+</p></center>
+
+<p>The HERE SDK also has a <code>satellite</code> scheme, that does not contain any labels.</p>
+<center><p>
+<img src="../graphics/satellite.jpg" width="1050">
+<figcaption>MapScheme.satellite</figcaption>
+</p></center>
+
+<p>The HERE SDK offers a map scheme that highlights roads without showing other content such as labels or buildings.</p>
+<center><p>
+<img src="../graphics/road_network_scheme.jpg" width="1050">
+<figcaption>Screenshots (from left to right): MapScheme.roadNetworkDay, MapScheme.roadNetworkNight</figcaption>
+</p></center>
+
+<p>The HERE SDK offers a map scheme that highlights geographic features such as elevation, landforms and natural landscapes.</p>
+<center><p>
+<img src="../graphics/topo_day_night.jpg" width="1050">
+<figcaption>Screenshots (from left to right): MapScheme.topoDay, MapScheme.topoNight</figcaption>
+</p></center>
+
+<h2 id="add-map-features">Add map features</h2>
+<p>On top of map schemes, the HERE SDK allows to add certain kinds of layers - we call them "map features" - that show additional information such as the current traffic flow.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Note that not all feature layers are available for all editions. Take a look at the API Reference to know which layers are supported for your edition.</p><p>Adding a layer may have a minimal performance impact on lower-end devices.</p></div></div>
+<p>Below you can see how the map feature layers can be enabled:</p>
+<pre class="language-"><code class="lang-dart">_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>buildingFootprints<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>buildingFootprintsAll<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>contours<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>contoursAll<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>congestionZones<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>congestionZonesAll<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>environmentalZones<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>environmentalZonesAll<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>extrudedBuildings<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>defaultMode<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>landmarks<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>landmarksTextured<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>roadExitLabels<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>roadExitLabelsAll<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>safetyCameras<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>defaultMode<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>shadows<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>shadowsAll<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>terrain<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>defaultMode<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>trafficFlow<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>defaultMode<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>trafficIncidents<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>defaultMode<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>lowSpeedZones<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>lowSpeedZonesAll<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>vehicleRestrictions<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>defaultMode<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>ambientOcclusion<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>ambientOcclusionAll<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>Similarly, you can also disable a list of layers like shown below:</p>
+<pre class="language-"><code class="lang-dart">_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">disableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>buildingFootprints<span class="token punctuation">,</span> <span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>extrudedBuildings<span class="token punctuation">,</span> <span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>ambientOcclusion<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>When <code>trafficFlow</code> and <code>trafficIncidents</code> features are enabled, then the HERE SDK will request new traffic information for each new vector tile. This may lead to an increase of costs, depending on your plan. With <code>MapContentSettings</code> the traffic flow and incident refresh period can be adjusted.</p></div></div>
+<p>Each map feature supports one or more alternative rendering options. For example, instead of using <code>terrainHillshade</code>, which is the default mode for <code>terrain</code>, you can use <code>terrain3d</code> to show advanced topographical shading for hills on a true 3D terrain map view.</p>
+<p>Below you can see screenshots for all map layers supported by the HERE SDK - note that not all feature layers are available for all editions:</p>
+<center><p>
+<img src="../graphics/Buildings_footprints_extruded_and_disabled.jpg" width="1050">
+<figcaption>Screenshots (from left to right): MapFeatures.buildingFootprints combined with MapFeatureModes.buildingFootprintsAll shows 2D footprints of buildings. MapFeatures.extrudedBuildings combined with MapFeatureModes.extrudedBuildingsAll shows a 3D representation of buildings. MapFeatures.buildingFootprints and MapFeatures.extrudedBuildings are enabled by default. This is how it looks when they are disabled.</figcaption>
+</p></center>
+
+<center><p>
+<img src="../graphics/Building_landmarks.jpg" width="1050">
+<figcaption>Screenshots (from left to right): MapFeatures.landmarks combined with MapFeatureModes.landmarksTextured shows textured landmarks. When paired with MapFeatureModes.landmarksTextureless shows textureless landmarks.</figcaption>
+</p></center>
+
+<center><p>
+<img src="../graphics/contours_lines.jpg" width="1050">
+<figcaption>Screenshot: MapFeatures.contours with MapFeatureModes.contoursAll shows contour lines on the map to represent elevation changes.</figcaption>
+</p></center>
+
+<center><p>
+<img src="../graphics/Zones_congestion_environment.jpg" width="1050">
+<figcaption>Screenshots (from left to right): MapFeatures.congestionZones combined with MapFeatureModes.congestionZonesAll shows city areas designated as congestion charge zones, marked as purple shade (Congestion charging zones are area where drivers are required to pay a fee to enter or travel within). MapFeatures.environmentalZones combined with MapFeatureModes.environmentalZonesAll shows city areas designated as environmental zones, marked as teal shade (Environmental zones are low emission zone, a designated area in a city or region where access for certain vehicles is restricted).</figcaption>
+</p></center>
+
+<center><p>
+<img src="../graphics/Road_exit_label.jpg" width="1050">
+<figcaption>Screenshots (from left to right): MapFeatures.roadExitLabels combined with the MapFeatureModes.roadExitLabelsNumbersOnly shows the road exit labels in numbers. When paired with MapFeatureModes.roadExitLabelsAll shows the road exit labels in text.</figcaption>
+</p></center>
+
+<center><p>
+<img src="../graphics/Safety_cameras.jpg" width="1050">
+<figcaption>Screenshot: MapFeatures.safetyCameras with MapFeatureModes.safetyCamerasAll shows speed warning cameras.</figcaption>
+</p></center>
+
+<center><p>
+<img src="../graphics/Shadows.jpg" width="1050">
+<figcaption>Screenshot: MapFeatures.shadows with MapFeatureModes.shadowsAll shows shadow for all building types (extruded buildings and landmarks).</figcaption>
+</p></center>
+
+<center><p>
+<img src="../graphics/Terrain.jpg" width="1050">
+<figcaption>Screenshot: MapFeatures.terrain with MapFeatureModes.terrainHillshade shows topographical shading for hills.</figcaption>
+</p></center>
+
+<center><p>
+<img src="../graphics/terrain3d.jpg" width="1050">
+<figcaption>Screenshot: MapFeatures.terrain with MapFeatureModes.terrain3d shows topographical shading for hills on a 3D terrain map.</figcaption>
+</p></center>
+
+<center><p>
+<img src="../graphics/Traffic_flows.jpg" width="1050">
+<figcaption>Screenshots (from left to right): MapFeatures.trafficFlow combined with MapFeatureModes.trafficFlowWithFreeFlow shows active traffic jams on the streets by showing green lines when there is no traffic congestion. When paired with MapFeatureModes.trafficFlowWithoutFreeFlow, no green lines are shown when there is no traffic congestion. When paired with MapFeatureModes.trafficFlowJapanWithoutFreeFlow, no green lines are shown when there is no traffic congestion.</figcaption>
+</p></center>
+
+<center><p>
+<img src="../graphics/Traffic_incident.jpg" width="1050">
+<figcaption>Screenshot: MapFeatures.trafficIncidents with MapFeatureModes.trafficIncidentsAll shows incidents such as accidents, construction works, and more.</figcaption>
+</p></center>
+
+<center><p>
+<img src="../graphics/Vehicle_restriction.jpg" width="1050">
+<figcaption>Screenshots (from left to right): MapFeatures.vehicleRestrictions combined with MapFeatureModes.vehicleRestrictionsActive shows truck-specific information with only showing active restrictions. When paired with MapFeatureModes.vehicleRestrictionsActiveAndInactive shows truck-specific information with showing active and inactive time-based restrictions. When paired with MapFeatureModes.vehicleRestrictionsActiveAndInactiveDifferentiated shows truck-specific information with showing active and inactive time-based restrictions, but inactive time-based restrictions are shown as faded.</figcaption>
+</p></center>
+
+<center><p>
+<img src="../graphics/Ambient_occlusion.jpg" width="1050">
+<figcaption>Screenshot (from left to right): On the left, ambient occlusion is disabled, while on the right, ambient occlusion is enabled using MapFeatures.ambientOcclusion with MapFeatureModes.ambientOcclusionAll, showcasing the enhanced shadowing and depth effects.</figcaption>
+</p></center>
+
+<p>Some layers allow to filter the shown content via <code>MapContentSettings</code>:</p>
+<ul>
+<li><code>MapFeatures.trafficIncidents</code>: Use <code>filterTrafficIncidents​(List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TrafficIncidentType</span><span class="token punctuation">&gt;</span></span> trafficIncidents)</code> to filter the displayed traffic incidents.</li>
+<li><code>MapFeatures.vehicleRestrictions</code>: Use <code>filterVehicleRestrictions​(TruckSpecifications truckSpecifications, List<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>HazardousMaterial</span><span class="token punctuation">&gt;</span></span> hazardousMaterials, TunnelCategory tunnelCategory)</code> to filter the displayed truck restrictions.</li>
+</ul>
+<p>The map layers <code>buildingFootprints</code> &amp; <code>extrudedBuildings</code> are enabled by default on the <code>MapView</code>.</p>
+<p>Beta Release: we now also support <code>MapFeatureModes.terrain3d</code> with day, night, hybrid day and hybrid night map schemes.</p>
+<center><p>
+<img src="../graphics/terrain_day_night_hybrid.jpg" width="1050">
+<figcaption>Screenshots (from left to right): MapScheme.day with MapFeatureModes.terrain3d, MapScheme.night with MapFeatureModes.terrain3d, MapScheme.hybridDay with MapFeatureModes.terrain3d, MapScheme.hybridNight with MapFeatureModes.terrain3d.</figcaption>
+</p></center>
+
+<h2 id="extruded-buildings-coverage">Extruded buildings coverage</h2>
+<p>When the <code>MapFeatures.extrudedBuildings</code> feature is enabled, buildings will be rendered in 3D with an outline. The appearance of the buildings may vary by country. For example, in Japan, the outlines are combined sometimes with colored building walls.</p>
+<p>By default, extruded buildings are supported for most countries.</p>
+<p>Note that the enriched <a href="customization-catalogs.html#configure-a-japan-map">Japan map</a> requires a separate contract with HERE.</p>
+<center><p>
+<img src="../graphics/building_extruded_new.jpg" width="1050">
+<figcaption>Screenshots (from left to right): Extruded buildings for a non-Japan region, extruded buildings for the Japan map.</figcaption>
+</p></center>
+
+<h2 id="available-customizations">Available customizations</h2>
+<p>The HERE SDK supports the customization of predefined map styles through the <code>Style</code> class. All <code>MapScheme</code> styles are supported.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>This is a beta release of this feature, so there could be a few bugs and unexpected
+behavior. Related APIs may change for new releases without a deprecation process.</p></div></div>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">String</span> myStyleCustomization <span class="token operator">=</span> <span class="token string-literal"><span class="token string">"""
+{
+  "definitions": {
+      "General.Labels.Scale.Factor": 1.5
+  }
+}
+"""</span></span><span class="token punctuation">;</span>
+
+<span class="token class-name">Style</span> styleUpdate <span class="token operator">=</span> <span class="token class-name">JsonStyleFactory</span><span class="token punctuation">.</span><span class="token function">createFromString</span><span class="token punctuation">(</span>myStyleCustomization<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+mapView<span class="token punctuation">.</span>hereMap<span class="token punctuation">.</span>style<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span>styleUpdate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The following style customizations are supported for predefined map styles:</p>
+<ul>
+<li><code>General.Labels.Scale.Factor</code>: a factor used to scale map labels (icons and text). The default value is 1. Values less than 1 would down-scale map labels and values larger than 1 would up-scale map labels. Values less than 0 or very large values are not supported and lead to undefined behavior. A <code>null</code> value restores the default.</li>
+</ul>
+<center><p>
+  <img src="../graphics/PredefinedStyleLabelScaleFactor.jpg" width="800">
+  <figcaption>Illustration: Predefined Labels Scale Factor (1 -&gt; 1.5).</figcaption>
+</p></center>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="map-items.html" class="navigation navigation-prev " aria-label="Previous page: Add map items">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="custom-map-styles.html" class="navigation navigation-next " aria-label="Next page: Customize the map style">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Add predefined map styles","level":"1.4.5","depth":2,"next":{"title":"Customize the map style","level":"1.4.6","depth":2,"path":"topics/custom-map-styles.md","ref":"topics/custom-map-styles.md","articles":[{"title":"Style guide for custom layers","level":"1.4.6.1","depth":3,"path":"topics/custom-map-styles-style-guide.md","ref":"topics/custom-map-styles-style-guide.md","articles":[]},{"title":"Style techniques reference for custom layers","level":"1.4.6.2","depth":3,"path":"topics/custom-map-styles-style-techniques.md","ref":"topics/custom-map-styles-style-techniques.md","articles":[]},{"title":"Style expressions reference for custom layers","level":"1.4.6.3","depth":3,"path":"topics/custom-map-styles-style-expressions.md","ref":"topics/custom-map-styles-style-expressions.md","articles":[]}]},"previous":{"title":"Add map items","level":"1.4.4","depth":2,"path":"topics/map-items.md","ref":"topics/map-items.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/map-styles.md","mtime":"2025-01-22T16:33:08.638Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

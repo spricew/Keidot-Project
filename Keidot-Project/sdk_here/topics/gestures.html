@@ -1,0 +1,1048 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Interact with the map · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="map-items.html">
+    
+    
+    <link rel="prev" href="camera.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Interact with the map</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="interact-with-the-map">Interact with the map</h1>
+<p>By default, a HERE SDK map view supports all common map gestures, such as pinch and double-tap to zoom in. The table below summarizes the available gestures and their corresponding default behaviors on the map.</p>
+<table style="border-spacing: 0px 20px">
+<tr>
+  <td style="border: 0">
+  <img src="../graphics/gesture-tap.png" style="box-shadow: 0 0 10px"> </td>
+  <td style=" border: 0"> <b>Tap the screen with one finger.</b> This gesture does not have a predefined map action.</td>
+</tr>
+
+<tr>
+  <td style="border: 0">
+  <img src="../graphics/gesture-doubletap.png" style="box-shadow: 0 0 10px"> </td>
+  <td style="border: 0"> <b>To zoom the map in by a fixed amount,</b> tap the screen twice with one finger.</td>
+</tr>
+
+<tr>
+  <td style="border: 0">
+  <img src="../graphics/gesture-longpress.png" style="box-shadow: 0 0 10px"> </td>
+  <td style="border: 0"> <b>Press and hold one finger to the screen.</b> This gesture does not have a predefined map action.</td>
+</tr>
+
+<tr>
+  <td style="border: 0">
+  <img src="../graphics/gesture-pan.png" style="box-shadow: 0 0 10px"> </td>
+  <td style="border: 0"> <b>To move the map,</b> press and hold one finger to the screen, and move it in any direction. The map will keep moving with a little momentum after the finger was lifted.</td>
+</tr>
+
+<tr>
+  <td style="border: 0">
+  <img src="../graphics/gesture-two-finger-pan.png" style="box-shadow: 0 0 10px"> </td>
+  <td style="border: 0"> <b>To tilt the map,</b> press and hold two fingers to the screen, and move them vertically. No behavior is predefined for other directions.</td>
+</tr>
+
+<tr>
+  <td style="border: 0">
+  <img src="../graphics/gesture-two-finger-tap.png" style="box-shadow: 0 0 10px"> </td>
+  <td style="border: 0"> <b>To zoom out by a fixed amount,</b> tap the screen with two fingers.</td>
+</tr>
+
+<tr>
+  <td style="border: 0">
+  <img src="../graphics/gesture-pinch.png" style="box-shadow: 0 0 10px"> </td>
+  <td style="border: 0"> <b>To zoom in or out continuously,</b> press and hold two fingers to the screen, and increase or decrease the distance between them.<br>
+  <b>To rotate the map continuously,</b> press and hold two fingers to the screen, and change the angle between them either by rotating them both or by moving one of them.
+  </td>
+</tr>
+</table>
+
+<p>The HERE SDK for Flutter provides support for the following gestures:</p>
+<ul>
+<li>Tap: <code>TapListener</code></li>
+<li>Double Tap: <code>DoubleTapListener</code></li>
+<li>Long Press: <code>LongPressListener</code></li>
+<li>Pan: <code>PanListener</code></li>
+<li>Two Finger Pan: <code>TwoFingerPanListener</code></li>
+<li>Two Finger Tap: <code>TwoFingerTapListener</code></li>
+<li>Pinch Rotate: <code>PinchRotateListener</code></li>
+</ul>
+<p>Each listener provides a dedicated callback that informs you whenever the user performs an action that could be detected, for example, the beginning or the end of that specific gesture. Usually, you will want to add a specific behavior to your application after a gesture was detected, like placing a map marker after a long press.</p>
+<p>Note that only one listener can be set at a time for the same gesture.</p>
+<h2 id="attach-a-gesture-listener">Attach a gesture listener</h2>
+<p>Let's see an example of how a gesture listener can be attached to the map view. The map view provides specific setters for each gesture. As soon as you set a listener, it will receive all related events for that gesture via the dedicated callback, which is <code>onTap()</code> in case of a <code>TapListener</code>:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_setTapGestureHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  _hereMapController<span class="token punctuation">.</span>gestures<span class="token punctuation">.</span>tapListener <span class="token operator">=</span> <span class="token class-name">TapListener</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Point2D</span> touchPoint<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> geoCoordinates <span class="token operator">=</span> <span class="token function">_toString</span><span class="token punctuation">(</span>_hereMapController<span class="token punctuation">.</span><span class="token function">viewToGeoCoordinates</span><span class="token punctuation">(</span>touchPoint<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'Tap at: </span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">geoCoordinates</span></span><span class="token string">'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">String</span> <span class="token function">_toString</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token operator">?</span> geoCoordinates<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>geoCoordinates <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// This can happen, when there is no map view touched, for example, when the screen was tilted and</span>
+    <span class="token comment">// the touch point is on the horizon.</span>
+    <span class="token keyword">return</span> <span class="token string-literal"><span class="token string">"Error: No valid geo coordinates."</span></span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> geoCoordinates<span class="token punctuation">.</span>latitude<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string-literal"><span class="token string">", "</span></span> <span class="token operator">+</span> geoCoordinates<span class="token punctuation">.</span>longitude<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>See the <a href="https://github.com/heremaps/here-sdk-examples/blob/730b71728258cffe53f3382676b0c104561febbd/examples/latest/navigate/flutter/gestures_app/lib/GesturesExample.dart" target="_blank">gestures example app</a> for details of the used methods.</p>
+<p>As soon as you set up a listener, you will start receiving notifications whenever gestures are detected.</p>
+<p>The <code>touchPoint</code> specifies the <code>MapView</code> coordinates where the gesture occurred. By calling <code>viewToGeoCoordinates(touchPoint)</code>, you can convert the pixels into geographic coordinates (as shown above).</p>
+<p>Likewise, to stop listening, we can simply call:</p>
+<pre class="language-"><code class="lang-dart">_hereMapController<span class="token punctuation">.</span>gestures<span class="token punctuation">.</span>tapListener <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+</code></pre>
+<p>For continuous gestures (like long press, pinch, pan, two finger pan), the <code>begin</code> gesture state will indicate that the gesture was detected. While the finger(s) still touch the display, you may receive <code>update</code> states, until the <code>end</code> state indicates that a finger has been lifted or the <code>cancel</code> state indicates that the gesture detection has been cancelled:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_setLongPressGestureHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  _hereMapController<span class="token punctuation">.</span>gestures<span class="token punctuation">.</span>longPressListener <span class="token operator">=</span> <span class="token class-name">LongPressListener</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">GestureState</span> gestureState<span class="token punctuation">,</span> <span class="token class-name">Point2D</span> touchPoint<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> geoCoordinates <span class="token operator">=</span> <span class="token function">_toString</span><span class="token punctuation">(</span>_hereMapController<span class="token punctuation">.</span><span class="token function">viewToGeoCoordinates</span><span class="token punctuation">(</span>touchPoint<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>gestureState <span class="token operator">==</span> <span class="token class-name">GestureState</span><span class="token punctuation">.</span>begin<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'LongPress detected at: </span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">geoCoordinates</span></span><span class="token string">'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>gestureState <span class="token operator">==</span> <span class="token class-name">GestureState</span><span class="token punctuation">.</span>update<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'LongPress update at: </span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">geoCoordinates</span></span><span class="token string">'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>gestureState <span class="token operator">==</span> <span class="token class-name">GestureState</span><span class="token punctuation">.</span>end<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'LongPress finger lifted at: </span><span class="token interpolation"><span class="token punctuation">$</span><span class="token expression">geoCoordinates</span></span><span class="token string">'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>gestureState <span class="token operator">==</span> <span class="token class-name">GestureState</span><span class="token punctuation">.</span>cancel<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">'Map view lost focus. Maybe a modal dialog is shown or the app is sent to background.'</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>For example, a user may still keep his finger on the screen after a long press event was detected - or even move it around. However, only the <code>begin</code> event will mark the point in time, when the long press gesture was detected.</p>
+<p>A long press gesture can be useful to place a map marker onto the map. An example of this can be seen in the "search_app" example. You can find the example app on <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">GitHub</a> for your preferred platform.</p>
+<p>Note that for the non-continuous gestures (like tap, double tap, two finger tap), no <code>GestureState</code> is needed to handle the gesture event.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>The pan gesture can result in a swipe that moves the map, which keeps moving although the gesture has already ended and all fingers have been lifted. To detect when any map movement has ended, a <code>MapIdleListener</code> can be used. It can be added for a <code>HereMap</code> instance, which you can get from a <code>MapView</code> instance.</p></div></div>
+<h2 id="control-map-actions">Control map actions</h2>
+<p>Setting a listener does not affect the default map behavior of the gestures. That can be controlled independently. By default, all standard behaviors, such as zooming in when double tapping the map, are enabled.</p>
+<p>For example, you can disable the default map gesture behavior for double tap (zooms in) and two finger tap (zooms out) as follows:</p>
+<pre class="language-"><code class="lang-dart">_hereMapController<span class="token punctuation">.</span>gestures<span class="token punctuation">.</span><span class="token function">disableDefaultAction</span><span class="token punctuation">(</span><span class="token class-name">GestureType</span><span class="token punctuation">.</span>doubleTap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>gestures<span class="token punctuation">.</span><span class="token function">disableDefaultAction</span><span class="token punctuation">(</span><span class="token class-name">GestureType</span><span class="token punctuation">.</span>twoFingerTap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>When disabling a default map action, you can still listen for the gesture event. This can be useful when you want to turn off the default action of a gesture to implement your own zooming behavior, for example. All gestures - except for tap and long press - provide a default map action. More details can be found in the overview above.</p>
+<p>To bring back the default map gesture behavior, you can call:</p>
+<pre class="language-"><code class="lang-dart">_hereMapController<span class="token punctuation">.</span>gestures<span class="token punctuation">.</span><span class="token function">enableDefaultAction</span><span class="token punctuation">(</span><span class="token class-name">GestureType</span><span class="token punctuation">.</span>doubleTap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+_hereMapController<span class="token punctuation">.</span>gestures<span class="token punctuation">.</span><span class="token function">enableDefaultAction</span><span class="token punctuation">(</span><span class="token class-name">GestureType</span><span class="token punctuation">.</span>twoFingerTap<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="customize-map-actions">Customize map actions</h2>
+<p>As we have already seen, by default, a double tap gesture zooms in the map in discrete steps - for example, from city level closer to street level. You can disable such default map gesture actions to implement your own behaviors - or you can add your desired actions to existing behaviors.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>If needed, it is also possible to combine platform gesture handling with the HERE SDK gesture detection. The HERE SDK does not provide all kinds of low level gesture events, as it focuses primarily on the common map gestures - for your convenience. If you need more granular control, you can always combine the gesture handling available from the HERE SDK with the native gesture detection.</p></div></div>
+<h2 id="try-the-example-app">Try the example app</h2>
+<p>Most of the code snippets mentioned above are available in our "gestures_app" example app. You can find this example app on <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">GitHub</a> for your preferred platform.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="camera.html" class="navigation navigation-prev " aria-label="Previous page: Adjust the map view">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="map-items.html" class="navigation navigation-next " aria-label="Next page: Add map items">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Interact with the map","level":"1.4.3","depth":2,"next":{"title":"Add map items","level":"1.4.4","depth":2,"path":"topics/map-items.md","ref":"topics/map-items.md","articles":[]},"previous":{"title":"Adjust the map view","level":"1.4.2","depth":2,"path":"topics/camera.md","ref":"topics/camera.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/gestures.md","mtime":"2025-01-22T16:33:08.566Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

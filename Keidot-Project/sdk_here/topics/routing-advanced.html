@@ -1,0 +1,1076 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Advanced routing features · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="routing-ev.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Advanced routing features</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="advanced-routing-features">Advanced routing features</h1>
+<p>Features such as isoline routing and real-time traffic information, which can be refreshed for already calculated routes, play a pivotal role in route planning. This section also delves into features such as returning to a route that has been left during navigation and importing routes from other services.</p>
+<h2 id="isoline-routing">Isoline routing</h2>
+<p>With isoline routing you can generate polygons to represent the area of reach from a given point based on time, distance or energy consumption: the polygon will encompass all destinations that can be reached in a specific amount of time, a maximum travel distance, or even the charge level available at an electric vehicle.</p>
+<p>The HERE SDK provides <code>IsolineRoutingEngine</code> which can be used to calculate a reachable area from a center point.</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">try</span><span class="token punctuation">{</span>
+    _isolineRoutingEngine <span class="token operator">=</span> <span class="token class-name">IsolineRoutingEngine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">InstantiationException</span> <span class="token punctuation">{</span>
+  <span class="token keyword">throw</span> <span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Initialization of IsolineRoutingEngine failed."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Isoline routing considers real-time and historical traffic in its calculations.</p></div></div>
+<p>Some examples of how this could be useful:</p>
+<ul>
+<li>Users can find restaurants within a 2 km walking distance from their current location.</li>
+<li>Users can search for hotels based on the distance to sights, for example, to find hotels within a 20 minute drive to major attractions - such as Disney World and Universal Studios in Orlando, Florida USA.</li>
+</ul>
+<p>Below we show a consumption based <code>Isoline</code> example for an electric vehicle scenario, where the driver wants to know which points are reachable within the provided limit of 400 Wh: so, the goal is to consume 400 Wh or less - and the question is: what can the driver reach within this energy limit?</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Electric vehicles have a limited reachable range based on their current battery charge and factors affecting the rate of energy consumed, such as road slope or auxiliary power usage. Therefore, it is useful to visualize the appropriate range to avoid running out of energy before reaching a charging point. Since vehicles have unique consumption parameters, they are to be specified in the request for an accurate range to be calculated. For more details, see the electric vehicle section below.</p></div></div>
+<p>The result will be a <code>GeoPolygon</code> shape that you can show on the map to provide the driver a visual orientation:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// This finds the area that an electric vehicle can reach by consuming 400 Wh or less,</span>
+<span class="token comment">// while trying to take the fastest possible route into any possible straight direction from start.</span>
+<span class="token comment">// Note: We have specified evCarOptions.routeOptions.optimizationMode = OptimizationMode.FASTEST for EV car options above.</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span>int<span class="token punctuation">&gt;</span></span> rangeValues <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">400</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// With null we choose the default option for the resulting polygon shape.</span>
+int<span class="token operator">?</span> maxPoints<span class="token punctuation">;</span>
+<span class="token class-name">IsolineOptionsCalculation</span> calculationOptions <span class="token operator">=</span> <span class="token class-name">IsolineOptionsCalculation</span><span class="token punctuation">.</span><span class="token function">withNoDefaults</span><span class="token punctuation">(</span>
+    <span class="token class-name">IsolineRangeType</span><span class="token punctuation">.</span>consumptionInWattHours<span class="token punctuation">,</span> rangeValues<span class="token punctuation">,</span> <span class="token class-name">IsolineCalculationMode</span><span class="token punctuation">.</span>balanced<span class="token punctuation">,</span> maxPoints<span class="token punctuation">,</span> <span class="token class-name">RoutePlaceDirection</span><span class="token punctuation">.</span>departure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">IsolineOptions</span> isolineOptions <span class="token operator">=</span> <span class="token class-name">IsolineOptions</span><span class="token punctuation">.</span><span class="token function">withEVCarOptions</span><span class="token punctuation">(</span>calculationOptions<span class="token punctuation">,</span> <span class="token function">_getEVCarOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+_isolineRoutingEngine<span class="token punctuation">.</span><span class="token function">calculateIsoline</span><span class="token punctuation">(</span><span class="token class-name">Waypoint</span><span class="token punctuation">(</span>_startGeoCoordinates<span class="token operator">!</span><span class="token punctuation">)</span><span class="token punctuation">,</span> isolineOptions<span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token class-name">RoutingError</span><span class="token operator">?</span> routingError<span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Isoline</span><span class="token punctuation">&gt;</span></span><span class="token operator">?</span> list<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>routingError <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">_showDialog</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Error while calculating reachable area:"</span></span><span class="token punctuation">,</span> routingError<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// When routingError is nil, the isolines list is guaranteed to contain at least one isoline.</span>
+  <span class="token comment">// The number of isolines matches the number of requested range values. Here we have used one range value,</span>
+  <span class="token comment">// so only one isoline object is expected.</span>
+  <span class="token class-name">Isoline</span> isoline <span class="token operator">=</span> list<span class="token operator">!</span><span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+
+  <span class="token comment">// If there is more than one polygon, the other polygons indicate separate areas, for example, islands, that</span>
+  <span class="token comment">// can only be reached by a ferry.</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">GeoPolygon</span> geoPolygon <span class="token keyword">in</span> isoline<span class="token punctuation">.</span>polygons<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Show polygon on map.</span>
+    <span class="token class-name">Color</span> fillColor <span class="token operator">=</span> <span class="token class-name">Color</span><span class="token punctuation">.</span><span class="token function">fromARGB</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">143</span><span class="token punctuation">,</span> <span class="token number">138</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">MapPolygon</span> mapPolygon <span class="token operator">=</span> <span class="token class-name">MapPolygon</span><span class="token punctuation">(</span>geoPolygon<span class="token punctuation">,</span> fillColor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    _hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">addMapPolygon</span><span class="token punctuation">(</span>mapPolygon<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    _mapPolygons<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>mapPolygon<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>This finds the area that an electric vehicle can reach by consuming 400 Wh or less, while trying to take the fastest possible route into any possible straight direction from start.</p>
+<p>Why fastest? This depends on the route's optimization mode (we have shown in earlier sections above) - of course, you can specify any mode. Note that each isoline needs exactly one center point from where a journey may start.</p>
+<p>Since we are interested in the energy consumption, we also provided <code>EVCarOptions</code>. These options must include battery specifications as shown in the electric vehicle routing section below. If you provide a time or distance limit instead as range type, you can provide the usual route options as shown earlier.</p>
+<p>The <code>IsolineRangeType</code> defines the type of the provide range value. Here we use 400. You can provide multiple values - and as a result you would then get multiple <code>Isoline</code> objects - one for each provided range value.</p>
+<p>On the other hand, each <code>Isoline</code> object can contain multiple polygons for special cases, such as when the area of reach includes an island. Such areas are provided as separate polygons.</p>
+<p>The shape of the resulting polygon can be defined by the <code>maxPoints</code> parameter. It determines the number of vertices of the <code>GeoPolygon</code>. Note that this parameter does not influence the actual calculation of the polygon, but just its appearance.</p>
+<center><p>
+  <img src="../graphics/isoline.jpg" width="450" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Showing the area of reach for the given limit.</figcaption>
+</p></center>
+
+<p>The screenshot shows the center location of the polygon, indicated by a big green circle. It also shows a possible route beyond this area with two additional found charging stations along the route. In the next section you can find how to calculate routes for electric vehicles.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>You can find the above code snippet as part of the "ev_routing_app" example on <a href="https://github.com/heremaps/here-sdk-examples/blob/master/examples/latest/navigate/android/EVRouting" target="_blank">GitHub</a>.</p></div></div>
+<h2 id="refresh-routes">Refresh routes</h2>
+<p>The traffic flow information contained in a <code>Route</code> object is valid for the time when the route was calculated, see above. If you want to update this information at any later point in time, you can refresh the route.</p>
+<p>It is also possible to refresh the route options for a route:</p>
+<pre class="language-"><code class="lang-dart"><span class="token class-name">RefreshRouteOptions</span> refreshRouteOptions <span class="token operator">=</span> <span class="token class-name">RefreshRouteOptions</span><span class="token punctuation">.</span><span class="token function">withTaxiOptions</span><span class="token punctuation">(</span>taxiOptions<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Update the route options and set a new start point on the route.</span>
+<span class="token comment">// The new starting point must be on or very close to the original route, preferrably, use a map-matched waypoint if possible.</span>
+<span class="token comment">// Note: A routeHandle is only available, when RouteOptions.enableRouteHandle was set to true when the original route was calculated.</span>
+routingEngine<span class="token punctuation">.</span><span class="token function">refreshRoute</span><span class="token punctuation">(</span>route<span class="token punctuation">.</span>routeHandle<span class="token punctuation">,</span> mapMatchedWaypoint<span class="token punctuation">,</span> refreshRouteOptions<span class="token punctuation">,</span> <span class="token punctuation">(</span>routingError<span class="token punctuation">,</span> routes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>routingError <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">HERE.Route</span> newRoute <span class="token operator">=</span> routes<span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+        <span class="token comment">// ...</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Handle error.</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>For this you need to know the <code>RouteHandle</code>, which must be requested via <code>RouteOptions.enableRouteHandle</code> before the route was calculated.</p>
+<p>In addition, refreshing a route can be useful to convert the route options from one transport type to another or to update specific options. If the conversion is not possible - for example, when a pedestrian route is converted to a truck route, then a <code>routingError</code> indicates this.</p>
+<p>You can also shorten the route, by specifying a new starting point. The new starting point must be very close to the original route as no new route is calculated. If the new starting point is too far away, then a <code>routingError</code> occurs.</p>
+<p>Note that refreshing a route is not enough when a driver deviates from a route during an ongoing turn-by-turn navigation - as the detour part needs a new route calculation. In such a case, it may be more useful to recalculate the whole route by setting a new starting point - or to use the <code>returnToRoute()</code> method that allows to keep the originally chosen route alternative.</p>
+<h2 id="return-to-a-route">Return to a route</h2>
+<p>The <code>RoutingEngine</code> allows to refresh an existing route (see above) based on the current traffic situation. The result may be a new route that is faster than the previous one. However, the new <code>startingPoint</code> must be very close to the original route.</p>
+<p>If you need to handle a case where the <code>startingPoint</code> is farther away from the route, consider to use the <code>returnToRoute()</code> feature of the <code>RoutingEngine</code>. For example, a driver may decide to take a detour due to the local traffic situation. Calling <code>returnToRoute()</code> will also result in a new route, but it will try to resemble as much as possible from the original route without a costly route recalculation - if possible.</p>
+<ul>
+<li>Stopover waypoints are guaranteed to be passed by.</li>
+<li>Pass-through waypoints are only meant to shape the route, so there is no guarantee that the new route will honor or discard them.</li>
+<li>The current traffic situation is taken into account and may reshape the route.</li>
+</ul>
+<p>Note that turn-by-turn navigation is only available for the <em>Navigate Edition</em>.</p>
+<h2 id="import-routes">Import routes</h2>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>This is a beta release of this feature, so there could be a few bugs and unexpected behaviors. Related APIs may change for new releases without a deprecation process.</p></div></div>
+<p>You can import routes from other APIs and/or vendors via one of the various overloaded <code>routingEngine.importRoute()</code> methods. Note that this is not a 1:1 import feature, but rather a reconstruction.</p>
+<p>A new <code>Route</code> object can be created from:</p>
+<ul>
+<li><strong>Option 1:</strong> A list of <code>GeoCoordinates</code> and <code>RouteOptions</code>. This can be useful, when the route should be imported from a different vendor or when the route should be persisted for a longer time. The route shape will be kept as close as possible to the one provided. Requires an online connection.</li>
+<li><strong>Option 2:</strong> A <code>RouteHandle</code>. This can be useful to import a route from other HERE services. A possible use case can be to create a route on the <a href="https://wego.here.com/?map=52.52984,13.38858,15,normal" target="_blank">HERE WeGo</a> website or another web page that uses the HERE REST APIs and then transfer it to a mobile device to start a trip. Note that a map update on backend side or other changes in the real world can lead to an invalid handle. Therefore, it is recommended to use the handle only for a few hours. Although the <code>RouteHandle</code> encodes certain information, it requires an online connection to get the full route data from backend.</li>
+</ul>
+<p>Any <code>AvoidanceOptions</code> that are applied may be discarded and reported as violations via the route's <code>Section.sectionNotices</code>. For example, if you request to avoid highways, but the provided coordinates match to a highway road, then the resulting route will still match the highway, but a notice is added to indicate that the desired avoidance option is violated.</p>
+<p>In general, be aware that importing a route may not always reproduce exactly the same route as the original one - even if you use the exact same <code>RouteOptions</code>. There can be always changes in the map, for example, due to a new construction site or related traffic events. Also, the map data itself can change, for example, when speed limits change along a road or new roads are built or existing ones closed. Also, the time of the departure can influence if certain roads can be taken or not.</p>
+<p>Below we look more into the details.</p>
+<p><strong>Option 1: import Routes from a List of Geographic Coordinates</strong></p>
+<p>To import a route from a list of <code>GeoCoordinates</code> with <code>RouteOptions</code>, a list of <code>GeoCoordinates</code> is needed that define the route shape. Such coordinates need to be very close to each other, or the calculation will fail. Such a list of coordinates can be extracted from a route calculated by a different vendor or it can be extracted from a GPX trace.</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Import a route from list of Location instances.</span>
+<span class="token comment">// Note that the geographic coordinates need to be close to each other.</span>
+<span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Location</span><span class="token punctuation">&gt;</span></span> routeLocations <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.518032</span><span class="token punctuation">,</span> <span class="token number">13.420632</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.51772</span><span class="token punctuation">,</span> <span class="token number">13.42038</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.51764</span><span class="token punctuation">,</span> <span class="token number">13.42062</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.51754</span><span class="token punctuation">,</span> <span class="token number">13.42093</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.51735</span><span class="token punctuation">,</span> <span class="token number">13.42155</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.51719</span><span class="token punctuation">,</span> <span class="token number">13.42209</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.51707</span><span class="token punctuation">,</span> <span class="token number">13.42248</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.51695</span><span class="token punctuation">,</span> <span class="token number">13.42285</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.5168</span><span class="token punctuation">,</span> <span class="token number">13.42331</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.51661</span><span class="token punctuation">,</span> <span class="token number">13.42387</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.51648</span><span class="token punctuation">,</span> <span class="token number">13.42429</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.51618</span><span class="token punctuation">,</span> <span class="token number">13.42513</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.5161</span><span class="token punctuation">,</span> <span class="token number">13.42537</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.51543</span><span class="token punctuation">,</span> <span class="token number">13.42475</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.51514</span><span class="token punctuation">,</span> <span class="token number">13.42449</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token class-name">Location</span><span class="token punctuation">.</span><span class="token function">withCoordinates</span><span class="token punctuation">(</span><span class="token class-name">GeoCoordinates</span><span class="token punctuation">(</span><span class="token number">52.515001</span><span class="token punctuation">,</span> <span class="token number">13.424374</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+routingEngine<span class="token punctuation">.</span><span class="token function">importCarRoute</span><span class="token punctuation">(</span>routeLocations<span class="token punctuation">,</span> <span class="token class-name">CarOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>routingError<span class="token punctuation">,</span> routes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>routingError <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">HERE.Route</span> newRoute <span class="token operator">=</span> routes<span class="token operator">!</span><span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Handle error.</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>For this option, you can select the overload of the <code>importRoute(..)</code> method that matches your desired transport type.</p>
+<p>When importing a route from a list of <code>Location</code> objects and <code>RouteOptions</code> then the <code>RoutingEngine</code> will create the route shape as closely as possible from the provided geographic coordinates.</p>
+<p>For best results use 1Hz GPS data, or points that have a spacing of a few meters. Very sparse data may result in an error.</p>
+<p>The list of locations is not unlimited: please refer to the API Reference for the maximum number of supported items. Similarly, the list of waypoints is not unlimited when calling <code>calculateRoute(..)</code>.</p>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Additionally, you can use an overload of the <code>importRoute(..)</code> method to specify a list of <code>RouteStop</code> elements. When importing a route just from a list of coordinates, the information on stopover waypoints is usually lost. Use the <code>RouteStop</code> class to specify such stops. It allows to specify a <code>locationIndex</code> where the stop should be done and a <code>stopDuration</code>. This will influence the overall ETA and during navigation the <code>RouteStop</code> will be treated as a stopover waypoint so that it will be reported as a <code>Milestone</code> when passing-by (note that navigation is only supported for the <code>Navigate Edition</code>).</p><h4 id="note">Note</h4><p>This feature requires to map-match all provides points to a street. Therefore, it may be considerably slower than importing a (longer) route from a <code>RouteHandle</code>.</p></div></div>
+<p><strong>Option 2: import routes from a RouteHandle</strong></p>
+<p>Below we take a look into the <code>RouteHandle</code> option. With the <code>RouteHandle​(String handle)</code> constructor you can create a <code>RouteHandle</code> from a given string handle. Such a string can be provided from other backend sources such as one of the available HERE REST APIs. Note that the string is only valid for a couple of hours.</p>
+<p>Below you can find an example REST API call to create a route with a route handle string (replace <code>YOUR_API_KEY</code> with the actual key you have in use):</p>
+<!-- markdown-link-check-disable --> <!-- Exclude from link check since no API key. -->
+<p><a href="https://router.hereapi.com/v8/routes?apikey=-YOUR_API_KEY&amp;origin=52.524465%2C13.382334&amp;destination=52.525301%2C13.399844&amp;return=polyline%2Csummary%2Cactions%2Cinstructions%2CrouteHandle&amp;transportMode=car" target="_blank">https://router.hereapi.com/v8/routes?apikey=-YOUR_API_KEY&amp;origin=52.524465%2C13.382334&amp;destination=52.525301%2C13.399844&amp;return=polyline%2Csummary%2Cactions%2Cinstructions%2CrouteHandle&amp;transportMode=car</a>
+<!-- markdown-link-check-enable --></p>
+<p>You can copy the route handle string from the JSON response and use it with the HERE SDK like so:</p>
+<pre class="language-"><code class="lang-dart"><span class="token comment">// Import a route from RouteHandle.</span>
+routingEngine<span class="token punctuation">.</span><span class="token function">importRouteFromHandle</span><span class="token punctuation">(</span><span class="token class-name">RouteHandle</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"routeHandleStringFromBackend"</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">RefreshRouteOptions</span><span class="token punctuation">.</span><span class="token function">withCarOptions</span><span class="token punctuation">(</span><span class="token class-name">CarOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>routingError<span class="token punctuation">,</span> routes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>routingError <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">HERE.Route</span> newRoute <span class="token operator">=</span> routes<span class="token operator">!</span><span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Handle error.</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The <code>RouteHandle</code> string identifies an already calculated route. Once imported successfully, a new <code>Route</code> object is created and provided as part of the <code>CalculateRouteCallback</code> for further use with the HERE SDK.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="routing-ev.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Get routes for electric vehicles">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Advanced routing features","level":"1.6.5","depth":2,"next":{"title":"Traffic","level":"1.7","depth":1,"ref":"","articles":[{"title":"Get started with Traffic","level":"1.7.1","depth":2,"path":"topics/traffic.md","ref":"topics/traffic.md","articles":[]},{"title":"Additional traffic features","level":"1.7.2","depth":2,"path":"topics/traffic-features.md","ref":"topics/traffic-features.md","articles":[]}]},"previous":{"title":"Get routes for electric vehicles","level":"1.6.4","depth":2,"path":"topics/routing-ev.md","ref":"topics/routing-ev.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/routing-advanced.md","mtime":"2025-01-22T16:33:08.738Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

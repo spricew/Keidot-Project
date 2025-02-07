@@ -1,0 +1,1020 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Additional traffic features · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="traffic.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Additional traffic features</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="additional-traffic-features">Additional traffic features</h1>
+<p>Enhance your map applications with real-time traffic data using HERE SDK's advanced traffic features. Display live traffic flow and incidents on the map to keep users informed and help them navigate efficiently. Additionally, you can pick and highlight specific traffic incidents for a detailed view.</p>
+<h2 id="show-real-time-traffic-flow-and-incidents-on-the-map">Show real-time traffic flow and incidents on the map</h2>
+<p>You can easily visualize traffic incidents on the map by enabling the map layer state <code>trafficIncidents</code>. The HERE SDK also supports a separate layer to see the current traffic situation. See the example below for how to show or hide a layer on the map.</p>
+<center><p>
+  <img src="../graphics/traffic_incidents.jpg" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Traffic incidents visualized on the map.</figcaption>
+</p></center>
+
+<p>After a layer is set, the visible area of the map is automatically updated. So you can freely pan the map in all directions to see the latest traffic incidents.</p>
+<p>In many situations, drivers are interested in finding the fastest route based on the current traffic jams in a city - or outside a city. The HERE SDK allows you to show a layer holding all the current traffic jams, visualized by lines in different colors to indicate the severity of the jam - always updated in real-time. This feature requires an online connection and consumes slightly more data. However, the traffic lines are shown as part of the map tiles and are therefore highly performant.</p>
+<p>Together - or independently - you can visualize such traffic information on the map with just a few lines of code:</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_enableTrafficVisualization</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Try to refresh the trafficFlow vector tiles 5 minutes.</span>
+  <span class="token comment">// If MapFeatures.trafficFlow is disabled, no requests are made.</span>
+  <span class="token comment">//</span>
+  <span class="token comment">// Note: This code initiates periodic calls to the HERE Traffic backend. Depending on your contract,</span>
+  <span class="token comment">// each call may be charged separately. It is the application's responsibility to decide how</span>
+  <span class="token comment">// often this code should be executed.</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token class-name">MapContentSettings</span><span class="token punctuation">.</span><span class="token function">setTrafficRefreshPeriod</span><span class="token punctuation">(</span><span class="token class-name">Duration</span><span class="token punctuation">(</span>minutes<span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">on</span> <span class="token class-name">MapContentSettingsTrafficRefreshPeriodExceptionException</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"TrafficRefreshPeriodException"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// Once these layers are added to the map, they will be automatically updated while panning the map.</span>
+  _hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>trafficFlow<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>trafficFlowWithFreeFlow<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// MapFeatures.trafficIncidents renders traffic icons and lines to indicate the location of incidents. Note that these are not directly pickable yet.</span>
+  _hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">enableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>trafficIncidents<span class="token punctuation">:</span> <span class="token class-name">MapFeatureModes</span><span class="token punctuation">.</span>defaultMode<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Optionally, for <code>MapFeatures.trafficFlow</code> you can also specify how often a request should be initiated in order to fetch the latest traffic data from the backend.</p>
+<p>Setting a new layer state is performed synchronously, but it requires a valid map scene that must have been loaded before. Also, setting a new layer state while a new map scene is being loaded, may result in an exception. For hiding feature layers, you can call:</p>
+<pre class="language-"><code class="lang-dart">_hereMapController<span class="token punctuation">.</span>mapScene<span class="token punctuation">.</span><span class="token function">disableFeatures</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>trafficFlow<span class="token punctuation">,</span> <span class="token class-name">MapFeatures</span><span class="token punctuation">.</span>trafficIncidents<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>The traffic flow lines are color coded as follows:</p>
+<ul>
+<li>Green: <strong>Normal</strong> traffic</li>
+<li>Amber/Yellow: <strong>High</strong> traffic</li>
+<li>Red: <strong>Very high</strong> traffic</li>
+<li>Black: <strong>Blocking</strong> traffic</li>
+</ul>
+<center><p>
+  <img src="../graphics/traffic_flow.jpg" width="250" style="box-shadow: 0 0 20px">
+  <figcaption>Screenshot: Traffic flow visualized on the map together with incidents.</figcaption>
+</p></center>
+
+<p>A usage example is available on <a href="https://github.com/heremaps/here-sdk-examples" target="_blank">GitHub</a> as part of the "traffic_app" example app.</p>
+<h2 id="pick-traffic-incidents">Pick traffic incidents</h2>
+<p>When the <code>trafficIncidents</code> is shown on the <code>MapView</code>, you can set up a tap handler and pick the traffic incidents to get more information.</p>
+<pre class="language-"><code class="lang-dart"><span class="token keyword">void</span> <span class="token function">_setTapGestureHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  _hereMapController<span class="token punctuation">.</span>gestures<span class="token punctuation">.</span>tapListener <span class="token operator">=</span> <span class="token class-name">TapListener</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">Point2D</span> touchPoint<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">GeoCoordinates</span><span class="token operator">?</span> touchGeoCoords <span class="token operator">=</span> _hereMapController<span class="token punctuation">.</span><span class="token function">viewToGeoCoordinates</span><span class="token punctuation">(</span>touchPoint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// Can be null when the map was tilted and the sky was tapped.</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>touchGeoCoords <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Pick incidents that are shown in MapSceneLayers.trafficIncidents.</span>
+      <span class="token function">_pickTrafficIncident</span><span class="token punctuation">(</span>touchPoint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Traffic incidents can only be picked, when trafficIncidents is visible.</span>
+<span class="token function">_pickTrafficIncident</span><span class="token punctuation">(</span><span class="token class-name">Point2D</span> touchPointInPixels<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">Point2D</span> originInPixels <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Point2D</span><span class="token punctuation">(</span>touchPointInPixels<span class="token punctuation">.</span>x<span class="token punctuation">,</span> touchPointInPixels<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">Size2D</span> sizeInPixels <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Size2D</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">Rectangle2D</span> rectangle <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Rectangle2D</span><span class="token punctuation">(</span>originInPixels<span class="token punctuation">,</span> sizeInPixels<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  _hereMapController<span class="token punctuation">.</span><span class="token function">pickMapContent</span><span class="token punctuation">(</span>rectangle<span class="token punctuation">,</span> <span class="token punctuation">(</span>pickMapContentResult<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pickMapContentResult <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// An error occurred while performing the pick operation.</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">PickTrafficIncidentResult</span><span class="token punctuation">&gt;</span></span> trafficIncidents <span class="token operator">=</span> pickMapContentResult<span class="token punctuation">.</span>trafficIncidents<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>trafficIncidents<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"No traffic incident found at picked location"</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Picked at least one incident."</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">PickTrafficIncidentResult</span> firstIncident <span class="token operator">=</span> trafficIncidents<span class="token punctuation">.</span>first<span class="token punctuation">;</span>
+      <span class="token function">_showDialog</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Traffic incident picked:"</span></span><span class="token punctuation">,</span> <span class="token string-literal"><span class="token string">"Type: "</span></span> <span class="token operator">+</span> firstIncident<span class="token punctuation">.</span>type<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// Find more details by looking up the ID via TrafficEngine.</span>
+      <span class="token function">_findIncidentByID</span><span class="token punctuation">(</span>firstIncident<span class="token punctuation">.</span>originalId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Optionally, look for more map content like embedded POIs.</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>With the tap handler, we get the touched location in view coordinates that can be passed to <code>mapView.pickMapContent()</code>. Here, we just use a point-sized rectangle, but you can also enlarge the pick area to include more content at once.</p>
+<p>The callback provides a <code>PickMapContentResult</code> which can contain a <code>TrafficIncidentResult</code>, but also other embedded types like default POI markers, that are always visible on the map. The <code>TrafficIncidentResult</code> type already provides most information about the incident, but to get all available information, we can use the <code>TrafficEngine</code> (see also below) to search for the picked incident by ID:</p>
+<pre class="language-"><code class="lang-dart"><span class="token function">_findIncidentByID</span><span class="token punctuation">(</span><span class="token class-name">String</span> originalId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token class-name">TrafficIncidentLookupOptions</span> trafficIncidentsLookupOptions <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TrafficIncidentLookupOptions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// Optionally, specify a language:</span>
+  <span class="token comment">// the language of the country where the incident occurs is used.</span>
+  <span class="token comment">// trafficIncidentsLookupOptions.languageCode = LanguageCode.EN_US;</span>
+  _trafficEngine<span class="token punctuation">.</span><span class="token function">lookupIncident</span><span class="token punctuation">(</span>originalId<span class="token punctuation">,</span> trafficIncidentsLookupOptions<span class="token punctuation">,</span>
+      <span class="token punctuation">(</span>trafficQueryError<span class="token punctuation">,</span> trafficIncident<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>trafficQueryError <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"Fetched TrafficIncident from lookup request."</span></span> <span class="token operator">+</span> <span class="token string-literal"><span class="token string">" Description: "</span></span> <span class="token operator">+</span> trafficIncident<span class="token operator">!</span><span class="token punctuation">.</span>description<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token function">_showDialog</span><span class="token punctuation">(</span><span class="token string-literal"><span class="token string">"TrafficLookupError:"</span></span><span class="token punctuation">,</span> trafficQueryError<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="traffic.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Get started with Traffic">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Additional traffic features","level":"1.7.2","depth":2,"next":{"title":"Customization","level":"1.8","depth":1,"ref":"","articles":[{"title":"User interface components","level":"1.8.1","depth":2,"path":"topics/customization-ui.md","ref":"topics/customization-ui.md","articles":[]},{"title":"Maps and services","level":"1.8.2","depth":2,"path":"topics/customization-catalogs.md","ref":"topics/customization-catalogs.md","articles":[]}]},"previous":{"title":"Get started with Traffic","level":"1.7.1","depth":2,"path":"topics/traffic.md","ref":"topics/traffic.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/traffic-features.md","mtime":"2025-01-22T16:33:08.802Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

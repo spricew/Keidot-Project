@@ -1,0 +1,1405 @@
+<!DOCTYPE HTML>
+<html lang="">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Style expressions reference for custom layers · Developer Guide - HERE SDK for Flutter</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-image-captions/image-captions.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-melchior/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="192x192" href="../gitbook/images/favicon-192x192.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="android-auto.html">
+    
+    
+    <link rel="prev" href="custom-map-styles-style-techniques.html">
+    
+
+    <meta name="copyright" content="© 2025 HERE Europe B.V."><meta name="html_title" content="HERE SDK for Flutter Explore v4.21.1.0 Developer's Guide"><meta name="DC.Document.Id" content="57cab8f6-4bd8-4699-a8ae-4730c2165bf4"><meta name="DC.Document.Name" content="HERE SDK for Flutter - Developer's Guide"><meta name="DC.Product.Name" content="HERE SDK for Flutter"><meta name="DC.Product.Version" content="4.21.1.0"><meta name="DC.Creation.Date" content="2025-01-22T16:33:33+00:00"></head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            <a class="brand-logo" href="https://www.here.com/">Visit www.here.com</a>
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="introduction-editions.html">
+            
+                <a href="introduction-editions.html">
+            
+                    
+                    Editions explained (Explore, Navigate)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="introduction-feature-list.html">
+            
+                <a href="introduction-feature-list.html">
+            
+                    
+                    Feature list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="introduction-requirements.html">
+            
+                <a href="introduction-requirements.html">
+            
+                    
+                    Minimum requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="coverage-information.html">
+            
+                <a href="coverage-information.html">
+            
+                    
+                    Coverage information
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2">
+            
+                <span>
+            
+                    
+                    Get started
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="get-hsdk-package.html">
+            
+                <a href="get-hsdk-package.html">
+            
+                    
+                    Get the HERE SDK package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="integrate-here-sdk.html">
+            
+                <a href="integrate-here-sdk.html">
+            
+                    
+                    Integrate the HERE SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="update-version.html">
+            
+                <a href="update-version.html">
+            
+                    
+                    Update from previous versions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4">
+            
+                <span>
+            
+                    
+                    Maps
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="maps.html">
+            
+                <a href="maps.html">
+            
+                    
+                    Get started with Maps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    Adjust the map view
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="gestures.html">
+            
+                <a href="gestures.html">
+            
+                    
+                    Interact with the map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="map-items.html">
+            
+                <a href="map-items.html">
+            
+                    
+                    Add map items
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="map-styles.html">
+            
+                <a href="map-styles.html">
+            
+                    
+                    Add predefined map styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="custom-map-styles.html">
+            
+                <a href="custom-map-styles.html">
+            
+                    
+                    Customize the map style
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="custom-map-styles-style-guide.html">
+            
+                <a href="custom-map-styles-style-guide.html">
+            
+                    
+                    Style guide for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="custom-map-styles-style-techniques.html">
+            
+                <a href="custom-map-styles-style-techniques.html">
+            
+                    
+                    Style techniques reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.6.3" data-path="custom-map-styles-style-expressions.html">
+            
+                <a href="custom-map-styles-style-expressions.html">
+            
+                    
+                    Style expressions reference for custom layers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="android-auto.html">
+            
+                <a href="android-auto.html">
+            
+                    
+                    Integration with CarPlay and Android Auto
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5">
+            
+                <span>
+            
+                    
+                    Search
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="search.html">
+            
+                <a href="search.html">
+            
+                    
+                    Get started with Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="search-geocoding.html">
+            
+                <a href="search-geocoding.html">
+            
+                    
+                    Search &amp; Geocoding features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6">
+            
+                <span>
+            
+                    
+                    Routing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="routing.html">
+            
+                <a href="routing.html">
+            
+                    
+                    Get started with Routing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="routing-ui.html">
+            
+                <a href="routing-ui.html">
+            
+                    
+                    Add UI building blocks
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="routing-options.html">
+            
+                <a href="routing-options.html">
+            
+                    
+                    Add route options
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="routing-ev.html">
+            
+                <a href="routing-ev.html">
+            
+                    
+                    Get routes for electric vehicles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="routing-advanced.html">
+            
+                <a href="routing-advanced.html">
+            
+                    
+                    Advanced routing features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7">
+            
+                <span>
+            
+                    
+                    Traffic
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="traffic.html">
+            
+                <a href="traffic.html">
+            
+                    
+                    Get started with Traffic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="traffic-features.html">
+            
+                <a href="traffic-features.html">
+            
+                    
+                    Additional traffic features
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8">
+            
+                <span>
+            
+                    
+                    Customization
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="customization-ui.html">
+            
+                <a href="customization-ui.html">
+            
+                    
+                    User interface components
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="customization-catalogs.html">
+            
+                <a href="customization-catalogs.html">
+            
+                    
+                    Maps and services
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9">
+            
+                <span>
+            
+                    
+                    Examples and tutorials
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="tutorials.html">
+            
+                <a href="tutorials.html">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10">
+            
+                <span>
+            
+                    
+                    Development tips
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="tips-engines.html">
+            
+                <a href="tips-engines.html">
+            
+                    
+                    Engines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="key-concepts.html">
+            
+                <a href="key-concepts.html">
+            
+                    
+                    Best practices
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="tips-supplements.html">
+            
+                <a href="tips-supplements.html">
+            
+                    
+                    Supplemental information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="changelog/changelog-explore.html">
+            
+                <a href="changelog/changelog-explore.html">
+            
+                    
+                    Product history
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="tips-troubleshooting.html">
+            
+                <a href="tips-troubleshooting.html">
+            
+                    
+                    Debugging and troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="tips-support.html">
+            
+                <a href="tips-support.html">
+            
+                    
+                    Community and support
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="use-cases.html">
+            
+                <a href="use-cases.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11">
+            
+                <span>
+            
+                    
+                    Pricing, legal, and privacy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="billing.html">
+            
+                <a href="billing.html">
+            
+                    
+                    Pricing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="about.html">
+            
+                <a href="about.html">
+            
+                    
+                    Legal and privacy requirements
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider">
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="..">Style expressions reference for custom layers</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="style-expressions-reference-for-custom-layers">Style expressions reference for custom layers</h1>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#query-expressions">Query Expressions</a></li>
+<li><a href="#conditional-expressions">Conditional Expressions</a></li>
+<li><a href="#comparison-expressions">Comparison Expressions</a></li>
+<li><a href="#build-expressions">Build Expressions</a></li>
+<li><a href="#conversion-expressions">Conversion Expressions</a></li>
+<li><a href="#scale-expressions">Scale Expressions</a></li>
+<li><a href="#math-expressions">Math Expressions</a></li>
+</ul>
+<h1 id="introduction">Introduction</h1>
+<p>Style expressions are used in style to filter and configure style rules.
+A style expression is represented in JSON as an <code>array</code> whereas first argument is an expression <code>name</code>, and the rest of the entries are expression arguments.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span>name<span class="token punctuation">,</span> argument1<span class="token punctuation">,</span> <span class="token operator">...</span>argumentN<span class="token punctuation">]</span>
+</code></pre>
+<p>An expression argument can be either a value type or an expression.</p>
+<h3 id="value-types">Value types</h3>
+<h4 id="null">null</h4>
+<p>The <code>null</code> type is a special type that can have only one value: null.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token keyword">null</span>
+</code></pre>
+<h4 id="boolean">boolean</h4>
+<p>The <code>boolean</code> type can only hold the values <code>true</code> or <code>false</code>.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token boolean">true</span>
+</code></pre>
+<h4 id="number">number</h4>
+<p>The <code>number</code> type stores a real number.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token operator">-</span><span class="token number">23.5</span>
+<span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token number">4</span>
+</code></pre>
+<h4 id="color">color</h4>
+<p>The <code>color</code> type stores a renderable color. A <code>color</code> value can be represented as a vector of numbers or a string.
+Supported element count for a vector is 3 ([r,g,b]) or 4 ([r,g,b,a]) with elements in range [0, 1].
+Supported string formats are:</p>
+<ul>
+<li>hex format "#rgb", "#rgba", "#rrggbb", and "#rrggbbaa" with r,g,b,a in range [0-9, a-f].</li>
+<li>css color functions "rgb(r,g,b)", "rgba(r,g,b,a)", "hsl(h,s,l)", "hsla(h,s,l,a)" with r,g,b in range [0, 255], a,s,l in range [0, 1] and h in range [0,360]. Values outside the ranges are clamped to the range boundary.</li>
+</ul>
+<pre class="language-"><code class="lang-javascript"><span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token string">"#00ff7f"</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token function">Color</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">127</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>SpringGreen<span class="token punctuation">)</span>
+<span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token string">"#f0f"</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token function">Color</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>Magenta<span class="token punctuation">)</span>
+<span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token string">"rgba(255, 99, 71, 44)"</span> <span class="token operator">-</span><span class="token operator">&gt;</span> <span class="token function">Color</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">99</span><span class="token punctuation">,</span> <span class="token number">71</span><span class="token punctuation">,</span> <span class="token number">44</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>Tomato <span class="token keyword">with</span> alpha <span class="token number">44</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="string">string</h4>
+<p>The <code>string</code> type stores a sequence of characters.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token string">"string_theory"</span>
+</code></pre>
+<h4 id="vector2d">vector2d</h4>
+<p>The <code>vector2d</code> type stores a 2d vector of <code>numbers</code>. To create a <code>vector2d</code> value, use <code>make-vector</code> expression.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"make-vector"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">]</span> <span class="token comment">// returns [10, 20]</span>
+</code></pre>
+<h4 id="vector3d">vector3d</h4>
+<p>The <code>vector3d</code> type stores a 3d vector of <code>numbers</code>. To create a <code>vector3d</code> value, use <code>make-vector</code> expression.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"make-vector"</span><span class="token punctuation">,</span> <span class="token number">4.5</span><span class="token punctuation">,</span> <span class="token number">5.5</span><span class="token punctuation">,</span> <span class="token number">6.7</span><span class="token punctuation">]</span> <span class="token comment">// returns [4.5, 5.5, 6.7]</span>
+</code></pre>
+<h4 id="vector4d">vector4d</h4>
+<p>The <code>vector4d</code> type stores a 4d vector of <code>numbers</code>. To create a <code>vector4d</code> value, use <code>make-vector</code> expression.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"make-vector"</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">234</span><span class="token punctuation">]</span> <span class="token comment">//  return [-2, 4, 90, -234]</span>
+</code></pre>
+<h4 id="array">array</h4>
+<p>The <code>array</code> type stores an array of value types. To create an <code>array</code> value use <code>literal</code> expression.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token punctuation">]</span> <span class="token comment">// returns an aray of real numbers.  </span>
+<span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"2"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token punctuation">]</span> <span class="token comment">// returns an array of numbers and strings</span>
+</code></pre>
+<h4 id="dictionary">dictionary</h4>
+<p>The <code>dictionary</code> type stores key-value pairs. The dictionary can be queried using <code>get</code> and <code>has</code> expressions.
+To create a <code>dictionary</code> value use <code>literal</code> expression.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token literal-property property">Example</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string-property property">"a"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string-property property">"b"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">]</span>
+</code></pre>
+<div class="panel panel-primary"><div class="panel-heading"><h3 class="panel-title" id="note"><i class="fa fa-edit"></i> Note</h3></div><div class="panel-body"><p>Whenever an expression argument can be of more than one value type, we use <code>value</code> for that argument.  </p></div></div>
+<h1 id="query-expressions">Query expressions</h1>
+<h2 id="ref">ref</h2>
+<p>References a value definition or an expression definition that can be evaluated to a value. Returns <code>null</code> if the definition cannot be found.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> string<span class="token punctuation">]</span>
+</code></pre>
+<p>Example:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token string-property property">"definitions"</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"my_definition_1"</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"my_definition_2"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"my definiton_3"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"+"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>
+
+<span class="token punctuation">}</span>
+<span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_definition_1"</span><span class="token punctuation">]</span> <span class="token comment">// returns 4</span>
+<span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_definition_2"</span><span class="token punctuation">]</span> <span class="token comment">// returns true</span>
+<span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_definition_3"</span><span class="token punctuation">]</span> <span class="token comment">// returns 3</span>
+<span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_definition_4"</span><span class="token punctuation">]</span> <span class="token comment">// returns null, the definition cannot be found.</span>
+</code></pre>
+<h2 id="get">get</h2>
+<p>Gets the property value of the current <code>feature</code> or a <code>dictionary</code>. Returns <code>null</code> if the property is not present. By <code>feature</code>, we understand a stylable map item, like roads, polygons etc.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"get"</span><span class="token punctuation">,</span> name<span class="token punctuation">]</span> <span class="token comment">// `name` can be an expression, but that disables optimization and evaluation will be much slower.</span>
+<span class="token punctuation">[</span><span class="token string">"get"</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> dictionary<span class="token punctuation">]</span>
+</code></pre>
+<p>Examples:</p>
+<p>To illustrate the use of <code>get</code> expression, let us consider a case where the rendered map contains a layer called 'Roads'.
+Each feature (i.e. road) in the layer contains the property "road_width", expressed in meters.
+Ideally we would like to use the "road_width" property of each feature in the style. To do that, we employ the
+<code>get</code> expression. In the style below we set the style attribute "width" to the value of "road_width" property. In this manner, each styled line will have the width
+that is defined in the "road_width" property.  </p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+    <span class="token string-property property">"styles"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token string-property property">"layer"</span><span class="token operator">:</span> <span class="token string">"Roads"</span><span class="token punctuation">,</span>
+            <span class="token string-property property">"technique"</span><span class="token operator">:</span> <span class="token string">"line"</span><span class="token punctuation">,</span>
+            <span class="token string-property property">"attr"</span><span class="token operator">:</span> <span class="token punctuation">{</span>                
+                <span class="token string-property property">"width"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"get"</span><span class="token punctuation">,</span> <span class="token string">"road_width"</span><span class="token punctuation">]</span> <span class="token comment">// returns the width in meter of the current road</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>In the following example, <code>literal</code> returns a <code>dictionary</code> with two keys "a" and "b". <code>get</code> expression will return the value of key "a"</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"get"</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string-property property">"a"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string-property property">"b"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment">// returns 1</span>
+</code></pre>
+<h2 id="has">has</h2>
+<p>Returns a <code>boolean</code> indicating if the current <code>feature</code> or the given <code>dictionary</code> has the specified property. By <code>feature</code>, we understand a stylable map item, like roads, polygons etc.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"has"</span><span class="token punctuation">,</span> name<span class="token punctuation">]</span> <span class="token comment">// `name` can be an expression, but that disables optimization and evaluation will be much slower.</span>
+<span class="token punctuation">[</span><span class="token string">"has"</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> dictionary<span class="token punctuation">]</span>
+</code></pre>
+<p>Examples:</p>
+<p>To illustrate the use of <code>has</code> expression, let us consider again the case where the rendered map contains a layer called 'Roads'.
+This time though not all features in the layer contains the property "road_width", expressed in meters. Some do, some don't.
+Ideally we would like to use the "road_width" property of each feature in the style, but what can we do for the features that do not have the "road_width" property?
+In this case, we employ <code>has</code> expression to check which feature has "road_width" and which not. For the ones that do not contain "road_width", we set a default line width.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+    <span class="token string-property property">"styles"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token string-property property">"layer"</span><span class="token operator">:</span> <span class="token string">"Roads"</span><span class="token punctuation">,</span>
+            <span class="token string-property property">"technique"</span><span class="token operator">:</span> <span class="token string">"line"</span><span class="token punctuation">,</span>
+            <span class="token string-property property">"attr"</span><span class="token operator">:</span> <span class="token punctuation">{</span>                
+                <span class="token string-property property">"width"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">"case"</span>
+                         <span class="token punctuation">[</span><span class="token string">"has"</span><span class="token punctuation">,</span> <span class="token string">"road_width"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// returns true if the current road has "road_width" property</span>
+                         <span class="token punctuation">[</span><span class="token string">"get"</span><span class="token punctuation">,</span> <span class="token string">"road_width"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// if the current road has "road_width" property, we set line width to "road_width" value</span>
+                         <span class="token number">10</span> <span class="token punctuation">]</span> <span class="token comment">// else we set the line width to 10 meters</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>In the following example, <code>literal</code> returns an <code>dictionary</code>  with two keys "a" and "b". <code>has</code> expression will return true.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"has"</span><span class="token punctuation">,</span> <span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string-property property">"a"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string-property property">"b"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment">// returns true</span>
+</code></pre>
+<h2 id="has">!has</h2>
+<p>Returns a <code>boolean</code> indicating if the current <code>feature</code> or the given <code>dictionary</code> does not have the specified property. By <code>feature</code>, we understand a stylable map item, like roads, polygons etc.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"!has"</span><span class="token punctuation">,</span> name<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">"!has"</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> dictionary<span class="token punctuation">]</span>
+</code></pre>
+<p>The <code>!has</code> expression is equivalent to the negation of the <code>has</code> expression:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"!has"</span><span class="token punctuation">,</span> name<span class="token punctuation">]</span> <span class="token comment">/* is same as */</span> <span class="token punctuation">[</span><span class="token string">"!"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"has"</span><span class="token punctuation">,</span> name<span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">"!has"</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> dictionary<span class="token punctuation">]</span> <span class="token comment">/* is same as */</span>  <span class="token punctuation">[</span><span class="token string">"!"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"has"</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> object<span class="token punctuation">]</span><span class="token punctuation">]</span>
+</code></pre>
+<h2 id="inside-range">inside-range</h2>
+<p>Returns <code>true</code> if <code>input</code> is inside any of the ranges, <code>false</code> if <code>input</code> in not inside any of the ranges
+or 'null' if the <code>input</code> or the ranges are invalid or empty.</p>
+<p>The ranges can be specified as a list of values, with each 2 consecutive values starting at an odd position
+defining a range (<code>range*StartMin</code> - <code>range*End</code>) or through a sub expression that evaluates to a list of values.
+The list must contain an even number of values with a minimum of 2.
+Each range is start inclusive and end exclusive (<code>[range*Start, range*End)</code>).</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"inside-range"</span><span class="token punctuation">,</span> input<span class="token punctuation">,</span>
+   range1Start<span class="token punctuation">,</span> range1End<span class="token punctuation">,</span>
+   <span class="token operator">...</span>
+   rangeNStart<span class="token punctuation">,</span> rangeNEnd
+<span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span><span class="token string">"inside-range"</span><span class="token punctuation">,</span> input<span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>range1Start<span class="token punctuation">,</span> range1End<span class="token punctuation">,</span> <span class="token operator">...</span> rangeNStart<span class="token punctuation">,</span> rangeNEnd<span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<p>Examples</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span> returns <span class="token number">8.5</span>
+<span class="token punctuation">[</span><span class="token string">"inside-range"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">8.0</span><span class="token punctuation">,</span> <span class="token number">9.0</span><span class="token punctuation">,</span> <span class="token number">19.0</span><span class="token punctuation">,</span> <span class="token number">20.0</span><span class="token punctuation">]</span> <span class="token comment">// returns  true</span>
+<span class="token punctuation">[</span><span class="token string">"inside-range"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">6.0</span><span class="token punctuation">,</span> <span class="token number">7.0</span><span class="token punctuation">,</span> <span class="token number">20.0</span><span class="token punctuation">,</span> <span class="token number">21.0</span><span class="token punctuation">]</span> <span class="token comment">// returns false</span>
+<span class="token punctuation">[</span><span class="token string">"inside-range"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">8.0</span><span class="token punctuation">,</span> <span class="token number">9.0</span><span class="token punctuation">,</span> <span class="token number">19.0</span><span class="token punctuation">]</span> <span class="token comment">// returns null and logs "Inside-range function expects 2 or an even number of range arguments."</span>
+<span class="token punctuation">[</span><span class="token string">"inside-range"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment">// returns null and logs "Inside-range function expects at least 2 arguments."</span>
+<span class="token punctuation">[</span><span class="token string">"inside-range"</span><span class="token punctuation">]</span> <span class="token comment">// returns null and logs "Inside-range function expects at least 2 arguments."</span>
+<span class="token punctuation">[</span><span class="token string">"inside-range"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">8.0</span><span class="token punctuation">,</span> <span class="token number">9.0</span><span class="token punctuation">,</span> <span class="token number">19.0</span><span class="token punctuation">,</span> <span class="token number">20.0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment">// returns true</span>
+<span class="token punctuation">[</span><span class="token string">"inside-range"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">6.0</span><span class="token punctuation">,</span> <span class="token number">7.0</span><span class="token punctuation">,</span> <span class="token number">20.0</span><span class="token punctuation">,</span> <span class="token number">21.0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment">// returns false</span>
+</code></pre>
+<h2 id="zoom">zoom</h2>
+<p>Gets the current <code>zoom</code> level.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span>
+</code></pre>
+<h1 id="conditional-expressions">Conditional expressions</h1>
+<h2 id="all">all</h2>
+<p>Returns <code>true</code> if all the sub expressions evaluate to <code>true</code>.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"all"</span><span class="token punctuation">,</span> expression<span class="token operator">...</span><span class="token punctuation">]</span> <span class="token comment">// boolean</span>
+</code></pre>
+<p>Example:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token string-property property">"definitions"</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"my_condition_1"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"my_condition_2"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"my_condition_3"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+
+<span class="token punctuation">}</span>
+<span class="token punctuation">[</span><span class="token string">"all"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_condition_1"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_condition_2"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_condition_3"</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span> <span class="token comment">// returns false since my_condition_2 is false</span>
+</code></pre>
+<h2 id="any">any</h2>
+<p>Returns <code>true</code> if any sub expression evaluates to <code>true</code>.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"any"</span><span class="token punctuation">,</span> expression<span class="token operator">...</span><span class="token punctuation">]</span> <span class="token comment">// boolean</span>
+</code></pre>
+<p>Example:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token string-property property">"definitions"</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"my_condition_1"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"my_condition_2"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"my_condition_3"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+
+<span class="token punctuation">}</span>
+<span class="token punctuation">[</span><span class="token string">"any"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_condition_1"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_condition_2"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_condition_3"</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span> <span class="token comment">// returns true since my_condition_1 is true</span>
+</code></pre>
+<h2 id="none">none</h2>
+<p>Returns <code>true</code> if no sub expression evaluates to <code>true</code>.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"none"</span><span class="token punctuation">,</span> expression<span class="token operator">...</span><span class="token punctuation">]</span>
+</code></pre>
+<p>Example:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token string-property property">"definitions"</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"my_condition_1"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"my_condition_2"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"my_condition_3"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+
+<span class="token punctuation">}</span>
+<span class="token punctuation">[</span><span class="token string">"none"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_condition_1"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_condition_2"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_condition_3"</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span> <span class="token comment">// returns false since my_condition_1 is true</span>
+</code></pre>
+<h2 id="match">match</h2>
+<p>Compares <code>value</code> with the labels and returns the <code>result</code> of the first match.
+If the <code>value</code> doesn't match any label <code>fallback</code> will be returned. A <code>label</code>
+must be a <code>number</code>, a <code>string</code>, or an <code>array</code> of those. If <code>value</code> and <code>label</code> differ in type, then <code>fallback</code> will be returned.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"match"</span><span class="token punctuation">,</span>
+  value<span class="token punctuation">,</span>
+  label1<span class="token punctuation">,</span> result1<span class="token punctuation">,</span>
+  <span class="token operator">...</span>
+  labelN<span class="token punctuation">,</span> resultN<span class="token punctuation">,</span>
+  fallback
+<span class="token punctuation">]</span>
+</code></pre>
+<p>Example:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token string-property property">"definitions"</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"my_value"</span><span class="token operator">:</span> <span class="token number">10</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">[</span><span class="token string">"match"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_value"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token number">20</span><span class="token punctuation">,</span>
+    <span class="token string">"Value is 20"</span><span class="token punctuation">,</span> <span class="token comment">// result 1</span>
+    <span class="token number">10</span><span class="token punctuation">,</span>
+    <span class="token string">"Value is 10"</span><span class="token punctuation">,</span> <span class="token comment">// result 2</span>
+    <span class="token string">"No match was found"</span> <span class="token comment">// fallback value</span>
+<span class="token punctuation">]</span> <span class="token comment">// returns "Value is 10"</span>
+</code></pre>
+<h2 id="case">case</h2>
+<p>Evaluates the conditions in order and returns the first result where the condition evaluates to <code>true</code>.
+The <code>fallback</code> will be returned if no conditions evaluates to true.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"case"</span><span class="token punctuation">,</span>
+  condition1<span class="token punctuation">,</span> result1<span class="token punctuation">,</span>
+  <span class="token operator">...</span>
+  conditionN<span class="token punctuation">,</span> resultN<span class="token punctuation">,</span>
+  fallback
+<span class="token punctuation">]</span>
+</code></pre>
+<p>Example:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token string-property property">"definitions"</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">"my_condition_1"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"my_condition_2"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"my_condition_3"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+
+<span class="token punctuation">}</span>
+<span class="token punctuation">[</span><span class="token string">"case"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_condition_1"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token number">10</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_condition_2"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token number">20</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">"ref"</span><span class="token punctuation">,</span> <span class="token string">"my_condition_3"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token number">40</span><span class="token punctuation">,</span>
+    <span class="token number">80</span> <span class="token comment">// fallback value</span>
+<span class="token punctuation">]</span> <span class="token comment">// returns 40 since my_condition_3 is true</span>
+</code></pre>
+<h1 id="comparison-expressions">Comparison expressions</h1>
+<h2 id="">==</h2>
+<p>Returns <code>true</code> if the values are equal. <code>boolean</code>, <code>number</code>, <code>string</code>, <code>vector2d</code>, <code>vector3d</code>, <code>vector4d</code>, <code>array</code> and <code>dictionary</code> types are supported.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"=="</span><span class="token punctuation">,</span> value<span class="token punctuation">,</span> value<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="">!=</h2>
+<p>Returns <code>true</code> if the values are not equal. <code>boolean</code>, <code>number</code>, <code>string</code>, <code>vector2d</code>, <code>vector3d</code>, <code>vector4d</code>, <code>array</code> and <code>dictionary</code>  types are supported.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"!="</span><span class="token punctuation">,</span> value<span class="token punctuation">,</span> value<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="">&lt;</h2>
+<p>Returns <code>true</code> if the first value is less than the second value. <code>boolean</code>, <code>number</code> and <code>string</code> types are supported.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"&lt;"</span><span class="token punctuation">,</span> value<span class="token punctuation">,</span> value<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="">&gt;</h2>
+<p>Returns <code>true</code> if the first value is greater than the second value. <code>boolean</code>, <code>number</code> and <code>string</code> types are supported.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"&gt;"</span><span class="token punctuation">,</span> value<span class="token punctuation">,</span> value<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="">&lt;=</h2>
+<p>Returns <code>true</code> if the first value is less than or equal to the second value. <code>boolean</code>, <code>number</code> and <code>string</code> types are supported.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"&lt;="</span><span class="token punctuation">,</span> value<span class="token punctuation">,</span> value<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="">&gt;=</h2>
+<p>Returns <code>true</code> if the first value is greater than or equal to the second value. <code>boolean</code>, <code>number</code> and <code>string</code> types are supported.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"&gt;="</span><span class="token punctuation">,</span> value<span class="token punctuation">,</span> value<span class="token punctuation">]</span>
+</code></pre>
+<h1 id="build-expressions">Build expressions</h1>
+<h2 id="rgb">rgb</h2>
+<p>Creates a <code>color</code> from the RGB components. The components must be integers between 0 and 255. Values outside the range are clamped to the range border.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"rgb"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">]</span>
+</code></pre>
+<p>Example</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"rgb"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span> <span class="token comment">// returns Color(1, 2, 3, 255)</span>
+</code></pre>
+<h2 id="rgba">rgba</h2>
+<p>Creates a <code>color</code> from the RGBA components. The r, g, b components must be integers within range [0, 255]. The a component must be within range [0, 1]. Values outside the range are clamped to the range border.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"rgba"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">]</span>
+</code></pre>
+<p>Example</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"rgba"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span> <span class="token comment">// returns Color(1, 2, 3, 4)</span>
+</code></pre>
+<h2 id="hsl">hsl</h2>
+<p>Creates a <code>color</code> from the HSL components:</p>
+<ul>
+<li>hue value in degrees between 0 and 360</li>
+<li>saturation value between 0 and 1</li>
+<li>lightness value between 0 and 1</li>
+</ul>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"hsl"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">]</span>
+</code></pre>
+<p>Example</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"hsl"</span><span class="token punctuation">,</span> <span class="token number">180</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">]</span> <span class="token comment">// returns Color(64, 191, 191, 250)</span>
+</code></pre>
+<h2 id="hsla">hsla</h2>
+<p>Creates a <code>color</code> from the HSLA components:</p>
+<ul>
+<li>hue value in degrees between 0 and 360</li>
+<li>saturation value between 0 and 1</li>
+<li>lightness value between 0 and 1</li>
+<li>alpha value between 0 and 1</li>
+</ul>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"hsla"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">]</span>
+</code></pre>
+<p>Example</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"hsla"</span><span class="token punctuation">,</span> <span class="token number">180</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">]</span> <span class="token comment">// returns Color(64, 191, 191, 128)</span>
+</code></pre>
+<h2 id="literal">literal</h2>
+<p>Returns a <code>dictionary</code> or an <code>array</code> as specified in <code>json_document</code>.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"literal"</span><span class="token punctuation">,</span> json_document<span class="token punctuation">]</span>
+</code></pre>
+<p>Example:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string-property property">"a"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string-property property">"b"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token comment">// returns a dictionry with keys "a" and "b"</span>
+<span class="token punctuation">[</span><span class="token string">"literal"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment">// returns an array</span>
+</code></pre>
+<h2 id="make-vector">make-vector</h2>
+<p>Constructs two, three, or four dimensional vector from numbers.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"make-vector"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">"make-vector"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">"make-vector"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">]</span>
+</code></pre>
+<p>Examples:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"make-vector"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">]</span> <span class="token comment">// returns [10, 20]</span>
+<span class="token punctuation">[</span><span class="token string">"make-vector"</span><span class="token punctuation">,</span> <span class="token number">4.5</span><span class="token punctuation">,</span> <span class="token number">5.5</span><span class="token punctuation">,</span> <span class="token number">6.7</span><span class="token punctuation">]</span> <span class="token comment">// returns [4.5, 5.5, 6.7]</span>
+<span class="token punctuation">[</span><span class="token string">"make-vector"</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">234</span><span class="token punctuation">]</span> <span class="token comment">//  return [-2, 4, 90, -234]</span>
+<span class="token punctuation">[</span><span class="token string">"make-vector"</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token string">"20"</span><span class="token punctuation">]</span> <span class="token comment">// returns null, does not support strings</span>
+</code></pre>
+<h1 id="conversion-expressions">Conversion expressions</h1>
+<h2 id="">!</h2>
+<p>Returns <code>false</code> if its value can be converted to <code>true</code>; otherwise, returns <code>true</code>. Value types supported are <code>boolean</code>, <code>number</code>, <code>color</code>, <code>string</code>, <code>vector2d</code>, <code>vector3d</code>, <code>vector4d</code>, <code>gradient</code>, <code>array</code> and <code>dictionary</code>.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"!"</span><span class="token punctuation">,</span> value<span class="token punctuation">]</span>
+</code></pre>
+<h2 id="to-color">to-color</h2>
+<p>Converts the <code>string</code> to <code>color</code>.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"to-color"</span><span class="token punctuation">,</span> string<span class="token punctuation">]</span>
+</code></pre>
+<p>Examples:</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"to-color"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"+"</span><span class="token punctuation">,</span> <span class="token string">"#"</span><span class="token punctuation">,</span> <span class="token string">"01020304"</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment">// returns Color(1, 2, 3, 4)</span>
+<span class="token punctuation">[</span><span class="token string">"to-color"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"get"</span><span class="token punctuation">,</span> <span class="token string">"line_color"</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token comment">// if ["get", "line_color"] returns a string #01020304 then to-color will return Color(1, 2, 3, 4)</span>
+<span class="token punctuation">[</span><span class="token string">"to-color"</span><span class="token punctuation">,</span> <span class="token string">"#01020304"</span><span class="token punctuation">]</span> <span class="token comment">// returns Color(1, 2, 3, 4) but this conversion is not necessary since the style evaluator recognizes automatically "#01020304" as color</span>
+</code></pre>
+<h1 id="scale-expressions">Scale expressions</h1>
+<h2 id="pixel-world-scale">pixel-world-scale</h2>
+<ul>
+<li>visibility: public</li>
+</ul>
+<p>Returns a <code>factor</code> to convert screen pixels to world units(meters). Second version returns a <code>number</code> multiplied by the<code>factor</code>.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"pixel-world-scale"</span><span class="token punctuation">]</span> <span class="token comment">// Factor</span>
+<span class="token punctuation">[</span><span class="token string">"pixel-world-scale"</span><span class="token punctuation">,</span> number<span class="token punctuation">]</span> <span class="token comment">// equivalent to ["*", ["pixel-world-scale"], number]</span>
+</code></pre>
+<p>Example</p>
+<p>Let's consider the case where the user wants to render a polyline with a width of 10 screen pixels. Given that the width attribute of the line techniques requires meters, the straight forward way to render a polyline with a width of 10 screen pixels is by using pixel-world-scale.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">{</span>
+    <span class="token string-property property">"styles"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token string-property property">"layer"</span><span class="token operator">:</span> <span class="token string">"MyRoads"</span><span class="token punctuation">,</span>
+            <span class="token string-property property">"technique"</span><span class="token operator">:</span> <span class="token string">"line"</span><span class="token punctuation">,</span>
+            <span class="token string-property property">"attr"</span><span class="token operator">:</span> <span class="token punctuation">{</span>                
+                <span class="token string-property property">"width"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"pixel-world-scale"</span><span class="token punctuation">,</span> <span class="token number">10.0</span><span class="token punctuation">]</span> <span class="token comment">// returns the width in meter that is equivalent to 10 screen pixels. The line will be rendered with a width of 10 screen pixels</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h1 id="math-expressions">Math expressions</h1>
+<h2 id="interpolate">interpolate</h2>
+<p>Creates interpolation of given values, based on another stop variable.
+Available interpolation types are <code>linear</code>, <code>step</code>, <code>cubic-bezier</code> and <code>exponential</code>.</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"interpolate"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"linear"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+   stop1<span class="token punctuation">,</span> value1<span class="token punctuation">,</span>
+   <span class="token operator">...</span>
+   stopN<span class="token punctuation">,</span> valueN<span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span><span class="token string">"interpolate"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"step"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+   stop1<span class="token punctuation">,</span> value1<span class="token punctuation">,</span>
+   <span class="token operator">...</span>
+   stopN<span class="token punctuation">,</span> valueN<span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span><span class="token string">"interpolate"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"cubic-bezier"</span><span class="token punctuation">,</span> x1<span class="token punctuation">,</span> y1<span class="token punctuation">,</span> x2<span class="token punctuation">,</span> y2<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+   stop1<span class="token punctuation">,</span> value1<span class="token punctuation">,</span>
+   <span class="token operator">...</span>
+   stopN<span class="token punctuation">,</span> valueN<span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+
+<span class="token punctuation">[</span><span class="token string">"interpolate"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"exponential"</span><span class="token punctuation">,</span> base<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+   stop1<span class="token punctuation">,</span> value1<span class="token punctuation">,</span>
+   <span class="token operator">...</span>
+   stopN<span class="token punctuation">,</span> valueN<span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+</code></pre>
+<p>Example</p>
+<pre class="language-"><code class="lang-javascript"><span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span> returns <span class="token number">9</span>
+<span class="token punctuation">[</span><span class="token string">"interpolate"</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"linear"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">"zoom"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">40</span><span class="token punctuation">]</span> <span class="token comment">// returns 30</span>
+</code></pre>
+<h2 id="math-operators">Math operators</h2>
+<pre class="language-"><code class="lang-javascript">
+<span class="token punctuation">[</span><span class="token string">"-"</span><span class="token punctuation">,</span> value<span class="token punctuation">,</span> value<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">"/"</span><span class="token punctuation">,</span> value<span class="token punctuation">,</span> value<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">"%"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">"+"</span><span class="token punctuation">,</span> value<span class="token punctuation">,</span> value<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> value<span class="token punctuation">,</span> value<span class="token punctuation">]</span>
+
+<span class="token string">"+"</span> supported operands<span class="token operator">:</span>
+<span class="token punctuation">[</span><span class="token string">"+"</span><span class="token punctuation">,</span> boolean<span class="token punctuation">,</span> boolean<span class="token punctuation">]</span> <span class="token comment">// returns the OR of the two operands</span>
+<span class="token punctuation">[</span><span class="token string">"+"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">"+"</span><span class="token punctuation">,</span> string<span class="token punctuation">,</span> string<span class="token punctuation">]</span> <span class="token comment">// returns the concatenated string</span>
+<span class="token punctuation">[</span><span class="token string">"+"</span><span class="token punctuation">,</span> vector2d<span class="token punctuation">,</span> vector2d<span class="token punctuation">]</span> <span class="token comment">// component-wise addition</span>
+<span class="token punctuation">[</span><span class="token string">"+"</span><span class="token punctuation">,</span> vector3d<span class="token punctuation">,</span> vector3d<span class="token punctuation">]</span> <span class="token comment">// component-wise addition</span>
+<span class="token punctuation">[</span><span class="token string">"+"</span><span class="token punctuation">,</span> vector3d<span class="token punctuation">,</span> vector3d<span class="token punctuation">]</span> <span class="token comment">// component-wise addition</span>
+<span class="token punctuation">[</span><span class="token string">"+"</span><span class="token punctuation">,</span> color<span class="token punctuation">,</span> color<span class="token punctuation">]</span> <span class="token comment">// returns the sum of the colors. The values are clamped to uint8</span>
+
+ <span class="token string">"-"</span> supported operands<span class="token operator">:</span>
+<span class="token punctuation">[</span><span class="token string">"-"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">"-"</span><span class="token punctuation">,</span> vector2d<span class="token punctuation">,</span> vector2d<span class="token punctuation">]</span> <span class="token comment">// component-wise subtraction</span>
+<span class="token punctuation">[</span><span class="token string">"-"</span><span class="token punctuation">,</span> vector3d<span class="token punctuation">,</span> vector3d<span class="token punctuation">]</span> <span class="token comment">// component-wise subtraction</span>
+<span class="token punctuation">[</span><span class="token string">"-"</span><span class="token punctuation">,</span> vector3d<span class="token punctuation">,</span> vector3d<span class="token punctuation">]</span> <span class="token comment">// component-wise subtraction</span>
+<span class="token punctuation">[</span><span class="token string">"-"</span><span class="token punctuation">,</span> color<span class="token punctuation">,</span> color<span class="token punctuation">]</span> <span class="token comment">// returns the difference of the colors. The values are clamped to uint8</span>
+
+<span class="token string">"*"</span> supported operands<span class="token operator">:</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> boolean<span class="token punctuation">,</span> boolean<span class="token punctuation">]</span> <span class="token comment">// returns the AND of the two operands</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> color<span class="token punctuation">,</span> color<span class="token punctuation">]</span> <span class="token comment">// component-wise multipication. Each color channel is interpreted as a value between 0 and 1 (128-&gt; 0.5). Each channel values are multiplied and converted bach to uint8.   </span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> color<span class="token punctuation">,</span> number<span class="token punctuation">]</span> <span class="token comment">// returns Color(color.r * number, color.g * number, color.b * number, color.a * number)</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> color<span class="token punctuation">]</span> <span class="token comment">// returns Color(color.r * number, color.g * number, color.b * number, color.a * number)</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> vector2d<span class="token punctuation">,</span> vector2d<span class="token punctuation">]</span> <span class="token comment">// component-wise multiplication</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> vector2d<span class="token punctuation">,</span> number<span class="token punctuation">]</span> <span class="token comment">// returns (vector2d.x * number, vector2d.y * number)</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> vector2d<span class="token punctuation">]</span> <span class="token comment">// returns (vector2d.x * number, vector2d.y * number)</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> vector3d<span class="token punctuation">,</span> vector3d<span class="token punctuation">]</span> <span class="token comment">// component-wise multiplication</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> vector3d<span class="token punctuation">,</span> number<span class="token punctuation">]</span> <span class="token comment">// returns (vector3d.x * number, vector3d.y * number, vector3d.z * number)</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> vector3d<span class="token punctuation">]</span> <span class="token comment">// returns (vector3d.x * number, vector3d.y * number, vector3d.z * number)</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> vector4d<span class="token punctuation">,</span> vector4d<span class="token punctuation">]</span> <span class="token comment">// component-wise multiplication</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> vector4d<span class="token punctuation">,</span> number<span class="token punctuation">]</span> <span class="token comment">// returns (vector4d.x * number, vector4d.y * number, vector4d.z * number, vector4d.z * number)</span>
+<span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> vector4d<span class="token punctuation">]</span> <span class="token comment">// returns (vector4d.x * number, vector4d.y * number, vector4d.z * number, vector4d.z * number)</span>
+
+<span class="token string">"/"</span> supported operands<span class="token operator">:</span>
+<span class="token punctuation">[</span><span class="token string">"/"</span><span class="token punctuation">,</span> number<span class="token punctuation">,</span> number<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token string">"/"</span><span class="token punctuation">,</span> vector2d<span class="token punctuation">,</span> vector2d<span class="token punctuation">]</span> <span class="token comment">// component-wise division</span>
+<span class="token punctuation">[</span><span class="token string">"/"</span><span class="token punctuation">,</span> vector3d<span class="token punctuation">,</span> vector3d<span class="token punctuation">]</span> <span class="token comment">// component-wise division</span>
+<span class="token punctuation">[</span><span class="token string">"/"</span><span class="token punctuation">,</span> vector4d<span class="token punctuation">,</span> vector4d<span class="token punctuation">]</span> <span class="token comment">// component-wise division</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="custom-map-styles-style-techniques.html" class="navigation navigation-prev " aria-label="Previous page: Style techniques reference for custom layers">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="android-auto.html" class="navigation navigation-next " aria-label="Next page: Integration with CarPlay and Android Auto">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Style expressions reference for custom layers","level":"1.4.6.3","depth":3,"next":{"title":"Integration with CarPlay and Android Auto","level":"1.4.7","depth":2,"path":"topics/android-auto.md","ref":"topics/android-auto.md","articles":[]},"previous":{"title":"Style techniques reference for custom layers","level":"1.4.6.2","depth":3,"path":"topics/custom-map-styles-style-techniques.md","ref":"topics/custom-map-styles-style-techniques.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-fontsettings","-theme-default","-sharing","-highlight","alerts","asciinema","callouts","codesnippet","codetabs","jsfiddle","image-captions","melchior","prism-themes","prism","snippet","uml",{"name":"raw-content","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-raw-content"},{"name":"javadeps","version":"/opt/here-gitbook/gitbook-plugin-javadeps"},{"name":"theme-here-standard","version":"/opt/here-gitbook/node_modules/@here/gitbook-plugin-theme-here-standard"},"-asciinema","-jsfiddle"],"pluginsConfig":{"prism":{"lang":{"sbt":"scala","gradle":"groovy","proto":"protobuf","maven":"xml","HTML":"html","JavaScript":"javascript","flow":"typescript","shell":"bash","bat":"batch","hocon":"properties","Python":"python"},"css":["prismjs/themes/prism-tomorrow.css"],"ignore":["uml","puml","plantuml","mermaid"]},"callouts":{},"javadeps":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"codesnippet":{},"melchior":{"includes":"_includes"},"uml":{"format":"svg","charset":"utf8","config":"classic","nailgun":false},"raw-content":{},"theme-here-standard":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"prism-themes":{},"alerts":{},"snippet":{"problem":"fail"},"image-captions":{"caption":"Figure _PAGE_IMAGE_NUMBER_. _CAPTION_","align":"left","variable_name":"_pictures"}},"theme":"default","filteredFolders":[{"folder":"shared_content","whiteListedContent":[]}],"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","latestTestedDartVersion":"3.5.1","ndkVersion":"27.0","audience":"external","hsdkVersion":"4.21.1.0","documentName":"HERE SDK for Flutter - Developer's Guide","minAndroidVersionName":"7.0 (Nougat)","miniOSVersionSimulator":"13.0","productVersion":"4.21.1.0","minimumFlutterVersion":"3.22.3","minimumDartVersion":"3.4.4","documentStatus":"FINAL","date":"2025-01-22T16:33:09.874Z","product":"sdk-explore","xcodeVersionUsed":"14.2","minimumSupportedMacOS":"Big Sur","minimumSupportedXcodeVersion":"13.2.1","androidStudioVersion":"Android Studio Jellyfish | 2023.3.1 Patch 1","_pictures":[],"latestTestedFlutterVersion":"3.24.1","documentType":"Developer's Guide","filtered":{},"minimumSupportedCocoaPods":"1.11","miniPadOSVersion":"13.0","productName":"HERE SDK for Flutter","minAndroidVersion":"24","_internal":{"documentName":"HERE SDK for Flutter - Developer's Guide","documentType":"Developer's Guide","documentStatus":"FINAL","productVersion":"4.21.1.0","productName":"HERE SDK for Flutter","traceId":"57cab8f6-4bd8-4699-a8ae-4730c2165bf4","date":"2025-01-22T16:33:09.874Z"},"miniOSVersion":"15.0"},"title":"Developer Guide - HERE SDK for Flutter","gitbook":"*"},"file":{"path":"topics/custom-map-styles-style-expressions.md","mtime":"2025-01-22T16:33:08.534Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-01-22T16:33:11.134Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-melchior/codetabs.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+
+    </body>
+</html>

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'request_screen3.dart'; // Importa la nueva pantalla
 
 class RequestScreen2 extends StatefulWidget {
+  const RequestScreen2({super.key});
+
   @override
   _RequestScreen2State createState() => _RequestScreen2State();
 }
@@ -14,24 +16,24 @@ class _RequestScreen2State extends State<RequestScreen2> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: const Color.fromARGB(255, 0, 0, 0)),
+          icon: const Icon(Icons.arrow_back, color: Color.fromARGB(255, 0, 0, 0)),
           onPressed: () {
             Navigator.pop(context); // Regresa a la pantalla anterior
           },
         ),
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Jardinería',
           style: TextStyle(color: Color(0xFF3BA670)),
         ),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(60), // Altura de la barra de búsqueda
+          preferredSize: const Size.fromHeight(60), // Altura de la barra de búsqueda
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Buscar ubicación cercana',
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
@@ -48,7 +50,7 @@ class _RequestScreen2State extends State<RequestScreen2> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Aquí puedes agregar más contenido si es necesario
-            Spacer(),
+            const Spacer(),
             Center(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center, // Centra los botones horizontalmente
@@ -57,12 +59,12 @@ class _RequestScreen2State extends State<RequestScreen2> {
                     onPressed: () {
                       Navigator.pop(context); // Regresa a la pantalla anterior
                     },
-                    child: Text(
+                    child: const Text(
                       'Cancelar',
                       style: TextStyle(color: Colors.red),
                     ),
                   ),
-                  SizedBox(width: 20), // Espacio entre los botones
+                  const SizedBox(width: 20), // Espacio entre los botones
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -73,12 +75,12 @@ class _RequestScreen2State extends State<RequestScreen2> {
                       );
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF12372A), // Color verde
+                      backgroundColor: const Color(0xFF12372A), // Color verde
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Elegir ubicación',
                       style: TextStyle(color: Colors.white),
                     ),

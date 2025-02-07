@@ -4,7 +4,9 @@ import 'package:test_app/Services/transaction/service_transaction_controller.dar
 import 'solicitud_exitosa_screen.dart'; // Asegúrate de importar la pantalla de solicitud exitosa
 
 class TransferenciaEsperaScreen extends StatelessWidget {
-  final ServiceTransactionController controller = Get.find(); // Obtén el controlador
+  final ServiceTransactionController controller = Get.find();
+
+  TransferenciaEsperaScreen({super.key}); // Obtén el controlador
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +16,13 @@ class TransferenciaEsperaScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
             Navigator.pop(context); // Regresa a la pantalla anterior
           },
         ),
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Transferencia en Espera',
           style: TextStyle(color: Color(0xFF3BA670)),
         ),
@@ -28,11 +30,11 @@ class TransferenciaEsperaScreen extends StatelessWidget {
       body: Center(
         child: Container(
           width: 300,
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(15),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 color: Colors.black12,
                 blurRadius: 10,
@@ -43,7 +45,7 @@ class TransferenciaEsperaScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
+              const Text(
                 'Pago bloqueado',
                 style: TextStyle(
                   fontSize: 18,
@@ -51,40 +53,40 @@ class TransferenciaEsperaScreen extends StatelessWidget {
                   color: Colors.red,
                 ),
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 '9:41',
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey,
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Jardineria',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Transferencia en espera',
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey,
                 ),
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 '\$750',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'La transferencia se reflejará cuando el trabajo se concluya',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -92,46 +94,46 @@ class TransferenciaEsperaScreen extends StatelessWidget {
                   color: Colors.grey,
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'CUENTA',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'Kevin Montero',
                 style: TextStyle(
                   fontSize: 18,
                 ),
               ),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'SIGN CLARE STP',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'Referencia: 4345343',
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.grey,
                 ),
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'Foto: 594249572',
                 style: TextStyle(
                   fontSize: 14,
                   color: Colors.grey,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () async {
                   // Envía los datos al servidor
@@ -141,12 +143,12 @@ class TransferenciaEsperaScreen extends StatelessWidget {
                   Get.to(() => SolicitudExitosaScreen());
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF12372A), // Color verde
+                  backgroundColor: const Color(0xFF12372A), // Color verde
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
-                child: Text(
+                child: const Text(
                   'Confirmar',
                   style: TextStyle(color: Colors.white),
                 ),

@@ -102,7 +102,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 suffixIcon: Icons.visibility_off,
               ),
               const SizedBox(height: 18),
-              CustomInput(
+              const CustomInput(
                 labelText: 'Repetir contraseña',
                 prefixIcon: Icons.lock,
                 obscureText: true,

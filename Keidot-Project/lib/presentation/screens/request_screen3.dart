@@ -4,6 +4,8 @@ import 'package:test_app/Services/transaction/service_transaction_controller.dar
 import 'metodo_pago_screen.dart'; // Importa la pantalla de Método de Pago
 
 class RequestScreen3 extends StatefulWidget {
+  const RequestScreen3({super.key});
+
   @override
   _RequestScreen3State createState() => _RequestScreen3State();
 }
@@ -55,13 +57,13 @@ class _RequestScreen3State extends State<RequestScreen3> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
             Navigator.pop(context); // Regresa a la pantalla anterior
           },
         ),
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Jardinería',
           style: TextStyle(color: Color(0xFF3BA670)),
         ),
@@ -72,7 +74,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Indicador de progreso
-            Center(
+            const Center(
               child: Text(
                 'Paso 2 de 3',
                 style: TextStyle(
@@ -82,17 +84,17 @@ class _RequestScreen3State extends State<RequestScreen3> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Selección de fecha
-            Text(
+            const Text(
               'Fecha',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Wrap(
               spacing: 8.0, // Espacio entre los botones
               children: [
@@ -102,17 +104,17 @@ class _RequestScreen3State extends State<RequestScreen3> {
                 _buildDateOption('Definir fecha'),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Campo de descripción
-            Text(
+            const Text(
               'Descripción',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TextField(
               controller: _descriptionController,
               maxLines: 3, // Permite múltiples líneas
@@ -126,7 +128,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
                 controller.setDescription(value); // Guarda la descripción en el controlador
               },
             ),
-            Spacer(),
+            const Spacer(),
 
             // Botones Anterior y Siguiente
             Row(
@@ -136,7 +138,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
                   onPressed: () {
                     Navigator.pop(context); // Regresa a la pantalla anterior
                   },
-                  child: Text(
+                  child: const Text(
                     'Anterior',
                     style: TextStyle(color: Colors.red),
                   ),
@@ -158,12 +160,12 @@ class _RequestScreen3State extends State<RequestScreen3> {
                     );
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF12372A),
+                    backgroundColor: const Color(0xFF12372A),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Siguiente',
                     style: TextStyle(color: Colors.white),
                   ),
@@ -199,10 +201,10 @@ class _RequestScreen3State extends State<RequestScreen3> {
                 selectedDate = now;
                 break;
               case "Mañana":
-                selectedDate = now.add(Duration(days: 1));
+                selectedDate = now.add(const Duration(days: 1));
                 break;
               case "En 3 días":
-                selectedDate = now.add(Duration(days: 3));
+                selectedDate = now.add(const Duration(days: 3));
                 break;
               default:
                 selectedDate = now;
@@ -214,7 +216,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
           }
         }
       },
-      selectedColor: Color(0xFF12372A), // Color verde cuando está seleccionado
+      selectedColor: const Color(0xFF12372A), // Color verde cuando está seleccionado
       labelStyle: TextStyle(
         color: _selectedDate == date ? Colors.white : Colors.black,
       ),
