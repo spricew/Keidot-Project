@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 const Color greenHigh = Color(0xFF3BA670);
 const Color darkGreen = Color(0xFF12372A);
 const Color defaultWhite = Color(0xFFFFFFFF);
+const Color lightgreen = Color(0xFFF1FCF3);
 
 const List<Color> _colorThemes = [
   greenHigh,
   darkGreen,
   defaultWhite,
+  lightgreen,
   Colors.blue,
   Colors.teal,
   Colors.green,

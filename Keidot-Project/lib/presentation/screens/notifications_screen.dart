@@ -48,12 +48,6 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
         ),
         backgroundColor: Colors.white,
         iconTheme: const IconThemeData(color: darkGreen),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.pop(context); // Navegar de vuelta
-          },
-        ),
       ),
       body: notifications.isEmpty
           ? const Center(

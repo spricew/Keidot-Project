@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/screens/account_screen.dart';
+import 'package:test_app/presentation/screens/config_screen.dart';
+import 'package:test_app/presentation/screens/client_profile_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,11 +18,34 @@ class HomeScreen extends StatelessWidget {
             return [
               PopupMenuItem(
                 child: InkWell(
-                  child: const Text("Mi cuenta"),
+                  child: const Text("Mi perfil"),
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => AccountScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => ClientProfileScreen()),
+                    );
+                  },
+                ),
+              ),
+              PopupMenuItem(
+                child: InkWell(
+                  child: const Text("Configuración"),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ConfigScreen()),
+                    );
+                  },
+                ),
+              ),
+              PopupMenuItem(
+                child: InkWell(
+                  child: const Text("Acerca de"),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ConfigScreen()),
                     );
                   },
                 ),
