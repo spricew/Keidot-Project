@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
-class NotificationsScreen extends StatelessWidget {
-  const NotificationsScreen({super.key});
+class NotificationScreen extends StatelessWidget {
+  const NotificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,13 @@ class NotificationsScreen extends StatelessWidget {
         titleColor: darkGreen,
         iconColor: darkGreen,
         onBackPressed: () {
-          // Volver al Home (índice 0)
+          // Regresar a la pantalla anterior
+          Navigator.pop(context);
         },
+      ),
+      // Aquí puedes agregar el contenido de la pantalla de notificaciones
+      body: const Center(
+        child: Text('Contenido de Notificaciones'),
       ),
     );
   }

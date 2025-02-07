@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 2).theme(),
       home:
-          const AccountScreen(), // Página de inicio => Recuerrda cambiar esto por el Login despues de la pruebas de Stripe
+          const Homepage(), // Página de inicio => Recuerrda cambiar esto por el Login despues de la pruebas de Stripe
     );
   }
 }
