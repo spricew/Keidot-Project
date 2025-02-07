@@ -2,7 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 
 class ClientProfileScreen extends StatelessWidget {
-  const ClientProfileScreen({super.key});
+  ClientProfileScreen({super.key});
+
+  // Simulación de datos que vendrían de la API
+  final List<Map<String, dynamic>> reviews = [
+    {
+      "name": "Heyder Momichis",
+      "date": "18 de Jul. 2024",
+      "rating": 4,
+      "comment": "El trabajador cumple bien con sus servicios."
+    },
+    {
+      "name": "Heyder Momichis",
+      "date": "22 de Jul. 2024",
+      "rating": 5,
+      "comment": "Excelente trabajo, muy puntual y profesional."
+    },
+    {
+      "name": "Heyder Momichis",
+      "date": "25 de Jul. 2024",
+      "rating": 3,
+      "comment": "Buen servicio, pero podría mejorar en tiempos de respuesta."
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -49,9 +71,9 @@ class ClientProfileScreen extends StatelessWidget {
           // Lista de comentarios
           Expanded(
             child: ListView.builder(
-              itemCount: 3, // Número de reseñas
+              itemCount: reviews.length, // Número dinámico de reseñas
               itemBuilder: (context, index) {
-                return _buildReviewCard();
+                return _buildReviewCard(reviews[index]);
               },
             ),
           ),
@@ -60,7 +82,7 @@ class ClientProfileScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildReviewCard() {
+  Widget _buildReviewCard(Map<String, dynamic> review) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       padding: const EdgeInsets.all(12),
@@ -71,7 +93,6 @@ class ClientProfileScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Encabezado con nombre y fecha
           Row(
             children: [
               const CircleAvatar(
@@ -83,48 +104,32 @@ class ClientProfileScreen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Heyder Momichis",
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "18 de Jul. 2024",
-                    style: TextStyle(fontSize: 12, color: Colors.grey[700]),
-                  ),
+                  Text(review["name"],
+                      style: const TextStyle(fontWeight: FontWeight.bold)),
+                  Text(review["date"],
+                      style: TextStyle(fontSize: 12, color: Colors.grey[700])),
                 ],
               ),
               const Spacer(),
-              // Calificación con estrellas
-              const Row(
-                children: [
-                  Text("4 / 5"),
-                  SizedBox(width: 4),
-                  Icon(Icons.star, color: Colors.black87, size: 16),
-                  Icon(Icons.star, color: Colors.black87, size: 16),
-                  Icon(Icons.star, color: Colors.black87, size: 16),
-                  Icon(Icons.star, color: Colors.black87, size: 16),
-                  Icon(Icons.star_border, color: Colors.black87, size: 16),
-                ],
+              Row(
+                children: List.generate(
+                    5,
+                    (i) => Icon(
+                          i < review["rating"] ? Icons.star : Icons.star_border,
+                          color: Colors.black87,
+                          size: 16,
+                        )),
               ),
             ],
           ),
-
           const SizedBox(height: 8),
-
-          // Comentario del usuario
-          const Text(
-            "El trabajador cumple bien con sus servicios.",
-            style: TextStyle(fontSize: 14),
-          ),
-
+          Text(review["comment"], style: const TextStyle(fontSize: 14)),
           const SizedBox(height: 8),
-
-          // Botón de comentar
           Row(
-            children: [
-              const Icon(Icons.comment, size: 16),
-              const SizedBox(width: 4),
-              const Text("Comentar"),
+            children: const [
+              Icon(Icons.more, size: 16),
+              SizedBox(width: 4),
+              Text("Ver detalles"),
             ],
           ),
         ],
