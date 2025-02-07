@@ -17,37 +17,37 @@ class HomeScreen extends StatelessWidget {
           itemBuilder: (BuildContext context) {
             return [
               PopupMenuItem(
-                child: InkWell(
-                  child: const Text("Mi perfil"),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ClientProfileScreen()),
-                    );
-                  },
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ClientProfileScreen()),
+                  );
+                },
+                child: const InkWell(
+                  child: Text("Mi perfil"),
                 ),
               ),
               PopupMenuItem(
-                child: InkWell(
-                  child: const Text("Configuración"),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ConfigScreen()),
-                    );
-                  },
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ConfigScreen()),
+                  );
+                },
+                child: const InkWell(
+                  child: Text("Configuración"),
                 ),
               ),
               PopupMenuItem(
-                child: InkWell(
-                  child: const Text("Acerca de"),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ConfigScreen()),
-                    );
-                  },
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ConfigScreen()),
+                  );
+                },
+                child: const InkWell(
+                  child: Text("Acerca de"),
                 ),
               ),
             ];
@@ -109,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                       print("Solicitar presionado");
                     },
                     child: const Text(
-                      'Solicitar →',
+                      'Solicitar',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
