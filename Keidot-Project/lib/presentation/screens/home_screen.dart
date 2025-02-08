@@ -1,6 +1,9 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:test_app/Services/models/service_model.dart';
 import 'package:test_app/Services/services_request/service_controller.dart';
+import 'package:test_app/presentation/screens/config_screen.dart';
+import 'package:test_app/presentation/screens/client_profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,6 +14,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Service> services = [];
+  int currentIndex = 0;
+  Timer? _timer;
 
   @override
   void initState() {
@@ -24,10 +29,27 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         services = apiServices;
       });
+      if (services.isNotEmpty) {
+        startImageRotation();
+      }
     } catch (e) {
-      // Manejo de errores
       print("Error: $e");
     }
+  }
+
+  void startImageRotation() {
+    _timer?.cancel();
+    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
+      setState(() {
+        currentIndex = (currentIndex + 1) % services.length;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
   }
 
   @override
@@ -42,13 +64,44 @@ class _HomeScreenState extends State<HomeScreen> {
             return [
               PopupMenuItem(
                 child: InkWell(
-                  child: const Text("Modificar"),
+                  child: const Text("Mi perfil"),
                   onTap: () {
                     Navigator.pop(context);
-                    print("Estas en Modificar");
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ClientProfileScreen()),
+                    );
                   },
                 ),
               ),
+              PopupMenuItem(
+                child: InkWell(
+                  child: const Text("Configuración"),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ConfigScreen()),
+                    );
+                  },
+                ),
+              ),
+              PopupMenuItem(
+                child: InkWell(
+                  child: const Text("Acerca de"),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ConfigScreen()),
+                    );
+                  },
+                ),
+              ),
+
             ];
           },
           icon: const Icon(Icons.menu),
@@ -77,17 +130,25 @@ class _HomeScreenState extends State<HomeScreen> {
               decoration: BoxDecoration(
                 color: Colors.green,
                 borderRadius: BorderRadius.circular(20),
+                image: services.isNotEmpty
+                    ? DecorationImage(
+                        image: NetworkImage(services[currentIndex].urlImage),
+                        fit: BoxFit.cover,
+                      )
+                    : null,
               ),
-              child: const Center(
-                child: Text(
-                  'Contenido',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
+              child: services.isEmpty
+                  ? const Center(
+                      child: Text(
+                        'Cargando imágenes...',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    )
+                  : null,
             ),
             const SizedBox(height: 28),
             const Text(

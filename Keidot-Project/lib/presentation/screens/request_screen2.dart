@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'request_screen3.dart'; // Importa la nueva pantalla
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+import 'request_screen3.dart';
 
 class RequestScreen2 extends StatefulWidget {
   const RequestScreen2({super.key});
@@ -9,6 +11,9 @@ class RequestScreen2 extends StatefulWidget {
 }
 
 class _RequestScreen2State extends State<RequestScreen2> {
+  final MapController _mapController = MapController();
+  final LatLng initialLocation = LatLng(20.9671, -89.6237); // Coordenadas de Mérida, Yucatán
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +23,7 @@ class _RequestScreen2State extends State<RequestScreen2> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Color.fromARGB(255, 0, 0, 0)),
           onPressed: () {
-            Navigator.pop(context); // Regresa a la pantalla anterior
+            Navigator.pop(context);
           },
         ),
         centerTitle: true,
@@ -27,7 +32,7 @@ class _RequestScreen2State extends State<RequestScreen2> {
           style: TextStyle(color: Color(0xFF3BA670)),
         ),
         bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(60), // Altura de la barra de búsqueda
+          preferredSize: const Size.fromHeight(60),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: TextField(
@@ -44,52 +49,65 @@ class _RequestScreen2State extends State<RequestScreen2> {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Aquí puedes agregar más contenido si es necesario
-            const Spacer(),
-            Center(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center, // Centra los botones horizontalmente
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pop(context); // Regresa a la pantalla anterior
-                    },
-                    child: const Text(
-                      'Cancelar',
-                      style: TextStyle(color: Colors.red),
-                    ),
-                  ),
-                  const SizedBox(width: 20), // Espacio entre los botones
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => RequestScreen3(), // Navega a RequestScreen3
-                        ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF12372A), // Color verde
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                    child: const Text(
-                      'Elegir ubicación',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ],
+      body: Column(
+        children: [
+          // Mapa de OpenStreetMap
+          Expanded(
+            child: FlutterMap(
+              mapController: _mapController,
+              options: MapOptions(
+                initialCenter: initialLocation,
+                initialZoom: 13,
               ),
+              children: [
+                TileLayer(
+                  urlTemplate: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                  subdomains: ['a', 'b', 'c'],
+                ),
+                MarkerLayer(
+                  markers: [
+                    Marker(
+                      point: initialLocation,
+                      width: 80,
+                      height: 80,
+                      child: Icon(Icons.location_on, color: Colors.red, size: 40),
+                    ),
+                  ],
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text('Cancelar', style: TextStyle(color: Colors.red)),
+                ),
+                const SizedBox(width: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => RequestScreen3()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF12372A),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  child: const Text('Elegir ubicación', style: TextStyle(color: Colors.white)),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
