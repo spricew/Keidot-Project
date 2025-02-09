@@ -6,6 +6,7 @@ const Color defaultWhite = Color(0xFFF5FBF5);
 const Color lightgreen = Color(0xFFF1FCF3);
 const Color grayContrast = Color(0xFFE9EFEA);
 const Color redError = Color(0xFFba1a1a);
+const Color greenContrast = Color(0xFF1a6b51);
 
 const List<Color> _colorThemes = [
   greenHigh,
