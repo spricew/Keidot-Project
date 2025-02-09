@@ -64,40 +64,37 @@ class _HomeScreenState extends State<HomeScreen> {
           itemBuilder: (BuildContext context) {
             return [
               PopupMenuItem(
-                child: InkWell(
-                  child: const Text("Mi perfil"),
-                  onTap: () {
-                    Navigator.pop(context);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ClientProfileScreen()),
-                    );
-                  },
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ClientProfileScreen()),
+                  );
+                },
+                child: const InkWell(
+                  child: Text("Mi perfil"),
                 ),
               ),
               PopupMenuItem(
-                child: InkWell(
-                  child: const Text("Configuración"),
-                  onTap: () {
-                    Navigator.pop(context);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ConfigScreen()),
-                    );
-                  },
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ConfigScreen()),
+                  );
+                },
+                child: const InkWell(
+                  child: Text("Configuración"),
                 ),
               ),
               PopupMenuItem(
-                child: InkWell(
-                  child: const Text("Acerca de"),
-                  onTap: () {
-                    Navigator.pop(context);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ConfigScreen()),
-                    );
-                  },
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ConfigScreen()),
+                  );
+                },
+                child: const InkWell(
+                  child: Text("Acerca de"),
                 ),
               ),
             ];
