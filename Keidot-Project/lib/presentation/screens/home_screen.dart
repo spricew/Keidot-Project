@@ -16,11 +16,13 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Service> services = [];
   int _currentIndex = 0;
   final PageController _pageController = PageController();
+  Timer? _carouselTimer;
 
   @override
   void initState() {
     super.initState();
     fetchServices();
+    _startAutoSlide();
   }
 
   Future<void> fetchServices() async {
@@ -35,9 +37,27 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
+  /// **Inicia el auto-slide del carrusel**
+  void _startAutoSlide() {
+    _carouselTimer = Timer.periodic(const Duration(seconds: 5), (timer) {
+      if (_pageController.hasClients && services.isNotEmpty) {
+        int nextPage = (_currentIndex + 1) % services.length;
+        _pageController.animateToPage(
+          nextPage,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
+        );
+        setState(() {
+          _currentIndex = nextPage;
+        });
+      }
+    });
+  }
+
   @override
   void dispose() {
     _pageController.dispose();
+    _carouselTimer?.cancel();
     super.dispose();
   }
 
@@ -88,10 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSpacing: 12,
                 childAspectRatio: 0.84,
               ),
-              itemCount: services.length > 4
-                  ? 4
-                  : services
-                      .length, //Limitar a mostras solo 4 Servicios que son los mas destacados
+              itemCount: services.length > 4 ? 4 : services.length,
               itemBuilder: (context, index) {
                 return _gridItem(services[index]);
               },
@@ -162,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 10,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: _currentIndex == index ? Colors.green : Colors.grey,
+                color: _currentIndex == index ? greenHigh : Colors.grey,
               ),
             ),
           ),
@@ -186,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           gradient: LinearGradient(
-            colors: [Colors.black.withOpacity(0.7), Colors.transparent],
+            colors: [Colors.black.withValues(alpha: 0.7), Colors.transparent],
             begin: Alignment.bottomCenter,
             end: Alignment.topCenter,
           ),
