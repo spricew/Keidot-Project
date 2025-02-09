@@ -5,7 +5,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
 
 class AuthService {
-  final String baseUrl = 'https://keidotapp.azurewebsites.net/api/Login/login';
+  final String baseUrl = 'https://keidot.azurewebsites.net/api/Login/login';
   final FlutterSecureStorage storage = const FlutterSecureStorage();
 
   Future<void> login(BuildContext context, String email, String password) async {

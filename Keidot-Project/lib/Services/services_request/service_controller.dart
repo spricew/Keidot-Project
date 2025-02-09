@@ -6,7 +6,7 @@ import 'package:test_app/Services/login_request/auth_serviceController.dart';
 import 'package:test_app/Services/models/service_model.dart';
 
 class ApiService {
-  static const String baseUrl = "https://keidotapp.azurewebsites.net/api/Service";
+  static const String baseUrl = "https://keidot.azurewebsites.net/api/Service";
 
   static Future<List<Service>> fetchServices() async {
     try {

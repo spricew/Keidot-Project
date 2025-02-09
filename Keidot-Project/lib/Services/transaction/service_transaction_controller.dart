@@ -57,7 +57,7 @@ class ServiceTransactionController extends GetxController {
 
     try {
       final response = await http.post(
-        Uri.parse('https://keidotapp.azurewebsites.net/api/ServiceRequest/create'),
+        Uri.parse('https://keidot.azurewebsites.net/api/ServiceRequest/create'),
         headers: {"Content-Type": "application/json"},
         body: jsonData,
       );

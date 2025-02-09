@@ -14,8 +14,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Service> services = [];
-  int currentIndex = 0;
-  Timer? _timer;
+  int _currentIndex = 0;
+  final PageController _pageController = PageController();
 
   @override
   void initState() {
@@ -29,26 +29,14 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         services = apiServices;
       });
-      if (services.isNotEmpty) {
-        startImageRotation();
-      }
     } catch (e) {
       print("Error: $e");
     }
   }
 
-  void startImageRotation() {
-    _timer?.cancel();
-    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
-      setState(() {
-        currentIndex = (currentIndex + 1) % services.length;
-      });
-    });
-  }
-
   @override
   void dispose() {
-    _timer?.cancel();
+    _pageController.dispose();
     super.dispose();
   }
 
@@ -101,7 +89,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
               ),
-
             ];
           },
           icon: const Icon(Icons.menu),
@@ -124,32 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: double.infinity,
-              height: 230,
-              decoration: BoxDecoration(
-                color: Colors.green,
-                borderRadius: BorderRadius.circular(20),
-                image: services.isNotEmpty
-                    ? DecorationImage(
-                        image: NetworkImage(services[currentIndex].urlImage),
-                        fit: BoxFit.cover,
-                      )
-                    : null,
-              ),
-              child: services.isEmpty
-                  ? const Center(
-                      child: Text(
-                        'Cargando imágenes...',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    )
-                  : null,
-            ),
+            _buildImageCarousel(),
             const SizedBox(height: 28),
             const Text(
               'Servicios destacados',
@@ -178,6 +140,75 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  /// **Carrusel de imágenes**
+  Widget _buildImageCarousel() {
+    if (services.isEmpty) {
+      return Container(
+        width: double.infinity,
+        height: 230,
+        decoration: BoxDecoration(
+          color: Colors.green,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: const Center(
+          child: Text(
+            'Cargando imágenes...',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+            ),
+          ),
+        ),
+      );
+    }
+
+    return Column(
+      children: [
+        SizedBox(
+          height: 230,
+          child: PageView.builder(
+            controller: _pageController,
+            itemCount: services.length,
+            onPageChanged: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+            itemBuilder: (context, index) {
+              return Container(
+                margin: const EdgeInsets.symmetric(horizontal: 8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                    image: NetworkImage(services[index].urlImage),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+        const SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(
+            services.length,
+            (index) => Container(
+              margin: const EdgeInsets.symmetric(horizontal: 4),
+              width: 10,
+              height: 10,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: _currentIndex == index ? Colors.green : Colors.grey,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 

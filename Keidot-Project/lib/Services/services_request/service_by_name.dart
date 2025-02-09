@@ -1,23 +1,44 @@
-import 'package:dio/dio.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:test_app/Services/login_request/auth_serviceController.dart';
 
 class ApiServiceName {
-  final Dio _dio = Dio();
-
-  Future<Map<String, dynamic>?> getServiceByName(String title) async {
+  static const String baseUrl = "https://keidot.azurewebsites.net/api/Service";
+//https://keidot.azurewebsites.net/
+  Future<Map<String, dynamic>?> getServiceByName(String query) async {
     try {
-      final response = await _dio.get(
-        "https://keidotapp.azurewebsites.net/api/Service/by-name",
-        queryParameters: {"title": title},
+      final String? token = await AuthService().getToken(); // Obtener token
+
+      if (token == null) {
+        throw Exception("No se encontró el token. Inicia sesión nuevamente.");
+      }
+
+      final response = await http.get(
+        Uri.parse(baseUrl),
+        headers: {
+          "Authorization": "Bearer $token",
+          "Content-Type": "application/json",
+        },
       );
 
       if (response.statusCode == 200) {
-        return response.data;
+        List<dynamic> jsonData = json.decode(response.body);
+        
+        // Convertir el query a minúsculas
+        String queryLower = query.toLowerCase();
+
+        // Buscar en la lista ignorando mayúsculas/minúsculas
+        var matchedService = jsonData.firstWhere(
+          (service) => service['title'].toString().toLowerCase() == queryLower,
+          orElse: () => null,
+        );
+
+        return matchedService;
       } else {
-        return null;
+        throw Exception("Error ${response.statusCode}: ${response.body}");
       }
     } catch (e) {
-      print("Error al obtener servicio: $e");
-      return null;
+      throw Exception("Error inesperado: $e");
     }
   }
 }
