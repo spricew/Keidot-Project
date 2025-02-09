@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/config/theme/app_theme.dart';
 
 class ConfigScreen extends StatelessWidget {
   const ConfigScreen({super.key});
@@ -18,8 +19,8 @@ class ConfigScreen extends StatelessWidget {
               color: Colors.white, // Fondo blanco
             ),
             child: IconButton(
-              icon: const Icon(Icons.arrow_back,
-                  color: Colors.black), // Icono negro
+              icon:
+                  const Icon(Icons.arrow_back, color: darkGreen), // Icono negro
               onPressed: () {
                 Navigator.pop(context); // Regresa a la pantalla anterior
               },
@@ -28,7 +29,7 @@ class ConfigScreen extends StatelessWidget {
         ),
       ),
 
-      backgroundColor: const Color.fromARGB(221, 123, 123, 123), // Fondo oscuro
+      backgroundColor: defaultWhite, // Fondo oscuro
       body: SingleChildScrollView(
         // Hace que todo sea scrolleable
         child: Padding(
@@ -40,7 +41,7 @@ class ConfigScreen extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(vertical: 25),
                 decoration: BoxDecoration(
-                  color: Colors.lightGreen,
+                  color: grayContrast,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: const Column(
@@ -49,8 +50,7 @@ class ConfigScreen extends StatelessWidget {
                     CircleAvatar(
                       radius: 40,
                       backgroundColor: Colors.white,
-                      child:
-                          Icon(Icons.person, size: 50, color: Colors.black87),
+                      child: Icon(Icons.person, size: 50, color: darkGreen),
                     ),
                     SizedBox(height: 10),
                     Text(
@@ -58,7 +58,7 @@ class ConfigScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black87,
+                        color: darkGreen,
                       ),
                     ),
                   ],
@@ -81,8 +81,7 @@ class ConfigScreen extends StatelessWidget {
                   _buildGridItem("Reseñas", "75", Icons.star),
                   _buildGridItem("Cambiar nombre", "", Icons.person_outline),
                   _buildGridItem("Cambiar contraseña", "", Icons.lock_outline),
-                  _buildGridItem(
-                      "Convertirse en trabajador", "", Icons.workspace_premium),
+                  _buildGridItem("Convertirse en trabajador", "", Icons.work),
                   _buildGridItem("Soporte", "", Icons.support_agent),
                 ],
               ),
@@ -92,7 +91,7 @@ class ConfigScreen extends StatelessWidget {
               // Botón de cerrar sesión
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.redAccent,
+                  backgroundColor: Colors.red,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),
                   minimumSize: const Size(double.infinity, 50),
@@ -111,23 +110,28 @@ class ConfigScreen extends StatelessWidget {
   Widget _buildGridItem(String title, String value, IconData icon) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.lightGreen,
+        color: grayContrast,
         borderRadius: BorderRadius.circular(15),
       ),
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(18),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title,
-              style:
-                  const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+              style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color: darkGreen,
+                  letterSpacing: -0.4)),
           if (value.isNotEmpty)
             Text(value,
-                style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: greenContrast)),
           Align(
             alignment: Alignment.bottomRight,
-            child: Icon(icon, size: 20),
+            child: Icon(icon, size: 22),
           ),
         ],
       ),
