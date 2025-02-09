@@ -87,7 +87,7 @@ class ClientProfileScreen extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.lightGreen,
+        color: lightgreen,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
