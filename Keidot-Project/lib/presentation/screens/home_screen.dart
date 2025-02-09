@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:test_app/Services/models/service_model.dart';
 import 'package:test_app/Services/services_request/service_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/screens/config_screen.dart';
-import 'package:test_app/presentation/screens/client_profile_screen.dart';
 import 'package:test_app/widgets/custom_popup.dart';
 
 class HomeScreen extends StatefulWidget {
