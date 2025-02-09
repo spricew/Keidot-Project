@@ -5,6 +5,7 @@ import 'package:test_app/Services/services_request/service_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/config_screen.dart';
 import 'package:test_app/presentation/screens/client_profile_screen.dart';
+import 'package:test_app/widgets/custom_popup.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,6 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         services = apiServices;
       });
     } catch (e) {
+      //ignore: avoid_print
       print("Error: $e");
     }
   }
@@ -48,47 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
         toolbarHeight: 60,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        leading: PopupMenuButton(
-          itemBuilder: (BuildContext context) {
-            return [
-              PopupMenuItem(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ClientProfileScreen()),
-                  );
-                },
-                child: const InkWell(
-                  child: Text("Mi perfil"),
-                ),
-              ),
-              PopupMenuItem(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ConfigScreen()),
-                  );
-                },
-                child: const InkWell(
-                  child: Text("Configuración"),
-                ),
-              ),
-              PopupMenuItem(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ConfigScreen()),
-                  );
-                },
-                child: const InkWell(
-                  child: Text("Acerca de"),
-                ),
-              ),
-            ];
-          },
-          icon: const Icon(Icons.menu),
-        ),
+        leading: const CustomPopupMenu(),
         title: const Align(
           alignment: Alignment.centerRight,
           child: Text(
@@ -128,7 +90,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSpacing: 12,
                 childAspectRatio: 0.84,
               ),
-              itemCount: services.length > 4 ? 4 : services.length, //Limitar a mostras solo 4 Servicios que son los mas destacados
+              itemCount: services.length > 4
+                  ? 4
+                  : services
+                      .length, //Limitar a mostras solo 4 Servicios que son los mas destacados
               itemBuilder: (context, index) {
                 return _gridItem(services[index]);
               },
