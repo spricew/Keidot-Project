@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:test_app/Services/models/service_model.dart';
 import 'package:test_app/Services/services_request/service_controller.dart';
+import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/config_screen.dart';
 import 'package:test_app/presentation/screens/client_profile_screen.dart';
 
@@ -82,8 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.pop(context);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => ConfigScreen()),
+                      MaterialPageRoute(builder: (context) => ConfigScreen()),
                     );
                   },
                 ),
@@ -95,13 +95,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.pop(context);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => ConfigScreen()),
+                      MaterialPageRoute(builder: (context) => ConfigScreen()),
                     );
                   },
                 ),
               ),
-
             ];
           },
           icon: const Icon(Icons.menu),
@@ -114,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
               fontSize: 26,
               fontWeight: FontWeight.w600,
               letterSpacing: -0.8,
-              color: Colors.green,
+              color: greenHigh,
             ),
           ),
         ),
@@ -154,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const Text(
               'Servicios destacados',
               style: TextStyle(
-                color: Colors.green,
+                color: darkGreen,
                 fontSize: 22,
                 fontWeight: FontWeight.w600,
                 letterSpacing: -0.2,
