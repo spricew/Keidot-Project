@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 const Color greenHigh = Color(0xFF3BA670);
 const Color darkGreen = Color(0xFF12372A);
-const Color defaultWhite = Color(0xFFFFFFFF);
+const Color defaultWhite = Color(0xFFF5FBF5);
 const Color lightgreen = Color(0xFFF1FCF3);
+const Color grayContrast = Color(0xFFE9EFEA);
+const Color redError = Color(0xFFba1a1a);
 
 const List<Color> _colorThemes = [
   greenHigh,
@@ -17,7 +19,6 @@ const List<Color> _colorThemes = [
   Colors.orange,
   Colors.pink,
 ];
-
 
 class AppTheme {
   final int selectedColor;
