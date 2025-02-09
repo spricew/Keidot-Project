@@ -9,7 +9,7 @@ class CustomPopupMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
-      elevation: 50,
+      elevation: 20,
       surfaceTintColor: defaultWhite,
       icon: const Icon(Icons.menu),
 
@@ -22,10 +22,12 @@ class CustomPopupMenu extends StatelessWidget {
             child: _buildMenuText("Mi perfil"),
           ),
           PopupMenuItem(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             onTap: () => _navigateToScreen(context, const ConfigScreen()),
             child: _buildMenuText("Configuración"),
           ),
           PopupMenuItem(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             onTap: () => _navigateToScreen(context, const ConfigScreen()),
             child: _buildMenuText("Acerca de"),
           ),
