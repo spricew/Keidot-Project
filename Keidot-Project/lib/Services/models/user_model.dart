@@ -6,7 +6,7 @@ class UserModel {
   final String password;
 
   UserModel({
-    this.idRol = "ac172fd1-5422-4160-8328-d32464508c48", // 👈 Valor fijo
+    this.idRol = "48ca9dac-9978-44e9-a15c-c203793bc9bf", // 👈 Valor fijo
     required this.email,
     required this.username,
     required this.phone,

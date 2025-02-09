@@ -128,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSpacing: 12,
                 childAspectRatio: 0.84,
               ),
-              itemCount: services.length,
+              itemCount: services.length > 4 ? 4 : services.length, //Limitar a mostras solo 4 Servicios que son los mas destacados
               itemBuilder: (context, index) {
                 return _gridItem(services[index]);
               },
