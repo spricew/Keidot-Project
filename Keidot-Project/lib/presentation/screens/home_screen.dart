@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:test_app/Services/models/service_model.dart';
 import 'package:test_app/Services/services_request/service_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
@@ -14,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Service> services = [];
+  bool isLoading = true;
   int _currentIndex = 0;
   final PageController _pageController = PageController();
   Timer? _carouselTimer;
@@ -30,14 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
       List<Service> apiServices = await ApiService.fetchServices();
       setState(() {
         services = apiServices;
+        isLoading = false;
       });
     } catch (e) {
-      //ignore: avoid_print
       print("Error: $e");
     }
   }
 
-  /// **Inicia el auto-slide del carrusel**
   void _startAutoSlide() {
     _carouselTimer = Timer.periodic(const Duration(seconds: 5), (timer) {
       if (_pageController.hasClients && services.isNotEmpty) {
@@ -87,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildImageCarousel(),
+            isLoading ? _buildShimmerCarousel() : _buildImageCarousel(),
             const SizedBox(height: 28),
             const Text(
               'Servicios destacados',
@@ -99,49 +100,55 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height: 10),
-            GridView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 12,
-                mainAxisSpacing: 12,
-                childAspectRatio: 0.84,
-              ),
-              itemCount: services.length > 4 ? 4 : services.length,
-              itemBuilder: (context, index) {
-                return _gridItem(services[index]);
-              },
-            ),
+            isLoading ? _buildShimmerGrid() : _buildServicesGrid(),
           ],
         ),
       ),
     );
   }
 
-  /// **Carrusel de imágenes**
-  Widget _buildImageCarousel() {
-    if (services.isEmpty) {
-      return Container(
+  Widget _buildShimmerCarousel() {
+    return Shimmer.fromColors(
+      baseColor: Colors.grey[300]!,
+      highlightColor: Colors.grey[100]!,
+      child: Container(
         width: double.infinity,
         height: 230,
         decoration: BoxDecoration(
-          color: Colors.green,
+          color: Colors.grey,
           borderRadius: BorderRadius.circular(20),
         ),
-        child: const Center(
-          child: Text(
-            'Cargando imágenes...',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
+      ),
+    );
+  }
+
+  Widget _buildShimmerGrid() {
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 12,
+        mainAxisSpacing: 12,
+        childAspectRatio: 0.84,
+      ),
+      itemCount: 4,
+      itemBuilder: (context, index) {
+        return Shimmer.fromColors(
+          baseColor: Colors.grey[300]!,
+          highlightColor: Colors.grey[100]!,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.grey,
+              borderRadius: BorderRadius.circular(16),
             ),
           ),
-        ),
-      );
-    }
+        );
+      },
+    );
+  }
 
+  Widget _buildImageCarousel() {
     return Column(
       children: [
         SizedBox(
@@ -168,23 +175,24 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
         ),
-        const SizedBox(height: 10),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(
-            services.length,
-            (index) => Container(
-              margin: const EdgeInsets.symmetric(horizontal: 4),
-              width: 10,
-              height: 10,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _currentIndex == index ? greenHigh : Colors.grey,
-              ),
-            ),
-          ),
-        ),
       ],
+    );
+  }
+
+  Widget _buildServicesGrid() {
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 12,
+        mainAxisSpacing: 12,
+        childAspectRatio: 0.84,
+      ),
+      itemCount: services.length > 4 ? 4 : services.length,
+      itemBuilder: (context, index) {
+        return _gridItem(services[index]);
+      },
     );
   }
 
