@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:test_app/Services/models/location_model.dart';
 
 class LocationService {
-  final String apiUrl = 'https://tuapi.com/guardar_ubicacion';
+  final String apiUrl = 'https://keidot.azurewebsites.net/api/Locations';
   final storage = const FlutterSecureStorage();
 
   /// Obtiene el UserId y Token del almacenamiento seguro.

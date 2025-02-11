@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_app/Services/location_request/location_service_controller.dart';
 import 'package:test_app/Services/transaction/service_transaction_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
@@ -7,6 +8,7 @@ import 'package:test_app/presentation/screens/login_screen.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(ServiceTransactionController()); // Inicializa el controlador
+  Get.put(LocationController());
   runApp(const MyApp());
 }
 

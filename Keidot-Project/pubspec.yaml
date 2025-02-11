@@ -46,11 +46,6 @@ flutter:
         - asset: assets/fonts/Urbanist-Regular.ttf
 
   assets:
-    - assets/images/banner.png
-    - assets/images/maquinaria.png
-    - assets/images/limpieza.png
-    - assets/images/plantas.png
-    - assets/images/jardineria.png
     - assets/images/Logo.png
 
 flutter_native_splash:

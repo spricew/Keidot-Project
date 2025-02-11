@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:test_app/Services/models/service_model.dart';
 import 'package:test_app/Services/services_request/service_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/widgets/custom_popup.dart';
@@ -14,8 +14,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<Service> services = [];
-  bool isLoading = true;
+  final ServiceController serviceController = Get.put(ServiceController());
   int _currentIndex = 0;
   final PageController _pageController = PageController();
   Timer? _carouselTimer;
@@ -23,26 +22,13 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    fetchServices();
     _startAutoSlide();
-  }
-
-  Future<void> fetchServices() async {
-    try {
-      List<Service> apiServices = await ApiService.fetchServices();
-      setState(() {
-        services = apiServices;
-        isLoading = false;
-      });
-    } catch (e) {
-      print("Error: $e");
-    }
   }
 
   void _startAutoSlide() {
     _carouselTimer = Timer.periodic(const Duration(seconds: 5), (timer) {
-      if (_pageController.hasClients && services.isNotEmpty) {
-        int nextPage = (_currentIndex + 1) % services.length;
+      if (_pageController.hasClients && serviceController.services.isNotEmpty) {
+        int nextPage = (_currentIndex + 1) % serviceController.services.length;
         _pageController.animateToPage(
           nextPage,
           duration: const Duration(milliseconds: 500),
@@ -88,7 +74,9 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            isLoading ? _buildShimmerCarousel() : _buildImageCarousel(),
+            Obx(() => serviceController.isLoading.value
+                ? _buildShimmerCarousel()
+                : _buildImageCarousel()),
             const SizedBox(height: 28),
             const Text(
               'Servicios destacados',
@@ -100,7 +88,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height: 10),
-            isLoading ? _buildShimmerGrid() : _buildServicesGrid(),
+            Obx(() => serviceController.isLoading.value
+                ? _buildShimmerGrid()
+                : _buildServicesGrid()),
           ],
         ),
       ),
@@ -155,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
           height: 230,
           child: PageView.builder(
             controller: _pageController,
-            itemCount: services.length,
+            itemCount: serviceController.services.length,
             onPageChanged: (index) {
               setState(() {
                 _currentIndex = index;
@@ -167,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                    image: NetworkImage(services[index].urlImage),
+                    image: NetworkImage(serviceController.services[index].urlImage),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -189,14 +179,14 @@ class _HomeScreenState extends State<HomeScreen> {
         mainAxisSpacing: 12,
         childAspectRatio: 0.84,
       ),
-      itemCount: services.length > 4 ? 4 : services.length,
+      itemCount: serviceController.services.length > 4 ? 4 : serviceController.services.length,
       itemBuilder: (context, index) {
-        return _gridItem(services[index]);
+        return _gridItem(serviceController.services[index]);
       },
     );
   }
 
-  Widget _gridItem(Service service) {
+  Widget _gridItem(service) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
@@ -211,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           gradient: LinearGradient(
-            colors: [Colors.black.withValues(alpha: 0.7), Colors.transparent],
+            colors: [Colors.black.withOpacity(0.7), Colors.transparent],
             begin: Alignment.bottomCenter,
             end: Alignment.topCenter,
           ),

@@ -110,7 +110,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                     }
 
                     // Navega a la siguiente pantalla
-                    Get.to(() => RequestScreen2());
+                    Get.to(() => const RequestScreen2());
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF12372A),
