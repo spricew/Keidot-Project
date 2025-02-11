@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:get/get.dart';
+import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:http/http.dart' as http;
 import 'package:test_app/Services/models/location_model.dart';
 
@@ -42,5 +44,20 @@ class LocationService {
     } catch (e) {
       print("Error: $e");
     }
+  }
+}
+
+class LocationController extends GetxController {
+  var latitude = 0.0.obs;
+  var longitude = 0.0.obs;
+
+  void setLocation(double lat, double lng) {
+    latitude.value = lat;
+    longitude.value = lng;
+  }
+
+  void clearLocation() {
+    latitude.value = 0.0;
+    longitude.value = 0.0;
   }
 }
