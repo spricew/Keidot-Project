@@ -26,56 +26,62 @@ class ServiceTransactionController extends GetxController {
   void setSelectedTime(String time) => requestData.update((val) => val?.selectedTime = time);
 
   // Método para enviar la solicitud al servidor
-  Future<void> sendRequest() async {
-    // Recupera el ID del usuario desde el almacenamiento seguro
-    final userId = await storage.read(key: 'userId');
-    if (userId == null) {
-      Get.snackbar("Error", "Usuario no autenticado");
-      return;
-    }
+Future<void> sendRequest() async {
+  // Recupera el ID del usuario y el token desde el almacenamiento seguro
+  final userId = await storage.read(key: 'userId');
+  final token = await storage.read(key: 'token');
 
-    // Asigna el ID del usuario a la solicitud
-    setUserId(userId);
-
-    // Verifica que la duración sea válida
-    if (requestData.value.tiempoEstimado.inHours <= 0) {
-      Get.snackbar("Error", "Selecciona una duración válida");
-      return;
-    }
-
-    // Verifica que los campos obligatorios no estén vacíos
-    if (requestData.value.userId.isEmpty ||
-        requestData.value.serviceId.isEmpty ||
-        requestData.value.paymentMethodId.isEmpty) {
-      Get.snackbar("Error", "Todos los campos son obligatorios");
-      return;
-    }
-
-    // Convierte el modelo a JSON
-    final jsonData = jsonEncode(requestData.value.toJson());
-    print("JSON enviado: $jsonData"); // Imprime el JSON para depuración
-
-    try {
-      final response = await http.post(
-        Uri.parse('https://keidot.azurewebsites.net/api/ServiceRequest/create'),
-        headers: {"Content-Type": "application/json"},
-        body: jsonData,
-      );
-
-      if (response.statusCode == 200) {
-        // Manejar respuesta exitosa
-        print("Solicitud enviada con éxito");
-        Get.snackbar("Éxito", "La solicitud se envió correctamente");
-      } else {
-        // Manejar error
-        print("Error al enviar la solicitud: ${response.statusCode}");
-        print("Respuesta del servidor: ${response.body}"); // Imprime la respuesta del servidor
-        Get.snackbar("Error", "No se pudo enviar la solicitud: ${response.body}");
-      }
-    } catch (e) {
-      // Manejar excepciones (por ejemplo, problemas de conexión)
-      print("Excepción al enviar la solicitud: $e");
-      Get.snackbar("Error", "Error de conexión: $e");
-    }
+  if (userId == null || token == null) {
+    Get.snackbar("Error", "Usuario no autenticado");
+    return;
   }
+
+  // Asigna el ID del usuario a la solicitud
+  setUserId(userId);
+
+  // Verifica que la duración sea válida
+  if (requestData.value.tiempoEstimado.inHours <= 0) {
+    Get.snackbar("Error", "Selecciona una duración válida");
+    return;
+  }
+
+  // Verifica que los campos obligatorios no estén vacíos
+  if (requestData.value.userId.isEmpty ||
+      requestData.value.serviceId.isEmpty ||
+      requestData.value.paymentMethodId.isEmpty) {
+    Get.snackbar("Error", "Todos los campos son obligatorios");
+    return;
+  }
+
+  // Añade el token en el cuerpo de la solicitud
+  final jsonData = jsonEncode({
+    ...requestData.value.toJson(), // Datos actuales de la solicitud
+    "token": token, // Se agrega el token al JSON
+  });
+
+  print("JSON enviado: $jsonData"); // Para depuración
+
+  try {
+    final response = await http.post(
+      Uri.parse('https://keidot.azurewebsites.net/api/ServiceRequest/create'),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: jsonData,
+    );
+
+    if (response.statusCode == 200) {
+      print("Solicitud enviada con éxito");
+      Get.snackbar("Éxito", "La solicitud se envió correctamente");
+    } else {
+      print("Error al enviar la solicitud: ${response.statusCode}");
+      print("Respuesta del servidor: ${response.body}");
+      Get.snackbar("Error", "No se pudo enviar la solicitud: ${response.body}");
+    }
+  } catch (e) {
+    print("Excepción al enviar la solicitud: $e");
+    Get.snackbar("Error", "Error de conexión: $e");
+  }
+}
+
 }
