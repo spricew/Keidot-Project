@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_app/Services/location_request/location_service_controller.dart';
 import 'package:test_app/Services/transaction/service_transaction_controller.dart';
 import 'solicitud_exitosa_screen.dart'; // Asegúrate de importar la pantalla de solicitud exitosa
 
 class TransferenciaEsperaScreen extends StatelessWidget {
   final ServiceTransactionController controller = Get.find();
+  final LocationController controller_location = Get.find();
 
   TransferenciaEsperaScreen({super.key}); // Obtén el controlador
 
@@ -138,6 +140,7 @@ class TransferenciaEsperaScreen extends StatelessWidget {
                 onPressed: () async {
                   // Envía los datos al servidor
                   await controller.sendRequest();
+                  await controller_location.saveLocation();
 
                   // Navega a la pantalla de solicitud exitosa
                   Get.to(() => SolicitudExitosaScreen());

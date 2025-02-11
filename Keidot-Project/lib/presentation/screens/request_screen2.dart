@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:test_app/Services/location_request/location_service_controller.dart';
 import 'request_screen3.dart';
 
 class RequestScreen2 extends StatefulWidget {
@@ -12,7 +14,10 @@ class RequestScreen2 extends StatefulWidget {
 
 class _RequestScreen2State extends State<RequestScreen2> {
   final MapController _mapController = MapController();
-  final LatLng initialLocation = LatLng(20.9671, -89.6237); // Coordenadas de Mérida, Yucatán
+  final LatLng initialLocation = LatLng(20.9671, -89.6237); // Coordenadas de Mérida
+  final LocationController locationController = Get.find<LocationController>();
+
+  LatLng selectedLocation = LatLng(20.9671, -89.6237); // Ubicación inicial
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +63,11 @@ class _RequestScreen2State extends State<RequestScreen2> {
               options: MapOptions(
                 initialCenter: initialLocation,
                 initialZoom: 13,
+                onTap: (tapPosition, point) {
+                  setState(() {
+                    selectedLocation = point;
+                  });
+                },
               ),
               children: [
                 TileLayer(
@@ -67,10 +77,10 @@ class _RequestScreen2State extends State<RequestScreen2> {
                 MarkerLayer(
                   markers: [
                     Marker(
-                      point: initialLocation,
+                      point: selectedLocation,
                       width: 80,
                       height: 80,
-                      child: Icon(Icons.location_on, color: Colors.red, size: 40),
+                      child: const Icon(Icons.location_on, color: Colors.red, size: 40),
                     ),
                   ],
                 ),
@@ -91,9 +101,15 @@ class _RequestScreen2State extends State<RequestScreen2> {
                 const SizedBox(width: 20),
                 ElevatedButton(
                   onPressed: () {
+                    // Guardar la ubicación en el controlador
+                    locationController.setLocation(selectedLocation.latitude, selectedLocation.longitude);
+
+                    // Ir a la siguiente pantalla
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => RequestScreen3()),
+                      MaterialPageRoute(
+                        builder: (context) => RequestScreen3(),
+                      ),
                     );
                   },
                   style: ElevatedButton.styleFrom(
