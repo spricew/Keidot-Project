@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // Importa esto para usar TextInputFormatter
-import 'package:test_app/presentation/screens/transferenciaespera_screen.dart';
+import 'package:test_app/presentation/screens/transferenciaespera_screen.dart'; //Esto lo hizo luis
 
 class AnadirMetodoPagoScreen extends StatelessWidget {
   const AnadirMetodoPagoScreen({super.key});
