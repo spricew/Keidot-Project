@@ -143,7 +143,7 @@ class TransferenciaEsperaScreen extends StatelessWidget {
                   await controller_location.saveLocation();
 
                   // Navega a la pantalla de solicitud exitosa
-                  Get.to(() => SolicitudExitosaScreen());
+                  Get.to(() =>const SolicitudExitosaScreen());
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF12372A), // Color verde
