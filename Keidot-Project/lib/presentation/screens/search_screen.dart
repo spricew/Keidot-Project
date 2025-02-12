@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart'; // Importante para la navegación
 import 'package:test_app/Services/services_request/service_by_name.dart';
+import 'package:test_app/Services/transaction/service_transaction_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/request_screen1.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 import 'package:test_app/Services/services_request/service_get_request.dart';
 
 class SearchScreen extends StatefulWidget {
   final Function(int) onTabSelected;
 
-  const SearchScreen({super.key, required this.onTabSelected});
+  const SearchScreen({
+    super.key,
+    required this.onTabSelected,
+  });
 
   @override
   _SearchScreenState createState() => _SearchScreenState();
@@ -15,7 +21,7 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   final ApiServiceName apiService = ApiServiceName();
-  TextEditingController searchController = TextEditingController();
+  final TextEditingController searchController = TextEditingController();
   List<Map<String, dynamic>> services = [];
   bool isLoading = false;
 
@@ -25,35 +31,49 @@ class _SearchScreenState extends State<SearchScreen> {
     fetchAllServices();
   }
 
-  void fetchAllServices() async {
+  Future<void> fetchAllServices() async {
     setState(() => isLoading = true);
     try {
       final serviceList = await ApiService.fetchServices();
       setState(() => services = serviceList.map((s) => s.toJson()).toList());
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Error: $e")));
+      if (mounted) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: Text("Error: $e")));
+      }
     } finally {
-      setState(() => isLoading = false);
+      if (mounted) {
+        setState(() => isLoading = false);
+      }
     }
   }
 
-  void fetchService() async {
+  Future<void> fetchService() async {
     final query = searchController.text.trim();
     if (query.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Ingresa un título de servicio")),
+        const SnackBar(content: Text("Ingresa un título de servicio")),
       );
       return;
     }
 
     setState(() => isLoading = true);
 
-    final result = await apiService.getServiceByName(query);
+    try {
+      final result = await apiService.getServiceByName(query);
+      setState(() => services = result != null ? [result] : []);
+    } catch (e) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text("Error: $e")));
+    } finally {
+      setState(() => isLoading = false);
+    }
+  }
 
-    setState(() {
-      services = result != null ? [result] : [];
-      isLoading = false;
-    });
+  void selectService(String serviceId, String serviceName) {
+    final serviceController = Get.find<ServiceTransactionController>();
+    serviceController.setServiceId(serviceId); // Guarda el ID en el controlador
+    Get.to(() => RequestScreen1(serviceId: serviceId, serviceName: serviceName));
   }
 
   @override
@@ -81,7 +101,8 @@ class _SearchScreenState extends State<SearchScreen> {
               decoration: InputDecoration(
                 hintText: "Buscar servicio...",
                 prefixIcon: Icon(Icons.search, color: darkGreen),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
               ),
             ),
             const SizedBox(height: 12),
@@ -89,33 +110,42 @@ class _SearchScreenState extends State<SearchScreen> {
             // Botón de búsqueda
             ElevatedButton(
               onPressed: fetchService,
-              style: ElevatedButton.styleFrom(backgroundColor: darkGreen),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: darkGreen, foregroundColor: Colors.white),
               child: isLoading
-                  ? CircularProgressIndicator(color: Colors.white)
-                  : Text("Buscar", style: TextStyle(color: Colors.white)),
+                  ? const CircularProgressIndicator(color: Colors.white)
+                  : const Text("Buscar"),
             ),
             const SizedBox(height: 20),
 
             // Lista de servicios
             Expanded(
               child: isLoading
-                  ? Center(child: CircularProgressIndicator())
+                  ? const Center(child: CircularProgressIndicator())
                   : services.isNotEmpty
                       ? ListView.builder(
                           itemCount: services.length,
                           itemBuilder: (context, index) {
                             final service = services[index];
+                            final serviceId = service['id'].toString(); // Asegurar que sea String
+                            final serviceName = service['title'] ?? "Sin título";
+
                             return Card(
                               elevation: 3,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)),
                               child: ListTile(
-                                title: Text(service['title'] ?? "Sin título",
-                                    style: TextStyle(fontWeight: FontWeight.bold)),
+                                title: Text(
+                                  serviceName,
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                onTap: () => selectService(serviceId, serviceName), // Enviar ID y Nombre
                               ),
                             );
                           },
                         )
-                      : Center(child: Text("No se encontraron servicios")),
+                      : const Center(child: Text("No se encontraron servicios")),
             ),
           ],
         ),
