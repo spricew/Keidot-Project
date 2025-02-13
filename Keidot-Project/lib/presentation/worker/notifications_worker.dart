@@ -13,27 +13,27 @@ class _WorkerNotificationsScreenState extends State<WorkerNotificationsScreen> {
   // Lista de notificaciones para trabajadores con estado mutable
   List<Map<String, dynamic>> notifications = [
     {
-      'date': '30 de Jul. 2024',
+      'date': '30 de Jul. 2025',
       'message': 'Has sido seleccionado para el trabajo de "Jardinería" en la dirección Av. Siempre Viva 123.',
       'isRead': false, // No leído
     },
     {
-      'date': '28 de Jul. 2024',
+      'date': '28 de Jul. 2025',
       'message': 'Tu solicitud para el trabajo de "Jardinería" ha sido rechazada.',
       'isRead': true, // Leído
     },
     {
-      'date': '22 de Jul. 2024',
+      'date': '22 de Jul. 2025',
       'message': 'Has recibido una nueva oferta para el trabajo de "Limpieza de jardín" con un pago de \$150.',
       'isRead': false, // No leído
     },
     {
-      'date': '18 de Jul. 2024',
+      'date': '18 de Jul. 2025',
       'message': 'El cliente ha cancelado el trabajo de "Decoración de jardín" al que habías aplicado.',
       'isRead': true, // Leído
     },
     {
-      'date': '15 de Jul. 2024',
+      'date': '15 de Jul. 2025',
       'message': 'Has completado con éxito el trabajo de "Limpieza de jardín". ¡Gracias por tu esfuerzo!',
       'isRead': false, // No leído
     },
@@ -57,7 +57,7 @@ class _WorkerNotificationsScreenState extends State<WorkerNotificationsScreen> {
         titleColor: darkGreen,
         iconColor: darkGreen,
         onBackPressed: () {
-          // Simplemente cierra la pantalla actual (sin navegación a otra pantalla)
+          // Simplemente cierra la pantalla actual 
           Navigator.of(context).pop();
         },
       ),
