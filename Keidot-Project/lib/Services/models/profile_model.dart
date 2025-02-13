@@ -26,3 +26,10 @@ class ProfileModel {
     };
   }
 }
+/*factory Service.fromJson(Map<String, dynamic> json) {
+    return Service(
+      serviceId: json['service_id'] as String,
+      title: json['title'] as String,
+      urlImage: json['url_image'] as String,
+    );
+  }*/
