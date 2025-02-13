@@ -10,7 +10,6 @@ class WorkerNotificationsScreen extends StatefulWidget {
 }
 
 class _WorkerNotificationsScreenState extends State<WorkerNotificationsScreen> {
-  // Lista de notificaciones para trabajadores con estado mutable
   List<Map<String, dynamic>> notifications = [
     {
       'date': '30 de Jul. 2025',
@@ -57,7 +56,7 @@ class _WorkerNotificationsScreenState extends State<WorkerNotificationsScreen> {
         titleColor: darkGreen,
         iconColor: darkGreen,
         onBackPressed: () {
-          // Simplemente cierra la pantalla actual 
+          //  cierra la pantalla actual 
           Navigator.of(context).pop();
         },
       ),
