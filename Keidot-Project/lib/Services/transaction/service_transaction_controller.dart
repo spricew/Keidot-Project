@@ -8,8 +8,7 @@ class ServiceTransactionController extends GetxController {
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   var requestData = ServiceTransactionModel(
     userId: "",
-    serviceId: "829da46a-b386-4b3d-9b1c-66cf3b317f07",
-    paymentMethodId: "",
+    serviceId: "",
     description: "",
     amount: 110.0,
     tiempoEstimado: Duration.zero,
@@ -18,8 +17,7 @@ class ServiceTransactionController extends GetxController {
 
   // Métodos para actualizar los campos de la solicitud
   void setUserId(String id) => requestData.update((val) => val?.userId = id);
-  void setServiceId(String id) => requestData.update((val) => val?.serviceId = id);
-  void setPaymentMethod(String id) => requestData.update((val) => val?.paymentMethodId = id);
+  void setServiceId(String serviceId) => requestData.update((val) => val?.serviceId = serviceId);
   void setDescription(String desc) => requestData.update((val) => val?.description = desc);
   void setAmount(double amt) => requestData.update((val) => val?.amount = amt);
   void setTiempoEstimado(Duration duration) => requestData.update((val) => val?.tiempoEstimado = duration);
@@ -47,8 +45,7 @@ Future<void> sendRequest() async {
 
   // Verifica que los campos obligatorios no estén vacíos
   if (requestData.value.userId.isEmpty ||
-      requestData.value.serviceId.isEmpty ||
-      requestData.value.paymentMethodId.isEmpty) {
+      requestData.value.serviceId.isEmpty) {
     Get.snackbar("Error", "Todos los campos son obligatorios");
     return;
   }

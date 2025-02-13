@@ -6,7 +6,7 @@ import 'package:test_app/Services/location_request/location_service_controller.d
 import 'request_screen3.dart';
 
 class RequestScreen2 extends StatefulWidget {
-  const RequestScreen2({super.key});
+  const RequestScreen2({super.key, required String serviceId, required String serviceName});
 
   @override
   _RequestScreen2State createState() => _RequestScreen2State();

@@ -5,23 +5,43 @@ import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/presentation/screens/request_screen2.dart';
 
 class RequestScreen1 extends StatelessWidget {
-  const RequestScreen1({super.key});
+  final String serviceName;
+  final String serviceId;
+
+  const RequestScreen1({
+    super.key,
+    required this.serviceName,
+    required this.serviceId,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const DetallesServicioPage();
+    return DetallesServicioPage(serviceName: serviceName, serviceId: serviceId);
   }
 }
 
 class DetallesServicioPage extends StatefulWidget {
-  const DetallesServicioPage({super.key});
+  final String serviceName;
+  final String serviceId;
+
+  const DetallesServicioPage({
+    super.key,
+    required this.serviceName,
+    required this.serviceId,
+  });
 
   @override
   _DetallesServicioPageState createState() => _DetallesServicioPageState();
 }
 
 class _DetallesServicioPageState extends State<DetallesServicioPage> {
-  final ServiceTransactionController controller = Get.find(); // Obtén el controlador
+  final ServiceTransactionController controller = Get.find();
+
+  @override
+  void initState() {
+    super.initState();
+    controller.setServiceId(widget.serviceId); // Guardar el serviceId
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +56,12 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
           },
         ),
         centerTitle: true,
-        title: const Text('Jardinería', style: TextStyle(color: Color(0xFF3BA670))),
+        title: Text(
+          widget.serviceName, // Muestra el título del servicio en la barra superior
+          style: const TextStyle(color: Color(0xFF3BA670), fontSize: 18),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis, // Para evitar que se corte si es largo
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -54,11 +79,15 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
             const Center(
               child: Text(
                 'Paso 1 de 3',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFF3BA670)),
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF3BA670)),
               ),
             ),
             const SizedBox(height: 16),
-            const Text('Duración estimada', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+            const Text('Duración estimada',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
             const SizedBox(height: 8),
             Card(
               color: const Color.fromARGB(255, 252, 249, 249),
@@ -68,7 +97,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                         value: 1,
                         groupValue: controller.requestData.value.tiempoEstimado.inMinutes == 30 ? 1 : 0,
                         onChanged: (value) {
-                          controller.setTiempoEstimado(const Duration(minutes: 30)); // Pequeña: 20-30 min
+                          controller.setTiempoEstimado(const Duration(minutes: 30));
                         },
                         title: const Text('Pequeña - Tiempo Est. 20-30 min'),
                       )),
@@ -76,7 +105,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                         value: 2,
                         groupValue: controller.requestData.value.tiempoEstimado.inMinutes == 90 ? 2 : 0,
                         onChanged: (value) {
-                          controller.setTiempoEstimado(const Duration(minutes: 90)); // Mediana: 1-2 hr
+                          controller.setTiempoEstimado(const Duration(minutes: 90));
                         },
                         title: const Text('Mediana - Tiempo Est. 1-2 hr'),
                       )),
@@ -84,7 +113,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                         value: 3,
                         groupValue: controller.requestData.value.tiempoEstimado.inMinutes == 150 ? 3 : 0,
                         onChanged: (value) {
-                          controller.setTiempoEstimado(const Duration(minutes: 150)); // Grande: Más de 2 hr
+                          controller.setTiempoEstimado(const Duration(minutes: 150));
                         },
                         title: const Text('Grande - Tiempo Est. Más de 2 hr'),
                       )),
@@ -97,20 +126,22 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
               children: [
                 TextButton(
                   onPressed: () {
-                    Get.offAll(() => const Homepage()); // Regresa a la pantalla de inicio
+                    Get.offAll(() => const Homepage());
                   },
                   child: const Text('Cancelar', style: TextStyle(color: Colors.red)),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    // Valida que se haya seleccionado una duración
                     if (controller.requestData.value.tiempoEstimado.inMinutes <= 0) {
                       Get.snackbar("Error", "Selecciona una duración válida");
                       return;
                     }
 
-                    // Navega a la siguiente pantalla
-                    Get.to(() => const RequestScreen2());
+                    // Ahora pasamos también el serviceId y serviceName a la siguiente pantalla
+                    Get.to(() => RequestScreen2(
+                          serviceId: widget.serviceId,
+                          serviceName: widget.serviceName,
+                        ));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF12372A),
