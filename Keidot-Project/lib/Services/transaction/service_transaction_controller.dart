@@ -36,6 +36,7 @@ class ServiceTransactionController extends GetxController {
   // Método para enviar la solicitud al servidor
   Future<void> sendRequest() async {
     final token = await storage.read(key: 'token');
+
     if (userId.value.isEmpty || serviceId.value.isEmpty || token == null) {
       Get.snackbar("Error", "Todos los campos son obligatorios");
       return;
@@ -48,22 +49,29 @@ class ServiceTransactionController extends GetxController {
       "amount": amount.value,
       "tiempoEstimado": tiempoEstimado.value.inMinutes, // Convertir a minutos
       "selectedTime": selectedTime.value,
-      "token": token
     };
 
     try {
       final response = await http.post(
         Uri.parse('https://keidot.azurewebsites.net/api/ServiceRequest/create'),
-        headers: {"Content-Type": "application/json"},
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer $token", // Enviar token en los headers
+        },
         body: jsonEncode(requestData),
       );
 
       if (response.statusCode == 200) {
-        Get.snackbar("Éxito", "Solicitud enviada correctamente");
+        print("Solicitud enviada con éxito");
+        Get.snackbar("Éxito", "La solicitud se envió correctamente");
       } else {
-        Get.snackbar("Error", "No se pudo enviar: ${response.body}");
+        print("Error al enviar la solicitud: ${response.statusCode}");
+        print("Respuesta del servidor: ${response.body}");
+        Get.snackbar(
+            "Error", "No se pudo enviar la solicitud: ${response.body}");
       }
     } catch (e) {
+      print("Excepción al enviar la solicitud: $e");
       Get.snackbar("Error", "Error de conexión: $e");
     }
   }
