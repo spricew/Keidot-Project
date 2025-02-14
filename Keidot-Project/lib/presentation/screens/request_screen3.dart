@@ -15,7 +15,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
   String? _selectedDate; // Para almacenar la fecha seleccionada
   final TextEditingController _descriptionController = TextEditingController(); // Controlador para el campo de descripción
 
-  // Método para mostrar el selector de fecha y hora
+  // Método para mostrar el selector de fecha y hora con validaciones
   Future<void> _selectDateTime(BuildContext context) async {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
@@ -27,10 +27,16 @@ class _RequestScreen3State extends State<RequestScreen3> {
     if (pickedDate != null) {
       final TimeOfDay? pickedTime = await showTimePicker(
         context: context,
-        initialTime: TimeOfDay.now(),
+        initialTime: TimeOfDay(hour: 8, minute: 0),
       );
 
       if (pickedTime != null) {
+        // Validar que la hora esté en el rango permitido (08:00 - 18:00)
+        if (pickedTime.hour < 8 || pickedTime.hour > 18) {
+          Get.snackbar("Error", "Selecciona un horario entre 08:00 y 18:00");
+          return;
+        }
+
         final DateTime selectedDateTime = DateTime(
           pickedDate.year,
           pickedDate.month,
@@ -98,9 +104,6 @@ class _RequestScreen3State extends State<RequestScreen3> {
             Wrap(
               spacing: 8.0, // Espacio entre los botones
               children: [
-                _buildDateOption('Hoy'),
-                _buildDateOption('Mañana'),
-                _buildDateOption('En 3 días'),
                 _buildDateOption('Definir fecha'),
               ],
             ),
@@ -190,30 +193,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
 
         // Guarda la fecha seleccionada en el controlador
         if (selected) {
-          if (date == "Definir fecha") {
-            _selectDateTime(context); // Abre el selector de fecha y hora
-          } else {
-            final now = DateTime.now();
-            DateTime selectedDate;
-
-            switch (date) {
-              case "Hoy":
-                selectedDate = now;
-                break;
-              case "Mañana":
-                selectedDate = now.add(const Duration(days: 1));
-                break;
-              case "En 3 días":
-                selectedDate = now.add(const Duration(days: 3));
-                break;
-              default:
-                selectedDate = now;
-            }
-
-            // Guarda la hora en el formato correcto (HH:mm)
-            final formattedTime = "${selectedDate.hour.toString().padLeft(2, '0')}:${selectedDate.minute.toString().padLeft(2, '0')}";
-            controller.setSelectedTime(formattedTime);
-          }
+          _selectDateTime(context); // Abre el selector de fecha y hora
         }
       },
       selectedColor: const Color(0xFF12372A), // Color verde cuando está seleccionado
