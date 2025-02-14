@@ -2,83 +2,69 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:test_app/Services/models/service_transaction_model.dart';
 
 class ServiceTransactionController extends GetxController {
   final FlutterSecureStorage storage = const FlutterSecureStorage();
-  var requestData = ServiceTransactionModel(
-    userId: "",
-    serviceId: "",
-    description: "",
-    amount: 110.0,
-    tiempoEstimado: Duration.zero,
-    selectedTime: "",
-  ).obs;
 
-  // Métodos para actualizar los campos de la solicitud
-  void setUserId(String id) => requestData.update((val) => val?.userId = id);
-  void setServiceId(String serviceId) => requestData.update((val) => val?.serviceId = serviceId);
-  void setDescription(String desc) => requestData.update((val) => val?.description = desc);
-  void setAmount(double amt) => requestData.update((val) => val?.amount = amt);
-  void setTiempoEstimado(Duration duration) => requestData.update((val) => val?.tiempoEstimado = duration);
-  void setSelectedTime(String time) => requestData.update((val) => val?.selectedTime = time);
+  // Variables observables para los campos del formulario
+  var userId = ''.obs;
+  var serviceId = ''.obs;
+  var description = ''.obs;
+  var amount = 110.0.obs;
+  var tiempoEstimado = Duration.zero.obs;
+  var selectedTime = ''.obs;
+
+  // Cargar el userId desde almacenamiento seguro al iniciar
+  @override
+  void onInit() {
+    super.onInit();
+    loadUserData();
+  }
+
+  Future<void> loadUserData() async {
+    userId.value = await storage.read(key: 'userId') ?? "";
+  }
+
+  // Métodos para actualizar los campos
+  void setUserId(String id) => userId.value = id;
+  void setServiceId(String id) => serviceId.value = id;
+  void setDescription(String desc) => description.value = desc;
+  void setAmount(double amt) => amount.value = amt;
+  void setTiempoEstimado(Duration duration) => tiempoEstimado.value = duration;
+  void setSelectedTime(String time) => selectedTime.value = time;
 
   // Método para enviar la solicitud al servidor
-Future<void> sendRequest() async {
-  // Recupera el ID del usuario y el token desde el almacenamiento seguro
-  final userId = await storage.read(key: 'userId');
-  final token = await storage.read(key: 'token');
-
-  if (userId == null || token == null) {
-    Get.snackbar("Error", "Usuario no autenticado");
-    return;
-  }
-
-  // Asigna el ID del usuario a la solicitud
-  setUserId(userId);
-
-  // Verifica que la duración sea válida
-  if (requestData.value.tiempoEstimado.inHours <= 0) {
-    Get.snackbar("Error", "Selecciona una duración válida");
-    return;
-  }
-
-  // Verifica que los campos obligatorios no estén vacíos
-  if (requestData.value.userId.isEmpty ||
-      requestData.value.serviceId.isEmpty) {
-    Get.snackbar("Error", "Todos los campos son obligatorios");
-    return;
-  }
-
-  // Añade el token en el cuerpo de la solicitud
-  final jsonData = jsonEncode({
-    ...requestData.value.toJson(), // Datos actuales de la solicitud
-    "token": token, // Se agrega el token al JSON
-  });
-
-  print("JSON enviado: $jsonData"); // Para depuración
-
-  try {
-    final response = await http.post(
-      Uri.parse('https://keidot.azurewebsites.net/api/ServiceRequest/create'),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: jsonData,
-    );
-
-    if (response.statusCode == 200) {
-      print("Solicitud enviada con éxito");
-      Get.snackbar("Éxito", "La solicitud se envió correctamente");
-    } else {
-      print("Error al enviar la solicitud: ${response.statusCode}");
-      print("Respuesta del servidor: ${response.body}");
-      Get.snackbar("Error", "No se pudo enviar la solicitud: ${response.body}");
+  Future<void> sendRequest() async {
+    final token = await storage.read(key: 'token');
+    if (userId.value.isEmpty || serviceId.value.isEmpty || token == null) {
+      Get.snackbar("Error", "Todos los campos son obligatorios");
+      return;
     }
-  } catch (e) {
-    print("Excepción al enviar la solicitud: $e");
-    Get.snackbar("Error", "Error de conexión: $e");
-  }
-}
 
+    final requestData = {
+      "userId": userId.value,
+      "serviceId": serviceId.value,
+      "description": description.value,
+      "amount": amount.value,
+      "tiempoEstimado": tiempoEstimado.value.inMinutes, // Convertir a minutos
+      "selectedTime": selectedTime.value,
+      "token": token
+    };
+
+    try {
+      final response = await http.post(
+        Uri.parse('https://keidot.azurewebsites.net/api/ServiceRequest/create'),
+        headers: {"Content-Type": "application/json"},
+        body: jsonEncode(requestData),
+      );
+
+      if (response.statusCode == 200) {
+        Get.snackbar("Éxito", "Solicitud enviada correctamente");
+      } else {
+        Get.snackbar("Error", "No se pudo enviar: ${response.body}");
+      }
+    } catch (e) {
+      Get.snackbar("Error", "Error de conexión: $e");
+    }
+  }
 }

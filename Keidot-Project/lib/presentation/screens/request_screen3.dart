@@ -149,7 +149,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
                 ElevatedButton(
                   onPressed: () {
                     // Valida que se haya seleccionado una fecha y hora
-                    if (controller.requestData.value.selectedTime.isEmpty) {
+                    if (controller.selectedTime.value.isEmpty) {
                       Get.snackbar("Error", "Selecciona una fecha y hora");
                       return;
                     }

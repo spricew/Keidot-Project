@@ -95,7 +95,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                 children: [
                   Obx(() => RadioListTile<int>(
                         value: 1,
-                        groupValue: controller.requestData.value.tiempoEstimado.inMinutes == 30 ? 1 : 0,
+                        groupValue: controller.tiempoEstimado.value.inMinutes == 30 ? 1 : 0,
                         onChanged: (value) {
                           controller.setTiempoEstimado(const Duration(minutes: 30));
                         },
@@ -103,7 +103,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                       )),
                   Obx(() => RadioListTile<int>(
                         value: 2,
-                        groupValue: controller.requestData.value.tiempoEstimado.inMinutes == 90 ? 2 : 0,
+                        groupValue: controller.tiempoEstimado.value.inMinutes == 90 ? 2 : 0,
                         onChanged: (value) {
                           controller.setTiempoEstimado(const Duration(minutes: 90));
                         },
@@ -111,7 +111,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                       )),
                   Obx(() => RadioListTile<int>(
                         value: 3,
-                        groupValue: controller.requestData.value.tiempoEstimado.inMinutes == 150 ? 3 : 0,
+                        groupValue: controller.tiempoEstimado.value.inMinutes == 150 ? 3 : 0,
                         onChanged: (value) {
                           controller.setTiempoEstimado(const Duration(minutes: 150));
                         },
@@ -132,7 +132,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    if (controller.requestData.value.tiempoEstimado.inMinutes <= 0) {
+                    if (controller.tiempoEstimado.value.inMinutes <= 0) {
                       Get.snackbar("Error", "Selecciona una duración válida");
                       return;
                     }
