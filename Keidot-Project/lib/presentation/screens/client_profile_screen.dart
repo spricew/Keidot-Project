@@ -32,49 +32,46 @@ class ClientProfileScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: defaultWhite,
       ),
-      body: Column(
-        children: [
-          // Perfil del cliente
-          Container(
-            width: double.infinity,
-            decoration: const BoxDecoration(color: greenHigh),
-            padding: const EdgeInsets.all(12.0),
-            child: const Row(
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
               children: [
-                CircleAvatar(
-                  radius: 40,
-                  backgroundColor: Colors.white,
-                  child: Icon(Icons.person, size: 50, color: Colors.black87),
+                Container(
+                  width: double.infinity,
+                  decoration: const BoxDecoration(color: greenContrast),
+                  padding: const EdgeInsets.all(12.0),
+                  child: const Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 40,
+                        backgroundColor: Colors.white,
+                        child: Icon(Icons.person, size: 50, color: darkGreen),
+                      ),
+                      SizedBox(width: 12),
+                      Text(
+                        'Heyder Momichis',
+                        style: TextStyle(
+                            color: defaultWhite,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 22),
+                      ),
+                    ],
+                  ),
                 ),
-                SizedBox(width: 12),
-                Text(
-                  'Heyder Momichis',
-                  style: TextStyle(
-                      color: defaultWhite,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 22),
+                const SizedBox(height: 24),
+                const Text(
+                  'Historial de servicios',
+                  style: TextStyle(fontSize: 20, color: darkGreen),
                 ),
+                const SizedBox(height: 20),
               ],
             ),
           ),
-
-          const SizedBox(height: 24),
-
-          // Título de la sección de comentarios
-          const Text(
-            'Historial de servicios',
-            style: TextStyle(fontSize: 20, color: darkGreen),
-          ),
-
-          const SizedBox(height: 16),
-
-          // Lista de comentarios
-          Expanded(
-            child: ListView.builder(
-              itemCount: reviews.length, // Número dinámico de reseñas
-              itemBuilder: (context, index) {
-                return _buildReviewCard(reviews[index]);
-              },
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => _buildReviewCard(reviews[index]),
+              childCount: reviews.length,
             ),
           ),
         ],
@@ -84,11 +81,16 @@ class ClientProfileScreen extends StatelessWidget {
 
   Widget _buildReviewCard(Map<String, dynamic> review) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: lightgreen,
-        borderRadius: BorderRadius.circular(10),
+      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 21),
+      decoration: const BoxDecoration(
+        color: defaultWhite,
+        border: Border(
+          top: BorderSide(
+            width: 1,
+            color:
+                Color.fromARGB(255, 201, 201, 201), // Color del borde superior
+          ),
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,7 +100,7 @@ class ClientProfileScreen extends StatelessWidget {
               const CircleAvatar(
                 radius: 20,
                 backgroundColor: Colors.white,
-                child: Icon(Icons.person, size: 25, color: Colors.black87),
+                child: Icon(Icons.person, size: 25, color: darkGreen),
               ),
               const SizedBox(width: 8),
               Column(
@@ -116,7 +118,7 @@ class ClientProfileScreen extends StatelessWidget {
                     5,
                     (i) => Icon(
                           i < review["rating"] ? Icons.star : Icons.star_border,
-                          color: Colors.black87,
+                          color: darkGreen,
                           size: 16,
                         )),
               ),
