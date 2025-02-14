@@ -20,9 +20,9 @@ class NewWorkerScreen extends StatelessWidget {
           style: TextStyle(
             color: Color(0xFF3BA670),
             fontWeight: FontWeight.bold,
-            fontSize: 18,
+            fontSize: 25,
           ),
-        ),
+        ),    
       ),
       body: const SingleChildScrollView(
         padding: EdgeInsets.all(20.0),
@@ -103,13 +103,6 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
             keyboardType: TextInputType.number,
             onChanged: (value) => experienceYears = int.tryParse(value) ?? 0,
             validator: (value) => (value == null || int.tryParse(value) == null) ? 'Ingresa un número válido' : null,
-          ),
-          const SizedBox(height: 16),
-          _buildTextField(
-            label: 'Habilidades',
-            maxLines: 3,
-            onChanged: (value) => skills = value,
-            validator: (value) => value == null || value.isEmpty ? 'Describe tus habilidades' : null,
           ),
           const SizedBox(height: 16),
           _buildTextField(
