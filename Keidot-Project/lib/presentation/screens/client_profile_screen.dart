@@ -37,16 +37,16 @@ class ClientProfileScreen extends StatelessWidget {
           // Perfil del cliente
           Container(
             width: double.infinity,
-            decoration: BoxDecoration(color: greenHigh),
+            decoration: const BoxDecoration(color: greenHigh),
             padding: const EdgeInsets.all(12.0),
-            child: Row(
+            child: const Row(
               children: [
-                const CircleAvatar(
+                CircleAvatar(
                   radius: 40,
                   backgroundColor: Colors.white,
                   child: Icon(Icons.person, size: 50, color: Colors.black87),
                 ),
-                const SizedBox(width: 12),
+                SizedBox(width: 12),
                 Text(
                   'Heyder Momichis',
                   style: TextStyle(
@@ -61,7 +61,7 @@ class ClientProfileScreen extends StatelessWidget {
           const SizedBox(height: 24),
 
           // Título de la sección de comentarios
-          Text(
+          const Text(
             'Historial de servicios',
             style: TextStyle(fontSize: 20, color: darkGreen),
           ),
@@ -125,8 +125,8 @@ class ClientProfileScreen extends StatelessWidget {
           const SizedBox(height: 8),
           Text(review["comment"], style: const TextStyle(fontSize: 14)),
           const SizedBox(height: 8),
-          Row(
-            children: const [
+          const Row(
+            children: [
               Icon(Icons.more, size: 16),
               SizedBox(width: 4),
               Text("Ver detalles"),

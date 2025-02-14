@@ -8,7 +8,7 @@ class RequestsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: 'Solicitudes',
         backgroundColor: Colors.white, // Ajustado al fondo oscuro de la imagen
       ),
@@ -43,10 +43,10 @@ class RequestsScreen extends StatelessWidget {
             child: const Icon(Icons.work, size: 30, color: darkGreen),
           ),
           const SizedBox(width: 12),
-          Expanded(
+          const Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
                   'Calle 54 x 67 y 69',
                   style: TextStyle(

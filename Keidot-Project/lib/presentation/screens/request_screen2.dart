@@ -14,10 +14,10 @@ class RequestScreen2 extends StatefulWidget {
 
 class _RequestScreen2State extends State<RequestScreen2> {
   final MapController _mapController = MapController();
-  final LatLng initialLocation = LatLng(20.9671, -89.6237); // Coordenadas de Mérida
+  const LatLng initialLocation = LatLng(20.9671, -89.6237); // Coordenadas de Mérida
   final LocationController locationController = Get.find<LocationController>();
 
-  LatLng selectedLocation = LatLng(20.9671, -89.6237); // Ubicación inicial
+  LatLng selectedLocation = const LatLng(20.9671, -89.6237); // Ubicación inicial
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,7 @@ class _RequestScreen2State extends State<RequestScreen2> {
               children: [
                 TileLayer(
                   urlTemplate: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-                  subdomains: ['a', 'b', 'c'],
+                  subdomains: const ['a', 'b', 'c'],
                 ),
                 MarkerLayer(
                   markers: [
@@ -108,7 +108,7 @@ class _RequestScreen2State extends State<RequestScreen2> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => RequestScreen3(),
+                        builder: (context) => const RequestScreen3(),
                       ),
                     );
                   },

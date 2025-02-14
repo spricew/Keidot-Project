@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:test_app/presentation/screens/home_screen.dart';
 
 class SuccessfulNameScreen extends StatelessWidget {
+  const SuccessfulNameScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +72,7 @@ class SuccessfulNameScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   Get.off(
-                      () => HomeScreen()); // Redirige a la pantalla de inicio
+                      () => const HomeScreen()); // Redirige a la pantalla de inicio
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF12372A), // Color verde

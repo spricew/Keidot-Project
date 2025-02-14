@@ -100,7 +100,7 @@ class _SearchScreenState extends State<SearchScreen> {
               controller: searchController,
               decoration: InputDecoration(
                 hintText: "Buscar servicio...",
-                prefixIcon: Icon(Icons.search, color: darkGreen),
+                prefixIcon: const Icon(Icons.search, color: darkGreen),
                 border:
                     OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
               ),

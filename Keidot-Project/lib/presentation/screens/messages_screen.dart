@@ -8,7 +8,7 @@ class MessagesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: 'Mensajes',
         titleFontSize: 28,
         toolbarHeight: 85,
