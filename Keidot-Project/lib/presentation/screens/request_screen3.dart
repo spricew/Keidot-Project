@@ -4,16 +4,19 @@ import 'package:test_app/Services/transaction/service_transaction_controller.dar
 import 'metodo_pago_screen.dart'; // Importa la pantalla de Método de Pago
 
 class RequestScreen3 extends StatefulWidget {
-  const RequestScreen3({super.key});
+  final String serviceName;
+  const RequestScreen3({super.key,required this.serviceName});
 
   @override
   _RequestScreen3State createState() => _RequestScreen3State();
 }
 
 class _RequestScreen3State extends State<RequestScreen3> {
-  final ServiceTransactionController controller = Get.find(); // Obtén el controlador
+  final ServiceTransactionController controller =
+      Get.find(); // Obtén el controlador
   String? _selectedDate; // Para almacenar la fecha seleccionada
-  final TextEditingController _descriptionController = TextEditingController(); // Controlador para el campo de descripción
+  final TextEditingController _descriptionController =
+      TextEditingController(); // Controlador para el campo de descripción
 
   // Método para mostrar el selector de fecha y hora con validaciones
   Future<void> _selectDateTime(BuildContext context) async {
@@ -46,11 +49,13 @@ class _RequestScreen3State extends State<RequestScreen3> {
         );
 
         setState(() {
-          _selectedDate = "${selectedDateTime.toLocal()}".split(' ')[0]; // Guarda la fecha seleccionada
+          _selectedDate = "${selectedDateTime.toLocal()}"
+              .split(' ')[0]; // Guarda la fecha seleccionada
         });
 
         // Guarda la hora en el formato correcto (HH:mm)
-        final formattedTime = "${pickedTime.hour.toString().padLeft(2, '0')}:${pickedTime.minute.toString().padLeft(2, '0')}";
+        final formattedTime =
+            "${pickedTime.hour.toString().padLeft(2, '0')}:${pickedTime.minute.toString().padLeft(2, '0')}";
         controller.setSelectedTime(formattedTime);
       }
     }
@@ -128,7 +133,8 @@ class _RequestScreen3State extends State<RequestScreen3> {
                 ),
               ),
               onChanged: (value) {
-                controller.setDescription(value); // Guarda la descripción en el controlador
+                controller.setDescription(
+                    value); // Guarda la descripción en el controlador
               },
             ),
             const Spacer(),
@@ -158,7 +164,9 @@ class _RequestScreen3State extends State<RequestScreen3> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const MetodoPagoScreen(),
+                        builder: (context) => MetodoPagoScreen(
+                          serviceName: widget.serviceName,
+                        ),
                       ),
                     );
                   },
@@ -196,7 +204,8 @@ class _RequestScreen3State extends State<RequestScreen3> {
           _selectDateTime(context); // Abre el selector de fecha y hora
         }
       },
-      selectedColor: const Color(0xFF12372A), // Color verde cuando está seleccionado
+      selectedColor:
+          const Color(0xFF12372A), // Color verde cuando está seleccionado
       labelStyle: TextStyle(
         color: _selectedDate == date ? Colors.white : Colors.black,
       ),

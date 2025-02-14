@@ -16,6 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final AuthService authService = AuthService();
+  bool obscurePassword = true; // Controla la visibilidad de la contraseña
 
   @override
   void dispose() {
@@ -94,9 +95,15 @@ class _LoginPageState extends State<LoginPage> {
                     CustomInput(
                       labelText: 'Contraseña',
                       prefixIcon: Icons.lock,
-                      obscureText: true,
-                      suffixIcon: Icons.visibility_off,
+                      obscureText: obscurePassword,
+                      suffixIcon:
+                          obscurePassword ? Icons.visibility_off : Icons.visibility,
                       controller: passwordController,
+                      onSuffixIconTap: () {
+                        setState(() {
+                          obscurePassword = !obscurePassword;
+                        });
+                      },
                     ),
                     const SizedBox(height: 8),
                     Align(

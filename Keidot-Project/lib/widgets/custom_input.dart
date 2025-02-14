@@ -7,6 +7,7 @@ class CustomInput extends StatelessWidget {
   final IconData? suffixIcon; // Ícono de la derecha opcional
   final TextInputType keyboardType; // Tipo de teclado
   final TextEditingController? controller; // Controlador opcional
+  final VoidCallback? onSuffixIconTap; // Callback opcional para el tap en el ícono de la derecha
 
   const CustomInput({
     super.key,
@@ -16,6 +17,7 @@ class CustomInput extends StatelessWidget {
     this.suffixIcon,
     this.keyboardType = TextInputType.text,
     this.controller,
+    this.onSuffixIconTap,
   });
 
   @override
@@ -35,10 +37,15 @@ class CustomInput extends StatelessWidget {
           padding: const EdgeInsets.only(left: 20, right: 10),
           child: Icon(prefixIcon, size: 22),
         ),
-        suffixIcon: Padding(
-          padding: const EdgeInsets.only(right: 10),
-          child: suffixIcon != null ? Icon(suffixIcon) : null,
-        ), // Muestra el ícono solo si se proporciona
+        suffixIcon: suffixIcon != null
+            ? Padding(
+                padding: const EdgeInsets.only(right: 10),
+                child: IconButton(
+                  icon: Icon(suffixIcon),
+                  onPressed: onSuffixIconTap, // Ahora reacciona al tap
+                ),
+              )
+            : null,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),
         ),

@@ -6,7 +6,9 @@ import 'package:test_app/Services/location_request/location_service_controller.d
 import 'request_screen3.dart';
 
 class RequestScreen2 extends StatefulWidget {
-  const RequestScreen2({super.key, required String serviceId, required String serviceName});
+  final String serviceName;
+  const RequestScreen2(
+      {super.key, required String serviceId, required this.serviceName});
 
   @override
   _RequestScreen2State createState() => _RequestScreen2State();
@@ -14,10 +16,12 @@ class RequestScreen2 extends StatefulWidget {
 
 class _RequestScreen2State extends State<RequestScreen2> {
   final MapController _mapController = MapController();
-  static const LatLng initialLocation = LatLng(20.9671, -89.6237); // Coordenadas de Mérida
+  static const LatLng initialLocation =
+      LatLng(20.9671, -89.6237); // Coordenadas de Mérida
   final LocationController locationController = Get.find<LocationController>();
 
-  LatLng selectedLocation = const LatLng(20.9671, -89.6237); // Ubicación inicial
+  LatLng selectedLocation =
+      const LatLng(20.9671, -89.6237); // Ubicación inicial
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +30,8 @@ class _RequestScreen2State extends State<RequestScreen2> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Color.fromARGB(255, 0, 0, 0)),
+          icon:
+              const Icon(Icons.arrow_back, color: Color.fromARGB(255, 0, 0, 0)),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -39,7 +44,8 @@ class _RequestScreen2State extends State<RequestScreen2> {
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(60),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Buscar ubicación cercana',
@@ -71,7 +77,8 @@ class _RequestScreen2State extends State<RequestScreen2> {
               ),
               children: [
                 TileLayer(
-                  urlTemplate: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                  urlTemplate:
+                      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                   subdomains: const ['a', 'b', 'c'],
                 ),
                 MarkerLayer(
@@ -80,7 +87,8 @@ class _RequestScreen2State extends State<RequestScreen2> {
                       point: selectedLocation,
                       width: 80,
                       height: 80,
-                      child: const Icon(Icons.location_on, color: Colors.red, size: 40),
+                      child: const Icon(Icons.location_on,
+                          color: Colors.red, size: 40),
                     ),
                   ],
                 ),
@@ -96,19 +104,23 @@ class _RequestScreen2State extends State<RequestScreen2> {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: const Text('Cancelar', style: TextStyle(color: Colors.red)),
+                  child: const Text('Cancelar',
+                      style: TextStyle(color: Colors.red)),
                 ),
                 const SizedBox(width: 20),
                 ElevatedButton(
                   onPressed: () {
                     // Guardar la ubicación en el controlador
-                    locationController.setLocation(selectedLocation.latitude, selectedLocation.longitude);
+                    locationController.setLocation(
+                        selectedLocation.latitude, selectedLocation.longitude);
 
                     // Ir a la siguiente pantalla
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const RequestScreen3(),
+                        builder: (context) => RequestScreen3(
+                          serviceName: widget.serviceName,
+                        ),
                       ),
                     );
                   },
@@ -118,7 +130,8 @@ class _RequestScreen2State extends State<RequestScreen2> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
-                  child: const Text('Elegir ubicación', style: TextStyle(color: Colors.white)),
+                  child: const Text('Elegir ubicación',
+                      style: TextStyle(color: Colors.white)),
                 ),
               ],
             ),

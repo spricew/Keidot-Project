@@ -3,12 +3,15 @@ import 'package:get/get.dart';
 import 'package:test_app/Services/location_request/location_service_controller.dart';
 import 'package:test_app/Services/transaction/service_transaction_controller.dart';
 import 'solicitud_exitosa_screen.dart'; // Asegúrate de importar la pantalla de solicitud exitosa
+import 'package:intl/intl.dart';
+
 
 class TransferenciaEsperaScreen extends StatelessWidget {
   final ServiceTransactionController controller = Get.find();
   final LocationController controller_location = Get.find();
+  final String serviceName; // Recibe el nombre del servicio seleccionado
 
-  TransferenciaEsperaScreen({super.key}); // Obtén el controlador
+  TransferenciaEsperaScreen({super.key, required this.serviceName}); // Obtén el controlador
 
   @override
   Widget build(BuildContext context) {
@@ -56,16 +59,16 @@ class TransferenciaEsperaScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              const Text(
-                '9:41',
-                style: TextStyle(
+                Text(
+                  DateFormat('HH:mm').format(DateTime.now()), // Muestra la hora actual en formato 24h
+                  style: const TextStyle(
                   fontSize: 16,
                   color: Colors.grey,
                 ),
-              ),
+                ),
               const SizedBox(height: 20),
-              const Text(
-                'Jardineria',
+              Text(
+                serviceName,
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
