@@ -31,6 +31,7 @@ class _LoginPageState extends State<LoginPage> {
     final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           Positioned.fill(
