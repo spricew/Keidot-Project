@@ -14,7 +14,7 @@ class RequestScreen2 extends StatefulWidget {
 
 class _RequestScreen2State extends State<RequestScreen2> {
   final MapController _mapController = MapController();
-  const LatLng initialLocation = LatLng(20.9671, -89.6237); // Coordenadas de Mérida
+  static const LatLng initialLocation = LatLng(20.9671, -89.6237); // Coordenadas de Mérida
   final LocationController locationController = Get.find<LocationController>();
 
   LatLng selectedLocation = const LatLng(20.9671, -89.6237); // Ubicación inicial
