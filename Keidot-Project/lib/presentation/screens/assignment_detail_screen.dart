@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+import 'package:test_app/Services/models/assignment_model.dart';
+import 'package:test_app/config/theme/app_theme.dart';
+
+class AssignmentDetailScreen extends StatelessWidget {
+  final AssignmentDTO assignment;
+
+  const AssignmentDetailScreen({super.key, required this.assignment});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Detalles de la Solicitud'),
+        backgroundColor: Colors.white,
+        elevation: 0,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              assignment.nameOfService,
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: darkGreen),
+            ),
+            const SizedBox(height: 10),
+            Text("Fecha asignada: ${assignment.dateOfAssigned.toLocal()}"),
+            const SizedBox(height: 5),
+            Text("Hora seleccionada: ${assignment.timeSelected}"),
+            const SizedBox(height: 5),
+            Text("Tiempo estimado: ${assignment.estimatedTime.inHours} horas"),
+            const SizedBox(height: 5),
+            Text("Monto: MXN \$${assignment.amount.toStringAsFixed(2)}", style: const TextStyle(color: greenContrast, fontSize: 16)),
+            const SizedBox(height: 15),
+            const Text(
+              'Descripción:',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 5),
+            Text(assignment.description, style: const TextStyle(fontSize: 16)),
+            const Spacer(),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  // Implementar la lógica de cancelación
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.grey[800],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                ),
+                icon: const Icon(Icons.cancel, color: Colors.red, size: 20),
+                label: const Text(
+                  'Cancelar Solicitud',
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

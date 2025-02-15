@@ -69,7 +69,7 @@ class TransferenciaEsperaScreen extends StatelessWidget {
               const SizedBox(height: 20),
               Text(
                 serviceName,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),

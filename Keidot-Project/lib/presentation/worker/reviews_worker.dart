@@ -62,14 +62,14 @@ class ReviewsWorkerScreen extends StatelessWidget {
                 bottomRight: Radius.circular(20),
               ),
             ),
-            child: Column(
+            child: const Column(
               children: [
                 CircleAvatar(
                   radius: 40,
                   backgroundImage: AssetImage('assets/profile_image.png'),
                 ),
-                const SizedBox(height: 12),
-                const Text(
+                SizedBox(height: 12),
+                Text(
                   'Delmy Arellano',
                   style: TextStyle(
                     color: Colors.white,
@@ -77,8 +77,8 @@ class ReviewsWorkerScreen extends StatelessWidget {
                     fontSize: 22,
                   ),
                 ),
-                const SizedBox(height: 8),
-                const Text(
+                SizedBox(height: 8),
+                Text(
                   'uwu',
                   style: TextStyle(
                     color: Colors.white,
@@ -125,7 +125,7 @@ class ReviewsWorkerScreen extends StatelessWidget {
             const SizedBox(height: 8),
             Row(
               children: [
-                Icon(Icons.star, color: Colors.amber, size: 16),
+                const Icon(Icons.star, color: Colors.amber, size: 16),
                 const SizedBox(width: 4),
                 Text(
                   "${review["rating"]} / 5",
@@ -155,8 +155,8 @@ class ReviewsWorkerScreen extends StatelessWidget {
               );
             }).toList(),
             const SizedBox(height: 12),
-            Row(
-              children: const [
+            const Row(
+              children: [
                 Icon(Icons.search, size: 16, color: Colors.grey),
                 SizedBox(width: 8),
                 Text(

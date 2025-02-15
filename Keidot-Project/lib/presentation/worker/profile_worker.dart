@@ -54,16 +54,16 @@ class WorkerProfileScreen extends StatelessWidget {
           // Perfil del trabajador
           Container(
             width: double.infinity,
-            decoration: BoxDecoration(color: greenHigh),
+            decoration: const BoxDecoration(color: greenHigh),
             padding: const EdgeInsets.all(12.0),
-            child: Center( // Centrar el contenido del Container
+            child: const Center( // Centrar el contenido del Container
               child: Column(
                 children: [
                   CircleAvatar(
                     radius: 40,
                     backgroundImage: AssetImage('assets/profile_image.png'), // Cambia esto por la ruta de tu imagen
                   ),
-                  const SizedBox(height: 12),
+                  SizedBox(height: 12),
                   Text(
                     'Delmy',
                     style: TextStyle(
@@ -78,9 +78,9 @@ class WorkerProfileScreen extends StatelessWidget {
 
           const SizedBox(height: 24),
 
-          Container(
+          SizedBox(
             width: double.infinity,
-            child: Text(
+            child: const Text(
               'Publicaciones sobre los trabajos de Delmy',
               textAlign: TextAlign.center, // Centrar el texto
               style: TextStyle(fontSize: 20, color: darkGreen),
@@ -137,8 +137,8 @@ class WorkerProfileScreen extends StatelessWidget {
           Text(publication["comment"], style: const TextStyle(fontSize: 14)),
           const SizedBox(height: 8),
           // Espacio reservado para futura implementación
-          Row(
-            children: const [
+          const Row(
+            children: [
               Icon(Icons.more, size: 16),
               SizedBox(width: 4),
               Text("Ver detalles"),
