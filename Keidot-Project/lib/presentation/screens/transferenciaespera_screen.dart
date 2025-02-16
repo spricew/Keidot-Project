@@ -11,7 +11,7 @@ class TransferenciaEsperaScreen extends StatelessWidget {
   final LocationController controller_location = Get.find();
   final String serviceName; // Recibe el nombre del servicio seleccionado
 
-  TransferenciaEsperaScreen({super.key, required this.serviceName}); // Obtén el controlador
+  TransferenciaEsperaScreen({super.key, required this.serviceName, required String serviceId}); // Obtén el controlador
 
   @override
   Widget build(BuildContext context) {

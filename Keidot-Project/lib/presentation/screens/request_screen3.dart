@@ -5,7 +5,9 @@ import 'metodo_pago_screen.dart'; // Importa la pantalla de Método de Pago
 
 class RequestScreen3 extends StatefulWidget {
   final String serviceName;
-  const RequestScreen3({super.key,required this.serviceName});
+  final String serviceId;
+  const RequestScreen3(
+      {super.key, required this.serviceName, required this.serviceId});
 
   @override
   _RequestScreen3State createState() => _RequestScreen3State();
@@ -166,6 +168,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
                       MaterialPageRoute(
                         builder: (context) => MetodoPagoScreen(
                           serviceName: widget.serviceName,
+                          serviceId: widget.serviceId,
                         ),
                       ),
                     );

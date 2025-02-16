@@ -50,8 +50,9 @@ class ServiceTransactionController extends GetxController {
       "tiempoEstimado": tiempoEstimado.value.inMinutes, // Convertir a minutos
       "selectedTime": selectedTime.value,
     };
-
+    
     try {
+      print("Enviando solicitud: ${jsonEncode(requestData)}");
       final response = await http.post(
         Uri.parse('https://keidot.azurewebsites.net/api/ServiceRequest/create'),
         headers: {
@@ -60,6 +61,7 @@ class ServiceTransactionController extends GetxController {
         },
         body: jsonEncode(requestData),
       );
+
 
       if (response.statusCode == 200) {
         print("Solicitud enviada con éxito");

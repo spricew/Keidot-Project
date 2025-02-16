@@ -4,7 +4,8 @@ import 'package:test_app/presentation/screens/transferenciaespera_screen.dart'; 
 
 class AnadirMetodoPagoScreen extends StatelessWidget {
   final String serviceName;
-  const AnadirMetodoPagoScreen({super.key, required this.serviceName});
+  final String serviceId;
+  const AnadirMetodoPagoScreen({super.key, required this.serviceName, required this.serviceId});
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +141,10 @@ class AnadirMetodoPagoScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => TransferenciaEsperaScreen(serviceName: '',)),
+                          builder: (context) => TransferenciaEsperaScreen(
+                                serviceName: serviceName,
+                                serviceId: serviceId,
+                              )),
                     );
                   },
                   style: ElevatedButton.styleFrom(

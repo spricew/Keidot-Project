@@ -7,8 +7,9 @@ import 'request_screen3.dart';
 
 class RequestScreen2 extends StatefulWidget {
   final String serviceName;
+  final String serviceId;
   const RequestScreen2(
-      {super.key, required String serviceId, required this.serviceName});
+      {super.key, required this.serviceId, required this.serviceName});
 
   @override
   _RequestScreen2State createState() => _RequestScreen2State();
@@ -120,6 +121,7 @@ class _RequestScreen2State extends State<RequestScreen2> {
                       MaterialPageRoute(
                         builder: (context) => RequestScreen3(
                           serviceName: widget.serviceName,
+                          serviceId: widget.serviceId,
                         ),
                       ),
                     );
