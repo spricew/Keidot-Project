@@ -13,7 +13,7 @@ class RequestScreen1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DetallesServicioPage();
+    return const DetallesServicioPage();
   }
 }
 
@@ -129,7 +129,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                     }
 
                     // Ahora pasamos también el serviceId y serviceName a la siguiente pantalla
-                    Get.to(() => RequestScreen2());
+                    Get.to(() => const RequestScreen2());
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF12372A),

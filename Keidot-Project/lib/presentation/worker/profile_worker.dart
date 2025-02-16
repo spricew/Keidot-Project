@@ -78,9 +78,9 @@ class WorkerProfileScreen extends StatelessWidget {
 
           const SizedBox(height: 24),
 
-          SizedBox(
+          const SizedBox(
             width: double.infinity,
-            child: const Text(
+            child: Text(
               'Publicaciones sobre los trabajos de Delmy',
               textAlign: TextAlign.center, // Centrar el texto
               style: TextStyle(fontSize: 20, color: darkGreen),

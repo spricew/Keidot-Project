@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
-import 'package:test_app/presentation/screens/home_screen.dart';
 
 class SolicitudExitosaScreen extends StatelessWidget {
   const SolicitudExitosaScreen({super.key});
