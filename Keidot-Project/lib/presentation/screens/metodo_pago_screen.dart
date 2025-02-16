@@ -3,10 +3,8 @@ import 'package:get/get.dart';
 import 'package:test_app/presentation/screens/transferenciaespera_screen.dart';
 
 class MetodoPagoScreen extends StatelessWidget {
-  final String serviceName;
-  final String serviceId;
 
-  const MetodoPagoScreen({super.key, required this.serviceName, required this.serviceId});
+  const MetodoPagoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +15,7 @@ class MetodoPagoScreen extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: ElevatedButton(
             onPressed: () {
-              Get.to(() => TransferenciaEsperaScreen(
-                    serviceName: serviceName,
-                    serviceId: serviceId,
-                  ));
+              Get.to(() => TransferenciaEsperaScreen());
             },
             child: const Text("Confirmar"),
           ),

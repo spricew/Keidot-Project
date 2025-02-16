@@ -70,11 +70,11 @@ class _SearchScreenState extends State<SearchScreen> {
     }
   }
 
-  void selectService(String serviceId, String serviceName) {
-    final serviceController = Get.find<ServiceTransactionController>();
-    serviceController.setServiceId(serviceId); // Guarda el ID en el controlador
-    Get.to(() => RequestScreen1(serviceId: serviceId, serviceName: serviceName));
-  }
+void selectService(String serviceId, String serviceName) {
+  final serviceController = Get.find<ServiceTransactionController>();
+  serviceController.setService(serviceId, serviceName); // Guarda ambos valores
+  Get.to(() =>const RequestScreen1());
+}
 
   @override
   Widget build(BuildContext context) {
@@ -127,7 +127,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           itemCount: services.length,
                           itemBuilder: (context, index) {
                             final service = services[index];
-                            final serviceId = service['id'].toString(); // Asegurar que sea String
+                            final serviceId = service['service_id'].toString(); // Asegurar que sea String
                             final serviceName = service['title'] ?? "Sin título";
 
                             return Card(
@@ -140,6 +140,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                   style: const TextStyle(
                                       fontWeight: FontWeight.bold),
                                 ),
+                                
                                 onTap: () => selectService(serviceId, serviceName), // Enviar ID y Nombre
                               ),
                             );

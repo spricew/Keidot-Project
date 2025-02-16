@@ -9,9 +9,9 @@ import 'package:intl/intl.dart';
 class TransferenciaEsperaScreen extends StatelessWidget {
   final ServiceTransactionController controller = Get.find();
   final LocationController controller_location = Get.find();
-  final String serviceName; // Recibe el nombre del servicio seleccionado
 
-  TransferenciaEsperaScreen({super.key, required this.serviceName, required String serviceId}); // Obtén el controlador
+
+  TransferenciaEsperaScreen({super.key}); // Obtén el controlador
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +68,7 @@ class TransferenciaEsperaScreen extends StatelessWidget {
                 ),
               const SizedBox(height: 20),
               Text(
-                serviceName,
+                controller.serviceName.value,
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,

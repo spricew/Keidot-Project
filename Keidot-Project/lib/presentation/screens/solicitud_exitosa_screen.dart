@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/presentation/screens/home_screen.dart';
 
 class SolicitudExitosaScreen extends StatelessWidget {
@@ -68,7 +69,7 @@ class SolicitudExitosaScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // Regresa a la pantalla inicial o realiza otra acción
-                  Get.to(() => const HomeScreen());
+                  Get.to(() => const Homepage());
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF12372A), // Color verde

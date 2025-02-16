@@ -5,29 +5,21 @@ import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/presentation/screens/request_screen2.dart';
 
 class RequestScreen1 extends StatelessWidget {
-  final String serviceName;
-  final String serviceId;
+
 
   const RequestScreen1({
     super.key,
-    required this.serviceName,
-    required this.serviceId,
   });
 
   @override
   Widget build(BuildContext context) {
-    return DetallesServicioPage(serviceName: serviceName, serviceId: serviceId);
+    return DetallesServicioPage();
   }
 }
 
 class DetallesServicioPage extends StatefulWidget {
-  final String serviceName;
-  final String serviceId;
-
   const DetallesServicioPage({
     super.key,
-    required this.serviceName,
-    required this.serviceId,
   });
 
   @override
@@ -39,8 +31,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
 
   @override
   void initState() {
-    super.initState();
-    controller.setServiceId(widget.serviceId); // Guardar el serviceId
+    super.initState(); // Guardar el serviceId
   }
 
   @override
@@ -57,7 +48,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
         ),
         centerTitle: true,
         title: Text(
-          widget.serviceName, // Muestra el título del servicio en la barra superior
+          controller.serviceName(), // Muestra el título del servicio en la barra superior
           style: const TextStyle(color: Color(0xFF3BA670), fontSize: 18),
           maxLines: 1,
           overflow: TextOverflow.ellipsis, // Para evitar que se corte si es largo
@@ -95,7 +86,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                 children: [
                   Obx(() => RadioListTile<int>(
                         value: 1,
-                        groupValue: controller.tiempoEstimado.value.inMinutes == 30 ? 1 : 0,
+                        groupValue: controller.transaction.value.tiempoEstimado.inMinutes == 30 ? 1 : 0,
                         onChanged: (value) {
                           controller.setTiempoEstimado(const Duration(minutes: 30));
                         },
@@ -103,7 +94,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                       )),
                   Obx(() => RadioListTile<int>(
                         value: 2,
-                        groupValue: controller.tiempoEstimado.value.inMinutes == 90 ? 2 : 0,
+                        groupValue: controller.transaction.value.tiempoEstimado.inMinutes == 90 ? 2 : 0,
                         onChanged: (value) {
                           controller.setTiempoEstimado(const Duration(minutes: 90));
                         },
@@ -111,7 +102,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                       )),
                   Obx(() => RadioListTile<int>(
                         value: 3,
-                        groupValue: controller.tiempoEstimado.value.inMinutes == 150 ? 3 : 0,
+                        groupValue: controller.transaction.value.tiempoEstimado.inMinutes == 150 ? 3 : 0,
                         onChanged: (value) {
                           controller.setTiempoEstimado(const Duration(minutes: 150));
                         },
@@ -132,16 +123,13 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    if (controller.tiempoEstimado.value.inMinutes <= 0) {
+                    if (controller.transaction.value.tiempoEstimado.inMinutes <= 0) {
                       Get.snackbar("Error", "Selecciona una duración válida");
                       return;
                     }
 
                     // Ahora pasamos también el serviceId y serviceName a la siguiente pantalla
-                    Get.to(() => RequestScreen2(
-                          serviceId: widget.serviceId,
-                          serviceName: widget.serviceName,
-                        ));
+                    Get.to(() => RequestScreen2());
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF12372A),

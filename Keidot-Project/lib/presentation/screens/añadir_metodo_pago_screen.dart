@@ -3,9 +3,7 @@ import 'package:flutter/services.dart'; // Importa esto para usar TextInputForma
 import 'package:test_app/presentation/screens/transferenciaespera_screen.dart'; //Esto lo hizo luis
 
 class AnadirMetodoPagoScreen extends StatelessWidget {
-  final String serviceName;
-  final String serviceId;
-  const AnadirMetodoPagoScreen({super.key, required this.serviceName, required this.serviceId});
+  const AnadirMetodoPagoScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -141,10 +139,7 @@ class AnadirMetodoPagoScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => TransferenciaEsperaScreen(
-                                serviceName: serviceName,
-                                serviceId: serviceId,
-                              )),
+                          builder: (context) => TransferenciaEsperaScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

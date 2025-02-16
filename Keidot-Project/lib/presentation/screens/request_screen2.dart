@@ -6,10 +6,8 @@ import 'package:test_app/Services/location_request/location_service_controller.d
 import 'request_screen3.dart';
 
 class RequestScreen2 extends StatefulWidget {
-  final String serviceName;
-  final String serviceId;
   const RequestScreen2(
-      {super.key, required this.serviceId, required this.serviceName});
+      {super.key});
 
   @override
   _RequestScreen2State createState() => _RequestScreen2State();
@@ -119,10 +117,7 @@ class _RequestScreen2State extends State<RequestScreen2> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => RequestScreen3(
-                          serviceName: widget.serviceName,
-                          serviceId: widget.serviceId,
-                        ),
+                        builder: (context) => RequestScreen3(),
                       ),
                     );
                   },

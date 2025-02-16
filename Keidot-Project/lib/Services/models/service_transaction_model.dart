@@ -22,7 +22,7 @@ class ServiceTransactionModel {
       "serviceId": serviceId,
       "description": description,
       "amount": amount,
-      "tiempo_estimado": tiempoEstimado.inHours, // Convertir Duration a horas
+      "tiempo_estimado": tiempoEstimado.inMinutes.toDouble(), 
       "selected_time": selectedTime, // Formato HH:mm
     };
   }

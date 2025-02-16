@@ -4,10 +4,7 @@ import 'package:test_app/Services/transaction/service_transaction_controller.dar
 import 'metodo_pago_screen.dart'; // Importa la pantalla de Método de Pago
 
 class RequestScreen3 extends StatefulWidget {
-  final String serviceName;
-  final String serviceId;
-  const RequestScreen3(
-      {super.key, required this.serviceName, required this.serviceId});
+  const RequestScreen3({super.key});
 
   @override
   _RequestScreen3State createState() => _RequestScreen3State();
@@ -42,6 +39,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
           return;
         }
 
+        // Combinar fecha y hora seleccionadas
         final DateTime selectedDateTime = DateTime(
           pickedDate.year,
           pickedDate.month,
@@ -50,15 +48,17 @@ class _RequestScreen3State extends State<RequestScreen3> {
           pickedTime.minute,
         );
 
+        // Guardar fecha en formato "yyyy-MM-dd"
         setState(() {
-          _selectedDate = "${selectedDateTime.toLocal()}"
-              .split(' ')[0]; // Guarda la fecha seleccionada
+          _selectedDate = "${pickedDate.toLocal()}".split(' ')[0];
         });
 
-        // Guarda la hora en el formato correcto (HH:mm)
-        final formattedTime =
-            "${pickedTime.hour.toString().padLeft(2, '0')}:${pickedTime.minute.toString().padLeft(2, '0')}";
-        controller.setSelectedTime(formattedTime);
+        // Convertir a formato ISO 8601 (UTC)
+        final String formattedISOTime =
+            selectedDateTime.toUtc().toIso8601String();
+
+        // Guardar en el controlador
+        controller.setSelectedTime(formattedISOTime);
       }
     }
   }
@@ -157,7 +157,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
                 ElevatedButton(
                   onPressed: () {
                     // Valida que se haya seleccionado una fecha y hora
-                    if (controller.selectedTime.value.isEmpty) {
+                    if (controller.transaction.value.selectedTime.isEmpty) {
                       Get.snackbar("Error", "Selecciona una fecha y hora");
                       return;
                     }
@@ -166,10 +166,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MetodoPagoScreen(
-                          serviceName: widget.serviceName,
-                          serviceId: widget.serviceId,
-                        ),
+                        builder: (context) => MetodoPagoScreen(),
                       ),
                     );
                   },

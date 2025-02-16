@@ -24,7 +24,7 @@ class _HomepageState extends State<Homepage> {
     _screens = [
       const HomeScreen(),
       SearchScreen(onTabSelected: _onItemTapped), // Ahora sí podemos usarla
-      const RequestScreen1(serviceName: '', serviceId: ''),
+      const RequestScreen1(),
       const NotificationsScreen(),
       const MessagesScreen(),
     ];
