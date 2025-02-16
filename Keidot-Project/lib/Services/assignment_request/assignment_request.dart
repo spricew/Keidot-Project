@@ -64,20 +64,29 @@ class AssignmentController {
 
         return data.map((json) {
           var tiempoEstimadoRaw = json["tiempo_estimado"];
-
           int tiempoEnMinutos;
 
           if (tiempoEstimadoRaw is String) {
-            // Si viene en formato "HH:mm:ss"
-            List<String> partes = tiempoEstimadoRaw.split(':');
-            int horas = int.parse(partes[0]);
-            int minutos = int.parse(partes[1]);
-            tiempoEnMinutos = (horas * 60) + minutos;
+            try {
+              // Verificar que tiene el formato correcto
+              List<String> partes = tiempoEstimadoRaw.split(':');
+              if (partes.length >= 2) {
+                int horas = int.parse(partes[0]);
+                int minutos = int.parse(partes[1]);
+                tiempoEnMinutos = (horas * 60) + minutos;
+              } else {
+                throw FormatException("Formato incorrecto en tiempo_estimado");
+              }
+            } catch (e) {
+              print("⚠️ Error al parsear tiempo_estimado: $tiempoEstimadoRaw - $e");
+              tiempoEnMinutos = 0; // Valor por defecto en caso de error
+            }
           } else if (tiempoEstimadoRaw is int) {
             // Si ya viene como número, lo tomamos directamente
             tiempoEnMinutos = tiempoEstimadoRaw;
           } else {
             // Si no es ni String ni int, asumimos 0 minutos
+            print("⚠️ tiempo_estimado tiene un formato desconocido: $tiempoEstimadoRaw");
             tiempoEnMinutos = 0;
           }
 

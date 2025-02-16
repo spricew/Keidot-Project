@@ -37,7 +37,8 @@ class _RequestsScreenState extends State<RequestsScreen> {
             } else if (snapshot.hasError) {
               return Center(child: Text('Error: ${snapshot.error}'));
             } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              return const Center(child: Text('No hay solicitudes disponibles.'));
+              return const Center(
+                  child: Text('No hay solicitudes disponibles.'));
             }
             return ListView.builder(
               itemCount: snapshot.data!.length,
@@ -58,7 +59,8 @@ class _RequestsScreenState extends State<RequestsScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AssignmentDetailScreen(assignment: assignment),
+            builder: (context) =>
+                AssignmentDetailScreen(assignment: assignment),
           ),
         );
       },
@@ -87,7 +89,12 @@ class _RequestsScreenState extends State<RequestsScreen> {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    assignment.timeSelected,
+                    'Fecha: ${assignment.formattedDateSelected}', // Usa el método para mostrar la fecha
+                    style: const TextStyle(color: Colors.grey, fontSize: 14),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'Hora: ${assignment.formattedTimeSelected}', // Usa el método para mostrar la hora
                     style: const TextStyle(color: Colors.grey, fontSize: 14),
                   ),
                   const SizedBox(height: 4),
