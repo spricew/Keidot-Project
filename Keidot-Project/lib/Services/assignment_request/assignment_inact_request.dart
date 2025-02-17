@@ -3,9 +3,9 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:test_app/Services/models/assignment_model.dart';
 
-class AssignmentController {
+class AssignmentInactiveController {
   final String baseUrl =
-      "https://keidot.azurewebsites.net/api/AssignmentByUser/user";
+      "https://keidot.azurewebsites.net/api/AssignmentByUser/serviceInactive";
   final FlutterSecureStorage storage = const FlutterSecureStorage();
 
   /// Obtiene el ID del usuario autenticado desde el almacenamiento seguro
@@ -35,7 +35,7 @@ class AssignmentController {
       }
 
       final url = '$baseUrl/$userId';
-      print("🌍 URL de la solicitud: $url");
+      print("URL de la solicitud: $url");
 
       final response = await http.get(
         Uri.parse(url),
@@ -45,18 +45,18 @@ class AssignmentController {
         },
       );
 
-      print("📤 Enviando solicitud GET a: $url");
-      print("📝 Headers: ${response.request?.headers}");
+      print("Enviando solicitud GET a: $url");
+      print("Headers: ${response.request?.headers}");
 
       if (response.statusCode == 200) {
-        print("✅ Respuesta recibida correctamente.");
-        print("📦 Cuerpo de la respuesta: ${response.body}");
+        print("Respuesta recibida correctamente.");
+        print("Cuerpo de la respuesta: ${response.body}");
 
         List<dynamic> data = jsonDecode(response.body);
 
         // Si la lista está vacía
         if (data.isEmpty) {
-          print("⚠️ La respuesta no contiene asignaciones.");
+          print("La respuesta no contiene asignaciones.");
           return [];
         }
 
@@ -76,7 +76,7 @@ class AssignmentController {
                 throw FormatException("Formato incorrecto en tiempo_estimado");
               }
             } catch (e) {
-              print("⚠️ Error al parsear tiempo_estimado: $tiempoEstimadoRaw - $e");
+              print("Error al parsear tiempo_estimado: $tiempoEstimadoRaw - $e");
               tiempoEnMinutos = 0; // Valor por defecto en caso de error
             }
           } else if (tiempoEstimadoRaw is int) {
@@ -84,7 +84,7 @@ class AssignmentController {
             tiempoEnMinutos = tiempoEstimadoRaw;
           } else {
             // Si no es ni String ni int, asumimos 0 minutos
-            print("⚠️ tiempo_estimado tiene un formato desconocido: $tiempoEstimadoRaw");
+            print("tiempo_estimado tiene un formato desconocido: $tiempoEstimadoRaw");
             tiempoEnMinutos = 0;
           }
 
