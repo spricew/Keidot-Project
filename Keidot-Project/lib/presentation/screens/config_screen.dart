@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/new_worker.dart';
+// Importar aquí las pantallas cuando las crees
 
 class ConfigScreen extends StatelessWidget {
   const ConfigScreen({super.key});
@@ -108,32 +111,56 @@ class ConfigScreen extends StatelessWidget {
   }
 
   Widget _buildGridItem(String title, String value, IconData icon) {
-    return Container(
-      decoration: BoxDecoration(
-        color: grayContrast,
-        borderRadius: BorderRadius.circular(15),
-      ),
-      padding: const EdgeInsets.all(18),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(title,
-              style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: darkGreen,
-                  letterSpacing: -0.4)),
-          if (value.isNotEmpty)
-            Text(value,
+    return GestureDetector(
+      onTap: () {
+        switch (title) {
+          case "Comentarios":
+            // Get.to(() => CommentsScreen()); // Crear y redirigir a CommentsScreen
+            break;
+          case "Reseñas":
+            // Get.to(() => ReviewsScreen()); // Crear y redirigir a ReviewsScreen
+            break;
+          case "Cambiar nombre":
+            // Get.to(() => ChangeNameScreen()); // Crear y redirigir a ChangeNameScreen
+            break;
+          case "Cambiar contraseña":
+            // Get.to(() => ChangePasswordScreen()); // Crear y redirigir a ChangePasswordScreen
+            break;
+          case "Convertirse en trabajador":
+            Get.to(() => const NewWorkerScreen()); // Redirigir a la pantalla de trabajador
+            break;
+          case "Soporte":
+            // Get.to(() => SupportScreen()); // Crear y redirigir a SupportScreen
+            break;
+        }
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: grayContrast,
+          borderRadius: BorderRadius.circular(15),
+        ),
+        padding: const EdgeInsets.all(18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(title,
                 style: const TextStyle(
                     fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: greenContrast)),
-          Align(
-            alignment: Alignment.bottomRight,
-            child: Icon(icon, size: 22),
-          ),
-        ],
+                    fontWeight: FontWeight.w500,
+                    color: darkGreen,
+                    letterSpacing: -0.4)),
+            if (value.isNotEmpty)
+              Text(value,
+                  style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: greenContrast)),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Icon(icon, size: 22),
+            ),
+          ],
+        ),
       ),
     );
   }

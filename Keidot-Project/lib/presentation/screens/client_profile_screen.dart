@@ -17,6 +17,7 @@ class _ClientProfileScreenState extends State<ClientProfileScreen> {
   final AssignmentInactiveController _controller =
       AssignmentInactiveController();
   late Future<List<AssignmentDTO>> _assignmentsFuture;
+  
   @override
   void initState() {
     super.initState();
@@ -47,12 +48,15 @@ class _ClientProfileScreenState extends State<ClientProfileScreen> {
                         child: Icon(Icons.person, size: 50, color: darkGreen),
                       ),
                       const SizedBox(width: 12),
-                      Text(
-                        "Hola, $name!",
-                        style: const TextStyle(
-                            color: defaultWhite,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 22),
+                      Expanded(
+                        child: Text(
+                          "Hola, $name!",
+                          style: const TextStyle(
+                              color: defaultWhite,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 22),
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                     ],
                   ),
@@ -128,27 +132,33 @@ class _ClientProfileScreenState extends State<ClientProfileScreen> {
                   child: Icon(Icons.work, size: 25, color: darkGreen),
                 ),
                 const SizedBox(width: 8),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      assignment.nameOfService,
-                      style: const TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "Fecha: ${assignment.formattedDateSelected}",
-                      style: TextStyle(fontSize: 12, color: Colors.grey[700]),
-                    ),
-                    Text(
-                      "Hora: ${assignment.formattedTimeSelected}",
-                      style: TextStyle(fontSize: 12, color: Colors.grey[700]),
-                    ),
-                  ],
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        assignment.nameOfService,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Text(
+                        "Fecha: ${assignment.formattedDateSelected}",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Text(
+                        "Hora: ${assignment.formattedTimeSelected}",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
                 ),
-                const Spacer(),
+                const SizedBox(width: 8),
                 Text(
                   "MXN \$${assignment.amount.toStringAsFixed(2)}",
                   style: const TextStyle(color: darkGreen, fontSize: 14),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),
