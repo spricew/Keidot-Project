@@ -14,8 +14,7 @@ class ClientProfileScreen extends StatefulWidget {
 }
 
 class _ClientProfileScreenState extends State<ClientProfileScreen> {
-  final AssignmentInactiveController _controller =
-      AssignmentInactiveController();
+  final AssignmentInactiveController _controller =AssignmentInactiveController();
   late Future<List<AssignmentDTO>> _assignmentsFuture;
   
   @override

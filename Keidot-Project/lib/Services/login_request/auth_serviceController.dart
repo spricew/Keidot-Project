@@ -47,7 +47,7 @@ class AuthService {
   }
 
   Future<String?> getToken() async {
-    return await storage.read(key: 'token');
+    return await storage.read(key: 'token'); //Recupera el token
   }
 
   Future<String?> getUserId() async {

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_app/Services/convert_worker/convert_worker_request.dart';
+import 'package:test_app/Services/models/convert_worker_model.dart';
 
 class NewWorkerScreen extends StatelessWidget {
   const NewWorkerScreen({super.key});
@@ -41,12 +43,12 @@ class NewWorkerForm extends StatefulWidget {
 
 class _NewWorkerFormState extends State<NewWorkerForm> {
   final _formKey = GlobalKey<FormState>();
-  
+  final UserProfileController _controller = UserProfileController();
+
   String urlImagePerfil = '';
   String address = '';
   String city = '';
   int experienceYears = 0;
-  String skills = '';
   String biography = '';
 
   Widget _buildTextField({
@@ -71,6 +73,35 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
       onChanged: onChanged,
       validator: validator,
     );
+  }
+
+  Future<void> _sendData() async {
+    if (!_formKey.currentState!.validate()) return;
+
+    final userProfile = UserProfile(
+      urlImagePerfil: urlImagePerfil,
+      address: address,
+      city: city,
+      experienceYears: experienceYears,
+      biography: biography,
+    );
+
+    bool success = await _controller.updateUserProfile(userProfile);
+    if (success) {
+      Get.snackbar(
+        'Éxito',
+        'Datos enviados correctamente',
+        backgroundColor: Colors.green,
+        colorText: Colors.white,
+      );
+    } else {
+      Get.snackbar(
+        'Error',
+        'No se pudo enviar la información',
+        backgroundColor: Colors.red,
+        colorText: Colors.white,
+      );
+    }
   }
 
   @override
@@ -106,13 +137,6 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
           ),
           const SizedBox(height: 16),
           _buildTextField(
-            label: 'Habilidades',
-            maxLines: 3,
-            onChanged: (value) => skills = value,
-            validator: (value) => value == null || value.isEmpty ? 'Describe tus habilidades' : null,
-          ),
-          const SizedBox(height: 16),
-          _buildTextField(
             label: 'Biografía',
             maxLines: 5,
             onChanged: (value) => biography = value,
@@ -121,17 +145,7 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
           const SizedBox(height: 24),
           Center(
             child: ElevatedButton(
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  Get.snackbar(
-                    'Éxito',
-                    'Formulario enviado correctamente',
-                    backgroundColor: Colors.green,
-                    colorText: Colors.white,
-                  );
-                  print('Datos enviados');
-                }
-              },
+              onPressed: _sendData,
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF12372A),
                 padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
