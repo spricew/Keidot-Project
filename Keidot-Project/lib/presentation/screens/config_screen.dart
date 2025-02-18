@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/change_name.dart';
+import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/presentation/screens/new_worker.dart';
 import 'package:test_app/providers/user_provider.dart';
 
@@ -106,7 +107,13 @@ class ConfigScreen extends StatelessWidget {
                     ),
                     minimumSize: const Size(double.infinity, 50),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginPage()),
+                    );
+                  },
                   child: const Text(
                     "Cerrar sesión",
                     style: TextStyle(fontSize: 16, color: Colors.white),

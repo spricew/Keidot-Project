@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_app/Services/register_request/update_name_controller.dart';
+import 'package:test_app/presentation/screens/succesfull_name.dart';
 
 class ChangeNameScreen extends StatelessWidget {
   const ChangeNameScreen({super.key});
@@ -22,6 +23,8 @@ class ChangeNameScreen extends StatelessWidget {
             backgroundColor: Colors.green[900],
             colorText: Colors.white,
           );
+          Future.delayed(const Duration(seconds: 1),
+              () => Get.off(const SuccessfulNameScreen()));
         } else {
           Get.snackbar(
             'Error',
