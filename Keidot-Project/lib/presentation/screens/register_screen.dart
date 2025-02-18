@@ -21,6 +21,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
   final RegisterService _registerService = RegisterService();
+  bool obscurePassword = true;
+  bool obscureConfirmPassword = true;
 
   File? _selectedFile;
   String? _fileName;
@@ -77,7 +79,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           child: Column(
             children: [
               CustomInput(
-                labelText: 'Usuario',
+                labelText: 'Nombre de usuario',
                 prefixIcon: Icons.people,
                 controller: usernameController,
               ),
@@ -98,15 +100,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 labelText: 'Contraseña',
                 prefixIcon: Icons.password,
                 controller: passwordController,
-                obscureText: true,
-                suffixIcon: Icons.visibility_off,
+                obscureText: obscurePassword,
+                suffixIcon:
+                    obscurePassword ? Icons.visibility_off : Icons.visibility,
+                onSuffixIconTap: () {
+                  setState(() {
+                    obscurePassword = !obscurePassword;
+                  });
+                },
               ),
               const SizedBox(height: 18),
-              const CustomInput(
+              CustomInput(
                 labelText: 'Repetir contraseña',
                 prefixIcon: Icons.lock,
-                obscureText: true,
-                suffixIcon: Icons.visibility_off,
+                obscureText: obscureConfirmPassword,
+                suffixIcon: obscureConfirmPassword
+                    ? Icons.visibility_off
+                    : Icons.visibility,
+                onSuffixIconTap: () {
+                  setState(() {
+                    obscureConfirmPassword = !obscureConfirmPassword;
+                  });
+                },
               ),
               const SizedBox(height: 25),
               const Align(
