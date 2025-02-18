@@ -1,5 +1,7 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:test_app/Services/convert_worker/convert_worker_request.dart';
 import 'package:test_app/Services/models/convert_worker_model.dart';
 
@@ -45,41 +47,38 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
   final _formKey = GlobalKey<FormState>();
   final UserProfileController _controller = UserProfileController();
 
-  String urlImagePerfil = '';
+  File? _selectedFile;
+  String? _fileName;
+
+  Future<void> _pickFile() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.image,
+    );
+
+    if (result != null) {
+      setState(() {
+        _selectedFile = File(result.files.single.path!);
+        _fileName = result.files.single.name;
+      });
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('No se seleccionó ningún archivo.')),
+      );
+    }
+  }
+
+  String fullName = '';
   String address = '';
   String city = '';
   int experienceYears = 0;
   String biography = '';
 
-  Widget _buildTextField({
-    required String label,
-    required Function(String) onChanged,
-    String? Function(String?)? validator,
-    int maxLines = 1,
-    TextInputType keyboardType = TextInputType.text,
-  }) {
-    return TextFormField(
-      decoration: InputDecoration(
-        labelText: label,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        filled: true,
-        fillColor: Colors.grey.shade100,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      ),
-      keyboardType: keyboardType,
-      maxLines: maxLines,
-      onChanged: onChanged,
-      validator: validator,
-    );
-  }
-
   Future<void> _sendData() async {
     if (!_formKey.currentState!.validate()) return;
 
     final userProfile = UserProfile(
-      urlImagePerfil: urlImagePerfil,
+      fullname: fullName,
+      urlImagePerfil: _selectedFile?.path ?? 'Htttps//HellowMundo',
       address: address,
       city: city,
       experienceYears: experienceYears,
@@ -111,36 +110,59 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const SizedBox(height: 16),
           _buildTextField(
-            label: 'URL de la imagen de perfil',
-            onChanged: (value) => urlImagePerfil = value,
-            validator: (value) => value == null || value.isEmpty ? 'Ingresa una URL válida' : null,
+            label: 'Nombre Completo',
+            onChanged: (value) => fullName = value,
+            validator: (value) =>
+            value == null || value.isEmpty ? 'Ingresa tu Nombre Completo' : null,
           ),
+          const Text(
+            'Foto de perfil:',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8),
+          ElevatedButton.icon(
+            onPressed: _pickFile,
+            icon: const Icon(Icons.upload_file),
+            label: const Text('Seleccionar archivo'),
+          ),
+          if (_selectedFile != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text('Archivo seleccionado: $_fileName'),
+            ),
           const SizedBox(height: 16),
           _buildTextField(
             label: 'Dirección',
             onChanged: (value) => address = value,
-            validator: (value) => value == null || value.isEmpty ? 'Ingresa tu dirección' : null,
+            validator: (value) =>
+                value == null || value.isEmpty ? 'Ingresa tu dirección' : null,
           ),
           const SizedBox(height: 16),
           _buildTextField(
             label: 'Ciudad',
             onChanged: (value) => city = value,
-            validator: (value) => value == null || value.isEmpty ? 'Ingresa tu ciudad' : null,
+            validator: (value) =>
+                value == null || value.isEmpty ? 'Ingresa tu ciudad' : null,
           ),
           const SizedBox(height: 16),
           _buildTextField(
             label: 'Años de experiencia',
             keyboardType: TextInputType.number,
             onChanged: (value) => experienceYears = int.tryParse(value) ?? 0,
-            validator: (value) => (value == null || int.tryParse(value) == null) ? 'Ingresa un número válido' : null,
+            validator: (value) => (value == null || int.tryParse(value) == null)
+                ? 'Ingresa un número válido'
+                : null,
           ),
           const SizedBox(height: 16),
           _buildTextField(
             label: 'Biografía',
             maxLines: 5,
             onChanged: (value) => biography = value,
-            validator: (value) => value == null || value.isEmpty ? 'Escribe una breve biografía' : null,
+            validator: (value) => value == null || value.isEmpty
+                ? 'Escribe una breve biografía'
+                : null,
           ),
           const SizedBox(height: 24),
           Center(
@@ -148,19 +170,48 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
               onPressed: _sendData,
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF12372A),
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
               child: const Text(
                 'Enviar',
-                style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
               ),
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildTextField({
+    required String label,
+    required Function(String) onChanged,
+    String? Function(String?)? validator,
+    int maxLines = 1,
+    TextInputType keyboardType = TextInputType.text,
+  }) {
+    return TextFormField(
+      decoration: InputDecoration(
+        labelText: label,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+        filled: true,
+        fillColor: Colors.grey.shade100,
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+      ),
+      keyboardType: keyboardType,
+      maxLines: maxLines,
+      onChanged: onChanged,
+      validator: validator,
     );
   }
 }

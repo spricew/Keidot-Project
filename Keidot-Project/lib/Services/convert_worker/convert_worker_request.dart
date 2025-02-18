@@ -28,7 +28,7 @@ class UserProfileController {
         body: jsonEncode(userProfile.toJson()),
       );
 
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 || response.statusCode == 204) {
         return true; // Éxito en la actualización
       } else {
         print("Error al actualizar perfil: ${response.body}");

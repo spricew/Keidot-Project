@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_app/Services/register_request/update_name_controller.dart';
 
 class ChangeNameScreen extends StatelessWidget {
   const ChangeNameScreen({super.key});
@@ -7,11 +8,44 @@ class ChangeNameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextEditingController nameController = TextEditingController();
+    final UpdateNameProfile updateNameProfile = UpdateNameProfile();
+
+    Future<void> _updateName() async {
+      String newName = nameController.text.trim();
+      if (newName.isNotEmpty) {
+        bool success = await updateNameProfile.updateUserName(newName);
+        if (success) {
+          Get.snackbar(
+            'Éxito',
+            'Tu nombre ha sido actualizado',
+            snackPosition: SnackPosition.BOTTOM,
+            backgroundColor: Colors.green[900],
+            colorText: Colors.white,
+          );
+        } else {
+          Get.snackbar(
+            'Error',
+            'No se pudo actualizar el nombre',
+            snackPosition: SnackPosition.BOTTOM,
+            backgroundColor: Colors.red,
+            colorText: Colors.white,
+          );
+        }
+      } else {
+        Get.snackbar(
+          'Error',
+          'Por favor, ingresa un nombre válido',
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.red,
+          colorText: Colors.white,
+        );
+      }
+    }
 
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back), // Flecha de regreso
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -19,21 +53,20 @@ class ChangeNameScreen extends StatelessWidget {
         title: const Text(
           'Cambiar nombre de usuario',
           style: TextStyle(
-            color: Color.fromARGB(255, 3, 58, 8), // DarkGreen
+            color: Color.fromARGB(255, 3, 58, 8),
             fontWeight: FontWeight.bold,
           ),
         ),
-        centerTitle: true, // Centrar el título en la AppBar
-        backgroundColor: Colors.white, // Fondo blanco para que resalte
-        elevation: 0, // Eliminar sombra de la AppBar
-        iconTheme:
-            const IconThemeData(color: Colors.black), // Color de la flecha
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Container(
-            width: 320, // Ajuste de ancho más proporcionado
+            width: 320,
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -56,7 +89,7 @@ class ChangeNameScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 3, 58, 8), // DarkGreen
+                    color: Color.fromARGB(255, 3, 58, 8),
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -88,28 +121,9 @@ class ChangeNameScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {
-                    String newName = nameController.text;
-                    if (newName.isNotEmpty) {
-                      Get.snackbar(
-                        'Nombre cambiado',
-                        'Tu nuevo nombre es $newName',
-                        snackPosition: SnackPosition.BOTTOM,
-                        backgroundColor: Colors.green[900],
-                        colorText: Colors.white,
-                      );
-                    } else {
-                      Get.snackbar(
-                        'Error',
-                        'Por favor, ingresa un nombre válido',
-                        snackPosition: SnackPosition.BOTTOM,
-                        backgroundColor: Colors.red,
-                        colorText: Colors.white,
-                      );
-                    }
-                  },
+                  onPressed: _updateName,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green[900], // DarkGreen
+                    backgroundColor: Colors.green[900],
                     padding: const EdgeInsets.symmetric(
                         horizontal: 40, vertical: 12),
                     shape: RoundedRectangleBorder(

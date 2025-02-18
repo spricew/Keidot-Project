@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:test_app/Services/models/user_model.dart';
-import 'package:test_app/Services/register_request/register_serviceController.dart';
+import 'package:test_app/Services/register_request/register_service_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 import 'package:test_app/widgets/custom_button.dart';

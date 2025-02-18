@@ -1,4 +1,5 @@
 class UserProfile {
+  final String fullname;
   final String urlImagePerfil;
   final String address;
   final String city;
@@ -6,6 +7,7 @@ class UserProfile {
   final String biography;
 
   UserProfile({
+    required this.fullname,
     required this.urlImagePerfil,
     required this.address,
     required this.city,
@@ -16,6 +18,7 @@ class UserProfile {
   // Método para convertir un JSON en un objeto UserProfile
   factory UserProfile.fromJson(Map<String, dynamic> json) {
     return UserProfile(
+      fullname: json['fullname'],
       urlImagePerfil: json['url_image_perfil'] as String,
       address: json['address'] as String,
       city: json['city'] as String,
@@ -27,6 +30,7 @@ class UserProfile {
   // Método para convertir un objeto UserProfile a JSON
   Map<String, dynamic> toJson() {
     return {
+      'fullname': fullname,
       'url_image_perfil': urlImagePerfil,
       'address': address,
       'city': city,
