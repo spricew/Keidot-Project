@@ -19,7 +19,7 @@ class RegisterService {
       print("Código de estado: ${response.statusCode}");
       print("Respuesta del servidor: ${response.body}"); 
 
-      if (response.statusCode == 201) {
+      if (response.statusCode == 200) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Registro exitoso')),
         );

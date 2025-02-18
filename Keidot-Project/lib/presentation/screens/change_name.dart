@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_app/Services/register_request/update_name_controller.dart';
+import 'package:test_app/Services/register_and_update_request/update_name_controller.dart';
 import 'package:test_app/presentation/screens/succesfull_name.dart';
 
 class ChangeNameScreen extends StatelessWidget {
