@@ -26,6 +26,9 @@ class AssignmentController {
       String? userId = await getUserId();
       String? token = await getToken();
 
+      print("🔍 ID recuperado del almacenamiento seguro: $userId");
+      print("🔍 Token recuperado: $token");
+
       if (userId == null) {
         throw Exception(
             "No se encontró el ID del usuario en el almacenamiento.");
@@ -73,10 +76,12 @@ class AssignmentController {
                 int minutos = int.parse(partes[1]);
                 tiempoEnMinutos = (horas * 60) + minutos;
               } else {
-                throw const FormatException("Formato incorrecto en tiempo_estimado");
+                throw const FormatException(
+                    "Formato incorrecto en tiempo_estimado");
               }
             } catch (e) {
-              print("⚠️ Error al parsear tiempo_estimado: $tiempoEstimadoRaw - $e");
+              print(
+                  "⚠️ Error al parsear tiempo_estimado: $tiempoEstimadoRaw - $e");
               tiempoEnMinutos = 0; // Valor por defecto en caso de error
             }
           } else if (tiempoEstimadoRaw is int) {
@@ -84,7 +89,8 @@ class AssignmentController {
             tiempoEnMinutos = tiempoEstimadoRaw;
           } else {
             // Si no es ni String ni int, asumimos 0 minutos
-            print("⚠️ tiempo_estimado tiene un formato desconocido: $tiempoEstimadoRaw");
+            print(
+                "⚠️ tiempo_estimado tiene un formato desconocido: $tiempoEstimadoRaw");
             tiempoEnMinutos = 0;
           }
 

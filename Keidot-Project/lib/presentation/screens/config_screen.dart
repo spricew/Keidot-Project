@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import 'package:test_app/Services/login_request/auth_serviceController.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/change_name.dart';
-import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/presentation/screens/new_worker.dart';
 import 'package:test_app/providers/user_provider.dart';
 
@@ -118,13 +118,9 @@ class ConfigScreen extends StatelessWidget {
                   ),
                   minimumSize: Size(double.infinity, screenHeight * 0.06),
                 ),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const LoginPage(),
-                    ),
-                  );
+                onPressed: () async {
+                  await AuthService().logout(
+                      context); // Llama al método logout para cerrar sesión
                 },
                 child: Text(
                   "Cerrar sesión",
