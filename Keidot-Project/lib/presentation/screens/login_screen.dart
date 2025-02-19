@@ -76,26 +76,6 @@ class _LoginPageState extends State<LoginPage> {
                           letterSpacing: -1,
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const RegisterScreen(),
-                            ),
-                          );
-                        },
-                        child: const Text(
-                          'Crear cuenta',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: greenHigh,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'Poppins',
-                            letterSpacing: -0.8,
-                          ),
-                        ),
-                      ),
                       const SizedBox(height: 16),
                       CustomInput(
                         labelText: 'Correo electrónico',
@@ -154,6 +134,34 @@ class _LoginPageState extends State<LoginPage> {
                               style: TextStyle(color: darkGreen),
                             ),
                             const SizedBox(height: 8),
+                            // Botón de "Crear cuenta"
+                            ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const RegisterScreen(),
+                                  ),
+                                );
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: darkGreen, // Fondo verde oscuro
+                                foregroundColor: Colors.white, // Texto blanco
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(25), // Bordes redondeados
+                                ),
+                                minimumSize: const Size(double.infinity, 50), // Mismo tamaño que los otros botones
+                              ),
+                              child: const Text(
+                                'Crear cuenta',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: 'Poppins',
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 12),
                             _socialLoginButton(
                               icon: Icons.account_circle,
                               label: 'Google',

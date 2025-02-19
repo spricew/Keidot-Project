@@ -70,11 +70,11 @@ class _SearchScreenState extends State<SearchScreen> {
     }
   }
 
-void selectService(String serviceId, String serviceName) {
-  final serviceController = Get.find<ServiceTransactionController>();
-  serviceController.setService(serviceId, serviceName); // Guarda ambos valores
-  Get.to(() =>const RequestScreen1());
-}
+  void selectService(String serviceId, String serviceName) {
+    final serviceController = Get.find<ServiceTransactionController>();
+    serviceController.setService(serviceId, serviceName); // Guarda ambos valores
+    Get.to(() => const RequestScreen1());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -96,61 +96,155 @@ void selectService(String serviceId, String serviceName) {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Campo de búsqueda
-            TextField(
-              controller: searchController,
-              decoration: InputDecoration(
-                hintText: "Buscar servicio...",
-                prefixIcon: const Icon(Icons.search, color: darkGreen),
-                border:
-                    OutlineInputBorder(borderRadius: BorderRadius.circular(25)),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.2),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: TextField(
+                controller: searchController,
+                decoration: InputDecoration(
+                  hintText: "Buscar servicio...",
+                  prefixIcon: const Icon(Icons.search, color: darkGreen),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25),
+                    borderSide: BorderSide.none,
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(
+                    vertical: 15,
+                    horizontal: 20,
+                  ),
+                ),
               ),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 16),
 
             // Botón de búsqueda
-            ElevatedButton(
-              onPressed: fetchService,
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: darkGreen, foregroundColor: Colors.white),
-              child: isLoading
-                  ? const CircularProgressIndicator(color: Colors.white)
-                  : const Text("Buscar"),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                onPressed: fetchService,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: darkGreen,
+                  foregroundColor: Colors.white, // Color del texto y del ícono
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                ),
+                icon: const Icon(
+                  Icons.search, 
+                  size: 24, 
+                  color: Colors.white, // Color del ícono
+                ),
+                label: isLoading
+                    ? const CircularProgressIndicator(color: Colors.white)
+                    : const Text(
+                        "Buscar",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold, // Texto en negrita
+                        ),
+                      ),
+              ),
             ),
             const SizedBox(height: 20),
 
             // Lista de servicios
             Expanded(
               child: isLoading
-                  ? const Center(child: CircularProgressIndicator())
+                  ? const Center(
+                      child: CircularProgressIndicator(
+                        color: darkGreen,
+                        strokeWidth: 3,
+                      ),
+                    )
                   : services.isNotEmpty
                       ? ListView.builder(
                           itemCount: services.length,
                           itemBuilder: (context, index) {
                             final service = services[index];
-                            final serviceId = service['service_id'].toString(); // Asegurar que sea String
-                            final serviceName = service['title'] ?? "Sin título";
+                            final serviceId =
+                                service['service_id'].toString(); // Asegurar que sea String
+                            final serviceName =
+                                service['title'] ?? "Sin título";
 
                             return Card(
                               elevation: 3,
+                              margin: const EdgeInsets.symmetric(vertical: 8),
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10)),
-                              child: ListTile(
-                                title: Text(
-                                  serviceName,
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: InkWell(
+                                borderRadius: BorderRadius.circular(15),
+                                onTap: () =>
+                                    selectService(serviceId, serviceName),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(16),
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        _getServiceIcon(serviceName), // Ícono relacionado
+                                        size: 30,
+                                        color: darkGreen,
+                                      ),
+                                      const SizedBox(width: 16),
+                                      Expanded(
+                                        child: Text(
+                                          serviceName,
+                                          style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            color: darkGreen,
+                                          ),
+                                        ),
+                                      ),
+                                      const Icon(Icons.arrow_forward_ios,
+                                          size: 20, color: darkGreen),
+                                    ],
+                                  ),
                                 ),
-                                
-                                onTap: () => selectService(serviceId, serviceName), // Enviar ID y Nombre
                               ),
                             );
                           },
                         )
-                      : const Center(child: Text("No se encontraron servicios")),
+                      : const Center(
+                          child: Text(
+                            "No se encontraron servicios",
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ),
             ),
           ],
         ),
       ),
     );
+  }
+
+  // Método para obtener un ícono relacionado con el servicio
+  IconData _getServiceIcon(String serviceName) {
+    if (serviceName.toLowerCase().contains('plom')) {
+      return Icons.plumbing;
+    } else if (serviceName.toLowerCase().contains('electric')) {
+      return Icons.electrical_services;
+    } else if (serviceName.toLowerCase().contains('limpieza')) {
+      return Icons.cleaning_services;
+    } else if (serviceName.toLowerCase().contains('jardín')) {
+      return Icons.nature;
+    } else {
+      return Icons.build; // Ícono por defecto
+    }
   }
 }

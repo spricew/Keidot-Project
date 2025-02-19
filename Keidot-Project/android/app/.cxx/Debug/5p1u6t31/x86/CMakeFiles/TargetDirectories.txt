@@ -1,0 +1,2 @@
+C:/Keidot-Project/Keidot-Project/android/app/.cxx/Debug/5p1u6t31/x86/CMakeFiles/edit_cache.dir
+C:/Keidot-Project/Keidot-Project/android/app/.cxx/Debug/5p1u6t31/x86/CMakeFiles/rebuild_cache.dir
