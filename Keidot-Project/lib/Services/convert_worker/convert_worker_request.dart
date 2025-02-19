@@ -2,22 +2,29 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:test_app/Services/models/convert_worker_model.dart';
+import 'package:logger/logger.dart';
 
 class UserProfileController {
   final String baseUrl = "https://keidot.azurewebsites.net/api/UpdateProfiles";
   final FlutterSecureStorage storage = const FlutterSecureStorage();
+  final Logger logger = Logger(); // Inicializar logger
 
   Future<bool> updateUserProfile(UserProfile userProfile) async {
     try {
-      // Obtener ID de usuario y token desde el almacenamiento seguro
-      String? userId = await storage.read(key: "userId"); // Corregido
-      String? token = await storage.read(key: "token");   // Corregido
+      // Obtener credenciales
+      String? userId = await storage.read(key: "userId");
+      String? token = await storage.read(key: "token");
 
       if (userId == null || token == null) {
-        throw Exception("No se encontró el ID de usuario o token.");
+        logger.e("No se encontró el ID de usuario o el token.");
+        throw Exception("No se encontró el ID de usuario o el token.");
       }
 
       final url = Uri.parse("$baseUrl/$userId");
+      final body = jsonEncode(userProfile.toJson());
+      
+      logger.i("Enviando solicitud PUT a: $url");
+      logger.d("Body: $body");
 
       final response = await http.put(
         url,
@@ -25,17 +32,21 @@ class UserProfileController {
           "Content-Type": "application/json",
           "Authorization": "Bearer $token",
         },
-        body: jsonEncode(userProfile.toJson()),
+        body: body,
       );
 
+      logger.i("Respuesta recibida: ${response.statusCode}");
+      logger.d("Respuesta: ${response.body}");
+
       if (response.statusCode == 200 || response.statusCode == 204) {
-        return true; // Éxito en la actualización
+        logger.i("Perfil actualizado exitosamente.");
+        return true;
       } else {
-        print("Error al actualizar perfil: ${response.body}");
+        logger.e("Error al actualizar perfil: ${response.body}");
         return false;
       }
     } catch (e) {
-      print("Excepción en updateUserProfile: $e");
+      logger.e("Excepción en updateUserProfile: $e");
       return false;
     }
   }
