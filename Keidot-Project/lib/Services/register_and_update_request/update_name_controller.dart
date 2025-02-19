@@ -4,7 +4,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class UpdateNameProfile {
   final String baseUrl = 'https://keidot.azurewebsites.net/api/UpdateProfiles'; // Reemplázalo con tu URL
-  final FlutterSecureStorage storage = FlutterSecureStorage();
+  static final FlutterSecureStorage storage = FlutterSecureStorage();
 
   /// Obtiene el ID del usuario autenticado desde el almacenamiento seguro
   Future<String?> getUserId() async {

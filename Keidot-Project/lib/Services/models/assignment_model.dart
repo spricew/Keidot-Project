@@ -48,7 +48,7 @@ class AssignmentDTO {
             seconds: int.parse(partes[2]),
           );
         } else {
-          throw FormatException("Formato incorrecto en tiempo_estimado");
+          throw const FormatException("Formato incorrecto en tiempo_estimado");
         }
       } catch (e) {
         print("Error al parsear tiempo_estimado: $tiempoEstimadoRaw - $e");

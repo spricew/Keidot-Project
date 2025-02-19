@@ -6,7 +6,7 @@ import 'package:test_app/presentation/screens/home_page.dart';
 
 class AuthService {
   final String baseUrl = 'https://keidot.azurewebsites.net/api/Login/login';
-  final FlutterSecureStorage storage = const FlutterSecureStorage();
+  static final FlutterSecureStorage storage = FlutterSecureStorage();
 
   Future<void> login(
       BuildContext context, String email, String password) async {
@@ -19,8 +19,8 @@ class AuthService {
 
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
-        await storage.write(key: 'name', value: data['name']);
-        await storage.write(key: 'token', value: data['token']);
+        await storage.write(key: 'name', value: data['name']);//Guarda el 
+        await storage.write(key: 'token', value: data['token']);//Guarda el
         await storage.write(key: 'userId', value: data['id']); // Guarda el ID del usuario
 
         Navigator.pushReplacement(

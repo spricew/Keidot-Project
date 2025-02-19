@@ -72,7 +72,8 @@ class _SearchScreenState extends State<SearchScreen> {
 
   void selectService(String serviceId, String serviceName) {
     final serviceController = Get.find<ServiceTransactionController>();
-    serviceController.setService(serviceId, serviceName); // Guarda ambos valores
+    serviceController.setService(
+        serviceId, serviceName); // Guarda ambos valores
     Get.to(() => const RequestScreen1());
   }
 
@@ -142,8 +143,8 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                 ),
                 icon: const Icon(
-                  Icons.search, 
-                  size: 24, 
+                  Icons.search,
+                  size: 24,
                   color: Colors.white, // Color del ícono
                 ),
                 label: isLoading
@@ -173,11 +174,10 @@ class _SearchScreenState extends State<SearchScreen> {
                           itemCount: services.length,
                           itemBuilder: (context, index) {
                             final service = services[index];
-                            final serviceId =
-                                service['service_id'].toString(); // Asegurar que sea String
+                            final serviceId = service['service_id']
+                                .toString(); // Asegurar que sea String
                             final serviceName =
                                 service['title'] ?? "Sin título";
-
                             return Card(
                               elevation: 3,
                               margin: const EdgeInsets.symmetric(vertical: 8),
@@ -193,7 +193,8 @@ class _SearchScreenState extends State<SearchScreen> {
                                   child: Row(
                                     children: [
                                       Icon(
-                                        _getServiceIcon(serviceName), // Ícono relacionado
+                                        _getServiceIcon(
+                                            serviceName), // Ícono relacionado
                                         size: 30,
                                         color: darkGreen,
                                       ),

@@ -11,7 +11,7 @@ class ChangeNameScreen extends StatelessWidget {
     final TextEditingController nameController = TextEditingController();
     final UpdateNameProfile updateNameProfile = UpdateNameProfile();
 
-    Future<void> _updateName() async {
+    Future<void> updateName() async {
       String newName = nameController.text.trim();
       if (newName.isNotEmpty) {
         bool success = await updateNameProfile.updateUserName(newName);
@@ -124,7 +124,7 @@ class ChangeNameScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: _updateName,
+                  onPressed: updateName,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green[900],
                     padding: const EdgeInsets.symmetric(

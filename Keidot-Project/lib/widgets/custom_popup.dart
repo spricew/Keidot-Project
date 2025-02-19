@@ -20,7 +20,7 @@ class CustomPopupMenu extends StatelessWidget {
         return [
           PopupMenuItem(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            onTap: () => _navigateToScreen(context, ClientProfileScreen()),
+            onTap: () => _navigateToScreen(context, const ClientProfileScreen()),
             child: _buildMenuText("Mi perfil"),
           ),
           PopupMenuItem(

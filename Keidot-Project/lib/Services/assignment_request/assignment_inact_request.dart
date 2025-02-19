@@ -73,7 +73,7 @@ class AssignmentInactiveController {
                 int minutos = int.parse(partes[1]);
                 tiempoEnMinutos = (horas * 60) + minutos;
               } else {
-                throw FormatException("Formato incorrecto en tiempo_estimado");
+                throw const FormatException("Formato incorrecto en tiempo_estimado");
               }
             } catch (e) {
               print("Error al parsear tiempo_estimado: $tiempoEstimadoRaw - $e");
