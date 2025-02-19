@@ -72,8 +72,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   void selectService(String serviceId, String serviceName) {
     final serviceController = Get.find<ServiceTransactionController>();
-    serviceController.setService(
-        serviceId, serviceName); // Guarda ambos valores
+    serviceController.setService(serviceId, serviceName); // Guarda ambos valores
     Get.to(() => const RequestScreen1());
   }
 
