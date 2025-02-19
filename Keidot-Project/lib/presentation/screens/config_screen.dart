@@ -14,6 +14,8 @@ class ConfigScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final name = Provider.of<UserProvider>(context).userName ?? "Usuario";
     final screenHeight = MediaQuery.of(context).size.height;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final textScale = MediaQuery.of(context).textScaleFactor;
 
     return SafeArea(
       child: Scaffold(
@@ -21,7 +23,7 @@ class ConfigScreen extends StatelessWidget {
           backgroundColor: Colors.transparent,
           elevation: 0,
           leading: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(screenWidth * 0.02),
             child: Container(
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
@@ -37,30 +39,38 @@ class ConfigScreen extends StatelessWidget {
           ),
         ),
         backgroundColor: defaultWhite,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+        body: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(
+            vertical: screenHeight * 0.02,
+            horizontal: screenWidth * 0.05,
+          ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // 🟢 Sección de Perfil
               Container(
                 width: double.infinity,
-                padding: const EdgeInsets.symmetric(vertical: 25),
+                padding: EdgeInsets.symmetric(vertical: screenHeight * 0.03),
                 decoration: BoxDecoration(
                   color: grayContrast,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
                   children: [
-                    const CircleAvatar(
-                      radius: 40,
+                    CircleAvatar(
+                      radius: screenWidth * 0.12,
                       backgroundColor: Colors.white,
-                      child: Icon(Icons.person, size: 50, color: darkGreen),
+                      child: Icon(
+                        Icons.person,
+                        size: screenWidth * 0.15,
+                        color: darkGreen,
+                      ),
                     ),
-                    const SizedBox(height: 10),
+                    SizedBox(height: screenHeight * 0.01),
                     Text(
                       "Hola, $name!",
-                      style: const TextStyle(
-                        fontSize: 20,
+                      style: TextStyle(
+                        fontSize: 20 * textScale,
                         fontWeight: FontWeight.bold,
                         color: darkGreen,
                       ),
@@ -70,56 +80,60 @@ class ConfigScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: screenHeight * 0.02),
 
-              // 🟢 Contenedor con tamaño ajustable para el Grid
-              SizedBox(
-                height:
-                    screenHeight * 0.5, // Ajusta según el tamaño de la pantalla
-                child: GridView.builder(
-                  physics:
-                      const NeverScrollableScrollPhysics(), // Evita scroll dentro del Grid
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 1.8,
-                  ),
-                  itemCount: _options.length,
-                  itemBuilder: (context, index) {
-                    final option = _options[index];
-                    return _buildGridItem(
-                        option["title"]!, option["value"]!, option["icon"]!);
-                  },
+              // 🟢 Contenedor del Grid con altura dinámica
+              GridView.builder(
+                shrinkWrap: true,
+                physics:
+                    const NeverScrollableScrollPhysics(), // Evita doble scroll
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: screenWidth > 600
+                      ? 3
+                      : 2, // Más columnas en pantallas grandes
+                  crossAxisSpacing: screenWidth * 0.02,
+                  mainAxisSpacing: screenHeight * 0.02,
+                  childAspectRatio: screenWidth > 600 ? 2 : 1.6,
                 ),
+                itemCount: _options.length,
+                itemBuilder: (context, index) {
+                  final option = _options[index];
+                  return _buildGridItem(
+                    option["title"]!,
+                    option["value"]!,
+                    option["icon"]!,
+                    textScale,
+                  );
+                },
               ),
 
-              const SizedBox(height: 10),
+              SizedBox(height: screenHeight * 0.02),
 
-              // 🟢 Botón de Cerrar Sesión con Padding
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+              // 🟢 Botón de Cerrar Sesión
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  minimumSize: Size(double.infinity, screenHeight * 0.06),
+                ),
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginPage(),
                     ),
-                    minimumSize: const Size(double.infinity, 50),
-                  ),
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginPage()),
-                    );
-                  },
-                  child: const Text(
-                    "Cerrar sesión",
-                    style: TextStyle(fontSize: 16, color: Colors.white),
-                  ),
+                  );
+                },
+                child: Text(
+                  "Cerrar sesión",
+                  style:
+                      TextStyle(fontSize: 16 * textScale, color: Colors.white),
                 ),
               ),
+
+              SizedBox(height: screenHeight * 0.02), // Espacio final
             ],
           ),
         ),
@@ -127,7 +141,8 @@ class ConfigScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildGridItem(String title, String value, IconData icon) {
+  Widget _buildGridItem(
+      String title, String value, IconData icon, double textScale) {
     return GestureDetector(
       onTap: () {
         switch (title) {
@@ -152,17 +167,16 @@ class ConfigScreen extends StatelessWidget {
           color: grayContrast,
           borderRadius: BorderRadius.circular(15),
         ),
-        padding: const EdgeInsets.all(18),
+        padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               title,
-              style: const TextStyle(
-                fontSize: 16,
+              style: TextStyle(
+                fontSize: 16 * textScale,
                 fontWeight: FontWeight.w500,
                 color: darkGreen,
-                letterSpacing: -0.4,
               ),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
@@ -170,8 +184,8 @@ class ConfigScreen extends StatelessWidget {
             if (value.isNotEmpty)
               Text(
                 value,
-                style: const TextStyle(
-                  fontSize: 16,
+                style: TextStyle(
+                  fontSize: 16 * textScale,
                   fontWeight: FontWeight.bold,
                   color: greenContrast,
                 ),
@@ -180,7 +194,7 @@ class ConfigScreen extends StatelessWidget {
               ),
             Align(
               alignment: Alignment.bottomRight,
-              child: Icon(icon, size: 22),
+              child: Icon(icon, size: 22 * textScale),
             ),
           ],
         ),
