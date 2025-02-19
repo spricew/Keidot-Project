@@ -47,7 +47,7 @@ class ConfigScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 🟢 Sección de Perfil
+              // Sección de Perfil
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.symmetric(vertical: screenHeight * 0.03),
@@ -82,18 +82,15 @@ class ConfigScreen extends StatelessWidget {
               ),
               SizedBox(height: screenHeight * 0.02),
 
-              // 🟢 Contenedor del Grid con altura dinámica
+              // Grid dinámico con `Flexible` para evitar desbordamientos
               GridView.builder(
                 shrinkWrap: true,
-                physics:
-                    const NeverScrollableScrollPhysics(), // Evita doble scroll
+                physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: screenWidth > 600
-                      ? 3
-                      : 2, // Más columnas en pantallas grandes
+                  crossAxisCount: screenWidth > 600 ? 3 : 2,
                   crossAxisSpacing: screenWidth * 0.02,
                   mainAxisSpacing: screenHeight * 0.02,
-                  childAspectRatio: screenWidth > 600 ? 2 : 1.6,
+                  childAspectRatio: screenWidth > 600 ? 2 : 1.8,
                 ),
                 itemCount: _options.length,
                 itemBuilder: (context, index) {
@@ -109,7 +106,7 @@ class ConfigScreen extends StatelessWidget {
 
               SizedBox(height: screenHeight * 0.02),
 
-              // 🟢 Botón de Cerrar Sesión
+              // Botón de Cerrar Sesión
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red,
@@ -132,8 +129,6 @@ class ConfigScreen extends StatelessWidget {
                       TextStyle(fontSize: 16 * textScale, color: Colors.white),
                 ),
               ),
-
-              SizedBox(height: screenHeight * 0.02), // Espacio final
             ],
           ),
         ),
@@ -194,7 +189,7 @@ class ConfigScreen extends StatelessWidget {
               ),
             Align(
               alignment: Alignment.bottomRight,
-              child: Icon(icon, size: 22 * textScale),
+              child: Icon(icon, size: 20 * textScale),
             ),
           ],
         ),
@@ -203,7 +198,7 @@ class ConfigScreen extends StatelessWidget {
   }
 }
 
-// 🟢 Lista de opciones
+// Lista de opciones
 final List<Map<String, dynamic>> _options = [
   {"title": "Comentarios", "value": "69", "icon": Icons.comment},
   {"title": "Reseñas", "value": "75", "icon": Icons.star},
