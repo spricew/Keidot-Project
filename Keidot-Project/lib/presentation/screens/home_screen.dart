@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:test_app/Services/services_request/service_controller.dart';
+import 'package:test_app/Services/transaction/service_transaction_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/request_screen1.dart';
 import 'package:test_app/widgets/custom_popup.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -186,8 +188,14 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _gridItem(service) {
-    return Container(
+ Widget _gridItem(service) {
+  return GestureDetector(
+    onTap: () {
+      final serviceController = Get.find<ServiceTransactionController>();
+      serviceController.setService(service.serviceId.toString(), service.title);
+      Get.to(() => const RequestScreen1());
+    },
+    child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         image: DecorationImage(
@@ -215,6 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 }
