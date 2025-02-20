@@ -1,10 +1,12 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:logger/logger.dart';
 
 class UpdateNameProfile {
-  final String baseUrl = 'https://keidot.azurewebsites.net/api/UpdateProfiles'; // Reemplázalo con tu URL
+  final String baseUrl = 'https://keidot.azurewebsites.net/api/UpdateProfiles';
   static const FlutterSecureStorage storage = FlutterSecureStorage();
+  final Logger logger = Logger();
 
   /// Obtiene el ID del usuario autenticado desde el almacenamiento seguro
   Future<String?> getUserId() async {
@@ -18,29 +20,37 @@ class UpdateNameProfile {
 
   /// Actualiza solo el nombre del usuario
   Future<bool> updateUserName(String newName) async {
-    String? userId = await getUserId();
-    String? token = await getToken();
+    try {
+      String? userId = await getUserId();
+      String? token = await getToken();
 
-    if (userId == null || token == null) {
-      print("Error: No se encontró el ID del usuario o el token.");
-      return false;
-    }
+      if (userId == null || token == null) {
+        logger.e("Error: No se encontró el ID del usuario o el token.");
+        return false;
+      }
 
-    final url = Uri.parse('$baseUrl/OnlyName/$userId');
-    final response = await http.put(
-      url,
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer $token',
-      },
-      body: jsonEncode({"fullname": newName}),
-    );
+      final url = Uri.parse('$baseUrl/OnlyName/$userId');
+      logger.i("URL de la solicitud: $url");
+      logger.d("Enviando nombre actualizado: $newName");
 
-    if (response.statusCode == 200) {
-      print("Nombre actualizado correctamente");
-      return true;
-    } else {
-      print("Error al actualizar el nombre: ${response.body}");
+      final response = await http.put(
+        url,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $token',
+        },
+        body: jsonEncode({"fullname": newName}),
+      );
+
+      if (response.statusCode == 200) {
+        logger.i("Nombre actualizado correctamente");
+        return true;
+      } else {
+        logger.e("Error al actualizar el nombre: ${response.statusCode} - ${response.body}");
+        return false;
+      }
+    } catch (e) {
+      logger.e("Excepción al actualizar el nombre: $e");
       return false;
     }
   }

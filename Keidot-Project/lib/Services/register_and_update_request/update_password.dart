@@ -1,11 +1,12 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:logger/logger.dart';
 
 class AuthService {
-  final String baseUrl =
-      "https://keidot.azurewebsites.net/api/RegisterUsers"; // Reemplaza con la URL de tu API
+  final String baseUrl = "https://keidot.azurewebsites.net/api/RegisterUsers"; // Reemplaza con la URL de tu API
   final storage = const FlutterSecureStorage();
+  final Logger logger = Logger();
 
   /// Obtiene el ID del usuario autenticado desde el almacenamiento seguro
   Future<String?> getUserId() async {
@@ -25,10 +26,12 @@ class AuthService {
       String? token = await getToken();
 
       if (userId == null || token == null) {
+        logger.e("No se encontró el usuario autenticado.");
         throw Exception("No se encontró el usuario autenticado.");
       }
 
       final url = Uri.parse("$baseUrl/UpdatePassword/$userId");
+      logger.d("Enviando solicitud PUT a: $url");
 
       final response = await http.put(
         url,
@@ -40,13 +43,14 @@ class AuthService {
       );
 
       if (response.statusCode == 200) {
-        return true; // Contraseña actualizada con éxito
+        logger.i("Contraseña actualizada con éxito.");
+        return true;
       } else {
-        print("Error: ${response.body}");
+        logger.e("Error al actualizar contraseña: ${response.body}");
         return false;
       }
     } catch (e) {
-      print("Error al actualizar la contraseña: $e");
+      logger.e("Excepción al actualizar la contraseña: $e");
       return false;
     }
   }
