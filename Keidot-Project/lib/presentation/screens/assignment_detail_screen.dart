@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:test_app/Services/assignment_request/assignment_is_active_request.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 
@@ -22,14 +24,18 @@ class AssignmentDetailScreen extends StatelessWidget {
           children: [
             Text(
               assignment.nameOfService,
-              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: darkGreen),
+              style: const TextStyle(
+                  fontSize: 22, fontWeight: FontWeight.bold, color: darkGreen),
             ),
             const SizedBox(height: 10),
 
             // Nuevo título para la fecha asignada
             const Text(
               "Fecha asignada para realizar el trabajo:",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
             ),
             const SizedBox(height: 5),
             Text(
@@ -67,8 +73,27 @@ class AssignmentDetailScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
-                onPressed: () {
-                  // Implementar la lógica de cancelación
+                onPressed: () async {
+                  final UpdateIsActiveService service = UpdateIsActiveService();
+                  bool success = await service.updateIsActive(false);
+
+                  if (success) {
+                    Get.snackbar(
+                      'Solicitud Cancelada',
+                      'La solicitud ha sido cancelada correctamente.',
+                      snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: Colors.green[900],
+                      colorText: Colors.white,
+                    );
+                  } else {
+                    Get.snackbar(
+                      'Error',
+                      'No se pudo cancelar la solicitud.',
+                      snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: Colors.red,
+                      colorText: Colors.white,
+                    );
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey[800],
