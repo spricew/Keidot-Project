@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:logger/logger.dart';
+import 'package:test_app/Services/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/assignment_request/assignment_request.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/presentation/screens/assignment_detail_screen.dart';
@@ -13,6 +16,8 @@ class RequestsScreen extends StatefulWidget {
 class _RequestsScreenState extends State<RequestsScreen> {
   late Future<List<AssignmentDTO>> _assignmentsFuture;
   final AssignmentController _controller = AssignmentController();
+  final AssignmentIdController _assignmentIdController = Get.find<AssignmentIdController>(); // Obtiene el controlador de GetX
+  final Logger _logger = Logger(); // Logger para depuración
 
   @override
   void initState() {
@@ -56,6 +61,8 @@ class _RequestsScreenState extends State<RequestsScreen> {
   Widget _buildRequestCard(AssignmentDTO assignment, BuildContext context) {
     return GestureDetector(
       onTap: () {
+        _assignmentIdController.setSelectedAssignment(assignment.idAssignment); // Guarda el ID en el controlador
+        _logger.i("Assignment ID seleccionado: ${assignment.idAssignment}"); // Imprime en consola
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -105,20 +112,6 @@ class _RequestsScreenState extends State<RequestsScreen> {
                 ],
               ),
             ),
-           /* ElevatedButton.icon(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.grey[800],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-              icon: const Icon(Icons.cancel, color: Colors.red, size: 18),
-              label: const Text(
-                'Cancelar',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),*/
           ],
         ),
       ),
