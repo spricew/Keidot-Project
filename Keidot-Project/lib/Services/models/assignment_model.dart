@@ -1,6 +1,7 @@
 import 'package:intl/intl.dart';
 
 class AssignmentDTO {
+  final String idAssignment;
   final String nameOfService;
   final String description;
   final Duration estimatedTime;
@@ -8,6 +9,7 @@ class AssignmentDTO {
   final double amount;
 
   AssignmentDTO({
+    required this.idAssignment,
     required this.nameOfService,
     required this.description,
     required this.estimatedTime,
@@ -62,6 +64,7 @@ class AssignmentDTO {
     }
 
     return AssignmentDTO(
+      idAssignment: json['id_assignment'],
       nameOfService: json['name_of_service'],
       description: json['description'],
       estimatedTime: estimatedTime,

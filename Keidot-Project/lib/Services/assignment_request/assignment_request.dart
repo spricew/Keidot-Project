@@ -23,6 +23,7 @@ class AssignmentController {
     return token;
   }
 
+
   /// Obtiene las solicitudes del usuario autenticado
   Future<List<AssignmentDTO>> getAssignments() async {
     try {
@@ -47,20 +48,15 @@ class AssignmentController {
         },
       );
 
-      logger.i("Enviando solicitud GET a: $url");
-      logger.i("Headers: ${response.request?.headers}");
-
       if (response.statusCode == 200) {
         logger.i("Respuesta recibida correctamente.");
-        logger.i("Cuerpo de la respuesta: ${response.body}");
-
         List<dynamic> data = jsonDecode(response.body);
 
         if (data.isEmpty) {
           logger.w("La respuesta no contiene asignaciones.");
           return [];
         }
-
+        
         return data.map((json) {
           var tiempoEstimadoRaw = json["tiempo_estimado"];
           int tiempoEnMinutos;

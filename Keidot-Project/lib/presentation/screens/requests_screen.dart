@@ -105,7 +105,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
                 ],
               ),
             ),
-            ElevatedButton.icon(
+           /* ElevatedButton.icon(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.grey[800],
@@ -118,7 +118,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
                 'Cancelar',
                 style: TextStyle(color: Colors.white),
               ),
-            ),
+            ),*/
           ],
         ),
       ),

@@ -30,14 +30,14 @@ class ApiService {
         },
       );
 
-      logger.i("📥 Respuesta recibida: ${response.statusCode}");
+      logger.i("Respuesta recibida: ${response.statusCode}");
       
       if (response.statusCode == 200) {
         List<dynamic> jsonData = json.decode(response.body);
-        logger.i("✅ Servicios obtenidos correctamente (${jsonData.length} elementos)");
+        logger.i("Servicios obtenidos correctamente (${jsonData.length} elementos)");
         return jsonData.map((item) => Service.fromJson(item)).toList();
       } else {
-        logger.e("❌ Error ${response.statusCode}: ${response.body}");
+        logger.e("Error ${response.statusCode}: ${response.body}");
         throw Exception("Error ${response.statusCode}: ${response.body}");
       }
     } on SocketException {

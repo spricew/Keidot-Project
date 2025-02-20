@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_app/Services/assignment_request/assignment_request.dart';
 import 'package:test_app/Services/location_request/location_service_controller.dart';
 import 'package:test_app/Services/transaction/service_transaction_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
@@ -20,7 +21,7 @@ void main() {
   // Inicializa los controladores de GetX
   Get.put(ServiceTransactionController());
   Get.put(LocationController());
-
+  Get.put(AssignmentController());
   runApp(
     MultiProvider(
       providers: [
