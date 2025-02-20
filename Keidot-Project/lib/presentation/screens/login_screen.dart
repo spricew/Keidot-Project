@@ -81,6 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                         labelText: 'Correo electrónico',
                         prefixIcon: Icons.email,
                         controller: emailController,
+                        errorText: null,
                       ),
                       const SizedBox(height: 16),
                       CustomInput(
@@ -96,6 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                             obscurePassword = !obscurePassword;
                           });
                         },
+                        errorText: null, // 👈 También aquí
                       ),
                       const SizedBox(height: 8),
                       Align(

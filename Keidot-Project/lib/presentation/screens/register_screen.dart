@@ -105,8 +105,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 errorText: usernameError,
                 onChanged: (value) {
                   setState(() {
-                    usernameError =
-                        value.isEmpty ? 'Ingrese su nombre de usuario' : null;
+                    usernameError = value.length < 5
+                        ? 'Debe tener al menos 3 caracteres'
+                        : null;
                   });
                 },
               ),
@@ -121,7 +122,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   setState(() {
                     if (value.isEmpty) {
                       emailError = 'Ingrese su correo electrónico';
-                    } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                    } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+')
+                        .hasMatch(value)) {
                       emailError = 'Ingrese un correo válido';
                     } else {
                       emailError = null;
@@ -184,10 +186,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 errorText: confirmPasswordError,
                 onChanged: (value) {
                   setState(() {
-                    confirmPasswordError =
-                        value != passwordController.text
-                            ? 'Las contraseñas no coinciden'
-                            : null;
+                    confirmPasswordError = value != passwordController.text
+                        ? 'Las contraseñas no coinciden'
+                        : null;
                   });
                 },
               ),
