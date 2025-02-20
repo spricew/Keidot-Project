@@ -27,6 +27,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
   File? _selectedFile;
   String? _fileName;
 
+  String? usernameError;
+  String? emailError;
+  String? phoneError;
+  String? passwordError;
+  String? confirmPasswordError;
+
   Future<void> _pickFile() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
       type: FileType.custom,
@@ -46,6 +52,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   void _register() async {
+    if (usernameError != null ||
+        emailError != null ||
+        phoneError != null ||
+        passwordError != null ||
+        confirmPasswordError != null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Corrige los errores antes de continuar'),
+          backgroundColor: Colors.red,
+        ),
+      );
+      return;
+    }
+
     final user = UserModel(
       email: emailController.text,
       username: usernameController.text,
@@ -82,18 +102,49 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 labelText: 'Nombre de usuario',
                 prefixIcon: Icons.people,
                 controller: usernameController,
+                errorText: usernameError,
+                onChanged: (value) {
+                  setState(() {
+                    usernameError =
+                        value.isEmpty ? 'Ingrese su nombre de usuario' : null;
+                  });
+                },
               ),
               const SizedBox(height: 18),
               CustomInput(
                 labelText: 'Correo electrónico',
                 prefixIcon: Icons.email,
                 controller: emailController,
+                keyboardType: TextInputType.emailAddress,
+                errorText: emailError,
+                onChanged: (value) {
+                  setState(() {
+                    if (value.isEmpty) {
+                      emailError = 'Ingrese su correo electrónico';
+                    } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                      emailError = 'Ingrese un correo válido';
+                    } else {
+                      emailError = null;
+                    }
+                  });
+                },
               ),
               const SizedBox(height: 18),
               CustomInput(
                 labelText: 'Teléfono',
                 prefixIcon: Icons.phone,
                 controller: phoneController,
+                keyboardType: TextInputType.number,
+                errorText: phoneError,
+                onChanged: (value) {
+                  setState(() {
+                    if (value.length != 10 || int.tryParse(value) == null) {
+                      phoneError = 'Ingrese un número de 10 dígitos';
+                    } else {
+                      phoneError = null;
+                    }
+                  });
+                },
               ),
               const SizedBox(height: 18),
               CustomInput(
@@ -108,6 +159,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     obscurePassword = !obscurePassword;
                   });
                 },
+                errorText: passwordError,
+                onChanged: (value) {
+                  setState(() {
+                    passwordError = value.length < 6
+                        ? 'Debe tener al menos 6 caracteres'
+                        : null;
+                  });
+                },
               ),
               const SizedBox(height: 18),
               CustomInput(
@@ -120,6 +179,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 onSuffixIconTap: () {
                   setState(() {
                     obscureConfirmPassword = !obscureConfirmPassword;
+                  });
+                },
+                errorText: confirmPasswordError,
+                onChanged: (value) {
+                  setState(() {
+                    confirmPasswordError =
+                        value != passwordController.text
+                            ? 'Las contraseñas no coinciden'
+                            : null;
                   });
                 },
               ),
