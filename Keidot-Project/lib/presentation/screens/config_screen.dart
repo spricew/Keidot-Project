@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-import 'package:test_app/Services/login_request/auth_serviceController.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/change_name.dart';
+import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/presentation/screens/new_worker.dart';
 import 'package:test_app/providers/user_provider.dart';
 
@@ -47,7 +47,6 @@ class ConfigScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Sección de Perfil
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.symmetric(vertical: screenHeight * 0.03),
@@ -81,8 +80,6 @@ class ConfigScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: screenHeight * 0.02),
-
-              // Grid dinámico con `Flexible` para evitar desbordamientos
               GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -90,7 +87,7 @@ class ConfigScreen extends StatelessWidget {
                   crossAxisCount: screenWidth > 600 ? 3 : 2,
                   crossAxisSpacing: screenWidth * 0.02,
                   mainAxisSpacing: screenHeight * 0.02,
-                  childAspectRatio: screenWidth > 600 ? 2 : 1.8,
+                  childAspectRatio: screenWidth > 600 ? 2 : 1.6,
                 ),
                 itemCount: _options.length,
                 itemBuilder: (context, index) {
@@ -103,10 +100,7 @@ class ConfigScreen extends StatelessWidget {
                   );
                 },
               ),
-
               SizedBox(height: screenHeight * 0.02),
-
-              // Botón de Cerrar Sesión
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red,
@@ -115,9 +109,13 @@ class ConfigScreen extends StatelessWidget {
                   ),
                   minimumSize: Size(double.infinity, screenHeight * 0.06),
                 ),
-                onPressed: () async {
-                  await AuthService().logout(
-                      context); // Llama al método logout para cerrar sesión
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginPage(),
+                    ),
+                  );
                 },
                 child: Text(
                   "Cerrar sesión",
@@ -125,6 +123,7 @@ class ConfigScreen extends StatelessWidget {
                       TextStyle(fontSize: 16 * textScale, color: Colors.white),
                 ),
               ),
+              SizedBox(height: screenHeight * 0.02),
             ],
           ),
         ),
@@ -161,6 +160,7 @@ class ConfigScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               title,
@@ -185,7 +185,7 @@ class ConfigScreen extends StatelessWidget {
               ),
             Align(
               alignment: Alignment.bottomRight,
-              child: Icon(icon, size: 20 * textScale),
+              child: Icon(icon, size: 22 * textScale),
             ),
           ],
         ),
@@ -194,7 +194,6 @@ class ConfigScreen extends StatelessWidget {
   }
 }
 
-// Lista de opciones
 final List<Map<String, dynamic>> _options = [
   {"title": "Comentarios", "value": "69", "icon": Icons.comment},
   {"title": "Reseñas", "value": "75", "icon": Icons.star},
