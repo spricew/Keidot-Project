@@ -13,10 +13,12 @@ class UpdateIsActiveService {
 
   Future<bool> updateIsActive(bool isActive) async {
     try {
+      print('Valor de is_active ${isActive}');
       final AssignmentIdController assignmentController =
           Get.find<AssignmentIdController>(); // Obtener el controlador
       String? token = await storage.read(key: 'token');
-      String? assignmentId = assignmentController.selectedAssignmentId; // Obtener el ID del controlador
+      String? assignmentId = assignmentController
+          .selectedAssignmentId; // Obtener el ID del controlador
 
       if (token == null || assignmentId == null) {
         logger.e("Falta el token o el assignmentId en el controlador");

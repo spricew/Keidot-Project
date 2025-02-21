@@ -48,7 +48,7 @@ class LocationService {
 
       logger.i("Respuesta del servidor: ${response.statusCode}, ${response.body}");
 
-      if (response.statusCode == 200) {
+      if (response.statusCode == 201) {
         Get.snackbar("Éxito", "Ubicación guardada con éxito",
             snackPosition: SnackPosition.BOTTOM);
       } else {

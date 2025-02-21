@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:test_app/Services/assignment_request/assignment_inact_request.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/assign_Inactive_detail_screen.dart';
 import 'package:test_app/presentation/screens/assignment_detail_screen.dart';
 import 'package:test_app/providers/user_provider.dart';
 
@@ -105,7 +106,7 @@ class _ClientProfileScreenState extends State<ClientProfileScreen> {
           context,
           MaterialPageRoute(
             builder: (context) =>
-                AssignmentDetailScreen(assignment: assignment),
+                AssignmentInactiveDetailScreen(assignment: assignment),
           ),
         );
       },
