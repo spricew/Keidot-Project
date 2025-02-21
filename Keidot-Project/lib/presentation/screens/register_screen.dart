@@ -6,6 +6,7 @@ import 'package:test_app/Services/register_and_update_request/register_service_c
 import 'package:test_app/Services/upload_image/file_converter.dart';
 import 'package:test_app/Services/upload_image/file_uploader.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 import 'package:test_app/widgets/custom_button.dart';
 import 'package:test_app/widgets/custom_input.dart';
@@ -213,7 +214,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       color: darkGreen, fontSize: 18, fontFamily: 'Poppins'),
                 ),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 16),
               ElevatedButton.icon(
                 onPressed: () async {
                   FilePickerResult? result =
@@ -262,7 +263,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 icon: const Icon(Icons.upload_file),
                 label: const Text('Seleccionar archivo'),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 16),
               if (_selectedFile != null)
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -284,6 +285,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
               CustomButton(
                 text: 'Registrarse',
                 onPressed: _register,
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Row(
+                  children: [
+                    Text(
+                      '¿Ya tienes cuenta?',
+                    ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()),
+                          );
+                        },
+                        child: const Text('Inicia sesión'),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
