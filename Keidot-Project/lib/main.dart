@@ -13,7 +13,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Inicializa los controladores de GetX
-  Get.lazyPut(() => AssignmentController());
+  Get.lazyPut(() => AssignmentIdController());
   Get.put(ServiceTransactionController());
   Get.put(LocationController());
   Get.put(AssignmentController());
