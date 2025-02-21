@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:test_app/Services/models/user_model.dart';
 import 'package:test_app/Services/register_and_update_request/register_service_controller.dart';
+import 'package:test_app/Services/upload_image/file_converter.dart';
+import 'package:test_app/Services/upload_image/file_uploader.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 import 'package:test_app/widgets/custom_button.dart';
@@ -26,6 +28,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   File? _selectedFile;
   String? _fileName;
+  String? _imageUrl;
 
   String? usernameError;
   String? emailError;
@@ -52,6 +55,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   void _register() async {
+    print("URL antes del registro: $_imageUrl"); // DEBUG
     if (usernameError != null ||
         emailError != null ||
         phoneError != null ||
@@ -65,12 +69,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
       );
       return;
     }
+    if (_imageUrl == null || _imageUrl!.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+            content: Text("Debes subir una imagen antes de registrarte.")),
+      );
+      return; // Detiene la ejecución de _register()
+    }
 
     final user = UserModel(
       email: emailController.text,
       username: usernameController.text,
       phone: int.tryParse(phoneController.text) ?? 0,
       password: passwordController.text,
+      urlImage: _imageUrl!,
     );
 
     await _registerService.register(context, user);
@@ -203,7 +215,50 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               const SizedBox(height: 12),
               ElevatedButton.icon(
-                onPressed: _pickFile,
+                onPressed: () async {
+                  FilePickerResult? result =
+                      await FilePicker.platform.pickFiles(
+                    type: FileType.custom,
+                    allowedExtensions: ['jpg', 'jpeg', 'png'],
+                  );
+
+                  if (result != null) {
+                    String filePath = result.files.single.path!;
+                    String fileName = result.files.single.name;
+                    File file = File(filePath);
+
+                    setState(() {
+                      _selectedFile = file;
+                      _fileName = fileName;
+                    });
+
+                    // Convertir archivo a Base64
+                    String base64Image =
+                        await FileConverter.convertToBase64(file);
+
+                    // Subir imagen y obtener URL
+                    String? imageUrl =
+                        await FileUploader.uploadImage(base64Image, fileName);
+
+                    print("URL obtenida: $imageUrl"); // DEBUG
+
+                    if (imageUrl != null && imageUrl.isNotEmpty) {
+                      setState(() {
+                        _imageUrl = imageUrl;
+                      });
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                            content: Text('Error al subir la imagen.')),
+                      );
+                    }
+                  } else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                          content: Text('No se seleccionó ningún archivo.')),
+                    );
+                  }
+                },
                 icon: const Icon(Icons.upload_file),
                 label: const Text('Seleccionar archivo'),
               ),
