@@ -9,18 +9,11 @@ import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/providers/user_provider.dart';
 import 'package:provider/provider.dart';
 
-/*void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  Get.put(ServiceTransactionController()); // Inicializa el controlador
-  Get.put(LocationController());
-  runApp(const MyApp());
-}*/
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Inicializa los controladores de GetX
-  Get.put(AssignmentIdController());
+  Get.lazyPut(() => AssignmentController());
   Get.put(ServiceTransactionController());
   Get.put(LocationController());
   Get.put(AssignmentController());
