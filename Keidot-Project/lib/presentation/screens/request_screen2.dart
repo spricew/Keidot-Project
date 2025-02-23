@@ -28,7 +28,7 @@ class _RequestScreen2State extends State<RequestScreen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: 'Ubicación',
         backgroundColor: Colors.transparent,
       ),
@@ -59,9 +59,9 @@ class _RequestScreen2State extends State<RequestScreen2> {
                       point: selectedLocation,
                       width: 80,
                       height: 80,
-                      child: Column(
+                      child: const Column(
                         children: [
-                          const Icon(Icons.location_on,
+                          Icon(Icons.location_on,
                               color: Colors.red, size: 46),
                         ],
                       ),
@@ -89,7 +89,7 @@ class _RequestScreen2State extends State<RequestScreen2> {
                   ),
                 ],
               ),
-              child: CustomInput(
+              child: const CustomInput(
                 labelText: 'Buscar ubicación',
                 prefixIcon: Icons.search,
                 errorText: null,
@@ -110,10 +110,10 @@ class _RequestScreen2State extends State<RequestScreen2> {
                       // Navega a la nueva pantalla
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Homepage()),
+                        MaterialPageRoute(builder: (context) => const Homepage()),
                       );
                     },
-                    child: Text('Cancelar', style: TextStyle(color: redError))),
+                    child: const Text('Cancelar', style: TextStyle(color: redError))),
                 const SizedBox(width: 14),
                 ElevatedButton(
                   onPressed: () {

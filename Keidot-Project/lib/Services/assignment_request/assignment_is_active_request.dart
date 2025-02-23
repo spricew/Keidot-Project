@@ -13,7 +13,7 @@ class UpdateIsActiveService {
 
   Future<bool> updateIsActive(bool isActive) async {
     try {
-      print('Valor de is_active ${isActive}');
+      print('Valor de is_active $isActive');
       final AssignmentIdController assignmentController =
           Get.find<AssignmentIdController>(); // Obtener el controlador
       String? token = await storage.read(key: 'token');

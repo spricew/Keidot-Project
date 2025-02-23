@@ -290,7 +290,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 alignment: Alignment.centerRight,
                 child: Row(
                   children: [
-                    Text(
+                    const Text(
                       '¿Ya tienes cuenta?',
                     ),
                     Align(
@@ -300,7 +300,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginPage()),
+                                builder: (context) => const LoginPage()),
                           );
                         },
                         child: const Text('Inicia sesión'),
