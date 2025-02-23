@@ -3,10 +3,9 @@ import 'package:get/get.dart';
 import 'package:test_app/Services/transaction/service_transaction_controller.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/presentation/screens/request_screen2.dart';
+import 'request_details_garden.dart';
 
 class RequestScreen1 extends StatelessWidget {
-
-
   const RequestScreen1({
     super.key,
   });
@@ -48,10 +47,12 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
         ),
         centerTitle: true,
         title: Text(
-          controller.serviceName(), // Muestra el título del servicio en la barra superior
+          controller
+              .serviceName(), // Muestra el título del servicio en la barra superior
           style: const TextStyle(color: Color(0xFF3BA670), fontSize: 18),
           maxLines: 1,
-          overflow: TextOverflow.ellipsis, // Para evitar que se corte si es largo
+          overflow:
+              TextOverflow.ellipsis, // Para evitar que se corte si es largo
         ),
       ),
       body: Padding(
@@ -61,7 +62,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
           children: [
             const Center(
               child: Text(
-                'Detalles del servicio',
+                'Detalles del jardín',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
@@ -77,7 +78,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
               ),
             ),
             const SizedBox(height: 16),
-            const Text('Duración estimada',
+            const Text('Tamaño del jardín',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
             const SizedBox(height: 8),
             Card(
@@ -86,27 +87,42 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                 children: [
                   Obx(() => RadioListTile<int>(
                         value: 1,
-                        groupValue: controller.transaction.value.tiempoEstimado.inMinutes == 30 ? 1 : 0,
+                        groupValue: controller.transaction.value.tiempoEstimado
+                                    .inMinutes ==
+                                30
+                            ? 1
+                            : 0,
                         onChanged: (value) {
-                          controller.setTiempoEstimado(const Duration(minutes: 30));
+                          controller
+                              .setTiempoEstimado(const Duration(minutes: 30));
                         },
-                        title: const Text('Pequeña - Tiempo Est. 20-30 min'),
+                        title: const Text('Pequeño'),
                       )),
                   Obx(() => RadioListTile<int>(
                         value: 2,
-                        groupValue: controller.transaction.value.tiempoEstimado.inMinutes == 90 ? 2 : 0,
+                        groupValue: controller.transaction.value.tiempoEstimado
+                                    .inMinutes ==
+                                90
+                            ? 2
+                            : 0,
                         onChanged: (value) {
-                          controller.setTiempoEstimado(const Duration(minutes: 90));
+                          controller
+                              .setTiempoEstimado(const Duration(minutes: 90));
                         },
-                        title: const Text('Mediana - Tiempo Est. 1-2 hr'),
+                        title: const Text('Mediano'),
                       )),
                   Obx(() => RadioListTile<int>(
                         value: 3,
-                        groupValue: controller.transaction.value.tiempoEstimado.inMinutes == 150 ? 3 : 0,
+                        groupValue: controller.transaction.value.tiempoEstimado
+                                    .inMinutes ==
+                                150
+                            ? 3
+                            : 0,
                         onChanged: (value) {
-                          controller.setTiempoEstimado(const Duration(minutes: 150));
+                          controller
+                              .setTiempoEstimado(const Duration(minutes: 150));
                         },
-                        title: const Text('Grande - Tiempo Est. Más de 2 hr'),
+                        title: const Text('Grande'),
                       )),
                 ],
               ),
@@ -119,23 +135,27 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                   onPressed: () {
                     Get.offAll(() => const Homepage());
                   },
-                  child: const Text('Cancelar', style: TextStyle(color: Colors.red)),
+                  child: const Text('Cancelar',
+                      style: TextStyle(color: Colors.red)),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    if (controller.transaction.value.tiempoEstimado.inMinutes <= 0) {
+                    if (controller.transaction.value.tiempoEstimado.inMinutes <=
+                        0) {
                       Get.snackbar("Error", "Selecciona una duración válida");
                       return;
                     }
 
                     // Ahora pasamos también el serviceId y serviceName a la siguiente pantalla
-                    Get.to(() => const RequestScreen2());
+                    Get.to(() => const RequestDetailsGarden());
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF12372A),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0)),
                   ),
-                  child: const Text('Siguiente', style: TextStyle(color: Colors.white)),
+                  child: const Text('Siguiente',
+                      style: TextStyle(color: Colors.white)),
                 ),
               ],
             ),
