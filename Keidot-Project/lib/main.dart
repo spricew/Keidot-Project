@@ -8,6 +8,7 @@ import 'package:test_app/Services/transaction/service_transaction_controller.dar
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/presentation/screens/stripe/keys.dart';
+import 'package:test_app/presentation/screens/stripe/stripe_screen.dart';
 import 'package:test_app/providers/user_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -40,8 +41,7 @@ class MyApp extends StatelessWidget {
       // Cambia MaterialApp por GetMaterialApp
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 2).theme(),
-      home:
-          const LoginPage(), // Página de inicio => 
+      home: const HomePageStripe(), // Página de inicio => 
     );
   }
 }

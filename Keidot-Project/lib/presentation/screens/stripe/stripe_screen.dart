@@ -56,7 +56,7 @@ class _HomePageStripeState extends State<HomePageStripe> {
             "Authorization": "Bearer $claveSecreta",
             "Content-Type": "application/x-www-form-urlencoded"
           });
-      print("response from API = " + responseFromStripeAPI.body);
+      print("response from API = ${responseFromStripeAPI.body}");
 
       return jsonDecode(responseFromStripeAPI.body);
     } catch (errorMsg) {
