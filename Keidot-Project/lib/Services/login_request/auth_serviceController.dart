@@ -5,6 +5,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
+import 'package:test_app/presentation/screens/stripe/stripe_screen.dart';
 
 class AuthService {
   final String baseUrl = 'https://keidot.azurewebsites.net/api/Login/login';
@@ -34,7 +35,7 @@ class AuthService {
 
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const Homepage()),
+          MaterialPageRoute(builder: (context) => const HomePageStripe()),
         );
       } else {
         logger.e("Error en inicio de sesión: ${response.body}");

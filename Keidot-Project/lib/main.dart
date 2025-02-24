@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
 import 'package:test_app/Services/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/assignment_request/assignment_request.dart';
@@ -6,13 +7,15 @@ import 'package:test_app/Services/location_request/location_service_controller.d
 import 'package:test_app/Services/transaction/service_transaction_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
-import 'package:test_app/presentation/screens/stripe/stripe_screen.dart';
+import 'package:test_app/presentation/screens/stripe/keys.dart';
 import 'package:test_app/providers/user_provider.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async  {
   WidgetsFlutterBinding.ensureInitialized();
 
+  Stripe.publishableKey = clavePublicable;
+  await Stripe.instance.applySettings();
   // Inicializa los controladores de GetX
   Get.lazyPut(() => AssignmentIdController());
   Get.put(ServiceTransactionController());
@@ -38,7 +41,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 2).theme(),
       home:
-          const HomePageStripe(), // Página de inicio => Recuerrda cambiar esto por el Login despues de la pruebas de Stripe
+          const LoginPage(), // Página de inicio => 
     );
   }
 }
