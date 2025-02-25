@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_app/Services/garden_feature_request/garden_request.dart';
-import 'package:test_app/Services/models/garden_feature.dart';
+import 'package:test_app/Services/models/garden_feature_model.dart';
 import 'package:test_app/Services/transaction/service_transaction_controller.dart';
 import 'package:test_app/presentation/screens/request_screen2.dart';
 

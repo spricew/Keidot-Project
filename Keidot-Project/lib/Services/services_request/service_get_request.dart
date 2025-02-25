@@ -19,8 +19,8 @@ class ApiService {
         throw Exception("No se encontró el token. Inicia sesión nuevamente.");
       }
 
-      logger.i("🔍 Token recuperado: $token");
-      logger.i("🌍 Realizando petición GET a: $baseUrl");
+      logger.i("Token recuperado: $token");
+      logger.i("Realizando petición GET a: $baseUrl");
 
       final response = await http.get(
         Uri.parse(baseUrl),

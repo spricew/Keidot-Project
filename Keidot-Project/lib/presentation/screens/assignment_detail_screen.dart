@@ -50,7 +50,7 @@ class AssignmentDetailScreen extends StatelessWidget {
             const SizedBox(height: 10),
 
             Text(
-              "Tiempo estimado: ${assignment.formattedEstimatedTime}",
+              "Tamaño estimado del jardin: ${assignment.estimatedSize}",
               style: const TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 5),

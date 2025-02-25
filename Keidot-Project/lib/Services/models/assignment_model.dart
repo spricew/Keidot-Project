@@ -4,7 +4,7 @@ class AssignmentDTO {
   final String idAssignment;
   final String nameOfService;
   final String description;
-  final Duration estimatedTime;
+  final String estimatedSize; // Ahora es un String, no Duration
   final DateTime timeSelected;
   final double amount;
 
@@ -12,7 +12,7 @@ class AssignmentDTO {
     required this.idAssignment,
     required this.nameOfService,
     required this.description,
-    required this.estimatedTime,
+    required this.estimatedSize,
     required this.timeSelected,
     required this.amount,
   });
@@ -27,49 +27,27 @@ class AssignmentDTO {
     return DateFormat('hh:mm a').format(timeSelected);
   }
 
-  /// Formatea el tiempo estimado como `30 min` o `2h 15min`
-  String get formattedEstimatedTime {
-    if (estimatedTime.inHours > 0) {
-      return "${estimatedTime.inHours}h ${estimatedTime.inMinutes.remainder(60)}min";
-    }
-    return "${estimatedTime.inMinutes} min";
-  }
-
   /// Convierte JSON a `AssignmentDTO`
   factory AssignmentDTO.fromJson(Map<String, dynamic> json) {
-    var tiempoEstimadoRaw = json['tiempo_estimado'];
-    Duration estimatedTime;
-
-    if (tiempoEstimadoRaw is String) {
-      try {
-        List<String> partes = tiempoEstimadoRaw.split(':');
-        if (partes.length == 3) {
-          estimatedTime = Duration(
-            hours: int.parse(partes[0]),
-            minutes: int.parse(partes[1]),
-            seconds: int.parse(partes[2]),
-          );
-        } else {
-          throw const FormatException("Formato incorrecto en tiempo_estimado");
-        }
-      } catch (e) {
-        print("Error al parsear tiempo_estimado: $tiempoEstimadoRaw - $e");
-        estimatedTime = Duration.zero;
-      }
-    } else if (tiempoEstimadoRaw is int) {
-      estimatedTime = Duration(minutes: tiempoEstimadoRaw);
-    } else {
-      print("tiempo_estimado tiene un formato desconocido: $tiempoEstimadoRaw");
-      estimatedTime = Duration.zero;
-    }
-
     return AssignmentDTO(
-      idAssignment: json['id_assignment'],
-      nameOfService: json['name_of_service'],
-      description: json['description'],
-      estimatedTime: estimatedTime,
+      idAssignment: json['id_assignment'] as String,
+      nameOfService: json['name_of_service'] as String,
+      description: json['description'] as String,
+      estimatedSize: json['estimated_size'] as String, // Cambiado de Duration a String
       timeSelected: DateTime.parse(json['time_selected']),
       amount: (json['amount'] as num).toDouble(),
     );
+  }
+
+  /// Convierte `AssignmentDTO` a JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'id_assignment': idAssignment,
+      'name_of_service': nameOfService,
+      'description': description,
+      'estimated_size': estimatedSize, // Ahora se envía como String
+      'time_selected': timeSelected.toIso8601String(),
+      'amount': amount,
+    };
   }
 }
