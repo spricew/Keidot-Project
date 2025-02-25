@@ -14,8 +14,9 @@ class ServiceTransactionController extends GetxController {
     serviceId: '',
     description: '',
     amount: 110.0,
-    tiempoEstimado: Duration.zero,
+    estimatedSize: '',
     selectedTime: '',
+    featureIds: [], // Inicializamos la lista vacía
   ).obs;
   var serviceName = ''.obs;
 
@@ -35,7 +36,8 @@ class ServiceTransactionController extends GetxController {
         val.serviceId = serviceIdStored ?? "";
       }
     });
-    logger.i("Usuario y servicio cargados: userId=$userIdStored, serviceId=$serviceIdStored");
+    logger.i(
+        "Usuario y servicio cargados: userId=$userIdStored, serviceId=$serviceIdStored");
   }
 
   void setService(String id, String name) {
@@ -62,18 +64,26 @@ class ServiceTransactionController extends GetxController {
     logger.i("Monto actualizado: \$${amt.toStringAsFixed(2)}");
   }
 
-  void setTiempoEstimado(Duration duration) {
-    transaction.update((val) {
-      if (val != null) val.tiempoEstimado = duration;
-    });
-    logger.i("Tiempo estimado actualizado: ${duration.inMinutes} minutos");
-  }
+void setEstimatedSize(String size) {
+  transaction.update((val) {
+    if (val != null) val.estimatedSize = size;
+  });
+  logger.i("Tamaño estimado actualizado: $size");
+}
+
 
   void setSelectedTime(String time) {
     transaction.update((val) {
       if (val != null) val.selectedTime = time;
     });
     logger.i("Hora seleccionada: $time");
+  }
+
+  void setFeatureIds(List<String> selectedFeatures) {
+    transaction.update((val) {
+      if (val != null) val.featureIds = selectedFeatures;
+    });
+    logger.i("Características seleccionadas: $selectedFeatures");
   }
 
   Future<void> sendRequest() async {
@@ -96,9 +106,9 @@ class ServiceTransactionController extends GetxController {
         logger.e("Error: El token de autenticación no está definido.");
         return;
       }
-      
+
       logger.i("Enviando solicitud: ${jsonEncode(requestData)}");
-      
+
       final response = await http.post(
         Uri.parse('https://keidot.azurewebsites.net/api/ServiceRequest/create'),
         headers: {
@@ -112,8 +122,10 @@ class ServiceTransactionController extends GetxController {
         logger.i("Solicitud enviada con éxito.");
         Get.snackbar("Éxito", "La solicitud se envió correctamente");
       } else {
-        logger.e("Error al enviar la solicitud: ${response.statusCode}, Respuesta: ${response.body}");
-        Get.snackbar("Error", "No se pudo enviar la solicitud: ${response.body}");
+        logger.e(
+            "Error al enviar la solicitud: ${response.statusCode}, Respuesta: ${response.body}");
+        Get.snackbar(
+            "Error", "No se pudo enviar la solicitud: ${response.body}");
       }
     } catch (e) {
       logger.e("Excepción al enviar la solicitud: $e");

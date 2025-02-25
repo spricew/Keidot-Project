@@ -84,42 +84,33 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
               color: const Color.fromARGB(255, 252, 249, 249),
               child: Column(
                 children: [
-                  Obx(() => RadioListTile<int>(
-                        value: 1,
-                        groupValue: controller.transaction.value.tiempoEstimado
-                                    .inMinutes ==
-                                30
-                            ? 1
-                            : 0,
+                  Obx(() => RadioListTile<String>(
+                        value: "Pequeño",
+                        groupValue: controller.transaction.value.estimatedSize,
                         onChanged: (value) {
-                          controller
-                              .setTiempoEstimado(const Duration(minutes: 30));
+                          if (value != null) {
+                            controller.setEstimatedSize(value);
+                          }
                         },
                         title: const Text('Pequeño'),
                       )),
-                  Obx(() => RadioListTile<int>(
-                        value: 2,
-                        groupValue: controller.transaction.value.tiempoEstimado
-                                    .inMinutes ==
-                                90
-                            ? 2
-                            : 0,
+                  Obx(() => RadioListTile<String>(
+                        value: "Mediano",
+                        groupValue: controller.transaction.value.estimatedSize,
                         onChanged: (value) {
-                          controller
-                              .setTiempoEstimado(const Duration(minutes: 90));
+                          if (value != null) {
+                            controller.setEstimatedSize(value);
+                          }
                         },
                         title: const Text('Mediano'),
                       )),
-                  Obx(() => RadioListTile<int>(
-                        value: 3,
-                        groupValue: controller.transaction.value.tiempoEstimado
-                                    .inMinutes ==
-                                150
-                            ? 3
-                            : 0,
+                  Obx(() => RadioListTile<String>(
+                        value: "Grande",
+                        groupValue: controller.transaction.value.estimatedSize,
                         onChanged: (value) {
-                          controller
-                              .setTiempoEstimado(const Duration(minutes: 150));
+                          if (value != null) {
+                            controller.setEstimatedSize(value);
+                          }
                         },
                         title: const Text('Grande'),
                       )),
@@ -139,13 +130,10 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    if (controller.transaction.value.tiempoEstimado.inMinutes <=
-                        0) {
+                    if (controller.transaction.value.estimatedSize.isEmpty) {
                       Get.snackbar("Error", "Selecciona una duración válida");
                       return;
                     }
-
-                    // Ahora pasamos también el serviceId y serviceName a la siguiente pantalla
                     Get.to(() => const RequestDetailsGarden());
                   },
                   style: ElevatedButton.styleFrom(
