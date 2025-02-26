@@ -23,7 +23,7 @@ class ServiceTransactionModel {
       "serviceId": serviceId,
       "description": description,
       "amount": amount,
-      "tiempo_estimado": estimatedSize,
+      "estimated_size": estimatedSize,
       "selected_time": selectedTime,
       "featureIds": featureIds, // ✅ Se incluye en la petición
     };

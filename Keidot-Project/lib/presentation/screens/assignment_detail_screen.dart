@@ -75,7 +75,7 @@ class AssignmentDetailScreen extends StatelessWidget {
               child: ElevatedButton.icon(
                 onPressed: () async {
                   final UpdateIsActiveService service = UpdateIsActiveService();
-                  bool success = await service.updateIsActive(false);
+                  bool success = await service.updateIsActive(context, false);
 
                   if (success) {
                     Get.snackbar(

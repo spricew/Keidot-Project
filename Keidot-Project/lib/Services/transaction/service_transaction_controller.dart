@@ -72,11 +72,11 @@ void setEstimatedSize(String size) {
 }
 
 
-  void setSelectedTime(String time) {
+  void setSelectedTime(String date) {
     transaction.update((val) {
-      if (val != null) val.selectedTime = time;
+      if (val != null) val.selectedTime = date;
     });
-    logger.i("Hora seleccionada: $time");
+    logger.i("Fecha seleccionada: $date");
   }
 
   void setFeatureIds(List<String> selectedFeatures) {

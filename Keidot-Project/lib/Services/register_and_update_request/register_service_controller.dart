@@ -14,14 +14,16 @@ class RegisterService {
       final String requestBody = jsonEncode(user.toJson());
       logger.i("Enviando solicitud de registro: $requestBody");
 
-      final response = await http.post(
-        Uri.parse(baseUrl),
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: requestBody,
-      ).timeout(const Duration(seconds: 10));
+      final response = await http
+          .post(
+            Uri.parse(baseUrl),
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+            },
+            body: requestBody,
+          )
+          .timeout(const Duration(seconds: 10));
 
       logger.i("Código de estado: ${response.statusCode}");
       logger.i("Respuesta del servidor: ${response.body}");
@@ -43,9 +45,10 @@ class RegisterService {
         });
       } else {
         final errorData = jsonDecode(response.body);
-        final errorMessage = (errorData is Map && errorData.containsKey('message'))
-            ? errorData['message']
-            : "Error en el registro";
+        final errorMessage =
+            (errorData is Map && errorData.containsKey('message'))
+                ? errorData['message']
+                : "Error en el registro";
 
         logger.e("Error en el registro: $errorMessage");
 
