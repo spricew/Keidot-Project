@@ -16,7 +16,8 @@ class RequestsScreen extends StatefulWidget {
 class _RequestsScreenState extends State<RequestsScreen> {
   late Future<List<AssignmentDTO>> _assignmentsFuture;
   final AssignmentController _controller = AssignmentController();
-  final AssignmentIdController _assignmentIdController = Get.find<AssignmentIdController>(); // Obtiene el controlador de GetX
+  final AssignmentIdController _assignmentIdController = Get.find<AssignmentIdController>(); // Obtiene el controlador de GetX para guardar el id
+  //de la asignacion seleccionada
   final Logger _logger = Logger(); // Logger para depuración
 
   @override
@@ -26,13 +27,21 @@ class _RequestsScreenState extends State<RequestsScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Solicitudes'),
-        backgroundColor: Colors.white,
-      ),
-      body: Padding(
+  @override
+Widget build(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text('Solicitudes'),
+      backgroundColor: Colors.white,
+    ),
+    body: RefreshIndicator(
+      onRefresh: () async {
+        setState(() {
+          _assignmentsFuture = _controller.getAssignments(); // Recargar solicitudes
+        });
+        await _assignmentsFuture; // Esperar a que termine la recarga
+      },
+      child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
         child: FutureBuilder<List<AssignmentDTO>>(
           future: _assignmentsFuture,
@@ -42,8 +51,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
             } else if (snapshot.hasError) {
               return Center(child: Text('Error: ${snapshot.error}'));
             } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              return const Center(
-                  child: Text('No hay solicitudes disponibles.'));
+              return const Center(child: Text('No hay solicitudes disponibles.'));
             }
             return ListView.builder(
               itemCount: snapshot.data!.length,
@@ -55,8 +63,10 @@ class _RequestsScreenState extends State<RequestsScreen> {
           },
         ),
       ),
-    );
-  }
+    ),
+  );
+}
+
 
   Widget _buildRequestCard(AssignmentDTO assignment, BuildContext context) {
     return GestureDetector(

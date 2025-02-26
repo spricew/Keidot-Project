@@ -131,7 +131,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                 ElevatedButton(
                   onPressed: () {
                     if (controller.transaction.value.estimatedSize.isEmpty) {
-                      Get.snackbar("Error", "Selecciona una duración válida");
+                      Get.snackbar("Error", "Seleccione una tamaño válido");//Enviar datos de la seleccion de las caracteristicas
                       return;
                     }
                     Get.to(() => const RequestDetailsGarden());

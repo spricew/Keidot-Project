@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:http/http.dart' as http;
 import 'package:test_app/presentation/screens/stripe/keys.dart';
+import 'package:test_app/presentation/screens/transferenciaespera_screen.dart';
 
 class HomePageStripe extends StatefulWidget {
   const HomePageStripe({super.key});
@@ -16,36 +17,40 @@ class _HomePageStripeState extends State<HomePageStripe> {
   double amount = 210;
   Map<String, dynamic>? intentPaymentData;
 
-  showPaymentSheet() async {
+  Future<void> showPaymentSheet(BuildContext context) async {
     try {
-      await Stripe.instance.presentPaymentSheet().then((val) {
-        intentPaymentData = null;
-      }).onError((errorMsg, sTrace) {
-        if (kDebugMode) {
-          print(errorMsg.toString() + sTrace.toString());
-        }
-      });
+      await Stripe.instance.presentPaymentSheet();
+
+      // Si el pago fue exitoso, limpiar los datos y redirigir
+      intentPaymentData = null;
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => TransferenciaEsperaScreen()),
+      );
     } on StripeException catch (error) {
-      if (kDebugMode) {
-        print(error);
-      }
+      print("Error de Stripe: $error");
+
       showDialog(
-          context: context,
-          builder: (c) => const AlertDialog(
-                content: Text("Cancelled"),
-              ));
-    } catch (errorMsg) {
-      if (kDebugMode) {
-        print(errorMsg);
-      }
-      print(errorMsg.toString());
+        context: context,
+        builder: (c) => const AlertDialog(
+          content: Text("Pago cancelado"),
+        ),
+      );
+    } catch (error) {
+      print("Error al procesar el pago: $error");
+
+      // Mostrar mensaje de error en la UI
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Hubo un error al procesar el pago")),
+      );
     }
   }
 
   makeIntentForPayment(amountToBeCharge, currency) async {
     try {
       Map<String, dynamic>? paymentInfo = {
-        "amount": (int.parse(amountToBeCharge)*100).toString(),
+        "amount": (int.parse(amountToBeCharge) * 100).toString(),
         "currency": currency,
         "payment_method_types[]": "card",
       };
@@ -67,27 +72,27 @@ class _HomePageStripeState extends State<HomePageStripe> {
     }
   }
 
-  paymentSheetInitialization(amountToBeCharge, currency) async {
+  Future<void> paymentSheetInitialization(
+      BuildContext context, String amountToBeCharge, String currency) async {
     try {
-      intentPaymentData = await makeIntentForPayment(amountToBeCharge, currency);
+      intentPaymentData =
+          await makeIntentForPayment(amountToBeCharge, currency);
 
-      await Stripe.instance
-          .initPaymentSheet(
-              paymentSheetParameters: SetupPaymentSheetParameters(
-                  allowsDelayedPaymentMethods: true,
-                  paymentIntentClientSecret:
-                      intentPaymentData!["client_secret"],
-                  style: ThemeMode.dark,
-                  merchantDisplayName: "Keidot App"))
-          .then((val) {
-        print(val);
-      });
-      showPaymentSheet();
+      await Stripe.instance.initPaymentSheet(
+        paymentSheetParameters: SetupPaymentSheetParameters(
+          allowsDelayedPaymentMethods: true,
+          paymentIntentClientSecret: intentPaymentData!["client_secret"],
+          style: ThemeMode.dark,
+          merchantDisplayName: "Keidot App",
+        ),
+      );
+
+      showPaymentSheet(context); // Pasamos el contexto aquí
     } catch (errorMsg, s) {
       if (kDebugMode) {
         print(s);
       }
-      print(errorMsg.toString());
+      print("Error en la inicialización del pago: $errorMsg");
     }
   }
 
@@ -99,20 +104,29 @@ class _HomePageStripeState extends State<HomePageStripe> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-                onPressed: () {
-                  paymentSheetInitialization(
-                  amount.round().toString(),
-                   "USD");
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
+              onPressed: () {
+                paymentSheetInitialization(
+                    context, amount.round().toString(), "USD");
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+              ),
+              child: Text(
+                'Pay Now ${amount.toString()}',
+                style: const TextStyle(
+                  color: Colors.white,
                 ),
-                child: Text(
-                  'Pay Now ${amount.toString()}',
-                  style: const TextStyle(
-                    color: Colors.white,
+              ),
+            ),
+            TextButton(
+                  onPressed: () {
+                    Navigator.pop(context); // Regresa a la pantalla anterior
+                  },
+                  child: const Text(
+                    'Anterior',
+                    style: TextStyle(color: Colors.red),
                   ),
-                ))
+                ),
           ],
         ),
       ),

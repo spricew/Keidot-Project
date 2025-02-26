@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_app/Services/transaction/service_transaction_controller.dart';
-import 'metodo_pago_screen.dart'; // Importa la pantalla de Método de Pago
+import 'package:test_app/presentation/screens/stripe/stripe_screen.dart';
+import 'package:intl/intl.dart';
 
 class RequestScreen3 extends StatefulWidget {
   const RequestScreen3({super.key});
@@ -116,6 +117,31 @@ class _RequestScreen3State extends State<RequestScreen3> {
             ),
             const SizedBox(height: 20),
 
+            Obx(() {
+              final selectedTime = controller.transaction.value.selectedTime;
+              if (selectedTime != null) {
+                try {
+                  DateTime parsedTime = DateTime.parse(selectedTime);
+                  return Text(
+                    'Fecha seleccionada: ${DateFormat('dd/MM/yyyy - hh:mm a').format(parsedTime)}',
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold),
+                  );
+                } catch (e) {
+                  return const Text(
+                    'Formato de fecha inválido',
+                    style: TextStyle(fontSize: 16, color: Colors.red),
+                  );
+                }
+              } else {
+                return const Text(
+                  'No hay fecha seleccionada',
+                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                );
+              }
+            }),
+
+            const SizedBox(height: 20),
             // Campo de descripción
             const Text(
               'Descripción',
@@ -166,7 +192,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const MetodoPagoScreen(),
+                        builder: (context) => const HomePageStripe(),
                       ),
                     );
                   },

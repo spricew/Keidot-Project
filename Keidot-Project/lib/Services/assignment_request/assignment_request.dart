@@ -25,75 +25,64 @@ class AssignmentController {
 
 
   /// Obtiene las solicitudes del usuario autenticado
-  Future<List<AssignmentDTO>> getAssignments() async {
-    try {
-      String? userId = await getUserId();
-      String? token = await getToken();
+Future<List<AssignmentDTO>> getAssignments() async {
+  try {
+    String? userId = await getUserId();
+    String? token = await getToken();
 
-      if (userId == null) {
-        throw Exception("No se encontró el ID del usuario en el almacenamiento.");
-      }
-      if (token == null) {
-        throw Exception("No se encontró el token en el almacenamiento.");
-      }
-
-      final url = '$baseUrl/$userId';
-      logger.i("URL de la solicitud: $url");
-
-      final response = await http.get(
-        Uri.parse(url),
-        headers: {
-          'Authorization': 'Bearer $token',
-          'Content-Type': 'application/json',
-        },
-      );
-
-      if (response.statusCode == 200) {
-        logger.i("Respuesta recibida correctamente.");
-        List<dynamic> data = jsonDecode(response.body);
-
-        if (data.isEmpty) {
-          logger.w("La respuesta no contiene asignaciones.");
-          return [];
-        }
-        
-        return data.map((json) {
-          var tiempoEstimadoRaw = json["tiempo_estimado"];
-          int tiempoEnMinutos;
-
-          if (tiempoEstimadoRaw is String) {
-            try {
-              List<String> partes = tiempoEstimadoRaw.split(':');
-              if (partes.length >= 2) {
-                int horas = int.parse(partes[0]);
-                int minutos = int.parse(partes[1]);
-                tiempoEnMinutos = (horas * 60) + minutos;
-              } else {
-                throw const FormatException("Formato incorrecto en tiempo_estimado");
-              }
-            } catch (e) {
-              logger.w("Error al parsear tiempo_estimado: $tiempoEstimadoRaw - $e");
-              tiempoEnMinutos = 0;
-            }
-          } else if (tiempoEstimadoRaw is int) {
-            tiempoEnMinutos = tiempoEstimadoRaw;
-          } else {
-            logger.w("tiempo_estimado tiene un formato desconocido: $tiempoEstimadoRaw");
-            tiempoEnMinutos = 0;
-          }
-
-          return AssignmentDTO.fromJson({
-            ...json,
-            "tiempo_estimado": tiempoEnMinutos,
-          });
-        }).toList();
-      } else {
-        logger.e("Error ${response.statusCode}: ${response.body}");
-        throw Exception("Error al obtener las solicitudes: ${response.body}");
-      }
-    } catch (e) {
-      logger.e("Excepción en la solicitud: $e");
-      throw Exception("Error en la solicitud: $e");
+    if (userId == null) {
+      throw Exception("No se encontró el ID del usuario en el almacenamiento.");
     }
+    if (token == null) {
+      throw Exception("No se encontró el token en el almacenamiento.");
+    }
+
+    final url = '$baseUrl/$userId';
+    logger.i("URL de la solicitud: $url");
+
+    final response = await http.get(
+      Uri.parse(url),
+      headers: {
+        'Authorization': 'Bearer $token',
+        'Content-Type': 'application/json',
+      },
+    );
+
+    if (response.statusCode == 200) {
+      logger.i("Respuesta recibida correctamente.");
+      List<dynamic> data = jsonDecode(response.body);
+
+      if (data.isEmpty) {
+        logger.w("La respuesta no contiene asignaciones.");
+        return [];
+      }
+
+      return data.map((json) {
+        var estimatedSizeRaw = json["estimated_size"];
+        String estimatedSize;
+
+        if (estimatedSizeRaw is String) {
+          estimatedSize = estimatedSizeRaw;
+        } else if (estimatedSizeRaw != null) {
+          estimatedSize = estimatedSizeRaw.toString();
+        } else {
+          logger.w("estimated_size es nulo o tiene un formato desconocido.");
+          estimatedSize = "Desconocido";
+        }
+
+        return AssignmentDTO.fromJson({
+          ...json,
+          "estimated_size": estimatedSize, // Reemplazando tiempoEstimado
+        });
+      }).toList();
+    } else {
+      logger.e("Error ${response.statusCode}: ${response.body}");
+      throw Exception("Error al obtener las solicitudes: ${response.body}");
+    }
+  } catch (e) {
+    logger.e("Excepción en la solicitud: $e");
+    throw Exception("Error en la solicitud: $e");
   }
+}
+
 }
