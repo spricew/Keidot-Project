@@ -8,7 +8,6 @@ import 'package:test_app/presentation/screens/transferenciaespera_screen.dart';
 
 class HomePageStripe extends StatefulWidget {
   const HomePageStripe({super.key});
-
   @override
   State<HomePageStripe> createState() => _HomePageStripeState();
 }

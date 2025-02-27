@@ -11,7 +11,7 @@ import 'package:test_app/presentation/screens/stripe/keys.dart';
 import 'package:test_app/providers/user_provider.dart';
 import 'package:provider/provider.dart';
 
-void main() async  {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   Stripe.publishableKey = clavePublicable;
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
       // Cambia MaterialApp por GetMaterialApp
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 2).theme(),
-      home: const LoginPage(), // Página de inicio => 
+      home: const LoginPage(), // Página de inicio =>
     );
   }
 }

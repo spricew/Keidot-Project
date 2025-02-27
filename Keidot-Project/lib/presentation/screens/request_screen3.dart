@@ -67,6 +67,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -123,7 +124,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
                 try {
                   DateTime parsedTime = DateTime.parse(selectedTime);
                   return Text(
-                    'Fecha seleccionada: ${DateFormat('dd/MM/yyyy - hh:mm a').format(parsedTime)}',
+                    'Fecha seleccionada: ${DateFormat('dd/MM/yyyy - hh:mm').format(parsedTime)}',
                     style: const TextStyle(
                         fontSize: 16, fontWeight: FontWeight.bold),
                   );
@@ -152,6 +153,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
             ),
             const SizedBox(height: 10),
             TextField(
+              
               controller: _descriptionController,
               maxLines: 3, // Permite múltiples líneas
               decoration: InputDecoration(

@@ -133,17 +133,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 errorText: emailError,
                 onChanged: (value) {
                   setState(() {
-                    if (value.isEmpty) {
-                      emailError = 'Ingrese su correo electrónico';
-                    } else if (!RegExp(r'^[^@]+@[^@]+\.[^@]+')
-                        .hasMatch(value)) {
-                      emailError = 'Ingrese un correo válido';
-                    } else {
-                      emailError = null;
-                    }
+                    emailError = _validateEmail(value);
                   });
                 },
               ),
+              
               const SizedBox(height: 18),
               CustomInput(
                 labelText: 'Teléfono',
@@ -315,4 +309,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ),
     );
   }
+  
+ // Función para validar el correo
+    String? _validateEmail(String value) {
+      if (value.isEmpty) {
+        return 'Ingrese su correo electrónico';
+      } else if (!RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+          .hasMatch(value)) {
+        return 'Ingrese un correo válido';
+      }
+      return null;
+    }
 }
