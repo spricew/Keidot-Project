@@ -1,9 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/screens/home_screen.dart';
 import 'package:test_app/presentation/worker/search_worker.dart';
 import 'package:test_app/presentation/worker/worker_messages_screen.dart';
 import 'package:test_app/widgets/custom_popup.dart';
@@ -19,7 +17,6 @@ class _HomeWorkerState extends State<HomeWorker> {
   int _currentIndex = 0;
   final PageController _pageController = PageController();
   Timer? _carouselTimer;
-  bool _isClient = false;
 
   @override
   void initState() {
@@ -70,19 +67,6 @@ class _HomeWorkerState extends State<HomeWorker> {
             ),
           ),
         ),
-        actions: [
-          Switch(
-            value: _isClient,
-            onChanged: (value) {
-              setState(() {
-                _isClient = value;
-              });
-              if (_isClient) {
-                Get.offAll(() => const HomeScreen());
-              }
-            },
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
