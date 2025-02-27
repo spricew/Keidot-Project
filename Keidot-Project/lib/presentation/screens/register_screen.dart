@@ -10,6 +10,7 @@ import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 import 'package:test_app/widgets/custom_button.dart';
 import 'package:test_app/widgets/custom_input.dart';
+import 'package:flutter/services.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -23,6 +24,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController phoneController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
   final RegisterService _registerService = RegisterService();
   bool obscurePassword = true;
   bool obscureConfirmPassword = true;
@@ -30,7 +33,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   File? _selectedFile;
   String? _fileName;
   String? _imageUrl;
-
+  bool isUploading = false; // 🔹 Estado para controlar la carga
+  bool _isImageUploaded = false;
   String? usernameError;
   String? emailError;
   String? phoneError;
@@ -111,7 +115,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              CustomInput(
+               CustomInput(
                 labelText: 'Nombre de usuario',
                 prefixIcon: Icons.people,
                 controller: usernameController,
@@ -137,9 +141,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   });
                 },
               ),
-              
               const SizedBox(height: 18),
-              CustomInput(
+             CustomInput(
                 labelText: 'Teléfono',
                 prefixIcon: Icons.phone,
                 controller: phoneController,
@@ -210,52 +213,64 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               const SizedBox(height: 16),
               ElevatedButton.icon(
-                onPressed: () async {
-                  FilePickerResult? result =
-                      await FilePicker.platform.pickFiles(
-                    type: FileType.custom,
-                    allowedExtensions: ['jpg', 'jpeg', 'png'],
-                  );
+                onPressed: isUploading
+                    ? null
+                    : () async {
+                        FilePickerResult? result =
+                            await FilePicker.platform.pickFiles(
+                          type: FileType.custom,
+                          allowedExtensions: ['jpg', 'jpeg', 'png'],
+                        );
 
-                  if (result != null) {
-                    String filePath = result.files.single.path!;
-                    String fileName = result.files.single.name;
-                    File file = File(filePath);
+                        if (result != null) {
+                          setState(() {
+                            isUploading = true;
+                            _isImageUploaded =
+                                false; // 🔹 Bloquea el botón hasta que la imagen se suba
+                          });
 
-                    setState(() {
-                      _selectedFile = file;
-                      _fileName = fileName;
-                    });
+                          String filePath = result.files.single.path!;
+                          String fileName = result.files.single.name;
+                          File file = File(filePath);
 
-                    // Convertir archivo a Base64
-                    String base64Image =
-                        await FileConverter.convertToBase64(file);
+                          setState(() {
+                            _selectedFile = file;
+                            _fileName = fileName;
+                          });
 
-                    // Subir imagen y obtener URL
-                    String? imageUrl =
-                        await FileUploader.uploadImage(base64Image, fileName);
+                          // Convertir archivo a Base64
+                          String base64Image =
+                              await FileConverter.convertToBase64(file);
 
-                    print("URL obtenida: $imageUrl"); // DEBUG
+                          // Subir imagen y obtener URL
+                          String? imageUrl = await FileUploader.uploadImage(
+                              base64Image, fileName);
 
-                    if (imageUrl != null && imageUrl.isNotEmpty) {
-                      setState(() {
-                        _imageUrl = imageUrl;
-                      });
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                            content: Text('Error al subir la imagen.')),
-                      );
-                    }
-                  } else {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                          content: Text('No se seleccionó ningún archivo.')),
-                    );
-                  }
-                },
+                          setState(() {
+                            isUploading = false;
+                            if (imageUrl != null && imageUrl.isNotEmpty) {
+                              _imageUrl = imageUrl;
+                              _isImageUploaded =
+                                  true; // 🔹 Habilita el botón al recibir la URL
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text('Error al subir la imagen.')),
+                              );
+                            }
+                          });
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content:
+                                    Text('No se seleccionó ningún archivo.')),
+                          );
+                        }
+                      },
                 icon: const Icon(Icons.upload_file),
-                label: const Text('Seleccionar archivo'),
+                label: isUploading
+                    ? const CircularProgressIndicator()
+                    : const Text('Seleccionar archivo'),
               ),
               const SizedBox(height: 16),
               if (_selectedFile != null)
@@ -276,7 +291,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               else
                 const Text('No se ha seleccionado ningún archivo.'),
               const SizedBox(height: 20),
-              CustomButton(
+             CustomButton(
                 text: 'Registrarse',
                 onPressed: _register,
               ),
@@ -309,15 +324,48 @@ class _RegisterScreenState extends State<RegisterScreen> {
       ),
     );
   }
-  
- // Función para validar el correo
-    String? _validateEmail(String value) {
-      if (value.isEmpty) {
-        return 'Ingrese su correo electrónico';
-      } else if (!RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
-          .hasMatch(value)) {
-        return 'Ingrese un correo válido';
-      }
-      return null;
+
+  // Función para validar el correo
+  String? _validateEmail(String value) {
+    if (value.isEmpty) {
+      return 'Ingrese su correo electrónico';
+    } else if (!RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+        .hasMatch(value)) {
+      return 'Ingrese un correo válido';
     }
+    return null;
+  }
+
+  bool _isFormValid() {
+    // Validar que el email sea válido
+    if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
+        .hasMatch(emailController.text)) {
+      return false;
+    }
+
+    // Validar que el nombre de usuario no esté vacío
+    if (usernameController.text.isEmpty) {
+      return false;
+    }
+
+    // Validar que el teléfono tenga un formato válido
+    if (phoneController.text.isEmpty ||
+        int.tryParse(phoneController.text) == null) {
+      return false;
+    }
+
+    // Validar que la contraseña tenga al menos 6 caracteres
+    if (passwordController.text.length < 6) {
+      return false;
+    }
+
+    // Validar que la confirmación de la contraseña coincida
+    // Validar que la confirmación de la contraseña coincida
+    if (confirmPasswordController.text != passwordController.text) {
+      return false;
+    }
+
+    // Si todas las validaciones pasan, el formulario es válido
+    return true;
+  }
 }
