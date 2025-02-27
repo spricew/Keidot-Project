@@ -29,6 +29,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final RegisterService _registerService = RegisterService();
   bool obscurePassword = true;
   bool obscureConfirmPassword = true;
+  // Mapa para guardar los errores de validación
+  Map<String, String> _errors = {};
 
   File? _selectedFile;
   String? _fileName;
@@ -61,27 +63,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   void _register() async {
     print("URL antes del registro: $_imageUrl"); // DEBUG
-    if (usernameError != null ||
-        emailError != null ||
-        phoneError != null ||
-        passwordError != null ||
-        confirmPasswordError != null) {
+
+    // Limpiar errores previos
+    setState(() {
+      usernameError = null;
+      emailError = null;
+      phoneError = null;
+      passwordError = null;
+      confirmPasswordError = null;
+    });
+
+    // Validar si la imagen está presente
+    if (_imageUrl == null || _imageUrl!.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Corrige los errores antes de continuar'),
+          content: Text("Debes subir una imagen antes de registrarte."),
           backgroundColor: Colors.red,
         ),
       );
       return;
     }
-    if (_imageUrl == null || _imageUrl!.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-            content: Text("Debes subir una imagen antes de registrarte.")),
-      );
-      return; // Detiene la ejecución de _register()
-    }
 
+    // Crear objeto del usuario
     final user = UserModel(
       email: emailController.text,
       username: usernameController.text,
@@ -90,7 +93,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
       urlImage: _imageUrl!,
     );
 
-    await _registerService.register(context, user);
+    // Consumir el servicio de registro y obtener posibles errores
+    final Map<String, dynamic>? errors =
+        await _registerService.register(context, user);
+
+    if (errors != null) {
+      setState(() {
+        usernameError = errors["Username"]?.first;
+        emailError = errors["Email"]?.first;
+        phoneError = errors["Phone"]?.first;
+        passwordError = errors["Password"]?.first;
+      });
+
+      // Mostrar un mensaje si hay un error general
+      if (errors.containsKey("general")) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(errors["general"]?.first ?? "Error en el registro"),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    }
   }
 
   @override
@@ -115,7 +139,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-               CustomInput(
+              CustomInput(
                 labelText: 'Nombre de usuario',
                 prefixIcon: Icons.people,
                 controller: usernameController,
@@ -142,7 +166,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 },
               ),
               const SizedBox(height: 18),
-             CustomInput(
+              CustomInput(
                 labelText: 'Teléfono',
                 prefixIcon: Icons.phone,
                 controller: phoneController,
@@ -291,7 +315,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               else
                 const Text('No se ha seleccionado ningún archivo.'),
               const SizedBox(height: 20),
-             CustomButton(
+              CustomButton(
                 text: 'Registrarse',
                 onPressed: _register,
               ),
