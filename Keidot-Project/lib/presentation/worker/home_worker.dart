@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/worker/search_worker.dart';
-import 'package:test_app/presentation/worker/worker_messages_screen.dart';
+import 'package:test_app/presentation/worker/worker_messages.dart';
 import 'package:test_app/widgets/custom_popup.dart';
 
 class HomeWorker extends StatefulWidget {
