@@ -6,7 +6,7 @@ import 'package:logger/logger.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
 
-class AuthService {
+class AuthenticationService {
   final String baseUrl = 'https://keidot.azurewebsites.net/api/Login/login';
   static const FlutterSecureStorage storage = FlutterSecureStorage();
   final Logger logger = Logger();

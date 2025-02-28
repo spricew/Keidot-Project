@@ -1,9 +1,10 @@
 import 'dart:convert';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
 
-class AuthService {
+class UpdatePassword {
   final String baseUrl = "https://keidot.azurewebsites.net/api/RegisterUsers"; // Reemplaza con la URL de tu API
   final storage = const FlutterSecureStorage();
   final Logger logger = Logger();
