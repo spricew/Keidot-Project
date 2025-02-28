@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
       // Cambia MaterialApp por GetMaterialApp
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 2).theme(),
-      home: const HomeWorker(), // Página de inicio =>
+      home: const LoginPage(), // Página de inicio =>
     );
   }
 }
