@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_app/presentation/worker/worker_notifications_screen.dart';
 import 'package:test_app/presentation/worker/worker_profile_screen.dart';
+import 'package:test_app/presentation/worker/worker_assignments_screen.dart';
 import 'package:test_app/presentation/worker/worker_settings_screen.dart';
 
 class WorkerPopupMenu extends StatelessWidget {
   const WorkerPopupMenu({Key? key}) : super(key: key);
 
-  void _navigateToScreen(BuildContext context, Widget screen) {
-    // Navega a la pantalla deseada usando Get
+  void _navigateToScreen(Widget screen) {
     Get.to(() => screen);
   }
 
@@ -18,30 +18,37 @@ class WorkerPopupMenu extends StatelessWidget {
       onSelected: (int value) {
         switch (value) {
           case 1:
-            _navigateToScreen(context, WorkerProfileScreen());
+            _navigateToScreen( WorkerProfileScreen());
             break;
           case 2:
-            _navigateToScreen(context, const WorkerSettingsScreen());
+            _navigateToScreen(const WorkerSettingsScreen());
             break;
           case 3:
-            _navigateToScreen(context, const WorkerNotificationsScreen());
+            _navigateToScreen(const WorkerNotificationsScreen());
+            break;
+          case 4:
+            _navigateToScreen(WorkerAssignmentsScreen());
             break;
           default:
             break;
         }
       },
       itemBuilder: (BuildContext context) => <PopupMenuEntry<int>>[
-        PopupMenuItem<int>(
+        const PopupMenuItem<int>(
           value: 1,
           child: Text('Perfil Trabajador'),
         ),
-        PopupMenuItem<int>(
+        const PopupMenuItem<int>(
           value: 2,
           child: Text('Configuración'),
         ),
-        PopupMenuItem<int>(
+        const PopupMenuItem<int>(
           value: 3,
           child: Text('Notificaciones'),
+        ),
+        const PopupMenuItem<int>(
+          value: 4,
+          child: Text('Trabajos Aceptados'),
         ),
       ],
       child: const Icon(Icons.menu, color: Colors.black),

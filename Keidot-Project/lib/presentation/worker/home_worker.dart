@@ -5,6 +5,7 @@ import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/worker/search_worker.dart';
 import 'package:test_app/presentation/worker/worker_messages.dart';
 import 'package:test_app/widgets/worker_popup_menu.dart';
+import 'package:test_app/presentation/worker/service_requests_screen.dart'; // Importa la nueva pantalla
 
 class HomeWorker extends StatefulWidget {
   const HomeWorker({super.key});
@@ -17,6 +18,14 @@ class _HomeWorkerState extends State<HomeWorker> {
   int _currentIndex = 0;
   final PageController _pageController = PageController();
   Timer? _carouselTimer;
+
+  // Lista de nombres de servicios destacados
+  final List<String> serviceNames = [
+    "Venta de plantas y semillas",
+    "Corte de césped",
+    "Limpieza de jardín",
+    "Alquiler de herramientas de jardinería"
+  ];
 
   @override
   void initState() {
@@ -161,7 +170,7 @@ class _HomeWorkerState extends State<HomeWorker> {
         mainAxisSpacing: 12,
         childAspectRatio: 0.84,
       ),
-      itemCount: 4,
+      itemCount: serviceNames.length,
       itemBuilder: (context, index) {
         return _gridItem(index);
       },
@@ -169,31 +178,37 @@ class _HomeWorkerState extends State<HomeWorker> {
   }
 
   Widget _gridItem(int index) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        image: const DecorationImage(
-          image: NetworkImage('https://via.placeholder.com/150'),
-          fit: BoxFit.cover,
-        ),
-      ),
+    return GestureDetector(
+      onTap: () {
+        // Redirige a la nueva pantalla pasándole el nombre del servicio seleccionado
+        Get.to(() => ServiceRequestsScreen(serviceName: serviceNames[index]));
+      },
       child: Container(
-        alignment: Alignment.bottomLeft,
-        padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          gradient: LinearGradient(
-            colors: [Colors.black.withOpacity(0.7), Colors.transparent],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
+          borderRadius: BorderRadius.circular(16),
+          image: const DecorationImage(
+            image: NetworkImage('https://via.placeholder.com/150'),
+            fit: BoxFit.cover,
           ),
         ),
-        child: Text(
-          'Servicio ${index + 1}',
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
+        child: Container(
+          alignment: Alignment.bottomLeft,
+          padding: const EdgeInsets.all(18),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            gradient: LinearGradient(
+              colors: [Colors.black.withOpacity(0.7), Colors.transparent],
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+            ),
+          ),
+          child: Text(
+            serviceNames[index],
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
