@@ -1,42 +1,21 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
-import 'package:test_app/Services/login_request/auth_serviceController.dart';
+import 'package:get/get.dart';
+import 'package:test_app/Services/models/service_model.dart';
+import 'package:test_app/Services/services_request/service_controller.dart';
 
 class ApiServiceName {
-  static const String baseUrl = "https://keidot.azurewebsites.net/api/Service";
-//https://keidot.azurewebsites.net/
-  Future<Map<String, dynamic>?> getServiceByName(String query) async {
+  final ServiceController serviceController = Get.find<ServiceController>();
+
+  Future<List<Map<String, dynamic>>> getServicesByName(String query) async {
     try {
-      final String? token = await AuthService().getToken(); // Obtener token
+      String queryLower = query.toLowerCase();
 
-      if (token == null) {
-        throw Exception("No se encontró el token. Inicia sesión nuevamente.");
-      }
+      // Filtrar todos los servicios que contengan el query en su título
+      List<Service> matchedServices = serviceController.services.where((service) {
+        return service.title.toLowerCase().contains(queryLower);
+      }).toList();
 
-      final response = await http.get(
-        Uri.parse(baseUrl),
-        headers: {
-          "Authorization": "Bearer $token",
-          "Content-Type": "application/json",
-        },
-      );
-
-      if (response.statusCode == 200) {
-        List<dynamic> jsonData = json.decode(response.body);
-        
-        // Convertir el query a minúsculas
-        String queryLower = query.toLowerCase();
-
-        // Buscar en la lista ignorando mayúsculas/minúsculas
-        var matchedService = jsonData.firstWhere(
-          (service) => service['title'].toString().toLowerCase() == queryLower,
-          orElse: () => null,
-        );
-
-        return matchedService;
-      } else {
-        throw Exception("Error ${response.statusCode}: ${response.body}");
-      }
+      // Convertir los objetos a JSON
+      return matchedServices.map((service) => service.toJson()).toList();
     } catch (e) {
       throw Exception("Error inesperado: $e");
     }

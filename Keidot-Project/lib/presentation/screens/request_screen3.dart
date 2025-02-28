@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_app/Services/transaction/service_transaction_controller.dart';
-import 'metodo_pago_screen.dart'; // Importa la pantalla de Método de Pago
+import 'package:test_app/presentation/screens/stripe/stripe_screen.dart';
+import 'package:intl/intl.dart';
 
 class RequestScreen3 extends StatefulWidget {
   const RequestScreen3({super.key});
@@ -11,11 +12,13 @@ class RequestScreen3 extends StatefulWidget {
 }
 
 class _RequestScreen3State extends State<RequestScreen3> {
-  final ServiceTransactionController controller = Get.find(); // Obtén el controlador
+  final ServiceTransactionController controller =
+      Get.find(); // Obtén el controlador
   String? _selectedDate; // Para almacenar la fecha seleccionada
-  final TextEditingController _descriptionController = TextEditingController(); // Controlador para el campo de descripción
+  final TextEditingController _descriptionController =
+      TextEditingController(); // Controlador para el campo de descripción
 
-  // Método para mostrar el selector de fecha y hora
+  // Método para mostrar el selector de fecha y hora con validaciones
   Future<void> _selectDateTime(BuildContext context) async {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
@@ -27,10 +30,17 @@ class _RequestScreen3State extends State<RequestScreen3> {
     if (pickedDate != null) {
       final TimeOfDay? pickedTime = await showTimePicker(
         context: context,
-        initialTime: TimeOfDay.now(),
+        initialTime: const TimeOfDay(hour: 8, minute: 0),
       );
 
       if (pickedTime != null) {
+        // Validar que la hora esté en el rango permitido (08:00 - 18:00)
+        if (pickedTime.hour < 8 || pickedTime.hour > 18) {
+          Get.snackbar("Error", "Selecciona un horario entre 08:00 y 18:00");
+          return;
+        }
+
+        // Combinar fecha y hora seleccionadas
         final DateTime selectedDateTime = DateTime(
           pickedDate.year,
           pickedDate.month,
@@ -39,13 +49,17 @@ class _RequestScreen3State extends State<RequestScreen3> {
           pickedTime.minute,
         );
 
+        // Guardar fecha en formato "yyyy-MM-dd"
         setState(() {
-          _selectedDate = "${selectedDateTime.toLocal()}".split(' ')[0]; // Guarda la fecha seleccionada
+          _selectedDate = "${pickedDate.toLocal()}".split(' ')[0];
         });
 
-        // Guarda la hora en el formato correcto (HH:mm)
-        final formattedTime = "${pickedTime.hour.toString().padLeft(2, '0')}:${pickedTime.minute.toString().padLeft(2, '0')}";
-        controller.setSelectedTime(formattedTime);
+        // Convertir a formato ISO 8601 (UTC)
+        final String formattedISOTime =
+            selectedDateTime.toUtc().toIso8601String();
+
+        // Guardar en el controlador
+        controller.setSelectedTime(formattedISOTime);
       }
     }
   }
@@ -53,6 +67,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
@@ -98,14 +113,36 @@ class _RequestScreen3State extends State<RequestScreen3> {
             Wrap(
               spacing: 8.0, // Espacio entre los botones
               children: [
-                _buildDateOption('Hoy'),
-                _buildDateOption('Mañana'),
-                _buildDateOption('En 3 días'),
                 _buildDateOption('Definir fecha'),
               ],
             ),
             const SizedBox(height: 20),
 
+            Obx(() {
+              final selectedTime = controller.transaction.value.selectedTime;
+              if (selectedTime != null) {
+                try {
+                  DateTime parsedTime = DateTime.parse(selectedTime);
+                  return Text(
+                    'Fecha seleccionada: ${DateFormat('dd/MM/yyyy - hh:mm').format(parsedTime)}',
+                    style: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold),
+                  );
+                } catch (e) {
+                  return const Text(
+                    'Formato de fecha inválido',
+                    style: TextStyle(fontSize: 16, color: Colors.red),
+                  );
+                }
+              } else {
+                return const Text(
+                  'No hay fecha seleccionada',
+                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                );
+              }
+            }),
+
+            const SizedBox(height: 20),
             // Campo de descripción
             const Text(
               'Descripción',
@@ -116,6 +153,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
             ),
             const SizedBox(height: 10),
             TextField(
+              
               controller: _descriptionController,
               maxLines: 3, // Permite múltiples líneas
               decoration: InputDecoration(
@@ -125,7 +163,8 @@ class _RequestScreen3State extends State<RequestScreen3> {
                 ),
               ),
               onChanged: (value) {
-                controller.setDescription(value); // Guarda la descripción en el controlador
+                controller.setDescription(
+                    value); // Guarda la descripción en el controlador
               },
             ),
             const Spacer(),
@@ -146,7 +185,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
                 ElevatedButton(
                   onPressed: () {
                     // Valida que se haya seleccionado una fecha y hora
-                    if (controller.requestData.value.selectedTime.isEmpty) {
+                    if (controller.transaction.value.selectedTime.isEmpty) {
                       Get.snackbar("Error", "Selecciona una fecha y hora");
                       return;
                     }
@@ -155,7 +194,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => MetodoPagoScreen(),
+                        builder: (context) => const HomePageStripe(),
                       ),
                     );
                   },
@@ -190,33 +229,11 @@ class _RequestScreen3State extends State<RequestScreen3> {
 
         // Guarda la fecha seleccionada en el controlador
         if (selected) {
-          if (date == "Definir fecha") {
-            _selectDateTime(context); // Abre el selector de fecha y hora
-          } else {
-            final now = DateTime.now();
-            DateTime selectedDate;
-
-            switch (date) {
-              case "Hoy":
-                selectedDate = now;
-                break;
-              case "Mañana":
-                selectedDate = now.add(const Duration(days: 1));
-                break;
-              case "En 3 días":
-                selectedDate = now.add(const Duration(days: 3));
-                break;
-              default:
-                selectedDate = now;
-            }
-
-            // Guarda la hora en el formato correcto (HH:mm)
-            final formattedTime = "${selectedDate.hour.toString().padLeft(2, '0')}:${selectedDate.minute.toString().padLeft(2, '0')}";
-            controller.setSelectedTime(formattedTime);
-          }
+          _selectDateTime(context); // Abre el selector de fecha y hora
         }
       },
-      selectedColor: const Color(0xFF12372A), // Color verde cuando está seleccionado
+      selectedColor:
+          const Color(0xFF12372A), // Color verde cuando está seleccionado
       labelStyle: TextStyle(
         color: _selectedDate == date ? Colors.white : Colors.black,
       ),

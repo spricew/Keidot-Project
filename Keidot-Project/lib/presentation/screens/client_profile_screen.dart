@@ -1,138 +1,168 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:test_app/Services/assignment_request/assignment_inact_request.dart';
+import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/assign_Inactive_detail_screen.dart';
+import 'package:test_app/providers/user_provider.dart';
 
-class ClientProfileScreen extends StatelessWidget {
-  ClientProfileScreen({super.key});
+class ClientProfileScreen extends StatefulWidget {
+  const ClientProfileScreen({super.key});
 
-  // Simulación de datos que vendrían de la API
-  final List<Map<String, dynamic>> reviews = [
-    {
-      "name": "Heyder Momichis",
-      "date": "18 de Jul. 2024",
-      "rating": 4,
-      "comment": "El trabajador cumple bien con sus servicios."
-    },
-    {
-      "name": "Heyder Momichis",
-      "date": "22 de Jul. 2024",
-      "rating": 5,
-      "comment": "Excelente trabajo, muy puntual y profesional."
-    },
-    {
-      "name": "Heyder Momichis",
-      "date": "25 de Jul. 2024",
-      "rating": 3,
-      "comment": "Buen servicio, pero podría mejorar en tiempos de respuesta."
-    },
-  ];
+  @override
+  _ClientProfileScreenState createState() => _ClientProfileScreenState();
+}
+
+class _ClientProfileScreenState extends State<ClientProfileScreen> {
+  final AssignmentInactiveController _controller =AssignmentInactiveController();
+  late Future<List<AssignmentDTO>> _assignmentsFuture;
+  
+  @override
+  void initState() {
+    super.initState();
+    _assignmentsFuture = _controller.getAssignments();
+  }
 
   @override
   Widget build(BuildContext context) {
+    final name = Provider.of<UserProvider>(context).userName ?? "Usuario";
     return Scaffold(
       appBar: AppBar(
         backgroundColor: defaultWhite,
       ),
-      body: Column(
-        children: [
-          // Perfil del cliente
-          Container(
-            width: double.infinity,
-            decoration: BoxDecoration(color: greenHigh),
-            padding: const EdgeInsets.all(12.0),
-            child: Row(
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
               children: [
-                const CircleAvatar(
-                  radius: 40,
-                  backgroundColor: Colors.white,
-                  child: Icon(Icons.person, size: 50, color: Colors.black87),
+                Container(
+                  width: double.infinity,
+                  decoration: const BoxDecoration(color: greenContrast),
+                  padding: const EdgeInsets.all(12.0),
+                  child: Row(
+                    children: [
+                      const CircleAvatar(
+                        radius: 40,
+                        backgroundColor: Colors.white,
+                        child: Icon(Icons.person, size: 50, color: darkGreen),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Text(
+                          "Hola, $name!",
+                          style: const TextStyle(
+                              color: defaultWhite,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 22),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                const SizedBox(width: 12),
-                Text(
-                  'Heyder Momichis',
-                  style: TextStyle(
-                      color: defaultWhite,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 22),
+                const SizedBox(height: 24),
+                const Text(
+                  'Historial de servicios',
+                  style: TextStyle(fontSize: 20, color: darkGreen),
                 ),
+                const SizedBox(height: 20),
               ],
             ),
           ),
-
-          const SizedBox(height: 24),
-
-          // Título de la sección de comentarios
-          Text(
-            'Historial de servicios',
-            style: TextStyle(fontSize: 20, color: darkGreen),
-          ),
-
-          const SizedBox(height: 16),
-
-          // Lista de comentarios
-          Expanded(
-            child: ListView.builder(
-              itemCount: reviews.length, // Número dinámico de reseñas
-              itemBuilder: (context, index) {
-                return _buildReviewCard(reviews[index]);
-              },
-            ),
+          FutureBuilder<List<AssignmentDTO>>(
+            future: _assignmentsFuture,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const SliverToBoxAdapter(
+                    child: Center(child: CircularProgressIndicator()));
+              } else if (snapshot.hasError) {
+                return SliverToBoxAdapter(
+                    child: Center(child: Text('Error: ${snapshot.error}')));
+              } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                return const SliverToBoxAdapter(
+                    child: Center(child: Text('No hay servicios inactivos.')));
+              }
+              return SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    final assignment = snapshot.data![index];
+                    return _buildAssignmentCard(assignment, context);
+                  },
+                  childCount: snapshot.data!.length,
+                ),
+              );
+            },
           ),
         ],
       ),
     );
   }
 
-  Widget _buildReviewCard(Map<String, dynamic> review) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: lightgreen,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              const CircleAvatar(
-                radius: 20,
-                backgroundColor: Colors.white,
-                child: Icon(Icons.person, size: 25, color: Colors.black87),
-              ),
-              const SizedBox(width: 8),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(review["name"],
-                      style: const TextStyle(fontWeight: FontWeight.bold)),
-                  Text(review["date"],
-                      style: TextStyle(fontSize: 12, color: Colors.grey[700])),
-                ],
-              ),
-              const Spacer(),
-              Row(
-                children: List.generate(
-                    5,
-                    (i) => Icon(
-                          i < review["rating"] ? Icons.star : Icons.star_border,
-                          color: Colors.black87,
-                          size: 16,
-                        )),
-              ),
-            ],
+  Widget _buildAssignmentCard(AssignmentDTO assignment, BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) =>
+                AssignmentInactiveDetailScreen(assignment: assignment),
           ),
-          const SizedBox(height: 8),
-          Text(review["comment"], style: const TextStyle(fontSize: 14)),
-          const SizedBox(height: 8),
-          Row(
-            children: const [
-              Icon(Icons.more, size: 16),
-              SizedBox(width: 4),
-              Text("Ver detalles"),
-            ],
+        );
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 21),
+        decoration: const BoxDecoration(
+          color: defaultWhite,
+          border: Border(
+            top: BorderSide(
+              width: 1,
+              color: Color.fromARGB(255, 201, 201, 201),
+            ),
           ),
-        ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const CircleAvatar(
+                  radius: 20,
+                  backgroundColor: Colors.white,
+                  child: Icon(Icons.work, size: 25, color: darkGreen),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        assignment.nameOfService,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Text(
+                        "Fecha: ${assignment.formattedDateSelected}",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Text(
+                        "Hora: ${assignment.formattedTimeSelected}",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Text(
+                  "MXN \$${assignment.amount.toStringAsFixed(2)}",
+                  style: const TextStyle(color: darkGreen, fontSize: 14),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,5 +1,9 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:test_app/Services/convert_worker/convert_worker_request.dart';
+import 'package:test_app/Services/models/convert_worker_model.dart';
 
 class NewWorkerScreen extends StatelessWidget {
   const NewWorkerScreen({super.key});
@@ -41,13 +45,150 @@ class NewWorkerForm extends StatefulWidget {
 
 class _NewWorkerFormState extends State<NewWorkerForm> {
   final _formKey = GlobalKey<FormState>();
-  
-  String urlImagePerfil = '';
+  final UserProfileController _controller = UserProfileController();
+
+  File? _selectedFile;
+  String? _fileName;
+
+  Future<void> _pickFile() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.image,
+    );
+
+    if (result != null) {
+      setState(() {
+        _selectedFile = File(result.files.single.path!);
+        _fileName = result.files.single.name;
+      });
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('No se seleccionó ningún archivo.')),
+      );
+    }
+  }
+
+  String fullName = '';
   String address = '';
   String city = '';
   int experienceYears = 0;
-  String skills = '';
   String biography = '';
+
+  Future<void> _sendData() async {
+    if (!_formKey.currentState!.validate()) return;
+
+    final userProfile = UserProfile(
+      fullname: fullName,
+      urlImagePerfil: _selectedFile?.path ?? 'Htttps//HellowMundo',
+      address: address,
+      city: city,
+      experienceYears: experienceYears,
+      biography: biography,
+    );
+
+    bool success = await _controller.updateUserProfile(userProfile);
+    if (success) {
+      Get.snackbar(
+        'Éxito',
+        'Datos enviados correctamente',
+        backgroundColor: Colors.green,
+        colorText: Colors.white,
+      );
+    } else {
+      Get.snackbar(
+        'Error',
+        'No se pudo enviar la información',
+        backgroundColor: Colors.red,
+        colorText: Colors.white,
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 16),
+          _buildTextField(
+            label: 'Nombre Completo',
+            onChanged: (value) => fullName = value,
+            validator: (value) =>
+            value == null || value.isEmpty ? 'Ingresa tu Nombre Completo' : null,
+          ),
+          const Text(
+            'Foto de perfil:',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8),
+          ElevatedButton.icon(
+            onPressed: _pickFile,
+            icon: const Icon(Icons.upload_file),
+            label: const Text('Seleccionar archivo'),
+          ),
+          if (_selectedFile != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text('Archivo seleccionado: $_fileName'),
+            ),
+          const SizedBox(height: 16),
+          _buildTextField(
+            label: 'Dirección',
+            onChanged: (value) => address = value,
+            validator: (value) =>
+                value == null || value.isEmpty ? 'Ingresa tu dirección' : null,
+          ),
+          const SizedBox(height: 16),
+          _buildTextField(
+            label: 'Ciudad',
+            onChanged: (value) => city = value,
+            validator: (value) =>
+                value == null || value.isEmpty ? 'Ingresa tu ciudad' : null,
+          ),
+          const SizedBox(height: 16),
+          _buildTextField(
+            label: 'Años de experiencia',
+            keyboardType: TextInputType.number,
+            onChanged: (value) => experienceYears = int.tryParse(value) ?? 0,
+            validator: (value) => (value == null || int.tryParse(value) == null)
+                ? 'Ingresa un número válido'
+                : null,
+          ),
+          const SizedBox(height: 16),
+          _buildTextField(
+            label: 'Biografía',
+            maxLines: 5,
+            onChanged: (value) => biography = value,
+            validator: (value) => value == null || value.isEmpty
+                ? 'Escribe una breve biografía'
+                : null,
+          ),
+          const SizedBox(height: 24),
+          Center(
+            child: ElevatedButton(
+              onPressed: _sendData,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF12372A),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+              child: const Text(
+                'Enviar',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
   Widget _buildTextField({
     required String label,
@@ -64,89 +205,13 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
         ),
         filled: true,
         fillColor: Colors.grey.shade100,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       ),
       keyboardType: keyboardType,
       maxLines: maxLines,
       onChanged: onChanged,
       validator: validator,
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildTextField(
-            label: 'URL de la imagen de perfil',
-            onChanged: (value) => urlImagePerfil = value,
-            validator: (value) => value == null || value.isEmpty ? 'Ingresa una URL válida' : null,
-          ),
-          const SizedBox(height: 16),
-          _buildTextField(
-            label: 'Dirección',
-            onChanged: (value) => address = value,
-            validator: (value) => value == null || value.isEmpty ? 'Ingresa tu dirección' : null,
-          ),
-          const SizedBox(height: 16),
-          _buildTextField(
-            label: 'Ciudad',
-            onChanged: (value) => city = value,
-            validator: (value) => value == null || value.isEmpty ? 'Ingresa tu ciudad' : null,
-          ),
-          const SizedBox(height: 16),
-          _buildTextField(
-            label: 'Años de experiencia',
-            keyboardType: TextInputType.number,
-            onChanged: (value) => experienceYears = int.tryParse(value) ?? 0,
-            validator: (value) => (value == null || int.tryParse(value) == null) ? 'Ingresa un número válido' : null,
-          ),
-          const SizedBox(height: 16),
-          _buildTextField(
-            label: 'Habilidades',
-            maxLines: 3,
-            onChanged: (value) => skills = value,
-            validator: (value) => value == null || value.isEmpty ? 'Describe tus habilidades' : null,
-          ),
-          const SizedBox(height: 16),
-          _buildTextField(
-            label: 'Biografía',
-            maxLines: 5,
-            onChanged: (value) => biography = value,
-            validator: (value) => value == null || value.isEmpty ? 'Escribe una breve biografía' : null,
-          ),
-          const SizedBox(height: 24),
-          Center(
-            child: ElevatedButton(
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  Get.snackbar(
-                    'Éxito',
-                    'Formulario enviado correctamente',
-                    backgroundColor: Colors.green,
-                    colorText: Colors.white,
-                  );
-                  print('Datos enviados');
-                }
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF12372A),
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-              child: const Text(
-                'Enviar',
-                style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }

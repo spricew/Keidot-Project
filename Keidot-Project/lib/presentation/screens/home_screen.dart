@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:test_app/Services/services_request/service_controller.dart';
+import 'package:test_app/Services/transaction/service_transaction_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/request_screen1.dart';
+import 'package:test_app/presentation/worker/home_worker.dart';
 import 'package:test_app/widgets/custom_popup.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   final PageController _pageController = PageController();
   Timer? _carouselTimer;
+  bool _isWorker = false;
 
   @override
   void initState() {
@@ -68,6 +72,19 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
+        actions: [
+          Switch(
+            value: _isWorker,
+            onChanged: (value) {
+              setState(() {
+                _isWorker = value;
+              });
+              if (_isWorker) {
+                Get.offAll(() => const HomeWorker());
+              }
+            },
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
@@ -187,31 +204,38 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _gridItem(service) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        image: DecorationImage(
-          image: NetworkImage(service.urlImage),
-          fit: BoxFit.cover,
-        ),
-      ),
+    return GestureDetector(
+      onTap: () {
+        final serviceController = Get.find<ServiceTransactionController>();
+        serviceController.setService(service.serviceId.toString(), service.title);
+        Get.to(() => const RequestScreen1());
+      },
       child: Container(
-        alignment: Alignment.bottomLeft,
-        padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          gradient: LinearGradient(
-            colors: [Colors.black.withOpacity(0.7), Colors.transparent],
-            begin: Alignment.bottomCenter,
-            end: Alignment.topCenter,
+          borderRadius: BorderRadius.circular(16),
+          image: DecorationImage(
+            image: NetworkImage(service.urlImage),
+            fit: BoxFit.cover,
           ),
         ),
-        child: Text(
-          service.title,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
+        child: Container(
+          alignment: Alignment.bottomLeft,
+          padding: const EdgeInsets.all(18),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            gradient: LinearGradient(
+              colors: [Colors.black.withOpacity(0.7), Colors.transparent],
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+            ),
+          ),
+          child: Text(
+            service.title,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),

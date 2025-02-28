@@ -16,6 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final AuthService authService = AuthService();
+  bool obscurePassword = true;
 
   @override
   void dispose() {
@@ -26,148 +27,192 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final double screenHeight = MediaQuery.of(context).size.height;
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Stack(
-        clipBehavior: Clip.none,
         children: [
-          Image.asset(
-            'assets/images/banner.png',
-            width: double.infinity,
-            height: double.infinity,
-            fit: BoxFit.cover,
+          Positioned.fill(
+            child: Image.asset(
+              'assets/images/banner.png',
+              fit: BoxFit.cover,
+            ),
           ),
-          Positioned(
-            top: 300,
-            left: 0,
-            right: 0,
-            child: Container(
-              height: MediaQuery.of(context).size.height,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(35),
-                  topRight: Radius.circular(35),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(40.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Iniciar sesión',
-                      style: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Poppins',
-                        color: darkGreen,
-                        letterSpacing: -1,
-                      ),
+
+          /// Scroll para evitar desbordamiento
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: screenHeight * 0.315), // Ajuste dinámico
+
+                Container(
+                  width: screenWidth,
+                  constraints: BoxConstraints(
+                    minHeight: screenHeight * 0.65, // Mínimo 65% de la pantalla
+                  ),
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(35),
+                      topRight: Radius.circular(35),
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const RegisterScreen()),
-                        );
-                      },
-                      child: const Text(
-                        'Crear cuenta',
+                  ),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: screenWidth * 0.075, // 10% del ancho
+                    vertical: 40,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Iniciar sesión',
                         style: TextStyle(
-                          fontSize: 20,
-                          color: greenHigh,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
                           fontFamily: 'Poppins',
-                          letterSpacing: -0.8,
+                          color: darkGreen,
+                          letterSpacing: -1,
                         ),
                       ),
-                    ),
-                    const SizedBox(height: 16),
-                    CustomInput(
-                      labelText: 'Correo electrónico',
-                      prefixIcon: Icons.email,
-                      controller: emailController,
-                    ),
-                    const SizedBox(height: 16),
-                    CustomInput(
-                      labelText: 'Contraseña',
-                      prefixIcon: Icons.lock,
-                      obscureText: true,
-                      suffixIcon: Icons.visibility_off,
-                      controller: passwordController,
-                    ),
-                    const SizedBox(height: 8),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: const Text('¿Olvidaste tu contraseña?'),
+                      const SizedBox(height: 16),
+                      CustomInput(
+                        labelText: 'Correo electrónico',
+                        prefixIcon: Icons.email,
+                        controller: emailController,
+                        errorText: null,
                       ),
-                    ),
-                    const SizedBox(height: 8),
-                    CustomButton(
-                      text: 'Iniciar sesión',
-                      onPressed: () async {
-                        String email = emailController.text.trim();
-                        String password = passwordController.text.trim();
+                      const SizedBox(height: 16),
+                      CustomInput(
+                        labelText: 'Contraseña',
+                        prefixIcon: Icons.lock,
+                        obscureText: obscurePassword,
+                        suffixIcon: obscurePassword
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                        controller: passwordController,
+                        onSuffixIconTap: () {
+                          setState(() {
+                            obscurePassword = !obscurePassword;
+                          });
+                        },
+                        errorText: null, // 👈 También aquí
+                      ),
+                      const SizedBox(height: 8),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () {},
+                          child: const Text('¿Olvidaste tu contraseña?'),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      CustomButton(
+                        text: 'Iniciar sesión',
+                        onPressed: () async {
+                          String email = emailController.text.trim();
+                          String password = passwordController.text.trim();
 
-                        if (email.isNotEmpty && password.isNotEmpty) {
-                          await authService.login(context, email, password);
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content:
-                                  Text('Por favor, completa todos los campos'),
-                              backgroundColor: Colors.red,
+                          if (email.isNotEmpty && password.isNotEmpty) {
+                            await authService.login(context, email, password);
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text(
+                                    'Por favor, completa todos los campos'),
+                                backgroundColor: Colors.red,
+                              ),
+                            );
+                          }
+                        },
+                      ),
+                      const SizedBox(height: 8),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const RegisterScreen(),
                             ),
                           );
-                        }
-                      },
-                    ),
-                    const SizedBox(height: 16),
-                    Center(
-                      child: Column(
-                        children: [
-                          const Text(
-                            'O inicia sesión con',
-                            style: TextStyle(color: darkGreen),
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(
+                              255, 221, 255, 230), // Fondo verde oscuro
+                          foregroundColor: darkGreen, // Texto blanco
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(25), // Bordes redondeados
                           ),
-                          const SizedBox(height: 8),
-                          ElevatedButton.icon(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.white,
-                              foregroundColor: Colors.black,
-                              side: const BorderSide(color: Colors.grey),
-                              minimumSize: const Size(double.infinity, 50),
-                            ),
-                            icon: const Icon(Icons.account_circle),
-                            label: const Text('Google'),
+                          minimumSize: const Size(double.infinity,
+                              50), // Mismo tamaño que los otros botones
+                        ),
+                        child: const Text(
+                          'Crear cuenta',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'Poppins',
                           ),
-                          const SizedBox(height: 16),
-                          ElevatedButton.icon(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.white,
-                              foregroundColor: Colors.blue,
-                              side: const BorderSide(color: Colors.grey),
-                              minimumSize: const Size(double.infinity, 50),
-                            ),
-                            icon: const Icon(Icons.facebook),
-                            label: const Text('Facebook'),
-                          ),
-                        ],
+                        ),
                       ),
-                    ),
-                  ],
+                      const SizedBox(height: 16),
+                      Center(
+                        child: Column(
+                          children: [
+                            const Text(
+                              'O inicia sesión con',
+                              style: TextStyle(color: darkGreen),
+                            ),
+                            const SizedBox(height: 8),
+                            // Botón de "Crear cuenta"
+
+                            const SizedBox(height: 12),
+                            _socialLoginButton(
+                              icon: Icons.account_circle,
+                              label: 'Google',
+                              color: Colors.black,
+                              onPressed: () {},
+                            ),
+                            const SizedBox(height: 12),
+                            _socialLoginButton(
+                              icon: Icons.facebook,
+                              label: 'Facebook',
+                              color: Colors.blue,
+                              onPressed: () {},
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
+              ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  /// 🔹 **Método para crear botones de redes sociales**
+  Widget _socialLoginButton({
+    required IconData icon,
+    required String label,
+    required Color color,
+    required VoidCallback onPressed,
+  }) {
+    return ElevatedButton.icon(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.white,
+        foregroundColor: color,
+        side: const BorderSide(color: Colors.grey),
+        minimumSize: const Size(double.infinity, 50),
+      ),
+      icon: Icon(icon),
+      label: Text(label),
     );
   }
 }

@@ -1,0 +1,2 @@
+String clavePublicable ="pk_test_51QosTy01xnYAfLDqNDVaLOgDziogEwEkT9f61PyYfwsVXZe9mgU5dPmNvuj7zklxdeOIxJQKS3KkKDfMeww2adf600oaS8pkHB";
+String claveSecreta = "sk_test_51QosTy01xnYAfLDqRv4NYrlGJLwITV45DhXU97yJT6hKmKmpYUxxN9frufYRBd3VCp3o0WLTfhHsIZCoH2qnBHbm00Ll2N5bXQ";

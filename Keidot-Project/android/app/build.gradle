@@ -40,3 +40,22 @@ android {
 flutter {
     source = "../.."
 }
+
+//Para cuando ya vaya a produccion
+/*signingConfigs {
+    release {
+        storeFile file("your_keystore.jks")
+        storePassword "your_password"
+        keyAlias "your_alias"
+        keyPassword "your_key_password"
+    }
+}
+
+buildTypes {
+    release {
+        minifyEnabled false
+        shrinkResources false
+        signingConfig signingConfigs.release
+    }
+}
+*/

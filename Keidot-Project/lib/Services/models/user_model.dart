@@ -4,6 +4,7 @@ class UserModel {
   final String username;
   final int phone;
   final String password;
+  final String urlImage;
 
   UserModel({
     this.idRol = "48ca9dac-9978-44e9-a15c-c203793bc9bf", // 👈 Valor fijo
@@ -11,6 +12,7 @@ class UserModel {
     required this.username,
     required this.phone,
     required this.password,
+    required this.urlImage
   });
 
   Map<String, dynamic> toJson() {
@@ -20,6 +22,7 @@ class UserModel {
       "username": username,
       "phone": phone,
       "password": password,
+      "url_identificacion":urlImage,
     };
   }
 }
