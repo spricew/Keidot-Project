@@ -17,12 +17,7 @@ class HomeWorker extends StatefulWidget {
 }
 
 class _HomeWorkerState extends State<HomeWorker> {
-  // Índice del BottomNavigationBar
   int _currentIndex = 0;
-  
-  // Índice del carrusel
-  int _carouselIndex = 0;
-
   final PageController _pageController = PageController();
   Timer? _carouselTimer;
 
@@ -61,7 +56,7 @@ class _HomeWorkerState extends State<HomeWorker> {
           curve: Curves.easeInOut,
         );
         setState(() {
-          _carouselIndex = nextPage;
+          _currentIndex = nextPage;
         });
       }
     });
@@ -158,9 +153,8 @@ class _HomeWorkerState extends State<HomeWorker> {
         controller: _pageController,
         itemCount: 4,
         onPageChanged: (index) {
-          // Actualizamos SOLO el índice del carrusel
           setState(() {
-            _carouselIndex = index;
+            _currentIndex = index;
           });
         },
         itemBuilder: (context, index) {
