@@ -1,40 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
+import 'home_worker.dart'; // Asegúrate de que la ruta sea la correcta
 
 class WorkerNotificationsScreen extends StatefulWidget {
   const WorkerNotificationsScreen({super.key});
 
   @override
-  _WorkerNotificationsScreenState createState() => _WorkerNotificationsScreenState();
+  _WorkerNotificationsScreenState createState() =>
+      _WorkerNotificationsScreenState();
 }
 
 class _WorkerNotificationsScreenState extends State<WorkerNotificationsScreen> {
+  // Lista de notificaciones (dummy data)
   List<Map<String, dynamic>> notifications = [
     {
-      'date': '30 de Jul. 2025',
-      'message': 'Has sido seleccionado para el trabajo de "Jardinería" en la dirección Av. Siempre Viva 123.',
-      'isRead': false, // No leído
+      'date': '30 de Jul. 2024',
+      'message': 'Cliente X ha solicitado tu servicio de "Jardinería".',
+      'isRead': false,
     },
     {
-      'date': '28 de Jul. 2025',
-      'message': 'Tu solicitud para el trabajo de "Jardinería" ha sido rechazada.',
-      'isRead': true, // Leído
+      'date': '28 de Jul. 2024',
+      'message': 'Cliente Y ha calificado tu servicio.',
+      'isRead': true,
     },
     {
-      'date': '22 de Jul. 2025',
-      'message': 'Has recibido una nueva oferta para el trabajo de "Limpieza de jardín" con un pago de \$150.',
-      'isRead': false, // No leído
+      'date': '22 de Jul. 2024',
+      'message': 'Cliente Z ha solicitado tu servicio.',
+      'isRead': false,
     },
     {
-      'date': '18 de Jul. 2025',
-      'message': 'El cliente ha cancelado el trabajo de "Decoración de jardín" al que habías aplicado.',
-      'isRead': true, // Leído
+      'date': '18 de Jul. 2024',
+      'message': 'Cliente W ha dejado un comentario.',
+      'isRead': true,
     },
     {
-      'date': '15 de Jul. 2025',
-      'message': 'Has completado con éxito el trabajo de "Limpieza de jardín". ¡Gracias por tu esfuerzo!',
-      'isRead': false, // No leído
+      'date': '15 de Jul. 2024',
+      'message': 'Cliente V ha solicitado tu servicio.',
+      'isRead': false,
     },
   ];
 
@@ -56,8 +60,8 @@ class _WorkerNotificationsScreenState extends State<WorkerNotificationsScreen> {
         titleColor: darkGreen,
         iconColor: darkGreen,
         onBackPressed: () {
-          //  cierra la pantalla actual 
-          Navigator.of(context).pop();
+          // Regresa a la Home de Trabajadores
+          Get.offAll(() => const HomeWorker());
         },
       ),
       body: ListView.builder(
@@ -67,24 +71,29 @@ class _WorkerNotificationsScreenState extends State<WorkerNotificationsScreen> {
           return ListTile(
             leading: Icon(
               Icons.circle,
-              color: notification['isRead'] ? Colors.grey : Colors.green, // Icono verde si no está leído, gris si está leído
+              color: notification['isRead'] ? Colors.grey : Colors.green,
               size: 12,
             ),
             title: Text(
               notification['message'],
               style: TextStyle(
-                fontWeight: notification['isRead'] ? FontWeight.normal : FontWeight.bold, // Texto en negrita si no está leído
-                color: notification['isRead'] ? Colors.grey : Colors.black, // Texto gris si está leído, negro si no
+                fontWeight: notification['isRead']
+                    ? FontWeight.normal
+                    : FontWeight.bold,
+                color:
+                    notification['isRead'] ? Colors.grey : Colors.black,
               ),
             ),
             subtitle: Text(
               notification['date'],
               style: TextStyle(
-                color: notification['isRead'] ? Colors.grey : Colors.black54, // Fecha gris si está leído
+                color: notification['isRead']
+                    ? Colors.grey
+                    : Colors.black54,
               ),
             ),
             onTap: () {
-              markAsRead(index); // Marcar como leído al tocar
+              markAsRead(index);
             },
           );
         },

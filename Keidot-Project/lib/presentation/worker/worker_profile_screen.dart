@@ -5,7 +5,7 @@ import 'package:test_app/config/theme/app_theme.dart';
 class WorkerProfileScreen extends StatelessWidget {
   WorkerProfileScreen({super.key});
 
-  // Datos de api (chamba de Diego)
+  // Datos de ejemplo (simulados)
   final List<Map<String, dynamic>> publications = [
     {
       "name": "Heyder Mornichis",
@@ -33,17 +33,17 @@ class WorkerProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white, // Fondo blanco
-        elevation: 0, // Sin sombra
+        backgroundColor: Colors.white,
+        elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black), // Botón de regreso
-          onPressed: () => Get.back(), // Navegar hacia atrás
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Get.back(),
         ),
-        centerTitle: true, // Centrar el título
+        centerTitle: true,
         title: const Text(
-          'Perfil del Trabajador', // Título centrado
+          'Perfil del Trabajador',
           style: TextStyle(
-            color: Color(0xFF3BA670), // Color del texto
+            color: Color(0xFF3BA670),
             fontWeight: FontWeight.bold,
             fontSize: 25,
           ),
@@ -51,17 +51,18 @@ class WorkerProfileScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // Perfil del trabajador
+          // Sección de perfil
           Container(
             width: double.infinity,
             decoration: const BoxDecoration(color: greenHigh),
             padding: const EdgeInsets.all(12.0),
-            child: const Center( // Centrar el contenido del Container
+            child: const Center(
               child: Column(
                 children: [
                   CircleAvatar(
                     radius: 40,
-                    backgroundImage: AssetImage('assets/profile_image.png'), // Cambia esto por la ruta de tu imagen
+                    backgroundImage:
+                        AssetImage('assets/profile_image.png'),
                   ),
                   SizedBox(height: 12),
                   Text(
@@ -75,24 +76,20 @@ class WorkerProfileScreen extends StatelessWidget {
               ),
             ),
           ),
-
           const SizedBox(height: 24),
-
           const SizedBox(
             width: double.infinity,
             child: Text(
               'Publicaciones sobre los trabajos de Delmy',
-              textAlign: TextAlign.center, // Centrar el texto
+              textAlign: TextAlign.center,
               style: TextStyle(fontSize: 20, color: darkGreen),
             ),
           ),
-
           const SizedBox(height: 16),
-
           // Lista de publicaciones
           Expanded(
             child: ListView.builder(
-              itemCount: publications.length, 
+              itemCount: publications.length,
               itemBuilder: (context, index) {
                 return _buildPublicationCard(publications[index]);
               },
@@ -128,15 +125,16 @@ class WorkerProfileScreen extends StatelessWidget {
                   Text(publication["name"],
                       style: const TextStyle(fontWeight: FontWeight.bold)),
                   Text(publication["rank"],
-                      style: TextStyle(fontSize: 12, color: Colors.grey[700])),
+                      style: TextStyle(
+                          fontSize: 12, color: Colors.grey[700])),
                 ],
               ),
             ],
           ),
           const SizedBox(height: 8),
-          Text(publication["comment"], style: const TextStyle(fontSize: 14)),
+          Text(publication["comment"],
+              style: const TextStyle(fontSize: 14)),
           const SizedBox(height: 8),
-          // Espacio reservado para futura implementación
           const Row(
             children: [
               Icon(Icons.more, size: 16),

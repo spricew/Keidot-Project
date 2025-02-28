@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/worker/search_worker.dart';
 import 'package:test_app/presentation/worker/worker_messages.dart';
-import 'package:test_app/widgets/custom_popup.dart';
+import 'package:test_app/widgets/worker_popup_menu.dart';
 
 class HomeWorker extends StatefulWidget {
   const HomeWorker({super.key});
@@ -54,7 +54,7 @@ class _HomeWorkerState extends State<HomeWorker> {
         toolbarHeight: 60,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        leading: const CustomPopupMenu(),
+        leading: const WorkerPopupMenu(), // Se usa el menú de trabajador
         title: const Align(
           alignment: Alignment.centerRight,
           child: Text(
@@ -109,7 +109,6 @@ class _HomeWorkerState extends State<HomeWorker> {
           setState(() {
             _currentIndex = index;
           });
-
           switch (index) {
             case 1:
               Get.offAll(() => const SearchWorkerScreen());
