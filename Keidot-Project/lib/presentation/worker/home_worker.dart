@@ -1,6 +1,8 @@
-import 'dart:async';
+/*import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_app/Services/models/assignment_model.dart';
+import 'package:test_app/Services/worker_request/assignments_publish/jobs_publish.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/worker/search_worker.dart';
 import 'package:test_app/presentation/worker/worker_messages.dart';
@@ -20,12 +22,23 @@ class _HomeWorkerState extends State<HomeWorker> {
   Timer? _carouselTimer;
 
   // Lista de nombres de servicios destacados
-  final List<String> serviceNames = [
-    "Venta de plantas y semillas",
-    "Corte de césped",
-    "Limpieza de jardín",
-    "Alquiler de herramientas de jardinería"
-  ];
+  Future<List<String>> fetchServiceNames() async {
+    final assignmentService = JobsPublishService();
+
+    try {
+      List<AssignmentDTO> assignments =
+          await assignmentService.fetchAllJobs();
+
+      // Extraer solo los nombres de los servicios y devolver la lista
+      List<String> serviceNames =
+          assignments.map((a) => a.nameOfService).toSet().toList();
+
+      return serviceNames;
+    } catch (e) {
+      print("Error al obtener los nombres de servicios: $e");
+      return [];
+    }
+  }
 
   @override
   void initState() {
@@ -159,59 +172,57 @@ class _HomeWorkerState extends State<HomeWorker> {
       ),
     );
   }
+}
 
   Widget _buildServicesGrid() {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 12,
-        mainAxisSpacing: 12,
-        childAspectRatio: 0.84,
-      ),
-      itemCount: serviceNames.length,
-      itemBuilder: (context, index) {
-        return _gridItem(index);
-      },
-    );
+    return FutureBuilder<List<String>>(
+        future: fetchAllJobs(), // Llamamos al método asincrónico
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+                child:
+                    CircularProgressIndicator()); // Muestra un loader mientras carga
+          } else if (snapshot.hasError) {
+            return const Center(child: Text("Error al cargar servicios"));
+          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+            return const Center(child: Text("No hay servicios disponibles"));
+          }
+
+          // Extraemos la lista de servicios una vez cargados
+          List<String> serviceNames = snapshot.data!;
+
+          return GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 12,
+              mainAxisSpacing: 12,
+              childAspectRatio: 0.84,
+            ),
+            itemCount: serviceNames.length,
+            itemBuilder: (context, index) {
+              return _gridItem(
+                  serviceNames[index]); // 🔹 Ahora `_gridItem` acepta un String
+            },
+          );
+        });
   }
 
-  Widget _gridItem(int index) {
+  Widget _gridItem(String serviceName) {
+    // 🔹 Cambiamos de int a String
     return GestureDetector(
       onTap: () {
         // Redirige a la nueva pantalla pasándole el nombre del servicio seleccionado
-        Get.to(() => ServiceRequestsScreen(serviceName: serviceNames[index]));
+        Get.to(() => ServiceRequestsScreen(
+            serviceName: serviceName)); // 🔹 Pasamos el String directamente
       },
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          image: const DecorationImage(
-            image: NetworkImage('https://via.placeholder.com/150'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Container(
-          alignment: Alignment.bottomLeft,
-          padding: const EdgeInsets.all(18),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            gradient: LinearGradient(
-              colors: [Colors.black.withOpacity(0.7), Colors.transparent],
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
-            ),
-          ),
-          child: Text(
-            serviceNames[index],
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+      child: Card(
+        child: Center(
+          child: Text(serviceName), // 🔹 Mostramos el nombre correctamente
         ),
       ),
     );
   }
-}
+
+*/

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_app/Services/location_request/location_service_controller.dart';
-import 'package:test_app/Services/transaction/service_transaction_controller.dart';
+import 'package:test_app/Services/client_request/location_request/location_service_controller.dart';
+import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'solicitud_exitosa_screen.dart'; // Asegúrate de importar la pantalla de solicitud exitosa
 import 'package:intl/intl.dart';
 

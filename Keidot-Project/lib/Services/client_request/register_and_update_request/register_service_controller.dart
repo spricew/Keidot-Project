@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
 import 'dart:convert';
-import '../models/user_model.dart';
+import '../../models/user_model.dart';
 
 class RegisterService {
   final String baseUrl = 'https://keidot.azurewebsites.net/api/RegisterUsers';

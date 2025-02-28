@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/worker/home_worker2.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
-import 'home_worker.dart'; // Asegúrate de que la ruta sea la correcta
+// Asegúrate de que la ruta sea la correcta
 
 class WorkerNotificationsScreen extends StatefulWidget {
   const WorkerNotificationsScreen({super.key});
@@ -61,7 +62,7 @@ class _WorkerNotificationsScreenState extends State<WorkerNotificationsScreen> {
         iconColor: darkGreen,
         onBackPressed: () {
           // Regresa a la Home de Trabajadores
-          Get.offAll(() => const HomeWorker());
+          Get.offAll(() => const HomepageWorker());
         },
       ),
       body: ListView.builder(

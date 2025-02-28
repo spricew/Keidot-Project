@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:test_app/Services/convert_worker/convert_worker_request.dart';
+import 'package:test_app/Services/worker_request/convert_worker/convert_worker_request.dart';
 import 'package:test_app/Services/models/convert_worker_model.dart';
 
 class NewWorkerScreen extends StatelessWidget {

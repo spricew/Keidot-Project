@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_app/Services/services_request/service_by_name.dart';
-import 'package:test_app/Services/transaction/service_transaction_controller.dart';
+import 'package:test_app/Services/client_request/services_request/service_by_name.dart';
+import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/request_screen1.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
-import 'package:test_app/Services/services_request/service_controller.dart';
+import 'package:test_app/Services/client_request/services_request/service_controller.dart';
 
 class SearchScreen extends StatefulWidget {
   final Function(int) onTabSelected;

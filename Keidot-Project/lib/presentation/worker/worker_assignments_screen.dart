@@ -16,6 +16,7 @@ class WorkerAssignmentsScreen extends StatelessWidget {
       estimatedSize: "50 m²",
       timeSelected: DateTime(2025, 8, 1, 10, 0),
       amount: 250.00,
+      status: "En Progreso"
     ),
     AssignmentDTO(
       idAssignment: "2",
@@ -24,6 +25,7 @@ class WorkerAssignmentsScreen extends StatelessWidget {
       estimatedSize: "100 m²",
       timeSelected: DateTime(2025, 8, 3, 14, 0),
       amount: 400.00,
+      status: "En Progreso"
     ),
   ];
 

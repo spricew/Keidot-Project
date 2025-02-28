@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:test_app/Services/assignment_request/assignment_controller.dart';
+import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/presentation/screens/requests_screen.dart';
 
 class UpdateIsActiveService {

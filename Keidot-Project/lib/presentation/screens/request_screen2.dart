@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:get/get.dart';
 import 'package:latlong2/latlong.dart';
-import 'package:test_app/Services/location_request/location_service_controller.dart';
+import 'package:test_app/Services/client_request/location_request/location_service_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
