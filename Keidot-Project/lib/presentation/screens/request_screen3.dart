@@ -57,6 +57,8 @@ class _RequestScreen3State extends State<RequestScreen3> {
         // Convertir a formato ISO 8601 (UTC)
         final String formattedISOTime =
             selectedDateTime.toUtc().toIso8601String();
+            //final String formattedISOTime = selectedDateTime.toIso8601String();
+
 
         // Guardar en el controlador
         controller.setSelectedTime(formattedISOTime);
@@ -122,9 +124,9 @@ class _RequestScreen3State extends State<RequestScreen3> {
               final selectedTime = controller.transaction.value.selectedTime;
               if (selectedTime != null) {
                 try {
-                  DateTime parsedTime = DateTime.parse(selectedTime);
+                  DateTime parsedTime = DateTime.parse(selectedTime).toLocal();
                   return Text(
-                    'Fecha seleccionada: ${DateFormat('dd/MM/yyyy - hh:mm').format(parsedTime)}',
+                    'Fecha seleccionada: ${DateFormat('dd/MM/yyyy - HH:mm').format(parsedTime)}',
                     style: const TextStyle(
                         fontSize: 16, fontWeight: FontWeight.bold),
                   );
@@ -153,7 +155,6 @@ class _RequestScreen3State extends State<RequestScreen3> {
             ),
             const SizedBox(height: 10),
             TextField(
-              
               controller: _descriptionController,
               maxLines: 3, // Permite múltiples líneas
               decoration: InputDecoration(
