@@ -5,6 +5,7 @@ import 'package:test_app/presentation/screens/notifications_screen.dart';
 import 'package:test_app/presentation/screens/request_screen1.dart';
 import 'package:test_app/presentation/screens/search_screen.dart';
 import 'package:test_app/presentation/screens/home_screen.dart';
+import 'package:test_app/presentation/worker/worker_job_requests_screen.dart';
 import 'package:test_app/presentation/worker/search_worker.dart';
 import 'package:test_app/presentation/worker/worker_assignment_detail_screen.dart';
 import 'package:test_app/presentation/worker/worker_messages.dart';
@@ -25,7 +26,7 @@ class _HomepageState extends State<HomepageWorker> {
   void initState() {
     super.initState();
     _screens = [
-      const WorkerMessagesScreen(),
+      const WorkerJobRequestsScreen(),
       SearchScreen(onTabSelected: _onItemTapped), // Ahora sí podemos usarla
       const RequestScreen1(),
       const NotificationsScreen(),
