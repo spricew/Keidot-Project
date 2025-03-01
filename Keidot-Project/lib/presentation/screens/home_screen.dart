@@ -79,37 +79,48 @@ class _HomeScreenState extends State<HomeScreen> {
               setState(() {
                 _isWorker = value;
               });
-              if (_isWorker) {
-                Get.offAll(() => const HomepageWorker());
-              }
             },
+            activeColor: Colors.white,
+            activeTrackColor: Colors.green,
+            inactiveThumbColor: Colors.white,
+            inactiveTrackColor: Colors.grey,
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Obx(() => serviceController.isLoading.value
-                ? _buildShimmerCarousel()
-                : _buildImageCarousel()),
-            const SizedBox(height: 28),
-            const Text(
-              'Servicios destacados',
-              style: TextStyle(
-                color: darkGreen,
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
-                letterSpacing: -0.2,
-              ),
+      body: _isWorker ? _buildWorkerUI() : _buildClientUI(),
+    );
+  }
+
+  /// UI para trabajadores
+  Widget _buildWorkerUI() {
+    return const HomepageWorker();
+  }
+
+  /// UI para clientes
+  Widget _buildClientUI() {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Obx(() => serviceController.isLoading.value
+              ? _buildShimmerCarousel()
+              : _buildImageCarousel()),
+          const SizedBox(height: 28),
+          const Text(
+            'Servicios destacados',
+            style: TextStyle(
+              color: darkGreen,
+              fontSize: 22,
+              fontWeight: FontWeight.w600,
+              letterSpacing: -0.2,
             ),
-            const SizedBox(height: 10),
-            Obx(() => serviceController.isLoading.value
-                ? _buildShimmerGrid()
-                : _buildServicesGrid()),
-          ],
-        ),
+          ),
+          const SizedBox(height: 10),
+          Obx(() => serviceController.isLoading.value
+              ? _buildShimmerGrid()
+              : _buildServicesGrid()),
+        ],
       ),
     );
   }
@@ -174,7 +185,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                    image: NetworkImage(serviceController.services[index].urlImage),
+                    image: NetworkImage(
+                        serviceController.services[index].urlImage),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -196,7 +208,9 @@ class _HomeScreenState extends State<HomeScreen> {
         mainAxisSpacing: 12,
         childAspectRatio: 0.84,
       ),
-      itemCount: serviceController.services.length > 4 ? 4 : serviceController.services.length,
+      itemCount: serviceController.services.length > 4
+          ? 4
+          : serviceController.services.length,
       itemBuilder: (context, index) {
         return _gridItem(serviceController.services[index]);
       },
@@ -207,7 +221,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return GestureDetector(
       onTap: () {
         final serviceController = Get.find<ServiceTransactionController>();
-        serviceController.setService(service.serviceId.toString(), service.title);
+        serviceController.setService(
+            service.serviceId.toString(), service.title);
         Get.to(() => const RequestScreen1());
       },
       child: Container(
