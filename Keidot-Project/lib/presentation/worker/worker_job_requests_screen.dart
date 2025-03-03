@@ -5,17 +5,19 @@ class WorkerJobRequestsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text(
           'Trabajos Disponibles',
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Colors.green,
-        foregroundColor: Colors.white,
+        foregroundColor: colors.primary,
       ),
       body: ListView.builder(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(3),
         itemCount: 5, // Número de trabajos de ejemplo
         itemBuilder: (context, index) {
           return Card(
