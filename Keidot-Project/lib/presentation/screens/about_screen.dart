@@ -24,6 +24,7 @@ class _AboutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
+    final size = MediaQuery.of(context).size;
 
     return SafeArea(
       child: Column(
@@ -36,7 +37,9 @@ class _AboutView extends StatelessWidget {
             children: [
               Text(
                 'Keidot App',
-                style: TextStyle(color: colors.onPrimaryContainer),
+                style: TextStyle(
+                    color: colors.onPrimaryContainer,
+                    fontSize: (size.width * 0.08)),
               ),
               Text('Versión 2.1.0')
             ],
