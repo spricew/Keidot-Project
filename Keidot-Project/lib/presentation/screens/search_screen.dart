@@ -6,6 +6,7 @@ import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/request_screen1.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 import 'package:test_app/Services/client_request/services_request/service_controller.dart';
+import 'package:test_app/widgets/custom_input.dart';
 
 class SearchScreen extends StatefulWidget {
   final Function(int) onTabSelected;
@@ -23,7 +24,7 @@ class _SearchScreenState extends State<SearchScreen> {
   final ApiServiceName apiService = ApiServiceName();
   final TextEditingController searchController = TextEditingController();
   final ServiceController serviceController = Get.find<ServiceController>();
-  
+
   List<Map<String, dynamic>> services = [];
   bool isLoading = false;
 
@@ -31,7 +32,7 @@ class _SearchScreenState extends State<SearchScreen> {
   void initState() {
     super.initState();
     loadServices();
-    
+
     // Escuchar cambios en el campo de búsqueda y actualizar la lista en tiempo real
     searchController.addListener(() {
       filterServices();
@@ -62,13 +63,16 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   void selectService(String serviceId, String serviceName) {
-    final serviceTransactionController = Get.find<ServiceTransactionController>();
+    final serviceTransactionController =
+        Get.find<ServiceTransactionController>();
     serviceTransactionController.setService(serviceId, serviceName);
     Get.to(() => const RequestScreen1());
   }
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
     return Scaffold(
       appBar: CustomAppBar(
         title: 'Búsqueda',
@@ -89,35 +93,16 @@ class _SearchScreenState extends State<SearchScreen> {
             // Campo de búsqueda
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    spreadRadius: 2,
-                    blurRadius: 5,
-                    offset: const Offset(0, 3),
-                  ),
-                ],
+                color: colors.onPrimary,
+                borderRadius: BorderRadius.circular(30),
               ),
-              child: TextField(
+              child: CustomInput(
                 controller: searchController,
-                decoration: InputDecoration(
-                  hintText: "Buscar servicio...",
-                  prefixIcon: const Icon(Icons.search, color: darkGreen),
-                  filled: true,
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25),
-                    borderSide: BorderSide.none,
-                  ),
-                  contentPadding: const EdgeInsets.symmetric(
-                    vertical: 15,
-                    horizontal: 20,
-                  ),
-                ),
+                labelText: 'Buscar ubicación',
+                prefixIcon: Icons.search,
+                errorText: null,
               ),
             ),
-            const SizedBox(height: 16),
 
             // Lista de servicios
             Expanded(
@@ -129,31 +114,28 @@ class _SearchScreenState extends State<SearchScreen> {
                         final serviceId = service['service_id'].toString();
                         final serviceName = service['title'] ?? "Sin título";
                         return Card(
-                          elevation: 3,
-                          margin: const EdgeInsets.symmetric(vertical: 8),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
+                          color: colors.onPrimary,
+                          margin: const EdgeInsets.symmetric(vertical: 4),
                           child: InkWell(
-                            borderRadius: BorderRadius.circular(15),
                             onTap: () => selectService(serviceId, serviceName),
                             child: Padding(
-                              padding: const EdgeInsets.all(16),
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 24, horizontal: 20),
                               child: Row(
                                 children: [
                                   Icon(
                                     _getServiceIcon(serviceName),
-                                    size: 30,
-                                    color: darkGreen,
+                                    size: 24,
+                                    color: colors.onPrimaryContainer,
                                   ),
                                   const SizedBox(width: 16),
                                   Expanded(
                                     child: Text(
                                       serviceName,
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
-                                        color: darkGreen,
+                                        color: colors.onPrimaryContainer,
                                       ),
                                     ),
                                   ),

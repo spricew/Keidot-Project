@@ -11,7 +11,7 @@ class CustomInput extends StatelessWidget {
   final VoidCallback?
       onSuffixIconTap; // Callback opcional para el tap en el ícono de la derecha
   final String? errorText; // Permitir que sea opcional
-    final List<TextInputFormatter>? inputFormatters; // Agregado
+  final List<TextInputFormatter>? inputFormatters; // Agregado
   final int? maxLength; // Agregado
 
   final ValueChanged<String>?
