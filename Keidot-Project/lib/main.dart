@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       // Cambia MaterialApp por GetMaterialApp
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 2).theme(),
+      theme: AppTheme(selectedColor: 0).theme(),
       home: const LoginPage(), // Página de inicio =>
     );
   }
