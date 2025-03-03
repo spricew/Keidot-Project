@@ -7,12 +7,14 @@ class MessagesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
     return Scaffold(
-      appBar: const CustomAppBar(
+      appBar: CustomAppBar(
         title: 'Mensajes',
         titleFontSize: 28,
         toolbarHeight: 85,
-        backgroundColor: Colors.white,
+        backgroundColor: colors.onPrimary,
         titleColor: darkGreen,
         iconColor: darkGreen,
       ),
@@ -21,6 +23,7 @@ class MessagesScreen extends StatelessWidget {
         itemCount: 10, // Número de chats ficticios
         itemBuilder: (context, index) {
           return Padding(
+            
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: ListTile(
               leading: const CircleAvatar(

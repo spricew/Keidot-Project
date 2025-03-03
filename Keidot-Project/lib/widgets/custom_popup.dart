@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/about_screen.dart';
 import 'package:test_app/presentation/screens/client_profile_screen.dart';
 import 'package:test_app/presentation/screens/config_screen.dart';
 import 'package:test_app/presentation/screens/home_screen.dart';
@@ -20,7 +21,8 @@ class CustomPopupMenu extends StatelessWidget {
         return [
           PopupMenuItem(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            onTap: () => _navigateToScreen(context, const ClientProfileScreen()),
+            onTap: () =>
+                _navigateToScreen(context, const ClientProfileScreen()),
             child: _buildMenuText("Mi perfil"),
           ),
           PopupMenuItem(
@@ -35,7 +37,7 @@ class CustomPopupMenu extends StatelessWidget {
           ),
           PopupMenuItem(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            onTap: () => _navigateToScreen(context, const HomeScreen()),
+            onTap: () => _navigateToScreen(context, const AboutScreen()),
             child: _buildMenuText("Acerca de"),
           ),
         ];
