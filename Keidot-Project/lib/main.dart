@@ -10,6 +10,7 @@ import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/presentation/screens/request_details_garden.dart';
 import 'package:test_app/presentation/screens/stripe/keys.dart';
 import 'package:test_app/presentation/worker/home_worker2.dart';
+import 'package:test_app/presentation/worker/worker_job_requests_screen.dart';
 import 'package:test_app/providers/user_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
       // Cambia MaterialApp por GetMaterialApp
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 0).theme(),
-      home: const LoginPage(), // Página de inicio =>
+      home: const WorkerJobRequestsScreen(), // Página de inicio =>
     );
   }
 }

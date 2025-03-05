@@ -70,46 +70,6 @@ class WorkerAssignmentDetailScreen extends StatelessWidget {
               style: const TextStyle(fontSize: 16),
             ),
             const Spacer(),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton.icon(
-                onPressed: () async {
-                  // Simula la cancelación del trabajo.
-                  // Aquí se llamaría a un servicio para cancelar el trabajo.
-                  bool success = true; // Simulación de éxito
-
-                  if (success) {
-                    Get.snackbar(
-                      'Trabajo Cancelado',
-                      'El trabajo ha sido cancelado correctamente.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.green[900],
-                      colorText: Colors.white,
-                    );
-                  } else {
-                    Get.snackbar(
-                      'Error',
-                      'No se pudo cancelar el trabajo.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.red,
-                      colorText: Colors.white,
-                    );
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey[800],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                ),
-                icon: const Icon(Icons.cancel, color: Colors.red, size: 20),
-                label: const Text(
-                  'Cancelar Trabajo',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                ),
-              ),
-            ),
           ],
         ),
       ),
