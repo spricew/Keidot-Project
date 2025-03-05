@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/worker/home_worker2.dart';
+import 'package:test_app/presentation/worker/home_worker.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 // Asegúrate de que la ruta sea la correcta
 

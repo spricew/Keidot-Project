@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
+import 'package:test_app/Services/worker_request/accepted_job/accepted_job_status_request.dart';
 import 'package:test_app/Services/worker_request/assignments_publish/jobs_publish.dart';
 import 'package:test_app/presentation/worker/worker_assignment_detail_screen.dart';
 
@@ -9,13 +11,15 @@ class WorkerJobRequestsScreen extends StatefulWidget {
   const WorkerJobRequestsScreen({super.key});
 
   @override
-  _WorkerJobRequestsScreenState createState() => _WorkerJobRequestsScreenState();
+  _WorkerJobRequestsScreenState createState() =>
+      _WorkerJobRequestsScreenState();
 }
 
 class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
   final JobsPublishService _jobService = JobsPublishService();
   late Future<List<AssignmentDTO>> _jobsFuture;
-  final AssignmentIdController assignmentController = Get.put(AssignmentIdController());
+  final AssignmentIdController assignmentController =
+      Get.put(AssignmentIdController());
 
   @override
   void initState() {
@@ -42,7 +46,8 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
-            return Center(child: Text("Error al cargar trabajos: ${snapshot.error}"));
+            return Center(
+                child: Text("Error al cargar trabajos: ${snapshot.error}"));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
             return const Center(child: Text("No hay trabajos disponibles."));
           }
@@ -61,7 +66,8 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
                 ),
                 elevation: 3,
                 child: ListTile(
-                  leading: const Icon(Icons.work, color: Colors.green, size: 30),
+                  leading:
+                      const Icon(Icons.work, color: Colors.green, size: 30),
                   title: Text(
                     job.nameOfService,
                     style: const TextStyle(
@@ -74,10 +80,33 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
                     style: const TextStyle(fontSize: 16),
                   ),
                   trailing: ElevatedButton(
-                    onPressed: () {
-                      // Acción de aceptar trabajo (pendiente de lógica)////////////////////////////////////
-                    // Guarda el ID de la asignación seleccionada
-                    assignmentController.setSelectedAssignment(job.idAssignment);
+                    onPressed: () async {
+                      // Guarda el ID de la asignación seleccionada
+                      assignmentController
+                          .setSelectedAssignment(job.idAssignment);
+
+                      // Crear instancia de AssignmentService
+                      final assignmentService = AssignmentAcceptedByWorker(
+                        baseUrl: "https://keidot.azurewebsites.net",
+                        storage: const FlutterSecureStorage(),
+                      );
+
+                      // Actualizar el estado a "En progreso"
+                      bool success = await assignmentService
+                          .updateAssignmentStatus(newStatus: "En progreso");
+
+                      // Mostrar mensaje al usuario
+                      if (success) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                              content: Text('Trabajo aceptado con éxito.')),
+                        );
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                              content: Text('Error al aceptar el trabajo.')),
+                        );
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green,
@@ -88,7 +117,6 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
                     ),
                   ),
                   onTap: () {
-
                     //Aqui va para guardar el id al ser selccionado
                     // Navega a la pantalla de detalles del trabajo
                     Get.to(() => WorkerAssignmentDetailScreen(assignment: job));
