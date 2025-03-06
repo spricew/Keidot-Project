@@ -48,7 +48,6 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         title: const Text(
           'Trabajos Disponibles',
           style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
@@ -83,8 +82,7 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
                   ),
                   elevation: 3,
                   child: ListTile(
-                    leading:
-                        const Icon(Icons.work, color: greenHigh, size: 30),
+                    leading: const Icon(Icons.work, color: greenHigh, size: 30),
                     title: Text(
                       job.nameOfService,
                       style: const TextStyle(
