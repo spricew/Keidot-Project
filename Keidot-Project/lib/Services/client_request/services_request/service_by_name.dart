@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:test_app/Services/models/service_model.dart';
-import 'package:test_app/Services/services_request/service_controller.dart';
+import 'package:test_app/Services/client_request/services_request/service_controller.dart';
 
 class ApiServiceName {
   final ServiceController serviceController = Get.find<ServiceController>();

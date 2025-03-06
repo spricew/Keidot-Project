@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_app/Services/worker_request/assignments_publish/jobs_publish.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/request_screen1.dart';
-import 'package:test_app/presentation/worker/home_worker.dart'; // Importa HomeWorker
+// Importa HomeWorker
+import 'package:test_app/presentation/worker/home_worker.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
 class SearchWorkerScreen extends StatefulWidget {
@@ -14,20 +16,20 @@ class SearchWorkerScreen extends StatefulWidget {
 
 class _SearchWorkerScreenState extends State<SearchWorkerScreen> {
   final TextEditingController searchController = TextEditingController();
+  final JobsPublishService _jobsPublishService = JobsPublishService();
 
-  // Lista de servicios estáticos para la maqueta
-  List<Map<String, dynamic>> services = [
-    {'service_id': '1', 'title': 'Venta de plantas y semillas'},
-    {'service_id': '2', 'title': 'Corte de césped'},
-    {'service_id': '3', 'title': 'Limpieza de jardín'},
-    {'service_id': '4', 'title': 'Alquiler de herramientas de jardinería'},
-  ];
-  List<Map<String, dynamic>> filteredServices = [];
+  List filteredServices = [];
 
+  void fetchAndSetServices() async {
+    filteredServices = await _jobsPublishService.fetchAllJobs();
+    setState(() {}); // 🔹 Para actualizar la UI después de obtener los datos
+  }
+  
   @override
   void initState() {
     super.initState();
-    filteredServices = services;
+
+    fetchAndSetServices(); // Cargar los servicios desde la API
 
     // Escuchar cambios en el campo de búsqueda y actualizar la lista en tiempo real
     searchController.addListener(() {
@@ -40,13 +42,12 @@ class _SearchWorkerScreenState extends State<SearchWorkerScreen> {
 
     if (query.isEmpty) {
       setState(() {
-        filteredServices = services;
+        filteredServices = filteredServices;
       });
     } else {
       setState(() {
-        filteredServices = services
-            .where((service) =>
-                service['title'].toLowerCase().contains(query))
+        filteredServices = filteredServices
+            .where((service) => service['title'].toLowerCase().contains(query))
             .toList();
       });
     }
@@ -67,7 +68,7 @@ class _SearchWorkerScreenState extends State<SearchWorkerScreen> {
         titleColor: darkGreen,
         iconColor: darkGreen,
         onBackPressed: () {
-          Get.off(() => const HomeWorker()); // Modificado para ir a HomeWorker
+          Get.off(() => const HomepageWorker()); // Modificado para ir a HomeWorker
         },
       ),
       body: Padding(
@@ -106,7 +107,6 @@ class _SearchWorkerScreenState extends State<SearchWorkerScreen> {
               ),
             ),
             const SizedBox(height: 16),
-
             Expanded(
               child: filteredServices.isNotEmpty
                   ? ListView.builder(

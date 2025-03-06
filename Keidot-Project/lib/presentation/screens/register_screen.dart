@@ -2,9 +2,9 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:test_app/Services/models/user_model.dart';
-import 'package:test_app/Services/register_and_update_request/register_service_controller.dart';
-import 'package:test_app/Services/upload_image/file_converter.dart';
-import 'package:test_app/Services/upload_image/file_uploader.dart';
+import 'package:test_app/Services/client_request/register_and_update_request/register_service_controller.dart';
+import 'package:test_app/Services/client_request/upload_image/file_converter.dart';
+import 'package:test_app/Services/client_request/upload_image/file_uploader.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
@@ -30,7 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool obscurePassword = true;
   bool obscureConfirmPassword = true;
   // Mapa para guardar los errores de validación
-  Map<String, String> _errors = {};
+  final Map<String, String> _errors = {};
 
   File? _selectedFile;
   String? _fileName;

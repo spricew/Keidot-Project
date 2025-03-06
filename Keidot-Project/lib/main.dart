@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
-import 'package:test_app/Services/assignment_request/assignment_controller.dart';
-import 'package:test_app/Services/assignment_request/assignment_request.dart';
-import 'package:test_app/Services/location_request/location_service_controller.dart';
-import 'package:test_app/Services/transaction/service_transaction_controller.dart';
+import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
+import 'package:test_app/Services/client_request/assignment_request/assignment_request.dart';
+import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
-import 'package:test_app/presentation/screens/request_details_garden.dart';
+import 'package:test_app/presentation/screens/request_screen1.dart';
 import 'package:test_app/presentation/screens/stripe/keys.dart';
 import 'package:test_app/presentation/worker/home_worker.dart';
 import 'package:test_app/providers/user_provider.dart';
@@ -21,7 +20,6 @@ void main() async {
   // Inicializa los controladores de GetX
   Get.lazyPut(() => AssignmentIdController());
   Get.put(ServiceTransactionController());
-  Get.put(LocationController());
   Get.put(AssignmentController());
   runApp(
     MultiProvider(
@@ -41,8 +39,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       // Cambia MaterialApp por GetMaterialApp
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 2).theme(),
-      home: const LoginPage(), // Página de inicio =>
+      theme: AppTheme(selectedColor: 0).theme(),
+      home: const RequestScreen1(), // Página de inicio =>
     );
   }
 }

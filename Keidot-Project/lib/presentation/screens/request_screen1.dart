@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_app/Services/transaction/service_transaction_controller.dart';
+import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
 import 'request_details_garden.dart';
 //aqui hacer una 
@@ -92,7 +92,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                             controller.setEstimatedSize(value);
                           }
                         },
-                        title: const Text('Pequeño'),
+                        title: const Text('Pequeño (1 m² - 50 m²)'),
                       )),
                   Obx(() => RadioListTile<String>(
                         value: "Mediano",
@@ -102,7 +102,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                             controller.setEstimatedSize(value);
                           }
                         },
-                        title: const Text('Mediano'),
+                        title: const Text('Mediano (51 m² - 150 m²)'),
                       )),
                   Obx(() => RadioListTile<String>(
                         value: "Grande",
@@ -112,7 +112,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                             controller.setEstimatedSize(value);
                           }
                         },
-                        title: const Text('Grande'),
+                        title: const Text('Grande (Más de 150 m²)'),
                       )),
                 ],
               ),

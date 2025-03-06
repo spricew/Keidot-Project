@@ -2,34 +2,30 @@ import 'dart:convert';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/models/location_model.dart';
 import 'package:logger/logger.dart';
-
+/*
 class LocationService {
   final String apiUrl = 'https://keidot.azurewebsites.net/api/Locations';
   final storage = const FlutterSecureStorage();
   final Logger logger = Logger();
 
-  /// Obtiene el UserId y Token del almacenamiento seguro.
-  Future<Map<String, String>> _getAuthData() async {
-    String? userId = await storage.read(key: 'userId');
-    String? token = await storage.read(key: 'token');
-
-    if (userId == null || token == null) {
-      logger.e("Usuario no autenticado o token no disponible");
-      throw Exception("Usuario no autenticado o token no disponible");
-    }
-
-    logger.i("Credenciales obtenidas: userId=$userId, token=$token");
-    return {'userId': userId, 'token': token};
-  }
-
   /// Guarda la ubicación en la API.
   Future<void> saveLocation(double latitude, double longitude) async {
     try {
-      final authData = await _getAuthData(); // Obtener credenciales
+      final AssignmentIdController assignmentController =
+          Get.find<AssignmentIdController>();
+      String? token = await storage.read(key: 'token');
+      String? assignmentId = assignmentController.selectedAssignmentId;
+
+      if (token == null || assignmentId == null) {
+        logger.e("Token o AssignmentId no disponible");
+        throw Exception("Token o AssignmentId no disponible");
+      }
+
       LocationModel location = LocationModel(
-        userId: authData['userId']!,
+        assignmentId: assignmentId,
         latitude: latitude,
         longitude: longitude,
       );
@@ -41,7 +37,7 @@ class LocationService {
         Uri.parse(apiUrl),
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer ${authData['token']}",
+          "Authorization": "Bearer $token",
         },
         body: requestBody,
       );
@@ -52,7 +48,8 @@ class LocationService {
         Get.snackbar("Éxito", "Ubicación guardada con éxito",
             snackPosition: SnackPosition.BOTTOM);
       } else {
-        final errorMessage = jsonDecode(response.body)['message'] ?? "Error desconocido";
+        final errorMessage =
+            jsonDecode(response.body)['message'] ?? "Error desconocido";
         Get.snackbar("Error", errorMessage, snackPosition: SnackPosition.BOTTOM);
       }
     } catch (e) {
@@ -62,6 +59,7 @@ class LocationService {
     }
   }
 }
+
 
 class LocationController extends GetxController {
   var latitude = 0.0.obs;
@@ -89,3 +87,4 @@ class LocationController extends GetxController {
     isLoading.value = false;
   }
 }
+*/

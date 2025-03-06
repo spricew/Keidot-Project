@@ -6,15 +6,14 @@ import 'package:test_app/config/theme/app_theme.dart';
 class WorkerAssignmentDetailScreen extends StatelessWidget {
   final AssignmentDTO assignment;
 
-  const WorkerAssignmentDetailScreen({Key? key, required this.assignment})
-      : super(key: key);
+  const WorkerAssignmentDetailScreen({super.key, required this.assignment});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Detalles del Trabajo'),
-        backgroundColor: Colors.white,
+        backgroundColor: defaultWhite,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
@@ -42,12 +41,12 @@ class WorkerAssignmentDetailScreen extends StatelessWidget {
             const SizedBox(height: 5),
             Text(
               "Fecha: ${assignment.formattedDateSelected}",
-              style: const TextStyle(fontSize: 16, color: Colors.grey),
+              style: const TextStyle(fontSize: 16, color: greenContrast),
             ),
             const SizedBox(height: 5),
             Text(
               "Hora: ${assignment.formattedTimeSelected}",
-              style: const TextStyle(fontSize: 16, color: Colors.grey),
+              style: const TextStyle(fontSize: 16, color:greenContrast),
             ),
             const SizedBox(height: 10),
             Text(
@@ -69,47 +68,24 @@ class WorkerAssignmentDetailScreen extends StatelessWidget {
               assignment.description,
               style: const TextStyle(fontSize: 16),
             ),
-            const Spacer(),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton.icon(
-                onPressed: () async {
-                  // Simula la cancelación del trabajo.
-                  // Aquí se llamaría a un servicio para cancelar el trabajo.
-                  bool success = true; // Simulación de éxito
-
-                  if (success) {
-                    Get.snackbar(
-                      'Trabajo Cancelado',
-                      'El trabajo ha sido cancelado correctamente.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.green[900],
-                      colorText: Colors.white,
-                    );
-                  } else {
-                    Get.snackbar(
-                      'Error',
-                      'No se pudo cancelar el trabajo.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.red,
-                      colorText: Colors.white,
-                    );
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey[800],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                ),
-                icon: const Icon(Icons.cancel, color: Colors.red, size: 20),
-                label: const Text(
-                  'Cancelar Trabajo',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                ),
+             const Spacer(), // Empuja el botón hacia abajo
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {
+                // Acción del botón
+                Get.snackbar("Acción", "Botón presionado");
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: darkGreen,
+                padding: const EdgeInsets.symmetric(vertical: 12),
+              ),
+              child: const Text(
+                "Ver ubicacion",
+                style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             ),
+          ),
           ],
         ),
       ),

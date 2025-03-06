@@ -7,6 +7,7 @@ class AssignmentDTO {
   final String estimatedSize; // Ahora es un String, no Duration
   final DateTime timeSelected;
   final double amount;
+  final String status;
 
   AssignmentDTO({
     required this.idAssignment,
@@ -15,6 +16,7 @@ class AssignmentDTO {
     required this.estimatedSize,
     required this.timeSelected,
     required this.amount,
+    required this.status
   });
 
   /// Formatea la fecha como `16/02/2025`
@@ -36,6 +38,7 @@ class AssignmentDTO {
       estimatedSize: json['estimated_size'] as String, // Cambiado de Duration a String
       timeSelected: DateTime.parse(json['time_selected']),
       amount: (json['amount'] as num).toDouble(),
+      status:  json['status'] as String,
     );
   }
 
@@ -48,6 +51,7 @@ class AssignmentDTO {
       'estimated_size': estimatedSize, // Ahora se envía como String
       'time_selected': timeSelected.toIso8601String(),
       'amount': amount,
+      'status': status
     };
   }
 }

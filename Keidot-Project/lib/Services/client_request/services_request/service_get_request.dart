@@ -12,7 +12,7 @@ class ApiService {
 
   static Future<List<Service>> fetchServices() async {
     try {
-      final String? token = await AuthService().getToken(); // Obtiene el token
+      final String? token = await AuthenticationService().getToken(); // Obtiene el token
       
       if (token == null) {
         logger.e("No se encontró el token. Inicia sesión nuevamente.");

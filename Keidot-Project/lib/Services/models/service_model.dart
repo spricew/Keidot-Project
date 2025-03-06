@@ -2,21 +2,25 @@ class Service {
   final String? serviceId;
   final String title;
   final String urlImage;
+  final double price;
 
   Service({
     this.serviceId,
     required this.title,
     required this.urlImage,
+    required this.price
   });
 
   // Método para convertir un JSON en un objeto Service
   factory Service.fromJson(Map<String, dynamic> json) {
-    return Service(
-      serviceId: json['service_id'] as String,
-      title: json['title'] as String,
-      urlImage: json['url_image'] as String,
-    );
-  }
+  return Service(
+    serviceId: json['service_id'] as String?,
+    title: json['title'] as String,
+    urlImage: json['url_image'] as String,
+    price: (json['price'] as num).toDouble()  //FIX AQUÍ 
+  );
+}
+
 
   // Método para convertir un objeto Service a JSON (si lo necesitas)
   Map<String, dynamic> toJson() {
@@ -24,6 +28,7 @@ class Service {
       'service_id': serviceId,
       'title': title,
       'url_image': urlImage,
+      'price': price
     };
   }
 }

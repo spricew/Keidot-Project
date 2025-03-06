@@ -18,7 +18,7 @@ class WorkerMessagesScreen extends StatelessWidget {
         titleColor: darkGreen,
         iconColor: darkGreen,
         onBackPressed: () {
-          Get.off(() => const HomeWorker()); // Redirige a HomeWorker
+          Get.off(() => const HomepageWorker()); // Redirige a HomeWorker
         },
       ),
       body: ListView.builder(
@@ -41,9 +41,9 @@ class WorkerMessagesScreen extends StatelessWidget {
                   color: darkGreen,
                 ),
               ),
-              subtitle: Text(
+              subtitle: const Text(
                 'Hola, ¿cómo estás?',
-                style: const TextStyle(color: Colors.grey, fontSize: 14),
+                style: TextStyle(color: Colors.grey, fontSize: 14),
               ),
               trailing: Text(
                 '12:30 PM',

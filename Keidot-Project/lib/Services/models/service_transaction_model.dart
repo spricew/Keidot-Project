@@ -5,7 +5,9 @@ class ServiceTransactionModel {
   double amount;
   String estimatedSize;
   String selectedTime;
-  List<String> featureIds; // ✅ NUEVO
+  List<String> featureIds;
+  double latitude;
+  double longitude;
 
   ServiceTransactionModel({
     required this.userId,
@@ -14,7 +16,9 @@ class ServiceTransactionModel {
     required this.amount,
     required this.estimatedSize,
     required this.selectedTime,
-    this.featureIds = const [], // ✅ Inicializamos con lista vacía
+    this.featureIds = const [],
+    required this.latitude,
+    required this.longitude,
   });
 
   Map<String, dynamic> toJson() {
@@ -25,7 +29,23 @@ class ServiceTransactionModel {
       "amount": amount,
       "estimated_size": estimatedSize,
       "selected_time": selectedTime,
-      "featureIds": featureIds, // ✅ Se incluye en la petición
+      "featureIds": featureIds,
+      "latitude": latitude,
+      "longitude": longitude,
     };
+  }
+
+  factory ServiceTransactionModel.fromJson(Map<String, dynamic> json) {
+    return ServiceTransactionModel(
+      userId: json["userId"],
+      serviceId: json["serviceId"],
+      description: json["description"],
+      amount: (json["amount"] as num).toDouble(),
+      estimatedSize: json["estimated_size"],
+      selectedTime: json["selected_time"],
+      featureIds: List<String>.from(json["featureIds"] ?? []),
+      latitude: (json["latitude"] as num).toDouble(),
+      longitude: (json["longitude"] as num).toDouble(),
+    );
   }
 }

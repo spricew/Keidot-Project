@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
 import 'package:test_app/Services/models/service_transaction_model.dart';
+import 'package:test_app/Services/models/location_model.dart';
 
 class ServiceTransactionController extends GetxController {
   final FlutterSecureStorage storage = const FlutterSecureStorage();
@@ -16,9 +17,12 @@ class ServiceTransactionController extends GetxController {
     amount: 110.0,
     estimatedSize: '',
     selectedTime: '',
-    featureIds: [], // Inicializamos la lista vacía
+    featureIds: [],
+    latitude: 0.0,
+    longitude: 0.0,
   ).obs;
   var serviceName = ''.obs;
+  var isLoading = false.obs;
 
   @override
   void onInit() {
@@ -36,8 +40,7 @@ class ServiceTransactionController extends GetxController {
         val.serviceId = serviceIdStored ?? "";
       }
     });
-    logger.i(
-        "Usuario y servicio cargados: userId=$userIdStored, serviceId=$serviceIdStored");
+    logger.i("Usuario y servicio cargados: userId=$userIdStored, serviceId=$serviceIdStored");
   }
 
   void setService(String id, String name) {
@@ -64,13 +67,12 @@ class ServiceTransactionController extends GetxController {
     logger.i("Monto actualizado: \$${amt.toStringAsFixed(2)}");
   }
 
-void setEstimatedSize(String size) {
-  transaction.update((val) {
-    if (val != null) val.estimatedSize = size;
-  });
-  logger.i("Tamaño estimado actualizado: $size");
-}
-
+  void setEstimatedSize(String size) {
+    transaction.update((val) {
+      if (val != null) val.estimatedSize = size;
+    });
+    logger.i("Tamaño estimado actualizado: $size");
+  }
 
   void setSelectedTime(String date) {
     transaction.update((val) {
@@ -86,6 +88,17 @@ void setEstimatedSize(String size) {
     logger.i("Características seleccionadas: $selectedFeatures");
   }
 
+  void setLocation(double lat, double lng) {
+    transaction.update((val) {
+      if (val != null) {
+        val.latitude = lat;
+        val.longitude = lng;
+      }
+    });
+    logger.d("Ubicación establecida: lat=$lat, lng=$lng");
+  }
+
+
   Future<void> sendRequest() async {
     final token = await storage.read(key: 'token');
 
@@ -98,7 +111,7 @@ void setEstimatedSize(String size) {
       Get.snackbar("Error", "Todos los campos son obligatorios");
       return;
     }
-
+     
     final requestData = transaction.value.toJson();
 
     try {
@@ -122,10 +135,8 @@ void setEstimatedSize(String size) {
         logger.i("Solicitud enviada con éxito.");
         Get.snackbar("Éxito", "La solicitud se envió correctamente");
       } else {
-        logger.e(
-            "Error al enviar la solicitud: ${response.statusCode}, Respuesta: ${response.body}");
-        Get.snackbar(
-            "Error", "No se pudo enviar la solicitud: ${response.body}");
+        logger.e("Error al enviar la solicitud: ${response.statusCode}, Respuesta: ${response.body}");
+        Get.snackbar("Error", "No se pudo enviar la solicitud: ${response.body}");
       }
     } catch (e) {
       logger.e("Excepción al enviar la solicitud: $e");

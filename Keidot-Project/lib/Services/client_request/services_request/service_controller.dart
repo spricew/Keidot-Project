@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:test_app/Services/models/service_model.dart';
-import 'package:test_app/Services/services_request/service_get_request.dart';
+import 'package:test_app/Services/client_request/services_request/service_get_request.dart';
 
 class ServiceController extends GetxController {
   var services = <Service>[].obs;
