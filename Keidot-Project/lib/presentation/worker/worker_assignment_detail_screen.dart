@@ -6,15 +6,14 @@ import 'package:test_app/config/theme/app_theme.dart';
 class WorkerAssignmentDetailScreen extends StatelessWidget {
   final AssignmentDTO assignment;
 
-  const WorkerAssignmentDetailScreen({Key? key, required this.assignment})
-      : super(key: key);
+  const WorkerAssignmentDetailScreen({super.key, required this.assignment});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Detalles del Trabajo'),
-        backgroundColor: Colors.white,
+        backgroundColor: defaultWhite,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
@@ -42,12 +41,12 @@ class WorkerAssignmentDetailScreen extends StatelessWidget {
             const SizedBox(height: 5),
             Text(
               "Fecha: ${assignment.formattedDateSelected}",
-              style: const TextStyle(fontSize: 16, color: Colors.grey),
+              style: const TextStyle(fontSize: 16, color: greenContrast),
             ),
             const SizedBox(height: 5),
             Text(
               "Hora: ${assignment.formattedTimeSelected}",
-              style: const TextStyle(fontSize: 16, color: Colors.grey),
+              style: const TextStyle(fontSize: 16, color:greenContrast),
             ),
             const SizedBox(height: 10),
             Text(
@@ -69,7 +68,24 @@ class WorkerAssignmentDetailScreen extends StatelessWidget {
               assignment.description,
               style: const TextStyle(fontSize: 16),
             ),
-            const Spacer(),
+             const Spacer(), // Empuja el botón hacia abajo
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed: () {
+                // Acción del botón
+                Get.snackbar("Acción", "Botón presionado");
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: darkGreen,
+                padding: const EdgeInsets.symmetric(vertical: 12),
+              ),
+              child: const Text(
+                "Ver ubicacion",
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+            ),
+          ),
           ],
         ),
       ),

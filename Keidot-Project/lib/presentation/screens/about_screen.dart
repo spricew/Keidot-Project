@@ -31,7 +31,7 @@ class _AboutView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            child: Text('IMAGEN'),
+            child: const Text('IMAGEN'),
           ),
           Column(
             children: [
@@ -41,7 +41,7 @@ class _AboutView extends StatelessWidget {
                     color: colors.onPrimaryContainer,
                     fontSize: (size.width * 0.08)),
               ),
-              Text('Versión 2.1.0')
+              const Text('Versión 2.1.0')
             ],
           )
         ],

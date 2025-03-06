@@ -122,27 +122,20 @@ class _RequestScreen3State extends State<RequestScreen3> {
 
             Obx(() {
               final selectedTime = controller.transaction.value.selectedTime;
-              if (selectedTime != null) {
-                try {
-                  DateTime parsedTime = DateTime.parse(selectedTime).toLocal();
-                  return Text(
-                    'Fecha seleccionada: ${DateFormat('dd/MM/yyyy - HH:mm').format(parsedTime)}',
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold),
-                  );
-                } catch (e) {
-                  return const Text(
-                    'Formato de fecha inválido',
-                    style: TextStyle(fontSize: 16, color: Colors.red),
-                  );
-                }
-              } else {
+              try {
+                DateTime parsedTime = DateTime.parse(selectedTime).toLocal();
+                return Text(
+                  'Fecha seleccionada: ${DateFormat('dd/MM/yyyy - HH:mm').format(parsedTime)}',
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold),
+                );
+              } catch (e) {
                 return const Text(
-                  'No hay fecha seleccionada',
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                  'Formato de fecha inválido',
+                  style: TextStyle(fontSize: 16, color: Colors.red),
                 );
               }
-            }),
+                        }),
 
             const SizedBox(height: 20),
             // Campo de descripción

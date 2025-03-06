@@ -5,7 +5,10 @@ import 'package:test_app/Services/client_request/assignment_request/assignment_c
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/Services/worker_request/accepted_job/accepted_job_status_request.dart';
 import 'package:test_app/Services/worker_request/assignments_publish/jobs_publish.dart';
+import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/worker/worker_assignment_detail_screen.dart';
+
+//Listado de todos los trabajos disponibles
 
 class WorkerJobRequestsScreen extends StatefulWidget {
   const WorkerJobRequestsScreen({super.key});
@@ -24,7 +27,19 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
   @override
   void initState() {
     super.initState();
-    _jobsFuture = _jobService.fetchAllJobs();
+    _loadJobs();
+  }
+
+  // Método para cargar trabajos
+  void _loadJobs() {
+    setState(() {
+      _jobsFuture = _jobService.fetchAllJobs();
+    });
+  }
+
+  // Método para refrescar los trabajos
+  Future<void> _refreshJobs() async {
+    _loadJobs();
   }
 
   @override
@@ -40,92 +55,96 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
         ),
         foregroundColor: colors.primary,
       ),
-      body: FutureBuilder<List<AssignmentDTO>>(
-        future: _jobsFuture,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return Center(
-                child: Text("Error al cargar trabajos: ${snapshot.error}"));
-          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return const Center(child: Text("No hay trabajos disponibles."));
-          }
+      body: RefreshIndicator(
+        onRefresh: _refreshJobs, // Se ejecuta al arrastrar hacia abajo
+        child: FutureBuilder<List<AssignmentDTO>>(
+          future: _jobsFuture,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircularProgressIndicator());
+            } else if (snapshot.hasError) {
+              return Center(
+                  child: Text("Error al cargar trabajos: ${snapshot.error}"));
+            } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+              return const Center(child: Text("No hay trabajos disponibles."));
+            }
 
-          final jobs = snapshot.data!;
+            final jobs = snapshot.data!;
 
-          return ListView.builder(
-            padding: const EdgeInsets.all(3),
-            itemCount: jobs.length,
-            itemBuilder: (context, index) {
-              final job = jobs[index];
-              return Card(
-                margin: const EdgeInsets.only(bottom: 12),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                elevation: 3,
-                child: ListTile(
-                  leading:
-                      const Icon(Icons.work, color: Colors.green, size: 30),
-                  title: Text(
-                    job.nameOfService,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
+            return ListView.builder(
+              padding: const EdgeInsets.all(3),
+              itemCount: jobs.length,
+              itemBuilder: (context, index) {
+                final job = jobs[index];
+                return Card(
+                  margin: const EdgeInsets.only(bottom: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  elevation: 3,
+                  child: ListTile(
+                    leading:
+                        const Icon(Icons.work, color: greenHigh, size: 30),
+                    title: Text(
+                      job.nameOfService,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                  ),
-                  subtitle: Text(
-                    "Ubicación: ${job.status ?? "Desconocida"}\nPago: \$${job.amount?.toStringAsFixed(2) ?? "N/A"}",
-                    style: const TextStyle(fontSize: 16),
-                  ),
-                  trailing: ElevatedButton(
-                    onPressed: () async {
-                      // Guarda el ID de la asignación seleccionada
-                      assignmentController
-                          .setSelectedAssignment(job.idAssignment);
+                    subtitle: Text(
+                      "Ubicación: ${job.status ?? "Desconocida"}\nPago: \$${job.amount.toStringAsFixed(2) ?? "N/A"}",
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                    trailing: ElevatedButton(
+                      onPressed: () async {
+                        // Guarda el ID de la asignación seleccionada
+                        assignmentController
+                            .setSelectedAssignment(job.idAssignment);
 
-                      // Crear instancia de AssignmentService
-                      final assignmentService = AssignmentAcceptedByWorker(
-                        baseUrl: "https://keidot.azurewebsites.net",
-                        storage: const FlutterSecureStorage(),
-                      );
-
-                      // Actualizar el estado a "En progreso"
-                      bool success = await assignmentService
-                          .updateAssignmentStatus(newStatus: "En progreso");
-
-                      // Mostrar mensaje al usuario
-                      if (success) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                              content: Text('Trabajo aceptado con éxito.')),
+                        // Crear instancia de AssignmentService
+                        final assignmentService = AssignmentAcceptedByWorker(
+                          baseUrl: "https://keidot.azurewebsites.net",
+                          storage: const FlutterSecureStorage(),
                         );
-                      } else {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                              content: Text('Error al aceptar el trabajo.')),
-                        );
-                      }
+
+                        // Actualizar el estado a "En progreso"
+                        bool success = await assignmentService
+                            .updateAssignmentStatus(newStatus: "En progreso");
+
+                        // Mostrar mensaje al usuario
+                        if (success) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('Trabajo aceptado con éxito.')),
+                          );
+                          _refreshJobs(); // Recargar trabajos al aceptar uno
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('Error al aceptar el trabajo.')),
+                          );
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: greenHigh,
+                      ),
+                      child: const Text(
+                        "Aceptar",
+                        style: TextStyle(color: defaultWhite),
+                      ),
+                    ),
+                    onTap: () {
+                      // Navega a la pantalla de detalles del trabajo
+                      Get.to(
+                          () => WorkerAssignmentDetailScreen(assignment: job));
                     },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green,
-                    ),
-                    child: const Text(
-                      "Aceptar",
-                      style: TextStyle(color: Colors.white),
-                    ),
                   ),
-                  onTap: () {
-                    //Aqui va para guardar el id al ser selccionado
-                    // Navega a la pantalla de detalles del trabajo
-                    Get.to(() => WorkerAssignmentDetailScreen(assignment: job));
-                  },
-                ),
-              );
-            },
-          );
-        },
+                );
+              },
+            );
+          },
+        ),
       ),
     );
   }

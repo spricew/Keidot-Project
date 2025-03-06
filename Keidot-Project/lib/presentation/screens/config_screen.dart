@@ -10,7 +10,7 @@ class ConfigScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: 'Configuración',
         backgroundColor: Colors.transparent,
         titleFontSize: 24,
@@ -31,7 +31,7 @@ class _ConfigView extends StatelessWidget {
     {
       'title': 'Cambiar contraseña',
       'icon': Icons.lock,
-      'screen': ChangeNameScreen(), // Pantalla para cambiar contraseña
+      'screen': const ChangeNameScreen(), // Pantalla para cambiar contraseña
     },
     {
       'title': 'Convertirse en trabajador',
@@ -78,7 +78,6 @@ class _OptionCard extends StatelessWidget {
   final Widget screen;
 
   const _OptionCard({
-    super.key,
     required this.title,
     required this.icon,
     required this.screen,

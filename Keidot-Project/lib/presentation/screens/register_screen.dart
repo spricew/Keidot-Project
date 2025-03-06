@@ -30,7 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool obscurePassword = true;
   bool obscureConfirmPassword = true;
   // Mapa para guardar los errores de validación
-  Map<String, String> _errors = {};
+  final Map<String, String> _errors = {};
 
   File? _selectedFile;
   String? _fileName;

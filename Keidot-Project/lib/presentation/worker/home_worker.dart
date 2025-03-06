@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:test_app/presentation/screens/messages_screen.dart';
 import 'package:test_app/presentation/screens/notifications_screen.dart';
 import 'package:test_app/presentation/screens/request_screen1.dart';
 import 'package:test_app/presentation/screens/search_screen.dart';
-import 'package:test_app/presentation/screens/home_screen.dart';
 import 'package:test_app/presentation/worker/worker_job_requests_screen.dart';
-import 'package:test_app/presentation/worker/search_worker.dart';
-import 'package:test_app/presentation/worker/worker_assignment_detail_screen.dart';
-import 'package:test_app/presentation/worker/worker_messages.dart';
 
 class HomepageWorker extends StatefulWidget {
   const HomepageWorker({super.key});

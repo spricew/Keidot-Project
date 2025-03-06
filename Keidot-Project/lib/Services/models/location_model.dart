@@ -1,19 +1,19 @@
 class LocationModel {
   final String? idLocation;
-  final String userId;
+  final String assignmentId;
   final double latitude;
   final double longitude;
 
   LocationModel({
     this.idLocation,
-    required this.userId,
+    required this.assignmentId,
     required this.latitude,
     required this.longitude,
   });
 
   Map<String, dynamic> toJson() {
     return {
-      "user_id": userId,
+      "assignment_id": assignmentId,
       "latitude": latitude,
       "longitude": longitude,
     };
@@ -21,8 +21,8 @@ class LocationModel {
 
   factory LocationModel.fromJson(Map<String, dynamic> json) {
     return LocationModel(
-      idLocation: json['idLocation'],
-      userId: json['userId'],
+      idLocation: json['id_location'],
+      assignmentId: json['assignment_id'],
       latitude: json['latitude'].toDouble(),
       longitude: json['longitude'].toDouble(),
     );

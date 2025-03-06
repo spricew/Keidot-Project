@@ -6,7 +6,7 @@ import 'package:test_app/presentation/worker/worker_assignments_screen.dart';
 import 'package:test_app/presentation/worker/worker_settings_screen.dart';
 
 class WorkerPopupMenu extends StatelessWidget {
-  const WorkerPopupMenu({Key? key}) : super(key: key);
+  const WorkerPopupMenu({super.key});
 
   void _navigateToScreen(Widget screen) {
     Get.to(() => screen);
