@@ -223,6 +223,9 @@ class _HomeScreenState extends State<HomeScreen> {
         final serviceController = Get.find<ServiceTransactionController>();
         serviceController.setService(
             service.serviceId.toString(), service.title);
+        // Guarda el precio en el método setAmount
+        final transactionController = Get.find<ServiceTransactionController>();
+        transactionController.setAmount(service.price);
         Get.to(() => const RequestScreen1());
       },
       child: Container(

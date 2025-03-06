@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/models/location_model.dart';
 import 'package:logger/logger.dart';
-
+/*
 class LocationService {
   final String apiUrl = 'https://keidot.azurewebsites.net/api/Locations';
   final storage = const FlutterSecureStorage();
@@ -87,3 +87,4 @@ class LocationController extends GetxController {
     isLoading.value = false;
   }
 }
+*/

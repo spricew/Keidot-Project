@@ -3,7 +3,6 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_request.dart';
-import 'package:test_app/Services/client_request/location_request/location_service_controller.dart';
 import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
@@ -19,7 +18,6 @@ void main() async {
   // Inicializa los controladores de GetX
   Get.lazyPut(() => AssignmentIdController());
   Get.put(ServiceTransactionController());
-  Get.put(LocationController());
   Get.put(AssignmentController());
   runApp(
     MultiProvider(
