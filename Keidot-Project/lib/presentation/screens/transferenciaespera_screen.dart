@@ -7,12 +7,12 @@ import 'package:intl/intl.dart';
 
 class TransferenciaEsperaScreen extends StatelessWidget {
   final ServiceTransactionController controller = Get.find();
-  final LocationController controller_location = Get.find();
 
   TransferenciaEsperaScreen({super.key}); // Obtén el controlador
 
   @override
   Widget build(BuildContext context) {
+    final transactionController = Get.find<ServiceTransactionController>();
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
@@ -82,13 +82,17 @@ class TransferenciaEsperaScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              const Text(
-                '\$750',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              Obx(() {
+                final amount =
+                    transactionController.transaction.value?.amount ?? 0.0;
+                return Text(
+                  '\$${amount.toStringAsFixed(2)}',
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                );
+              }),
               const SizedBox(height: 20),
               const Text(
                 'La transferencia se reflejará cuando el trabajo se concluya',
@@ -142,7 +146,6 @@ class TransferenciaEsperaScreen extends StatelessWidget {
                 onPressed: () async {
                   // Envía los datos al servidor
                   await controller.sendRequest();
-                  await controller_location.saveLocation();
                   //
                   // Navega a la pantalla de solicitud exitosa
                   Get.to(() => const SolicitudExitosaScreen());
