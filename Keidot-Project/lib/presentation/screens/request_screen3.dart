@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_app/Services/transaction/service_transaction_controller.dart';
+import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/presentation/screens/stripe/stripe_screen.dart';
 import 'package:intl/intl.dart';
 
@@ -57,6 +57,8 @@ class _RequestScreen3State extends State<RequestScreen3> {
         // Convertir a formato ISO 8601 (UTC)
         final String formattedISOTime =
             selectedDateTime.toUtc().toIso8601String();
+            //final String formattedISOTime = selectedDateTime.toIso8601String();
+
 
         // Guardar en el controlador
         controller.setSelectedTime(formattedISOTime);
@@ -120,27 +122,20 @@ class _RequestScreen3State extends State<RequestScreen3> {
 
             Obx(() {
               final selectedTime = controller.transaction.value.selectedTime;
-              if (selectedTime != null) {
-                try {
-                  DateTime parsedTime = DateTime.parse(selectedTime);
-                  return Text(
-                    'Fecha seleccionada: ${DateFormat('dd/MM/yyyy - hh:mm').format(parsedTime)}',
-                    style: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold),
-                  );
-                } catch (e) {
-                  return const Text(
-                    'Formato de fecha inválido',
-                    style: TextStyle(fontSize: 16, color: Colors.red),
-                  );
-                }
-              } else {
+              try {
+                DateTime parsedTime = DateTime.parse(selectedTime).toLocal();
+                return Text(
+                  'Fecha seleccionada: ${DateFormat('dd/MM/yyyy - HH:mm').format(parsedTime)}',
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold),
+                );
+              } catch (e) {
                 return const Text(
-                  'No hay fecha seleccionada',
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                  'Formato de fecha inválido',
+                  style: TextStyle(fontSize: 16, color: Colors.red),
                 );
               }
-            }),
+                        }),
 
             const SizedBox(height: 20),
             // Campo de descripción
@@ -153,7 +148,6 @@ class _RequestScreen3State extends State<RequestScreen3> {
             ),
             const SizedBox(height: 10),
             TextField(
-              
               controller: _descriptionController,
               maxLines: 3, // Permite múltiples líneas
               decoration: InputDecoration(

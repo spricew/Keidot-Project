@@ -2,7 +2,9 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/presentation/screens/stripe/keys.dart';
 import 'package:test_app/presentation/screens/transferenciaespera_screen.dart';
 
@@ -13,7 +15,7 @@ class HomePageStripe extends StatefulWidget {
 }
 
 class _HomePageStripeState extends State<HomePageStripe> {
-  double amount = 210;
+
   Map<String, dynamic>? intentPaymentData;
 
   Future<void> showPaymentSheet(BuildContext context) async {
@@ -95,14 +97,18 @@ class _HomePageStripeState extends State<HomePageStripe> {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
+ @override
+Widget build(BuildContext context) {
+    final transactionController = Get.find<ServiceTransactionController>();
+
+  return Scaffold(
+    body: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Obx(() {
+            final amount = transactionController.transaction.value?.amount ?? 0.0;
+            return ElevatedButton(
               onPressed: () {
                 paymentSheetInitialization(
                     context, amount.round().toString(), "USD");
@@ -111,24 +117,25 @@ class _HomePageStripeState extends State<HomePageStripe> {
                 backgroundColor: Colors.green,
               ),
               child: Text(
-                'Pay Now ${amount.toString()}',
+                'Pay Now \$${amount.toString()}',
                 style: const TextStyle(
                   color: Colors.white,
                 ),
               ),
+            );
+          }),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context); // Regresa a la pantalla anterior
+            },
+            child: const Text(
+              'Anterior',
+              style: TextStyle(color: Colors.red),
             ),
-            TextButton(
-                  onPressed: () {
-                    Navigator.pop(context); // Regresa a la pantalla anterior
-                  },
-                  child: const Text(
-                    'Anterior',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                ),
-          ],
-        ),
+          ),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
 }

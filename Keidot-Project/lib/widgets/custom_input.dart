@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomInput extends StatelessWidget {
   final String labelText; // Texto de la etiqueta
@@ -10,6 +11,8 @@ class CustomInput extends StatelessWidget {
   final VoidCallback?
       onSuffixIconTap; // Callback opcional para el tap en el ícono de la derecha
   final String? errorText; // Permitir que sea opcional
+  final List<TextInputFormatter>? inputFormatters; // Agregado
+  final int? maxLength; // Agregado
 
   final ValueChanged<String>?
       onChanged; // Función opcional para detectar cambios
@@ -25,6 +28,8 @@ class CustomInput extends StatelessWidget {
     this.onSuffixIconTap,
     required this.errorText,
     this.onChanged,
+    this.inputFormatters, // Agregado
+    this.maxLength, // Agregado
   });
 
   @override

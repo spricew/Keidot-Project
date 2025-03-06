@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_app/Services/worker_request/assignments_publish/jobs_publish.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/screens/request_screen1.dart'; // Manteniendo el RequestScreen1 como ejemplo
+import 'package:test_app/presentation/screens/request_screen1.dart';
+// Importa HomeWorker
+import 'package:test_app/presentation/worker/home_worker.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
 class SearchWorkerScreen extends StatefulWidget {
@@ -13,21 +16,20 @@ class SearchWorkerScreen extends StatefulWidget {
 
 class _SearchWorkerScreenState extends State<SearchWorkerScreen> {
   final TextEditingController searchController = TextEditingController();
+  final JobsPublishService _jobsPublishService = JobsPublishService();
 
-  // Lista de servicios estáticos para la maqueta
-  List<Map<String, dynamic>> services = [
-    {'service_id': '1', 'title': 'Venta de plantas y semillas'},
-    {'service_id': '2', 'title': 'Corte de césped'},
-    {'service_id': '3', 'title': 'Limpieza de jardín'},
-    {'service_id': '4', 'title': 'Alquiler de herramientas de jardineria'},
-  ];
-  List<Map<String, dynamic>> filteredServices = [];
+  List filteredServices = [];
+
+  void fetchAndSetServices() async {
+    filteredServices = await _jobsPublishService.fetchAllJobs();
+    setState(() {}); // 🔹 Para actualizar la UI después de obtener los datos
+  }
 
   @override
   void initState() {
     super.initState();
-    // Inicia la lista filtrada con todos los servicios
-    filteredServices = services;
+
+    fetchAndSetServices(); // Cargar los servicios desde la API
 
     // Escuchar cambios en el campo de búsqueda y actualizar la lista en tiempo real
     searchController.addListener(() {
@@ -40,21 +42,18 @@ class _SearchWorkerScreenState extends State<SearchWorkerScreen> {
 
     if (query.isEmpty) {
       setState(() {
-        filteredServices = services; // Si la búsqueda está vacía, muestra todos los servicios
+        filteredServices = filteredServices;
       });
     } else {
       setState(() {
-        filteredServices = services
-            .where((service) => service['title']
-                .toLowerCase()
-                .contains(query)) // Filtra por nombre de servicio
+        filteredServices = filteredServices
+            .where((service) => service['title'].toLowerCase().contains(query))
             .toList();
       });
     }
   }
 
   void selectService(String serviceId, String serviceName) {
-    // Simula la selección del servicio y navega a la siguiente pantalla
     Get.to(() => const RequestScreen1());
   }
 
@@ -69,7 +68,7 @@ class _SearchWorkerScreenState extends State<SearchWorkerScreen> {
         titleColor: darkGreen,
         iconColor: darkGreen,
         onBackPressed: () {
-          Get.back(); // Navegar hacia atrás
+          Get.off(() => const HomeWorker()); // Modificado para ir a HomeWorker
         },
       ),
       body: Padding(
@@ -77,7 +76,6 @@ class _SearchWorkerScreenState extends State<SearchWorkerScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Campo de búsqueda
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
@@ -109,8 +107,6 @@ class _SearchWorkerScreenState extends State<SearchWorkerScreen> {
               ),
             ),
             const SizedBox(height: 16),
-
-            // Lista de servicios
             Expanded(
               child: filteredServices.isNotEmpty
                   ? ListView.builder(
@@ -173,7 +169,6 @@ class _SearchWorkerScreenState extends State<SearchWorkerScreen> {
     );
   }
 
-  // Método para obtener un ícono relacionado con el servicio
   IconData _getServiceIcon(String serviceName) {
     if (serviceName.toLowerCase().contains('plom')) {
       return Icons.plumbing;
@@ -184,7 +179,7 @@ class _SearchWorkerScreenState extends State<SearchWorkerScreen> {
     } else if (serviceName.toLowerCase().contains('jardín')) {
       return Icons.nature;
     } else {
-      return Icons.build; // Ícono por defecto
+      return Icons.build;
     }
   }
 

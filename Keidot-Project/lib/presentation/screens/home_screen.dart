@@ -2,11 +2,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:test_app/Services/services_request/service_controller.dart';
-import 'package:test_app/Services/transaction/service_transaction_controller.dart';
+import 'package:test_app/Services/client_request/services_request/service_controller.dart';
+import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/new_worker.dart';
 import 'package:test_app/presentation/screens/request_screen1.dart';
 import 'package:test_app/presentation/worker/home_worker.dart';
+import 'package:test_app/presentation/worker/worker_assignment_detail_screen.dart';
 import 'package:test_app/widgets/custom_popup.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -73,43 +75,49 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         actions: [
-          Switch(
-            value: _isWorker,
-            onChanged: (value) {
-              setState(() {
-                _isWorker = value;
-              });
-              if (_isWorker) {
-                Get.offAll(() => const HomeWorker());
-              }
+          IconButton(
+            icon:
+                const Icon(Icons.work, color: greenHigh), // Ícono de trabajador
+            onPressed: () {
+              Get.to(() => const HomeWorker()); // Navegación a HomepageWorker
             },
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Obx(() => serviceController.isLoading.value
-                ? _buildShimmerCarousel()
-                : _buildImageCarousel()),
-            const SizedBox(height: 28),
-            const Text(
-              'Servicios destacados',
-              style: TextStyle(
-                color: darkGreen,
-                fontSize: 22,
-                fontWeight: FontWeight.w600,
-                letterSpacing: -0.2,
-              ),
+      body: _buildClientUI(),
+    );
+  }
+
+  /// UI para trabajadores
+  Widget _buildWorkerUI() {
+    return const HomeWorker();
+  }
+
+  /// UI para clientes
+  Widget _buildClientUI() {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Obx(() => serviceController.isLoading.value
+              ? _buildShimmerCarousel()
+              : _buildImageCarousel()),
+          const SizedBox(height: 28),
+          const Text(
+            'Servicios destacados',
+            style: TextStyle(
+              color: darkGreen,
+              fontSize: 22,
+              fontWeight: FontWeight.w600,
+              letterSpacing: -0.2,
             ),
-            const SizedBox(height: 10),
-            Obx(() => serviceController.isLoading.value
-                ? _buildShimmerGrid()
-                : _buildServicesGrid()),
-          ],
-        ),
+          ),
+          const SizedBox(height: 10),
+          Obx(() => serviceController.isLoading.value
+              ? _buildShimmerGrid()
+              : _buildServicesGrid()),
+        ],
       ),
     );
   }
@@ -174,7 +182,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                    image: NetworkImage(serviceController.services[index].urlImage),
+                    image: NetworkImage(
+                        serviceController.services[index].urlImage),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -196,7 +205,9 @@ class _HomeScreenState extends State<HomeScreen> {
         mainAxisSpacing: 12,
         childAspectRatio: 0.84,
       ),
-      itemCount: serviceController.services.length > 4 ? 4 : serviceController.services.length,
+      itemCount: serviceController.services.length > 4
+          ? 4
+          : serviceController.services.length,
       itemBuilder: (context, index) {
         return _gridItem(serviceController.services[index]);
       },
@@ -207,7 +218,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return GestureDetector(
       onTap: () {
         final serviceController = Get.find<ServiceTransactionController>();
-        serviceController.setService(service.serviceId.toString(), service.title);
+        serviceController.setService(
+            service.serviceId.toString(), service.title);
+        // Guarda el precio en el método setAmount
+        final transactionController = Get.find<ServiceTransactionController>();
+        transactionController.setAmount(service.price);
         Get.to(() => const RequestScreen1());
       },
       child: Container(
