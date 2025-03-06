@@ -4,7 +4,6 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
 import 'package:test_app/Services/models/service_transaction_model.dart';
-import 'package:test_app/Services/models/location_model.dart';
 
 class ServiceTransactionController extends GetxController {
   final FlutterSecureStorage storage = const FlutterSecureStorage();
