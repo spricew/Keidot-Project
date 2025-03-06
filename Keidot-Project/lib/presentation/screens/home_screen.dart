@@ -79,8 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
             icon:
                 const Icon(Icons.work, color: greenHigh), // Ícono de trabajador
             onPressed: () {
-              Get.to(
-                  () => const HomepageWorker()); // Navegación a HomepageWorker
+              Get.to(() => const HomeWorker()); // Navegación a HomepageWorker
             },
           ),
         ],
@@ -91,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   /// UI para trabajadores
   Widget _buildWorkerUI() {
-    return const HomepageWorker();
+    return const HomeWorker();
   }
 
   /// UI para clientes

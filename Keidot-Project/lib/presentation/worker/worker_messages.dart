@@ -18,7 +18,7 @@ class WorkerMessagesScreen extends StatelessWidget {
         titleColor: darkGreen,
         iconColor: darkGreen,
         onBackPressed: () {
-          Get.off(() => const HomepageWorker()); // Redirige a HomeWorker
+          Get.off(() => const HomeWorker()); // Redirige a HomeWorker
         },
       ),
       body: ListView.builder(
