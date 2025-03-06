@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
 import 'request_details_garden.dart';
-//aqui hacer una 
+
 class RequestScreen1 extends StatelessWidget {
   const RequestScreen1({
     super.key,
@@ -26,10 +26,11 @@ class DetallesServicioPage extends StatefulWidget {
 
 class _DetallesServicioPageState extends State<DetallesServicioPage> {
   final ServiceTransactionController controller = Get.find();
+  final RxList<String> selectedJobs = <String>[].obs;
 
   @override
   void initState() {
-    super.initState(); // Guardar el serviceId
+    super.initState();
   }
 
   @override
@@ -46,12 +47,10 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
         ),
         centerTitle: true,
         title: Text(
-          controller
-              .serviceName(), // Muestra el título del servicio en la barra superior
+          controller.serviceName(),
           style: const TextStyle(color: Color(0xFF3BA670), fontSize: 18),
           maxLines: 1,
-          overflow:
-              TextOverflow.ellipsis, // Para evitar que se corte si es largo
+          overflow: TextOverflow.ellipsis,
         ),
       ),
       body: Padding(
@@ -77,6 +76,65 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
               ),
             ),
             const SizedBox(height: 16),
+            
+            // Nueva Sección: Selección de trabajo
+            const Text('Selección de trabajo',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+            const SizedBox(height: 8),
+            Card(
+              color: const Color.fromARGB(255, 252, 249, 249),
+              child: Column(
+                children: [
+                  Obx(() => CheckboxListTile(
+                        value: selectedJobs.contains('Corte de césped'),
+                        onChanged: (value) {
+                          if (value == true) {
+                            selectedJobs.add('Corte de césped');
+                          } else {
+                            selectedJobs.remove('Corte de césped');
+                          }
+                        },
+                        title: const Text('Corte de césped'),
+                      )),
+                  Obx(() => CheckboxListTile(
+                        value: selectedJobs.contains('Control de plagas y enfermedades'),
+                        onChanged: (value) {
+                          if (value == true) {
+                            selectedJobs.add('Control de plagas y enfermedades');
+                          } else {
+                            selectedJobs.remove('Control de plagas y enfermedades');
+                          }
+                        },
+                        title: const Text('Control de plagas y enfermedades'),
+                      )),
+                  Obx(() => CheckboxListTile(
+                        value: selectedJobs.contains('Poda de árboles y arbustos'),
+                        onChanged: (value) {
+                          if (value == true) {
+                            selectedJobs.add('Poda de árboles y arbustos');
+                          } else {
+                            selectedJobs.remove('Poda de árboles y arbustos');
+                          }
+                        },
+                        title: const Text('Poda de árboles y arbustos'),
+                      )),
+                  Obx(() => CheckboxListTile(
+                        value: selectedJobs.contains('Limpieza de jardín'),
+                        onChanged: (value) {
+                          if (value == true) {
+                            selectedJobs.add('Limpieza de jardín');
+                          } else {
+                            selectedJobs.remove('Limpieza de jardín');
+                          }
+                        },
+                        title: const Text('Limpieza de jardín'),
+                      )),
+                ],
+              ),
+            ),
+            const SizedBox(height: 16),
+            
+            // Sección: Tamaño del jardín
             const Text('Tamaño del jardín',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
             const SizedBox(height: 8),
@@ -131,7 +189,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                 ElevatedButton(
                   onPressed: () {
                     if (controller.transaction.value.estimatedSize.isEmpty) {
-                      Get.snackbar("Error", "Seleccione una tamaño válido");//Enviar datos de la seleccion de las caracteristicas
+                      Get.snackbar("Error", "Seleccione un tamaño válido");
                       return;
                     }
                     Get.to(() => const RequestDetailsGarden());
