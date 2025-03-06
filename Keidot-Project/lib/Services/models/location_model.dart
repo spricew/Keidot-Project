@@ -13,6 +13,7 @@ class LocationModel {
 
   Map<String, dynamic> toJson() {
     return {
+      "id_location": idLocation,
       "assignment_id": assignmentId,
       "latitude": latitude,
       "longitude": longitude,

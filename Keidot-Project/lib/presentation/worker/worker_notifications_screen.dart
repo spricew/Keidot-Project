@@ -62,7 +62,7 @@ class _WorkerNotificationsScreenState extends State<WorkerNotificationsScreen> {
         iconColor: darkGreen,
         onBackPressed: () {
           // Regresa a la Home de Trabajadores
-          Get.offAll(() => const HomepageWorker());
+          Get.offAll(() => const HomeWorker());
         },
       ),
       body: ListView.builder(
@@ -81,16 +81,13 @@ class _WorkerNotificationsScreenState extends State<WorkerNotificationsScreen> {
                 fontWeight: notification['isRead']
                     ? FontWeight.normal
                     : FontWeight.bold,
-                color:
-                    notification['isRead'] ? Colors.grey : Colors.black,
+                color: notification['isRead'] ? Colors.grey : Colors.black,
               ),
             ),
             subtitle: Text(
               notification['date'],
               style: TextStyle(
-                color: notification['isRead']
-                    ? Colors.grey
-                    : Colors.black54,
+                color: notification['isRead'] ? Colors.grey : Colors.black54,
               ),
             ),
             onTap: () {

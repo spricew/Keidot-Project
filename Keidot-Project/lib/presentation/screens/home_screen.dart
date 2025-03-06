@@ -5,8 +5,10 @@ import 'package:shimmer/shimmer.dart';
 import 'package:test_app/Services/client_request/services_request/service_controller.dart';
 import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/new_worker.dart';
 import 'package:test_app/presentation/screens/request_screen1.dart';
 import 'package:test_app/presentation/worker/home_worker.dart';
+import 'package:test_app/presentation/worker/worker_assignment_detail_screen.dart';
 import 'package:test_app/widgets/custom_popup.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -73,27 +75,22 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         actions: [
-          Switch(
-            value: _isWorker,
-            onChanged: (value) {
-              setState(() {
-                _isWorker = value;
-              });
+          IconButton(
+            icon:
+                const Icon(Icons.work, color: greenHigh), // Ícono de trabajador
+            onPressed: () {
+              Get.to(() => const HomeWorker()); // Navegación a HomepageWorker
             },
-            activeColor: Colors.white,
-            activeTrackColor: Colors.green,
-            inactiveThumbColor: Colors.white,
-            inactiveTrackColor: Colors.grey,
           ),
         ],
       ),
-      body: _isWorker ? _buildWorkerUI() : _buildClientUI(),
+      body: _buildClientUI(),
     );
   }
 
   /// UI para trabajadores
   Widget _buildWorkerUI() {
-    return const HomepageWorker();
+    return const HomeWorker();
   }
 
   /// UI para clientes

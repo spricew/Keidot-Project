@@ -24,7 +24,7 @@ class _SearchWorkerScreenState extends State<SearchWorkerScreen> {
     filteredServices = await _jobsPublishService.fetchAllJobs();
     setState(() {}); // 🔹 Para actualizar la UI después de obtener los datos
   }
-  
+
   @override
   void initState() {
     super.initState();
@@ -68,7 +68,7 @@ class _SearchWorkerScreenState extends State<SearchWorkerScreen> {
         titleColor: darkGreen,
         iconColor: darkGreen,
         onBackPressed: () {
-          Get.off(() => const HomepageWorker()); // Modificado para ir a HomeWorker
+          Get.off(() => const HomeWorker()); // Modificado para ir a HomeWorker
         },
       ),
       body: Padding(
