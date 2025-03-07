@@ -20,7 +20,8 @@ class _RequestScreen2State extends State<RequestScreen2> {
   final MapController _mapController = MapController();
   static const LatLng initialLocation =
       LatLng(20.9671, -89.6237); // Coordenadas de Mérida
-  final ServiceTransactionController locationController = Get.find<ServiceTransactionController>();
+  final ServiceTransactionController locationController =
+      Get.find<ServiceTransactionController>();
 
   LatLng selectedLocation =
       const LatLng(20.9671, -89.6237); // Ubicación inicial
@@ -28,13 +29,12 @@ class _RequestScreen2State extends State<RequestScreen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
+      appBar: CustomAppBar(
         title: 'Ubicación',
-        backgroundColor: Colors.transparent,
+        backgroundColor: defaultWhite,
       ),
       body: Stack(
         children: [
-          // 🟢 Mapa en el fondo, ocupando toda la pantalla
           Positioned.fill(
             child: FlutterMap(
               mapController: _mapController,
@@ -61,8 +61,7 @@ class _RequestScreen2State extends State<RequestScreen2> {
                       height: 80,
                       child: const Column(
                         children: [
-                          Icon(Icons.location_on,
-                              color: Colors.red, size: 46),
+                          Icon(Icons.location_on, color: Colors.red, size: 46),
                         ],
                       ),
                     ),
@@ -110,10 +109,12 @@ class _RequestScreen2State extends State<RequestScreen2> {
                       // Navega a la nueva pantalla
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Homepage()),
+                        MaterialPageRoute(
+                            builder: (context) => const Homepage()),
                       );
                     },
-                    child: const Text('Cancelar', style: TextStyle(color: redError))),
+                    child: const Text('Cancelar',
+                        style: TextStyle(color: redError))),
                 const SizedBox(width: 14),
                 ElevatedButton(
                   onPressed: () {

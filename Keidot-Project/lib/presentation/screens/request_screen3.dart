@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
+import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/stripe/stripe_screen.dart';
 import 'package:intl/intl.dart';
+import 'package:test_app/widgets/custom_appbar.dart';
 
 class RequestScreen3 extends StatefulWidget {
   const RequestScreen3({super.key});
@@ -57,8 +59,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
         // Convertir a formato ISO 8601 (UTC)
         final String formattedISOTime =
             selectedDateTime.toUtc().toIso8601String();
-            //final String formattedISOTime = selectedDateTime.toIso8601String();
-
+        //final String formattedISOTime = selectedDateTime.toIso8601String();
 
         // Guardar en el controlador
         controller.setSelectedTime(formattedISOTime);
@@ -70,20 +71,11 @@ class _RequestScreen3State extends State<RequestScreen3> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () {
-            Navigator.pop(context); // Regresa a la pantalla anterior
-          },
-        ),
-        centerTitle: true,
-        title: const Text(
-          'Jardinería',
-          style: TextStyle(color: Color(0xFF3BA670)),
-        ),
+      appBar: CustomAppBar(
+        title: 'Detalles del jardín',
+        toolbarHeight: 65,
+        titleFontSize: 25,
+        backgroundColor: defaultWhite,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -135,7 +127,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
                   style: TextStyle(fontSize: 16, color: Colors.red),
                 );
               }
-                        }),
+            }),
 
             const SizedBox(height: 20),
             // Campo de descripción

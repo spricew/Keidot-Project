@@ -26,12 +26,14 @@ class DetallesServicioPage extends StatefulWidget {
 
 class _DetallesServicioPageState extends State<DetallesServicioPage> {
   final ServiceTransactionController controller = Get.find();
-  final RxList<String> selectedJobs = <String>[].obs;
+  final RxString selectedJob = RxString(""); // Solo un servicio seleccionado
 
-  @override
-  void initState() {
-    super.initState();
-  }
+  final List<String> allJobs = [
+    'Corte de césped',
+    'Control de plagas y enfermedades',
+    'Poda de árboles y arbustos',
+    'Limpieza de jardín'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +42,11 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: const Icon(
+            Icons.chevron_left,
+            color: Colors.black,
+            size: 34,
+          ),
           onPressed: () {
             Get.offAll(() => const Homepage());
           },
@@ -75,65 +81,34 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                     color: Color(0xFF3BA670)),
               ),
             ),
-            const SizedBox(height: 16),
-            
-            // Nueva Sección: Selección de trabajo
-            const Text('Selección de trabajo',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
-            const SizedBox(height: 8),
-            Card(
-              color: const Color.fromARGB(255, 252, 249, 249),
-              child: Column(
-                children: [
-                  Obx(() => CheckboxListTile(
-                        value: selectedJobs.contains('Corte de césped'),
-                        onChanged: (value) {
-                          if (value == true) {
-                            selectedJobs.add('Corte de césped');
-                          } else {
-                            selectedJobs.remove('Corte de césped');
-                          }
-                        },
-                        title: const Text('Corte de césped'),
-                      )),
-                  Obx(() => CheckboxListTile(
-                        value: selectedJobs.contains('Control de plagas y enfermedades'),
-                        onChanged: (value) {
-                          if (value == true) {
-                            selectedJobs.add('Control de plagas y enfermedades');
-                          } else {
-                            selectedJobs.remove('Control de plagas y enfermedades');
-                          }
-                        },
-                        title: const Text('Control de plagas y enfermedades'),
-                      )),
-                  Obx(() => CheckboxListTile(
-                        value: selectedJobs.contains('Poda de árboles y arbustos'),
-                        onChanged: (value) {
-                          if (value == true) {
-                            selectedJobs.add('Poda de árboles y arbustos');
-                          } else {
-                            selectedJobs.remove('Poda de árboles y arbustos');
-                          }
-                        },
-                        title: const Text('Poda de árboles y arbustos'),
-                      )),
-                  Obx(() => CheckboxListTile(
-                        value: selectedJobs.contains('Limpieza de jardín'),
-                        onChanged: (value) {
-                          if (value == true) {
-                            selectedJobs.add('Limpieza de jardín');
-                          } else {
-                            selectedJobs.remove('Limpieza de jardín');
-                          }
-                        },
-                        title: const Text('Limpieza de jardín'),
-                      )),
-                ],
-              ),
-            ),
-            const SizedBox(height: 16),
-            
+            const SizedBox(height: 46),
+
+            Obx(() => DropdownButtonFormField<String>(
+                  value:
+                      selectedJob.value.isNotEmpty ? selectedJob.value : null,
+                  decoration: InputDecoration(
+                    labelText: 'Selecciona un servicio',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8)),
+                    contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 12, vertical: 10),
+                  ),
+                  items: allJobs.map((job) {
+                    return DropdownMenuItem(
+                      value: job,
+                      child: Text(job),
+                    );
+                  }).toList(),
+                  onChanged: (value) {
+                    if (value != null) {
+                      selectedJob.value = value; // Solo un servicio
+                    }
+                  },
+                  hint: const Text("Selecciona un servicio"),
+                )),
+
+            const SizedBox(height: 20),
+
             // Sección: Tamaño del jardín
             const Text('Tamaño del jardín',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
