@@ -91,7 +91,7 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
                       ),
                     ),
                     subtitle: Text(
-                      "Ubicación: ${job.status ?? "Desconocida"}\nPago: \$${job.amount.toStringAsFixed(2) ?? "N/A"}",
+                      "Tamaño Estimado: ${job.estimatedSize ?? "Desconocida"}\nPago: \$${job.amount.toStringAsFixed(2) ?? "N/A"}",
                       style: const TextStyle(fontSize: 16),
                     ),
                     trailing: ElevatedButton(
@@ -116,7 +116,11 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
                             const SnackBar(
                                 content: Text('Trabajo aceptado con éxito.')),
                           );
-                          _refreshJobs(); // Recargar trabajos al aceptar uno
+
+                          // **Eliminar el trabajo de la lista sin recargar toda la pantalla**
+                          setState(() {
+                            jobs.removeAt(index);
+                          });
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
