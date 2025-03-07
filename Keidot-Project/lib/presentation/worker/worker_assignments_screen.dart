@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
+import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/Services/worker_request/jobs_accepted_by_worker/jobs_taken_worker.dart';
 import 'package:test_app/config/theme/app_theme.dart';
@@ -42,9 +43,8 @@ class _WorkerAssignmentsScreenState extends State<WorkerAssignmentsScreen> {
       final List<dynamic> jobsData =
           await _acceptedJobsService.fetchAcceptedJobs(workerId);
 
-      List<AssignmentDTO> jobs = jobsData
-          .map((job) => AssignmentDTO.fromJson(job))
-          .toList();
+      List<AssignmentDTO> jobs =
+          jobsData.map((job) => AssignmentDTO.fromJson(job)).toList();
 
       logger.i("Trabajos aceptados cargados con éxito.");
       return jobs;
@@ -107,8 +107,15 @@ class _WorkerAssignmentsScreenState extends State<WorkerAssignmentsScreen> {
                   ),
                   trailing: const Icon(Icons.arrow_forward_ios),
                   onTap: () {
-                    Get.to(
-                        () => WorkerAssignmentDetailScreen(assignment: assignment));
+                    final AssignmentIdController assignmentController =
+                        Get.put(AssignmentIdController());
+
+                    // Guardar el ID de la asignación seleccionada
+                    assignmentController.setSelectedAssignment(assignment.idAssignment);
+
+                    // Navegar a la pantalla de detalles
+                    Get.to(() =>
+                        WorkerAssignmentDetailScreen(assignment: assignment));
                   },
                 );
               },
