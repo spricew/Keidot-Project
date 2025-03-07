@@ -37,8 +37,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       // Cambia MaterialApp por GetMaterialApp
       debugShowCheckedModeBanner: false,
-      theme: AppTheme(selectedColor: 0).theme(),
-      home: const LoginPage(), // Página de inicio =>
+      theme: AppTheme(selectedColor: 2).theme(),
+      home: const LoginPage(), // Ve cambiando esta cosa para las pantallas que quieras ver Diego gay 
     );
   }
 }
