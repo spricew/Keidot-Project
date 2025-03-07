@@ -110,6 +110,10 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const Text(
+            'Nombre completo:',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
           const SizedBox(height: 16),
           _buildTextField(
             label: 'Nombre Completo',
@@ -117,8 +121,25 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
             validator: (value) =>
             value == null || value.isEmpty ? 'Ingresa tu Nombre Completo' : null,
           ),
+          const SizedBox(height: 13),
           const Text(
-            'Foto de perfil:',
+            'Foto de seguro independiente del SAT:',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8),
+          ElevatedButton.icon(
+            onPressed: _pickFile,
+            icon: const Icon(Icons.upload_file),
+            label: const Text('Seleccionar archivo'),
+          ),
+          if (_selectedFile != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Text('Archivo seleccionado: $_fileName'),
+            ),
+          const SizedBox(height: 16),
+          const Text(
+            'Foto de RFC:',
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 8),
@@ -153,17 +174,8 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
             onChanged: (value) => experienceYears = int.tryParse(value) ?? 0,
             validator: (value) => (value == null || int.tryParse(value) == null)
                 ? 'Ingresa un número válido'
-                : null,
-          ),
-          const SizedBox(height: 16),
-          _buildTextField(
-            label: 'Biografía',
-            maxLines: 5,
-            onChanged: (value) => biography = value,
-            validator: (value) => value == null || value.isEmpty
-                ? 'Escribe una breve biografía'
-                : null,
-          ),
+                : null,         
+                ),
           const SizedBox(height: 24),
           Center(
             child: ElevatedButton(

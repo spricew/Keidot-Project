@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/change_name.dart';
 import 'package:test_app/presentation/screens/messages_screen.dart';
@@ -17,12 +18,7 @@ class HomeWorker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(
-        title: 'Página de trabajador',
-        backgroundColor: Colors.transparent,
-        titleFontSize: 24,
-        toolbarHeight: 80,
-      ),
+      appBar: AppBar(title: Text('Página del trabajador'),),
       body: _ViewHomeWorker(),
     );
   }
