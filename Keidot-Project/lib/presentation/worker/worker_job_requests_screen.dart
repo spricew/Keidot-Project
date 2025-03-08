@@ -6,7 +6,7 @@ import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/Services/worker_request/accepted_job/accepted_job_status_request.dart';
 import 'package:test_app/Services/worker_request/assignments_publish/jobs_publish.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/worker/worker_assignment_detail_screen.dart';
+import 'package:test_app/presentation/worker/ubicacion_assignment_detail_screen.dart';
 
 //Listado de todos los trabajos disponibles
 
