@@ -85,12 +85,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Icon(
                     Icons.work,
                     color: colors.onPrimary, // Color del ícono
-                    size: 28, // Tamaño del ícono
+                    size: 24, // Tamaño del ícono
                   ),
                 ),
               ),
             ),
-            const SizedBox(width: 8), // Espacio entre el ícono y el texto
+            const SizedBox(width: 10), // Espacio entre el ícono y el texto
             const Text(
               'Keidot',
               style: TextStyle(
