@@ -3,7 +3,9 @@ import 'package:get/get.dart';
 import 'package:test_app/Services/client_request/garden_feature_request/garden_request.dart';
 import 'package:test_app/Services/models/garden_feature_model.dart';
 import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
+import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/request_screen2.dart';
+import 'package:test_app/widgets/custom_appbar.dart';
 
 class RequestDetailsGarden extends StatefulWidget {
   const RequestDetailsGarden({super.key});
@@ -72,18 +74,11 @@ class _RequestDetailsGardenState extends State<RequestDetailsGarden> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.pop(context),
-        ),
-        centerTitle: true,
-        title: const Text(
-          'Detalles del jardín',
-          style: TextStyle(color: Color(0xFF3BA670), fontSize: 18),
-        ),
+      appBar: CustomAppBar(
+        title: 'Detalles del jardín',
+        toolbarHeight: 65,
+        titleFontSize: 25,
+        backgroundColor: defaultWhite,
       ),
       body: isLoading
           ? const Center(child: CircularProgressIndicator())

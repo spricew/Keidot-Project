@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
+import 'package:test_app/Services/worker_request/location_job_publish.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 
 class WorkerAssignmentDetailScreen extends StatelessWidget {
@@ -46,7 +48,7 @@ class WorkerAssignmentDetailScreen extends StatelessWidget {
             const SizedBox(height: 5),
             Text(
               "Hora: ${assignment.formattedTimeSelected}",
-              style: const TextStyle(fontSize: 16, color:greenContrast),
+              style: const TextStyle(fontSize: 16, color: greenContrast),
             ),
             const SizedBox(height: 10),
             Text(
@@ -68,24 +70,34 @@ class WorkerAssignmentDetailScreen extends StatelessWidget {
               assignment.description,
               style: const TextStyle(fontSize: 16),
             ),
-             const Spacer(), // Empuja el botón hacia abajo
-          SizedBox(
-            width: double.infinity,
-            child: ElevatedButton(
-              onPressed: () {
-                // Acción del botón
-                Get.snackbar("Acción", "Botón presionado");
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: darkGreen,
-                padding: const EdgeInsets.symmetric(vertical: 12),
-              ),
-              child: const Text(
-                "Ver ubicacion",
-                style: TextStyle(color: Colors.white, fontSize: 18),
+            const Spacer(), // Empuja el botón hacia abajo
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  final AssignmentIdController assignmentController =
+                      Get.find<AssignmentIdController>();
+
+                  String? assignmentId =
+                      assignmentController.selectedAssignmentId;
+
+                  if (assignmentId != null) {
+                    LocationService().fetchAndNavigateToLocation(assignmentId);
+                  } else {
+                    Get.snackbar(
+                        "Error", "No se encontró un ID de asignación.");
+                  }
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: darkGreen,
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                ),
+                child: const Text(
+                  "Ver ubicación",
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                ),
               ),
             ),
-          ),
           ],
         ),
       ),

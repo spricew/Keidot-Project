@@ -6,7 +6,7 @@ import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/Services/worker_request/accepted_job/accepted_job_status_request.dart';
 import 'package:test_app/Services/worker_request/assignments_publish/jobs_publish.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/worker/worker_assignment_detail_screen.dart';
+import 'package:test_app/presentation/worker/ubicacion_assignment_detail_screen.dart';
 
 //Listado de todos los trabajos disponibles
 
@@ -91,7 +91,7 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
                       ),
                     ),
                     subtitle: Text(
-                      "Ubicación: ${job.status ?? "Desconocida"}\nPago: \$${job.amount.toStringAsFixed(2) ?? "N/A"}",
+                      "Tamaño Estimado: ${job.estimatedSize ?? "Desconocida"}\nPago: \$${job.amount.toStringAsFixed(2) ?? "N/A"}",
                       style: const TextStyle(fontSize: 16),
                     ),
                     trailing: ElevatedButton(
@@ -116,7 +116,11 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
                             const SnackBar(
                                 content: Text('Trabajo aceptado con éxito.')),
                           );
-                          _refreshJobs(); // Recargar trabajos al aceptar uno
+
+                          // **Eliminar el trabajo de la lista sin recargar toda la pantalla**
+                          setState(() {
+                            jobs.removeAt(index);
+                          });
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(

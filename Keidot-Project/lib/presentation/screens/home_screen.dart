@@ -8,7 +8,7 @@ import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/new_worker.dart';
 import 'package:test_app/presentation/screens/request_screen1.dart';
 import 'package:test_app/presentation/worker/home_worker.dart';
-import 'package:test_app/presentation/worker/worker_assignment_detail_screen.dart';
+import 'package:test_app/presentation/worker/ubicacion_assignment_detail_screen.dart';
 import 'package:test_app/widgets/custom_popup.dart';
 
 class HomeScreen extends StatefulWidget {
