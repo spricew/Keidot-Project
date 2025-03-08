@@ -17,6 +17,32 @@ class HomePageStripe extends StatefulWidget {
 class _HomePageStripeState extends State<HomePageStripe> {
 
   Map<String, dynamic>? intentPaymentData;
+  String? paymentIntentId; // Guardará el ID de la transacción
+
+//Metodo para hacer el reembolso Tengo que guardar el id_payment modificar el DTO de flutter
+Future<void> requestRefund() async {
+  if (paymentIntentId == null) {
+    print("❌ No hay un paymentIntentId para reembolsar");
+    return;
+  }
+
+  final url = Uri.parse("https://tu-servidor.com/refund"); // 🌐 URL de tu backend
+
+  final response = await http.post(
+    url,
+    headers: {"Content-Type": "application/json"},
+    body: jsonEncode({"paymentIntentId": paymentIntentId}),
+  );
+
+  final responseData = jsonDecode(response.body);
+
+  if (response.statusCode == 200 && responseData['success']) {
+    print("✅ Reembolso exitoso: ${responseData['refund']}");
+  } else {
+    print("❌ Error en el reembolso: ${responseData['error']}");
+  }
+}
+
 
   Future<void> showPaymentSheet(BuildContext context) async {
     try {
@@ -48,30 +74,33 @@ class _HomePageStripeState extends State<HomePageStripe> {
     }
   }
 
-  makeIntentForPayment(amountToBeCharge, currency) async {
-    try {
-      Map<String, dynamic>? paymentInfo = {
-        "amount": (int.parse(amountToBeCharge) * 100).toString(),
-        "currency": currency,
-        "payment_method_types[]": "card",
-      };
-      var responseFromStripeAPI = await http.post(
-          Uri.parse("https://api.stripe.com/v1/payment_intents"),
-          body: paymentInfo,
-          headers: {
-            "Authorization": "Bearer $claveSecreta",
-            "Content-Type": "application/x-www-form-urlencoded"
-          });
-      print("response from API = ${responseFromStripeAPI.body}");
+ makeIntentForPayment(String amountToBeCharge, String currency) async {
+  try {
+    Map<String, dynamic>? paymentInfo = {
+      "amount": (int.parse(amountToBeCharge) * 100).toString(), // Centavos
+      "currency": currency,
+      "payment_method_types[]": "card",
+    };
+    var responseFromStripeAPI = await http.post(
+      Uri.parse("https://api.stripe.com/v1/payment_intents"),
+      body: paymentInfo,
+      headers: {
+        "Authorization": "Bearer $claveSecreta",
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+    );
 
-      return jsonDecode(responseFromStripeAPI.body);
-    } catch (errorMsg) {
-      if (kDebugMode) {
-        print(errorMsg);
-      }
-      print(errorMsg.toString());
-    }
+    var responseData = jsonDecode(responseFromStripeAPI.body);
+    print("response from API = ${responseFromStripeAPI.body}");
+
+    paymentIntentId = responseData["id"]; // Guardamos el ID para reembolsos
+
+    return responseData;
+  } catch (errorMsg) {
+    print(errorMsg.toString());
   }
+}
+
 
   Future<void> paymentSheetInitialization(
       BuildContext context, String amountToBeCharge, String currency) async {
