@@ -20,6 +20,7 @@ class ServiceTransactionController extends GetxController {
     latitude: 0.0,
     longitude: 0.0,
     paymentIntentId: '',
+    lastesCharge: ''
   ).obs;
   var serviceName = ''.obs;
   var isLoading = false.obs;
@@ -63,7 +64,7 @@ class ServiceTransactionController extends GetxController {
 
   void setChargeId(String chargeId) {
   transaction.update((val) {
-    if (val != null) val.paymentIntentId = chargeId;
+    if (val != null) val.lastesCharge = chargeId;
   });
   logger.i("chargeId guardado: $chargeId");
 }

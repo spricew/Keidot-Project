@@ -9,19 +9,20 @@ class ServiceTransactionModel {
   double latitude;
   double longitude;
   String paymentIntentId;
+  String lastesCharge;
 
-  ServiceTransactionModel({
-    required this.userId,
-    required this.serviceId,
-    required this.description,
-    required this.amount,
-    required this.estimatedSize,
-    required this.selectedTime,
-    this.featureIds = const [],
-    required this.latitude,
-    required this.longitude,
-    required this.paymentIntentId
-  });
+  ServiceTransactionModel(
+      {required this.userId,
+      required this.serviceId,
+      required this.description,
+      required this.amount,
+      required this.estimatedSize,
+      required this.selectedTime,
+      this.featureIds = const [],
+      required this.latitude,
+      required this.longitude,
+      required this.paymentIntentId,
+      required this.lastesCharge});
 
   Map<String, dynamic> toJson() {
     return {
@@ -34,7 +35,8 @@ class ServiceTransactionModel {
       "featureIds": featureIds,
       "latitude": latitude,
       "longitude": longitude,
-      "payment_intent_id": paymentIntentId
+      "payment_intent_id": paymentIntentId,
+      "latest_charge": lastesCharge
     };
   }
 
@@ -50,6 +52,7 @@ class ServiceTransactionModel {
       latitude: (json["latitude"] as num).toDouble(),
       longitude: (json["longitude"] as num).toDouble(),
       paymentIntentId: json["payment_intent_id"],
+      lastesCharge: json["latest_charge"]
     );
   }
 }
