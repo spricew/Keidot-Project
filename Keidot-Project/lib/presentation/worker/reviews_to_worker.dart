@@ -6,7 +6,8 @@ class ReviewsScreen extends StatefulWidget {
   ReviewsScreen({super.key});
 
   @override
-  _ReviewsScreenState createState() => _ReviewsScreenState();
+  _ReviewsScreenState createState() => _ReviewsScreenState(); //Parte del trabajador para que cuando se cambie el status a "Completado "me redirija a esta pantalla
+  //donde podra el Cliente opinar sobre el trabajo hecho por el trabajador, subir fotos de la camara del cel
 }
 
 class _ReviewsScreenState extends State<ReviewsScreen> {

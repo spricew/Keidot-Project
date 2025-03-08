@@ -19,6 +19,7 @@ class ServiceTransactionController extends GetxController {
     featureIds: [],
     latitude: 0.0,
     longitude: 0.0,
+    paymentIntentId: '',
   ).obs;
   var serviceName = ''.obs;
   var isLoading = false.obs;
@@ -51,6 +52,21 @@ class ServiceTransactionController extends GetxController {
     serviceName.value = name;
     logger.i("Servicio seleccionado: $name (ID: $id)");
   }
+  //Guardamos el paymentId
+  void setPaymentId(String paymentId) {
+  transaction.update((val) {
+    if (val != null) val.paymentIntentId = paymentId;
+  });
+  logger.i("Payment ID guardado: $paymentId");
+}
+  //Guardamos el chargeId
+
+  void setChargeId(String chargeId) {
+  transaction.update((val) {
+    if (val != null) val.paymentIntentId = chargeId;
+  });
+  logger.i("chargeId guardado: $chargeId");
+}
 
   void setDescription(String desc) {
     transaction.update((val) {

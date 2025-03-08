@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
@@ -7,6 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/presentation/screens/stripe/keys.dart';
 import 'package:test_app/presentation/screens/transferenciaespera_screen.dart';
+import 'package:logger/logger.dart';
 
 class HomePageStripe extends StatefulWidget {
   const HomePageStripe({super.key});
@@ -15,48 +15,29 @@ class HomePageStripe extends StatefulWidget {
 }
 
 class _HomePageStripeState extends State<HomePageStripe> {
-
+  final ServiceTransactionController controller =
+      Get.find(); // Obtén el controlador
   Map<String, dynamic>? intentPaymentData;
-  String? paymentIntentId; // Guardará el ID de la transacción
-
-//Metodo para hacer el reembolso Tengo que guardar el id_payment modificar el DTO de flutter
-Future<void> requestRefund() async {
-  if (paymentIntentId == null) {
-    print("❌ No hay un paymentIntentId para reembolsar");
-    return;
-  }
-
-  final url = Uri.parse("https://tu-servidor.com/refund"); // 🌐 URL de tu backend
-
-  final response = await http.post(
-    url,
-    headers: {"Content-Type": "application/json"},
-    body: jsonEncode({"paymentIntentId": paymentIntentId}),
-  );
-
-  final responseData = jsonDecode(response.body);
-
-  if (response.statusCode == 200 && responseData['success']) {
-    print("✅ Reembolso exitoso: ${responseData['refund']}");
-  } else {
-    print("❌ Error en el reembolso: ${responseData['error']}");
-  }
-}
-
+  var logger = Logger();
 
   Future<void> showPaymentSheet(BuildContext context) async {
     try {
       await Stripe.instance.presentPaymentSheet();
-
       // Si el pago fue exitoso, limpiar los datos y redirigir
       intentPaymentData = null;
+      logger.i("Pago exitoso: Intento de pago limpiado");
+      final paymentIntentId = controller.transaction.value.paymentIntentId;
+
+      await fetchPaymentDetails(paymentIntentId); // Obtener el charge_id
+
+      logger.i("Pago exitoso: Intento de pago limpiado y Charge ID obtenido.");
 
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => TransferenciaEsperaScreen()),
       );
     } on StripeException catch (error) {
-      print("Error de Stripe: $error");
+      logger.e("Error de Stripe: $error");
 
       showDialog(
         context: context,
@@ -65,7 +46,7 @@ Future<void> requestRefund() async {
         ),
       );
     } catch (error) {
-      print("Error al procesar el pago: $error");
+      logger.e("Error al procesar el pago: $error");
 
       // Mostrar mensaje de error en la UI
       ScaffoldMessenger.of(context).showSnackBar(
@@ -74,39 +55,48 @@ Future<void> requestRefund() async {
     }
   }
 
- makeIntentForPayment(String amountToBeCharge, String currency) async {
-  try {
-    Map<String, dynamic>? paymentInfo = {
-      "amount": (int.parse(amountToBeCharge) * 100).toString(), // Centavos
-      "currency": currency,
-      "payment_method_types[]": "card",
-    };
-    var responseFromStripeAPI = await http.post(
-      Uri.parse("https://api.stripe.com/v1/payment_intents"),
-      body: paymentInfo,
-      headers: {
-        "Authorization": "Bearer $claveSecreta",
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-    );
+  Future<Map<String, dynamic>?> makeIntentForPayment(
+      String amountToBeCharge, String currency) async {
+    try {
+      Map<String, dynamic> paymentInfo = {
+        "amount": (int.parse(amountToBeCharge) * 100)
+            .toString(), // Convertimos a centavos
+        "currency": currency,
+        "payment_method_types[]": "card",
+      };
 
-    var responseData = jsonDecode(responseFromStripeAPI.body);
-    print("response from API = ${responseFromStripeAPI.body}");
+      var responseFromStripeAPI = await http.post(
+        Uri.parse("https://api.stripe.com/v1/payment_intents"),
+        body: paymentInfo,
+        headers: {
+          "Authorization": "Bearer $claveSecreta",
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+      );
 
-    paymentIntentId = responseData["id"]; // Guardamos el ID para reembolsos
+      var responseData = jsonDecode(responseFromStripeAPI.body);
 
-    return responseData;
-  } catch (errorMsg) {
-    print(errorMsg.toString());
+      if (responseData.containsKey("id")) {
+        controller.setPaymentId(responseData["id"]); // Guardamos el Payment ID
+      }
+
+      logger.i("Respuesta de Stripe: ${responseFromStripeAPI.body}");
+      return responseData;
+    } catch (errorMsg) {
+      logger.e("Error en la solicitud de pago: $errorMsg");
+      return null;
+    }
   }
-}
-
 
   Future<void> paymentSheetInitialization(
       BuildContext context, String amountToBeCharge, String currency) async {
     try {
+      logger.i(
+          "Iniciando la hoja de pago con monto: $amountToBeCharge $currency");
+
       intentPaymentData =
           await makeIntentForPayment(amountToBeCharge, currency);
+      logger.i("Intento de pago generado: ${intentPaymentData!["id"]}");
 
       await Stripe.instance.initPaymentSheet(
         paymentSheetParameters: SetupPaymentSheetParameters(
@@ -117,54 +107,77 @@ Future<void> requestRefund() async {
         ),
       );
 
+      logger.i("Hoja de pago inicializada correctamente.");
       showPaymentSheet(context); // Pasamos el contexto aquí
     } catch (errorMsg, s) {
-      if (kDebugMode) {
-        print(s);
-      }
-      print("Error en la inicialización del pago: $errorMsg");
+      logger.e("Error en la inicialización del pago: $errorMsg",
+          error: errorMsg, stackTrace: s);
     }
   }
 
- @override
-Widget build(BuildContext context) {
+//Metodo para obtener el charge_id una vez ya se haya generado en Stripe
+  Future<void> fetchPaymentDetails(String paymentIntentId) async {
+    try {
+      var response = await http.get(
+        Uri.parse("https://api.stripe.com/v1/payment_intents/$paymentIntentId"),
+        headers: {
+          "Authorization": "Bearer $claveSecreta",
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+      );
+
+      var responseData = jsonDecode(response.body);
+
+      if (responseData.containsKey("latest_charge")) {
+        String chargeId = responseData["latest_charge"];
+        controller.setChargeId(chargeId); // Guardamos el charge ID
+        logger.i("Charge ID guardado: $chargeId");
+      }
+    } catch (error) {
+      logger.e("Error obteniendo detalles del pago: $error");
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final transactionController = Get.find<ServiceTransactionController>();
 
-  return Scaffold(
-    body: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Obx(() {
-            final amount = transactionController.transaction.value?.amount ?? 0.0;
-            return ElevatedButton(
-              onPressed: () {
-                paymentSheetInitialization(
-                    context, amount.round().toString(), "USD");
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-              ),
-              child: Text(
-                'Pay Now \$${amount.toString()}',
-                style: const TextStyle(
-                  color: Colors.white,
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Obx(() {
+              final amount =
+                  transactionController.transaction.value?.amount ?? 0.0;
+              return ElevatedButton(
+                onPressed: () {
+                  paymentSheetInitialization(
+                      context, amount.round().toString(), "MXN");
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
                 ),
+                child: Text(
+                  'Pay Now \$${amount.toString()}',
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              );
+            }),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context); // Regresa a la pantalla anterior
+              },
+              child: const Text(
+                'Anterior',
+                style: TextStyle(color: Colors.red),
               ),
-            );
-          }),
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context); // Regresa a la pantalla anterior
-            },
-            child: const Text(
-              'Anterior',
-              style: TextStyle(color: Colors.red),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 }

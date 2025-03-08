@@ -8,6 +8,7 @@ class ServiceTransactionModel {
   List<String> featureIds;
   double latitude;
   double longitude;
+  String paymentIntentId;
 
   ServiceTransactionModel({
     required this.userId,
@@ -19,6 +20,7 @@ class ServiceTransactionModel {
     this.featureIds = const [],
     required this.latitude,
     required this.longitude,
+    required this.paymentIntentId
   });
 
   Map<String, dynamic> toJson() {
@@ -32,6 +34,7 @@ class ServiceTransactionModel {
       "featureIds": featureIds,
       "latitude": latitude,
       "longitude": longitude,
+      "payment_intent_id": paymentIntentId
     };
   }
 
@@ -46,6 +49,7 @@ class ServiceTransactionModel {
       featureIds: List<String>.from(json["featureIds"] ?? []),
       latitude: (json["latitude"] as num).toDouble(),
       longitude: (json["longitude"] as num).toDouble(),
+      paymentIntentId: json["payment_intent_id"],
     );
   }
 }
