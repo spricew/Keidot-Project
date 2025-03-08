@@ -56,33 +56,52 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 60,
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        leading: const CustomPopupMenu(),
-        title: const Align(
-          alignment: Alignment.centerRight,
-          child: Text(
-            'Keidot',
-            style: TextStyle(
-              fontSize: 26,
-              fontWeight: FontWeight.w600,
-              letterSpacing: -0.8,
-              color: greenHigh,
+        leading: const CustomPopupMenu(), // Ícono de menú personalizado
+        title: Row(
+          mainAxisAlignment:
+              MainAxisAlignment.end, // Alinea el contenido al final (derecha)
+          children: [
+            // Botón de trabajador mejorado
+            Material(
+              color: colors.surfaceTint, // Fondo transparente
+              borderRadius: BorderRadius.circular(30), // Borde circular
+              child: InkWell(
+                onTap: () {
+                  Get.to(
+                      () => const HomeWorker()); // Navegación a HomepageWorker
+                },
+                borderRadius: BorderRadius.circular(30), // Borde circular
+                splashColor:
+                    darkGreen.withOpacity(0.2), // Color de la onda al presionar
+                child: Container(
+                  padding: const EdgeInsets.all(8), // Espacio interno
+                  child: Icon(
+                    Icons.work,
+                    color: colors.onPrimary, // Color del ícono
+                    size: 28, // Tamaño del ícono
+                  ),
+                ),
+              ),
             ),
-          ),
+            const SizedBox(width: 8), // Espacio entre el ícono y el texto
+            const Text(
+              'Keidot',
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.w600,
+                letterSpacing: -0.8,
+                color: greenHigh,
+              ),
+            ),
+          ],
         ),
-        actions: [
-          IconButton(
-            icon:
-                const Icon(Icons.work, color: greenHigh), // Ícono de trabajador
-            onPressed: () {
-              Get.to(() => const HomeWorker()); // Navegación a HomepageWorker
-            },
-          ),
-        ],
       ),
       body: _buildClientUI(),
     );
