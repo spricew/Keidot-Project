@@ -111,7 +111,7 @@ class _WorkerAssignmentsScreenState extends State<WorkerAssignmentsScreen> {
                         Get.put(AssignmentIdController());
 
                     // Guardar el ID de la asignación seleccionada
-                    assignmentController.setSelectedAssignment(assignment.idAssignment);
+                    assignmentController.setSelectedIdAssignment(assignment.idAssignment);
 
                     // Navegar a la pantalla de detalles
                     Get.to(() =>

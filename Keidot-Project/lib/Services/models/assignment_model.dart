@@ -9,6 +9,7 @@ class AssignmentDTO {
   final double amount;
   final String status;
   final DateTime createdAt; // Se agrega la fecha de creación
+  final String paymentIntentId; // Se agrega el id del intento de pago
 
   AssignmentDTO({
     required this.idAssignment,
@@ -19,6 +20,7 @@ class AssignmentDTO {
     required this.amount,
     required this.status,
     required this.createdAt,
+    required this.paymentIntentId,
   });
 
   /// Formatea la fecha como `16/02/2025`
@@ -48,11 +50,13 @@ class AssignmentDTO {
       idAssignment: json['id_assignment'] as String,
       nameOfService: json['name_of_service'] as String,
       description: json['description'] as String,
-      estimatedSize:json['estimated_size'] as String, // Cambiado de Duration a String
+      estimatedSize:
+          json['estimated_size'] as String, // Cambiado de Duration a String
       timeSelected: DateTime.parse(json['time_selected']),
       amount: (json['amount'] as num).toDouble(),
       status: json['status'] as String,
       createdAt: DateTime.parse(json['asigned_at']),
+      paymentIntentId: json['payment_intent_id'] as String,
     );
   }
 
@@ -66,7 +70,8 @@ class AssignmentDTO {
       'time_selected': timeSelected.toIso8601String(),
       'amount': amount,
       'status': status,
-      'created_at': createdAt.toIso8601String(),
+      'asigned_at': createdAt.toIso8601String(),
+      'payment_intent_id': paymentIntentId,
     };
   }
 }

@@ -21,7 +21,7 @@ void main() async {
   // Inicializa los controladores de GetX
   Get.lazyPut(() => AssignmentIdController());
   Get.put(ServiceTransactionController());
-  Get.put(AssignmentController());
+  Get.put(AssignmentService());
   runApp(
     MultiProvider(
       providers: [
