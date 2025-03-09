@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_is_active_request.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/review_screen.dart';
+import 'package:test_app/presentation/worker/home_worker.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
 class AssignmentDetailScreen extends StatelessWidget {
@@ -107,30 +109,12 @@ class AssignmentDetailScreen extends StatelessWidget {
                               ),
                             ),
                             TextButton(
-                              onPressed: () async {
-                                final UpdateIsActiveService service =
-                                    UpdateIsActiveService();
-                                bool success =
-                                    await service.updateIsActive(context, true);
-
-                                if (success) {
-                                  Get.snackbar(
-                                    'Solicitud Completada',
-                                    'La solicitud ha sido completada correctamente.',
-                                    snackPosition: SnackPosition.BOTTOM,
-                                    backgroundColor: Colors.green[900],
-                                    colorText: Colors.white,
-                                  );
-                                } else {
-                                  Get.snackbar(
-                                    'Error',
-                                    'No se pudo completar la solicitud.',
-                                    snackPosition: SnackPosition.BOTTOM,
-                                    backgroundColor: Colors.red,
-                                    colorText: Colors.white,
-                                  );
-                                }
-                                Get.back();
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const ReviewScreen()));
                               },
                               child: const Text(
                                 'Aceptar',
