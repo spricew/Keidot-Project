@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_is_active_request.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/widgets/custom_appbar.dart';
 
 class AssignmentDetailScreen extends StatelessWidget {
   final AssignmentDTO assignment;
@@ -12,10 +13,11 @@ class AssignmentDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Detalles de la Solicitud'),
+      appBar: const CustomAppBar(
+        title: 'Detalles de la Solicitud',
+        toolbarHeight: 80,
         backgroundColor: Colors.white,
-        elevation: 0,
+        titleFontSize: 26,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
