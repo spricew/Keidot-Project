@@ -66,7 +66,7 @@ class AssignmentDTO {
       'time_selected': timeSelected.toIso8601String(),
       'amount': amount,
       'status': status,
-      'assigned_at': assigne,
+      'assigned_at': createdAt.toIso8601String(),
     };
   }
 }
