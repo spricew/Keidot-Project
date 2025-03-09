@@ -132,9 +132,9 @@ class __ViewReviewState extends State<_ViewReview> {
                 ),
                 onPressed: () {
                   Get.defaultDialog(
-                    titlePadding: EdgeInsets.all(20),
+                    titlePadding: const EdgeInsets.all(20),
                     contentPadding:
-                        EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                        const EdgeInsets.only(left: 20, right: 20, bottom: 20),
                     title: '¡Gracias por tu opinión!',
                     middleText: 'Tu opinión es muy importante para nosotros.',
                     actions: [
