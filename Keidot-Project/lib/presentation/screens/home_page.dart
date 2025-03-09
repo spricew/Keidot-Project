@@ -40,21 +40,33 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _screens[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        selectedItemColor: darkGreen,
-        unselectedItemColor: Colors.grey,
-        type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Inicio'),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Buscar'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.add_box_outlined), label: 'Solicitar'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.notifications), label: 'Notificaciones'),
-          BottomNavigationBarItem(icon: Icon(Icons.send), label: 'Mensajes'),
-        ],
+      bottomNavigationBar: SafeArea(
+        left: false,
+        right: false,
+        top: false,
+        bottom: true,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 6),
+          child: BottomNavigationBar(
+            elevation: 0, // Remove the shadow by setting elevation to 0
+            currentIndex: _selectedIndex,
+            onTap: _onItemTapped,
+            selectedItemColor: darkGreen,
+            unselectedItemColor: Colors.grey,
+            type: BottomNavigationBarType.fixed,
+            items: const [
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Inicio'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.search), label: 'Buscar'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.add_box_outlined), label: 'Solicitar'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.notifications), label: 'Notificaciones'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.send), label: 'Mensajes'),
+            ],
+          ),
+        ),
       ),
     );
   }
