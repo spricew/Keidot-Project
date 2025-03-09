@@ -78,7 +78,7 @@ class AssignmentDetailScreen extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: double.infinity,
-                    child: ElevatedButton(
+                    child: ElevatedButton.icon(
                       onPressed: () {
                         // Lógica para marcar como terminado
                         Get.defaultDialog(
@@ -151,10 +151,11 @@ class AssignmentDetailScreen extends StatelessWidget {
                         ),
                         padding: const EdgeInsets.symmetric(vertical: 14),
                       ),
-                      child: const Text(
+                      label: const Text(
                         'Marcar como Terminado',
                         style: TextStyle(color: Colors.white, fontSize: 16),
                       ),
+                      icon: Icon(Icons.check_circle, color: Colors.white),
                     ),
                   ),
                   const SizedBox(height: 10), // Espacio entre botones
