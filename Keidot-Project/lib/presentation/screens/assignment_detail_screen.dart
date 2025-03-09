@@ -190,7 +190,7 @@ class AssignmentDetailScreen extends StatelessWidget {
                                       backgroundColor: Colors.red,
                                       colorText: Colors.white,
                                     );
-                                    return; // Si no se pudo cancelar, detener el proceso
+                                    return;
                                   }
 
                                   final PaymentRefundService refundService =
@@ -207,6 +207,11 @@ class AssignmentDetailScreen extends StatelessWidget {
                                       backgroundColor: Colors.green[900],
                                       colorText: Colors.white,
                                     );
+
+                                    // 🔹 Agregar un delay antes de cerrar la pantalla
+                                    await Future.delayed(Duration(
+                                        seconds:
+                                            2)); // Espera 2 segundos antes de cerrar
                                   } else {
                                     Get.snackbar(
                                       'Error en el Reembolso',
@@ -216,6 +221,10 @@ class AssignmentDetailScreen extends StatelessWidget {
                                       backgroundColor: Colors.red,
                                       colorText: Colors.white,
                                     );
+
+                                    await Future.delayed(Duration(
+                                        seconds:
+                                            2)); // Espera 2 segundos antes de cerrar
                                   }
                                 } catch (e) {
                                   Get.snackbar(
@@ -225,9 +234,12 @@ class AssignmentDetailScreen extends StatelessWidget {
                                     backgroundColor: Colors.red,
                                     colorText: Colors.white,
                                   );
-                                  await Future.delayed(Duration(seconds: 2));
+
+                                  await Future.delayed(Duration(
+                                      seconds:
+                                          2)); // Espera 2 segundos antes de cerrar
                                 } finally {
-                                  Get.back(); // Cierra la pantalla después de la operación
+                                  Get.back(); // 🔹 Ahora se cerrará después del delay
                                 }
                               },
                               child: const Text(
