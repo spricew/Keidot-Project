@@ -74,41 +74,174 @@ class AssignmentDetailScreen extends StatelessWidget {
             const Spacer(),
             SizedBox(
               width: double.infinity,
-              child: ElevatedButton.icon(
-                onPressed: () async {
-                  final UpdateIsActiveService service = UpdateIsActiveService();
-                  bool success = await service.updateIsActive(context, false);
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Lógica para marcar como terminado
+                        Get.defaultDialog(
+                          titlePadding: EdgeInsets.all(20),
+                          contentPadding: EdgeInsets.all(20),
+                          title: 'Marcar como Terminado',
+                          titleStyle: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          content: const Text(
+                            '¿Estás seguro de que deseas marcar esta solicitud como terminada?',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Get.back();
+                              },
+                              child: const Text(
+                                'Cancelar',
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () async {
+                                final UpdateIsActiveService service =
+                                    UpdateIsActiveService();
+                                bool success =
+                                    await service.updateIsActive(context, true);
 
-                  if (success) {
-                    Get.snackbar(
-                      'Solicitud Cancelada',
-                      'La solicitud ha sido cancelada correctamente.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.green[900],
-                      colorText: Colors.white,
-                    );
-                  } else {
-                    Get.snackbar(
-                      'Error',
-                      'No se pudo cancelar la solicitud.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.red,
-                      colorText: Colors.white,
-                    );
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.grey[800],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                                if (success) {
+                                  Get.snackbar(
+                                    'Solicitud Completada',
+                                    'La solicitud ha sido completada correctamente.',
+                                    snackPosition: SnackPosition.BOTTOM,
+                                    backgroundColor: Colors.green[900],
+                                    colorText: Colors.white,
+                                  );
+                                } else {
+                                  Get.snackbar(
+                                    'Error',
+                                    'No se pudo completar la solicitud.',
+                                    snackPosition: SnackPosition.BOTTOM,
+                                    backgroundColor: Colors.red,
+                                    colorText: Colors.white,
+                                  );
+                                }
+                                Get.back();
+                              },
+                              child: const Text(
+                                'Aceptar',
+                                style: TextStyle(
+                                  color: Colors.green,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            Colors.green[700], // Color que indica "completado"
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                      ),
+                      child: const Text(
+                        'Marcar como Terminado',
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
                   ),
-                  padding: const EdgeInsets.symmetric(vertical: 14),
-                ),
-                icon: const Icon(Icons.cancel, color: Colors.red, size: 20),
-                label: const Text(
-                  'Cancelar Solicitud',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                ),
+                  const SizedBox(height: 10), // Espacio entre botones
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton.icon(
+                      onPressed: () async {
+                        // Lógica para cancelar solicitud
+                        Get.defaultDialog(
+                          titlePadding: EdgeInsets.all(20),
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 20, horizontal: 20),
+                          title: 'Cancelar Solicitud',
+                          titleStyle: const TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          content: const Text(
+                            '¿Estás seguro de que deseas cancelar esta solicitud?',
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Get.back();
+                              },
+                              child: const Text(
+                                'Cancelar',
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () async {
+                                final UpdateIsActiveService service =
+                                    UpdateIsActiveService();
+                                bool success = await service.updateIsActive(
+                                    context, false);
+
+                                if (success) {
+                                  Get.snackbar(
+                                    'Solicitud Cancelada',
+                                    'La solicitud ha sido cancelada correctamente.',
+                                    snackPosition: SnackPosition.BOTTOM,
+                                    backgroundColor: Colors.green[900],
+                                    colorText: Colors.white,
+                                  );
+                                } else {
+                                  Get.snackbar(
+                                    'Error',
+                                    'No se pudo cancelar la solicitud.',
+                                    snackPosition: SnackPosition.BOTTOM,
+                                    backgroundColor: Colors.red,
+                                    colorText: Colors.white,
+                                  );
+                                }
+                                Get.back();
+                              },
+                              child: const Text(
+                                'Aceptar',
+                                style: TextStyle(
+                                  color: Colors.green,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.grey[800],
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                      ),
+                      icon:
+                          const Icon(Icons.cancel, color: Colors.red, size: 20),
+                      label: const Text(
+                        'Cancelar Solicitud',
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
