@@ -8,6 +8,7 @@ class AssignmentDTO {
   final DateTime timeSelected;
   final double amount;
   final String status;
+  // final DateTime createdAt; // Se agrega la fecha de creación
 
   AssignmentDTO({
     required this.idAssignment,
@@ -16,7 +17,8 @@ class AssignmentDTO {
     required this.estimatedSize,
     required this.timeSelected,
     required this.amount,
-    required this.status
+    required this.status,
+    // required this.createdAt,
   });
 
   /// Formatea la fecha como `16/02/2025`
@@ -35,10 +37,12 @@ class AssignmentDTO {
       idAssignment: json['id_assignment'] as String,
       nameOfService: json['name_of_service'] as String,
       description: json['description'] as String,
-      estimatedSize: json['estimated_size'] as String, // Cambiado de Duration a String
+      estimatedSize:
+          json['estimated_size'] as String, // Cambiado de Duration a String
       timeSelected: DateTime.parse(json['time_selected']),
       amount: (json['amount'] as num).toDouble(),
-      status:  json['status'] as String,
+      status: json['status'] as String,
+      // createdAt: DateTime.parse(json['created_at']),
     );
   }
 
