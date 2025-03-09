@@ -52,7 +52,7 @@ class AssignmentDTO {
       timeSelected: DateTime.parse(json['time_selected']),
       amount: (json['amount'] as num).toDouble(),
       status: json['status'] as String,
-      createdAt: DateTime.parse(json['created_at']),
+      createdAt: DateTime.parse(json['asigned_at']),
     );
   }
 
@@ -66,7 +66,7 @@ class AssignmentDTO {
       'time_selected': timeSelected.toIso8601String(),
       'amount': amount,
       'status': status,
-      'assigned_at': createdAt.toIso8601String(),
+      'created_at': createdAt.toIso8601String(),
     };
   }
 }

@@ -12,7 +12,7 @@ class AssignmentController {
   /// Obtiene el ID del usuario autenticado desde el almacenamiento seguro
   Future<String?> getUserId() async {
     String? userId = await storage.read(key: 'userId');
-    logger.i("🔍 ID recuperado del almacenamiento seguro: $userId");
+    logger.i("ID recuperado del almacenamiento seguro: $userId");
     return userId;
   }
 
@@ -51,7 +51,7 @@ Future<List<AssignmentDTO>> getAssignments() async {
     if (response.statusCode == 200) {
       logger.i("Respuesta recibida correctamente.");
       List<dynamic> data = jsonDecode(response.body);
-
+      logger.i(response.body);
       if (data.isEmpty) {
         logger.w("La respuesta no contiene asignaciones.");
         return [];
