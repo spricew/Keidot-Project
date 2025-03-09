@@ -8,7 +8,8 @@ class AssignmentDTO {
   final DateTime timeSelected;
   final double amount;
   final String status;
-  // final DateTime createdAt; // Se agrega la fecha de creación
+  final DateTime createdAt; // Se agrega la fecha de creación
+  final String paymentIntentId; // Se agrega el id del intento de pago
 
   AssignmentDTO({
     required this.idAssignment,
@@ -18,7 +19,8 @@ class AssignmentDTO {
     required this.timeSelected,
     required this.amount,
     required this.status,
-    // required this.createdAt,
+    required this.createdAt,
+    required this.paymentIntentId,
   });
 
   /// Formatea la fecha como `16/02/2025`
@@ -29,6 +31,17 @@ class AssignmentDTO {
   /// Formatea la hora seleccionada como `03:00 PM`
   String get formattedTimeSelected {
     return DateFormat('hh:mm a').format(timeSelected);
+  }
+
+  //Assignet_at formateada porque no lo hizo HeyderMomischis
+  /// Formatea la fecha como `16/02/2025`
+  String get formattedDatecreatedAt {
+    return DateFormat('dd/MM/yyyy').format(createdAt);
+  }
+
+  /// Formatea la hora seleccionada como `03:00 PM`
+  String get formattedTimecreatedAt {
+    return DateFormat('hh:mm a').format(createdAt);
   }
 
   /// Convierte JSON a `AssignmentDTO`
@@ -42,7 +55,8 @@ class AssignmentDTO {
       timeSelected: DateTime.parse(json['time_selected']),
       amount: (json['amount'] as num).toDouble(),
       status: json['status'] as String,
-      // createdAt: DateTime.parse(json['created_at']),
+      createdAt: DateTime.parse(json['asigned_at']),
+      paymentIntentId: json['payment_intent_id'] as String,
     );
   }
 
@@ -55,7 +69,9 @@ class AssignmentDTO {
       'estimated_size': estimatedSize, // Ahora se envía como String
       'time_selected': timeSelected.toIso8601String(),
       'amount': amount,
-      'status': status
+      'status': status,
+      'asigned_at': createdAt.toIso8601String(),
+      'payment_intent_id': paymentIntentId,
     };
   }
 }

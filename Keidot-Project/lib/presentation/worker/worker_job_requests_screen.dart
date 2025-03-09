@@ -98,7 +98,7 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
                       onPressed: () async {
                         // Guarda el ID de la asignación seleccionada
                         assignmentController
-                            .setSelectedAssignment(job.idAssignment);
+                            .setSelectedIdAssignment(job.idAssignment);
 
                         // Crear instancia de AssignmentService
                         final assignmentService = AssignmentAcceptedByWorker(

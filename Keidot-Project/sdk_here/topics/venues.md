@@ -73,9 +73,7 @@ class MyApp extends StatelessWidget {
   void _onVenueEngineCreated() {
     _venueEngineState.onVenueEngineCreated();
   }
-
-}
-```
+//Aqui hubieron cambios: se quitaron los '{}'  ```
 
 Once the `VenueEngine` is initialized, a callback is called. From this point on, there is access to both the `VenueService` and the `VenueMap`. A `VenueService` is used to load venues, and a `VenueMap` controls the venues on the map. Inside the callback, all needed listeners can be added, and then the  `VenueEngine` must be started. The platform map catalog `HRN` must be set once `VenueEngine` is started.
 

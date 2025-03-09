@@ -18,19 +18,18 @@ class RequestsScreen extends StatefulWidget {
 
 class _RequestsScreenState extends State<RequestsScreen> {
   late Future<List<AssignmentDTO>> _assignmentsFuture;
-  final AssignmentController _controller = AssignmentController();
-  final AssignmentIdController _assignmentIdController = Get.find<
-      AssignmentIdController>(); // Obtiene el controlador de GetX para guardar el id
+
+  final AssignmentService _service = AssignmentService();
+  final AssignmentIdController _assignmentIdController = Get.find<AssignmentIdController>(); // Obtiene el controlador de GetX para guardar el id
   //de la asignacion seleccionada
   final Logger _logger = Logger(); // Logger para depuración
 
   @override
   void initState() {
     super.initState();
-    _assignmentsFuture = _controller.getAssignments();
+    _assignmentsFuture = _service.getAssignments();
   }
 
-  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,10 +78,11 @@ class _RequestsScreenState extends State<RequestsScreen> {
   Widget _buildRequestCard(AssignmentDTO assignment, BuildContext context) {
     return GestureDetector(
       onTap: () {
-        _assignmentIdController.setSelectedAssignment(
-            assignment.idAssignment); // Guarda el ID en el controlador
-        _logger.i(
-            "Assignment ID seleccionado: ${assignment.idAssignment}"); // Imprime en consola
+        _assignmentIdController.setSelectedIdAssignment(assignment.idAssignment); // Guarda el ID en el controlador
+        _logger.i("Assignment ID seleccionado: ${assignment.idAssignment}"); // Imprime en consola
+        //Guardamos el payment_intent_id por si se necesita en el futuro
+        _assignmentIdController.setSelectedpaymentIntentId(assignment.paymentIntentId);
+        _logger.i("paymentIntentId seleccionado: ${assignment.paymentIntentId}");
         Navigator.push(
           context,
           MaterialPageRoute(

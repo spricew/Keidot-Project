@@ -4,6 +4,7 @@ import 'package:test_app/Services/client_request/assignment_request/assignment_i
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/review_screen.dart';
+import 'package:test_app/presentation/screens/stripe/stripe_refund.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
 class AssignmentDetailScreen extends StatelessWidget {
@@ -175,29 +176,71 @@ class AssignmentDetailScreen extends StatelessWidget {
                             ),
                             TextButton(
                               onPressed: () async {
-                                final UpdateIsActiveService service =
-                                    UpdateIsActiveService();
-                                bool success = await service.updateIsActive(
-                                    context, false);
+                                try {
+                                  final UpdateIsActiveService service =
+                                      UpdateIsActiveService();
+                                  bool success = await service.updateIsActive(
+                                      context, false);
 
-                                if (success) {
-                                  Get.snackbar(
-                                    'Solicitud Cancelada',
-                                    'La solicitud ha sido cancelada correctamente.',
-                                    snackPosition: SnackPosition.BOTTOM,
-                                    backgroundColor: Colors.green[900],
-                                    colorText: Colors.white,
-                                  );
-                                } else {
+                                  if (!success) {
+                                    Get.snackbar(
+                                      'Error',
+                                      'No se pudo cancelar la solicitud.',
+                                      snackPosition: SnackPosition.BOTTOM,
+                                      backgroundColor: Colors.red,
+                                      colorText: Colors.white,
+                                    );
+                                    return;
+                                  }
+
+                                  final PaymentRefundService refundService =
+                                      PaymentRefundService();
+                                  final Map<String, dynamic> response =
+                                      await refundService.processRefund(
+                                          assignment.paymentIntentId);
+
+                                  if (response['success'] == true) {
+                                    Get.snackbar(
+                                      'Reembolso Exitoso',
+                                      'El reembolso se ha procesado correctamente.',
+                                      snackPosition: SnackPosition.BOTTOM,
+                                      backgroundColor: Colors.green[900],
+                                      colorText: Colors.white,
+                                    );
+
+                                    // 🔹 Agregar un delay antes de cerrar la pantalla
+                                    await Future.delayed(Duration(
+                                        seconds:
+                                            2)); // Espera 2 segundos antes de cerrar
+                                  } else {
+                                    Get.snackbar(
+                                      'Error en el Reembolso',
+                                      response['message'] ??
+                                          'Ocurrió un error desconocido.',
+                                      snackPosition: SnackPosition.BOTTOM,
+                                      backgroundColor: Colors.red,
+                                      colorText: Colors.white,
+                                    );
+
+                                    await Future.delayed(Duration(
+                                        seconds:
+                                            2)); // Espera 2 segundos antes de cerrar
+                                  }
+                                } catch (e) {
                                   Get.snackbar(
                                     'Error',
-                                    'No se pudo cancelar la solicitud.',
+                                    'Se produjo un error inesperado: $e',
                                     snackPosition: SnackPosition.BOTTOM,
                                     backgroundColor: Colors.red,
                                     colorText: Colors.white,
                                   );
+
+                                  await Future.delayed(Duration(
+                                      seconds:
+                                          2)); // Espera 2 segundos antes de cerrar
+                                } finally {
+                                  Get.back(); // 🔹 Ahora se cerrará después del delay
                                 }
-                                Get.back();
                               },
                               child: const Text(
                                 'Aceptar',
