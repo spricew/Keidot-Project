@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_is_active_request.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/review_screen.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
 class AssignmentDetailScreen extends StatelessWidget {
@@ -78,7 +79,7 @@ class AssignmentDetailScreen extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: double.infinity,
-                    child: ElevatedButton(
+                    child: ElevatedButton.icon(
                       onPressed: () {
                         // Lógica para marcar como terminado
                         Get.defaultDialog(
@@ -107,30 +108,12 @@ class AssignmentDetailScreen extends StatelessWidget {
                               ),
                             ),
                             TextButton(
-                              onPressed: () async {
-                                final UpdateIsActiveService service =
-                                    UpdateIsActiveService();
-                                bool success =
-                                    await service.updateIsActive(context, true);
-
-                                if (success) {
-                                  Get.snackbar(
-                                    'Solicitud Completada',
-                                    'La solicitud ha sido completada correctamente.',
-                                    snackPosition: SnackPosition.BOTTOM,
-                                    backgroundColor: Colors.green[900],
-                                    colorText: Colors.white,
-                                  );
-                                } else {
-                                  Get.snackbar(
-                                    'Error',
-                                    'No se pudo completar la solicitud.',
-                                    snackPosition: SnackPosition.BOTTOM,
-                                    backgroundColor: Colors.red,
-                                    colorText: Colors.white,
-                                  );
-                                }
-                                Get.back();
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const ReviewScreen()));
                               },
                               child: const Text(
                                 'Aceptar',
@@ -151,10 +134,11 @@ class AssignmentDetailScreen extends StatelessWidget {
                         ),
                         padding: const EdgeInsets.symmetric(vertical: 14),
                       ),
-                      child: const Text(
+                      label: const Text(
                         'Marcar como Terminado',
                         style: TextStyle(color: Colors.white, fontSize: 16),
                       ),
+                      icon: Icon(Icons.check_circle, color: Colors.white),
                     ),
                   ),
                   const SizedBox(height: 10), // Espacio entre botones
