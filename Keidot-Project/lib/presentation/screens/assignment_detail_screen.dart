@@ -4,7 +4,6 @@ import 'package:test_app/Services/client_request/assignment_request/assignment_i
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/review_screen.dart';
-import 'package:test_app/presentation/worker/home_worker.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
 class AssignmentDetailScreen extends StatelessWidget {
