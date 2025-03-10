@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/change_name.dart';
+import 'package:test_app/presentation/screens/messages_screen.dart';
+import 'package:test_app/presentation/screens/new_worker.dart';
+import 'package:test_app/presentation/screens/notifications_screen.dart';
+import 'package:test_app/presentation/screens/request_screen1.dart';
+import 'package:test_app/presentation/screens/search_screen.dart';
+import 'package:test_app/presentation/worker/dashboard.dart';
 import 'package:test_app/presentation/worker/worker_assignments_screen.dart';
 import 'package:test_app/presentation/worker/worker_job_requests_screen.dart';
 import 'package:test_app/presentation/worker/worker_messages.dart';
@@ -38,6 +46,11 @@ class _ViewHomeWorker extends StatelessWidget {
       'icon': Icons.send,
       'screen':
           const WorkerMessagesScreen(), // Pantalla para convertirse en trabajador
+    },
+    {
+      'title': 'Panel de ingresos',
+      'icon': Icons.bar_chart,
+      'screen': const Dashboard(), // Pantalla de ingresos
     },
     {
       'title': 'Soporte',
