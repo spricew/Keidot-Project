@@ -9,7 +9,7 @@ import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/worker/ubicacion_assignment_detail_screen.dart';
 
 class WorkerAssignmentsScreen extends StatefulWidget {
-  WorkerAssignmentsScreen({super.key});
+  const WorkerAssignmentsScreen({super.key});
 
   @override
   _WorkerAssignmentsScreenState createState() =>

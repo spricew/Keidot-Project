@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
   final PageController _pageController = PageController();
   Timer? _carouselTimer;
-  bool _isWorker = false;
+  final bool _isWorker = false;
 
   @override
   void initState() {

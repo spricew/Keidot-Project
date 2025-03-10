@@ -149,7 +149,7 @@ class _HomePageStripeState extends State<HomePageStripe> {
           children: [
             Obx(() {
               final amount =
-                  transactionController.transaction.value?.amount ?? 0.0;
+                  transactionController.transaction.value.amount ?? 0.0;
               return ElevatedButton(
                 onPressed: () {
                   paymentSheetInitialization(

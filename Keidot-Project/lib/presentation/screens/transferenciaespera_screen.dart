@@ -83,7 +83,7 @@ class TransferenciaEsperaScreen extends StatelessWidget {
               const SizedBox(height: 10),
               Obx(() {
                 final amount =
-                    transactionController.transaction.value?.amount ?? 0.0;
+                    transactionController.transaction.value.amount ?? 0.0;
                 return Text(
                   '\$${amount.toStringAsFixed(2)}',
                   style: const TextStyle(

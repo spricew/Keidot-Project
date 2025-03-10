@@ -84,8 +84,8 @@ class AssignmentDetailScreen extends StatelessWidget {
                       onPressed: () {
                         // Lógica para marcar como terminado
                         Get.defaultDialog(
-                          titlePadding: EdgeInsets.all(20),
-                          contentPadding: EdgeInsets.all(20),
+                          titlePadding: const EdgeInsets.all(20),
+                          contentPadding: const EdgeInsets.all(20),
                           title: 'Marcar como Terminado',
                           titleStyle: const TextStyle(
                             fontSize: 20,
@@ -139,7 +139,7 @@ class AssignmentDetailScreen extends StatelessWidget {
                         'Marcar como Terminado',
                         style: TextStyle(color: Colors.white, fontSize: 16),
                       ),
-                      icon: Icon(Icons.check_circle, color: Colors.white),
+                      icon: const Icon(Icons.check_circle, color: Colors.white),
                     ),
                   ),
                   const SizedBox(height: 10), // Espacio entre botones
@@ -149,8 +149,8 @@ class AssignmentDetailScreen extends StatelessWidget {
                       onPressed: () async {
                         // Lógica para cancelar solicitud
                         Get.defaultDialog(
-                          titlePadding: EdgeInsets.all(20),
-                          contentPadding: EdgeInsets.symmetric(
+                          titlePadding: const EdgeInsets.all(20),
+                          contentPadding: const EdgeInsets.symmetric(
                               vertical: 20, horizontal: 20),
                           title: 'Cancelar Solicitud',
                           titleStyle: const TextStyle(
@@ -209,7 +209,7 @@ class AssignmentDetailScreen extends StatelessWidget {
                                     );
 
                                     // 🔹 Agregar un delay antes de cerrar la pantalla
-                                    await Future.delayed(Duration(
+                                    await Future.delayed(const Duration(
                                         seconds:
                                             2)); // Espera 2 segundos antes de cerrar
                                   } else {
@@ -222,7 +222,7 @@ class AssignmentDetailScreen extends StatelessWidget {
                                       colorText: Colors.white,
                                     );
 
-                                    await Future.delayed(Duration(
+                                    await Future.delayed(const Duration(
                                         seconds:
                                             2)); // Espera 2 segundos antes de cerrar
                                   }
@@ -235,7 +235,7 @@ class AssignmentDetailScreen extends StatelessWidget {
                                     colorText: Colors.white,
                                   );
 
-                                  await Future.delayed(Duration(
+                                  await Future.delayed(const Duration(
                                       seconds:
                                           2)); // Espera 2 segundos antes de cerrar
                                 } finally {

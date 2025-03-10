@@ -29,7 +29,7 @@ class _RequestScreen2State extends State<RequestScreen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: 'Ubicación',
         backgroundColor: defaultWhite,
       ),

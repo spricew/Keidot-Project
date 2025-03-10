@@ -74,7 +74,7 @@ class _RequestDetailsGardenState extends State<RequestDetailsGarden> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: 'Detalles del jardín',
         toolbarHeight: 65,
         titleFontSize: 25,

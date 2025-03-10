@@ -71,7 +71,7 @@ class _RequestScreen3State extends State<RequestScreen3> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: 'Detalles del jardín',
         toolbarHeight: 65,
         titleFontSize: 25,

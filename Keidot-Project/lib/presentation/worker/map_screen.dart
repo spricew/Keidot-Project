@@ -6,7 +6,7 @@ class MapScreen extends StatelessWidget {
   final double latitude;
   final double longitude;
 
-  const MapScreen({Key? key, required this.latitude, required this.longitude}) : super(key: key);
+  const MapScreen({super.key, required this.latitude, required this.longitude});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class MapScreen extends StatelessWidget {
         children: [
           TileLayer(
             urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-            subdomains: ['a', 'b', 'c'],
+            subdomains: const ['a', 'b', 'c'],
           ),
           MarkerLayer(
             markers: [

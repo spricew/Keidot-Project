@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 
 class ReviewsScreen extends StatefulWidget {
-  ReviewsScreen({super.key});
+  const ReviewsScreen({super.key});
 
   @override
   _ReviewsScreenState createState() => _ReviewsScreenState(); //Parte del trabajador para que cuando se cambie el status a "Completado "me redirija a esta pantalla

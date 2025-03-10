@@ -10,7 +10,6 @@ import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 import 'package:test_app/widgets/custom_button.dart';
 import 'package:test_app/widgets/custom_input.dart';
-import 'package:flutter/services.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
