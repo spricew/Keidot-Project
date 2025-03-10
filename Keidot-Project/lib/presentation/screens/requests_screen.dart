@@ -4,7 +4,10 @@ import 'package:logger/logger.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_request.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
+import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/assignment_detail_screen.dart';
+import 'package:test_app/presentation/screens/home_page.dart';
+import 'package:test_app/widgets/custom_appbar.dart';
 
 class RequestsScreen extends StatefulWidget {
   const RequestsScreen({super.key});
@@ -16,9 +19,8 @@ class RequestsScreen extends StatefulWidget {
 class _RequestsScreenState extends State<RequestsScreen> {
   late Future<List<AssignmentDTO>> _assignmentsFuture;
   final AssignmentService _service = AssignmentService();
-  final AssignmentIdController _assignmentIdController = Get.find<AssignmentIdController>(); // Obtiene el controlador de GetX para guardar el id
-  //de la asignacion seleccionada
-  final Logger _logger = Logger(); // Logger para depuración
+  final AssignmentIdController _assignmentIdController = Get.find<AssignmentIdController>(); 
+  final Logger _logger = Logger(); 
 
   @override
   void initState() {
@@ -27,60 +29,60 @@ class _RequestsScreenState extends State<RequestsScreen> {
   }
 
   @override
-  @override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: const Text('Solicitudes'),
-      backgroundColor: Colors.white,
-    ),
-    body: RefreshIndicator(
-      onRefresh: () async {
-        setState(() {
-          _assignmentsFuture = _service.getAssignments(); // Recargar solicitudes
-        });
-        await _assignmentsFuture; // Esperar a que termine la recarga
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
-        child: FutureBuilder<List<AssignmentDTO>>(
-          future: _assignmentsFuture,
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator());
-            } else if (snapshot.hasError) {
-              return Center(child: Text('Error: ${snapshot.error}'));
-            } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              return const Center(child: Text('No hay solicitudes disponibles.'));
-            }
-            return ListView.builder(
-              itemCount: snapshot.data!.length,
-              itemBuilder: (context, index) {
-                final assignment = snapshot.data![index];
-                return _buildRequestCard(assignment, context);
-              },
-            );
-          },
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: CustomAppBar(
+        title: 'Solicitudes',
+        backgroundColor: defaultWhite,
+        titleFontSize: 25,
+        onBackPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const Homepage())),
+      ),
+      body: RefreshIndicator(
+        onRefresh: () async {
+          setState(() {
+            _assignmentsFuture = _service.getAssignments();
+          });
+          await _assignmentsFuture; 
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+          child: FutureBuilder<List<AssignmentDTO>>(
+            future: _assignmentsFuture,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (snapshot.hasError) {
+                return Center(child: Text('Error: ${snapshot.error}'));
+              } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                return const Center(child: Text('No hay solicitudes disponibles.'));
+              }
+              return ListView.builder(
+                itemCount: snapshot.data!.length,
+                itemBuilder: (context, index) {
+                  final assignment = snapshot.data![index];
+                  return _buildRequestCard(assignment, context);
+                },
+              );
+            },
+          ),
         ),
       ),
-    ),
-  );
-}
-
+    );
+  }
 
   Widget _buildRequestCard(AssignmentDTO assignment, BuildContext context) {
     return GestureDetector(
       onTap: () {
-        _assignmentIdController.setSelectedIdAssignment(assignment.idAssignment); // Guarda el ID en el controlador
-        _logger.i("Assignment ID seleccionado: ${assignment.idAssignment}"); // Imprime en consola
-        //Guardamos el payment_intent_id por si se necesita en el futuro
+        _assignmentIdController.setSelectedIdAssignment(assignment.idAssignment);
+        _logger.i("Assignment ID seleccionado: ${assignment.idAssignment}");
         _assignmentIdController.setSelectedpaymentIntentId(assignment.paymentIntentId);
         _logger.i("paymentIntentId seleccionado: ${assignment.paymentIntentId}");
+
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) =>
-                AssignmentDetailScreen(assignment: assignment),
+            builder: (context) => AssignmentDetailScreen(assignment: assignment),
           ),
         );
       },
@@ -109,12 +111,12 @@ Widget build(BuildContext context) {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'Fecha: ${assignment.formattedDateSelected}', // Usa el método para mostrar la fecha
+                    'Fecha: ${assignment.formattedDateSelected}',
                     style: const TextStyle(color: Colors.grey, fontSize: 14),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'Hora: ${assignment.formattedTimeSelected}', // Usa el método para mostrar la hora
+                    'Hora: ${assignment.formattedTimeSelected}',
                     style: const TextStyle(color: Colors.grey, fontSize: 14),
                   ),
                   const SizedBox(height: 4),

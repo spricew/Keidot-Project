@@ -124,7 +124,7 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
                         } else {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
-                                content: Text('Error al aceptar el trabajo.')),
+                                content: Text('No puedes aceptar tus trabajos publicados.')),
                           );
                         }
                       },

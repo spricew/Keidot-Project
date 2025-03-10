@@ -12,48 +12,55 @@ class AssignmentAcceptedByWorker {
 
   AssignmentAcceptedByWorker({required this.baseUrl, required this.storage});
 
- Future<bool> updateAssignmentStatus({required String newStatus}) async {
-  try {
-    // Leer workerId y token desde el storage
-    final AssignmentIdController assignmentController =
-        Get.find<AssignmentIdController>();
-    String? workerId = await storage.read(key: "userId");
-    String? token = await storage.read(key: "token");
-    String? assignmentId = assignmentController.selectedAssignmentId;
+  Future<bool> updateAssignmentStatus({required String newStatus}) async {
+    try {
+      // Leer workerId y token desde el storage
+      final AssignmentIdController assignmentController =
+          Get.find<AssignmentIdController>();
+      String? workerId = await storage.read(key: "userId");
+      String? token = await storage.read(key: "token");
+      String? assignmentId = assignmentController.selectedAssignmentId;
 
-    if (workerId == null || token == null || assignmentId == null) {
-      logger.e("Error: workerId, token o assignmentId son nulos.");
-      throw Exception("workerId, token o assignmentId son nulos.");
-    }
+      if (workerId == null || token == null || assignmentId == null) {
+        logger.e("Error: workerId, token o assignmentId son nulos.");
+        throw Exception("workerId, token o assignmentId son nulos.");
+      }
 
-    final Uri url = Uri.parse(
-        '$baseUrl/api/AssignmentByUser/update-status?assignmentId=$assignmentId&workerId=$workerId');
+      final Uri url = Uri.parse(
+          '$baseUrl/api/AssignmentByUser/update-status?assignmentId=$assignmentId&workerId=$workerId');
 
-    logger.i("Enviando solicitud a: $url");
-    logger.i("Payload: ${jsonEncode(newStatus)}");
+      String? userId = await storage.read(key: "userId"); // Id del usuario actual
 
-    final response = await http.put(
-      url,
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer $token',
-      },
-      body: jsonEncode(newStatus), // Solo se envía el string
-    );
+      if (workerId == userId) {
+        logger.e("No puedes tomar tus probios trabajos.");
+        throw Exception("No puedes tomar tus probios trabajos.");
+      }
 
-    logger.i("Código de respuesta: ${response.statusCode}");
-    logger.i("Respuesta del servidor: ${response.body}");
+      logger.i("Enviando solicitud a: $url");
+      logger.i("Payload: ${jsonEncode(newStatus)}");
 
-    if (response.statusCode == 200) {
-      logger.i("Estado actualizado correctamente.");
-      return true;
-    } else {
-      logger.e("Error en la respuesta del servidor: ${response.body}");
+      final response = await http.put(
+        url,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $token',
+        },
+        body: jsonEncode(newStatus), // Solo se envía el string
+      );
+
+      logger.i("Código de respuesta: ${response.statusCode}");
+      logger.i("Respuesta del servidor: ${response.body}");
+
+      if (response.statusCode == 200) {
+        logger.i("Estado actualizado correctamente.");
+        return true;
+      } else {
+        logger.e("Error en la respuesta del servidor: ${response.body}");
+        return false;
+      }
+    } catch (e) {
+      logger.e("Excepción atrapada: $e");
       return false;
     }
-  } catch (e) {
-    logger.e("Excepción atrapada: $e");
-    return false;
   }
-}
 }
