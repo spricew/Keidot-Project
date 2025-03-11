@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'package:test_app/Services/worker_request/reviews_request/review_controllerGet.dart';
+import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/providers/user_provider.dart';
 
 class ReviewsWorkerScreen extends StatelessWidget {
   ReviewsWorkerScreen({super.key});
@@ -9,9 +12,10 @@ class ReviewsWorkerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final name = Provider.of<UserProvider>(context).userName ?? "Usuario";
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: defaultWhite,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
@@ -21,7 +25,7 @@ class ReviewsWorkerScreen extends StatelessWidget {
         title: const Text(
           'Reseñas sobre el trabajador',
           style: TextStyle(
-            color: Colors.green,
+            color: greenHigh,
             fontWeight: FontWeight.bold,
             fontSize: 25,
           ),
@@ -47,34 +51,19 @@ class ReviewsWorkerScreen extends StatelessWidget {
                   backgroundImage: AssetImage('assets/profile_image.png'),
                 ),
                 const SizedBox(height: 12),
-               Obx(() {
-                  if (reviewController.reviews.isNotEmpty) {
-                    // Muestra el nombre del cliente de la primera reseña
-                    final nameClient = reviewController.reviews.first['nameClient'] ?? 'Nombre no disponible';
-                    return Text(
-                      nameClient,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22,
-                      ),
-                    );
-                  } else {
-                    return const Text(
-                      'Nombre no disponible',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 22,
-                      ),
-                    );
-                  }
-                }),
+               Text(
+                  name, // Usa el nombre del usuario autenticado
+                  style: const TextStyle(
+                    color: defaultWhite,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 22,
+                  ),
+                ),
                 const SizedBox(height: 8),
                 const Text(
                   'Trabajador especializado',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: defaultWhite,
                     fontSize: 16,
                   ),
                 ),
