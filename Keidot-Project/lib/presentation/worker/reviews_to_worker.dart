@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/Services/client_request/review_request/review_controller.dart';
 
 class ReviewsScreen extends StatefulWidget {
   const ReviewsScreen({super.key});
 
   @override
-  _ReviewsScreenState createState() => _ReviewsScreenState(); //Parte del trabajador para que cuando se cambie el status a "Completado "me redirija a esta pantalla
-  //donde podra el Cliente opinar sobre el trabajo hecho por el trabajador, subir fotos de la camara del cel
+  _ReviewsScreenState createState() => _ReviewsScreenState();
 }
 
 class _ReviewsScreenState extends State<ReviewsScreen> {
+  final ReviewController reviewController = Get.find<ReviewController>();
   final TextEditingController commentController = TextEditingController();
   int selectedRating = 0; // Valor inicial: 0 estrellas
 
@@ -63,7 +64,8 @@ class _ReviewsScreenState extends State<ReviewsScreen> {
                       const SizedBox(height: 4),
                       const Text('Aqui va el nombre del usuario Diegas'),
                       const SizedBox(height: 12),
-                      // Botón para subir imagen, sin funcionalidad
+
+                      // Botón para subir imagen (sin funcionalidad)
                       const Text('Sube una imagen del trabajo realizado:'),
                       const SizedBox(height: 8),
                       Center(
@@ -74,6 +76,7 @@ class _ReviewsScreenState extends State<ReviewsScreen> {
                         ),
                       ),
                       const SizedBox(height: 12),
+
                       // Área para escribir reseña
                       const Text('Escribe tu reseña:'),
                       TextField(
@@ -83,9 +86,13 @@ class _ReviewsScreenState extends State<ReviewsScreen> {
                           hintText: 'Escribe tu reseña',
                         ),
                         maxLines: 3,
+                        onChanged: (value) {
+                          reviewController.setCommentAt(value);
+                        },
                       ),
                       const SizedBox(height: 8),
-                      // Estrellas para la calificación, ahora con funcionalidad
+
+                      // Estrellas para la calificación con funcionalidad
                       Row(
                         children: List.generate(5, (index) {
                           return IconButton(
@@ -96,17 +103,21 @@ class _ReviewsScreenState extends State<ReviewsScreen> {
                             onPressed: () {
                               setState(() {
                                 selectedRating = index + 1;
+                                reviewController.setRating(selectedRating);
                               });
                             },
                           );
                         }),
                       ),
                       const SizedBox(height: 8),
-                      // Botón de enviar con colores invertidos
+
+                      // Botón de enviar
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          onPressed: () {}, // Funcionalidad futura
+                          onPressed: () async {
+                            await reviewController.sendReview();
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white,
                             foregroundColor: Colors.green,

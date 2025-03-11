@@ -18,9 +18,10 @@ class UpdateIsActiveService {
       print('Valor de is_active $isActive');
       final AssignmentIdController assignmentController =
           Get.find<AssignmentIdController>(); // Obtener el controlador
-      String? token = await storage.read(key: 'token');
+
       String? assignmentId = assignmentController
           .selectedAssignmentId; // Obtener el ID del controlador
+      String? token = await storage.read(key: 'token');
 
       if (token == null || assignmentId == null) {
         logger.e("Falta el token o el assignmentId en el controlador");
@@ -37,19 +38,18 @@ class UpdateIsActiveService {
         body: jsonEncode(isActive),
       );
 
-if (response.statusCode == 200) {
-  logger.i(
-      "Estado 'is_active' actualizado correctamente para la asignación $assignmentId");
+      if (response.statusCode == 200) {
+        logger.i(
+            "Estado 'is_active' actualizado correctamente para la asignación $assignmentId");
 
-  // Reemplaza la pantalla actual con la Homepage
-  Navigator.pushReplacement(
-    context,
-    MaterialPageRoute(builder: (context) => const RequestsScreen()),
-  );
+        // Reemplaza la pantalla actual con la Homepage
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const RequestsScreen()),
+        );
 
-  return true;
-}
-else {
+        return true;
+      } else {
         logger
             .w("Error al actualizar 'is_active'. Respuesta: ${response.body}");
         return false;
