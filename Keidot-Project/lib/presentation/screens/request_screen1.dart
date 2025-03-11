@@ -37,6 +37,8 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
 
   @override
   Widget build(BuildContext context) {
+    final sizeW = MediaQuery.of(context).size.width;
+    final sizeH = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -83,29 +85,33 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
             ),
             const SizedBox(height: 46),
 
-            Obx(() => DropdownButtonFormField<String>(
-                  value:
-                      selectedJob.value.isNotEmpty ? selectedJob.value : null,
-                  decoration: InputDecoration(
-                    labelText: 'Selecciona un servicio',
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8)),
-                    contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 10),
-                  ),
-                  items: allJobs.map((job) {
-                    return DropdownMenuItem(
-                      value: job,
-                      child: Text(job),
-                    );
-                  }).toList(),
-                  onChanged: (value) {
-                    if (value != null) {
-                      selectedJob.value = value; // Solo un servicio
-                    }
-                  },
-                  hint: const Text("Selecciona un servicio"),
-                )),
+            SizedBox(
+              width: sizeW, // Ancho deseado
+              child: Obx(() => DropdownButtonFormField<String>(
+                    value:
+                        selectedJob.value.isNotEmpty ? selectedJob.value : null,
+                    decoration: InputDecoration(
+                      labelText: 'Selecciona un servicio',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 18, vertical: 16),
+                    ),
+                    items: allJobs.map((job) {
+                      return DropdownMenuItem(
+                        value: job,
+                        child: Text(job),
+                      );
+                    }).toList(),
+                    onChanged: (value) {
+                      if (value != null) {
+                        selectedJob.value = value;
+                      }
+                    },
+                    hint: const Text("Corte de césped"),
+                  )),
+            ),
 
             const SizedBox(height: 20),
 
