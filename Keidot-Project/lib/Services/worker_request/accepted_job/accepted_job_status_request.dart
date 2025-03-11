@@ -29,12 +29,12 @@ class AssignmentAcceptedByWorker {
       final Uri url = Uri.parse(
           '$baseUrl/api/AssignmentByUser/update-status?assignmentId=$assignmentId&workerId=$workerId');
 
-      String? userId = await storage.read(key: "userId"); // Id del usuario actual
+      /*String? userId = await storage.read(key: "userId"); // Id del usuario actual
 
       if (workerId == userId) {
-        logger.e("No puedes tomar tus probios trabajos.");
-        throw Exception("No puedes tomar tus probios trabajos.");
-      }
+      logger.e("No puedes tomar tus probios trabajos.");
+      throw Exception("No puedes tomar tus probios trabajos.");
+      }*/
 
       logger.i("Enviando solicitud a: $url");
       logger.i("Payload: ${jsonEncode(newStatus)}");
