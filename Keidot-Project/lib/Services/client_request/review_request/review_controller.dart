@@ -37,17 +37,16 @@ class ReviewController extends GetxController {
       return false;
     }
 
-    //final AssignmentIdController assignmentController = Get.find<AssignmentIdController>(); 
-    //String? assignmentId = assignmentController.selectedAssignmentId;
+    final AssignmentIdController assignmentController = Get.find<AssignmentIdController>(); 
+    String? assignmentId = assignmentController.selectedAssignmentId;
 
-final String assignmentId = "01957d08-5529-7875-822e-4a371dad6a54";
-    /*if (assignmentId == null || assignmentId.isEmpty) {
+    if (assignmentId == null || assignmentId.isEmpty) {
       _logger.e("Error: No se encontró el assignment_id");
       return false;
-    }*/
+    }
 ////////////////////////////////////////////////////////////////////////////////////////////////////quitaar comentarios, es para pruebas
     final review = {
-      "assignment_id": assignmentId.isEmpty ? assignmentId : "01957d08-5529-7875-822e-4a371dad6a54", 
+      "assignment_id": assignmentId, 
       ...ReviewModel(
         rating: rating.value,
         urlImagen: urlImagen.value,
