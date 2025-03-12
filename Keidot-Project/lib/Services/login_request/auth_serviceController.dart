@@ -25,7 +25,7 @@ class AuthenticationService {
         logger.i("ID recibido del backend: ${data['id']}");
         logger.i("Token recibido: ${data['token']}");
 
-        await storage.delete(key: 'userId');
+        await storage.deleteAll(); // Elimina todas las credenciales anteriores
         await storage.write(key: 'userId', value: data['id']);
         await storage.write(key: 'token', value: data['token']);
         await storage.write(key: 'name', value: data['name'] ?? '');

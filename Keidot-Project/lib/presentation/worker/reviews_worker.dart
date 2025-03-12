@@ -1,39 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
+import 'package:test_app/Services/worker_request/reviews_request/review_controllerGet.dart';
+import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/providers/user_provider.dart';
 
 class ReviewsWorkerScreen extends StatelessWidget {
   ReviewsWorkerScreen({super.key});
 
-  final List<Map<String, dynamic>> reviews = [
-    {
-      "date": "18 de Jul. 2025",
-      "client": "Rommel Canepa",
-      "rating": 3.0,
-      "comment": "No me gustó mucho la manera de comportarse, pero está dentro de lo normal",
-      "response": [
-        "Muchas gracias por tu recomendación.",
-        "Esta persona trabaja muy bien.",
-        "Muchas gracias por tu recomendación."
-      ]
-    },
-    {
-      "date": "18 de Jul. 2025",
-      "client": "Kevin Montero",
-      "rating": 4.0,
-      "comment": "Me gustó mucho como realizó su servicio",
-      "response": [
-        "Muchas gracias por tu recomendación.",
-        "Esta persona trabaja muy bien.",
-        "Muchas gracias por tu recomendación."
-      ]
-    },
-  ];
+  final ReviewWorkerController reviewController = Get.put(ReviewWorkerController());
 
   @override
   Widget build(BuildContext context) {
+    final name = Provider.of<UserProvider>(context).userName ?? "Usuario";
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: defaultWhite,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
@@ -41,9 +23,9 @@ class ReviewsWorkerScreen extends StatelessWidget {
         ),
         centerTitle: true,
         title: const Text(
-          'Reseñas sobre el cliente',
+          'Reseñas sobre el trabajador',
           style: TextStyle(
-            color: Colors.green,
+            color: greenHigh,
             fontWeight: FontWeight.bold,
             fontSize: 25,
           ),
@@ -51,7 +33,7 @@ class ReviewsWorkerScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // Apartado verde con nombre e imagen del trabajador
+          // Encabezado con imagen y nombre del trabajador
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(16),
@@ -62,26 +44,26 @@ class ReviewsWorkerScreen extends StatelessWidget {
                 bottomRight: Radius.circular(20),
               ),
             ),
-            child: const Column(
+            child: Column(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 40,
                   backgroundImage: AssetImage('assets/profile_image.png'),
                 ),
-                SizedBox(height: 12),
-                Text(
-                  'Delmy Arellano',
-                  style: TextStyle(
-                    color: Colors.white,
+                const SizedBox(height: 12),
+               Text(
+                  name, // Usa el nombre del usuario autenticado
+                  style: const TextStyle(
+                    color: defaultWhite,
                     fontWeight: FontWeight.bold,
                     fontSize: 22,
                   ),
                 ),
-                SizedBox(height: 8),
-                Text(
-                  'uwu',
+                const SizedBox(height: 8),
+                const Text(
+                  'Trabajador especializado',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: defaultWhite,
                     fontSize: 16,
                   ),
                 ),
@@ -89,22 +71,41 @@ class ReviewsWorkerScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          // Lista de reseñas
+          // Lista de reseñas obtenidas desde la API
           Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.all(16),
-              itemCount: reviews.length,
-              itemBuilder: (context, index) {
-                return _buildReviewCard(reviews[index]);
-              },
-            ),
+            child: Obx(() {
+              if (reviewController.isLoading.value) {
+                return const Center(child: CircularProgressIndicator());
+              }
+
+              if (reviewController.reviews.isEmpty) {
+                return const Center(
+                  child: Text("Aún no hay reseñas disponibles"),
+                );
+              }
+
+              return ListView.builder(
+                padding: const EdgeInsets.all(16),
+                itemCount: reviewController.reviews.length, // Usamos la lista de reseñas
+                itemBuilder: (context, index) {
+                  final review = reviewController.reviews[index];
+                  return _buildReviewCard(
+                    review['review_date'],
+                    review['nameClient'],
+                    review['rating'],
+                    review['comment_at'],
+                  );
+                },
+              );
+            }),
           ),
         ],
       ),
     );
   }
 
-  Widget _buildReviewCard(Map<String, dynamic> review) {
+  Widget _buildReviewCard(
+      String date, String client, int rating, String comment) {
     return Card(
       elevation: 2,
       margin: const EdgeInsets.only(bottom: 16),
@@ -114,12 +115,12 @@ class ReviewsWorkerScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              review["date"],
+              date,
               style: TextStyle(color: Colors.grey[600], fontSize: 14),
             ),
             const SizedBox(height: 8),
             Text(
-              review["client"],
+              client,
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
             const SizedBox(height: 8),
@@ -128,42 +129,15 @@ class ReviewsWorkerScreen extends StatelessWidget {
                 const Icon(Icons.star, color: Colors.amber, size: 16),
                 const SizedBox(width: 4),
                 Text(
-                  "${review["rating"]} / 5",
+                  "$rating / 5",
                   style: TextStyle(fontSize: 14, color: Colors.grey[800]),
                 ),
               ],
             ),
             const SizedBox(height: 12),
             Text(
-              review["comment"],
+              comment,
               style: const TextStyle(fontSize: 14),
-            ),
-            const SizedBox(height: 12),
-            ...review["response"].map<Widget>((response) {
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: Row(
-                  children: [
-                    const Icon(Icons.search, size: 16, color: Colors.grey),
-                    const SizedBox(width: 8),
-                    Text(
-                      response,
-                      style: TextStyle(fontSize: 14, color: Colors.grey[700]),
-                    ),
-                  ],
-                ),
-              );
-            }).toList(),
-            const SizedBox(height: 12),
-            const Row(
-              children: [
-                Icon(Icons.search, size: 16, color: Colors.grey),
-                SizedBox(width: 8),
-                Text(
-                  "Comentar",
-                  style: TextStyle(fontSize: 14, color: Colors.grey),
-                ),
-              ],
             ),
           ],
         ),
