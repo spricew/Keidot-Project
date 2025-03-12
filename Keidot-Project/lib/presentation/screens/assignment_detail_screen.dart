@@ -219,7 +219,7 @@ class AssignmentDetailScreen extends StatelessWidget {
                                           'Ocurrió un error desconocido.',
                                       snackPosition: SnackPosition.BOTTOM,
                                       backgroundColor: Colors.red,
-                                      colorText: Colors.white,
+                                      colorText: defaultWhite,
                                     );
 
                                     await Future.delayed(const Duration(
