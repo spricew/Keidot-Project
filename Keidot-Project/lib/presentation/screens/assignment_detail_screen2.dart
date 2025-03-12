@@ -6,16 +6,16 @@ import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/stripe/stripe_refund.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
-class AssignmentDetailScreen extends StatelessWidget {
+class AssignmentDetailScreen2 extends StatelessWidget {
   final AssignmentDTO assignment;
 
-  const AssignmentDetailScreen({super.key, required this.assignment});
+  const AssignmentDetailScreen2({super.key, required this.assignment});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
-        title: 'Detalles de la Solicitud',
+        title: 'Detalles de la solicitud',
         toolbarHeight: 80,
         backgroundColor: Colors.white,
         titleFontSize: 26,
@@ -81,18 +81,18 @@ class AssignmentDetailScreen extends StatelessWidget {
                     width: double.infinity,
                     child: ElevatedButton.icon(
                       onPressed: () async {
-                        // Lógica para cancelar solicitud
+                        // Lógica para terminar trabajo
                         Get.defaultDialog(
                           titlePadding: const EdgeInsets.all(20),
                           contentPadding: const EdgeInsets.symmetric(
                               vertical: 20, horizontal: 20),
-                          title: 'Cancelar Solicitud',
+                          title: 'Terminar Trabajo',
                           titleStyle: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                           content: const Text(
-                            '¿Estás seguro de que deseas cancelar esta solicitud?',
+                            '¿Estás seguro de que deseas terminar este trabajo?',
                             style: TextStyle(fontSize: 16),
                           ),
                           actions: [
@@ -114,12 +114,12 @@ class AssignmentDetailScreen extends StatelessWidget {
                                   final UpdateIsActiveService service =
                                       UpdateIsActiveService();
                                   bool success = await service.updateIsActive(
-                                      context, false);
+                                      context, true);
 
                                   if (!success) {
                                     Get.snackbar(
                                       'Error',
-                                      'No se pudo cancelar la solicitud.',
+                                      'No se pudo terminar el trabajo.',
                                       snackPosition: SnackPosition.BOTTOM,
                                       backgroundColor: Colors.red,
                                       colorText: Colors.white,
@@ -127,39 +127,18 @@ class AssignmentDetailScreen extends StatelessWidget {
                                     return;
                                   }
 
-                                  final PaymentRefundService refundService =
-                                      PaymentRefundService();
-                                  final Map<String, dynamic> response =
-                                      await refundService.processRefund(
-                                          assignment.paymentIntentId);
+                                  Get.snackbar(
+                                    'Trabajo Terminado',
+                                    'El trabajo se ha terminado correctamente.',
+                                    snackPosition: SnackPosition.BOTTOM,
+                                    backgroundColor: Colors.green[900],
+                                    colorText: Colors.white,
+                                  );
 
-                                  if (response['success'] == true) {
-                                    Get.snackbar(
-                                      'Reembolso Exitoso',
-                                      'El reembolso se ha procesado correctamente.',
-                                      snackPosition: SnackPosition.BOTTOM,
-                                      backgroundColor: Colors.green[900],
-                                      colorText: Colors.white,
-                                    );
-
-                                    // 🔹 Agregar un delay antes de cerrar la pantalla
-                                    await Future.delayed(const Duration(
-                                        seconds:
-                                            2)); // Espera 2 segundos antes de cerrar
-                                  } else {
-                                    Get.snackbar(
-                                      'Error en el Reembolso',
-                                      response['message'] ??
-                                          'Ocurrió un error desconocido.',
-                                      snackPosition: SnackPosition.BOTTOM,
-                                      backgroundColor: Colors.red,
-                                      colorText: defaultWhite,
-                                    );
-
-                                    await Future.delayed(const Duration(
-                                        seconds:
-                                            2)); // Espera 2 segundos antes de cerrar
-                                  }
+                                  // 🔹 Agregar un delay antes de cerrar la pantalla
+                                  await Future.delayed(const Duration(
+                                      seconds:
+                                          2)); // Espera 2 segundos antes de cerrar
                                 } catch (e) {
                                   Get.snackbar(
                                     'Error',
@@ -194,10 +173,9 @@ class AssignmentDetailScreen extends StatelessWidget {
                         ),
                         padding: const EdgeInsets.symmetric(vertical: 14),
                       ),
-                      icon:
-                          const Icon(Icons.cancel, color: Colors.red, size: 20),
+                      icon: const Icon(Icons.check, color: Colors.green, size: 20),
                       label: const Text(
-                        'Cancelar Solicitud',
+                        'Terminar Trabajo',
                         style: TextStyle(color: Colors.white, fontSize: 16),
                       ),
                     ),

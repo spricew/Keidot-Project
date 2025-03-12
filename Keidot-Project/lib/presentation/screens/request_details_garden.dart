@@ -6,7 +6,7 @@ import 'package:test_app/Services/client_request/transaction/service_transaction
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/request_screen2.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
-
+//esta pantalla es la de detalles de la solicitud de jardín como si tiene piscina, si tiene árboles, etc.
 class RequestDetailsGarden extends StatefulWidget {
   const RequestDetailsGarden({super.key});
 
