@@ -7,6 +7,7 @@ import 'package:test_app/Services/client_request/review_request/review_controlle
 import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/Services/worker_request/reviews_request/review_controllerGet.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/config_screen.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/presentation/screens/review_screen.dart';
 import 'package:test_app/presentation/screens/stripe/keys.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
       // Cambia MaterialApp por GetMaterialApp
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 2).theme(),
-      home: const LoginPage(), // Ve cambiando esta cosa para las pantallas que quieras ver Diego gay
+      home: const ConfigScreen(), // Ve cambiando esta cosa para las pantallas que quieras ver Diego gay
     );
   }
 }

@@ -80,6 +80,7 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          const SizedBox(height: 16),
           _buildTextField(
             label: 'URL de la imagen de perfil',
             onChanged: (value) => urlImagePerfil = value,

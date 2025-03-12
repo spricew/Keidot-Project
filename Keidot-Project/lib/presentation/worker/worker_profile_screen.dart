@@ -1,148 +1,169 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:provider/provider.dart';
+import 'package:test_app/Services/client_request/assignment_request/assignment_inact_request.dart';
+import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/assign_Inactive_detail_screen.dart';
+import 'package:test_app/providers/user_provider.dart';
 
-class WorkerProfileScreen extends StatelessWidget {
-  WorkerProfileScreen({super.key});
 
-  // Datos de ejemplo (simulados)
-  final List<Map<String, dynamic>> publications = [
-    {
-      "name": "Heyder Mornichis",
-      "rank": "#2 en AL 2025",
-      "comment": "Buen trabajo, quisiera solicitar de tus servicios."
-    },
-    {
-      "name": "Heyder Mornichis",
-      "rank": "#3 en AL 2025",
-      "comment": "Buen trabajo, quisiera solicitar de tus servicios."
-    },
-    {
-      "name": "Heyder Mornichis",
-      "rank": "#4 en AL 2025",
-      "comment": "Buen trabajo, quisiera solicitar de tus servicios."
-    },
-    {
-      "name": "Heyder Mornichis",
-      "rank": "#5 en AL 2025",
-      "comment": "Buen trabajo, quisiera solicitar de tus servicios."
-    },
-  ];
+class WorkerProfileScreen extends StatefulWidget {
+  const WorkerProfileScreen({super.key});
+
+  @override
+  _WorkerProfileScreenState createState() => _WorkerProfileScreenState();
+}
+
+class _WorkerProfileScreenState extends State<WorkerProfileScreen> {
+  final AssignmentInactiveController _controller = AssignmentInactiveController();
+  late Future<List<AssignmentDTO>> _assignmentsFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _assignmentsFuture = _controller.getAssignments();
+  }
 
   @override
   Widget build(BuildContext context) {
+    final name = Provider.of<UserProvider>(context).userName ?? "Trabajador";
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Get.back(),
-        ),
-        centerTitle: true,
-        title: const Text(
-          'Perfil del Trabajador',
-          style: TextStyle(
-            color: Color(0xFF3BA670),
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-          ),
-        ),
+        backgroundColor: defaultWhite,
       ),
-      body: Column(
-        children: [
-          // Sección de perfil
-          Container(
-            width: double.infinity,
-            decoration: const BoxDecoration(color: greenHigh),
-            padding: const EdgeInsets.all(12.0),
-            child: const Center(
-              child: Column(
-                children: [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundImage:
-                        AssetImage('assets/profile_image.png'),
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                Container(
+                  width: double.infinity,
+                  decoration: const BoxDecoration(color: greenContrast),
+                  padding: const EdgeInsets.all(12.0),
+                  child: Row(
+                    children: [
+                      const CircleAvatar(
+                        radius: 40,
+                        backgroundColor: Colors.white,
+                        child: Icon(Icons.person, size: 50, color: darkGreen),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Text(
+                          "Hola, $name!",
+                          style: const TextStyle(
+                              color: defaultWhite,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 22),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
                   ),
-                  SizedBox(height: 12),
-                  Text(
-                    'Delmy',
-                    style: TextStyle(
-                        color: defaultWhite,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 22),
-                  ),
-                ],
-              ),
+                ),
+                const SizedBox(height: 24),
+                const Text(
+                  'Historial de trabajos',
+                  style: TextStyle(fontSize: 20, color: darkGreen),
+                ),
+                const SizedBox(height: 20),
+              ],
             ),
           ),
-          const SizedBox(height: 24),
-          const SizedBox(
-            width: double.infinity,
-            child: Text(
-              'Publicaciones sobre los trabajos de Delmy',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 20, color: darkGreen),
-            ),
-          ),
-          const SizedBox(height: 16),
-          // Lista de publicaciones
-          Expanded(
-            child: ListView.builder(
-              itemCount: publications.length,
-              itemBuilder: (context, index) {
-                return _buildPublicationCard(publications[index]);
-              },
-            ),
+          FutureBuilder<List<AssignmentDTO>>(
+            future: _assignmentsFuture,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const SliverToBoxAdapter(
+                    child: Center(child: CircularProgressIndicator()));
+              } else if (snapshot.hasError) {
+                return SliverToBoxAdapter(
+                    child: Center(child: Text('Error: ${snapshot.error}')));
+              } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                return const SliverToBoxAdapter(
+                    child: Center(child: Text('No hay trabajos inactivos.')));
+              }
+              return SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    final assignment = snapshot.data![index];
+                    return _buildAssignmentCard(assignment, context);
+                  },
+                  childCount: snapshot.data!.length,
+                ),
+              );
+            },
           ),
         ],
       ),
     );
   }
 
-  Widget _buildPublicationCard(Map<String, dynamic> publication) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: lightgreen,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              const CircleAvatar(
-                radius: 20,
-                backgroundColor: Colors.white,
-                child: Icon(Icons.person, size: 25, color: Colors.black87),
-              ),
-              const SizedBox(width: 8),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(publication["name"],
-                      style: const TextStyle(fontWeight: FontWeight.bold)),
-                  Text(publication["rank"],
-                      style: TextStyle(
-                          fontSize: 12, color: Colors.grey[700])),
-                ],
-              ),
-            ],
+  Widget _buildAssignmentCard(AssignmentDTO assignment, BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) =>
+                AssignmentInactiveDetailScreen(assignment: assignment),
           ),
-          const SizedBox(height: 8),
-          Text(publication["comment"],
-              style: const TextStyle(fontSize: 14)),
-          const SizedBox(height: 8),
-          const Row(
-            children: [
-              Icon(Icons.more, size: 16),
-              SizedBox(width: 4),
-              Text("Ver detalles"),
-            ],
+        );
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 21),
+        decoration: const BoxDecoration(
+          color: defaultWhite,
+          border: Border(
+            top: BorderSide(
+              width: 1,
+              color: Color.fromARGB(255, 201, 201, 201),
+            ),
           ),
-        ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const CircleAvatar(
+                  radius: 20,
+                  backgroundColor: Colors.white,
+                  child: Icon(Icons.work, size: 25, color: darkGreen),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        assignment.nameOfService,
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Text(
+                        "Fecha: ${assignment.formattedDateSelected}",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      Text(
+                        "Hora: ${assignment.formattedTimeSelected}",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[700]),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Text(
+                  "MXN \$${assignment.amount.toStringAsFixed(2)}",
+                  style: const TextStyle(color: darkGreen, fontSize: 14),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
