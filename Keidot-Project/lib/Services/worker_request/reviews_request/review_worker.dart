@@ -11,6 +11,7 @@ class ReviewWorkerService {
  Future<List<Map<String, dynamic>>?> fetchReview() async {
   try {
     String? workerId = await storage.read(key: "userId");
+    
     if (workerId == null) {
       logger.e("Error: No se encontró el ID del trabajador en el almacenamiento");
       return null;
