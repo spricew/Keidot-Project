@@ -62,15 +62,15 @@ class _WorkerAssignmentsScreenState extends State<WorkerAssignmentsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Trabajos Aceptados'),
-        backgroundColor: defaultWhite,
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Get.back(),
+        title: const Text(
+          'Trabajos Aceptados',
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
         ),
+        foregroundColor: colors.primary,
       ),
       body: RefreshIndicator(
         onRefresh: _refreshAssignments,
@@ -90,33 +90,63 @@ class _WorkerAssignmentsScreenState extends State<WorkerAssignmentsScreen> {
             final assignments = snapshot.data!;
 
             return ListView.builder(
+              padding: const EdgeInsets.all(3),
               itemCount: assignments.length,
               itemBuilder: (context, index) {
                 final assignment = assignments[index];
-                return ListTile(
-                  title: Text(
-                    assignment.nameOfService,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: greenHigh,
+                return Card(
+                  margin: const EdgeInsets.only(bottom: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  elevation: 3,
+                  child: ListTile(
+                    leading: const Icon(Icons.work, color: greenHigh, size: 30),
+                    title: Text(
+                      assignment.nameOfService,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Fecha: ${assignment.formattedDateSelected}",
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                        Text(
+                          "Hora: ${assignment.formattedTimeSelected}",
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                        Text(
+                          "Pago: \$${assignment.amount.toStringAsFixed(2)}",
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ],
+                    ),
+                    trailing: ElevatedButton(
+                      onPressed: () {
+                        final AssignmentIdController assignmentController =
+                            Get.put(AssignmentIdController());
+
+                        // Guardar el ID de la asignación seleccionada
+                        assignmentController.setSelectedIdAssignment(assignment.idAssignment);
+
+                        // Navegar a la pantalla de detalles
+                        Get.to(() =>
+                            WorkerAssignmentDetailScreen(assignment: assignment));
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: greenHigh,
+                      ),
+                      child: const Text(
+                        "Detalles",
+                        style: TextStyle(color: defaultWhite),
+                      ),
                     ),
                   ),
-                  subtitle: Text(
-                    "${assignment.formattedDateSelected} a las ${assignment.formattedTimeSelected}",
-                  ),
-                  trailing: const Icon(Icons.arrow_forward_ios),
-                  onTap: () {
-                    final AssignmentIdController assignmentController =
-                        Get.put(AssignmentIdController());
-
-                    // Guardar el ID de la asignación seleccionada
-                    assignmentController.setSelectedIdAssignment(assignment.idAssignment);
-
-                    // Navegar a la pantalla de detalles
-                    Get.to(() =>
-                        WorkerAssignmentDetailScreen(assignment: assignment));
-                  },
                 );
               },
             );

@@ -4,6 +4,8 @@ import 'package:test_app/presentation/worker/dashboard.dart';
 import 'package:test_app/presentation/worker/worker_assignments_screen.dart';
 import 'package:test_app/presentation/worker/worker_job_requests_screen.dart';
 import 'package:test_app/presentation/worker/worker_messages.dart';
+import 'package:test_app/presentation/worker/worker_profile_screen.dart';
+import 'package:test_app/presentation/worker/worker_support.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
 class HomeWorker extends StatelessWidget {
@@ -28,6 +30,11 @@ class HomeWorker extends StatelessWidget {
 class _ViewHomeWorker extends StatelessWidget {
   final List<Map<String, dynamic>> options = [
     {
+      'title': 'Perfil del trabajador',
+      'icon': Icons.person,
+      'screen': const WorkerProfileScreen(), // Pantalla para cambiar nombre
+    },
+    {
       'title': 'Trabajos disponibles',
       'icon': Icons.event_available,
       'screen': const WorkerJobRequestsScreen(), // Pantalla para cambiar nombre
@@ -51,7 +58,7 @@ class _ViewHomeWorker extends StatelessWidget {
     {
       'title': 'Soporte',
       'icon': Icons.help,
-      'screen': const WorkerMessagesScreen(), // Pantalla para soporte
+      'screen': WorkerSupportPage(), // Pantalla para soporte
     },
   ];
 

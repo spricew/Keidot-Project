@@ -19,8 +19,9 @@ class RequestsScreen extends StatefulWidget {
 class _RequestsScreenState extends State<RequestsScreen> {
   late Future<List<AssignmentDTO>> _assignmentsFuture;
   final AssignmentService _service = AssignmentService();
-  final AssignmentIdController _assignmentIdController = Get.find<AssignmentIdController>(); 
-  final Logger _logger = Logger(); 
+  final AssignmentIdController _assignmentIdController =
+      Get.find<AssignmentIdController>();
+  final Logger _logger = Logger();
 
   @override
   void initState() {
@@ -43,7 +44,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
           setState(() {
             _assignmentsFuture = _service.getAssignments();
           });
-          await _assignmentsFuture; 
+          await _assignmentsFuture;
         },
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
@@ -55,7 +56,8 @@ class _RequestsScreenState extends State<RequestsScreen> {
               } else if (snapshot.hasError) {
                 return Center(child: Text('Error: ${snapshot.error}'));
               } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-                return const Center(child: Text('No hay solicitudes disponibles.'));
+                return const Center(
+                    child: Text('No hay solicitudes disponibles.'));
               }
               return ListView.builder(
                 itemCount: snapshot.data!.length,
@@ -72,17 +74,22 @@ class _RequestsScreenState extends State<RequestsScreen> {
   }
 
   Widget _buildRequestCard(AssignmentDTO assignment, BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
     return GestureDetector(
       onTap: () {
-        _assignmentIdController.setSelectedIdAssignment(assignment.idAssignment);
+        _assignmentIdController
+            .setSelectedIdAssignment(assignment.idAssignment);
         _logger.i("Assignment ID seleccionado: ${assignment.idAssignment}");
-        _assignmentIdController.setSelectedpaymentIntentId(assignment.paymentIntentId);
-        _logger.i("paymentIntentId seleccionado: ${assignment.paymentIntentId}");
+        _assignmentIdController
+            .setSelectedpaymentIntentId(assignment.paymentIntentId);
+        _logger
+            .i("paymentIntentId seleccionado: ${assignment.paymentIntentId}");
 
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AssignmentDetailScreen(assignment: assignment),
+            builder: (context) =>
+                AssignmentDetailScreen(assignment: assignment),
           ),
         );
       },
@@ -90,13 +97,13 @@ class _RequestsScreenState extends State<RequestsScreen> {
         margin: const EdgeInsets.only(bottom: 12),
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey.shade400, width: 1),
-          color: Colors.grey[300],
+          border: Border.all(color: Colors.black26, width: 1),
+          color: colors.onPrimary,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Row(
           children: [
-            const Icon(Icons.work, size: 30, color: Colors.green),
+            Icon(Icons.work, size: 30, color: colors.primary),
             const SizedBox(width: 12),
             Expanded(
               child: Column(
@@ -104,8 +111,8 @@ class _RequestsScreenState extends State<RequestsScreen> {
                 children: [
                   Text(
                     assignment.nameOfService,
-                    style: const TextStyle(
-                        color: Colors.green,
+                    style: TextStyle(
+                        color: colors.primary,
                         fontSize: 16,
                         fontWeight: FontWeight.bold),
                   ),
@@ -122,7 +129,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
                   const SizedBox(height: 4),
                   Text(
                     'MXN \$${assignment.amount.toStringAsFixed(2)}',
-                    style: const TextStyle(color: Colors.green, fontSize: 14),
+                    style: TextStyle(color: colors.primary, fontSize: 14),
                   ),
                 ],
               ),

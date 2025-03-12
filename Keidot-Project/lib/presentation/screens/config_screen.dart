@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/presentation/screens/about_screen.dart';
 import 'package:test_app/presentation/screens/change_name.dart';
+import 'package:test_app/presentation/screens/change_password.dart';
 import 'package:test_app/presentation/screens/new_worker.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
@@ -30,7 +32,7 @@ class _ConfigView extends StatelessWidget {
     {
       'title': 'Cambiar contraseña',
       'icon': Icons.lock,
-      'screen': const ChangeNameScreen(), // Pantalla para cambiar contraseña
+      'screen': const ChangePasswordScreen(), // Pantalla para cambiar contraseña
     },
     {
       'title': 'Convertirse en trabajador',
@@ -41,7 +43,7 @@ class _ConfigView extends StatelessWidget {
     {
       'title': 'Soporte',
       'icon': Icons.help,
-      'screen': const ChangeNameScreen(), // Pantalla para soporte
+      'screen': const AboutScreen(), // Pantalla para soporte
     },
   ];
 

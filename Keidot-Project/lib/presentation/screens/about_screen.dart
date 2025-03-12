@@ -15,36 +15,36 @@ class AboutScreen extends StatelessWidget {
         backgroundColor: colors.onPrimary,
         titleFontSize: 24,
       ),
-      body: _AboutView(),
+      body: const _AboutView(),
     );
   }
 }
 
 class _AboutView extends StatelessWidget {
+  const _AboutView();
+
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
     final size = MediaQuery.of(context).size;
 
     return SafeArea(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            child: const Text('IMAGEN'),
-          ),
-          Column(
-            children: [
-              Text(
-                'Keidot App',
-                style: TextStyle(
-                    color: colors.onPrimaryContainer,
-                    fontSize: (size.width * 0.08)),
-              ),
-              const Text('Versión 2.1.0')
-            ],
-          )
-        ],
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset('assets/images/Logo.png', width: 100, height: 100),
+            const SizedBox(height: 20),
+            Text(
+              'Keidot App',
+              style: TextStyle(
+                  color: colors.onPrimaryContainer,
+                  fontSize: (size.width * 0.08)),
+            ),
+            const SizedBox(height: 10),
+            const Text('Versión 2.1.0')
+          ],
+        ),
       ),
     );
   }
