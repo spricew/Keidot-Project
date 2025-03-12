@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/presentation/worker/dashboard.dart';
+import 'package:test_app/presentation/worker/reviews_worker.dart';
 import 'package:test_app/presentation/worker/worker_assignments_screen.dart';
 import 'package:test_app/presentation/worker/worker_job_requests_screen.dart';
 import 'package:test_app/presentation/worker/worker_messages.dart';
@@ -32,7 +33,7 @@ class _ViewHomeWorker extends StatelessWidget {
     {
       'title': 'Perfil del trabajador',
       'icon': Icons.person,
-      'screen': const WorkerProfileScreen(), // Pantalla para cambiar nombre
+      'screen': ReviewsWorkerScreen(), // Pantalla para cambiar nombre
     },
     {
       'title': 'Trabajos disponibles',

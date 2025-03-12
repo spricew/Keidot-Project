@@ -1,57 +1,105 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:logger/logger.dart';
+import 'package:test_app/Services/client_request/assignment_request/assigment_in_progress.dart';
+import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
+import 'package:test_app/Services/models/assignment_model.dart';
+import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/assignment_detail_screen.dart';
+import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
-class PendingWorkScreen extends StatelessWidget {
+class PendingWorkScreen extends StatefulWidget {
   const PendingWorkScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
-    return Scaffold(
-      appBar: CustomAppBar(
-        title: 'Trabajos aceptados',
-        backgroundColor: colors.onPrimary,
-      ),
-      body: _PendingView(),
-    );
-  }
+  _PendingWorkScreenState createState() => _PendingWorkScreenState();
 }
 
-class _PendingView extends StatelessWidget {
+class _PendingWorkScreenState extends State<PendingWorkScreen> {
+  late Future<List<AssignmentDTO>> _assignmentsFuture;
+  final AssignmentInProgress _service = AssignmentInProgress();
+  final AssignmentIdController _assignmentIdController =
+      Get.find<AssignmentIdController>();
+  final Logger _logger = Logger();
+
+  @override
+  void initState() {
+    super.initState();
+    _assignmentsFuture = _service.getAssignments();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20),
-        child: Column(
-          children: [
-            _CardBuilder(),
-            _CardBuilder(),
-            _CardBuilder(),
-          ],
+    return Scaffold(
+      appBar: CustomAppBar(
+        title: 'Trabajos Aceptados',
+        backgroundColor: defaultWhite,
+        titleFontSize: 25,
+        onBackPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const Homepage())),
+      ),
+      body: RefreshIndicator(
+        onRefresh: () async {
+          setState(() {
+            _assignmentsFuture = _service.getAssignments();
+          });
+          await _assignmentsFuture;
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+          child: FutureBuilder<List<AssignmentDTO>>(
+            future: _assignmentsFuture,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (snapshot.hasError) {
+                return Center(child: Text('Error: ${snapshot.error}'));
+              } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                return const Center(
+                    child: Text('No hay solicitudes disponibles.'));
+              }
+              return ListView.builder(
+                itemCount: snapshot.data!.length,
+                itemBuilder: (context, index) {
+                  final assignment = snapshot.data![index];
+                  return _buildRequestCard(assignment, context);
+                },
+              );
+            },
+          ),
         ),
       ),
     );
   }
-}
 
-class _CardBuilder extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildRequestCard(AssignmentDTO assignment, BuildContext context) {
     final colors = Theme.of(context).colorScheme;
-    return Container(
-        padding: const EdgeInsets.all(20),
-        margin: const EdgeInsets.only(bottom: 20),
+    return GestureDetector(
+      onTap: () {
+        _assignmentIdController
+            .setSelectedIdAssignment(assignment.idAssignment);
+        _logger.i("Assignment ID seleccionado: ${assignment.idAssignment}");
+        _assignmentIdController
+            .setSelectedpaymentIntentId(assignment.paymentIntentId);
+        _logger
+            .i("paymentIntentId seleccionado: ${assignment.paymentIntentId}");
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) =>
+                AssignmentDetailScreen(assignment: assignment),
+          ),
+        );
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 12),
+        padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.1),
-              blurRadius: 10,
-              offset: const Offset(0, 5),
-            ),
-          ],
+          border: Border.all(color: Colors.black26, width: 1),
+          color: colors.onPrimary,
+          borderRadius: BorderRadius.circular(15),
         ),
         child: Row(
           children: [
@@ -62,7 +110,7 @@ class _CardBuilder extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Nombre del servicio',
+                    assignment.nameOfService,
                     style: TextStyle(
                         color: colors.primary,
                         fontSize: 16,
@@ -70,23 +118,25 @@ class _CardBuilder extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'Fecha: ${DateTime.now()}',
+                    'Fecha: ${assignment.formattedDateSelected}',
                     style: const TextStyle(color: Colors.grey, fontSize: 14),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'Hora: ${DateTime.now()}',
+                    'Hora: ${assignment.formattedTimeSelected}',
                     style: const TextStyle(color: Colors.grey, fontSize: 14),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    'MXN \$${100}',
+                    'MXN \$${assignment.amount.toStringAsFixed(2)}',
                     style: TextStyle(color: colors.primary, fontSize: 14),
                   ),
                 ],
               ),
             ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
-import 'package:test_app/Services/client_request/assignment_request/assignment_request.dart';
+import 'package:test_app/Services/client_request/assignment_request/assignment_in_pending.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/assignment_detail_screen.dart';

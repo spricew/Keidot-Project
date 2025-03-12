@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/Services/client_request/review_request/review_controller.dart';
+import 'package:test_app/providers/user_provider.dart';
 
 class ReviewsScreen extends StatefulWidget {
   const ReviewsScreen({super.key});
@@ -17,6 +19,7 @@ class _ReviewsScreenState extends State<ReviewsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final name = Provider.of<UserProvider>(context).userName ?? "Usuario";
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -62,7 +65,7 @@ class _ReviewsScreenState extends State<ReviewsScreen> {
                       const Text('Nombre del Usuario:',
                           style: TextStyle(fontWeight: FontWeight.bold)),
                       const SizedBox(height: 4),
-                      const Text('Aqui va el nombre del usuario Diegas'),
+                      Text(name),
                       const SizedBox(height: 12),
 
                       // Botón para subir imagen (sin funcionalidad)

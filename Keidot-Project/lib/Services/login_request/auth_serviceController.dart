@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
+import 'package:test_app/Services/client_request/assignment_request/assignment_in_pending.dart';
+import 'package:test_app/Services/client_request/review_request/review_controller.dart';
+import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
+import 'package:test_app/Services/worker_request/reviews_request/review_controllerGet.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
 
@@ -11,7 +16,8 @@ class AuthenticationService {
   static const FlutterSecureStorage storage = FlutterSecureStorage();
   final Logger logger = Logger();
 
-  Future<void> login(BuildContext context, String email, String password) async {
+  Future<void> login(
+      BuildContext context, String email, String password) async {
     try {
       logger.i("Iniciando sesión para: $email");
       final response = await http.post(
@@ -25,16 +31,38 @@ class AuthenticationService {
         logger.i("ID recibido del backend: ${data['id']}");
         logger.i("Token recibido: ${data['token']}");
 
-        await storage.deleteAll(); // Elimina todas las credenciales anteriores
-        await storage.write(key: 'userId', value: data['id']);
-        await storage.write(key: 'token', value: data['token']);
-        await storage.write(key: 'name', value: data['name'] ?? '');
+        // Eliminar datos anteriores
+        await Future.wait([
+          storage.delete(key: 'userId'),
+          storage.delete(key: 'token'),
+          storage.delete(key: 'name'),
+        ]);
 
-        logger.i("Credenciales guardadas correctamente");
+        // Guardar nuevos datos
+        await Future.wait([
+          storage.write(key: 'userId', value: data['id']),
+          storage.write(key: 'token', value: data['token']),
+          storage.write(key: 'name', value: data['name'] ?? ''),
+        ]);
 
+        // Verificar que el ID realmente se guardó
+        String? userIdStored = await storage.read(key: "userId");
+        logger.i("User ID almacenado después del login: $userIdStored");
+
+        // Resetear controladores con el nuevo usuario
+        Get.delete<ServiceTransactionController>();
+        Get.put(ServiceTransactionController());
+
+        Get.delete<ReviewController>();
+        Get.put(ReviewController());
+
+        Get.delete<AssignmentService>();
+        Get.put(AssignmentService());
+
+        // Navegar a la pantalla principal
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const Homepage()), //Aqui va  Homepage
+          MaterialPageRoute(builder: (context) => const Homepage()),
         );
       } else {
         logger.e("Error en inicio de sesión: ${response.body}");
