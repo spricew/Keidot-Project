@@ -5,7 +5,8 @@ import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/review_screen.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
-
+//estas en la pantalla de ubicaión de la solicitud de jardinería  y se muestra la información de la solicitud
+//se muestra la fecha asignada para realizar el trabajo, el tamaño estimado del jardín, el monto y la descripción
 class AssignmentDetailScreen extends StatelessWidget {
   final AssignmentDTO assignment;
 

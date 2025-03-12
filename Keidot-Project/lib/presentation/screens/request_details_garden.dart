@@ -126,61 +126,6 @@ class _RequestDetailsGardenState extends State<RequestDetailsGarden> {
                     ],
                   ),
                   const SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {
-                      Get.defaultDialog(
-                        titlePadding: const EdgeInsets.all(20),
-                        contentPadding: const EdgeInsets.all(20),
-                        title: 'Cancelar Solicitud',
-                        titleStyle: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        content: const Text(
-                          '¿Estás seguro de que deseas cancelar esta solicitud?',
-                          style: TextStyle(fontSize: 16),
-                        ),
-                        actions: [
-                          TextButton(
-                            onPressed: () {
-                              Get.back();
-                            },
-                            child: const Text(
-                              'No',
-                              style: TextStyle(
-                                color: Colors.red,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              // Lógica para cancelar la solicitud
-                              Navigator.pop(context);
-                            },
-                            child: const Text(
-                              'Sí',
-                              style: TextStyle(
-                                color: Colors.green,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                        ],
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                    ),
-                    child: const Text(
-                      'Cancelar Solicitud',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
-                    ),
-                  ),
                 ],
               ),
             ),
