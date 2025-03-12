@@ -124,7 +124,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
               child: Column(
                 children: [
                   Obx(() => RadioListTile<String>(
-                        value: "Pequeño",
+                        value: "Pequeño (1 m² - 50 m²)",
                         groupValue: controller.transaction.value.estimatedSize,
                         onChanged: (value) {
                           if (value != null) {
@@ -134,7 +134,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                         title: const Text('Pequeño (1 m² - 50 m²)'),
                       )),
                   Obx(() => RadioListTile<String>(
-                        value: "Mediano",
+                        value: "Mediano (51 m² - 150 m²)",
                         groupValue: controller.transaction.value.estimatedSize,
                         onChanged: (value) {
                           if (value != null) {
@@ -144,7 +144,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                         title: const Text('Mediano (51 m² - 150 m²)'),
                       )),
                   Obx(() => RadioListTile<String>(
-                        value: "Grande",
+                        value: "Grande (Más de 150 m²)",
                         groupValue: controller.transaction.value.estimatedSize,
                         onChanged: (value) {
                           if (value != null) {
