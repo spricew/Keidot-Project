@@ -1,12 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
-import 'package:test_app/Services/client_request/assignment_request/assignment_in_pending.dart';
+import 'package:test_app/Services/client_request/assignment_request/GET/assignment_in_pending.dart';
 import 'package:test_app/Services/client_request/review_request/review_controller.dart';
 import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/Services/worker_request/reviews_request/review_controllerGet.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/firebase_options.dart';
 import 'package:test_app/presentation/screens/config_screen.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
 import 'package:test_app/presentation/screens/review_screen.dart';
@@ -27,6 +29,9 @@ void main() async {
   Get.put(ServiceTransactionController());
   Get.lazyPut(() => ReviewController());
   Get.put(AssignmentService());
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform, // Configuración automática
+  );
   runApp(
     MultiProvider(
       providers: [

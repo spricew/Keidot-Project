@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
+import 'package:test_app/presentation/worker/assign_in%20_state_screen.dart';
 import 'package:test_app/presentation/worker/dashboard.dart';
 import 'package:test_app/presentation/worker/reviews_worker.dart';
 import 'package:test_app/presentation/worker/worker_assignments_screen.dart';
@@ -40,10 +41,16 @@ class _ViewHomeWorker extends StatelessWidget {
       'icon': Icons.event_available,
       'screen': const WorkerJobRequestsScreen(), // Pantalla para cambiar nombre
     },
+    
+    {
+      'title': 'Trabajos solicitados',
+      'icon': Icons.timelapse,
+      'screen': const AssignInStateRequest(), // Pantalla para cambiar contraseña
+    },
     {
       'title': 'Trabajos pendientes',
       'icon': Icons.timelapse,
-      'screen': WorkerAssignmentsScreen(), // Pantalla para cambiar contraseña
+      'screen': const WorkerAssignmentsScreen(), // Pantalla para cambiar contraseña
     },
     {
       'title': 'Mensajes',

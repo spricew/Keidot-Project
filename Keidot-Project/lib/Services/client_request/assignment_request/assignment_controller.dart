@@ -7,6 +7,7 @@ class AssignmentIdController extends GetxController {
 
   String? _selectedAssignmentId; // Propiedad privada
   String? _selectedpaymentIntentId; // Propiedad privada
+  String? _selecteWorkerId; // Propiedad privada
 
   AssignmentDTO?
       _selectedAssignment; // Ahora almacenamos el objeto completo //Quitar
@@ -29,6 +30,10 @@ class AssignmentIdController extends GetxController {
     _selectedpaymentIntentId = paymentIntentId;
     logger.i("paymentIntentId seleccionada: $paymentIntentId");
   }
+  void setSelectedIdWorker(String workerId) {
+    _selecteWorkerId = workerId;
+    logger.i("Asignación seleccionada: $workerId");
+  }
 
   //Quitar
   /// Getter para obtener la asignación seleccionada
@@ -39,4 +44,7 @@ class AssignmentIdController extends GetxController {
 
     /// Getter para obtener el paymentIntentId seleccionado
   String? get selectedpaymentIntentId => _selectedpaymentIntentId;
+
+  /// Getter para obtener el ID del trabajador seleccionado
+  String? get selectedWorkerId => _selecteWorkerId;
 }

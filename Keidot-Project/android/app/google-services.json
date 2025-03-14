@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "60014275602",
+    "project_id": "keidot-15545",
+    "storage_bucket": "keidot-15545.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60014275602:android:658460ef1c41c3a15abccb",
+        "android_client_info": {
+          "package_name": "com.example.test_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoFAEKOqXPZ8lpIxfVa_CQnRrmJdg8T2E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

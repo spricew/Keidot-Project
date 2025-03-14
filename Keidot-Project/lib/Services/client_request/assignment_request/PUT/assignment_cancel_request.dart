@@ -13,9 +13,9 @@ class UpdateIsActiveService {
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger();
 
-  Future<bool> updateIsActive(BuildContext context, bool isActive) async {
+  Future<bool> updateIsActive(BuildContext context,) async {
+    String canceled = "Cancelado";
     try {
-      print('Valor de is_active $isActive');
       final AssignmentIdController assignmentController =
           Get.find<AssignmentIdController>(); // Obtener el controlador
 
@@ -28,19 +28,19 @@ class UpdateIsActiveService {
         return false;
       }
 
-      final url = Uri.parse("$baseUrl/update-is-active/$assignmentId");
+      final url = Uri.parse("$baseUrl/canceled-assignment/$assignmentId");
       final response = await http.put(
         url,
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
         },
-        body: jsonEncode(isActive),
+        body: jsonEncode(canceled),
       );
 
       if (response.statusCode == 200) {
         logger.i(
-            "Estado 'is_active' actualizado correctamente para la asignación $assignmentId");
+            "Estado 'Cancelado' correctamente para la asignación $assignmentId");
 
         // Reemplaza la pantalla actual con la Homepage
         Navigator.pushReplacement(

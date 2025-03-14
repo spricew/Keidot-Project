@@ -12,7 +12,7 @@ class AssignmentAcceptedByWorker {
 
   AssignmentAcceptedByWorker({required this.baseUrl, required this.storage});
 
-  Future<bool> updateAssignmentStatus({required String newStatus}) async {
+  Future<bool> updateAssignmentStatus() async {
     try {
       // Leer workerId y token desde el storage
       final AssignmentIdController assignmentController =
@@ -27,7 +27,7 @@ class AssignmentAcceptedByWorker {
       }
 
       final Uri url = Uri.parse(
-          '$baseUrl/api/AssignmentByUser/update-status?assignmentId=$assignmentId&workerId=$workerId');
+          '$baseUrl/api/AssignmentByUser/ApplyingForAJob?assignmentId=$assignmentId&workerId=$workerId');
 
       /*String? userId = await storage.read(key: "userId"); // Id del usuario actual
 
@@ -37,7 +37,6 @@ class AssignmentAcceptedByWorker {
       }*/
 
       logger.i("Enviando solicitud a: $url");
-      logger.i("Payload: ${jsonEncode(newStatus)}");
 
       final response = await http.put(
         url,
@@ -45,7 +44,6 @@ class AssignmentAcceptedByWorker {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
         },
-        body: jsonEncode(newStatus), // Solo se envía el string
       );
 
       logger.i("Código de respuesta: ${response.statusCode}");

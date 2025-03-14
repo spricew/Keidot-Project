@@ -3,7 +3,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
-import 'package:test_app/Services/worker_request/accepted_job/accepted_job_status_request.dart';
+import 'package:test_app/Services/worker_request/request_for_make_job/request_for_job.dart';
 import 'package:test_app/Services/worker_request/assignments_publish/jobs_publish.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/worker/ubicacion_assignment_detail_screen.dart';
@@ -108,13 +108,17 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
 
                         // Actualizar el estado a "En progreso"
                         bool success = await assignmentService
-                            .updateAssignmentStatus(newStatus: "En progreso");
+                            .updateAssignmentStatus(); // Actualiza el estado de la asignación envindo el ID del trabajador para ntificar que ha sido aceptado
 
                         // Mostrar mensaje al usuario
                         if (success) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
-                                content: Text('Trabajo aceptado con éxito.')),
+                                content: Text('Solicititando trabajo.')), 
+                          );
+                             ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                                content: Text('El cliente puede tardar en aceptar su solictud.')), 
                           );
 
                           // **Eliminar el trabajo de la lista sin recargar toda la pantalla**
@@ -132,7 +136,7 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
                         backgroundColor: greenHigh,
                       ),
                       child: const Text(
-                        "Aceptar",
+                        "Solicitar",
                         style: TextStyle(color: defaultWhite),
                       ),
                     ),
