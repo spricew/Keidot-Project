@@ -27,7 +27,7 @@ class AssignmentAcceptedByWorker {
       }
 
       final Uri url = Uri.parse(
-          '$baseUrl/api/AssignmentByUser/ApplyingForAJob?assignmentId=$assignmentId&workerId=$workerId');
+          '$baseUrl/api/AssignmentByUser/Worker/ApplyingForAJob?assignmentId=$assignmentId&workerId=$workerId');
 
       /*String? userId = await storage.read(key: "userId"); // Id del usuario actual
 

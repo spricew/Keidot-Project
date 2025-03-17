@@ -3,7 +3,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
-import 'package:test_app/Services/worker_request/request_for_make_job/request_for_job.dart';
+import 'package:test_app/Services/worker_request/applying_fo_a_job/request_for_job.dart';
 import 'package:test_app/Services/worker_request/assignments_publish/jobs_publish.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/worker/ubicacion_assignment_detail_screen.dart';

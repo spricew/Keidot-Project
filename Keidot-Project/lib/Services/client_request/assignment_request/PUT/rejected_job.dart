@@ -5,16 +5,16 @@ import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
-import 'package:test_app/presentation/screens/requests_screen.dart';
-//Para marcar como "Cancelado" y actualizar el "is_active" de la asignación a "false"
-class AssignmentCancelRequest {
+import 'package:test_app/presentation/screens/home_page.dart';
+//Para marcar como "Cancelado" ya que el trabajador ha rechazado la solicitud
+class AssignmentRejected {
   final String baseUrl =
       "https://keidot.azurewebsites.net/api/ServiceAssigment";
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger();
 
   Future<bool> updateIsActive(BuildContext context,) async {
-    String canceled = "Cancelado";
+    String canceled = "En espera";
     try {
       final AssignmentIdController assignmentController =
           Get.find<AssignmentIdController>(); // Obtener el controlador
@@ -28,7 +28,7 @@ class AssignmentCancelRequest {
         return false;
       }
 
-      final url = Uri.parse("$baseUrl/canceled-assignment/$assignmentId");
+      final url = Uri.parse("$baseUrl/update-requests/$assignmentId");
       final response = await http.put(
         url,
         headers: {
@@ -45,7 +45,7 @@ class AssignmentCancelRequest {
         // Reemplaza la pantalla actual con la Homepage
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const RequestsScreen()),
+          MaterialPageRoute(builder: (context) => const Homepage()),
         );
 
         return true;

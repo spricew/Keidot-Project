@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
 import 'package:test_app/Services/client_request/assignment_request/GET/assignment_in_pending.dart';
+import 'package:test_app/Services/client_request/assignment_request/GET/assignment_in_wait.dart';
 import 'package:test_app/Services/client_request/review_request/review_controller.dart';
 import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/Services/firebase_messaging/device_token.dart';
@@ -61,8 +62,8 @@ class AuthenticationService {
         Get.delete<ReviewController>();
         Get.put(ReviewController());
 
-        Get.delete<AssignmentService>();
-        Get.put(AssignmentService());
+        Get.delete<AssignmentInWait>();
+        Get.put(AssignmentInWait());
 
         // Navegar a la pantalla principal
         Navigator.pushReplacement(

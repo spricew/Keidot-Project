@@ -4,7 +4,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
-import 'package:test_app/Services/worker_request/in_state_request/in_state_request.dart';
+import 'package:test_app/Services/worker_request/jobs_pending/in_state_request.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/worker/ubicacion_assignment_detail_screen.dart';
 

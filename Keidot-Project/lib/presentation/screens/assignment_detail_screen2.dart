@@ -111,8 +111,8 @@ class AssignmentDetailScreen2 extends StatelessWidget {
                             TextButton(
                               onPressed: () async {
                                 try {
-                                  final UpdateIsActiveService service =
-                                      UpdateIsActiveService();
+                                  final AssignmentCancelRequest service =
+                                      AssignmentCancelRequest();
                                   bool success = await service.updateIsActive(
                                       context,);
 

@@ -16,7 +16,7 @@ class AcceptedJobsService {
         logger.e("Token no encontrado en el almacenamiento seguro.");
         throw Exception("Token no encontrado.");
       }
-      final Uri url = Uri.parse('$baseUrl/api/AssignmentByUser/JobsAccepted/$workerId');
+      final Uri url = Uri.parse('$baseUrl/api/AssignmentByUser/Worker/JobsAccepted/$workerId');
       logger.i("Enviando solicitud GET a: $url");
 
       final response = await http.get(

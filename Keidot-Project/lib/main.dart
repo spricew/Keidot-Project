@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
+import 'package:test_app/Services/client_request/assignment_request/GET/assignment_in_wait.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/client_request/assignment_request/GET/assignment_in_pending.dart';
 import 'package:test_app/Services/client_request/review_request/review_controller.dart';
@@ -28,7 +29,7 @@ void main() async {
   Get.lazyPut(() => AssignmentIdController());
   Get.put(ServiceTransactionController());
   Get.lazyPut(() => ReviewController());
-  Get.put(AssignmentService());
+  Get.put(AssignmentInWait());
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform, // Configuración automática
   );

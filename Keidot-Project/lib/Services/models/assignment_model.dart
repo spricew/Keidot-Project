@@ -10,7 +10,7 @@ class AssignmentDTO {
   final String status;
   final DateTime createdAt; // Se agrega la fecha de creación
   final String paymentIntentId; // Se agrega el id del intento de pago
-  final String workerId; // Se agrega el id del trabajador
+  final String? workerId; // Se agrega el id del trabajador
 
   AssignmentDTO({
     required this.idAssignment,
