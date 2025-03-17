@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
@@ -33,6 +34,10 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform, // Configuración automática
   );
+  // Inicializa Firebase Messaging para primer y segundo plano
+  await setupFirebaseMessaging();
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+
   runApp(
     MultiProvider(
       providers: [
@@ -43,6 +48,33 @@ void main() async {
   );
 }
 
+//manejar los mensajes en primer plano
+// Configura Firebase Messaging
+Future<void> setupFirebaseMessaging() async {
+  FirebaseMessaging messaging = FirebaseMessaging.instance;
+
+  // Solicita permisos en iOS
+  NotificationSettings settings = await messaging.requestPermission(
+    alert: true,
+    badge: true,
+    sound: true,
+  );
+
+  // Obtén el token de FCM
+  String? token = await messaging.getToken();
+  print('FCM Token: $token');
+
+  // Maneja mensajes en primer plano
+  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+    print('Mensaje recibido en primer plano: ${message.notification?.title}');
+    // Aquí puedes mostrar una notificación local
+  });
+}
+
+//manejar los mensajes en segundo plano
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  print('Mensaje recibido en segundo plano: ${message.notification?.title}');
+}
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

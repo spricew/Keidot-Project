@@ -32,7 +32,7 @@ class AssignmentIdController extends GetxController {
   }
   void setSelectedIdWorker(String workerId) {
     _selecteWorkerId = workerId;
-    logger.i("Asignación seleccionada: $workerId");
+    logger.i("Worker seleccionado: $workerId");
   }
 
   //Quitar

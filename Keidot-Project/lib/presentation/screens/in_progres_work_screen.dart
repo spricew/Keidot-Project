@@ -9,14 +9,14 @@ import 'package:test_app/presentation/screens/assignment_detail_screen2.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
-class PendingWorkScreen extends StatefulWidget {
-  const PendingWorkScreen({super.key});
+class InProgresWorkScreen extends StatefulWidget {
+  const InProgresWorkScreen({super.key});
 
   @override
   _PendingWorkScreenState createState() => _PendingWorkScreenState();
 }
 
-class _PendingWorkScreenState extends State<PendingWorkScreen> {
+class _PendingWorkScreenState extends State<InProgresWorkScreen> {
   late Future<List<AssignmentDTO>> _assignmentsFuture;
   final AssignmentInProgress _service = AssignmentInProgress();
   final AssignmentIdController _assignmentIdController =

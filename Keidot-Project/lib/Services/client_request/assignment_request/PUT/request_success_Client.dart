@@ -15,7 +15,7 @@ class AssignmentSuccess {
   final Logger logger = Logger();
 
   Future<bool> updateIsActive(BuildContext context,) async {
-    String canceled = "En progreso";
+    String accept = "En progreso";
     try {
       final AssignmentIdController assignmentController =
           Get.find<AssignmentIdController>(); // Obtener el controlador
@@ -36,12 +36,12 @@ class AssignmentSuccess {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
         },
-        body: jsonEncode(canceled),
+        body: jsonEncode(accept),
       );
 
       if (response.statusCode == 200) {
         logger.i(
-            "Estado 'Cancelado' correctamente para la asignación $assignmentId");
+            "Estado 'Aceptado' correctamente para la asignación $assignmentId");
 
         // Reemplaza la pantalla actual con la Homepage
         Navigator.pushReplacement(

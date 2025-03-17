@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_app/Services/client_request/services_request/service_controller.dart';
 import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
 import 'request_details_garden.dart';
@@ -26,19 +27,11 @@ class DetallesServicioPage extends StatefulWidget {
 
 class _DetallesServicioPageState extends State<DetallesServicioPage> {
   final ServiceTransactionController controller = Get.find();
-  final RxString selectedJob = RxString(""); // Solo un servicio seleccionado
-
-  final List<String> allJobs = [
-    'Corte de césped',
-    'Control de plagas y enfermedades',
-    'Poda de árboles y arbustos',
-    'Limpieza de jardín'
-  ];
+  final ServiceController serviceController = Get.put(ServiceController());
 
   @override
   Widget build(BuildContext context) {
     final sizeW = MediaQuery.of(context).size.width;
-    final sizeH = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -84,38 +77,63 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
               ),
             ),
             const SizedBox(height: 46),
+            Obx(() {
+              if (serviceController.isLoading.value) {
+                return const Center(
+                  child:
+                      CircularProgressIndicator(), // Muestra un indicador de carga mientras se obtienen los servicios
+                );
+              }
 
-            SizedBox(
-              width: sizeW, // Ancho deseado
-              child: Obx(() => DropdownButtonFormField<String>(
-                    value:
-                        selectedJob.value.isNotEmpty ? selectedJob.value : null,
-                    decoration: InputDecoration(
-                      labelText: 'Selecciona un servicio',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 18, vertical: 16),
+              // Verifica si la lista de servicios está vacía
+              if (serviceController.services.isEmpty) {
+                return const Center(
+                  child: Text(
+                      "No hay servicios disponibles"), // Muestra un mensaje si no hay servicios
+                );
+              }
+
+              return SizedBox(
+                width: sizeW,
+                child: DropdownButtonFormField<String>(
+                  value: controller.transaction.value.serviceId?.isEmpty ?? true
+                      ? null // Si el serviceId es nulo o vacío, usa null como valor inicial
+                      : controller.transaction.value
+                          .serviceId, // Usa el ID desde la transacción
+                  decoration: InputDecoration(
+                    labelText: 'Selecciona un servicio',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8),
                     ),
-                    items: allJobs.map((job) {
-                      return DropdownMenuItem(
-                        value: job,
-                        child: Text(job),
-                      );
-                    }).toList(),
-                    onChanged: (value) {
-                      if (value != null) {
-                        selectedJob.value = value;
-                      }
-                    },
-                    hint: const Text("Corte de césped"),
-                  )),
-            ),
-
+                    contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 18, vertical: 16),
+                  ),
+                  items: serviceController.services.map((service) {
+                    return DropdownMenuItem(
+                      value: service
+                          .serviceId, // Usa el serviceId como valor del DropdownMenuItem
+                      child: Text(service
+                          .title), // Muestra el título del servicio en el dropdown
+                    );
+                  }).toList(),
+                  onChanged: (value) {
+                    if (value != null) {
+                      final selectedService = serviceController.services
+                          .firstWhere((service) => service.serviceId == value);
+                      final serviceTransactionController =
+                          Get.find<ServiceTransactionController>();
+                      serviceTransactionController.setService(
+                          value,
+                          selectedService
+                              .title); // Guarda el serviceId y el nombre del servicio
+                    }
+                  },
+                  hint: const Text(
+                      "Seleccione un servicio"), // Texto de sugerencia
+                ),
+              );
+            }),
             const SizedBox(height: 20),
-
-            // Sección: Tamaño del jardín
             const Text('Tamaño del jardín',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
             const SizedBox(height: 8),

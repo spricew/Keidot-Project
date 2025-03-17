@@ -6,15 +6,16 @@ import 'package:logger/logger.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
-//Para marcar como "Cancelado" ya que el trabajador ha rechazado la solicitud
-class AssignmentRejected {
+
+//Para marcar como "En progreso" ya que el trabajador ha aceptado la solicitud
+class AssignmentFinished {
   final String baseUrl =
       "https://keidot.azurewebsites.net/api/ServiceAssigment";
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger();
 
   Future<bool> updateIsActive(BuildContext context,) async {
-    String canceled = "En espera";
+    String finished = "Completado";
     try {
       final AssignmentIdController assignmentController =
           Get.find<AssignmentIdController>(); // Obtener el controlador
@@ -28,19 +29,19 @@ class AssignmentRejected {
         return false;
       }
 
-      final url = Uri.parse("$baseUrl/update-requests/$assignmentId");
+      final url = Uri.parse("$baseUrl/finished-assignment/$assignmentId");
       final response = await http.put(
         url,
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
         },
-        body: jsonEncode(canceled),
+        body: jsonEncode(finished),
       );
 
       if (response.statusCode == 200) {
         logger.i(
-            "Estado 'Rechazado' correctamente para la asignación $assignmentId");
+            "Estado 'Finalizado' correctamente para la asignación $assignmentId");
 
         // Reemplaza la pantalla actual con la Homepage
         Navigator.pushReplacement(
