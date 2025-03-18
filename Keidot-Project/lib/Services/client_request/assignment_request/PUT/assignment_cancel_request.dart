@@ -9,7 +9,7 @@ import 'package:test_app/presentation/screens/requests_screen.dart';
 //Para marcar como "Cancelado" y actualizar el "is_active" de la asignación a "false"
 class AssignmentCancelRequest {
   final String baseUrl =
-      "https://keidot.azurewebsites.net/api/ServiceAssigment";
+      "https://keidotapi.azurewebsites.net/api/ServiceAssigment";
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger();
 

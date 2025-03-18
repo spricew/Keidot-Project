@@ -9,7 +9,7 @@ import 'package:test_app/presentation/screens/home_page.dart';
 //Para marcar como "Cancelado" ya que el trabajador ha rechazado la solicitud
 class AssignmentRejected {
   final String baseUrl =
-      "https://keidot.azurewebsites.net/api/ServiceAssigment";
+      "https://keidotapi.azurewebsites.net/api/ServiceAssigment";
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger();
 

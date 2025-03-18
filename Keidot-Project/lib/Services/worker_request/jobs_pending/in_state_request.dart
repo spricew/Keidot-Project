@@ -4,7 +4,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
 
 class AssignInStateService {
-  String baseUrl = 'https://keidot.azurewebsites.net';
+  String baseUrl = 'https://keidotapi.azurewebsites.net';
   final FlutterSecureStorage storage;
   final Logger logger = Logger();
 

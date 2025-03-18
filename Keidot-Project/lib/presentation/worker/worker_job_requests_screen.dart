@@ -102,7 +102,7 @@ class _WorkerJobRequestsScreenState extends State<WorkerJobRequestsScreen> {
 
                         // Crear instancia de AssignmentService
                         final assignmentService = AssignmentAcceptedByWorker(
-                          baseUrl: "https://keidot.azurewebsites.net",
+                          baseUrl: "https://keidotapi.azurewebsites.net",
                           storage: const FlutterSecureStorage(),
                         );
 

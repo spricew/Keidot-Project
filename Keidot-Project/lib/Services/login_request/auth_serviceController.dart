@@ -15,7 +15,7 @@ import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
 
 class AuthenticationService {
-  final String baseUrl = 'https://keidot.azurewebsites.net/api/Login/login';
+  final String baseUrl = 'https://keidotapi.azurewebsites.net/api/Login/login';
   static const FlutterSecureStorage storage = FlutterSecureStorage();
   final Logger logger = Logger();
 
@@ -39,6 +39,7 @@ class AuthenticationService {
           storage.delete(key: 'userId'),
           storage.delete(key: 'token'),
           storage.delete(key: 'name'),
+          storage.delete(key: 'is_worker'),
         ]);
 
         // Guardar nuevos datos
@@ -46,6 +47,7 @@ class AuthenticationService {
           storage.write(key: 'userId', value: data['id']),
           storage.write(key: 'token', value: data['token']),
           storage.write(key: 'name', value: data['name'] ?? ''),
+          storage.write(key: 'is_worker', value: data['is_worker'].toString()), // Convertir a String
         ]);
 
         // Verificar que el ID realmente se guardó
@@ -107,5 +109,9 @@ class AuthenticationService {
 
   Future<String?> getUserName() async {
     return await storage.read(key: 'name');
+  }
+
+  Future<String?> getIsWorker() async {
+    return await storage.read(key: 'is_worker ');
   }
 }

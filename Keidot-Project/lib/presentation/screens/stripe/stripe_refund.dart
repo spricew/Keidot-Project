@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 
 class PaymentRefundService {
-  final String baseUrl = "https://keidot.azurewebsites.net/api/payments/refund";
+  final String baseUrl = "https://keidotapi.azurewebsites.net/api/payments/refund";
   final Logger _logger = Logger();
   final FlutterSecureStorage storage = const FlutterSecureStorage();
 

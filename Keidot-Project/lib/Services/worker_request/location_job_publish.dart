@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:test_app/presentation/worker/map_screen.dart';
 
 class LocationService {
-  static const String baseUrl = "https://keidot.azurewebsites.net/api/Locations/assignmentLocation"; 
+  static const String baseUrl = "https://keidotapi.azurewebsites.net/api/Locations/assignmentLocation"; 
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger(); 
 

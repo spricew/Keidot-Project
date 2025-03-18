@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:logger/logger.dart';
 
 class ReviewWorkerService {
-  final String baseUrl = 'https://keidot.azurewebsites.net/api/Reviews/worker';
+  final String baseUrl = 'https://keidotapi.azurewebsites.net/api/Reviews/worker';
   final Logger logger = Logger();
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   

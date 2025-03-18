@@ -5,7 +5,7 @@ import 'package:test_app/Services/models/convert_worker_model.dart';
 import 'package:logger/logger.dart';
 
 class UserProfileController {
-  final String baseUrl = "https://keidot.azurewebsites.net/api/UpdateProfiles";
+  final String baseUrl = "https://keidotapi.azurewebsites.net/api/UpdateProfiles";
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger(); // Inicializar logger
 

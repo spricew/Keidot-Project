@@ -4,7 +4,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
 
 class UpdateNameProfile {
-  final String baseUrl = 'https://keidot.azurewebsites.net/api/UpdateProfiles';
+  final String baseUrl = 'https://keidotapi.azurewebsites.net/api/UpdateProfiles';
   static const FlutterSecureStorage storage = FlutterSecureStorage();
   final Logger logger = Logger();
 

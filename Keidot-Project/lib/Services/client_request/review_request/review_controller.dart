@@ -29,7 +29,7 @@ class ReviewController extends GetxController {
 
   /// Método para enviar la reseña a la API mediante POST
   Future<bool> sendReview() async {
-    const String apiUrl = 'https://keidot.azurewebsites.net/api/Reviews';
+    const String apiUrl = 'https://keidotapi.azurewebsites.net/api/Reviews';
     final String? token = await storage.read(key: 'token');
 
     if (token == null) {
