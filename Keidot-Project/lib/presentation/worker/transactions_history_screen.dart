@@ -20,17 +20,17 @@ class TransactionsHistoryScreen extends StatelessWidget {
       Transaction(
           amount: 200.0,
           description: "Compra de insumos",
-          date: DateTime.now().subtract(Duration(days: 1)),
+          date: DateTime.now().subtract(const Duration(days: 1)),
           isIncome: false),
       Transaction(
           amount: 1500.0,
           description: "Pago de cliente",
-          date: DateTime.now().subtract(Duration(days: 2)),
+          date: DateTime.now().subtract(const Duration(days: 2)),
           isIncome: true),
       Transaction(
           amount: 100.0,
           description: "Mantenimiento",
-          date: DateTime.now().subtract(Duration(days: 3)),
+          date: DateTime.now().subtract(const Duration(days: 3)),
           isIncome: false),
     ];
 

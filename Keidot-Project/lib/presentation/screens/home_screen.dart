@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: InkWell(
                 onTap: () async {
                   // Obtener el valor de is_worker desde el almacenamiento seguro
-                  final FlutterSecureStorage storage = FlutterSecureStorage();
+                  const FlutterSecureStorage storage = FlutterSecureStorage();
                   String? isWorkerString = await storage.read(key: 'is_worker');
 
                   // Convertir el valor a bool

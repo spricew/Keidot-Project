@@ -6,7 +6,7 @@ import 'package:logger/logger.dart';
 
 class DeviceTokenService {
   static const String apiUrl = "https://keidotapi.azurewebsites.net/api/DeviceToken/update"; // Cambia por tu URL
-  static final FlutterSecureStorage storage = FlutterSecureStorage();
+  static const FlutterSecureStorage storage = FlutterSecureStorage();
   static final Logger logger = Logger(); // Instancia de Logger
 
   static Future<String?> getDeviceToken() async {

@@ -5,7 +5,6 @@ import 'package:test_app/Services/client_request/assignment_request/GET/assignme
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/screens/assignment_detail_screen2.dart';
 import 'package:test_app/presentation/screens/detail_asign_profile.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/widgets/custom_appbar.dart';

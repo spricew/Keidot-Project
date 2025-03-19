@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 //probar si sirve los envios de mensaje/////////////////Tambien crear apratado donde en worker vera las solicitudes y las podra aceptar o no
 
 class HomeScreenExample extends StatefulWidget {
+  const HomeScreenExample({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -18,13 +20,13 @@ class _HomeScreenState extends State<HomeScreenExample> {
   }
 
   void _configureFirebaseMessaging() {
-    final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
+    final FirebaseMessaging firebaseMessaging = FirebaseMessaging.instance;
 
     // Solicitar permisos para notificaciones
-    _firebaseMessaging.requestPermission();
+    firebaseMessaging.requestPermission();
 
     // Obtener el token del dispositivo
-    _firebaseMessaging.getToken().then((token) {
+    firebaseMessaging.getToken().then((token) {
       setState(() {
         _token = token;
       });
@@ -43,7 +45,7 @@ class _HomeScreenState extends State<HomeScreenExample> {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text("OK"),
+              child: const Text("OK"),
             ),
           ],
         ),
@@ -63,7 +65,7 @@ class _HomeScreenState extends State<HomeScreenExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Notificaciones Push"),
+        title: const Text("Notificaciones Push"),
       ),
       body: Center(
         child: Text(_token ?? "Cargando token..."),

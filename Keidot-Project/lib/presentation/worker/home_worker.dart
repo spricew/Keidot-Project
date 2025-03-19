@@ -6,7 +6,6 @@ import 'package:test_app/presentation/worker/reviews_worker.dart';
 import 'package:test_app/presentation/worker/worker_assignments_screen.dart';
 import 'package:test_app/presentation/worker/worker_job_requests_screen.dart';
 import 'package:test_app/presentation/worker/worker_messages.dart';
-import 'package:test_app/presentation/worker/worker_profile_screen.dart';
 import 'package:test_app/presentation/worker/worker_support.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 

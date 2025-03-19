@@ -85,7 +85,7 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
       biography: biography,
     );
 
-    bool success = await _controller.updateUserProfile(userProfile);
+    bool success = await _controller.updateUserProfile(userProfile, context);
     if (success) {
       Get.snackbar(
         'Éxito',

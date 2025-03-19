@@ -18,7 +18,7 @@ class WorkerPopupMenu extends StatelessWidget {
       onSelected: (int value) {
         switch (value) {
           case 1:
-            _navigateToScreen( WorkerProfileScreen());
+            _navigateToScreen( const WorkerProfileScreen());
             break;
           case 2:
             _navigateToScreen(const WorkerSettingsScreen());
@@ -27,7 +27,7 @@ class WorkerPopupMenu extends StatelessWidget {
             _navigateToScreen(const WorkerNotificationsScreen());
             break;
           case 4:
-            _navigateToScreen(WorkerAssignmentsScreen());
+            _navigateToScreen(const WorkerAssignmentsScreen());
             break;
           default:
             break;

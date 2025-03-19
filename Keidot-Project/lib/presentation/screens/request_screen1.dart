@@ -96,7 +96,7 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
               return SizedBox(
                 width: sizeW,
                 child: DropdownButtonFormField<String>(
-                  value: controller.transaction.value.serviceId?.isEmpty ?? true
+                  value: controller.transaction.value.serviceId.isEmpty ?? true
                       ? null // Si el serviceId es nulo o vacío, usa null como valor inicial
                       : controller.transaction.value
                           .serviceId, // Usa el ID desde la transacción

@@ -7,7 +7,7 @@ import 'package:test_app/Services/models/assignment_model.dart';
 class JobsPublishService {
   final Logger _logger = Logger();
   final String baseUrl = "https://keidotapi.azurewebsites.net/api/AssignmentByUser/Worker";
-  FlutterSecureStorage storage = FlutterSecureStorage(); // Almacenamiento seguro
+  FlutterSecureStorage storage = const FlutterSecureStorage(); // Almacenamiento seguro
 
   Future<List<AssignmentDTO>> fetchAllJobs() async {
     final url = Uri.parse("$baseUrl/WorkerServices");
