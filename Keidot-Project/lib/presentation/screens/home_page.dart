@@ -25,7 +25,7 @@ class _HomepageState extends State<Homepage> {
       const HomeScreen(),
       SearchScreen(onTabSelected: _onItemTapped), // Ahora sí podemos usarla
       const RequestScreen1(),
-      const NotificationsScreen(),
+      const PendingWorkScreen(),
       const MessagesScreen(),
     ];
   }

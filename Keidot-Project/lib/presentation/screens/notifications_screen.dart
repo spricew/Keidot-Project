@@ -1,96 +1,142 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart'; // Importa GetX
+import 'package:get/get.dart';
+import 'package:logger/logger.dart';
+import 'package:test_app/Services/client_request/assignment_request/GET/assignment_in_pending.dart';
+import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
+import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/detail_asign_profile.dart';
+import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
-import 'home_screen.dart'; // Importa HomeScreen
 
-class NotificationsScreen extends StatefulWidget {
-  const NotificationsScreen({super.key});
+class PendingWorkScreen extends StatefulWidget {
+  const PendingWorkScreen({super.key});
 
   @override
-  _NotificationsScreenState createState() => _NotificationsScreenState();
+  _PendingWorkScreenState createState() => _PendingWorkScreenState();
 }
 
-class _NotificationsScreenState extends State<NotificationsScreen> {
-  // Lista de notificaciones con estado mutable
-  List<Map<String, dynamic>> notifications = [
-    {
-      'date': '30 de Jul. 2024',
-      'message': 'Kevin Montero ha solicitado el trabajo de "Jardinerita" que has pedido con anterioridad.',
-      'isRead': false, // No leído
-    },
-    {
-      'date': '28 de Jul. 2024',
-      'message': 'Rommel Canepa ha solicitado el trabajo de "Jardinerita" que has pedido con anterioridad.',
-      'isRead': true, // Leído
-    },
-    {
-      'date': '22 de Jul. 2024',
-      'message': 'Rommel Canepa ha solicitado el trabajo de "Jardinerita" que has pedido con anterioridad.',
-      'isRead': false, // No leído
-    },
-    {
-      'date': '18 de Jul. 2024',
-      'message': 'Rommel Canepa ha solicitado el trabajo de "Jardinerita" que has pedido con anterioridad.',
-      'isRead': true, // Leído
-    },
-    {
-      'date': '15 de Jul. 2024',
-      'message': 'Rommel Canepa ha solicitado el trabajo de "Jardinerita" que has pedido con anterioridad.',
-      'isRead': false, // No leído
-    },
-  ];
+class _PendingWorkScreenState extends State<PendingWorkScreen> {
+  late Future<List<AssignmentDTO>> _assignmentsFuture;
+  final AssignmentInPending _service = AssignmentInPending();
+  final AssignmentIdController _assignmentIdController =
+      Get.find<AssignmentIdController>();
+  final Logger _logger = Logger();
 
-  // Función para marcar una notificación como leída
-  void markAsRead(int index) {
-    setState(() {
-      notifications[index]['isRead'] = true;
-    });
+  @override
+  void initState() {
+    super.initState();
+    _assignmentsFuture = _service.getAssignments();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: 'Notificaciones',
-        titleFontSize: 28,
-        toolbarHeight: 85,
-        backgroundColor: Colors.white,
-        titleColor: darkGreen,
-        iconColor: darkGreen,
-        onBackPressed: () {
-          // Redirigir a home_screen.dart usando GetX
-          Get.offAll(() => const HomeScreen());
-        },
+        title: 'Trabajos por aceptar',
+        backgroundColor: defaultWhite,
+        titleFontSize: 25,
+        onBackPressed: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const Homepage())),
       ),
-      body: ListView.builder(
-        itemCount: notifications.length,
-        itemBuilder: (context, index) {
-          final notification = notifications[index];
-          return ListTile(
-            leading: Icon(
-              Icons.circle,
-              color: notification['isRead'] ? Colors.grey : Colors.green, // Icono verde si no está leído, gris si está leído
-              size: 12,
-            ),
-            title: Text(
-              notification['message'],
-              style: TextStyle(
-                fontWeight: notification['isRead'] ? FontWeight.normal : FontWeight.bold, // Texto en negrita si no está leído
-                color: notification['isRead'] ? Colors.grey : Colors.black, // Texto gris si está leído, negro si no
-              ),
-            ),
-            subtitle: Text(
-              notification['date'],
-              style: TextStyle(
-                color: notification['isRead'] ? Colors.grey : Colors.black54, // Fecha gris si está leído
-              ),
-            ),
-            onTap: () {
-              markAsRead(index); // Marcar como leído al tocar
-            },
-          );
+      body: RefreshIndicator(
+        onRefresh: () async {
+          setState(() {
+            _assignmentsFuture = _service.getAssignments();
+          });
+          await _assignmentsFuture;
         },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+          child: FutureBuilder<List<AssignmentDTO>>(
+            future: _assignmentsFuture,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(child: CircularProgressIndicator());
+              } else if (snapshot.hasError) {
+                return Center(child: Text('Error: ${snapshot.error}'));
+              } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                return const Center(
+                    child: Text('No hay solicitudes disponibles.'));
+              }
+              return ListView.builder(
+                itemCount: snapshot.data!.length,
+                itemBuilder: (context, index) {
+                  final assignment = snapshot.data![index];
+                  return _buildRequestCard(assignment, context);
+                },
+              );
+            },
+          ),
+        ),
       ),
     );
-  }}
+  }
+
+  Widget _buildRequestCard(AssignmentDTO assignment, BuildContext context) {
+    final colors = Theme.of(context).colorScheme;
+    return GestureDetector(
+      onTap: () {
+        _assignmentIdController
+            .setSelectedIdAssignment(assignment.idAssignment);
+            
+        _assignmentIdController
+            .setSelectedpaymentIntentId(assignment.paymentIntentId);
+
+        _assignmentIdController.setSelectedIdWorker(assignment.workerId);
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) =>
+                AssignmentProfileDetailScreen(assignment: assignment),
+          ),
+        );
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 12),
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.black26, width: 1),
+          color: colors.onPrimary,
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Row(
+          children: [
+            Icon(Icons.work, size: 30, color: colors.primary),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    assignment.nameOfService,
+                    style: TextStyle(
+                        color: colors.primary,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'Fecha: ${assignment.formattedDateSelected}',
+                    style: const TextStyle(color: Colors.grey, fontSize: 14),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'Hora: ${assignment.formattedTimeSelected}',
+                    style: const TextStyle(color: Colors.grey, fontSize: 14),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    'MXN \$${assignment.amount.toStringAsFixed(2)}',
+                    style: TextStyle(color: colors.primary, fontSize: 14),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

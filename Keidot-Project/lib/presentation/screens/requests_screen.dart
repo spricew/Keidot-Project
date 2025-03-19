@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
+import 'package:test_app/Services/client_request/assignment_request/GET/assignment_in_wait.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
-import 'package:test_app/Services/client_request/assignment_request/assignment_in_pending.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/assignment_detail_screen.dart';
@@ -18,7 +18,7 @@ class RequestsScreen extends StatefulWidget {
 
 class _RequestsScreenState extends State<RequestsScreen> {
   late Future<List<AssignmentDTO>> _assignmentsFuture;
-  final AssignmentService _service = AssignmentService();
+  final AssignmentInWait _service = AssignmentInWait();
   final AssignmentIdController _assignmentIdController =
       Get.find<AssignmentIdController>();
   final Logger _logger = Logger();
@@ -33,7 +33,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: 'Solicitudes',
+        title: 'Trabajos publicados',
         backgroundColor: defaultWhite,
         titleFontSize: 25,
         onBackPressed: () => Navigator.push(

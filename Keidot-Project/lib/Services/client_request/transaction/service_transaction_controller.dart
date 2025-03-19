@@ -139,7 +139,7 @@ class ServiceTransactionController extends GetxController {
       logger.i("Enviando solicitud: ${jsonEncode(requestData)}");
 
       final response = await http.post(
-        Uri.parse('https://keidot.azurewebsites.net/api/ServiceRequest/create'),
+        Uri.parse('https://keidotapi.azurewebsites.net/api/ServiceRequest/create'),
         headers: {
           "Content-Type": "application/json",
           "Authorization": "Bearer $token",

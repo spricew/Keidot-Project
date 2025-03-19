@@ -5,7 +5,7 @@ import 'package:logger/logger.dart';
 import 'package:test_app/Services/models/garden_feature_model.dart';
 
 class GardenFeatureService {
-  final String baseUrl = "https://keidot.azurewebsites.net/api"; // Base URL
+  final String baseUrl = "https://keidotapi.azurewebsites.net/api"; // Base URL
   final Logger logger = Logger(); // Inicializar Logger
   final FlutterSecureStorage storage = const FlutterSecureStorage(); // Almacenamiento seguro
 

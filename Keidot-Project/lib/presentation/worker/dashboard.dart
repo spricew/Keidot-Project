@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/worker/transactions_history_screen.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
 class Dashboard extends StatelessWidget {
@@ -24,12 +24,54 @@ class _DashboardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final sizeW = MediaQuery.of(context).size.width;
+    final sizeH = MediaQuery.of(context).size.height;
+    final colors = Theme.of(context).colorScheme;
     return SafeArea(
       child: Center(
         child: Wrap(
+          alignment: WrapAlignment.center,
           spacing: 8.0, // Espaciado horizontal entre elementos
           runSpacing: 8.0, // Espaciado vertical entre líneas
           children: [
+            GestureDetector(
+              onTap: () {
+                // Navegar a la pantalla correspondiente
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const TransactionsHistoryScreen()),
+                );
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: colors.outline, width: 0.3),
+                  color: colors.onPrimary,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                height: sizeH * 0.08,
+                width: sizeW * 0.915,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        const SizedBox(width: 10),
+                        Text(
+                          'Historial de transacciones',
+                          style: TextStyle(
+                            color: colors.onPrimaryContainer,
+                            fontSize: sizeH * 0.019,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Icon(Icons.arrow_forward_ios,
+                        size: 20, color: Colors.grey),
+                  ],
+                ),
+              ),
+            ),
             _CardBuilder(
               title: 'Reseñas',
               score: 4.0,

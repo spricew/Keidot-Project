@@ -1,5 +1,7 @@
 # Ignorar el archivo .env
 .env
+google-services.json
+
 # Miscellaneous
 *.class
 *.log
@@ -47,3 +49,4 @@ app.*.map.json
 /macos/
 /web/
 /windows/
+/lib/presentation/sreens/stripe/

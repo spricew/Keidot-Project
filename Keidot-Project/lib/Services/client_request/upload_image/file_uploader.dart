@@ -5,7 +5,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class FileUploader {
   static const String apiUrl =
-      'https://keidot.azurewebsites.net/api/ImageService/Upload'; // URL de la API
+      'https://keidotapi.azurewebsites.net/api/ImageService/Upload'; // URL de la API
 
   static final Logger _logger = Logger(); // Instancia de Logger
   static const FlutterSecureStorage storage = FlutterSecureStorage(); // Agregado

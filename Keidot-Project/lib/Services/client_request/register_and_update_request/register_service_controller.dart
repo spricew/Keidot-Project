@@ -6,7 +6,7 @@ import 'dart:convert';
 import '../../models/user_model.dart';
 
 class RegisterService {
-  final String baseUrl = 'https://keidot.azurewebsites.net/api/RegisterUsers';
+  final String baseUrl = 'https://keidotapi.azurewebsites.net/api/RegisterUsers';
   final Logger logger = Logger();
 
   Future<Map<String, dynamic>?> register(

@@ -9,7 +9,7 @@ import 'package:test_app/Services/models/review_model.dart';
 
 class ReviewController extends GetxController {
   final Logger _logger = Logger();
-  final FlutterSecureStorage storage = FlutterSecureStorage();
+  FlutterSecureStorage storage = FlutterSecureStorage();
 
   var rating = 5.obs; // Valor por defecto
   var urlImagen = 'ambientedeprueba.com'.obs; // Valor por defecto vacío
@@ -29,7 +29,7 @@ class ReviewController extends GetxController {
 
   /// Método para enviar la reseña a la API mediante POST
   Future<bool> sendReview() async {
-    const String apiUrl = 'https://keidot.azurewebsites.net/api/Reviews';
+    const String apiUrl = 'https://keidotapi.azurewebsites.net/api/Reviews';
     final String? token = await storage.read(key: 'token');
 
     if (token == null) {

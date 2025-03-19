@@ -3,20 +3,20 @@ import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
 
-class AcceptedJobsService {
+class AssignInStateService {
   String baseUrl = 'https://keidotapi.azurewebsites.net';
   final FlutterSecureStorage storage;
   final Logger logger = Logger();
 
-  AcceptedJobsService({required this.storage});
-  Future<List<dynamic>> fetchAcceptedJobs(String workerId) async {
+  AssignInStateService({required this.storage});
+  Future<List<dynamic>> fetchInStateService(String workerId) async {
     try {
       String? token = await storage.read(key: "token");
       if (token == null) {
         logger.e("Token no encontrado en el almacenamiento seguro.");
         throw Exception("Token no encontrado.");
       }
-      final Uri url = Uri.parse('$baseUrl/api/AssignmentByUser/Worker/JobsAccepted/$workerId');
+      final Uri url = Uri.parse('$baseUrl/api/AssignmentByUser/Worker/JobsInStatePendingWorker/$workerId');
       logger.i("Enviando solicitud GET a: $url");
 
       final response = await http.get(

@@ -1,5 +1,8 @@
 plugins {
     id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
     id "kotlin-android"
     // El plugin de Flutter debe aplicarse después de los de Android y Kotlin.
     id "dev.flutter.flutter-gradle-plugin"
@@ -40,6 +43,17 @@ android {
 flutter {
     source = "../.."
 }
+// START: FlutterFire Configuration
+dependencies {
+    // Import the BoM for the Firebase platform
+    implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
+
+    // Add the dependencies for the Firebase Cloud Messaging and Analytics libraries
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation("com.google.firebase:firebase-messaging")
+    implementation("com.google.firebase:firebase-analytics")
+}
+//Finishing FlutterFire Configuration
 
 //Para cuando ya vaya a produccion
 /*signingConfigs {
@@ -59,3 +73,5 @@ buildTypes {
     }
 }
 */
+
+//apply plugin: 'com.google.gms.google-services' // Debe ser la última línea

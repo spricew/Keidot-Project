@@ -5,17 +5,17 @@ import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
-import 'package:test_app/presentation/screens/requests_screen.dart';
-
-class UpdateIsActiveService {
+import 'package:test_app/presentation/screens/home_page.dart';
+//Para marcar como "Cancelado" ya que el trabajador ha rechazado la solicitud
+class AssignmentRejected {
   final String baseUrl =
-      "https://keidot.azurewebsites.net/api/ServiceAssigment";
+      "https://keidotapi.azurewebsites.net/api/ServiceAssigment";
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger();
 
-  Future<bool> updateIsActive(BuildContext context, bool isActive) async {
+  Future<bool> updateIsActive(BuildContext context,) async {
+    String canceled = "En espera";
     try {
-      print('Valor de is_active $isActive');
       final AssignmentIdController assignmentController =
           Get.find<AssignmentIdController>(); // Obtener el controlador
 
@@ -28,24 +28,24 @@ class UpdateIsActiveService {
         return false;
       }
 
-      final url = Uri.parse("$baseUrl/update-is-active/$assignmentId");
+      final url = Uri.parse("$baseUrl/update-requests/$assignmentId");
       final response = await http.put(
         url,
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
         },
-        body: jsonEncode(isActive),
+        body: jsonEncode(canceled),
       );
 
       if (response.statusCode == 200) {
         logger.i(
-            "Estado 'is_active' actualizado correctamente para la asignación $assignmentId");
+            "Estado 'Rechazado' correctamente para la asignación $assignmentId");
 
         // Reemplaza la pantalla actual con la Homepage
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const RequestsScreen()),
+          MaterialPageRoute(builder: (context) => const Homepage()),
         );
 
         return true;

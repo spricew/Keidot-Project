@@ -4,7 +4,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
 
 class UpdatePassword {
-  final String baseUrl = "https://keidot.azurewebsites.net/api/RegisterUsers"; // Reemplaza con la URL de tu API
+  final String baseUrl = "https://keidotapi.azurewebsites.net/api/RegisterUsers"; // Reemplaza con la URL de tu API
   final storage = const FlutterSecureStorage();
   final Logger logger = Logger();
 

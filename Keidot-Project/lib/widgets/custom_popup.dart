@@ -3,7 +3,7 @@ import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/about_screen.dart';
 import 'package:test_app/presentation/screens/client_profile_screen.dart';
 import 'package:test_app/presentation/screens/config_screen.dart';
-import 'package:test_app/presentation/screens/pending_work_screen.dart';
+import 'package:test_app/presentation/screens/in_progres_work_screen.dart';
 import 'package:test_app/presentation/screens/requests_screen.dart';
 
 class CustomPopupMenu extends StatelessWidget {
@@ -32,8 +32,8 @@ class CustomPopupMenu extends StatelessWidget {
           ),
           PopupMenuItem(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            onTap: () => _navigateToScreen(context, const PendingWorkScreen()),
-            child: _buildMenuText("Pendientes"),
+            onTap: () => _navigateToScreen(context, const InProgresWorkScreen()),
+            child: _buildMenuText("En progreso"),
           ),
           PopupMenuItem(
             padding: const EdgeInsets.symmetric(horizontal: 20),

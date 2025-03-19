@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
 class WorkerSupportPage extends StatelessWidget {
+  const WorkerSupportPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -28,12 +30,12 @@ class WorkerSupportPage extends StatelessWidget {
                 color: colors.primary, // Color personalizado para el título
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               'Para cualquier consulta o problema, por favor contacta a nuestro equipo de soporte:',
-              style: TextStyle(fontSize: 16, color: colors.onBackground),
+              style: TextStyle(fontSize: 16, color: colors.onSurface),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             _SupportInfoCard(
               title: 'Email: soporte@keidot.com',
               icon: Icons.email,
@@ -46,7 +48,7 @@ class WorkerSupportPage extends StatelessWidget {
               colors: colors,
               size: size,
             ),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             Text(
               'Sobre Keidot',
               style: TextStyle(
@@ -55,15 +57,15 @@ class WorkerSupportPage extends StatelessWidget {
                 color: colors.primary, // Color personalizado para el título
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               'Keidot es una aplicación innovadora que ofrece soluciones eficientes para la gestión de tareas y proyectos. Nuestro objetivo es facilitar la organización y mejorar la productividad de nuestros usuarios.',
-              style: TextStyle(fontSize: 16, color: colors.onBackground),
+              style: TextStyle(fontSize: 16, color: colors.onSurface),
             ),
           ],
         ),
       ),
-      backgroundColor: colors.background, // Color de fondo personalizado
+      backgroundColor: colors.surface, // Color de fondo personalizado
     );
   }
 }

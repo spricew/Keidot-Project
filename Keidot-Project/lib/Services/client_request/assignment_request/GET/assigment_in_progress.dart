@@ -4,8 +4,8 @@ import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 
-class AssignmentService {
-  final String baseUrl = "https://keidot.azurewebsites.net/api/AssignmentByUser/JobsInPending";
+class AssignmentInProgress {
+  final String baseUrl = "https://keidotapi.azurewebsites.net/api/AssignmentByUser/Client/JobsInProgress";
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger(); // Instancia de Logger
 

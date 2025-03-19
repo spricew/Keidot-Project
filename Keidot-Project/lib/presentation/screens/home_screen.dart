@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:test_app/Services/client_request/services_request/service_controller.dart';
@@ -71,9 +72,31 @@ class _HomeScreenState extends State<HomeScreen> {
               color: colors.surfaceTint, // Fondo transparente
               borderRadius: BorderRadius.circular(30), // Borde circular
               child: InkWell(
-                onTap: () {
-                  Get.to(
-                      () => const HomeWorker()); // Navegación a HomepageWorker
+                onTap: () async {
+                  // Obtener el valor de is_worker desde el almacenamiento seguro
+                  const FlutterSecureStorage storage = FlutterSecureStorage();
+                  String? isWorkerString = await storage.read(key: 'is_worker');
+
+                  // Convertir el valor a bool
+                  bool isWorker = isWorkerString == 'true';
+
+                  // Verificar si el usuario es un trabajador
+                  if (isWorker) {
+                    Get.to(() =>
+                        const HomeWorker()); // Navegación a HomepageWorker
+                  } else {
+                    // Mostrar un mensaje de error si no es un trabajador
+                    Get.snackbar(
+                      'Acceso denegado',
+                      'Esta función solo está disponible para trabajadores.',
+                      snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: Colors.red,
+                      colorText: Colors.white,
+                    );
+
+                    // Opcional: Redirigir a otra pantalla
+                    // Get.to(() => const HomeScreen());
+                  }
                 },
                 borderRadius: BorderRadius.circular(30), // Borde circular
                 splashColor:

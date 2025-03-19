@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_app/Services/client_request/assignment_request/assignment_is_active_request.dart';
+import 'package:test_app/Services/client_request/assignment_request/PUT/assignment_cancel_request.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/stripe/stripe_refund.dart';
@@ -111,10 +111,10 @@ class AssignmentDetailScreen extends StatelessWidget {
                             TextButton(
                               onPressed: () async {
                                 try {
-                                  final UpdateIsActiveService service =
-                                      UpdateIsActiveService();
+                                  final AssignmentCancelRequest service =
+                                      AssignmentCancelRequest();
                                   bool success = await service.updateIsActive(
-                                      context, false);
+                                      context);
 
                                   if (!success) {
                                     Get.snackbar(
