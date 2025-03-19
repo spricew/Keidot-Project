@@ -44,7 +44,9 @@ class AuthenticationService {
           storage.write(key: 'userId', value: data['id']),
           storage.write(key: 'token', value: data['token']),
           storage.write(key: 'name', value: data['name'] ?? ''),
-          storage.write(key: 'is_worker', value: data['is_worker'].toString()), // Convertir a String
+          storage.write(
+              key: 'is_worker',
+              value: data['is_worker'].toString()), // Convertir a String
         ]);
 
         // Verificar que el ID realmente se guardó
@@ -88,6 +90,7 @@ class AuthenticationService {
     await storage.delete(key: 'token');
     await storage.delete(key: 'userId');
     await storage.delete(key: 'name');
+    storage.delete(key: 'is_worker');
     logger.i("Credenciales eliminadas correctamente");
 
     Navigator.pushReplacement(
