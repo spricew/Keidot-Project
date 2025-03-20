@@ -15,22 +15,18 @@ class HomePageStripe extends StatefulWidget {
 }
 
 class _HomePageStripeState extends State<HomePageStripe> {
-  final ServiceTransactionController controller =
-      Get.find(); // Obtén el controlador
+  final ServiceTransactionController controller = Get.find();
   Map<String, dynamic>? intentPaymentData;
   var logger = Logger();
 
   Future<void> showPaymentSheet(BuildContext context) async {
     try {
       await Stripe.instance.presentPaymentSheet();
-      // Si el pago fue exitoso, limpiar los datos y redirigir
       intentPaymentData = null;
-      logger.i("Pago exitoso: Intento de pago limpiado");
+      logger.i("Pago exitoso");
       final paymentIntentId = controller.transaction.value.paymentIntentId;
-
-      await fetchPaymentDetails(paymentIntentId); // Obtener el charge_id
-
-      logger.i("Pago exitoso: Intento de pago limpiado y Charge ID obtenido.");
+      await fetchPaymentDetails(paymentIntentId);
+      logger.i("Charge ID obtenido.");
 
       Navigator.pushReplacement(
         context,
@@ -38,29 +34,36 @@ class _HomePageStripeState extends State<HomePageStripe> {
       );
     } on StripeException catch (error) {
       logger.e("Error de Stripe: $error");
-
       showDialog(
         context: context,
-        builder: (c) => const AlertDialog(
-          content: Text("Pago cancelado"),
+        builder: (c) => AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          title: const Text("Pago cancelado"),
+          content: const Text("El pago fue cancelado por el usuario."),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text("OK"),
+            )
+          ],
         ),
       );
     } catch (error) {
       logger.e("Error al procesar el pago: $error");
-
-      // Mostrar mensaje de error en la UI
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Hubo un error al procesar el pago")),
+        SnackBar(
+          content: const Text("Hubo un error al procesar el pago"),
+          backgroundColor: Colors.red,
+          behavior: SnackBarBehavior.floating,
+        ),
       );
     }
   }
 
-  Future<Map<String, dynamic>?> makeIntentForPayment(
-      String amountToBeCharge, String currency) async {
+  Future<Map<String, dynamic>?> makeIntentForPayment(String amountToBeCharge, String currency) async {
     try {
       Map<String, dynamic> paymentInfo = {
-        "amount": (int.parse(amountToBeCharge) * 100)
-            .toString(), // Convertimos a centavos
+        "amount": (int.parse(amountToBeCharge) * 100).toString(),
         "currency": currency,
         "payment_method_types[]": "card",
       };
@@ -75,12 +78,10 @@ class _HomePageStripeState extends State<HomePageStripe> {
       );
 
       var responseData = jsonDecode(responseFromStripeAPI.body);
-
       if (responseData.containsKey("id")) {
-        controller.setPaymentId(responseData["id"]); // Guardamos el Payment ID
+        controller.setPaymentId(responseData["id"]);
       }
 
-      logger.i("Respuesta de Stripe: ${responseFromStripeAPI.body}");
       return responseData;
     } catch (errorMsg) {
       logger.e("Error en la solicitud de pago: $errorMsg");
@@ -88,34 +89,23 @@ class _HomePageStripeState extends State<HomePageStripe> {
     }
   }
 
-  Future<void> paymentSheetInitialization(
-      BuildContext context, String amountToBeCharge, String currency) async {
+  Future<void> paymentSheetInitialization(BuildContext context, String amountToBeCharge, String currency) async {
     try {
-      logger.i(
-          "Iniciando la hoja de pago con monto: $amountToBeCharge $currency");
-
-      intentPaymentData =
-          await makeIntentForPayment(amountToBeCharge, currency);
-      logger.i("Intento de pago generado: ${intentPaymentData!["id"]}");
-
+      intentPaymentData = await makeIntentForPayment(amountToBeCharge, currency);
       await Stripe.instance.initPaymentSheet(
         paymentSheetParameters: SetupPaymentSheetParameters(
           allowsDelayedPaymentMethods: true,
           paymentIntentClientSecret: intentPaymentData!["client_secret"],
-          style: ThemeMode.dark,
+          style: ThemeMode.light,
           merchantDisplayName: "Keidot App",
         ),
       );
-
-      logger.i("Hoja de pago inicializada correctamente.");
-      showPaymentSheet(context); // Pasamos el contexto aquí
+      showPaymentSheet(context);
     } catch (errorMsg, s) {
-      logger.e("Error en la inicialización del pago: $errorMsg",
-          error: errorMsg, stackTrace: s);
+      logger.e("Error en la inicialización del pago: $errorMsg", error: errorMsg, stackTrace: s);
     }
   }
 
-//Metodo para obtener el charge_id una vez ya se haya generado en Stripe
   Future<void> fetchPaymentDetails(String paymentIntentId) async {
     try {
       var response = await http.get(
@@ -125,13 +115,9 @@ class _HomePageStripeState extends State<HomePageStripe> {
           "Content-Type": "application/x-www-form-urlencoded"
         },
       );
-
       var responseData = jsonDecode(response.body);
-
       if (responseData.containsKey("latest_charge")) {
-        String chargeId = responseData["latest_charge"];
-        controller.setChargeId(chargeId); // Guardamos el charge ID
-        logger.i("Charge ID guardado: $chargeId");
+        controller.setChargeId(responseData["latest_charge"]);
       }
     } catch (error) {
       logger.e("Error obteniendo detalles del pago: $error");
@@ -141,39 +127,55 @@ class _HomePageStripeState extends State<HomePageStripe> {
   @override
   Widget build(BuildContext context) {
     final transactionController = Get.find<ServiceTransactionController>();
-
     return Scaffold(
-      body: Center(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: const Text(
+          "Pago Seguro con Stripe",
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Obx(() {
-              final amount =
-                  transactionController.transaction.value.amount ?? 0.0;
+              final amount = transactionController.transaction.value.amount ?? 0.0;
               return ElevatedButton(
                 onPressed: () {
-                  paymentSheetInitialization(
-                      context, amount.round().toString(), "MXN");
+                  paymentSheetInitialization(context, amount.round().toString(), "MXN");
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green,
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 ),
                 child: Text(
-                  'Pay Now \$${amount.toString()}',
+                  'Pagar ahora \$${amount.toStringAsFixed(2)}',
                   style: const TextStyle(
                     color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               );
             }),
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context); // Regresa a la pantalla anterior
-              },
-              child: const Text(
-                'Anterior',
-                style: TextStyle(color: Colors.red),
-              ),
+            const SizedBox(height: 20),
+            const Icon(
+              Icons.lock_outline,
+              color: Colors.green,
+              size: 40,
+            ),
+            const Text(
+              "Tu pago es 100% seguro y encriptado.",
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16, color: Colors.black54),
             ),
           ],
         ),
