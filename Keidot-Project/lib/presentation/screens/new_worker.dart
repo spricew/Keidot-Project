@@ -114,8 +114,9 @@ class _NewWorkerFormState extends State<NewWorkerForm> {
           _buildTextField(
             label: 'Nombre Completo',
             onChanged: (value) => fullName = value,
-            validator: (value) =>
-            value == null || value.isEmpty ? 'Ingresa tu Nombre Completo' : null,
+            validator: (value) => value == null || value.isEmpty
+                ? 'Ingresa tu Nombre Completo'
+                : null,
           ),
           const Text(
             'Foto de perfil:',
