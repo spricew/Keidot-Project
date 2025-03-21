@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/Services/login_request/auth_serviceController.dart';
 import 'package:test_app/presentation/screens/about_screen.dart';
 import 'package:test_app/presentation/screens/change_name.dart';
 import 'package:test_app/presentation/screens/change_password.dart';
@@ -32,7 +33,8 @@ class _ConfigView extends StatelessWidget {
     {
       'title': 'Cambiar contraseña',
       'icon': Icons.lock,
-      'screen': const ChangePasswordScreen(), // Pantalla para cambiar contraseña
+      'screen':
+          const ChangePasswordScreen(), // Pantalla para cambiar contraseña
     },
     {
       'title': 'Convertirse en trabajador',

@@ -22,10 +22,10 @@ class FileUploader {
 
       final token = await storage.read(key: 'token'); // 🔹 Ahora sí existe
 
-      if (token == null) {
+      /*if (token == null) {
         _logger.e("Error: Token no encontrado.");
         return null;
-      }
+      }*/
 
       final response = await http.post(
         Uri.parse(apiUrl),

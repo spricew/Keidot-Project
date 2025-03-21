@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app/Services/login_request/auth_serviceController.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/about_screen.dart';
 import 'package:test_app/presentation/screens/client_profile_screen.dart';
@@ -40,6 +41,14 @@ class CustomPopupMenu extends StatelessWidget {
             onTap: () => _navigateToScreen(context, const AboutScreen()),
             child: _buildMenuText("Acerca de"),
           ),
+           PopupMenuItem(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          onTap: () async {
+            final authService = AuthenticationService();
+            await authService.logout(context);
+          },
+          child: _buildMenuText("Cerrar sesión"),
+        ),
         ];
       },
     );

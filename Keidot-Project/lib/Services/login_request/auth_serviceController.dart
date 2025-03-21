@@ -92,7 +92,7 @@ class AuthenticationService {
     await storage.delete(key: 'name');
     storage.delete(key: 'is_worker');
     logger.i("Credenciales eliminadas correctamente");
-
+    Get.snackbar("Cerrando sesión", "Sesión cerrada correctamente");
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) => const LoginPage()),

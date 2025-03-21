@@ -69,23 +69,17 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             // Botón de trabajador mejorado
             Material(
-              color: colors.surfaceTint, // Fondo transparente
-              borderRadius: BorderRadius.circular(30), // Borde circular
+              color: colors.surfaceTint,
+              borderRadius: BorderRadius.circular(30),
               child: InkWell(
                 onTap: () async {
-                  // Obtener el valor de is_worker desde el almacenamiento seguro
                   const FlutterSecureStorage storage = FlutterSecureStorage();
                   String? isWorkerString = await storage.read(key: 'is_worker');
-
-                  // Convertir el valor a bool
                   bool isWorker = isWorkerString == 'true';
 
-                  // Verificar si el usuario es un trabajador
                   if (isWorker) {
-                    Get.to(() =>
-                        const HomeWorker()); // Navegación a HomepageWorker
+                    Get.to(() => const HomeWorker());
                   } else {
-                    // Mostrar un mensaje de error si no es un trabajador
                     Get.snackbar(
                       'Acceso denegado',
                       'Esta función solo está disponible para trabajadores.',
@@ -93,24 +87,49 @@ class _HomeScreenState extends State<HomeScreen> {
                       backgroundColor: Colors.red,
                       colorText: Colors.white,
                     );
-
-                    // Opcional: Redirigir a otra pantalla
-                    // Get.to(() => const HomeScreen());
                   }
                 },
-                borderRadius: BorderRadius.circular(30), // Borde circular
-                splashColor:
-                    darkGreen.withOpacity(0.2), // Color de la onda al presionar
+                onLongPress: () async {
+                  // Mostrar mensaje solo la primera vez
+                  const FlutterSecureStorage storage = FlutterSecureStorage();
+                  String? messageShown =
+                      await storage.read(key: 'messageShown');
+
+                  if (messageShown != 'true') {
+                    Get.snackbar(
+                      '¿Quieres tener ingresos extras?',
+                      'Conviértete en trabajador y comienza a generar ingresos.',
+                      snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: Colors.green,
+                      colorText: Colors.white,
+                      duration: const Duration(seconds: 10),
+                      mainButton: TextButton(
+                        onPressed: () async {
+                          await storage.write(
+                              key: 'messageShown', value: 'true');
+                          Get.back();
+                        },
+                        child: const Text(
+                          'Aceptar',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    );
+                  }
+                },
+                borderRadius: BorderRadius.circular(30),
+                splashColor: darkGreen.withOpacity(0.2),
                 child: Container(
-                  padding: const EdgeInsets.all(8), // Espacio interno
+                  padding: const EdgeInsets.all(8),
                   child: Icon(
                     Icons.work,
-                    color: colors.onPrimary, // Color del ícono
-                    size: 24, // Tamaño del ícono
+                    color: colors.onPrimary,
+                    size: 24,
                   ),
                 ),
               ),
             ),
+
             const SizedBox(width: 10), // Espacio entre el ícono y el texto
             const Text(
               'Keidot',
