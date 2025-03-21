@@ -147,6 +147,9 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                         onChanged: (value) {
                           if (value != null) {
                             controller.setEstimatedSize(value);
+                            controller.transaction.update((trx) {
+                              trx?.amount = (trx?.amount ?? 0) * 5;
+                            });
                           }
                         },
                         title: const Text('Pequeño (1 m² - 50 m²)'),
@@ -157,6 +160,9 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                         onChanged: (value) {
                           if (value != null) {
                             controller.setEstimatedSize(value);
+                            controller.transaction.update((trx) {
+                              trx?.amount = (trx?.amount ?? 0) * 8;
+                            });
                           }
                         },
                         title: const Text('Mediano (51 m² - 150 m²)'),
@@ -167,6 +173,9 @@ class _DetallesServicioPageState extends State<DetallesServicioPage> {
                         onChanged: (value) {
                           if (value != null) {
                             controller.setEstimatedSize(value);
+                            controller.transaction.update((trx) {
+                              trx?.amount = (trx?.amount ?? 0) * 11;
+                            });
                           }
                         },
                         title: const Text('Grande (Más de 150 m²)'),

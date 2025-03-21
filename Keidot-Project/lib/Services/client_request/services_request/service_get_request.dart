@@ -7,7 +7,7 @@ import 'package:test_app/Services/login_request/auth_serviceController.dart';
 import 'package:test_app/Services/models/service_model.dart';
 
 class ApiService {
-  static const String baseUrl = "https://keidotapi.azurewebsites.net/api/garden-features";
+  static const String baseUrl = "https://keidotapi.azurewebsites.net/api/Service";
   static final Logger logger = Logger();
 
   static Future<List<Service>> fetchServices() async {

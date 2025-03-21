@@ -1,17 +1,22 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'package:test_app/Services/client_request/transaction/service_transaction_controller.dart';
+import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/providers/user_provider.dart';
 import 'solicitud_exitosa_screen.dart'; // Asegúrate de importar la pantalla de solicitud exitosa
 import 'package:intl/intl.dart';
 
 class TransferenciaEsperaScreen extends StatelessWidget {
   final ServiceTransactionController controller = Get.find();
-
   TransferenciaEsperaScreen({super.key}); // Obtén el controlador
 
   @override
   Widget build(BuildContext context) {
     final transactionController = Get.find<ServiceTransactionController>();
+    final name = Provider.of<UserProvider>(context).userName ?? "Usuario";
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
@@ -110,10 +115,16 @@ class TransferenciaEsperaScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              const Text(
-                'Kevin Montero',
-                style: TextStyle(
-                  fontSize: 18,
+              Flexible(
+                fit: FlexFit.loose,
+                child: Text(
+                  name,
+                  style: const TextStyle(
+                    color: Color.fromARGB(255, 49, 194, 49),
+                    fontWeight: FontWeight.w600,
+                    fontSize: 22,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
               const SizedBox(height: 20),
@@ -125,17 +136,17 @@ class TransferenciaEsperaScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              const Text(
-                'Referencia: 4345343',
-                style: TextStyle(
+              Text(
+                'Referencia: $reference',
+                style: const TextStyle(
                   fontSize: 14,
                   color: Colors.grey,
                 ),
               ),
               const SizedBox(height: 10),
-              const Text(
-                'Foto: 594249572',
-                style: TextStyle(
+              Text(
+                'Folio: $folio',
+                style: const TextStyle(
                   fontSize: 14,
                   color: Colors.grey,
                 ),
@@ -165,5 +176,13 @@ class TransferenciaEsperaScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  final String reference = _generateRandomNumber(7);
+  final String folio = _generateRandomNumber(9);
+
+  static String _generateRandomNumber(int length) {
+    final Random random = Random();
+    return List.generate(length, (_) => random.nextInt(10).toString()).join();
   }
 }

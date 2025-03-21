@@ -9,7 +9,7 @@ import 'package:test_app/Services/models/review_model.dart';
 
 class ReviewController extends GetxController {
   final Logger _logger = Logger();
-  FlutterSecureStorage storage = FlutterSecureStorage();
+  FlutterSecureStorage storage = const FlutterSecureStorage();
 
   var rating = 5.obs; // Valor por defecto
   var urlImagen = 'ambientedeprueba.com'.obs; // Valor por defecto vacío

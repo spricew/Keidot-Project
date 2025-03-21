@@ -27,11 +27,6 @@ class CustomPopupMenu extends StatelessWidget {
           ),
           PopupMenuItem(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            onTap: () => _navigateToScreen(context, const RequestsScreen()),
-            child: _buildMenuText("Solicitudes"),
-          ),
-          PopupMenuItem(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
             onTap: () => _navigateToScreen(context, const InProgresWorkScreen()),
             child: _buildMenuText("En progreso"),
           ),

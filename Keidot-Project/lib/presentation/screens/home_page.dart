@@ -26,7 +26,7 @@ class _HomepageState extends State<Homepage> {
       SearchScreen(onTabSelected: _onItemTapped), // Ahora sí podemos usarla
       const RequestScreen1(),
       const PendingWorkScreen(),
-      const MessagesScreen(),
+      const RequestsScreen(),
     ];
   }
 
@@ -63,7 +63,7 @@ class _HomepageState extends State<Homepage> {
               BottomNavigationBarItem(
                   icon: Icon(Icons.notifications), label: 'Notificaciones'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.send), label: 'Mensajes'),
+                  icon: Icon(Icons.send), label: 'Solicitudes'),
             ],
           ),
         ),

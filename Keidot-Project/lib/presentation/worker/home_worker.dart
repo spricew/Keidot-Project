@@ -65,7 +65,7 @@ class _ViewHomeWorker extends StatelessWidget {
     {
       'title': 'Soporte',
       'icon': Icons.help,
-      'screen': WorkerSupportPage(), // Pantalla para soporte
+      'screen': const WorkerSupportPage(), // Pantalla para soporte
     },
   ];
 

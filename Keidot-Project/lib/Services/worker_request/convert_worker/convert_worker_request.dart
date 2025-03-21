@@ -5,7 +5,6 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:test_app/Services/models/convert_worker_model.dart';
 import 'package:logger/logger.dart';
 import 'package:test_app/presentation/screens/login_screen.dart';
-import 'package:test_app/presentation/worker/home_worker.dart';
 
 class UserProfileController {
   final String baseUrl = "https://keidotapi.azurewebsites.net/api/UpdateProfiles";
