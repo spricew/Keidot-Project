@@ -3,7 +3,6 @@ import 'package:test_app/Services/client_request/assignment_request/PUT/rejected
 import 'package:test_app/Services/client_request/assignment_request/PUT/request_success_Client.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/screens/worker_profile_screen.dart';
 
 class AssignmentProfileDetailScreen extends StatelessWidget {
   final AssignmentDTO assignment;
@@ -33,7 +32,6 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
 
-                  // Nuevo título para la fecha asignada
                   const Text(
                     "Fecha asignada para realizar el trabajo:",
                     style: TextStyle(
@@ -78,20 +76,17 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
             ),
           ),
 
-          // Botones en la parte inferior
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
               children: [
-                // Botón para aceptar
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
-                      // Lógica para aceptar la solicitud
                       _acceptAssignment(context);
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green, // Color verde para aceptar
+                      backgroundColor: Colors.green,
                       padding: const EdgeInsets.symmetric(vertical: 15),
                     ),
                     child: const Text(
@@ -100,17 +95,15 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(width: 10), // Espacio entre botones
+                const SizedBox(width: 10),
 
-                // Botón para rechazar
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
-                      // Lógica para rechazar la solicitud
                       _rejectAssignment(context);
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.red, // Color rojo para rechazar
+                      backgroundColor: Colors.red,
                       padding: const EdgeInsets.symmetric(vertical: 15),
                     ),
                     child: const Text(
@@ -119,18 +112,15 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(width: 10), // Espacio entre botones
+                const SizedBox(width: 10),
 
-                // Botón para ver el perfil del trabajador
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
-                      // Lógica para ver el perfil del trabajador
                       _viewWorkerProfile(context);
-                      
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.blue, // Color azul para ver perfil
+                      backgroundColor: Colors.blue,
                       padding: const EdgeInsets.symmetric(vertical: 15),
                     ),
                     child: const Text(
@@ -147,47 +137,49 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
     );
   }
 
-  // Método para aceptar la solicitud
-  void _acceptAssignment(BuildContext context) {
-  final AssignmentSuccess assignmentSuccess = AssignmentSuccess(); // Instancia del servicio
+  void _acceptAssignment(BuildContext context) async {
+    final AssignmentSuccess assignmentSuccess = AssignmentSuccess();
 
-  showDialog(
-    context: context,
-    builder: (context) => AlertDialog(
-      title: const Text('Aceptar Solicitud'),
-      content: const Text('¿Estás seguro de que deseas aceptar esta solicitud?'),
-      actions: [
-        TextButton(
-          onPressed: () => Navigator.pop(context),
-          child: const Text('Cancelar'),
-        ),
-        TextButton(
-          onPressed: () async {
-            Navigator.pop(context); // Cerrar el diálogo
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Aceptar Solicitud'),
+        content: const Text('¿Estás seguro de que deseas aceptar esta solicitud?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancelar'),
+          ),
+          TextButton(
+            onPressed: () async {
+              Navigator.pop(context);
+              bool isAccepted = await assignmentSuccess.updateIsActive(context);
 
-            // Llamar al servicio para aceptar la solicitud
-            bool isAccepted = await assignmentSuccess.updateIsActive(context);
-
-            if (isAccepted) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Solicitud aceptada correctamente.')),
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: const Text('Resultado'),
+                  content: Text(isAccepted
+                      ? 'Solicitud aceptada correctamente.'
+                      : 'Error al aceptar la solicitud. Inténtalo de nuevo.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: const Text('OK'),
+                    ),
+                  ],
+                ),
               );
-            } else {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Error al aceptar la solicitud. Inténtalo de nuevo.')),
-              );
-            }
-          },
-          child: const Text('Aceptar'),
-        ),
-      ],
-    ),
-  );
-}
+            },
+            child: const Text('Aceptar'),
+          ),
+        ],
+      ),
+    );
+  }
 
-  // Método para rechazar la solicitud
-  void _rejectAssignment(BuildContext context) {
-    final AssignmentRejected assignmentRejected = AssignmentRejected(); // Instancia del servicio
+  void _rejectAssignment(BuildContext context) async {
+    final AssignmentRejected assignmentRejected = AssignmentRejected();
 
     showDialog(
       context: context,
@@ -201,20 +193,24 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
           ),
           TextButton(
             onPressed: () async {
-              Navigator.pop(context); // Cerrar el diálogo
-
-              // Llamar al servicio para rechazar la solicitud
+              Navigator.pop(context);
               bool isRejected = await assignmentRejected.updateIsActive(context);
 
-              if (isRejected) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Solicitud rechazada correctamente.')),
-                );
-              } else {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Error al rechazar la solicitud. Inténtalo de nuevo.')),
-                );
-              }
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: const Text('Resultado'),
+                  content: Text(isRejected
+                      ? 'Solicitud rechazada correctamente.'
+                      : 'Error al rechazar la solicitud. Inténtalo de nuevo.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: const Text('OK'),
+                    ),
+                  ],
+                ),
+              );
             },
             child: const Text('Rechazar'),
           ),
@@ -222,12 +218,20 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
       ),
     );
   }
-}
 
-  // Método para ver el perfil del trabajador
   void _viewWorkerProfile(BuildContext context) {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => const WorkerProfileScreen()),
-  );
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Información'),
+        content: const Text('Navegando al perfil del trabajador...'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('OK'),
+          ),
+        ],
+      ),
+    );
+  }
 }
