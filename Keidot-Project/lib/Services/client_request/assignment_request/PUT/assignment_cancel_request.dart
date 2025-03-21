@@ -5,7 +5,9 @@ import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
+import 'package:test_app/presentation/screens/home_page.dart';
 import 'package:test_app/presentation/screens/requests_screen.dart';
+
 //Para marcar como "Cancelado" y actualizar el "is_active" de la asignación a "false"
 class AssignmentCancelRequest {
   final String baseUrl =
@@ -13,7 +15,9 @@ class AssignmentCancelRequest {
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger();
 
-  Future<bool> updateIsActive(BuildContext context,) async {
+  Future<bool> updateIsActive(
+    BuildContext context,
+  ) async {
     String canceled = "Cancelado";
     try {
       final AssignmentIdController assignmentController =
@@ -39,14 +43,12 @@ class AssignmentCancelRequest {
       );
 
       if (response.statusCode == 200) {
+        Get.snackbar("Éxito", "Haz cancelado la solicitud");
         logger.i(
             "Estado 'Cancelado' correctamente para la asignación $assignmentId");
 
         // Reemplaza la pantalla actual con la Homepage
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const RequestsScreen()),
-        );
+        Get.off(() => const Homepage());
 
         return true;
       } else {

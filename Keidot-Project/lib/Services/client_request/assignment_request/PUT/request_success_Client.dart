@@ -14,7 +14,9 @@ class AssignmentSuccess {
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger();
 
-  Future<bool> updateIsActive(BuildContext context,) async {
+  Future<bool> updateIsActive(
+    BuildContext context,
+  ) async {
     String accept = "En progreso";
     try {
       final AssignmentIdController assignmentController =
@@ -44,10 +46,8 @@ class AssignmentSuccess {
             "Estado 'Aceptado' correctamente para la asignación $assignmentId");
 
         // Reemplaza la pantalla actual con la Homepage
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const Homepage()),
-        );
+        Get.snackbar("Éxito", "Haz aceptado la solicitud");
+        Get.off(() => const Homepage());
 
         return true;
       } else {

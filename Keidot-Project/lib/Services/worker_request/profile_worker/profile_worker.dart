@@ -5,7 +5,7 @@ import 'package:logger/logger.dart';
 import 'package:test_app/Services/models/worker_profile.dart';
 
 class ProfileWorkerService {
-  final String baseUrl = 'https://tu-api.com/api'; // Ajusta tu URL base
+  final String baseUrl = 'https://keidotapi.azurewebsites.net/api'; // Ajusta tu URL base
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger();
 
@@ -18,7 +18,7 @@ class ProfileWorkerService {
         return null;
       }
       final response = await http.get(
-        Uri.parse('$baseUrl/profiles/worker/$workerId'),
+        Uri.parse('$baseUrl/Profiles/ProfileWorker/$workerId'),
         headers: {
           'Authorization': 'Bearer $token',
           'Content-Type': 'application/json',

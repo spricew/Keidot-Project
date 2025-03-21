@@ -49,6 +49,7 @@ class AssignmentAcceptedByWorker {
       logger.i("Respuesta del servidor: ${response.body}");
 
       if (response.statusCode == 200) {
+        Get.snackbar("Éxito", "Haz solicitado el trabajo");
         logger.i("Estado actualizado correctamente.");
         return true;
       } else {

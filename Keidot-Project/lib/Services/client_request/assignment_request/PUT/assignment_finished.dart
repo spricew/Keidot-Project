@@ -14,7 +14,9 @@ class AssignmentFinished {
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger();
 
-  Future<bool> updateIsActive(BuildContext context,) async {
+  Future<bool> updateIsActive(
+    BuildContext context,
+  ) async {
     String finished = "Completado";
     try {
       final AssignmentIdController assignmentController =
@@ -40,15 +42,9 @@ class AssignmentFinished {
       );
 
       if (response.statusCode == 200) {
+        Get.snackbar("Éxito", "Haz finalizado el trabajo");
         logger.i(
             "Estado 'Finalizado' correctamente para la asignación $assignmentId");
-
-        // Reemplaza la pantalla actual con la Homepage
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const Homepage()),
-        );
-
         return true;
       } else {
         logger
