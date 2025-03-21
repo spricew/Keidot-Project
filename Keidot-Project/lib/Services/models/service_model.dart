@@ -3,12 +3,14 @@ class Service {
   final String title;
   final String urlImage;
   final double price;
+  final bool isActive;
 
   Service({
     this.serviceId,
     required this.title,
     required this.urlImage,
-    required this.price
+    required this.price,
+    required this.isActive,
   });
 
   // Método para convertir un JSON en un objeto Service
@@ -17,7 +19,8 @@ class Service {
     serviceId: json['service_id'] as String?,
     title: json['title'] as String,
     urlImage: json['url_image'] as String,
-    price: (json['price'] as num).toDouble()  //FIX AQUÍ 
+    price: (json['price'] as num).toDouble(),  //FIX AQUÍ 
+     isActive: json['is_active']
   );
 }
 
@@ -28,7 +31,8 @@ class Service {
       'service_id': serviceId,
       'title': title,
       'url_image': urlImage,
-      'price': price
+      'price': price,
+      'is_active': isActive,
     };
   }
 }

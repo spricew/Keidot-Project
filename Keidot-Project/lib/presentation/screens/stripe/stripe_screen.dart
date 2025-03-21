@@ -51,8 +51,8 @@ class _HomePageStripeState extends State<HomePageStripe> {
     } catch (error) {
       logger.e("Error al procesar el pago: $error");
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: const Text("Hubo un error al procesar el pago"),
+        const SnackBar(
+          content: Text("Hubo un error al procesar el pago"),
           backgroundColor: Colors.red,
           behavior: SnackBarBehavior.floating,
         ),
