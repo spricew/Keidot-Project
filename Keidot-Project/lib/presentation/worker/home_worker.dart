@@ -40,28 +40,30 @@ class _ViewHomeWorker extends StatelessWidget {
       'icon': Icons.event_available,
       'screen': const WorkerJobRequestsScreen(), // Pantalla para cambiar nombre
     },
-    
+
     {
       'title': 'Trabajos solicitados',
       'icon': Icons.timelapse,
-      'screen': const AssignInStateRequest(), // Pantalla para cambiar contraseña
+      'screen':
+          const AssignInStateRequest(), // Pantalla para cambiar contraseña
     },
     {
       'title': 'Trabajos pendientes',
       'icon': Icons.timelapse,
-      'screen': const WorkerAssignmentsScreen(), // Pantalla para cambiar contraseña
-    },
-    {
-      'title': 'Mensajes',
-      'icon': Icons.send,
       'screen':
-          const WorkerMessagesScreen(), // Pantalla para convertirse en trabajador
+          const WorkerAssignmentsScreen(), // Pantalla para cambiar contraseña
     },
-    {
-      'title': 'Panel de ingresos',
-      'icon': Icons.bar_chart,
-      'screen': const Dashboard(), // Pantalla de ingresos
-    },
+    // {
+    //   'title': 'Mensajes',
+    //   'icon': Icons.send,
+    //   'screen':
+    //       const WorkerMessagesScreen(), // Pantalla para convertirse en trabajador
+    // },
+    // {
+    //   'title': 'Panel de ingresos',
+    //   'icon': Icons.bar_chart,
+    //   'screen': const Dashboard(), // Pantalla de ingresos
+    // },
     {
       'title': 'Soporte',
       'icon': Icons.help,
