@@ -6,6 +6,7 @@ import 'package:logger/logger.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:test_app/Services/client_request/assignment_request/assignment_controller.dart';
 import 'package:test_app/presentation/screens/home_page.dart';
+
 //Para marcar como "Cancelado" ya que el trabajador ha rechazado la solicitud
 class AssignmentRejected {
   final String baseUrl =
@@ -13,7 +14,9 @@ class AssignmentRejected {
   final FlutterSecureStorage storage = const FlutterSecureStorage();
   final Logger logger = Logger();
 
-  Future<bool> updateIsActive(BuildContext context,) async {
+  Future<bool> updateIsActive(
+    BuildContext context,
+  ) async {
     String canceled = "En espera";
     try {
       final AssignmentIdController assignmentController =
@@ -39,14 +42,11 @@ class AssignmentRejected {
       );
 
       if (response.statusCode == 200) {
+        Get.snackbar("Éxito", "Haz rechazado la solicitud");
         logger.i(
             "Estado 'Rechazado' correctamente para la asignación $assignmentId");
 
-        // Reemplaza la pantalla actual con la Homepage
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const Homepage()),
-        );
+        Get.off(() => const Homepage());
 
         return true;
       } else {

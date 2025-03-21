@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:test_app/Services/client_request/assignment_request/PUT/assignment_finished.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/review_screen.dart';
 import 'package:test_app/widgets/custom_appbar.dart';
 
 class AssignmentDetailScreen2 extends StatelessWidget {
@@ -112,8 +113,8 @@ class AssignmentDetailScreen2 extends StatelessWidget {
                                 try {
                                   final AssignmentFinished service =
                                       AssignmentFinished();
-                                  bool success = await service.updateIsActive(
-                                      context,);
+                                  bool success =
+                                      await service.updateIsActive(context);
 
                                   if (!success) {
                                     Get.snackbar(
@@ -134,10 +135,12 @@ class AssignmentDetailScreen2 extends StatelessWidget {
                                     colorText: Colors.white,
                                   );
 
-                                  // 🔹 Agregar un delay antes de cerrar la pantalla
-                                  await Future.delayed(const Duration(
-                                      seconds:
-                                          2)); // Espera 2 segundos antes de cerrar
+                                  // 🔹 Agregar un delay antes de redirigir a ReviewScreen
+                                  await Future.delayed(
+                                      const Duration(seconds: 2));
+
+                                  Get.off(() =>
+                                      const ReviewScreen()); // Redirección a ReviewScreen
                                 } catch (e) {
                                   Get.snackbar(
                                     'Error',
@@ -147,11 +150,10 @@ class AssignmentDetailScreen2 extends StatelessWidget {
                                     colorText: Colors.white,
                                   );
 
-                                  await Future.delayed(const Duration(
-                                      seconds:
-                                          2)); // Espera 2 segundos antes de cerrar
+                                  await Future.delayed(
+                                      const Duration(seconds: 2));
                                 } finally {
-                                  Get.back(); // 🔹 Ahora se cerrará después del delay
+                                  Get.back();
                                 }
                               },
                               child: const Text(
@@ -172,7 +174,8 @@ class AssignmentDetailScreen2 extends StatelessWidget {
                         ),
                         padding: const EdgeInsets.symmetric(vertical: 14),
                       ),
-                      icon: const Icon(Icons.check, color: Colors.green, size: 20),
+                      icon: const Icon(Icons.check,
+                          color: Colors.green, size: 20),
                       label: const Text(
                         'Terminar Trabajo',
                         style: TextStyle(color: Colors.white, fontSize: 16),
