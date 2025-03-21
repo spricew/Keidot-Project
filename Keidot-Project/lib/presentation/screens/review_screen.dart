@@ -106,26 +106,26 @@ class __ViewReviewState extends State<_ViewReview> {
                 label: const Text('Agregar foto'),
               ),
               const SizedBox(height: 10),
-              Obx(
-                () => reviewController.urlImagen.isNotEmpty
-                    ? Image.file(
-                        File(reviewController.urlImagen.value),
-                        width: MediaQuery.of(context).size.width * 0.45,
-                      )
-                    : Container(
-                        width: MediaQuery.of(context).size.width * 0.45,
-                        height: MediaQuery.of(context).size.width * 0.45,
-                        decoration: BoxDecoration(
-                          color: colors.surfaceContainerHighest,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const Icon(
-                          Icons.image,
-                          size: 50,
-                          color: Colors.grey,
-                        ),
-                      ),
-              ),
+              // Obx(
+              //   () => reviewController.urlImagen.isNotEmpty
+              //       ? Image.file(
+              //           File(reviewController.urlImagen.value),
+              //           width: MediaQuery.of(context).size.width * 0.45,
+              //         )
+              //       : Container(
+              //           width: MediaQuery.of(context).size.width * 0.45,
+              //           height: MediaQuery.of(context).size.width * 0.45,
+              //           decoration: BoxDecoration(
+              //             color: colors.surfaceContainerHighest,
+              //             borderRadius: BorderRadius.circular(10),
+              //           ),
+              //           child: const Icon(
+              //             Icons.image,
+              //             size: 50,
+              //             color: Colors.grey,
+              //           ),
+              //         ),
+              // ),
               const SizedBox(height: 20),
               ElevatedButton.icon(
                 style: ElevatedButton.styleFrom(
@@ -141,8 +141,8 @@ class __ViewReviewState extends State<_ViewReview> {
                   if (success) {
                     Get.defaultDialog(
                       titlePadding: const EdgeInsets.all(20),
-                      contentPadding:
-                          const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                      contentPadding: const EdgeInsets.only(
+                          left: 20, right: 20, bottom: 20),
                       title: '¡Gracias por tu opinión!',
                       middleText: 'Tu opinión es muy importante para nosotros.',
                       actions: [
