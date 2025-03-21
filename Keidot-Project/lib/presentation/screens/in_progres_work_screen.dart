@@ -13,10 +13,10 @@ class InProgresWorkScreen extends StatefulWidget {
   const InProgresWorkScreen({super.key});
 
   @override
-  _PendingWorkScreenState createState() => _PendingWorkScreenState();
+  _InProgreWorkScreenState createState() => _InProgreWorkScreenState();
 }
 
-class _PendingWorkScreenState extends State<InProgresWorkScreen> {
+class _InProgreWorkScreenState extends State<InProgresWorkScreen> {
   late Future<List<AssignmentDTO>> _assignmentsFuture;
   final AssignmentInProgress _service = AssignmentInProgress();
   final AssignmentIdController _assignmentIdController =

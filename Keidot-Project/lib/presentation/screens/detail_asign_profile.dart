@@ -3,6 +3,7 @@ import 'package:test_app/Services/client_request/assignment_request/PUT/rejected
 import 'package:test_app/Services/client_request/assignment_request/PUT/request_success_Client.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/worker_profile_screen.dart';
 
 class AssignmentProfileDetailScreen extends StatelessWidget {
   final AssignmentDTO assignment;
@@ -126,6 +127,7 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
                     onPressed: () {
                       // Lógica para ver el perfil del trabajador
                       _viewWorkerProfile(context);
+                      
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue, // Color azul para ver perfil
@@ -224,9 +226,8 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
 
   // Método para ver el perfil del trabajador
   void _viewWorkerProfile(BuildContext context) {
-    // Aquí puedes agregar la lógica para navegar a la pantalla del perfil del trabajador
-    // Por ejemplo, usar Navigator.push para ir a otra pantalla
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Navegando al perfil del trabajador...')),
-    );
-  }
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const WorkerProfileScreen()),
+  );
+}
