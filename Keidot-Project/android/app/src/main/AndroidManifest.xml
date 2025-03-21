@@ -2,53 +2,33 @@
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-
-
-	<application 
-	android:requestLegacyExternalStorage="true"
-    android:label="test_app" 
-    android:name="${applicationName}" 
-    android:icon="@mipmap/ic_launcher" 
-    android:theme="@style/LaunchTheme">
-
-    <provider
-        android:name="androidx.core.content.FileProvider"
-        android:authorities="${applicationId}.fileprovider"
-        android:grantUriPermissions="true"
-        android:exported="false">
-        <meta-data
-            android:name="android.support.FILE_PROVIDER_PATHS"
-            android:resource="@xml/file_paths"/>
-    </provider>
-
-    <activity 
-        android:name=".MainActivity" 
-        android:exported="true" 
-        android:launchMode="singleTop" 
-        android:taskAffinity="" 
-        android:theme="@style/AppTheme" 
-        android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode" 
-        android:hardwareAccelerated="true" 
-        android:windowSoftInputMode="adjustResize">
-
-        <meta-data 
-            android:name="io.flutter.embedding.android.NormalTheme"
-            android:resource="@style/NormalTheme" />
-
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-
-    </activity>
-
-    <!-- Flutter plugin metadata -->
-    <meta-data android:name="flutterEmbedding" android:value="2" />
-    
-
-</application>
-
+	<uses-permission android:name="android.permission.CAMERA" />
+	<application android:requestLegacyExternalStorage="true" android:label="test_app" android:name="${applicationName}" android:icon="@mipmap/ic_launcher" android:theme="@style/LaunchTheme">
+		<provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.fileprovider" android:grantUriPermissions="true" android:exported="false">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths" />
+		</provider>
+		<activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTop" android:taskAffinity="" android:theme="@style/AppTheme" android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode" android:hardwareAccelerated="true" android:windowSoftInputMode="adjustResize">
+			<meta-data android:name="io.flutter.embedding.android.NormalTheme" android:resource="@style/NormalTheme" />
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<!-- Flutter plugin metadata -->
+		<meta-data android:name="flutterEmbedding" android:value="2" />
+		<service android:name="com.google.firebase.messaging.FirebaseMessagingService">
+			<intent-filter>
+				<action android:name="com.google.firebase.MESSAGING_EVENT" />
+			</intent-filter>
+		</service>
+		<!-- Configuración de notificaciones para cuando la app esté cerrada -->
+		<receiver android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:exported="true" android:permission="com.google.android.c2dm.permission.SEND">
+			<intent-filter>
+				<action android:name="com.google.android.c2dm.intent.RECEIVE" />
+				<category android:name="${applicationId}" />
+			</intent-filter>
+		</receiver>
+	</application>
 	<!--
 	Required to query activities that can process text, see:
 	https://developer.android.com/training/package-visibility and
