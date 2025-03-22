@@ -30,6 +30,7 @@ Future<void> main() async {
   // Configura Firebase Messaging
   await setupFirebaseMessaging();
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  await initializeNotifications();
 
   // Inicializa controladores GetX
   Get.lazyPut(() => AssignmentIdController());
