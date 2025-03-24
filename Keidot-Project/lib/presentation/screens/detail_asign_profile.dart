@@ -3,6 +3,7 @@ import 'package:test_app/Services/client_request/assignment_request/PUT/rejected
 import 'package:test_app/Services/client_request/assignment_request/PUT/request_success_Client.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
+import 'package:test_app/presentation/screens/worker_profile_screen.dart';
 
 class AssignmentProfileDetailScreen extends StatelessWidget {
   final AssignmentDTO assignment;
@@ -28,10 +29,11 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
                   Text(
                     assignment.nameOfService,
                     style: const TextStyle(
-                        fontSize: 22, fontWeight: FontWeight.bold, color: darkGreen),
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: darkGreen),
                   ),
                   const SizedBox(height: 10),
-
                   const Text(
                     "Fecha asignada para realizar el trabajo:",
                     style: TextStyle(
@@ -50,7 +52,6 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
                     style: const TextStyle(fontSize: 16, color: Colors.grey),
                   ),
                   const SizedBox(height: 10),
-
                   Text(
                     "Tamaño estimado del jardin: ${assignment.estimatedSize}",
                     style: const TextStyle(fontSize: 16),
@@ -61,7 +62,6 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
                     style: const TextStyle(color: greenContrast, fontSize: 16),
                   ),
                   const SizedBox(height: 15),
-
                   const Text(
                     'Descripción:',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -75,7 +75,6 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
               ),
             ),
           ),
-
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
@@ -96,7 +95,6 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 10),
-
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
@@ -113,7 +111,6 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 10),
-
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
@@ -144,7 +141,8 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Aceptar Solicitud'),
-        content: const Text('¿Estás seguro de que deseas aceptar esta solicitud?'),
+        content:
+            const Text('¿Estás seguro de que deseas aceptar esta solicitud?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
@@ -185,7 +183,8 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Rechazar Solicitud'),
-        content: const Text('¿Estás seguro de que deseas rechazar esta solicitud?'),
+        content:
+            const Text('¿Estás seguro de que deseas rechazar esta solicitud?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
@@ -194,7 +193,8 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
           TextButton(
             onPressed: () async {
               Navigator.pop(context);
-              bool isRejected = await assignmentRejected.updateIsActive(context);
+              bool isRejected =
+                  await assignmentRejected.updateIsActive(context);
 
               showDialog(
                 context: context,
@@ -225,13 +225,15 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
       builder: (context) => AlertDialog(
         title: const Text('Información'),
         content: const Text('Navegando al perfil del trabajador...'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('OK'),
-          ),
-        ],
       ),
     );
+
+    // Espera 1 segundo, cierra el diálogo y navega
+    Future.delayed(const Duration(seconds: 1), () {
+      Navigator.of(context).pop(); // Cierra el AlertDialog
+      Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => const WorkerProfileScreen()),
+      );
+    });
   }
 }

@@ -10,7 +10,8 @@ class JobsPublishService {
   FlutterSecureStorage storage = const FlutterSecureStorage(); // Almacenamiento seguro
 
   Future<List<AssignmentDTO>> fetchAllJobs() async {
-    final url = Uri.parse("$baseUrl/WorkerServices");
+    String? UserId = await storage.read(key: "userId");
+    final url = Uri.parse("$baseUrl/WorkerServices/$UserId");
 
     try {
       _logger.i("Obteniendo trabajos publicados desde: $url");
