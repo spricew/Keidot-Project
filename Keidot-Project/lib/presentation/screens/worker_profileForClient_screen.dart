@@ -6,14 +6,14 @@ import 'package:test_app/Services/worker_request/profile_worker/profile_worker.d
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/review_for_client.dart';
 
-class WorkerProfileScreen extends StatefulWidget {
-  const WorkerProfileScreen({super.key});
+class WorkerProfileForClientScreen extends StatefulWidget {
+  const WorkerProfileForClientScreen({super.key});
 
   @override
   _ClientProfileScreenState createState() => _ClientProfileScreenState();
 }
 
-class _ClientProfileScreenState extends State<WorkerProfileScreen> {
+class _ClientProfileScreenState extends State<WorkerProfileForClientScreen> {
   final ProfileWorkerService _service = ProfileWorkerService();
   final AssignmentIdController _assignmentIdController =
       Get.find<AssignmentIdController>();

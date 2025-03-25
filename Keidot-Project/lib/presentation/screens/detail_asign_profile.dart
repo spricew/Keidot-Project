@@ -3,7 +3,7 @@ import 'package:test_app/Services/client_request/assignment_request/PUT/rejected
 import 'package:test_app/Services/client_request/assignment_request/PUT/request_success_Client.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 import 'package:test_app/config/theme/app_theme.dart';
-import 'package:test_app/presentation/screens/worker_profile_screen.dart';
+import 'package:test_app/presentation/screens/worker_profileForClient_screen.dart';
 
 class AssignmentProfileDetailScreen extends StatelessWidget {
   final AssignmentDTO assignment;
@@ -232,7 +232,7 @@ class AssignmentProfileDetailScreen extends StatelessWidget {
     Future.delayed(const Duration(seconds: 1), () {
       Navigator.of(context).pop(); // Cierra el AlertDialog
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const WorkerProfileScreen()),
+        MaterialPageRoute(builder: (context) => const WorkerProfileForClientScreen()),
       );
     });
   }

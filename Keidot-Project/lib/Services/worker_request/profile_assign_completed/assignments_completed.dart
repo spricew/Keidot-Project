@@ -4,14 +4,14 @@ import 'package:logger/logger.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
 
-class JobsPublishService {
+class AssignmentsCompleted {
   final Logger _logger = Logger();
   final String baseUrl = "https://keidotapi.azurewebsites.net/api/AssignmentByUser/Worker";
   FlutterSecureStorage storage = const FlutterSecureStorage(); // Almacenamiento seguro
 
   Future<List<AssignmentDTO>> fetchAllJobs() async {
-    String?UserId = await storage.read(key: "userId");
-    final url = Uri.parse("$baseUrl/WorkerServices/$UserId");
+    String? userId = await storage.read(key: "userId");
+    final url = Uri.parse("$baseUrl/WorkerCompleted/$userId");
 
     try {
       _logger.i("Obteniendo trabajos publicados desde: $url");

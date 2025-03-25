@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_app/Services/client_request/assignment_request/GET/assignment_inact_request.dart';
 import 'package:test_app/Services/models/assignment_model.dart';
+import 'package:test_app/Services/worker_request/profile_assign_completed/assignments_completed.dart';
 import 'package:test_app/config/theme/app_theme.dart';
 import 'package:test_app/presentation/screens/assign_Inactive_detail_screen.dart';
 import 'package:test_app/providers/user_provider.dart';
-
 
 class WorkerProfileScreen extends StatefulWidget {
   const WorkerProfileScreen({super.key});
@@ -15,13 +14,13 @@ class WorkerProfileScreen extends StatefulWidget {
 }
 
 class _WorkerProfileScreenState extends State<WorkerProfileScreen> {
-  final AssignmentInactiveController _controller = AssignmentInactiveController();
+  final AssignmentsCompleted _completedService = AssignmentsCompleted();
   late Future<List<AssignmentDTO>> _assignmentsFuture;
 
   @override
   void initState() {
     super.initState();
-    _assignmentsFuture = _controller.getAssignments();
+    _assignmentsFuture = _completedService.fetchAllJobs();
   }
 
   @override
@@ -63,7 +62,7 @@ class _WorkerProfileScreenState extends State<WorkerProfileScreen> {
                 ),
                 const SizedBox(height: 24),
                 const Text(
-                  'Historial de trabajos',
+                  'Trabajos completados',
                   style: TextStyle(fontSize: 20, color: darkGreen),
                 ),
                 const SizedBox(height: 20),
@@ -81,7 +80,7 @@ class _WorkerProfileScreenState extends State<WorkerProfileScreen> {
                     child: Center(child: Text('Error: ${snapshot.error}')));
               } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
                 return const SliverToBoxAdapter(
-                    child: Center(child: Text('No hay trabajos inactivos.')));
+                    child: Center(child: Text('No hay trabajos completados.')));
               }
               return SliverList(
                 delegate: SliverChildBuilderDelegate(
