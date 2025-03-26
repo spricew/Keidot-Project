@@ -16,6 +16,7 @@
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
+			<meta-data android:name="android.app.splash_screen_drawable" android:resource="@drawable/launch_background" />
 		</activity>
 		<!-- Flutter plugin metadata -->
 		<meta-data android:name="flutterEmbedding" android:value="2" />
