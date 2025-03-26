@@ -1,0 +1,2 @@
+C:/Proyecto-KEIDOT/app_movil/Keidot-Project/Keidot-Project/android/app/.cxx/RelWithDebInfo/4n254j6v/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Proyecto-KEIDOT/app_movil/Keidot-Project/Keidot-Project/android/app/.cxx/RelWithDebInfo/4n254j6v/armeabi-v7a/CMakeFiles/rebuild_cache.dir
