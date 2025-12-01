@@ -1,16 +1,3 @@
-# test_app
+# Keidot App
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Keidot es una app móvil desarrollada con Flutter y Dart que conecta a clientes con trabajadores de jardinería de forma rápida y segura. Permite solicitar servicios como corte de césped, limpieza de jardín, decoración o renta de herramientas, mostrando a los trabajadores cercanos según su ubicación y especialidades. El proceso incluye solicitud, aceptación, pago seguro y evidencia con fotos para dar confianza a ambas partes. La app también ofrece servicios por temporada y un sistema de reseñas para mantener la calidad del trabajo. Keidot busca ser una solución moderna y accesible tanto para quienes necesitan ayuda en su jardín como para quienes desean generar ingresos extra.
